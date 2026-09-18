@@ -344,6 +344,11 @@ function renderFaviconPreview(dataUrl) {
 }
 
 function getAdminToken() {
+  const inputValue = $("#adminTokenInput")?.value?.trim() || "";
+  if (inputValue) {
+    sessionStorage.setItem(ADMIN_TOKEN_SESSION_KEY, inputValue);
+    return inputValue;
+  }
   return sessionStorage.getItem(ADMIN_TOKEN_SESSION_KEY) || "";
 }
 
@@ -369,6 +374,9 @@ async function adminApi(path, options={}) {
 
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
+    if (res.status === 401) {
+      throw new Error("관리자 인증에 실패했습니다. 입력한 ADMIN_TOKEN과 Cloudflare Worker의 ADMIN_TOKEN이 같은지 확인해 주세요.");
+    }
     throw new Error(data.error || `API 오류 (${res.status})`);
   }
   return data;
@@ -717,7 +725,7 @@ function bindEvents() {
       return;
     }
     sessionStorage.setItem(ADMIN_TOKEN_SESSION_KEY, token);
-    setAdminStatus($("#adminApiStatus"), "이 브라우저 세션에 관리자 토큰을 저장했습니다.", "success");
+    setAdminStatus($("#adminApiStatus"), "관리자 토큰이 적용되었습니다.", "success");
   });
 
   $("#checkAdminApi").addEventListener("click", async () => {

@@ -71,3 +71,9 @@ videos.json 자체는 YouTube 원본 제목/설명을 저장합니다.
 - `YOUTUBE_API_KEY`, `GITHUB_TOKEN`, `ADMIN_TOKEN`은 절대 GitHub에 넣지 마세요.
 - 세 Secret은 Cloudflare Worker Secret으로만 저장하세요.
 - 별도 Worker를 새로 만들 경우 Secret은 Worker별 설정이므로 새 Worker에도 다시 등록해야 합니다.
+
+
+## v2 변경사항
+- ADMIN_TOKEN 입력값을 업데이트 버튼 클릭 시 자동 적용
+- 별도로 '토큰 적용' 버튼을 누르지 않아도 됨
+- 401 인증 실패 시 더 명확한 오류 메시지 표시
