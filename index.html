@@ -54,7 +54,17 @@
       </label>
     </section>
 
-    <section id="resultMeta" class="result-meta" aria-live="polite"></section>
+    <div class="result-header">
+      <section id="resultMeta" class="result-meta" aria-live="polite"></section>
+      <div class="view-toggle" role="group" aria-label="보기 방식">
+        <button id="gridViewBtn" class="view-toggle-btn active" type="button" aria-label="카드형 보기" title="카드형 보기">
+          <span aria-hidden="true">▦</span>
+        </button>
+        <button id="listViewBtn" class="view-toggle-btn" type="button" aria-label="목록형 보기" title="목록형 보기">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
     <section id="videoGrid" class="video-grid" aria-live="polite"></section>
 
     <section id="emptyState" class="empty-state" hidden>

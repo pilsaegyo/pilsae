@@ -1,5 +1,6 @@
 const DEFAULT_TITLE = "날짜로 다시 찾는 영상 기록";
 const STORAGE_TITLE = "pilsaeArchiveTitle";
+const STORAGE_VIEW = "pilsaeArchiveView";
 
 let videos = [];
 const $ = (sel) => document.querySelector(sel);
@@ -53,6 +54,13 @@ function pushUniqueDate(list, entry) {
   )) {
     list.push(entry);
   }
+}
+
+function removeHashtagsFromDescription(text="") {
+  return String(text || "")
+    // Remove hashtag tokens such as #1999, #2015-02-27, #신혜성
+    // until whitespace or another # begins.
+    .replace(/#[^\s#]+/g, " ");
 }
 
 function extractDatesFromText(text="") {
@@ -227,7 +235,7 @@ function normalizeVideo(v, idx=0) {
 
   // Re-analyse ONLY the saved video description every load.
   // Title/source text must never affect date detection.
-  const textToAnalyse = String(v.description || "");
+  const textToAnalyse = removeHashtagsFromDescription(v.description || "");
 
   const extracted = extractDatesFromText(textToAnalyse);
   const dateEntries = mergeDateEntries(existing, extracted);
@@ -426,6 +434,29 @@ function filteredVideos() {
     });
 }
 
+
+function currentView() {
+  return localStorage.getItem(STORAGE_VIEW) === "list" ? "list" : "grid";
+}
+
+function applyViewMode() {
+  const mode = currentView();
+  const grid = $("#videoGrid");
+  const gridBtn = $("#gridViewBtn");
+  const listBtn = $("#listViewBtn");
+
+  if (!grid || !gridBtn || !listBtn) return;
+
+  grid.classList.toggle("list-view", mode === "list");
+  gridBtn.classList.toggle("active", mode === "grid");
+  listBtn.classList.toggle("active", mode === "list");
+}
+
+function setViewMode(mode) {
+  localStorage.setItem(STORAGE_VIEW, mode === "list" ? "list" : "grid");
+  applyViewMode();
+}
+
 function render() {
   $("#videoCount").textContent = `${videos.length}개`;
 
@@ -436,6 +467,7 @@ function render() {
   $("#videoGrid").innerHTML = rows.map(renderCard).join("");
   $("#emptyState").hidden = rows.length !== 0;
 
+  applyViewMode();
   renderAdminList();
 }
 
@@ -496,6 +528,9 @@ function bindEvents() {
       render
     );
   });
+
+  $("#gridViewBtn").addEventListener("click", () => setViewMode("grid"));
+  $("#listViewBtn").addEventListener("click", () => setViewMode("list"));
 
   $("#adminEntry").addEventListener("click", () => setAdmin(true));
   $("#closeAdmin").addEventListener("click", () => setAdmin(false));
