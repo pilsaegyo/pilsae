@@ -1,4 +1,4 @@
-const DEFAULT_TITLE = "필새채널 영상 년도별 정리 Ver.260919";
+const DEFAULT_TITLE = "날짜로 다시 찾는 영상 기록";
 const STORAGE_TITLE = "pilsaeArchiveTitle";
 
 let videos = [];
@@ -59,34 +59,34 @@ function extractDatesFromText(text="") {
   const input = String(text || "");
   const found = [];
 
-  const addDay = (y, m, d, raw="") => {
+  const addDay = (y, m, d) => {
     y = Number(y); m = Number(m); d = Number(d);
     if (!isValidDate(y, m, d)) return;
     pushUniqueDate(found, {
       sourceDate: `${y}-${pad2(m)}-${pad2(d)}`,
-      source: raw.trim(),
+      source: "",
       precision: "day",
       inferred: false
     });
   };
 
-  const addMonth = (y, m, raw="") => {
+  const addMonth = (y, m) => {
     y = Number(y); m = Number(m);
     if (y < 1900 || y > 2099 || m < 1 || m > 12) return;
     pushUniqueDate(found, {
       sourceDate: `${y}-${pad2(m)}-01`,
-      source: raw.trim(),
+      source: "",
       precision: "month",
       inferred: true
     });
   };
 
-  const addYear = (y, raw="") => {
+  const addYear = (y) => {
     y = Number(y);
     if (y < 1900 || y > 2099) return;
     pushUniqueDate(found, {
       sourceDate: `${y}-01-01`,
-      source: raw.trim(),
+      source: "",
       precision: "year",
       inferred: true
     });
@@ -94,62 +94,39 @@ function extractDatesFromText(text="") {
 
   // 1) YYYY년 M월 D일
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일/g)) {
-    addDay(m[1], m[2], m[3], m[0]);
+    addDay(m[1], m[2], m[3]);
   }
 
   // 2) YYYY.MM.DD / YYYY-MM-DD / YYYY/MM/DD
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})(?!\d)/g)) {
-    addDay(m[1], m[2], m[3], m[0]);
+    addDay(m[1], m[2], m[3]);
   }
 
   // 3) YYYYMMDD
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})(\d{2})(\d{2})(?!\d)/g)) {
-    addDay(m[1], m[2], m[3], m[0]);
+    addDay(m[1], m[2], m[3]);
   }
 
-  // 4) YYMMDD e.g. 150227, 010826, 990626
+  // 4) YYMMDD e.g. 150227, 010826, 981025
   for (const m of input.matchAll(/(?<!\d)(\d{2})(\d{2})(\d{2})(?!\d)/g)) {
     const y = normalizeTwoDigitYear(m[1]);
-    addDay(y, m[2], m[3], m[0]);
+    addDay(y, m[2], m[3]);
   }
 
-  // 5) YYYY년 M월 (day unknown)
-  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월(?!\s*\d)/g)) {
-    addMonth(m[1], m[2], m[0]);
+  // 5) YYYY년 M월
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월(?!\s*\d+\s*일)/g)) {
+    addMonth(m[1], m[2]);
   }
 
-  // 6) YYYY.MM / YYYY-MM / YYYY/MM (day unknown)
+  // 6) YYYY.MM / YYYY-MM / YYYY/MM
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})[.\-/](\d{1,2})(?![.\-/]\d|\d)/g)) {
-    addMonth(m[1], m[2], m[0]);
+    addMonth(m[1], m[2]);
   }
 
-  // 7) Explicit 4-digit year with backtick: 1999`, 2000`
-  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*[`´’']/g)) {
-    addYear(m[1], m[0]);
-  }
-
-  // 8) 2-digit year with backtick: 99`, 00`
-  for (const m of input.matchAll(/(?<!\d)(\d{2})\s*[`´’'](?!\d)/g)) {
-    addYear(normalizeTwoDigitYear(m[1]), m[0]);
-  }
-
-  // 9) YYYY년 / YYYY년도
+  // 7) YYYY년 / YYYY년도
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년(?:도)?(?!\s*\d+\s*월)/g)) {
-    addYear(m[1], m[0]);
+    addYear(m[1]);
   }
-
-  // 10) YY년도 / YY년 (e.g. 99년도 방송)
-  for (const m of input.matchAll(/(?<!\d)(\d{2})\s*년(?:도)?(?!\s*\d+\s*월)/g)) {
-    addYear(normalizeTwoDigitYear(m[1]), m[0]);
-  }
-
-  // Prefer more precise entries when same year/month/day prefix collides.
-  const precisionRank = { day: 3, month: 2, year: 1 };
-  found.sort((a, b) => {
-    const da = a.sourceDate.localeCompare(b.sourceDate);
-    if (da !== 0) return da;
-    return (precisionRank[b.precision] || 0) - (precisionRank[a.precision] || 0);
-  });
 
   return found;
 }
@@ -178,28 +155,58 @@ function normalizeDateEntry(entry) {
 function mergeDateEntries(existing, extracted) {
   const merged = [];
 
-  for (const e of existing || []) {
-    const n = normalizeDateEntry(e);
-    if (n && n.sourceDate) pushUniqueDate(merged, n);
-  }
+  const add = (e) => {
+    if (!e || !e.sourceDate) return;
 
-  // Avoid adding year-only/month-only inference if a more precise date
-  // for the same year/month already exists.
-  for (const e of extracted || []) {
-    if (!e?.sourceDate) continue;
-
+    // If a more precise date already exists for same year/month, skip less precise one.
     const y = e.sourceDate.slice(0,4);
     const ym = e.sourceDate.slice(0,7);
 
-    if (e.precision === "year") {
-      if (merged.some(x => x.sourceDate.startsWith(y))) continue;
-    }
-    if (e.precision === "month") {
-      if (merged.some(x => x.sourceDate.startsWith(ym) && x.precision === "day")) continue;
+    if (e.precision === "year" &&
+        merged.some(x => x.sourceDate.startsWith(y) && x.precision !== "year")) {
+      return;
     }
 
-    pushUniqueDate(merged, e);
+    if (e.precision === "month" &&
+        merged.some(x => x.sourceDate.startsWith(ym) && x.precision === "day")) {
+      return;
+    }
+
+    // Remove less precise entries if a more precise one is being added.
+    if (e.precision === "day") {
+      for (let i = merged.length - 1; i >= 0; i--) {
+        const x = merged[i];
+        if ((x.precision === "year" && x.sourceDate.startsWith(y)) ||
+            (x.precision === "month" && x.sourceDate.startsWith(ym))) {
+          merged.splice(i, 1);
+        }
+      }
+    } else if (e.precision === "month") {
+      for (let i = merged.length - 1; i >= 0; i--) {
+        const x = merged[i];
+        if (x.precision === "year" && x.sourceDate.startsWith(y)) {
+          merged.splice(i, 1);
+        }
+      }
+    }
+
+    const key = `${e.sourceDate}|${e.precision || "day"}`;
+    if (!merged.some(x => `${x.sourceDate}|${x.precision || "day"}` === key)) {
+      merged.push({
+        sourceDate: e.sourceDate,
+        source: "",
+        precision: e.precision || "day",
+        inferred: Boolean(e.inferred)
+      });
+    }
+  };
+
+  for (const e of existing || []) {
+    const n = normalizeDateEntry(e);
+    if (n && n.sourceDate) add(n);
   }
+
+  for (const e of extracted || []) add(e);
 
   return merged;
 }
@@ -218,21 +225,19 @@ function normalizeVideo(v, idx=0) {
     });
   }
 
-  // Re-analyse the complete saved description + source + title every load.
-  const textToAnalyse = [
-    v.description || "",
-    v.source || "",
-    v.title || ""
-  ].join("\n");
+  // Re-analyse ONLY the saved video description every load.
+  // Title/source text must never affect date detection.
+  const textToAnalyse = String(v.description || "");
 
   const extracted = extractDatesFromText(textToAnalyse);
   const dateEntries = mergeDateEntries(existing, extracted);
 
   const validDates = dateEntries.map(d => d.sourceDate).filter(Boolean);
+  const uniqueYears = [...new Set(validDates.map(d => d.slice(0,4)))];
 
   let type = "unknown";
-  if (validDates.length > 1) type = "mixed";
-  else if (validDates.length === 1) type = "single";
+  if (uniqueYears.length > 1) type = "mixed";
+  else if (uniqueYears.length === 1) type = "single";
 
   const sortDate = validDates.length
     ? [...validDates].sort().reverse()[0]
@@ -304,29 +309,51 @@ function typeLabel(type) {
 
 function displayDate(d) {
   const raw = String(d.sourceDate || "");
-  if (d.precision === "year") return `${raw.slice(0,4)}년`;
+  if (d.precision === "year") {
+    return `${raw.slice(0,4)}년`;
+  }
   if (d.precision === "month") {
-    const [y,m] = raw.split("-");
+    const [y, m] = raw.split("-");
     return `${y}.${m}`;
   }
   return raw;
 }
 
 function renderDates(v) {
-  if (!v.dates.length || !v.dates.some(d => d.sourceDate)) {
+  const valid = v.dates
+    .filter(d => d.sourceDate)
+    .sort((a,b) => b.sourceDate.localeCompare(a.sourceDate));
+
+  if (!valid.length) {
     return `<span class="date-chip">날짜 미확인</span>`;
   }
 
-  return v.dates
-    .filter(d => d.sourceDate)
+  // Same year appears once only.
+  // Within a year, prefer day > month > year; if same precision, latest value wins.
+  const rank = { day: 3, month: 2, year: 1 };
+  const byYear = new Map();
+
+  for (const d of valid) {
+    const year = d.sourceDate.slice(0,4);
+    const prev = byYear.get(year);
+
+    if (!prev) {
+      byYear.set(year, d);
+      continue;
+    }
+
+    const curRank = rank[d.precision] || 0;
+    const prevRank = rank[prev.precision] || 0;
+
+    if (curRank > prevRank ||
+        (curRank === prevRank && d.sourceDate > prev.sourceDate)) {
+      byYear.set(year, d);
+    }
+  }
+
+  return [...byYear.values()]
     .sort((a,b) => b.sourceDate.localeCompare(a.sourceDate))
-    .map(d => {
-      const dateLabel = displayDate(d);
-      const sourceLabel = d.source && d.source !== dateLabel
-        ? ` · ${d.source}`
-        : "";
-      return `<span class="date-chip">${escapeHTML(dateLabel + sourceLabel)}</span>`;
-    })
+    .map(d => `<span class="date-chip">${escapeHTML(displayDate(d))}</span>`)
     .join("");
 }
 
@@ -499,9 +526,9 @@ function bindEvents() {
           parseStatus: v.type === "unknown" ? "needs_review" : "parsed",
           dates: v.dates.map(d => ({
             sourceDate: d.sourceDate,
-            source: d.source,
-            precision: d.precision,
-            inferred: d.inferred
+            source: "",
+            precision: "day",
+            inferred: false
           }))
         })),
         total: videos.length
