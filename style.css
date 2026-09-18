@@ -246,3 +246,93 @@ h1{font-size:clamp(36px,6vw,68px);line-height:1.05;letter-spacing:-.05em;margin:
     font-size:14px;
   }
 }
+
+
+/* UX improvements */
+.toolbar{
+  grid-template-columns:150px minmax(250px,1.35fr) minmax(150px,.7fr) minmax(155px,.72fr) minmax(170px,.8fr) auto;
+}
+.reset-filter-button{
+  min-height:80px;
+  align-self:stretch;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--surface);
+  color:var(--text);
+  padding:0 17px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.reset-filter-button:hover{
+  background:var(--soft);
+}
+.reset-filter-button:focus-visible,
+.view-toggle-btn:focus-visible,
+.load-more-button:focus-visible,
+.channel-link:focus-visible,
+.card-link:focus-visible,
+.thumb:focus-visible{
+  outline:3px solid rgba(23,23,23,.18);
+  outline-offset:2px;
+}
+.loading-state{
+  min-height:160px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:var(--muted);
+  font-size:14px;
+}
+.loading-state[hidden]{display:none}
+.loading-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+  animation:archivePulse 1.1s ease-in-out infinite;
+}
+@keyframes archivePulse{
+  0%,100%{opacity:.28;transform:scale(.8)}
+  50%{opacity:1;transform:scale(1.15)}
+}
+.load-more-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:28px;
+}
+.load-more-button{
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--surface);
+  padding:12px 24px;
+  font-weight:800;
+  color:var(--text);
+}
+.load-more-button:hover{background:var(--soft)}
+.video-card .card-title a{
+  color:inherit;
+  text-decoration:none;
+}
+.video-card .card-title a:hover{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.result-meta strong{color:var(--text)}
+.result-submeta{
+  margin-left:6px;
+  color:#999;
+}
+@media (max-width:1080px){
+  .toolbar{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .reset-filter-button{min-height:80px}
+}
+@media (max-width:700px){
+  .toolbar{grid-template-columns:1fr 1fr}
+  .stat-card,.field,.reset-filter-button{min-height:72px}
+}
+@media (max-width:520px){
+  .toolbar{grid-template-columns:1fr}
+  .reset-filter-button{min-height:48px}
+  .result-header{align-items:flex-start}
+}

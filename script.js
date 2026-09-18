@@ -3,6 +3,8 @@ const STORAGE_TITLE = "pilsaeArchiveTitle";
 const STORAGE_VIEW = "pilsaeArchiveView";
 
 let videos = [];
+const PAGE_SIZE = 60;
+let visibleLimit = PAGE_SIZE;
 const $ = (sel) => document.querySelector(sel);
 
 function escapeHTML(value="") {
@@ -304,8 +306,23 @@ function allYears() {
 function rebuildYearFilter() {
   const select = $("#yearFilter");
   const current = select.value;
+
+  const counts = new Map();
+  videos.forEach(v => {
+    const years = new Set(
+      v.dates
+        .map(d => String(d.sourceDate || "").slice(0,4))
+        .filter(y => /^(19|20)\d{2}$/.test(y))
+    );
+    years.forEach(y => counts.set(y, (counts.get(y) || 0) + 1));
+  });
+
   select.innerHTML = `<option value="">전체 연도</option>` +
-    allYears().map(y => `<option value="${y}">${y}</option>`).join("");
+    [...counts.keys()]
+      .sort((a,b) => Number(b) - Number(a))
+      .map(y => `<option value="${y}">${y} (${counts.get(y)})</option>`)
+      .join("");
+
   if ([...select.options].some(o => o.value === current)) select.value = current;
 }
 
@@ -377,7 +394,7 @@ function renderCard(v) {
       </a>
       <div class="card-body">
         <div class="card-top">
-          <h2 class="card-title">${escapeHTML(v.title)}</h2>
+          <h2 class="card-title"><a href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a></h2>
           <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type)}</span>
         </div>
 
@@ -400,40 +417,60 @@ function filteredVideos() {
   const q = $("#searchInput").value.trim().toLowerCase();
   const year = $("#yearFilter").value;
   const type = $("#typeFilter").value;
+  const sortMode = $("#sortFilter")?.value || "source-desc";
 
-  return videos
-    .filter(v => {
-      const searchableDates = v.dates.flatMap(d => [
-        d.sourceDate,
-        d.source,
-        displayDate(d)
-      ]);
+  const rows = videos.filter(v => {
+    const searchableDates = v.dates.flatMap(d => [
+      d.sourceDate,
+      d.source,
+      displayDate(d)
+    ]);
 
-      const haystack = [
-        v.title,
-        v.description,
-        v.source,
-        v.parseStatus,
-        ...searchableDates
-      ].join(" ").toLowerCase();
+    const haystack = [
+      v.title,
+      v.description,
+      v.source,
+      v.parseStatus,
+      ...searchableDates
+    ].join(" ").toLowerCase();
 
-      const qok = !q || haystack.includes(q);
-      const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
-      const tok = !type || v.type === type;
+    const qok = !q || haystack.includes(q);
+    const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
+    const tok = !type || v.type === type;
 
-      return qok && yok && tok;
-    })
-    .sort((a, b) => {
-      // Primary: archive/source date descending.
-      const ad = a.sortDate || "";
-      const bd = b.sortDate || "";
-      if (ad !== bd) return bd.localeCompare(ad);
+    return qok && yok && tok;
+  });
 
-      // Secondary: upload date descending.
+  const sourceCompare = (a,b) => {
+    const ad = a.sortDate || "";
+    const bd = b.sortDate || "";
+    if (!ad && !bd) return 0;
+    if (!ad) return 1;
+    if (!bd) return -1;
+    return bd.localeCompare(ad);
+  };
+
+  rows.sort((a,b) => {
+    if (sortMode === "source-asc") {
+      const c = sourceCompare(a,b);
+      return c === 0 ? String(a.publishedAt || "").localeCompare(String(b.publishedAt || "")) : -c;
+    }
+    if (sortMode === "upload-desc") {
       return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
-    });
-}
+    }
+    if (sortMode === "upload-asc") {
+      return String(a.publishedAt || "").localeCompare(String(b.publishedAt || ""));
+    }
+    if (sortMode === "title-asc") {
+      return String(a.title || "").localeCompare(String(b.title || ""), "ko");
+    }
 
+    const c = sourceCompare(a,b);
+    return c || String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+  });
+
+  return rows;
+}
 
 function currentView() {
   return localStorage.getItem(STORAGE_VIEW) === "list" ? "list" : "grid";
@@ -458,14 +495,30 @@ function setViewMode(mode) {
 }
 
 function render() {
+  $("#loadingState")?.setAttribute("hidden", "");
+
   $("#videoCount").textContent = `${videos.length}개`;
 
   const rows = filteredVideos();
-  $("#resultMeta").textContent =
-    videos.length ? `${rows.length}개의 영상 표시 중` : "";
+  const visibleRows = rows.slice(0, visibleLimit);
 
-  $("#videoGrid").innerHTML = rows.map(renderCard).join("");
+  const unknownCount = rows.filter(v => v.type === "unknown").length;
+  $("#resultMeta").innerHTML = videos.length
+    ? `<strong>${rows.length}개</strong>의 영상` +
+      (unknownCount ? `<span class="result-submeta">· 날짜 미확인 ${unknownCount}개</span>` : "")
+    : "";
+
+  $("#videoGrid").innerHTML = visibleRows.map(renderCard).join("");
   $("#emptyState").hidden = rows.length !== 0;
+
+  const moreBtn = $("#loadMoreBtn");
+  if (moreBtn) {
+    const remaining = rows.length - visibleRows.length;
+    moreBtn.hidden = remaining <= 0;
+    moreBtn.textContent = remaining > 0
+      ? `더 보기 (${Math.min(PAGE_SIZE, remaining)}개)`
+      : "더 보기";
+  }
 
   applyViewMode();
   renderAdminList();
@@ -522,15 +575,40 @@ function downloadJSON(data, filename) {
 }
 
 function bindEvents() {
-  ["searchInput", "yearFilter", "typeFilter"].forEach(id => {
+  ["searchInput", "yearFilter", "typeFilter", "sortFilter"].forEach(id => {
     $("#" + id).addEventListener(
       id === "searchInput" ? "input" : "change",
-      render
+      () => {
+        visibleLimit = PAGE_SIZE;
+        render();
+      }
     );
+  });
+
+  $("#resetFilters").addEventListener("click", () => {
+    $("#searchInput").value = "";
+    $("#yearFilter").value = "";
+    $("#typeFilter").value = "";
+    $("#sortFilter").value = "source-desc";
+    visibleLimit = PAGE_SIZE;
+    render();
+  });
+
+  $("#loadMoreBtn").addEventListener("click", () => {
+    visibleLimit += PAGE_SIZE;
+    render();
   });
 
   $("#gridViewBtn").addEventListener("click", () => setViewMode("grid"));
   $("#listViewBtn").addEventListener("click", () => setViewMode("list"));
+
+  const adminAllowed =
+    new URLSearchParams(location.search).get("admin") === "1" ||
+    location.hash === "#admin";
+
+  if (adminAllowed) {
+    $("#adminEntry").hidden = false;
+  }
 
   $("#adminEntry").addEventListener("click", () => setAdmin(true));
   $("#closeAdmin").addEventListener("click", () => setAdmin(false));
@@ -606,18 +684,21 @@ function bindEvents() {
 
 (async function init() {
   applyTitle();
+  $("#emptyState").hidden = true;
 
   try {
     await loadInitialData();
+    rebuildYearFilter();
+    bindEvents();
+    render();
   } catch (err) {
     console.error(err);
-    $("#resultMeta").textContent =
-      "videos.json을 불러오지 못했습니다. 로컬에서는 웹서버로 실행해 주세요.";
+    $("#loadingState")?.setAttribute("hidden", "");
+    $("#resultMeta").textContent = "영상 목록을 불러오지 못했습니다.";
+    $("#emptyState").hidden = false;
+    $("#emptyState").innerHTML =
+      `<strong>데이터를 불러오지 못했습니다.</strong><p>잠시 후 새로고침해 주세요.</p>`;
   }
-
-  rebuildYearFilter();
-  bindEvents();
-  render();
 
   if (location.hash === "#admin") setAdmin(true);
 })();
