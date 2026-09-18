@@ -14,38 +14,217 @@ function youtubeUrlFromId(id="") {
   return id ? `https://www.youtube.com/watch?v=${encodeURIComponent(id)}` : "";
 }
 
+function pad2(n) {
+  return String(n).padStart(2, "0");
+}
+
+function isValidDate(y, m, d) {
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.getUTCFullYear() === y &&
+         dt.getUTCMonth() + 1 === m &&
+         dt.getUTCDate() === d;
+}
+
+function normalizeTwoDigitYear(yy) {
+  const n = Number(yy);
+  // Archive context rule:
+  // 00~29 => 2000~2029
+  // 30~99 => 1930~1999
+  return n <= 29 ? 2000 + n : 1900 + n;
+}
+
+function pushUniqueDate(list, entry) {
+  if (!entry || !entry.sourceDate) return;
+  const key = `${entry.sourceDate}|${entry.precision || "day"}|${entry.source || ""}`;
+  if (!list.some(x =>
+    `${x.sourceDate}|${x.precision || "day"}|${x.source || ""}` === key
+  )) {
+    list.push(entry);
+  }
+}
+
+function extractDatesFromText(text="") {
+  const input = String(text || "");
+  const found = [];
+
+  const addDay = (y, m, d, raw="") => {
+    y = Number(y); m = Number(m); d = Number(d);
+    if (!isValidDate(y, m, d)) return;
+    pushUniqueDate(found, {
+      sourceDate: `${y}-${pad2(m)}-${pad2(d)}`,
+      source: raw.trim(),
+      precision: "day",
+      inferred: false
+    });
+  };
+
+  const addMonth = (y, m, raw="") => {
+    y = Number(y); m = Number(m);
+    if (y < 1900 || y > 2099 || m < 1 || m > 12) return;
+    pushUniqueDate(found, {
+      sourceDate: `${y}-${pad2(m)}-01`,
+      source: raw.trim(),
+      precision: "month",
+      inferred: true
+    });
+  };
+
+  const addYear = (y, raw="") => {
+    y = Number(y);
+    if (y < 1900 || y > 2099) return;
+    pushUniqueDate(found, {
+      sourceDate: `${y}-01-01`,
+      source: raw.trim(),
+      precision: "year",
+      inferred: true
+    });
+  };
+
+  // 1) YYYY년 M월 D일
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일/g)) {
+    addDay(m[1], m[2], m[3], m[0]);
+  }
+
+  // 2) YYYY.MM.DD / YYYY-MM-DD / YYYY/MM/DD
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})(?!\d)/g)) {
+    addDay(m[1], m[2], m[3], m[0]);
+  }
+
+  // 3) YYYYMMDD
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})(\d{2})(\d{2})(?!\d)/g)) {
+    addDay(m[1], m[2], m[3], m[0]);
+  }
+
+  // 4) YYMMDD e.g. 150227, 010826, 990626
+  for (const m of input.matchAll(/(?<!\d)(\d{2})(\d{2})(\d{2})(?!\d)/g)) {
+    const y = normalizeTwoDigitYear(m[1]);
+    addDay(y, m[2], m[3], m[0]);
+  }
+
+  // 5) YYYY년 M월 (day unknown)
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월(?!\s*\d)/g)) {
+    addMonth(m[1], m[2], m[0]);
+  }
+
+  // 6) YYYY.MM / YYYY-MM / YYYY/MM (day unknown)
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})[.\-/](\d{1,2})(?![.\-/]\d|\d)/g)) {
+    addMonth(m[1], m[2], m[0]);
+  }
+
+  // 7) Explicit 4-digit year with backtick: 1999`, 2000`
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*[`´’']/g)) {
+    addYear(m[1], m[0]);
+  }
+
+  // 8) 2-digit year with backtick: 99`, 00`
+  for (const m of input.matchAll(/(?<!\d)(\d{2})\s*[`´’'](?!\d)/g)) {
+    addYear(normalizeTwoDigitYear(m[1]), m[0]);
+  }
+
+  // 9) YYYY년 / YYYY년도
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년(?:도)?(?!\s*\d+\s*월)/g)) {
+    addYear(m[1], m[0]);
+  }
+
+  // 10) YY년도 / YY년 (e.g. 99년도 방송)
+  for (const m of input.matchAll(/(?<!\d)(\d{2})\s*년(?:도)?(?!\s*\d+\s*월)/g)) {
+    addYear(normalizeTwoDigitYear(m[1]), m[0]);
+  }
+
+  // Prefer more precise entries when same year/month/day prefix collides.
+  const precisionRank = { day: 3, month: 2, year: 1 };
+  found.sort((a, b) => {
+    const da = a.sourceDate.localeCompare(b.sourceDate);
+    if (da !== 0) return da;
+    return (precisionRank[b.precision] || 0) - (precisionRank[a.precision] || 0);
+  });
+
+  return found;
+}
+
 function normalizeDateEntry(entry) {
   if (!entry) return null;
   if (typeof entry === "string") {
-    return { sourceDate: entry, source: "" };
+    return {
+      sourceDate: entry,
+      source: "",
+      precision: /^\d{4}-\d{2}-\d{2}$/.test(entry) ? "day" : "day",
+      inferred: false
+    };
   }
   if (typeof entry === "object") {
     return {
       sourceDate: String(entry.sourceDate || ""),
-      source: String(entry.source || "")
+      source: String(entry.source || ""),
+      precision: String(entry.precision || "day"),
+      inferred: Boolean(entry.inferred)
     };
   }
   return null;
 }
 
+function mergeDateEntries(existing, extracted) {
+  const merged = [];
+
+  for (const e of existing || []) {
+    const n = normalizeDateEntry(e);
+    if (n && n.sourceDate) pushUniqueDate(merged, n);
+  }
+
+  // Avoid adding year-only/month-only inference if a more precise date
+  // for the same year/month already exists.
+  for (const e of extracted || []) {
+    if (!e?.sourceDate) continue;
+
+    const y = e.sourceDate.slice(0,4);
+    const ym = e.sourceDate.slice(0,7);
+
+    if (e.precision === "year") {
+      if (merged.some(x => x.sourceDate.startsWith(y))) continue;
+    }
+    if (e.precision === "month") {
+      if (merged.some(x => x.sourceDate.startsWith(ym) && x.precision === "day")) continue;
+    }
+
+    pushUniqueDate(merged, e);
+  }
+
+  return merged;
+}
+
 function normalizeVideo(v, idx=0) {
-  const dateEntries = Array.isArray(v.dates)
+  const existing = Array.isArray(v.dates)
     ? v.dates.map(normalizeDateEntry).filter(Boolean)
     : [];
 
-  // Fallback to top-level sourceDate when dates[] is empty.
-  if (!dateEntries.length && v.sourceDate) {
-    dateEntries.push({
+  if (!existing.length && v.sourceDate) {
+    existing.push({
       sourceDate: String(v.sourceDate),
-      source: String(v.source || "")
+      source: String(v.source || ""),
+      precision: "day",
+      inferred: false
     });
   }
+
+  // Re-analyse the complete saved description + source + title every load.
+  const textToAnalyse = [
+    v.description || "",
+    v.source || "",
+    v.title || ""
+  ].join("\n");
+
+  const extracted = extractDatesFromText(textToAnalyse);
+  const dateEntries = mergeDateEntries(existing, extracted);
 
   const validDates = dateEntries.map(d => d.sourceDate).filter(Boolean);
 
   let type = "unknown";
   if (validDates.length > 1) type = "mixed";
   else if (validDates.length === 1) type = "single";
+
+  const sortDate = validDates.length
+    ? [...validDates].sort().reverse()[0]
+    : "";
 
   return {
     id: String(v.id || `video-${idx}`),
@@ -55,9 +234,10 @@ function normalizeVideo(v, idx=0) {
     sourceDate: v.sourceDate ? String(v.sourceDate) : "",
     publishedAt: v.publishedAt ? String(v.publishedAt) : "",
     thumbnail: String(v.thumbnail || ""),
-    parseStatus: String(v.parseStatus || ""),
+    parseStatus: validDates.length ? "parsed" : String(v.parseStatus || ""),
     dates: dateEntries,
     type,
+    sortDate,
     url: youtubeUrlFromId(v.id)
   };
 }
@@ -67,10 +247,6 @@ async function loadInitialData() {
   if (!res.ok) throw new Error(`videos.json 로드 실패: ${res.status}`);
 
   const raw = await res.json();
-
-  // Supports both:
-  // 1) { "videos": [...], "total": 642 }
-  // 2) [...]
   const list = Array.isArray(raw) ? raw : raw.videos;
 
   if (!Array.isArray(list)) {
@@ -112,6 +288,16 @@ function typeLabel(type) {
        : "단일 날짜";
 }
 
+function displayDate(d) {
+  const raw = String(d.sourceDate || "");
+  if (d.precision === "year") return `${raw.slice(0,4)}년`;
+  if (d.precision === "month") {
+    const [y,m] = raw.split("-");
+    return `${y}.${m}`;
+  }
+  return raw;
+}
+
 function renderDates(v) {
   if (!v.dates.length || !v.dates.some(d => d.sourceDate)) {
     return `<span class="date-chip">날짜 미확인</span>`;
@@ -119,11 +305,13 @@ function renderDates(v) {
 
   return v.dates
     .filter(d => d.sourceDate)
+    .sort((a,b) => b.sourceDate.localeCompare(a.sourceDate))
     .map(d => {
-      const label = d.source
-        ? `${d.sourceDate} · ${d.source}`
-        : d.sourceDate;
-      return `<span class="date-chip">${escapeHTML(label)}</span>`;
+      const dateLabel = displayDate(d);
+      const sourceLabel = d.source && d.source !== dateLabel
+        ? ` · ${d.source}`
+        : "";
+      return `<span class="date-chip">${escapeHTML(dateLabel + sourceLabel)}</span>`;
     })
     .join("");
 }
@@ -147,7 +335,7 @@ function renderCard(v) {
         <div class="dates">${renderDates(v)}</div>
 
         ${v.source ? `<p class="source">출처 · ${escapeHTML(v.source)}</p>` : ""}
-        ${v.parseStatus === "needs_review"
+        ${v.type === "unknown"
           ? `<p class="note">정확한 날짜 확인 필요</p>`
           : ""}
 
@@ -164,22 +352,37 @@ function filteredVideos() {
   const year = $("#yearFilter").value;
   const type = $("#typeFilter").value;
 
-  return videos.filter(v => {
-    const searchableDates = v.dates.flatMap(d => [d.sourceDate, d.source]);
-    const haystack = [
-      v.title,
-      v.description,
-      v.source,
-      v.parseStatus,
-      ...searchableDates
-    ].join(" ").toLowerCase();
+  return videos
+    .filter(v => {
+      const searchableDates = v.dates.flatMap(d => [
+        d.sourceDate,
+        d.source,
+        displayDate(d)
+      ]);
 
-    const qok = !q || haystack.includes(q);
-    const yok = !year || v.dates.some(d => String(d.sourceDate || "").includes(year));
-    const tok = !type || v.type === type;
+      const haystack = [
+        v.title,
+        v.description,
+        v.source,
+        v.parseStatus,
+        ...searchableDates
+      ].join(" ").toLowerCase();
 
-    return qok && yok && tok;
-  });
+      const qok = !q || haystack.includes(q);
+      const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
+      const tok = !type || v.type === type;
+
+      return qok && yok && tok;
+    })
+    .sort((a, b) => {
+      // Primary: archive/source date descending.
+      const ad = a.sortDate || "";
+      const bd = b.sortDate || "";
+      if (ad !== bd) return bd.localeCompare(ad);
+
+      // Secondary: upload date descending.
+      return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+    });
 }
 
 function render() {
@@ -209,7 +412,7 @@ function renderAdminList() {
       <div>
         <strong>${escapeHTML(v.title)}</strong><br>
         <small>${escapeHTML(
-          v.dates.map(d => d.sourceDate).filter(Boolean).join(", ") || "날짜 없음"
+          v.dates.map(displayDate).filter(Boolean).join(", ") || "날짜 없음"
         )} · ${typeLabel(v.type)}</small>
       </div>
     </div>
@@ -268,8 +471,6 @@ function bindEvents() {
     applyTitle();
   });
 
-  // Export in the SAME structure as the uploaded JSON:
-  // { videos: [...], total: N }
   $("#exportData").addEventListener("click", () => {
     downloadJSON(
       {
@@ -281,8 +482,13 @@ function bindEvents() {
           sourceDate: v.sourceDate || null,
           publishedAt: v.publishedAt,
           thumbnail: v.thumbnail,
-          parseStatus: v.parseStatus,
-          dates: v.dates
+          parseStatus: v.type === "unknown" ? "needs_review" : "parsed",
+          dates: v.dates.map(d => ({
+            sourceDate: d.sourceDate,
+            source: d.source,
+            precision: d.precision,
+            inferred: d.inferred
+          }))
         })),
         total: videos.length
       },
@@ -290,7 +496,6 @@ function bindEvents() {
     );
   });
 
-  // Import also accepts the original {videos:[...]} structure.
   $("#importFile").addEventListener("change", async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -314,8 +519,6 @@ function bindEvents() {
     }
   });
 
-  // Static hosting can't physically overwrite data/videos.json from browser.
-  // Hide functions that imply server-side persistence.
   const formCard = $("#videoForm")?.closest(".admin-card");
   if (formCard) formCard.hidden = true;
 
