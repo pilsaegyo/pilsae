@@ -1,6 +1,13 @@
 const DEFAULT_TITLE = "날짜로 다시 찾는 영상 기록";
-const STORAGE_TITLE = "pilsaeArchiveTitle";
 const STORAGE_VIEW = "pilsaeArchiveView";
+const ADMIN_TOKEN_SESSION_KEY = "pilsaeAdminToken";
+
+let siteConfig = {
+  title: DEFAULT_TITLE,
+  channelHandle: "@pilsae",
+  faviconDataUrl: "",
+  adminApiUrl: "https://pilsae-admin-api.hyesung.workers.dev"
+};
 
 let videos = [];
 const PAGE_SIZE = 60;
@@ -285,13 +292,96 @@ async function loadInitialData() {
     .map(normalizeVideo);
 }
 
-function currentTitle() {
-  return localStorage.getItem(STORAGE_TITLE) || DEFAULT_TITLE;
+async function loadSiteConfig() {
+  try {
+    const res = await fetch("./site-config.json", { cache: "no-store" });
+    if (!res.ok) return;
+    const cfg = await res.json();
+    siteConfig = { ...siteConfig, ...cfg };
+  } catch (err) {
+    console.warn("site-config.json 로드 실패", err);
+  }
 }
 
-function applyTitle() {
-  $("#mainTitle").textContent = currentTitle();
-  if ($("#titleInput")) $("#titleInput").value = currentTitle();
+function applySiteConfig() {
+  const title = siteConfig.title || DEFAULT_TITLE;
+  $("#mainTitle").textContent = title;
+  document.title = `${title} | 필새 영상 아카이브`;
+
+  const titleInput = $("#titleInput");
+  if (titleInput) titleInput.value = title;
+
+  const handle = siteConfig.channelHandle || "@pilsae";
+  const handleInput = $("#channelHandleInput");
+  if (handleInput) handleInput.value = handle;
+
+  const adminHandle = $("#adminChannelHandle");
+  if (adminHandle) adminHandle.textContent = handle;
+
+  const brandHandle = document.querySelector(".brand-handle");
+  if (brandHandle) brandHandle.textContent = handle;
+
+  const channelLink = document.querySelector(".channel-link");
+  if (channelLink) {
+    const cleanHandle = handle.startsWith("@") ? handle : `@${handle}`;
+    channelLink.href = `https://www.youtube.com/${cleanHandle}`;
+  }
+
+  const favicon = $("#dynamicFavicon");
+  if (favicon && siteConfig.faviconDataUrl) {
+    favicon.href = siteConfig.faviconDataUrl;
+  }
+
+  renderFaviconPreview(siteConfig.faviconDataUrl || "");
+}
+
+function renderFaviconPreview(dataUrl) {
+  const box = $("#faviconPreview");
+  if (!box) return;
+  box.innerHTML = dataUrl
+    ? `<img src="${escapeHTML(dataUrl)}" alt="파비콘 미리보기" />`
+    : "P";
+}
+
+function getAdminToken() {
+  return sessionStorage.getItem(ADMIN_TOKEN_SESSION_KEY) || "";
+}
+
+function setAdminStatus(el, message, type="") {
+  if (!el) return;
+  el.className = `admin-status ${type}`.trim();
+  el.textContent = message || "";
+}
+
+async function adminApi(path, options={}) {
+  const base = String(siteConfig.adminApiUrl || "").replace(/\/$/, "");
+  if (!base) throw new Error("site-config.json의 adminApiUrl이 비어 있습니다.");
+
+  const token = getAdminToken();
+  const headers = new Headers(options.headers || {});
+  headers.set("Content-Type", "application/json");
+  if (token) headers.set("Authorization", `Bearer ${token}`);
+
+  const res = await fetch(`${base}${path}`, {
+    ...options,
+    headers
+  });
+
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(data.error || `API 오류 (${res.status})`);
+  }
+  return data;
+}
+
+function updateAdminSummary() {
+  const total = videos.length;
+  const review = videos.filter(v => v.type === "unknown").length;
+  const parsed = total - review;
+
+  if ($("#adminCurrentTotal")) $("#adminCurrentTotal").textContent = `${total}개`;
+  if ($("#adminParsedTotal")) $("#adminParsedTotal").textContent = `${parsed}개`;
+  if ($("#adminReviewTotal")) $("#adminReviewTotal").textContent = `${review}개`;
 }
 
 function allYears() {
@@ -522,6 +612,7 @@ function render() {
 
   applyViewMode();
   renderAdminList();
+  updateAdminSummary();
 }
 
 function renderAdminList() {
@@ -613,16 +704,128 @@ function bindEvents() {
   $("#adminEntry").addEventListener("click", () => setAdmin(true));
   $("#closeAdmin").addEventListener("click", () => setAdmin(false));
 
-  $("#saveTitle").addEventListener("click", () => {
-    const value = $("#titleInput").value.trim();
-    if (!value) return;
-    localStorage.setItem(STORAGE_TITLE, value);
-    applyTitle();
+
+  const savedAdminToken = getAdminToken();
+  if ($("#adminTokenInput") && savedAdminToken) {
+    $("#adminTokenInput").value = savedAdminToken;
+  }
+
+  $("#saveAdminToken").addEventListener("click", () => {
+    const token = $("#adminTokenInput").value.trim();
+    if (!token) {
+      setAdminStatus($("#adminApiStatus"), "ADMIN_TOKEN을 입력해 주세요.", "error");
+      return;
+    }
+    sessionStorage.setItem(ADMIN_TOKEN_SESSION_KEY, token);
+    setAdminStatus($("#adminApiStatus"), "이 브라우저 세션에 관리자 토큰을 저장했습니다.", "success");
   });
 
-  $("#resetTitle").addEventListener("click", () => {
-    localStorage.removeItem(STORAGE_TITLE);
-    applyTitle();
+  $("#checkAdminApi").addEventListener("click", async () => {
+    const status = $("#adminApiStatus");
+    setAdminStatus(status, "Worker 연결을 확인하는 중입니다…", "loading");
+    try {
+      const data = await adminApi("/health", { method: "GET" });
+      const ok = data.youtubeConfigured && data.githubConfigured && data.adminConfigured;
+      setAdminStatus(
+        status,
+        ok
+          ? `연결 정상 · ${data.repo} · ${data.handle}`
+          : "Worker는 연결됐지만 필요한 Secret 중 일부가 없습니다.",
+        ok ? "success" : "error"
+      );
+    } catch (err) {
+      setAdminStatus(status, err.message, "error");
+    }
+  });
+
+  let pendingFaviconDataUrl = "";
+
+  $("#faviconInput").addEventListener("change", () => {
+    const file = $("#faviconInput").files?.[0];
+    if (!file) return;
+
+    if (file.size > 200 * 1024) {
+      setAdminStatus($("#siteSettingsStatus"), "파비콘은 200KB 이하를 권장합니다.", "error");
+      $("#faviconInput").value = "";
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      pendingFaviconDataUrl = String(reader.result || "");
+      renderFaviconPreview(pendingFaviconDataUrl);
+    };
+    reader.readAsDataURL(file);
+  });
+
+  $("#saveSiteSettings").addEventListener("click", async () => {
+    const status = $("#siteSettingsStatus");
+    const title = $("#titleInput").value.trim();
+    const channelHandle = $("#channelHandleInput").value.trim() || "@pilsae";
+
+    if (!getAdminToken()) {
+      setAdminStatus(status, "먼저 ADMIN_TOKEN을 입력하고 '이 세션에서 사용'을 눌러 주세요.", "error");
+      return;
+    }
+
+    setAdminStatus(status, "GitHub에 사이트 설정을 저장하는 중입니다…", "loading");
+
+    try {
+      const data = await adminApi("/update-site-config", {
+        method: "POST",
+        body: JSON.stringify({
+          title,
+          channelHandle,
+          faviconDataUrl: pendingFaviconDataUrl || siteConfig.faviconDataUrl || "",
+          adminApiUrl: siteConfig.adminApiUrl
+        })
+      });
+
+      siteConfig = { ...siteConfig, ...data.config };
+      pendingFaviconDataUrl = "";
+      applySiteConfig();
+      setAdminStatus(
+        status,
+        "저장 완료. GitHub commit 후 Cloudflare가 새 배포를 시작합니다.",
+        "success"
+      );
+    } catch (err) {
+      setAdminStatus(status, err.message, "error");
+    }
+  });
+
+  $("#syncYoutubeVideos").addEventListener("click", async () => {
+    const button = $("#syncYoutubeVideos");
+    const status = $("#syncStatus");
+
+    if (!getAdminToken()) {
+      setAdminStatus(status, "먼저 ADMIN_TOKEN을 입력하고 '이 세션에서 사용'을 눌러 주세요.", "error");
+      return;
+    }
+
+    button.disabled = true;
+    setAdminStatus(
+      status,
+      "YouTube에서 전체 영상 목록을 가져오고 GitHub videos.json을 교체하는 중입니다. 잠시 기다려 주세요…",
+      "loading"
+    );
+
+    try {
+      const data = await adminApi("/sync-videos", {
+        method: "POST",
+        body: "{}"
+      });
+
+      setAdminStatus(
+        status,
+        `업데이트 완료 · ${data.total}개 영상 · GitHub commit 생성됨. Cloudflare 새 배포가 완료되면 새로고침해 주세요.`,
+        "success"
+      );
+    } catch (err) {
+      setAdminStatus(status, err.message, "error");
+    } finally {
+      button.disabled = false;
+    }
   });
 
   $("#exportData").addEventListener("click", () => {
@@ -650,40 +853,11 @@ function bindEvents() {
     );
   });
 
-  $("#importFile").addEventListener("change", async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    try {
-      const raw = JSON.parse(await file.text());
-      const list = Array.isArray(raw) ? raw : raw.videos;
-      if (!Array.isArray(list)) {
-        throw new Error("videos 배열을 찾을 수 없습니다.");
-      }
-
-      videos = list
-        .filter(v => !isExcludedVideo(v))
-        .map(normalizeVideo);
-      rebuildYearFilter();
-      render();
-
-      alert("JSON을 읽었습니다. 이 정적 버전에서는 파일 자체가 서버에 자동 저장되지는 않습니다.");
-    } catch (err) {
-      alert("JSON을 불러오지 못했습니다: " + err.message);
-    } finally {
-      e.target.value = "";
-    }
-  });
-
-  const formCard = $("#videoForm")?.closest(".admin-card");
-  if (formCard) formCard.hidden = true;
-
-  const clearBtn = $("#clearLocalData");
-  if (clearBtn) clearBtn.hidden = true;
 }
 
 (async function init() {
-  applyTitle();
+  await loadSiteConfig();
+  applySiteConfig();
   $("#emptyState").hidden = true;
 
   try {

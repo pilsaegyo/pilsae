@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
+  <link id="dynamicFavicon" rel="icon" href="data:," />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -97,56 +98,70 @@
     <section id="adminPanel" class="admin-panel" hidden>
       <div class="admin-heading">
         <div>
-          <p class="eyebrow">LOCAL ADMIN</p>
+          <p class="eyebrow">ARCHIVE ADMIN</p>
           <h2>아카이브 관리자</h2>
         </div>
         <button id="closeAdmin" class="ghost-button" type="button">관리자 화면 닫기</button>
       </div>
 
-      <div class="admin-card">
-        <h3>메인 타이틀 수정</h3>
+      <div class="admin-card admin-auth-card">
+        <h3>관리자 인증</h3>
+        <p class="admin-help">Cloudflare Worker의 ADMIN_TOKEN 값을 입력합니다. 브라우저에는 세션 동안만 보관하며 GitHub에는 저장하지 않습니다.</p>
         <div class="admin-row">
-          <input id="titleInput" type="text" />
-          <button id="saveTitle" type="button">저장</button>
-          <button id="resetTitle" class="ghost-button" type="button">초기화</button>
+          <input id="adminTokenInput" type="password" autocomplete="off" placeholder="ADMIN_TOKEN 입력" />
+          <button id="saveAdminToken" type="button">이 세션에서 사용</button>
+          <button id="checkAdminApi" class="ghost-button" type="button">연결 확인</button>
         </div>
+        <div id="adminApiStatus" class="admin-status"></div>
       </div>
 
       <div class="admin-card">
-        <h3>영상 데이터 Import / Export</h3>
-        <p class="admin-help">JSON 파일을 불러오면 브라우저에 저장됩니다. 서버 DB가 아니라 현재 브라우저의 localStorage를 사용합니다.</p>
+        <h3>사이트 설정</h3>
+        <div class="settings-grid">
+          <label>
+            <span>상단 타이틀</span>
+            <input id="titleInput" type="text" placeholder="날짜로 다시 찾는 영상 기록" />
+          </label>
+          <label>
+            <span>YouTube 채널 핸들</span>
+            <input id="channelHandleInput" type="text" placeholder="@pilsae" />
+          </label>
+          <label class="wide">
+            <span>파비콘</span>
+            <div class="favicon-row">
+              <div id="faviconPreview" class="favicon-preview">P</div>
+              <input id="faviconInput" type="file" accept="image/png,image/jpeg,image/webp,image/x-icon,.ico" />
+            </div>
+          </label>
+        </div>
         <div class="admin-actions">
-          <label class="file-button">
-            JSON 가져오기
-            <input id="importFile" type="file" accept="application/json,.json" hidden />
-          </label>
-          <button id="exportData" type="button">JSON 내보내기</button>
-          <button id="clearLocalData" class="danger-button" type="button">로컬 데이터 초기화</button>
+          <button id="saveSiteSettings" type="button">사이트 설정 저장</button>
         </div>
+        <div id="siteSettingsStatus" class="admin-status"></div>
       </div>
 
       <div class="admin-card">
-        <h3>영상 추가</h3>
-        <form id="videoForm" class="video-form">
-          <label>제목<input name="title" required /></label>
-          <label>YouTube URL<input name="url" placeholder="https://www.youtube.com/watch?v=..." /></label>
-          <label>출처<input name="source" placeholder="예: 2015 CONCERT" /></label>
-          <label class="wide">날짜 <input name="dates" placeholder="예: 2015-02-27, 2015-02-28" /></label>
-          <label>영상 유형
-            <select name="type">
-              <option value="single">단일 날짜</option>
-              <option value="mixed">혼합 영상</option>
-              <option value="unknown">날짜 확인 필요</option>
-            </select>
-          </label>
-          <label>메모<input name="note" /></label>
-          <button class="wide" type="submit">영상 추가</button>
-        </form>
+        <h3>YouTube 영상 정보 업데이트</h3>
+        <p class="admin-help">
+          YouTube Data API로 <strong id="adminChannelHandle">@pilsae</strong>의 전체 업로드 영상을 다시 가져온 뒤
+          GitHub의 <code>data/videos.json</code>을 자동 교체합니다.
+          GitHub commit이 생성되면 Cloudflare가 새 배포를 시작합니다.
+        </p>
+        <div class="sync-summary">
+          <div><span>현재 표시 영상</span><strong id="adminCurrentTotal">—</strong></div>
+          <div><span>날짜 인식</span><strong id="adminParsedTotal">—</strong></div>
+          <div><span>날짜 확인 필요</span><strong id="adminReviewTotal">—</strong></div>
+        </div>
+        <button id="syncYoutubeVideos" class="sync-button" type="button">↻ YouTube 영상 정보 업데이트</button>
+        <div id="syncStatus" class="admin-status"></div>
       </div>
 
       <div class="admin-card">
-        <h3>현재 로컬 데이터</h3>
-        <div id="adminList" class="admin-list"></div>
+        <h3>데이터 백업</h3>
+        <p class="admin-help">현재 브라우저에서 읽은 영상 데이터를 JSON으로 내려받을 수 있습니다.</p>
+        <div class="admin-actions">
+          <button id="exportData" type="button">현재 JSON 내보내기</button>
+        </div>
       </div>
     </section>
   </main>
