@@ -1,4 +1,4 @@
-const DEFAULT_TITLE = "날짜로 다시 찾는 영상 기록";
+const DEFAULT_TITLE = "필새채널 영상 년도별 정리 Ver.260919";
 const STORAGE_TITLE = "pilsaeArchiveTitle";
 
 let videos = [];
@@ -12,6 +12,18 @@ function escapeHTML(value="") {
 
 function youtubeUrlFromId(id="") {
   return id ? `https://www.youtube.com/watch?v=${encodeURIComponent(id)}` : "";
+}
+
+
+function isExcludedVideo(v) {
+  const title = String(v?.title || "").toLowerCase();
+
+  const excludedTitlePatterns = [
+    "ai 데뷔초 신혜성",
+    "ai 신혜성"
+  ];
+
+  return excludedTitlePatterns.some(pattern => title.includes(pattern));
 }
 
 function pad2(n) {
@@ -253,7 +265,9 @@ async function loadInitialData() {
     throw new Error("videos.json에서 videos 배열을 찾을 수 없습니다.");
   }
 
-  videos = list.map(normalizeVideo);
+  videos = list
+    .filter(v => !isExcludedVideo(v))
+    .map(normalizeVideo);
 }
 
 function currentTitle() {
@@ -507,7 +521,9 @@ function bindEvents() {
         throw new Error("videos 배열을 찾을 수 없습니다.");
       }
 
-      videos = list.map(normalizeVideo);
+      videos = list
+        .filter(v => !isExcludedVideo(v))
+        .map(normalizeVideo);
       rebuildYearFilter();
       render();
 
