@@ -1852,3 +1852,79 @@ mark{
   overflow:hidden;
   text-overflow:ellipsis;
 }
+
+
+/* v13 admin layout */
+.admin-mode-open .site-header{
+  position:sticky;
+  top:0;
+  z-index:30;
+}
+.admin-mode-open #adminPanel{
+  margin-top:18px;
+  border-top:0;
+  padding-top:0;
+}
+.admin-mode-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+  padding:9px 12px;
+  border:1px solid #e4dbea;
+  border-radius:12px;
+  background:#f5f0fa;
+  color:#665477;
+  font-size:12px;
+  font-weight:850;
+}
+.admin-back-link{
+  color:#5c4773;
+  text-decoration:none;
+  padding:6px 9px;
+  border-radius:8px;
+  background:#fff;
+  border:1px solid #e0d6e8;
+}
+.admin-content-card{
+  min-height:420px;
+}
+.admin-content-toolbar{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:10px;
+}
+.admin-content-toolbar .admin-classify-search{
+  flex:1;
+  max-width:none;
+  margin:0;
+}
+.admin-content-note{
+  margin:0 0 2px;
+  color:#958c9b;
+  font-size:10px;
+  white-space:nowrap;
+}
+.admin-content-list{
+  max-height:620px;
+}
+@media (max-width:620px){
+  .admin-mode-bar{
+    position:sticky;
+    top:58px;
+    z-index:9;
+  }
+  .admin-content-toolbar{
+    display:block;
+  }
+  .admin-content-note{
+    margin-top:7px;
+    white-space:normal;
+  }
+  .admin-tabs{
+    top:101px;
+  }
+}

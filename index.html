@@ -147,6 +147,10 @@
     </section>
 
     <section id="adminPanel" class="admin-panel" hidden>
+      <div class="admin-mode-bar">
+        <span>관리자 모드</span>
+        <a href="./" class="admin-back-link">일반 아카이브 보기</a>
+      </div>
       <div class="admin-heading">
         <div>
           <p class="eyebrow">ARCHIVE ADMIN</p>
@@ -169,6 +173,7 @@
       <div class="admin-tabs" role="tablist" aria-label="관리자 메뉴">
         <button class="admin-tab active" type="button" role="tab" aria-selected="true" data-admin-tab="sync">영상 동기화</button>
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="review">날짜 검토 <span id="adminReviewTabCount" class="admin-tab-count">0</span></button>
+        <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="content">콘텐츠 분류</button>
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="settings">사이트 설정</button>
       </div>
 
@@ -190,20 +195,6 @@
       </div>
 
       <div class="admin-tab-panel" data-admin-panel="review" hidden>
-        <div class="admin-card">
-          <div class="admin-review-heading">
-            <div>
-              <h3>콘텐츠 분류</h3>
-              <p class="admin-help">플레이리스트/노래 모음 영상은 날짜와 별개로 분류합니다. 관리 목록에는 기존 플레이리스트와 6분 이상 영상만 표시해 불필요하게 긴 목록을 줄였습니다.</p>
-            </div>
-          </div>
-          <label class="admin-classify-search">
-            <span>영상 찾기</span>
-            <input id="adminContentSearch" type="search" placeholder="플레이리스트로 지정할 영상 제목 검색" autocomplete="off" />
-          </label>
-          <div id="adminContentList" class="admin-content-list"></div>
-        </div>
-
         <div class="admin-card admin-review-card">
           <div class="admin-review-heading">
             <div>
@@ -224,6 +215,27 @@
             <span id="adminUndatedPlaylistBadge" class="admin-count-badge">0개</span>
           </div>
           <div id="adminUndatedPlaylistList" class="admin-unknown-list"></div>
+        </div>
+      </div>
+
+      <div class="admin-tab-panel" data-admin-panel="content" hidden>
+        <div class="admin-card admin-content-card">
+          <div class="admin-review-heading">
+            <div>
+              <h3>콘텐츠 분류</h3>
+              <p class="admin-help">플레이리스트/노래 모음 영상을 별도로 관리합니다. 기존 플레이리스트와 6분 이상 영상만 후보로 표시합니다.</p>
+            </div>
+          </div>
+
+          <div class="admin-content-toolbar">
+            <label class="admin-classify-search">
+              <span>영상 찾기</span>
+              <input id="adminContentSearch" type="search" placeholder="제목으로 검색" autocomplete="off" />
+            </label>
+            <p class="admin-content-note">검색 전에는 최대 30개만 표시됩니다. 검색하면 최대 50개까지 확인할 수 있습니다.</p>
+          </div>
+
+          <div id="adminContentList" class="admin-content-list"></div>
         </div>
       </div>
 

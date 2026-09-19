@@ -1595,12 +1595,26 @@ function setAdminTab(tabName) {
   });
 }
 
-function setAdmin(open) {
-  $("#adminPanel").hidden = !open;
+function setAdmin(open, { auto=false }={}) {
+  const panel = $("#adminPanel");
+  if (!panel) return;
+
+  panel.hidden = !open;
+  document.body.classList.toggle("admin-mode-open", open);
 
   if (open) {
-    location.hash = "admin";
-    $("#adminPanel").scrollIntoView({ behavior: "smooth", block: "start" });
+    const params = new URLSearchParams(location.search);
+    const queryAdmin = params.get("admin") === "1";
+
+    // When entering through ?admin=1, keep the clean query URL and show
+    // the admin workspace at the top instead of making the user scroll.
+    if (!queryAdmin && location.hash !== "#admin") {
+      location.hash = "admin";
+    }
+
+    if (!auto) {
+      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   } else if (location.hash === "#admin") {
     history.replaceState(null, "", location.pathname + location.search);
   }
@@ -1837,7 +1851,11 @@ function bindEvents() {
   $("#timelineViewBtn").addEventListener("click", () => setViewMode("timeline"));
 
   document.querySelectorAll("[data-admin-tab]").forEach(btn => {
-    btn.addEventListener("click", () => setAdminTab(btn.dataset.adminTab || "sync"));
+    btn.addEventListener("click", () => {
+      const tab = btn.dataset.adminTab || "sync";
+      setAdminTab(tab);
+      if (tab === "content") renderAdminContentList();
+    });
   });
 
   window.addEventListener("popstate", () => {
@@ -1861,10 +1879,26 @@ function bindEvents() {
     location.hash === "#admin";
 
   if (adminAllowed) {
+    const panel = $("#adminPanel");
+    const main = document.querySelector("main.container");
+
+    // Put the admin workspace at the very top in admin mode.
+    if (panel && main && main.firstElementChild !== panel) {
+      main.prepend(panel);
+    }
+
     $("#adminEntry").hidden = false;
+    setAdmin(true, { auto:true });
   }
 
-  $("#adminEntry").addEventListener("click", () => setAdmin(true));
+  $("#adminEntry").addEventListener("click", () => {
+    const panel = $("#adminPanel");
+    const main = document.querySelector("main.container");
+    if (panel && main && main.firstElementChild !== panel) {
+      main.prepend(panel);
+    }
+    setAdmin(true);
+  });
   $("#closeAdmin").addEventListener("click", () => setAdmin(false));
 
 
