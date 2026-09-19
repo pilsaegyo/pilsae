@@ -7011,11 +7011,19 @@
       "title": "밀레니엄 개킹카 신혜성 Y2K의 지배자  #신혜성 #신화",
       "description": "신화창조2000 비상구편 섞어서 편집... \n유투브 치면 나오는데 화질은 흐린눈 하세요 ㅠㅠ;;\n진짜기여운데........화질때문에 눈물흘리시겠지만..대충흐린눈하시고 기여운부분만 빼먹으면 됨.....흠..어려우실까나\n근데 귀엽긴하거든여?? 그시절 그감성이라 생각하구보면 좀 ㄱㅊ..ㅠ 그래두안보시겠지? 흠 ㅜㅠ\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン",
       "source": "신화창조2000 비상구편 섞어서 편집...",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-05-17T05:35:34Z",
       "thumbnail": "https://i.ytimg.com/vi/E5rw2WBv8eI/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8008,7 +8016,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:13:17.451Z",
+  "generatedAt": "2026-09-19T04:13:27.110Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
