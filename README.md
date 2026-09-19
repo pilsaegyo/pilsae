@@ -907,3 +907,16 @@
 - 다음 Step 3B에서 Wrangler 설정 파일을 GitHub에 추가해 Cloudflare Git 연동 준비.
 - 아직 Cloudflare Worker 자동 배포 자체는 활성화하지 않음.
 - 이 Step 3A는 실행 중인 Admin API Worker에도 수동으로 한 번 반영해야 함.
+
+
+## v26.0 Step 3B · Wrangler 설정 추가
+- `worker/wrangler.jsonc` 추가.
+- Worker name: `pilsae-admin-api`
+- entrypoint: `index.js`
+- compatibility_date: `2026-09-20`
+- `workers_dev: true`로 기존 workers.dev 주소 유지.
+- `keep_vars: true`로 Cloudflare Dashboard에서 관리 중인 일반 Vars를 Worker 자동 배포 시 유지.
+- 필수 Secret 이름을 `ADMIN_TOKEN`, `GITHUB_TOKEN`, `YOUTUBE_API_KEY`로 선언해 자동 배포 전 존재 여부를 검증.
+- Secret 값 자체는 GitHub/ZIP에 포함하지 않음.
+- Step 3B ZIP을 관리자 배포 탭에서 GitHub에 커밋한 뒤 Cloudflare Worker Builds에 GitHub 저장소를 연결해야 자동 배포가 활성화됨.
+- 이 단계는 `worker/index.js` 코드 변경 없음.
