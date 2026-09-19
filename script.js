@@ -1088,9 +1088,7 @@ function rebuildYearFilter() {
   const years = allYears();
 
   select.innerHTML = `<option value="">전체 연도 (${rows.length})</option>` +
-    years
-      .map(y => `<option value="${y}">${y} (${counts.get(y) || 0})</option>`)
-      .join("");
+    years.map(y => `<option value="${y}">${y} (${counts.get(y) || 0})</option>`).join("");
 
   if ([...select.options].some(o => o.value === current)) {
     select.value = current;
@@ -2881,6 +2879,7 @@ function resetSyncPreview() {
 }
 
 
+
 function setupCompactStickyToolbar() {
   const toolbar = document.querySelector(".toolbar-panel");
   if (!toolbar || document.body.classList.contains("admin-page")) return;
@@ -2918,6 +2917,7 @@ function setupCompactStickyToolbar() {
       document.body.classList.remove("compact-toolbar-active");
       placeholder.hidden = true;
     }
+
   };
 
   const update = () => {

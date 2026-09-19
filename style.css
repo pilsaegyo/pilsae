@@ -5125,3 +5125,53 @@ h1,h2,h3,
     font-size:12.5px;
   }
 }
+
+
+/* v24.9 compact bar: shorter labels instead of over-widening selects */
+@media (min-width:901px){
+  .toolbar-panel.is-compact-sticky{
+    grid-template-columns:minmax(320px,1.55fr) minmax(600px,2.75fr);
+  }
+
+  .toolbar-panel.is-compact-sticky .filter-extra{
+    grid-template-columns:
+      minmax(104px,.82fr)
+      minmax(104px,.82fr)
+      minmax(108px,.86fr)
+      minmax(108px,.86fr)
+      minmax(132px,1.02fr)
+      auto;
+  }
+
+  .toolbar-panel.is-compact-sticky #yearFilter{
+    font-size:13px;
+  }
+}
+
+
+/* v24.10 keep year counts visible in compact mode */
+@media (min-width:901px){
+  .toolbar-panel.is-compact-sticky{
+    grid-template-columns:minmax(300px,1.35fr) minmax(660px,3fr);
+  }
+
+  .toolbar-panel.is-compact-sticky .filter-extra{
+    grid-template-columns:
+      minmax(142px,1.12fr)  /* 전체 연도 (611) */
+      minmax(104px,.82fr)
+      minmax(108px,.86fr)
+      minmax(108px,.86fr)
+      minmax(136px,1.04fr)
+      auto;
+    gap:6px;
+  }
+
+  .toolbar-panel.is-compact-sticky #yearFilter{
+    font-size:12.5px;
+    letter-spacing:-.015em;
+  }
+
+  .toolbar-panel.is-compact-sticky .field select{
+    padding-right:20px;
+  }
+}
