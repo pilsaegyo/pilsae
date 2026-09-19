@@ -7167,11 +7167,19 @@
       "title": "모르면 외워 남자는 깐머리 신혜성은 깐셩 주의사항 아주 보기 어려운 레어템이라는 점 #신혜성 #신화",
       "description": "2002 월드컵송 녹음\nhttps://youtu.be/sb3kBPXtlvo?si=z_c6D4_kpzJ7sNkh\n#shinhwa #shinhyesung  #申惠星 #神话 #シンファ\n\nシン・ヘソン",
       "source": "2002 월드컵송 녹음",
-      "sourceDate": null,
+      "sourceDate": "2002-01-01",
       "publishedAt": "2025-05-14T13:02:42Z",
       "thumbnail": "https://i.ytimg.com/vi/MeTI-qFxfo8/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2002-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8032,7 +8040,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:13:47.868Z",
+  "generatedAt": "2026-09-19T04:14:00.147Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
