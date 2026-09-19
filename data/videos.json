@@ -4884,11 +4884,19 @@
       "title": "연예인 두명 #신혜성 #에릭 #신화",
       "description": "[출처]\nShinhwa Finale Concert 2015 VCR\n1. 신혜성 : https://www.youtube.com/watch?v=I-78i4gw6Rw\n2. 에릭 : https://www.youtube.com/watch?v=jxW_qhXyIl\n\n오글거리지만 그냥 컨텐츠 기억용.\n\n#신혜성 #에릭 #신화 #shinhwa #shinhyesung #eric #muneric #申惠星 #神话 #シンファ \n#kpop #kpopedit #kpopidol #kpopconcerts #fanedit #문정혁 #신화에릭\n#moonjunghyuk #文晸赫",
       "source": "[출처]",
-      "sourceDate": null,
+      "sourceDate": "2015-01-01",
       "publishedAt": "2025-07-29T13:32:42Z",
       "thumbnail": "https://i.ytimg.com/vi/-yHbucCmvtQ/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2015-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7905,7 +7913,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:11:12.701Z",
+  "generatedAt": "2026-09-19T04:11:22.579Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
