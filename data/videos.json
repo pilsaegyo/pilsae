@@ -4911,11 +4911,19 @@
       "title": "신브리춤 맹연습 #신혜성 #에릭 #신화",
       "description": "신화방송 ep 52 \n\n#신화방송 #예능숏츠\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "신화방송 ep 52",
-      "sourceDate": null,
+      "sourceDate": "2013-04-21",
       "publishedAt": "2025-08-09T10:30:19Z",
       "thumbnail": "https://i.ytimg.com/vi/Mgu5YTjPPpY/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2013-04-21",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8315,7 +8323,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:22:10.017Z",
+  "generatedAt": "2026-09-19T05:22:39.979Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
