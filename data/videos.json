@@ -7427,11 +7427,19 @@
       "title": "나는 내가 마구 괴롭히고 울릴 수 있는 병약하고 얼굴 하얀 샌님 타입의 미소년을 좋아한다고ㅡ!! #신혜성 #신화 #shinhwa",
       "description": "첫사랑 교회 오빠 \n\n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン",
       "source": "첫사랑 교회 오빠",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-05-09T10:33:07Z",
       "thumbnail": "https://i.ytimg.com/vi/CAGf4qHfhBM/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8040,7 +8048,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:14:00.147Z",
+  "generatedAt": "2026-09-19T04:14:16.594Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
