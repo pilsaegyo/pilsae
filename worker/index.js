@@ -81,7 +81,8 @@ export default {
           "ignore_candidate",
           "accept_description_date",
           "content_type",
-          "playlist_scope"
+          "playlist_scope",
+          "video_format"
         ]);
 
         if (!undoableActions.has(String(entry.action || "")) || !entry.videoId) {
@@ -383,6 +384,12 @@ export default {
               playlistScope: old.playlistScope === "multi-year" ? "multi-year"
                 : old.playlistScope === "undated" ? "undated"
                 : "",
+              videoFormat: old.videoFormatSource === "manual" && ["standard", "shorts"].includes(old.videoFormat)
+                ? old.videoFormat
+                : video.videoFormat,
+              videoFormatSource: old.videoFormatSource === "manual"
+                ? "manual"
+                : "auto",
               parseStatus: shouldReviewManualDate
                 ? "needs_review"
                 : (manualDates.length ? "parsed" : video.parseStatus)
@@ -778,6 +785,70 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/set-video-format" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const videoId = String(body.videoId || "").trim();
+        const videoFormat = String(body.videoFormat || "").trim();
+
+        if (!videoId || !["standard", "shorts"].includes(videoFormat)) {
+          throw new HttpError(400, "동영상 타입 값이 올바르지 않습니다.");
+        }
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+
+        const before = {
+          videoFormat: ["standard", "shorts"].includes(video.videoFormat)
+            ? video.videoFormat
+            : "standard",
+          videoFormatSource: video.videoFormatSource === "manual" ? "manual" : "auto"
+        };
+
+        video.videoFormat = videoFormat;
+        video.videoFormatSource = "manual";
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Set video format ${videoFormat} for ${videoId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "video_format",
+            videoId,
+            title: video.title || videoId,
+            before,
+            after: {
+              videoFormat: video.videoFormat,
+              videoFormatSource: video.videoFormatSource
+            }
+          }
+        });
+
+        return jsonResponse({
+          ok: true,
+          videoId,
+          videoFormat,
+          videoFormatSource: "manual",
+          commitUrl: result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
       if (url.pathname === "/set-content-type" && request.method === "POST") {
         requireAdmin(request, env);
         const owner = env.GITHUB_OWNER || "pilsaegyo";
@@ -1064,6 +1135,33 @@ function parseIso8601Duration(value="") {
   return days * 86400 + hours * 3600 + minutes * 60 + seconds;
 }
 
+function detectYoutubeVideoFormat(video) {
+  const snippet = video?.snippet || {};
+  const duration = String(video?.contentDetails?.duration || "");
+  const durationSeconds = parseIso8601Duration(duration);
+  const publishedAt = String(snippet.publishedAt || "");
+  const text = [
+    snippet.title || "",
+    snippet.description || "",
+    ...(Array.isArray(snippet.tags) ? snippet.tags : [])
+  ].join(" ").toLowerCase();
+
+  // YouTube Data API does not expose a direct Shorts boolean.
+  // This heuristic is intentionally overridable from the admin page.
+  if (/(^|\s|#)shorts?\b/i.test(text)) return "shorts";
+  if (durationSeconds > 0 && durationSeconds <= 60) return "shorts";
+
+  if (
+    publishedAt.slice(0, 10) >= "2024-10-15" &&
+    durationSeconds > 0 &&
+    durationSeconds <= 180
+  ) {
+    return "shorts";
+  }
+
+  return "standard";
+}
+
 function normalizeYoutubeVideo(video) {
   if (!video?.id || !video?.snippet) return null;
 
@@ -1090,6 +1188,8 @@ function normalizeYoutubeVideo(video) {
     thumbnail,
     duration,
     durationSeconds,
+    videoFormat: detectYoutubeVideoFormat(video),
+    videoFormatSource: "auto",
     parseStatus: "needs_review",
     contentType: "video",
     playlistScope: "",
@@ -1348,6 +1448,15 @@ function snapshotHistoryState(action, video) {
     return video.playlistScope || "";
   }
 
+  if (kind === "video_format") {
+    return {
+      videoFormat: ["standard", "shorts"].includes(video.videoFormat)
+        ? video.videoFormat
+        : "standard",
+      videoFormatSource: video.videoFormatSource === "manual" ? "manual" : "auto"
+    };
+  }
+
   return null;
 }
 
@@ -1395,6 +1504,13 @@ function applyHistoryBeforeState(entry, video) {
 
   if (action === "playlist_scope") {
     video.playlistScope = ["multi-year", "undated"].includes(before) ? before : "";
+    return;
+  }
+
+  if (action === "video_format") {
+    const prior = before && typeof before === "object" ? before : {};
+    video.videoFormat = prior.videoFormat === "shorts" ? "shorts" : "standard";
+    video.videoFormatSource = prior.videoFormatSource === "manual" ? "manual" : "auto";
     return;
   }
 

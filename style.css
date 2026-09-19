@@ -4460,422 +4460,73 @@ select{
 }
 
 
-/* v23.3 typography polish — lighter, chip-like visual tone */
-:root{
-  --type-strong:600;
-  --type-medium:550;
-  --type-soft:500;
-}
-
-/* Main content titles: reduce the heavy/bold impression */
-.card-title,
-.video-grid.list-view .card-title,
-.timeline-title,
-.admin-content-copy strong,
-.admin-unknown-top > strong{
-  font-weight:var(--type-strong);
-  letter-spacing:-.018em;
-}
-
-/* Card title keeps presence without looking blocky */
-.card-title{
-  line-height:1.42;
-}
-
-/* Date chips: match the cleaner year/mixed-year chip tone */
-.date-chip,
-.date-context-link{
-  font-weight:var(--type-medium);
-  letter-spacing:-.008em;
-  line-height:1.25;
-}
-
-.year-summary-chip,
-.badge,
-.precision-badge,
-.admin-content-badge,
-.admin-reason-badge{
-  font-weight:600!important;
-  letter-spacing:-.008em;
-}
-
-/* Full dates were visually heavier than year/mixed-year labels */
-.video-grid:not(.list-view) .date-chip{
-  font-size:11.5px;
-  padding:6px 9px;
-}
-
-.video-grid.list-view .date-chip{
-  font-size:10.5px;
-  font-weight:var(--type-medium);
-}
-
-.timeline-item-date{
-  font-weight:var(--type-medium);
-  letter-spacing:-.008em;
-}
-
-.timeline-item-date span{
-  font-weight:var(--type-soft);
-}
-
-/* Supporting text */
-.source,
-.note,
-.card-meta,
-.timeline-meta,
-.timeline-years,
-.admin-content-copy small{
-  font-weight:var(--type-soft);
-  letter-spacing:-.008em;
-}
-
-/* Admin content controls: keep the same soft typography as the purple chips */
-.content-action-btn,
-.content-type-toggle,
-.playlist-scope-btn,
-.playlist-scope-current strong{
-  font-weight:600;
-  letter-spacing:-.006em;
-}
-
-.content-action-btn{
-  font-size:10.5px;
-}
-
-.content-action-icon{
-  font-weight:600;
-}
-
-/* Small UI labels should stay legible but not overly bold */
-.admin-tab,
-.admin-count-badge,
-.active-filter-chip,
-.date-more-btn,
-.search-match>span{
-  font-weight:600;
-}
-
-/* Keep major page headings distinct, but soften excessive weight */
-h1,h2,h3,
-.brand-main{
-  font-weight:650;
-}
-
-/* Mobile: preserve the lighter tone at smaller sizes */
-@media (max-width:620px){
-  .card-title,
-  .video-grid.list-view .card-title,
-  .timeline-title{
-    font-weight:600;
-  }
-
-  .date-chip,
-  .date-context-link{
-    font-weight:550;
-  }
-}
-
-
-/* v23.4 desktop mixed-year card layout */
-@media (min-width:621px){
-  /* Mixed-year summary must show the full year list instead of ellipsis clipping. */
-  .video-grid:not(.list-view) .dates:has(.year-summary-chip){
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:7px;
-    align-items:stretch;
-  }
-
-  .video-grid:not(.list-view) .dates:has(.year-summary-chip) .year-summary-chip{
-    grid-column:1/-1;
-    width:auto;
-    max-width:100%;
-    white-space:normal;
-    overflow:visible;
-    text-overflow:clip;
-    line-height:1.35;
-    justify-content:flex-start;
-    padding:7px 10px;
-  }
-
-  /* Show the three visible dates as a clean 3-column row. */
-  .video-grid:not(.list-view) .dates:has(.year-summary-chip) > .date-chip,
-  .video-grid:not(.list-view) .dates:has(.year-summary-chip) > .date-extra:not([hidden]) .date-chip{
-    width:100%;
-    min-width:0;
-    justify-content:center;
-    text-align:center;
-    padding:6px 5px;
-    white-space:nowrap;
-  }
-
-  /* Hidden extra dates become grid items through display:contents. */
-  .video-grid:not(.list-view) .dates:has(.year-summary-chip) > .date-extra:not([hidden]){
-    display:contents;
-  }
-
-  .video-grid:not(.list-view) .dates:has(.year-summary-chip) .date-more-btn{
-    grid-column:1/-1;
-    justify-self:start;
-  }
-}
-
-
-/* v23.5 timeline playlist section separation */
-.timeline-playlists{
+/* v24 video format: standard vs Shorts */
+.thumb{
   position:relative;
-  margin-top:34px;
-  padding-top:26px;
-  border-top:1px solid #e8e0ec;
 }
 
-/* Break the visual continuity of the main date-axis before playlists start. */
-.timeline-playlists::before{
-  content:"";
+.video-format-icon{
   position:absolute;
-  left:0;
-  top:-1px;
-  width:54px;
-  height:3px;
-  background:var(--bg);
+  right:8px;
+  bottom:8px;
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:rgba(18,18,18,.82);
+  color:#fff;
+  box-shadow:0 2px 8px rgba(0,0,0,.14);
+  backdrop-filter:blur(4px);
 }
 
-/* Give the playlist hub its own left rhythm instead of sitting on the date axis. */
-.timeline-playlists .timeline-year-heading{
-  margin-left:18px;
-  padding-left:0;
+.video-format-icon svg{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
 
-.timeline-playlists .timeline-year-heading::before{
-  display:none;
+.video-format-icon .format-play{
+  fill:currentColor;
+  stroke:none;
 }
 
-.timeline-playlists .timeline-year-heading h2{
-  margin-bottom:6px;
+.video-format-icon.is-shorts{
+  border-radius:10px 6px 10px 6px;
 }
 
-/* The first playlist subgroup was visually colliding with the axis/title. */
-.timeline-playlists .timeline-month,
-.timeline-playlists .timeline-year-only-group,
-.timeline-playlists .timeline-playlist-undated-group{
-  margin-left:18px;
+.list-view .video-format-icon{
+  right:6px;
+  bottom:6px;
+  width:24px;
+  height:24px;
 }
 
-.timeline-playlists .timeline-month>h3,
-.timeline-playlists .timeline-year-only-group>h3,
-.timeline-playlists .timeline-playlist-undated-group>h3{
-  margin-top:10px;
-  padding-left:0;
+.list-view .video-format-icon svg{
+  width:15px;
+  height:15px;
 }
 
-.timeline-playlists .timeline-month>h3::before,
-.timeline-playlists .timeline-year-only-group>h3::before,
-.timeline-playlists .timeline-playlist-undated-group>h3::before{
-  display:none;
+.video-format-admin-block{
+  margin-top:9px;
+  padding-top:9px;
+  border-top:1px solid var(--line);
 }
 
-.timeline-playlists .timeline-items{
-  margin-top:7px;
-}
-
-.timeline-playlists .timeline-item:first-child{
-  padding-top:12px;
-}
-
-@media (max-width:620px){
-  .timeline-playlists{
-    margin-top:26px;
-    padding-top:20px;
-  }
-
-  .timeline-playlists .timeline-year-heading,
-  .timeline-playlists .timeline-month,
-  .timeline-playlists .timeline-year-only-group,
-  .timeline-playlists .timeline-playlist-undated-group{
-    margin-left:10px;
-  }
-}
-
-
-/* v23.6 playlist timeline structural fix
-   Playlist hub is a separate archive section, not part of the sticky year axis. */
-.timeline-playlists{
-  margin-top:42px;
-  padding-top:28px;
-  border-top:1px solid #e8e0ec;
-}
-
-/* Critical fix: the generic year heading is sticky.
-   Playlist heading must be normal flow or it can overlap thumbnails/items. */
-.timeline-playlists .timeline-year-heading{
-  position:relative;
-  top:auto;
-  z-index:1;
-  margin:0 0 18px;
-  padding:0;
-  background:none;
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:14px;
-}
-
-.timeline-playlists .timeline-year-heading > div{
-  min-width:0;
-}
-
-.timeline-playlists .timeline-year-heading h2{
-  margin:0;
-}
-
-.timeline-playlists .timeline-section-note{
-  margin:6px 0 0;
-}
-
-/* Playlist subgroups no longer use the 76px month-axis column.
-   This removes the visual collision with the left timeline rail. */
-.timeline-playlists .timeline-month{
-  display:block;
-  margin:0;
-  padding:18px 0 24px;
-  border-top:1px solid #eee8f1;
-}
-
-.timeline-playlists .timeline-month:first-of-type{
-  border-top:0;
-  padding-top:8px;
-}
-
-.timeline-playlists .timeline-month > h3{
-  margin:0 0 12px;
-  padding:0;
-  display:flex;
-  align-items:center;
-  gap:7px;
-  line-height:1.35;
-}
-
-.timeline-playlists .timeline-month > h3::before{
-  display:none!important;
-}
-
-.timeline-playlists .timeline-month > h3 small{
-  font-weight:500;
-  color:#978b9f;
-}
-
-/* Playlist items occupy the full content width and cannot rise into the heading. */
-.timeline-playlists .timeline-items{
-  margin:0;
-  padding:0;
-  width:100%;
-}
-
-.timeline-playlists .timeline-item{
-  position:relative;
-  z-index:0;
-  width:100%;
-}
-
-.timeline-playlists .timeline-item:first-child{
-  padding-top:10px;
-}
-
-/* Remove the small axis-cover hack from v23.5; no axis is used here anymore. */
-.timeline-playlists::before{
-  display:none;
+.video-format-btn.active{
+  border-color:#bdaec6;
+  background:#f3edf6;
 }
 
 @media (max-width:620px){
-  .timeline-playlists{
-    margin-top:30px;
-    padding-top:22px;
-  }
-
-  .timeline-playlists .timeline-year-heading{
-    margin-left:0;
-    margin-bottom:14px;
-    align-items:center;
-  }
-
-  .timeline-playlists .timeline-month,
-  .timeline-playlists .timeline-year-only-group,
-  .timeline-playlists .timeline-playlist-undated-group{
-    margin-left:0;
-  }
-
-  .timeline-playlists .timeline-month{
-    padding:15px 0 20px;
-  }
-
-  .timeline-playlists .timeline-month > h3{
-    margin-bottom:8px;
-  }
-}
-
-
-/* v23.7 desktop sticky filter bar */
-@media (min-width:621px){
-  /* Keep the filter controls reachable while browsing long result lists. */
-  .toolbar-panel{
-    position:sticky;
-    top:58px;
-    z-index:20;
-    padding-top:8px;
-    padding-bottom:8px;
-    background:rgba(247,247,245,.94);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(231,231,227,.92);
-  }
-
-  /* Compress the control height on desktop sticky state. */
-  .toolbar{
-    align-items:stretch;
-    margin-bottom:0;
-  }
-
-  .toolbar .field,
-  .toolbar .stat-card,
-  .toolbar .reset-filter-button{
-    min-height:58px;
-  }
-
-  .toolbar .field{
-    padding:7px 12px 6px;
-  }
-
-  .toolbar .field input,
-  .toolbar .field select{
-    padding-top:5px;
-  }
-
-  .toolbar .stat-card{
-    padding:9px 14px;
-  }
-
-  .toolbar .stat-card strong{
-    font-size:20px;
-  }
-
-  .toolbar .reset-filter-button{
-    padding:0 15px;
-  }
-
-  /* Timeline sticky headings must sit below the fixed filter bar. */
-  .timeline-year-heading{
-    top:128px;
-  }
-
-  /* Playlist hub remains non-sticky from v23.6. */
-  .timeline-playlists .timeline-year-heading{
-    top:auto;
-  }
-}
-
-@media (min-width:1000px){
-  .toolbar-panel{
-    top:60px;
+  .video-format-icon{
+    width:24px;
+    height:24px;
+    right:6px;
+    bottom:6px;
   }
 }

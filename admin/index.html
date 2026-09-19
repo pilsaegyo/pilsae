@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=23.7" />
+  <link rel="stylesheet" href="./style.css?v=24" />
 </head>
-<body class="admin-page admin-locked" data-build="23.7">
+<body class="admin-page admin-locked" data-build="24">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -33,6 +33,7 @@
       <select id="yearFilter"><option value=""></option></select>
       <select id="typeFilter"><option value=""></option></select>
       <select id="contentTypeFilter"><option value=""></option></select>
+      <select id="videoFormatFilter"><option value=""></option><option value="standard"></option><option value="shorts"></option></select>
       <select id="sortFilter"><option value="source-desc"></option></select>
       <div id="activeFilterChips"></div>
       <nav id="yearJumpBar"></nav>
@@ -243,6 +244,7 @@
                 <option value="all">전체 후보</option>
                 <option value="playlists">플레이리스트만</option>
                 <option value="candidates">미분류 후보만</option>
+                <option value="video-format">동영상 타입 관리</option>
               </select>
             </label>
             <p class="admin-content-note">검색 전에는 최대 30개만 표시됩니다. 검색하면 최대 50개까지 확인할 수 있습니다.</p>
@@ -310,6 +312,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=23.7" defer></script>
+  <script src="./script.js?v=24" defer></script>
 </body>
 </html>

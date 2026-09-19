@@ -526,6 +526,49 @@ function mergeDateEntries(existing, extracted) {
   return merged;
 }
 
+function autoVideoFormat({ title="", description="", durationSeconds=0, publishedAt="" }={}) {
+  const duration = Number(durationSeconds || 0);
+  const text = `${title} ${description}`.toLowerCase();
+
+  // YouTube Data API does not expose a direct "is Shorts" property.
+  // Use a practical heuristic and allow an administrator to override it.
+  if (/(^|\s|#)shorts?\b/i.test(text)) return "shorts";
+  if (duration > 0 && duration <= 60) return "shorts";
+
+  const published = String(publishedAt || "").slice(0, 10);
+  if (published >= "2024-10-15" && duration > 0 && duration <= 180) {
+    return "shorts";
+  }
+
+  return "standard";
+}
+
+function normalizeVideoFormat(v) {
+  if (v?.videoFormat === "shorts") return "shorts";
+  if (v?.videoFormat === "standard") return "standard";
+  return autoVideoFormat({
+    title: v?.title || "",
+    description: v?.description || "",
+    durationSeconds: v?.durationSeconds || 0,
+    publishedAt: v?.publishedAt || ""
+  });
+}
+
+function videoFormatLabel(format) {
+  return format === "shorts" ? "Shorts" : "일반 동영상";
+}
+
+function videoFormatIconHtml(v) {
+  const isShorts = v?.videoFormat === "shorts";
+  const label = isShorts ? "Shorts" : "일반 동영상";
+  const icon = isShorts
+    ? `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.1 3.7c1.1-1.6 3.3-2 4.9-.9l3 2.1c1.6 1.1 2 3.3.9 4.9l-1 1.4 1.1.8c1.6 1.1 2 3.3.9 4.9l-2.1 3c-1.1 1.6-3.3 2-4.9.9l-3-2.1c-1.6-1.1-2-3.3-.9-4.9l1-1.4-1.1-.8c-1.6-1.1-2-3.3-.9-4.9l2.1-3Z"/><path class="format-play" d="m10.5 8.8 4.3 3.2-4.3 3.2V8.8Z"/></svg>`
+    : `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="12" rx="3"/><path class="format-play" d="m10 9 5 3-5 3V9Z"/></svg>`;
+
+  return `<span class="video-format-icon ${isShorts ? "is-shorts" : "is-standard"}"
+    role="img" aria-label="${label}" title="${label}">${icon}</span>`;
+}
+
 function normalizeVideo(v, idx=0) {
   const existing = Array.isArray(v.dates)
     ? v.dates.map(normalizeDateEntry).filter(Boolean)
@@ -582,6 +625,8 @@ function normalizeVideo(v, idx=0) {
       : "",
     durationSeconds: Number(v.durationSeconds || 0),
     duration: String(v.duration || ""),
+    videoFormat: normalizeVideoFormat(v),
+    videoFormatSource: v.videoFormatSource === "manual" ? "manual" : "auto",
     dateCandidates: validDates.length ? [] : extractReviewDateCandidates(
       v.title || "",
       v.description || "",
@@ -1331,12 +1376,17 @@ function resetPublicFilters() {
   $("#yearFilter").value = "";
   $("#typeFilter").value = "";
   $("#contentTypeFilter").value = "";
+  $("#videoFormatFilter").value = "";
   $("#sortFilter").value = "source-desc";
   hideSearchSuggestions();
   updateSearchClearButton();
   visibleLimit = PAGE_SIZE;
   syncUrlState();
   render();
+
+  // Individual filter/search changes keep the current scroll position.
+  // Only a full reset returns the user to the top of the archive.
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
   const toolbarPanel = document.querySelector(".toolbar-panel");
   const mobileFilterToggle = $("#mobileFilterToggle");
@@ -1368,6 +1418,7 @@ function renderCard(v) {
     <article class="video-card">
       <a class="thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
         ${thumb}
+        ${videoFormatIconHtml(v)}
       </a>
       <div class="card-body">
         <div class="card-meta-row">
@@ -1455,6 +1506,7 @@ function filteredVideos() {
   const year = $("#yearFilter").value;
   const type = $("#typeFilter").value;
   const contentType = $("#contentTypeFilter")?.value || "";
+  const videoFormat = $("#videoFormatFilter")?.value || "";
   const sortMode = $("#sortFilter")?.value || "source-desc";
 
   const rows = videos.filter(v => {
@@ -1470,6 +1522,7 @@ function filteredVideos() {
       v.source,
       v.parseStatus,
       contentTypeLabel(v.contentType),
+      videoFormatLabel(v.videoFormat),
       isMultiYearPlaylist(v) ? "다년도 플레이리스트 혼합 연도" : "",
       ...searchableDates
     ].join(" ").toLowerCase();
@@ -1478,8 +1531,9 @@ function filteredVideos() {
     const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
     const tok = !type || effectiveDateType(v) === type;
     const cok = !contentType || v.contentType === contentType;
+    const fok = !videoFormat || v.videoFormat === videoFormat;
 
-    return qok && yok && tok && cok;
+    return qok && yok && tok && cok && fok;
   });
 
   const compareBySelectedSort = sortRowsByMode(rows, sortMode);
@@ -1504,6 +1558,7 @@ function readUrlState() {
     year: params.get("year") || "",
     type: params.get("type") || "",
     content: params.get("content") || "",
+    format: params.get("format") || "",
     sort: params.get("sort") || "source-desc",
     view: params.get("view") || ""
   };
@@ -1521,6 +1576,9 @@ function applyUrlStateToControls() {
   if ($("#contentTypeFilter") && [...$("#contentTypeFilter").options].some(o => o.value === state.content)) {
     $("#contentTypeFilter").value = state.content;
   }
+  if ($("#videoFormatFilter") && [...$("#videoFormatFilter").options].some(o => o.value === state.format)) {
+    $("#videoFormatFilter").value = state.format;
+  }
   if ($("#sortFilter") && [...$("#sortFilter").options].some(o => o.value === state.sort)) {
     $("#sortFilter").value = state.sort;
   }
@@ -1532,6 +1590,7 @@ function syncUrlState({ replace=false, viewOverride="" }={}) {
   const year = $("#yearFilter")?.value || "";
   const type = $("#typeFilter")?.value || "";
   const content = $("#contentTypeFilter")?.value || "";
+  const format = $("#videoFormatFilter")?.value || "";
   const sort = $("#sortFilter")?.value || "source-desc";
   const view = ["grid", "list", "timeline"].includes(viewOverride)
     ? viewOverride
@@ -1541,6 +1600,7 @@ function syncUrlState({ replace=false, viewOverride="" }={}) {
   if (year) params.set("year", year);
   if (type) params.set("type", type);
   if (content) params.set("content", content);
+  if (format) params.set("format", format);
   if (sort !== "source-desc") params.set("sort", sort);
   if (view !== defaultViewMode()) params.set("view", view);
   if (location.hash === "#admin") params.set("admin", "1");
@@ -1557,12 +1617,14 @@ function currentActiveFilters() {
   const year = $("#yearFilter")?.value || "";
   const type = $("#typeFilter")?.value || "";
   const content = $("#contentTypeFilter")?.value || "";
+  const format = $("#videoFormatFilter")?.value || "";
   const sort = $("#sortFilter")?.value || "source-desc";
 
   if (q) filters.push({ key:"search", label:`검색: ${q}` });
   if (year) filters.push({ key:"year", label:`${year}년` });
   if (type) filters.push({ key:"type", label:typeLabel(type) });
   if (content) filters.push({ key:"content", label:contentTypeLabel(content) });
+  if (format) filters.push({ key:"format", label:`동영상 타입: ${videoFormatLabel(format)}` });
   if (sort !== "source-desc") {
     const option = $("#sortFilter")?.selectedOptions?.[0];
     filters.push({ key:"sort", label:option?.textContent || "정렬 변경" });
@@ -1587,6 +1649,7 @@ function clearOneFilter(key) {
   if (key === "year") $("#yearFilter").value = "";
   if (key === "type") $("#typeFilter").value = "";
   if (key === "content") $("#contentTypeFilter").value = "";
+  if (key === "format") $("#videoFormatFilter").value = "";
   if (key === "sort") $("#sortFilter").value = "source-desc";
   visibleLimit = PAGE_SIZE;
   syncUrlState();
@@ -1958,6 +2021,7 @@ function renderEmptyStateActions() {
   const year = $("#yearFilter")?.value || "";
   const type = $("#typeFilter")?.value || "";
   const content = $("#contentTypeFilter")?.value || "";
+  const format = $("#videoFormatFilter")?.value || "";
 
   const actions = [];
 
@@ -1972,6 +2036,9 @@ function renderEmptyStateActions() {
   }
   if (content) {
     actions.push(`<button type="button" class="empty-secondary-btn" data-empty-action="clear-content">콘텐츠 유형 해제</button>`);
+  }
+  if (format) {
+    actions.push(`<button type="button" class="empty-secondary-btn" data-empty-action="clear-format">동영상 타입 해제</button>`);
   }
 
   actions.push(`<button id="emptyResetBtn" class="empty-reset-btn" type="button" data-empty-action="reset-all">전체 보기</button>`);
@@ -2289,10 +2356,12 @@ function renderAdminContentList() {
 
   // Keep already-classified playlists visible for management.
   // For new playlist candidates, only surface videos 6 minutes or longer.
-  let rows = videos.filter(v =>
-    v.contentType === "playlist" ||
-    Number(v.durationSeconds || 0) >= 360
-  );
+  let rows = adminContentMode === "video-format"
+    ? [...videos]
+    : videos.filter(v =>
+        v.contentType === "playlist" ||
+        Number(v.durationSeconds || 0) >= 360
+      );
 
   if (adminContentMode === "playlists") {
     rows = rows.filter(v => v.contentType === "playlist");
@@ -2307,11 +2376,16 @@ function renderAdminContentList() {
   } else {
     rows = rows
       .sort((a,b) => {
+        if (adminContentMode === "video-format") {
+          if (a.videoFormat === "shorts" && b.videoFormat !== "shorts") return -1;
+          if (a.videoFormat !== "shorts" && b.videoFormat === "shorts") return 1;
+          return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+        }
         if (a.contentType === "playlist" && b.contentType !== "playlist") return -1;
         if (a.contentType !== "playlist" && b.contentType === "playlist") return 1;
         return Number(b.durationSeconds || 0) - Number(a.durationSeconds || 0);
       })
-      .slice(0, 30);
+      .slice(0, adminContentMode === "video-format" ? 50 : 30);
   }
 
   if (q) rows = rows.slice(0, 50);
@@ -2365,6 +2439,28 @@ function renderAdminContentList() {
             </div>
           </div>
         ` : ""}
+        <div class="video-format-admin-block">
+          <div class="playlist-scope-current">
+            <span>동영상 타입 ${v.videoFormatSource === "manual" ? "· 수동 지정" : "· 자동 판별"}</span>
+            <strong>${escapeHTML(videoFormatLabel(v.videoFormat))}</strong>
+          </div>
+          <div class="playlist-scope-actions">
+            <button type="button"
+              class="content-action-btn video-format-btn ${v.videoFormat === "standard" ? "active" : ""}"
+              data-video-format="${escapeHTML(v.id)}"
+              data-video-format-value="standard">
+              <span class="content-action-icon" aria-hidden="true">▻</span>
+              <span>일반동영상</span>
+            </button>
+            <button type="button"
+              class="content-action-btn video-format-btn ${v.videoFormat === "shorts" ? "active" : ""}"
+              data-video-format="${escapeHTML(v.id)}"
+              data-video-format-value="shorts">
+              <span class="content-action-icon" aria-hidden="true">ϟ</span>
+              <span>Shorts</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   `).join("");
@@ -2381,7 +2477,8 @@ function adminHistoryActionLabel(action) {
     playlist_scope: "플레이리스트 범위 변경",
     site_config: "사이트 설정 변경",
     undo: "변경 되돌리기",
-    backup_restore: "백업 복원"
+    backup_restore: "백업 복원",
+    video_format: "동영상 타입 변경"
   };
   return labels[action] || action || "관리자 변경";
 }
@@ -2409,7 +2506,8 @@ function canUndoAdminHistoryEntry(entry) {
     "ignore_candidate",
     "accept_description_date",
     "content_type",
-    "playlist_scope"
+    "playlist_scope",
+    "video_format"
   ].includes(String(entry?.action || "")) && Boolean(entry?.videoId);
 }
 
@@ -2426,6 +2524,9 @@ function adminUndoSummary(entry) {
   }
   if (action === "playlist_scope") {
     return "플레이리스트 범위를 변경 전으로 되돌립니다.";
+  }
+  if (action === "video_format") {
+    return "일반동영상/Shorts 타입을 변경 전으로 되돌립니다.";
   }
   return "이 변경을 이전 상태로 되돌립니다.";
 }
@@ -2796,6 +2897,8 @@ function bindEvents() {
         $("#typeFilter").value = "";
       } else if (action === "clear-content") {
         $("#contentTypeFilter").value = "";
+      } else if (action === "clear-format") {
+        $("#videoFormatFilter").value = "";
       } else if (action === "reset-all") {
         resetPublicFilters();
         return;
@@ -2928,6 +3031,33 @@ function bindEvents() {
         renderAdminContentList();
       } catch (err) {
         playlistScopeBtn.disabled = false;
+        alert(err.message);
+      }
+      return;
+    }
+
+    const videoFormatBtn = event.target.closest("button[data-video-format]");
+    if (videoFormatBtn) {
+      const videoId = videoFormatBtn.dataset.videoFormat || "";
+      const videoFormat = videoFormatBtn.dataset.videoFormatValue || "standard";
+      videoFormatBtn.disabled = true;
+
+      try {
+        adminHistoryLoaded = false;
+        const data = await adminApi("/set-video-format", {
+          method: "POST",
+          body: JSON.stringify({ videoId, videoFormat })
+        });
+
+        const v = videos.find(x => x.id === videoId);
+        if (v) {
+          v.videoFormat = data.videoFormat === "shorts" ? "shorts" : "standard";
+          v.videoFormatSource = "manual";
+        }
+        render();
+        renderAdminContentList();
+      } catch (err) {
+        videoFormatBtn.disabled = false;
         alert(err.message);
       }
       return;
@@ -3105,7 +3235,7 @@ function bindEvents() {
     openYoutubeVideo(event, link.dataset.videoId || "");
   });
 
-  ["searchInput", "yearFilter", "typeFilter", "contentTypeFilter", "sortFilter"].forEach(id => {
+  ["searchInput", "yearFilter", "typeFilter", "contentTypeFilter", "videoFormatFilter", "sortFilter"].forEach(id => {
     $("#" + id).addEventListener(
       id === "searchInput" ? "input" : "change",
       () => {

@@ -6,9 +6,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=23.7" />
+  <link rel="stylesheet" href="./style.css?v=24" />
 </head>
-<body class="site-config-pending" data-build="23.7">
+<body class="site-config-pending" data-build="24">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -117,6 +117,15 @@
         </label>
 
         <label class="field">
+          <span>동영상 타입</span>
+          <select id="videoFormatFilter">
+            <option value="">전체 동영상</option>
+            <option value="standard">일반 동영상</option>
+            <option value="shorts">Shorts</option>
+          </select>
+        </label>
+
+        <label class="field">
           <span>정렬</span>
           <select id="sortFilter">
             <option value="source-desc">원본 날짜 최신순</option>
@@ -184,6 +193,6 @@
     <span>필새 영상 아카이브</span>
   </footer>
 
-  <script src="./script.js?v=23.7" defer></script>
+  <script src="./script.js?v=24" defer></script>
 </body>
 </html>
