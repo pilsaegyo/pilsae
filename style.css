@@ -5280,3 +5280,237 @@ h1,h2,h3,.brand-main{font-weight:650}
     margin-top:7px;
   }
 }
+
+
+/* v25.11 card metadata compacting
+   - status badges -> thumbnail top-left
+   - mobile date +N toggle -> summary row */
+
+/* Thumbnail status badges: shared by PC/mobile card/list views */
+.thumb-status-badges{
+  position:absolute;
+  top:9px;
+  left:9px;
+  z-index:3;
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  max-width:calc(100% - 54px);
+  pointer-events:none;
+}
+
+.thumb-status-badges .badge{
+  display:inline-flex;
+  align-items:center;
+  min-height:23px;
+  padding:4px 7px;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:999px;
+  background:rgba(39,28,48,.80);
+  color:#f5eef9;
+  box-shadow:0 2px 8px rgba(0,0,0,.12);
+  backdrop-filter:blur(6px);
+  font-size:9px;
+  line-height:1;
+  font-weight:750!important;
+  white-space:nowrap;
+}
+
+.thumb-status-badges .badge.playlist,
+.thumb-status-badges .badge.mixed,
+.thumb-status-badges .badge.unknown{
+  background:rgba(39,28,48,.80);
+  border-color:rgba(255,255,255,.22);
+  color:#f5eef9;
+}
+
+/* Old body badge area is no longer used in card view. */
+.video-grid:not(.timeline-view) .card-badges{
+  display:none!important;
+}
+
+/* Date structure shared by card views */
+.date-summary-row{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  width:100%;
+  min-width:0;
+}
+
+.date-chip-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;
+  width:100%;
+  min-width:0;
+}
+
+.date-chip-grid > .date-chip,
+.date-chip-grid > .date-extra:not([hidden]) .date-chip{
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  justify-content:center;
+  text-align:center;
+}
+
+.date-chip-grid > .date-extra:not([hidden]){
+  display:contents;
+}
+
+.mobile-date-summary-chip,
+.date-mobile-toggle{
+  display:none;
+}
+
+/* PC keeps the familiar text "날짜 N개 더보기". */
+@media (min-width:621px){
+  .video-grid:not(.list-view):not(.timeline-view) .dates.multi-date-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:7px;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .date-summary-row .year-summary-chip{
+    width:100%;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .date-chip-grid > .date-chip,
+  .video-grid:not(.list-view):not(.timeline-view) .date-chip-grid > .date-extra:not([hidden]) .date-chip{
+    padding:5px 4px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:9.5px;
+    line-height:1.25;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .date-more-desktop{
+    align-self:flex-start;
+  }
+}
+
+/* Mobile: year summary + compact +N control on one line,
+   first three dates remain on the second line.
+   When opened, +N becomes − and the remaining dates flow below. */
+@media (max-width:620px){
+  .thumb-status-badges{
+    top:7px;
+    left:7px;
+    gap:4px;
+    max-width:calc(100% - 48px);
+  }
+
+  .thumb-status-badges .badge{
+    min-height:20px;
+    padding:3px 6px;
+    font-size:8px;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .dates.multi-date-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+    margin-top:11px;
+    margin-bottom:10px;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .date-summary-row{
+    justify-content:space-between;
+    gap:7px;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .date-summary-row .year-summary-chip{
+    flex:1 1 auto;
+    width:auto;
+    min-width:0;
+    margin:0;
+    padding:5px 7px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:9.5px;
+  }
+
+  .mobile-date-summary-chip{
+    display:inline-flex;
+    flex:1 1 auto;
+    min-width:0;
+    align-items:center;
+    padding:5px 7px;
+    border:1px solid #ded0ed;
+    border-radius:999px;
+    background:#e9e0f6;
+    color:#5c477d;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:9.5px;
+    line-height:1.25;
+    font-weight:700;
+  }
+
+  .date-mobile-toggle{
+    flex:0 0 auto;
+    display:inline-grid;
+    place-items:center;
+    min-width:31px;
+    height:27px;
+    padding:0 8px;
+    border:1px solid #ded4e6;
+    border-radius:999px;
+    background:#f6f2f9;
+    color:#675478;
+    font-size:10px;
+    line-height:1;
+    font-weight:800;
+  }
+
+  .date-mobile-toggle[aria-expanded="true"]{
+    min-width:27px;
+    padding:0 7px;
+    font-size:15px;
+  }
+
+  .date-more-desktop{
+    display:none!important;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .date-chip-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:5px;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .date-chip-grid > .date-chip,
+  .video-grid:not(.list-view):not(.timeline-view) .date-chip-grid > .date-extra:not([hidden]) .date-chip{
+    padding:5px 3px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:9.5px;
+    line-height:1.2;
+  }
+
+  /* Single date cards keep the same compact chip sizing. */
+  .video-grid:not(.list-view):not(.timeline-view) .dates:not(.multi-date-grid) .date-chip{
+    padding:5px 7px;
+    font-size:9.5px;
+    line-height:1.25;
+  }
+}
+
+/* List view also gets thumbnail overlay badges without increasing row height. */
+.video-grid.list-view .thumb-status-badges{
+  top:6px;
+  left:6px;
+  max-width:calc(100% - 38px);
+}
+
+.video-grid.list-view .thumb-status-badges .badge{
+  min-height:18px;
+  padding:3px 5px;
+  font-size:7px;
+}

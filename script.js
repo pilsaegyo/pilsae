@@ -1249,11 +1249,34 @@ function renderDates(v) {
   const visible = dateHtml.slice(0, dateLimit);
   const hidden = dateHtml.slice(dateLimit);
 
-  return summary +
-    visible.join("") +
-    hidden.map(html => `<span class="date-extra" data-date-group="${key}" hidden>${html}</span>`).join("") +
+  const mobileFallbackSummary = !summary && hidden.length
+    ? `<span class="mobile-date-summary-chip">${escapeHTML(years[0] ? `${years[0]}년 · 날짜 ${valid.length}개` : `날짜 ${valid.length}개`)}</span>`
+    : "";
+
+  const summaryRow = (summary || hidden.length)
+    ? `<span class="date-summary-row">
+        ${summary}
+        ${mobileFallbackSummary}
+        ${hidden.length ? `
+          <button class="date-mobile-toggle" type="button"
+            data-date-toggle="${key}"
+            data-more-count="${hidden.length}"
+            aria-expanded="false"
+            aria-label="날짜 ${hidden.length}개 더보기">+${hidden.length}</button>
+        ` : ""}
+      </span>`
+    : "";
+
+  return summaryRow +
+    `<span class="date-chip-grid">
+      ${visible.join("")}
+      ${hidden.map(html => `<span class="date-extra" data-date-group="${key}" hidden>${html}</span>`).join("")}
+    </span>` +
     (hidden.length
-      ? `<button class="date-more-btn" type="button" data-date-toggle="${key}" data-more-count="${hidden.length}">날짜 ${hidden.length}개 더보기</button>`
+      ? `<button class="date-more-btn date-more-desktop" type="button"
+          data-date-toggle="${key}"
+          data-more-count="${hidden.length}"
+          aria-expanded="false">날짜 ${hidden.length}개 더보기</button>`
       : "");
 }
 
@@ -1533,12 +1556,12 @@ function renderCard(v) {
     <article class="video-card">
       <a class="thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
         ${thumb}
+        ${statusBadge ? `<span class="thumb-status-badges">${statusBadge}</span>` : ""}
         ${videoFormatIconHtml(v)}
       </a>
       <div class="card-body">
         <div class="card-meta-row">
           <div class="dates ${(v.dates || []).filter(d => d.sourceDate).length > 1 ? "multi-date-grid" : ""}">${renderDates(v)}</div>
-          ${statusBadge ? `<div class="card-badges">${statusBadge}</div>` : ""}
         </div>
 
         <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${highlightMatch(v.title, q)}</a></h2>
@@ -3843,8 +3866,31 @@ function bindEvents() {
       const key = dateToggle.dataset.dateToggle;
       const extras = [...document.querySelectorAll(`[data-date-group="${CSS.escape(key)}"]`)];
       const opening = extras.some(el => el.hidden);
+
       extras.forEach(el => el.hidden = !opening);
-      dateToggle.textContent = opening ? "날짜 접기" : `날짜 ${dateToggle.dataset.moreCount}개 더보기`;
+
+      const datesWrap = dateToggle.closest(".dates");
+      datesWrap?.classList.toggle("is-date-expanded", opening);
+
+      const toggles = [...document.querySelectorAll(`button[data-date-toggle="${CSS.escape(key)}"]`)];
+      toggles.forEach(btn => {
+        const count = btn.dataset.moreCount || "";
+
+        btn.setAttribute("aria-expanded", opening ? "true" : "false");
+
+        if (btn.classList.contains("date-mobile-toggle")) {
+          btn.textContent = opening ? "−" : `+${count}`;
+          btn.setAttribute(
+            "aria-label",
+            opening ? "날짜 접기" : `날짜 ${count}개 더보기`
+          );
+        } else {
+          btn.textContent = opening
+            ? "날짜 접기"
+            : `날짜 ${count}개 더보기`;
+        }
+      });
+
       return;
     }
 
