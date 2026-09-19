@@ -3548,3 +3548,87 @@ select{
     font-size:10px;
   }
 }
+
+
+/* v20 user navigation polish */
+.site-help-share{
+  width:100%;
+  min-height:40px;
+  margin-top:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border:1px solid #ded4e5;
+  border-radius:11px;
+  background:#fff;
+  color:#5f4a70;
+  font-size:10px;
+  font-weight:750;
+  transition:background .15s ease,border-color .15s ease,transform .15s ease;
+}
+
+.site-help-share:hover,
+.site-help-share:focus-visible{
+  background:#f7f2fa;
+  border-color:#cdbbd9;
+  outline:none;
+}
+
+.site-help-share:active{
+  transform:scale(.985);
+}
+
+.empty-state-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:7px;
+  margin-top:14px;
+}
+
+.empty-secondary-btn,
+.empty-reset-btn{
+  min-height:36px;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:10px;
+  font-weight:750;
+}
+
+.empty-secondary-btn{
+  border:1px solid #ddd7e1;
+  background:#fff;
+  color:#6d626f;
+}
+
+.empty-secondary-btn:hover,
+.empty-secondary-btn:focus-visible{
+  border-color:#cbbfd1;
+  background:#faf7fb;
+  outline:none;
+}
+
+.empty-reset-btn{
+  border:1px solid #604e82;
+  background:#604e82;
+  color:#fff;
+}
+
+@media (max-width:620px){
+  .empty-state-actions{
+    gap:6px;
+  }
+
+  .empty-secondary-btn,
+  .empty-reset-btn{
+    min-height:38px;
+    padding:8px 11px;
+    font-size:10px;
+  }
+
+  .site-help-share{
+    min-height:42px;
+    font-size:11px;
+  }
+}

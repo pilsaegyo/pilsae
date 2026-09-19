@@ -1168,6 +1168,63 @@ function renderCard(v) {
   `;
 }
 
+function searchRelevance(v, rawQuery) {
+  const q = String(rawQuery || "").trim().toLowerCase();
+  if (!q) return 0;
+
+  const title = String(v.title || "").trim().toLowerCase();
+  const source = String(v.source || "").trim().toLowerCase();
+  const description = String(v.description || "").trim().toLowerCase();
+  const dateValues = (v.dates || []).flatMap(d => [
+    String(d.sourceDate || "").trim().toLowerCase(),
+    String(displayDate(d) || "").trim().toLowerCase()
+  ]).filter(Boolean);
+
+  // Lower score = more relevant.
+  if (title === q) return 0;
+  if (title.startsWith(q)) return 1;
+  if (title.includes(q)) return 2;
+  if (dateValues.some(value => value === q)) return 3;
+  if (dateValues.some(value => value.includes(q))) return 4;
+  if (source === q) return 5;
+  if (source.startsWith(q)) return 6;
+  if (source.includes(q)) return 7;
+  if (description.includes(q)) return 8;
+  return 9;
+}
+
+function sortRowsByMode(rows, sortMode) {
+  const sourceCompare = (a,b) => {
+    const ad = a.sortDate || "";
+    const bd = b.sortDate || "";
+    if (!ad && !bd) return 0;
+    if (!ad) return 1;
+    if (!bd) return -1;
+    return bd.localeCompare(ad);
+  };
+
+  const compareBySelectedSort = (a,b) => {
+    if (sortMode === "source-asc") {
+      const c = sourceCompare(a,b);
+      return c === 0 ? String(a.publishedAt || "").localeCompare(String(b.publishedAt || "")) : -c;
+    }
+    if (sortMode === "upload-desc") {
+      return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+    }
+    if (sortMode === "upload-asc") {
+      return String(a.publishedAt || "").localeCompare(String(b.publishedAt || ""));
+    }
+    if (sortMode === "title-asc") {
+      return String(a.title || "").localeCompare(String(b.title || ""), "ko");
+    }
+
+    const c = sourceCompare(a,b);
+    return c || String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+  };
+
+  return compareBySelectedSort;
+}
+
 function filteredVideos() {
   const q = $("#searchInput").value.trim().toLowerCase();
   const year = $("#yearFilter").value;
@@ -1200,32 +1257,16 @@ function filteredVideos() {
     return qok && yok && tok && cok;
   });
 
-  const sourceCompare = (a,b) => {
-    const ad = a.sortDate || "";
-    const bd = b.sortDate || "";
-    if (!ad && !bd) return 0;
-    if (!ad) return 1;
-    if (!bd) return -1;
-    return bd.localeCompare(ad);
-  };
+  const compareBySelectedSort = sortRowsByMode(rows, sortMode);
 
   rows.sort((a,b) => {
-    if (sortMode === "source-asc") {
-      const c = sourceCompare(a,b);
-      return c === 0 ? String(a.publishedAt || "").localeCompare(String(b.publishedAt || "")) : -c;
+    // While searching, relevance comes first. The user's selected sort
+    // remains the tie-breaker inside the same relevance group.
+    if (q) {
+      const relevanceDiff = searchRelevance(a, q) - searchRelevance(b, q);
+      if (relevanceDiff !== 0) return relevanceDiff;
     }
-    if (sortMode === "upload-desc") {
-      return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
-    }
-    if (sortMode === "upload-asc") {
-      return String(a.publishedAt || "").localeCompare(String(b.publishedAt || ""));
-    }
-    if (sortMode === "title-asc") {
-      return String(a.title || "").localeCompare(String(b.title || ""), "ko");
-    }
-
-    const c = sourceCompare(a,b);
-    return c || String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+    return compareBySelectedSort(a,b);
   });
 
   return rows;
@@ -1665,6 +1706,72 @@ function scrollTimelineYearIntoView(year) {
   target?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function renderEmptyStateActions() {
+  const wrap = $("#emptyStateActions");
+  if (!wrap) return;
+
+  const q = $("#searchInput")?.value?.trim() || "";
+  const year = $("#yearFilter")?.value || "";
+  const type = $("#typeFilter")?.value || "";
+  const content = $("#contentTypeFilter")?.value || "";
+
+  const actions = [];
+
+  if (q) {
+    actions.push(`<button type="button" class="empty-secondary-btn" data-empty-action="clear-search">검색어 지우기</button>`);
+  }
+  if (year) {
+    actions.push(`<button type="button" class="empty-secondary-btn" data-empty-action="clear-year">${escapeHTML(year)}년 해제</button>`);
+  }
+  if (type) {
+    actions.push(`<button type="button" class="empty-secondary-btn" data-empty-action="clear-type">날짜 유형 해제</button>`);
+  }
+  if (content) {
+    actions.push(`<button type="button" class="empty-secondary-btn" data-empty-action="clear-content">콘텐츠 유형 해제</button>`);
+  }
+
+  actions.push(`<button id="emptyResetBtn" class="empty-reset-btn" type="button" data-empty-action="reset-all">전체 보기</button>`);
+  wrap.innerHTML = actions.join("");
+}
+
+async function copyCurrentViewLink() {
+  // Ensure the URL reflects the currently selected filters/view before copying.
+  syncUrlState({ replace:true });
+  const url = location.href;
+  const label = $("#copyCurrentLinkLabel");
+
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(url);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = url;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    }
+
+    if (label) {
+      label.textContent = "링크가 복사됐어요";
+      window.setTimeout(() => {
+        if (label) label.textContent = "현재 화면 링크 복사";
+      }, 1600);
+    }
+  } catch (err) {
+    console.warn("현재 화면 링크 복사 실패", err);
+    if (label) {
+      label.textContent = "복사하지 못했어요";
+      window.setTimeout(() => {
+        if (label) label.textContent = "현재 화면 링크 복사";
+      }, 1600);
+    }
+  }
+}
+
 function render() {
   $("#loadingState")?.setAttribute("hidden", "");
 
@@ -1704,9 +1811,10 @@ function render() {
     const active = currentActiveFilters();
     if (detail) {
       detail.textContent = active.length
-        ? `${active.map(x => x.label).join(" · ")} 조건에서는 결과가 없습니다.`
+        ? `${active.map(x => x.label).join(" · ")} 조건에서는 결과가 없습니다. 아래 조건을 하나씩 풀어보세요.`
         : "검색어나 필터를 변경해 보세요.";
     }
+    renderEmptyStateActions();
   }
 
   const moreBtn = $("#loadMoreBtn");
@@ -2037,6 +2145,7 @@ function bindEvents() {
 
   $("#siteHelpClose")?.addEventListener("click", () => setSiteHelp(false));
   $("#siteHelpBackdrop")?.addEventListener("click", () => setSiteHelp(false));
+  $("#copyCurrentLinkBtn")?.addEventListener("click", copyCurrentViewLink);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !$("#siteHelpPanel")?.hidden) {
@@ -2052,6 +2161,31 @@ function bindEvents() {
       if (!insideHelp && !helpButton && !window.matchMedia("(max-width: 620px)").matches) {
         setSiteHelp(false);
       }
+    }
+
+    const emptyAction = event.target.closest("button[data-empty-action]");
+    if (emptyAction) {
+      const action = emptyAction.dataset.emptyAction || "";
+
+      if (action === "clear-search") {
+        $("#searchInput").value = "";
+        hideSearchSuggestions();
+        updateSearchClearButton();
+      } else if (action === "clear-year") {
+        $("#yearFilter").value = "";
+      } else if (action === "clear-type") {
+        $("#typeFilter").value = "";
+      } else if (action === "clear-content") {
+        $("#contentTypeFilter").value = "";
+      } else if (action === "reset-all") {
+        resetPublicFilters();
+        return;
+      }
+
+      visibleLimit = PAGE_SIZE;
+      syncUrlState();
+      render();
+      return;
     }
 
     const dateToggle = event.target.closest("button[data-date-toggle]");
@@ -2410,7 +2544,6 @@ function bindEvents() {
   });
 
   $("#resetFilters").addEventListener("click", resetPublicFilters);
-  $("#emptyResetBtn")?.addEventListener("click", resetPublicFilters);
 
   $("#clearSearchBtn")?.addEventListener("click", () => {
     $("#searchInput").value = "";
