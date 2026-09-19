@@ -4414,3 +4414,47 @@ select{
     width:100%;
   }
 }
+
+
+/* v23.2 dashboard / history refresh icons */
+.admin-heading-actions{
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+
+.admin-icon-button{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  padding:0;
+  border:1px solid #ddd6e1;
+  border-radius:9px;
+  background:#fff;
+  color:#716477;
+  cursor:pointer;
+}
+
+.admin-icon-button svg{
+  width:15px;
+  height:15px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.admin-icon-button:hover,
+.admin-icon-button:focus-visible{
+  border-color:#c2b4c9;
+  background:#f8f4fa;
+  color:#594762;
+  outline:none;
+}
+
+.admin-icon-button:active svg{
+  transform:rotate(25deg);
+}

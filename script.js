@@ -839,13 +839,22 @@ function adminHealthIssues() {
 
     if (v.manualDateReviewPending || v.descriptionChangedAfterManual) {
       if (v.contentType === "playlist") {
-        issues.push({
-          type:"플레이리스트 설명 변경 확인",
-          severity:"high",
-          videoId:v.id,
-          title,
-          detail:"플레이리스트의 수동 날짜 지정 이후 설명이 변경되었습니다."
-        });
+        const hasConfirmedPlaylistScope =
+          v.playlistScope === "multi-year" ||
+          v.playlistScope === "undated";
+
+        // Once an administrator explicitly confirms the playlist scope,
+        // its old manual-date review state is no longer actionable.
+        // Keep the underlying history, but remove it from dashboard health.
+        if (!hasConfirmedPlaylistScope) {
+          issues.push({
+            type:"플레이리스트 설명 변경 확인",
+            severity:"high",
+            videoId:v.id,
+            title,
+            detail:"플레이리스트의 수동 날짜 지정 이후 설명이 변경되었습니다."
+          });
+        }
       } else {
         issues.push({
           type:"설명 변경 재검토",
@@ -3331,6 +3340,11 @@ function bindEvents() {
   $("#adminReviewSort")?.addEventListener("change", (event) => {
     adminReviewSort = event.target.value || "priority";
     renderAdminUnknownList();
+  });
+
+  $("#refreshAdminHealth")?.addEventListener("click", () => {
+    adminHealthFilter = "all";
+    renderAdminDashboard();
   });
 
   $("#refreshAdminHistory")?.addEventListener("click", () => loadAdminHistory({ force:true }));
