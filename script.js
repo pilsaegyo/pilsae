@@ -749,6 +749,23 @@ function allYears() {
   return [...years].sort((a,b) => Number(b) - Number(a));
 }
 
+function yearVideoCounts() {
+  const counts = new Map();
+  videos.forEach(v => {
+    const years = new Set(
+      (v.dates || [])
+        .map(d => String(d.sourceDate || "").slice(0,4))
+        .filter(y => /^(19|20)\d{2}$/.test(y))
+    );
+    years.forEach(y => counts.set(y, (counts.get(y) || 0) + 1));
+  });
+  return counts;
+}
+
+function playlistCount() {
+  return videos.filter(v => v.contentType === "playlist").length;
+}
+
 function rebuildYearFilter() {
   const select = $("#yearFilter");
   const current = select.value;
@@ -925,11 +942,115 @@ function searchContextSnippet(v, query) {
   return "";
 }
 
+function searchSuggestionItems(query) {
+  const q = String(query || "").trim().toLowerCase();
+  if (q.length < 2) return [];
+
+  const items = [];
+  const seen = new Set();
+
+  const add = (kind, label, value, meta="") => {
+    const key = `${kind}|${value}`.toLowerCase();
+    if (!value || seen.has(key)) return;
+    seen.add(key);
+    items.push({ kind, label, value, meta });
+  };
+
+  for (const v of videos) {
+    if (items.length >= 12) break;
+
+    if (String(v.title || "").toLowerCase().includes(q)) {
+      add("제목", v.title, v.title, v.source || "");
+    }
+
+    if (v.source && String(v.source).toLowerCase().includes(q)) {
+      add("출처", v.source, v.source, v.title || "");
+    }
+
+    for (const d of (v.dates || [])) {
+      const dateLabel = displayDate(d);
+      const raw = String(d.sourceDate || "");
+      if (dateLabel.toLowerCase().includes(q) || raw.toLowerCase().includes(q)) {
+        add("날짜", dateLabel, dateLabel, v.title || "");
+      }
+      if (items.length >= 12) break;
+    }
+  }
+
+  // Prefer title matches, then date, then source.
+  const rank = { "제목": 0, "날짜": 1, "출처": 2 };
+  return items
+    .sort((a,b) => (rank[a.kind] ?? 9) - (rank[b.kind] ?? 9))
+    .slice(0, 6);
+}
+
+function renderSearchSuggestions() {
+  const input = $("#searchInput");
+  const wrap = $("#searchSuggestions");
+  if (!input || !wrap) return;
+
+  const q = input.value.trim();
+  const items = searchSuggestionItems(q);
+
+  if (!items.length) {
+    wrap.hidden = true;
+    wrap.innerHTML = "";
+    input.setAttribute("aria-expanded", "false");
+    return;
+  }
+
+  wrap.innerHTML = items.map((item, index) => `
+    <button type="button" class="search-suggestion-item" role="option"
+      data-search-suggestion="${escapeHTML(item.value)}" data-suggestion-index="${index}">
+      <span class="search-suggestion-kind">${escapeHTML(item.kind)}</span>
+      <span class="search-suggestion-copy">
+        <strong>${highlightMatch(item.label, q)}</strong>
+        ${item.meta ? `<small>${escapeHTML(item.meta)}</small>` : ""}
+      </span>
+    </button>
+  `).join("");
+
+  wrap.hidden = false;
+  input.setAttribute("aria-expanded", "true");
+}
+
+function hideSearchSuggestions() {
+  const wrap = $("#searchSuggestions");
+  const input = $("#searchInput");
+  if (wrap) wrap.hidden = true;
+  if (input) input.setAttribute("aria-expanded", "false");
+}
+
+function renderQuickBrowseBar() {
+  const btn = $("#playlistQuickBtn");
+  const count = $("#playlistQuickCount");
+  if (!btn || !count) return;
+
+  const total = playlistCount();
+  count.textContent = String(total);
+
+  const active = ($("#contentTypeFilter")?.value || "") === "playlist";
+  btn.classList.toggle("active", active);
+  btn.setAttribute("aria-pressed", active ? "true" : "false");
+}
+
 function renderCard(v) {
   const thumb = v.thumbnail
     ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />`
     : `<div class="thumb-placeholder">썸네일 없음</div>`;
   const q = $("#searchInput")?.value?.trim() || "";
+
+  let statusBadge = "";
+  if (v.contentType === "playlist") {
+    const scope = isMultiYearPlaylist(v)
+      ? "다년도"
+      : (v.playlistScope === "undated" ? "연도 미지정" : "");
+    statusBadge = `<span class="badge playlist">${scope ? `플레이리스트 · ${scope}` : "플레이리스트"}</span>`;
+  } else if (effectiveDateType(v) === "mixed") {
+    statusBadge = `<span class="badge mixed">혼합 연도</span>`;
+  } else if (effectiveDateType(v) === "unknown") {
+    statusBadge = `<span class="badge unknown">날짜 미확인</span>`;
+  }
 
   return `
     <article class="video-card">
@@ -937,16 +1058,13 @@ function renderCard(v) {
         ${thumb}
       </a>
       <div class="card-body">
-        <div class="card-top">
-          <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${highlightMatch(v.title, q)}</a></h2>
-          <div class="card-badges">
-            ${v.contentType === "playlist" ? `<span class="badge playlist">플레이리스트</span>` : ""}
-            ${isMultiYearPlaylist(v) ? `<span class="badge playlist-multiyear">다년도</span>` : ""}
-            <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type, v)}</span>
-          </div>
+        <div class="card-meta-row">
+          <div class="dates">${renderDates(v)}</div>
+          ${statusBadge ? `<div class="card-badges">${statusBadge}</div>` : ""}
         </div>
 
-        <div class="dates">${renderDates(v)}</div>
+        <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${highlightMatch(v.title, q)}</a></h2>
+
         ${searchContextSnippet(v, q)}
         ${v.source ? `<p class="source">출처 · ${highlightMatch(v.source, q)}</p>` : ""}
         ${v.type === "unknown" && !isMultiYearPlaylist(v)
@@ -960,6 +1078,7 @@ function renderCard(v) {
     </article>
   `;
 }
+
 function filteredVideos() {
   const q = $("#searchInput").value.trim().toLowerCase();
   const year = $("#yearFilter").value;
@@ -1413,10 +1532,13 @@ function renderYearJumpBar() {
   }
 
   const years = allYears();
+  const counts = yearVideoCounts();
   const current = $("#yearFilter")?.value || "";
   bar.innerHTML = `
-    <button type="button" class="year-jump-chip ${current ? "" : "active"}" data-year-jump="">전체</button>
-    ${years.map(y => `<button type="button" class="year-jump-chip ${current === y ? "active" : ""}" data-year-jump="${escapeHTML(y)}">${escapeHTML(y)}</button>`).join("")}
+    <button type="button" class="year-jump-chip ${current ? "" : "active"}" data-year-jump="">
+      <span>전체</span><small>${videos.length}</small>
+    </button>
+    ${years.map(y => `<button type="button" class="year-jump-chip ${current === y ? "active" : ""}" data-year-jump="${escapeHTML(y)}"><span>${escapeHTML(y)}</span><small>${counts.get(y) || 0}</small></button>`).join("")}
   `;
   bar.hidden = false;
 }
@@ -1450,6 +1572,7 @@ function render() {
   }
 
   renderActiveFilterChips();
+  renderQuickBrowseBar();
 
   const rows = filteredVideos();
   const visibleRows = rows.slice(0, visibleLimit);
@@ -1994,6 +2117,26 @@ function bindEvents() {
       return;
     }
 
+    const suggestion = event.target.closest("button[data-search-suggestion]");
+    if (suggestion) {
+      $("#searchInput").value = suggestion.dataset.searchSuggestion || "";
+      visibleLimit = PAGE_SIZE;
+      hideSearchSuggestions();
+      syncUrlState({ replace:true });
+      render();
+      return;
+    }
+
+    const playlistQuick = event.target.closest("#playlistQuickBtn");
+    if (playlistQuick) {
+      const select = $("#contentTypeFilter");
+      select.value = select.value === "playlist" ? "" : "playlist";
+      visibleLimit = PAGE_SIZE;
+      syncUrlState();
+      render();
+      return;
+    }
+
     const yearJump = event.target.closest("button[data-year-jump]");
     if (yearJump) {
       const year = yearJump.dataset.yearJump || "";
@@ -2017,12 +2160,25 @@ function bindEvents() {
         visibleLimit = PAGE_SIZE;
         syncUrlState({ replace: id === "searchInput" });
         render();
+        if (id === "searchInput") renderSearchSuggestions();
       }
     );
   });
 
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".search-field")) hideSearchSuggestions();
+  });
+
+  $("#searchInput").addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      hideSearchSuggestions();
+      $("#searchInput").blur();
+    }
+  });
+
   $("#resetFilters").addEventListener("click", () => {
     $("#searchInput").value = "";
+    hideSearchSuggestions();
     $("#yearFilter").value = "";
     $("#typeFilter").value = "";
     $("#contentTypeFilter").value = "";

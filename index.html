@@ -6,9 +6,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=15.1" />
+  <link rel="stylesheet" href="./style.css?v=16" />
 </head>
-<body data-build="15.1">
+<body data-build="16">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -50,8 +50,10 @@
           <span>영상 검색</span>
           <div class="search-control">
             <span class="search-icon" aria-hidden="true">⌕</span>
-            <input id="searchInput" type="search" placeholder="제목 · 출처 · 날짜 검색" autocomplete="off" />
+            <input id="searchInput" type="search" placeholder="제목 · 출처 · 날짜 검색" autocomplete="off"
+              aria-autocomplete="list" aria-controls="searchSuggestions" aria-expanded="false" />
           </div>
+          <div id="searchSuggestions" class="search-suggestions" role="listbox" hidden></div>
         </label>
 
         <button id="mobileFilterToggle" class="mobile-filter-toggle" type="button" aria-expanded="false" aria-controls="filterExtra">
@@ -104,6 +106,14 @@
     </section>
 
     <div id="activeFilterChips" class="active-filter-chips public-archive-ui" aria-live="polite"></div>
+
+    <div id="quickBrowseBar" class="quick-browse-bar public-archive-ui" aria-label="빠른 탐색">
+      <button id="playlistQuickBtn" class="quick-browse-chip" type="button" aria-pressed="false">
+        <span aria-hidden="true">♫</span>
+        <span>플레이리스트</span>
+        <small id="playlistQuickCount">0</small>
+      </button>
+    </div>
 
     <nav id="yearJumpBar" class="year-jump-bar public-archive-ui" aria-label="연도 빠른 이동" hidden></nav>
 
@@ -294,6 +304,6 @@
     <button id="adminEntry" class="admin-entry" type="button" aria-label="관리자 화면" hidden>관리</button>
   </footer>
 
-  <script src="./script.js?v=15.1" defer></script>
+  <script src="./script.js?v=16" defer></script>
 </body>
 </html>
