@@ -28,6 +28,45 @@ function youtubeUrlFromId(id="") {
   return id ? `https://www.youtube.com/watch?v=${encodeURIComponent(id)}` : "";
 }
 
+function isAndroidMobile() {
+  return /Android/i.test(navigator.userAgent || "");
+}
+
+function isIOSMobile() {
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent || "");
+}
+
+function openYoutubeVideo(event, videoId) {
+  if (!videoId) return;
+
+  const webUrl = youtubeUrlFromId(videoId);
+
+  // Desktop keeps the normal new-tab YouTube behavior.
+  if (!isAndroidMobile() && !isIOSMobile()) return;
+
+  event.preventDefault();
+
+  if (isAndroidMobile()) {
+    const fallback = encodeURIComponent(webUrl);
+    window.location.href =
+      `intent://www.youtube.com/watch?v=${encodeURIComponent(videoId)}` +
+      `#Intent;scheme=https;package=com.google.android.youtube;` +
+      `S.browser_fallback_url=${fallback};end`;
+    return;
+  }
+
+  // iOS: try the YouTube app first, then fall back to the normal URL
+  // if the app is not available.
+  const appUrl = `youtube://watch?v=${encodeURIComponent(videoId)}`;
+  window.location.href = appUrl;
+
+  window.setTimeout(() => {
+    if (!document.hidden) {
+      window.location.href = webUrl;
+    }
+  }, 900);
+}
+
 
 function isExcludedVideo(v) {
   const title = String(v?.title || "").toLowerCase();
@@ -256,6 +295,8 @@ function normalizeVideo(v, idx=0) {
   const validDates = dateEntries.map(d => d.sourceDate).filter(Boolean);
   const uniqueYears = [...new Set(validDates.map(d => d.slice(0,4)))];
 
+  // "혼합 영상"은 서로 다른 연도가 실제로 섞인 경우에만 사용.
+  // 같은 연도 안에서 날짜가 여러 개여도 해당 연도의 일반 영상으로 유지한다.
   let type = "unknown";
   if (uniqueYears.length > 1) type = "mixed";
   else if (uniqueYears.length === 1) type = "single";
@@ -490,42 +531,87 @@ function displayDate(d) {
   return raw;
 }
 
+function shortDisplayDate(d, includeYear=true) {
+  const raw = String(d.sourceDate || "");
+  if (d.precision === "year") return `${raw.slice(0,4)}년`;
+  if (d.precision === "month") {
+    const [y,m] = raw.split("-");
+    return includeYear ? `${y}.${m}` : `${m}월`;
+  }
+  const [y,m,day] = raw.split("-");
+  return includeYear ? `${y}.${m}.${day}` : `${m}.${day}`;
+}
+
+function videoYears(v) {
+  return [...new Set(
+    v.dates.map(d => String(d.sourceDate || "").slice(0,4))
+      .filter(y => /^(19|20)\d{2}$/.test(y))
+  )].sort((a,b) => Number(b)-Number(a));
+}
+
 function renderDates(v) {
   const valid = v.dates
     .filter(d => d.sourceDate)
     .sort((a,b) => b.sourceDate.localeCompare(a.sourceDate));
 
   if (!valid.length) {
-    return `<span class="date-chip">날짜 미확인</span>`;
+    return `<span class="date-chip unknown-date-chip">날짜 미확인</span>`;
   }
 
-  // Same year appears once only.
-  // Within a year, prefer day > month > year; if same precision, latest value wins.
-  const rank = { day: 3, month: 2, year: 1 };
-  const byYear = new Map();
+  const years = videoYears(v);
+  const limit = 4;
+  const displayItems = [];
 
-  for (const d of valid) {
+  // 혼합영상은 먼저 연도 요약을 보여주고 세부 날짜를 이어서 표시.
+  if (v.type === "mixed") {
+    displayItems.push({
+      html: `<span class="year-summary-chip">${years.map(escapeHTML).join(" · ")}</span>`,
+      summary: true
+    });
+  }
+
+  let prevYear = "";
+  valid.forEach((d) => {
     const year = d.sourceDate.slice(0,4);
-    const prev = byYear.get(year);
+    const includeYear = v.type === "mixed" || year !== prevYear;
+    displayItems.push({
+      html: `<span class="date-chip">${escapeHTML(shortDisplayDate(d, includeYear))}</span>`,
+      summary: false
+    });
+    prevYear = year;
+  });
 
-    if (!prev) {
-      byYear.set(year, d);
-      continue;
-    }
+  const visible = displayItems.slice(0, limit);
+  const hidden = displayItems.slice(limit);
+  const key = escapeHTML(v.id);
 
-    const curRank = rank[d.precision] || 0;
-    const prevRank = rank[prev.precision] || 0;
+  return visible.map(x => x.html).join("") +
+    hidden.map(x => `<span class="date-extra" data-date-group="${key}" hidden>${x.html}</span>`).join("") +
+    (hidden.length
+      ? `<button class="date-more-btn" type="button" data-date-toggle="${key}" data-more-count="${hidden.length}">+${hidden.length}개</button>`
+      : "");
+}
 
-    if (curRank > prevRank ||
-        (curRank === prevRank && d.sourceDate > prev.sourceDate)) {
-      byYear.set(year, d);
-    }
+function unknownReason(v) {
+  if (v.type !== "unknown") return "";
+  const raw = String(v.description || "");
+  if (!raw.trim()) return "영상 설명 없음";
+
+  const hashtagRemoved = removeHashtagsFromDescription(raw);
+  const hashtagDateLike = /#(?:19|20)\d{2}(?:[-./]?\d{1,2})?(?:[-./]?\d{1,2})?\b|#\d{6,8}\b/.test(raw);
+  if (hashtagDateLike && !extractDatesFromText(hashtagRemoved).length) {
+    return "해시태그에만 날짜 표기가 있음";
   }
 
-  return [...byYear.values()]
-    .sort((a,b) => b.sourceDate.localeCompare(a.sourceDate))
-    .map(d => `<span class="date-chip">${escapeHTML(displayDate(d))}</span>`)
-    .join("");
+  const dateLike = /(?:19|20)\d{2}|\b\d{6,8}\b|\d{2,4}[-./]\d{1,2}/.test(hashtagRemoved);
+  if (dateLike) return "날짜처럼 보이는 표기 확인 필요";
+  return "설명에서 날짜 정보 찾지 못함";
+}
+
+function descriptionPreview(text, max=190) {
+  const clean = String(text || "").replace(/\s+/g, " ").trim();
+  if (!clean) return "설명 없음";
+  return clean.length > max ? clean.slice(0, max).trim() + "…" : clean;
 }
 
 function renderCard(v) {
@@ -535,12 +621,12 @@ function renderCard(v) {
 
   return `
     <article class="video-card">
-      <a class="thumb" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
+      <a class="thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
         ${thumb}
       </a>
       <div class="card-body">
         <div class="card-top">
-          <h2 class="card-title"><a href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a></h2>
+          <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a></h2>
           <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type)}</span>
         </div>
 
@@ -548,10 +634,10 @@ function renderCard(v) {
 
         ${v.source ? `<p class="source">출처 · ${escapeHTML(v.source)}</p>` : ""}
         ${v.type === "unknown"
-          ? `<p class="note">정확한 날짜 확인 필요</p>`
+          ? `<p class="note">${escapeHTML(unknownReason(v))}</p>`
           : ""}
 
-        <a class="card-link" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
+        <a class="card-link youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
           YouTube에서 보기
         </a>
       </div>
@@ -618,6 +704,44 @@ function filteredVideos() {
   return rows;
 }
 
+function currentActiveFilters() {
+  const filters = [];
+  const q = $("#searchInput")?.value?.trim() || "";
+  const year = $("#yearFilter")?.value || "";
+  const type = $("#typeFilter")?.value || "";
+  const sort = $("#sortFilter")?.value || "source-desc";
+
+  if (q) filters.push({ key:"search", label:`검색: ${q}` });
+  if (year) filters.push({ key:"year", label:`${year}년` });
+  if (type) filters.push({ key:"type", label:typeLabel(type) });
+  if (sort !== "source-desc") {
+    const option = $("#sortFilter")?.selectedOptions?.[0];
+    filters.push({ key:"sort", label:option?.textContent || "정렬 변경" });
+  }
+  return filters;
+}
+
+function renderActiveFilterChips() {
+  const wrap = $("#activeFilterChips");
+  if (!wrap) return;
+  const filters = currentActiveFilters();
+  wrap.innerHTML = filters.map(f => `
+    <button type="button" class="active-filter-chip" data-clear-filter="${escapeHTML(f.key)}">
+      ${escapeHTML(f.label)} <span aria-hidden="true">×</span>
+    </button>
+  `).join("");
+  wrap.hidden = filters.length === 0;
+}
+
+function clearOneFilter(key) {
+  if (key === "search") $("#searchInput").value = "";
+  if (key === "year") $("#yearFilter").value = "";
+  if (key === "type") $("#typeFilter").value = "";
+  if (key === "sort") $("#sortFilter").value = "source-desc";
+  visibleLimit = PAGE_SIZE;
+  render();
+}
+
 function currentView() {
   return localStorage.getItem(STORAGE_VIEW) === "list" ? "list" : "grid";
 }
@@ -651,23 +775,21 @@ function render() {
   if ($("#heroKnown")) $("#heroKnown").textContent = `${allKnown}`;
   if ($("#heroUnknown")) $("#heroUnknown").textContent = `${allUnknown}`;
 
-  const activeFilterCount = [
-    $("#yearFilter")?.value,
-    $("#typeFilter")?.value,
-    ($("#sortFilter")?.value || "source-desc") !== "source-desc" ? "sort" : ""
-  ].filter(Boolean).length;
+  const activeFilterCount = currentActiveFilters().length;
   const filterCountEl = $("#activeFilterCount");
   if (filterCountEl) {
     filterCountEl.textContent = String(activeFilterCount);
     filterCountEl.hidden = activeFilterCount === 0;
   }
 
+  renderActiveFilterChips();
+
   const rows = filteredVideos();
   const visibleRows = rows.slice(0, visibleLimit);
 
   const unknownCount = rows.filter(v => v.type === "unknown").length;
   $("#resultMeta").innerHTML = videos.length
-    ? `<strong>${rows.length}개</strong>의 영상` +
+    ? `<span class="result-total">전체 ${videos.length}개</span><span class="result-divider">·</span><strong>현재 결과 ${rows.length}개</strong>` +
       (unknownCount ? `<span class="result-submeta">· 날짜 미확인 ${unknownCount}개</span>` : "")
     : "";
 
@@ -685,6 +807,7 @@ function render() {
 
   applyViewMode();
   renderAdminList();
+  renderAdminUnknownList();
   updateAdminSummary();
 }
 
@@ -710,6 +833,36 @@ function renderAdminList() {
   (videos.length > 100
     ? `<p class="admin-help">관리자 목록은 성능을 위해 앞 100개만 표시합니다. 전체 ${videos.length}개입니다.</p>`
     : "");
+}
+
+function renderAdminUnknownList() {
+  const wrap = $("#adminUnknownList");
+  const badge = $("#adminUnknownBadge");
+  if (!wrap) return;
+
+  const unknown = videos.filter(v => v.type === "unknown");
+  if (badge) badge.textContent = `${unknown.length}개`;
+
+  if (!unknown.length) {
+    wrap.innerHTML = `<p class="admin-help">현재 날짜 확인이 필요한 영상이 없습니다.</p>`;
+    return;
+  }
+
+  wrap.innerHTML = unknown.map(v => `
+    <article class="admin-unknown-item">
+      <div class="admin-unknown-thumb">
+        ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
+      </div>
+      <div class="admin-unknown-body">
+        <div class="admin-unknown-top">
+          <strong>${escapeHTML(v.title)}</strong>
+          <span class="admin-reason-badge">${escapeHTML(unknownReason(v))}</span>
+        </div>
+        <p>${escapeHTML(descriptionPreview(v.description))}</p>
+        <a class="youtube-video-link admin-youtube-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">YouTube에서 설명 확인</a>
+      </div>
+    </article>
+  `).join("");
 }
 
 function setAdmin(open) {
@@ -739,6 +892,28 @@ function downloadJSON(data, filename) {
 }
 
 function bindEvents() {
+  document.addEventListener("click", (event) => {
+    const dateToggle = event.target.closest("button[data-date-toggle]");
+    if (dateToggle) {
+      const key = dateToggle.dataset.dateToggle;
+      const extras = [...document.querySelectorAll(`[data-date-group="${CSS.escape(key)}"]`)];
+      const opening = extras.some(el => el.hidden);
+      extras.forEach(el => el.hidden = !opening);
+      dateToggle.textContent = opening ? "접기" : `+${dateToggle.dataset.moreCount}개`;
+      return;
+    }
+
+    const filterChip = event.target.closest("button[data-clear-filter]");
+    if (filterChip) {
+      clearOneFilter(filterChip.dataset.clearFilter || "");
+      return;
+    }
+
+    const link = event.target.closest("a.youtube-video-link");
+    if (!link) return;
+    openYoutubeVideo(event, link.dataset.videoId || "");
+  });
+
   ["searchInput", "yearFilter", "typeFilter", "sortFilter"].forEach(id => {
     $("#" + id).addEventListener(
       id === "searchInput" ? "input" : "change",

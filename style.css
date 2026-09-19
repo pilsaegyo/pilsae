@@ -993,3 +993,163 @@ body{
   .hero-stats span:nth-child(2){display:none}
   .toolbar-primary{grid-template-columns:minmax(0,1fr) 68px}
 }
+
+
+/* v7 integrated archive UX */
+.active-filter-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:-12px 2px 20px;
+}
+.active-filter-chips[hidden]{display:none}
+.active-filter-chip{
+  border:1px solid #e2d8ed;
+  background:#f4effa;
+  color:#604e82;
+  border-radius:999px;
+  padding:6px 9px;
+  font-size:12px;
+  font-weight:750;
+}
+.active-filter-chip span{margin-left:3px;color:#9b8baa}
+.result-total{color:#8a8490}
+.result-divider{margin:0 5px;color:#bbb4c1}
+
+/* Multi-date display */
+.dates{align-items:center}
+.year-summary-chip{
+  display:inline-flex;
+  padding:6px 9px;
+  border-radius:999px;
+  background:#e9e0f6;
+  color:#5c477d;
+  font-size:12px;
+  font-weight:850;
+  border:1px solid #ded0ed;
+}
+.date-extra{display:contents}
+.date-more-btn{
+  border:1px solid #e1d8e8;
+  background:#fff;
+  color:#725f86;
+  border-radius:999px;
+  padding:5px 8px;
+  font-size:11px;
+  font-weight:800;
+}
+.unknown-date-chip{background:#f7f0f3;color:#855665}
+
+/* Better hierarchy inside cards */
+.source{font-size:12px;color:#918b96}
+.note{
+  display:inline-flex;
+  padding:5px 8px;
+  border-radius:9px;
+  background:#faf3f5;
+  color:#8a5867;
+  font-size:11px;
+}
+
+/* Admin: unresolved-date review */
+.admin-review-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+}
+.admin-count-badge{
+  flex:0 0 auto;
+  background:#f1eafa;
+  color:#654e85;
+  border:1px solid #e3d8ee;
+  border-radius:999px;
+  padding:6px 9px;
+  font-size:12px;
+  font-weight:850;
+}
+.admin-unknown-list{
+  display:flex;
+  flex-direction:column;
+  margin-top:12px;
+}
+.admin-unknown-item{
+  display:grid;
+  grid-template-columns:124px minmax(0,1fr);
+  gap:14px;
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.admin-unknown-item:first-child{border-top:0}
+.admin-unknown-thumb{
+  aspect-ratio:16/9;
+  border-radius:12px;
+  overflow:hidden;
+  background:#f0edf3;
+}
+.admin-unknown-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.admin-unknown-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.admin-unknown-top strong{font-size:14px;line-height:1.45}
+.admin-reason-badge{
+  flex:0 0 auto;
+  padding:5px 7px;
+  border-radius:8px;
+  background:#faf1f4;
+  color:#875866;
+  font-size:10px;
+  font-weight:800;
+}
+.admin-unknown-body p{
+  margin:7px 0;
+  color:#817b85;
+  font-size:12px;
+  line-height:1.55;
+}
+.admin-youtube-link{
+  display:inline-flex;
+  color:#665184;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* Mobile refinements */
+@media (max-width:620px){
+  /* On phones, keep only the total archive stat in the hero. */
+  .hero-stats span:not(:first-child){display:none!important}
+  .hero-stats span:first-child{padding:4px 8px}
+
+  .active-filter-chips{
+    margin:-8px 0 13px;
+    gap:5px;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    scrollbar-width:none;
+  }
+  .active-filter-chips::-webkit-scrollbar{display:none}
+  .active-filter-chip{flex:0 0 auto;font-size:11px;padding:5px 8px}
+
+  .result-total{display:block;margin-bottom:2px}
+  .result-divider{display:none}
+
+  /* Keep cards short: first 3 date pieces, remainder behind +N. */
+  .dates .date-chip,
+  .dates .year-summary-chip{font-size:11px;padding:5px 7px}
+
+  .admin-unknown-item{
+    grid-template-columns:90px minmax(0,1fr);
+    gap:10px;
+  }
+  .admin-unknown-top{display:block}
+  .admin-reason-badge{display:inline-flex;margin-top:5px}
+  .admin-unknown-body p{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+  }
+}
