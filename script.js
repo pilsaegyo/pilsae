@@ -424,6 +424,10 @@ function playlistScopeLabel(v) {
   return "연도 지정";
 }
 
+function effectiveDateType(v) {
+  return isMultiYearPlaylist(v) ? "mixed" : v.type;
+}
+
 function normalizeDateEntry(entry) {
   if (!entry) return null;
   if (typeof entry === "string") {
@@ -982,10 +986,7 @@ function filteredVideos() {
 
     const qok = !q || haystack.includes(q);
     const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
-    const effectiveDateType = isMultiYearPlaylist(v)
-      ? "mixed"
-      : v.type;
-    const tok = !type || effectiveDateType === type;
+    const tok = !type || effectiveDateType(v) === type;
     const cok = !contentType || v.contentType === contentType;
 
     return qok && yok && tok && cok;
@@ -1343,40 +1344,39 @@ function renderTimeline(rows) {
     parts.push(`</section>`);
   }
 
-  if (multiYearPlaylists.length) {
+  const playlistTotal = multiYearPlaylists.length + undatedPlaylists.length;
+  if (playlistTotal) {
     parts.push(`
-      <section class="timeline-year timeline-playlists timeline-playlists-multiyear">
+      <section class="timeline-year timeline-playlists timeline-playlist-hub">
         <div class="timeline-year-heading">
-          <h2>플레이리스트</h2>
-          <span>${multiYearPlaylists.length}개</span>
-        </div>
-        <div class="timeline-month timeline-playlist-multiyear-group">
-          <h3>다년도 플레이리스트</h3>
-          <div class="timeline-items">
-            ${multiYearPlaylists
-              .sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"))
-              .map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+          <div>
+            <h2>플레이리스트</h2>
+            <p class="timeline-section-note">날짜 아카이브와 별도로 모아보는 플레이리스트 영역입니다.</p>
           </div>
+          <span>${playlistTotal}개</span>
         </div>
-      </section>
-    `);
-  }
 
-  if (undatedPlaylists.length) {
-    parts.push(`
-      <section class="timeline-year timeline-playlists">
-        <div class="timeline-year-heading">
-          <h2>플레이리스트</h2>
-          <span>${undatedPlaylists.length}개</span>
-        </div>
-        <div class="timeline-month timeline-playlist-undated-group">
-          <h3>연도 미지정</h3>
-          <div class="timeline-items">
-            ${undatedPlaylists
-              .sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"))
-              .map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+        ${multiYearPlaylists.length ? `
+          <div class="timeline-month timeline-playlist-multiyear-group">
+            <h3>다년도 플레이리스트 <small>${multiYearPlaylists.length}개</small></h3>
+            <div class="timeline-items">
+              ${multiYearPlaylists
+                .sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"))
+                .map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+            </div>
           </div>
-        </div>
+        ` : ""}
+
+        ${undatedPlaylists.length ? `
+          <div class="timeline-month timeline-playlist-undated-group">
+            <h3>연도 미지정 플레이리스트 <small>${undatedPlaylists.length}개</small></h3>
+            <div class="timeline-items">
+              ${undatedPlaylists
+                .sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"))
+                .map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+            </div>
+          </div>
+        ` : ""}
       </section>
     `);
   }
@@ -1454,10 +1454,11 @@ function render() {
   const rows = filteredVideos();
   const visibleRows = rows.slice(0, visibleLimit);
 
-  const unknownCount = rows.filter(v => v.type === "unknown").length;
+  // Public result summary intentionally excludes internal date-review counts.
+  // This also avoids mismatches where a multi-year playlist has raw type=unknown
+  // but is correctly treated as mixed by the public filters.
   $("#resultMeta").innerHTML = videos.length
-    ? `<span class="result-total">전체 ${videos.length}개</span><span class="result-divider">·</span><strong>현재 결과 ${rows.length}개</strong>` +
-      (unknownCount ? `<span class="result-submeta">· 날짜 미확인 ${unknownCount}개</span>` : "")
+    ? `<span class="result-total">전체 ${videos.length}개</span><span class="result-divider">·</span><strong>현재 결과 ${rows.length}개</strong>`
     : "";
 
   const mode = currentView();
@@ -1599,6 +1600,9 @@ function renderAdminUnknownList() {
     v.contentType !== "playlist" &&
     (v.type === "unknown" || v.manualDateReviewPending)
   );
+  const ordinaryUnknown = unknown.filter(v => !v.manualDateReviewPending);
+  const descriptionChanges = unknown.filter(v => v.manualDateReviewPending);
+
   const undatedPlaylists = videos.filter(v =>
     v.contentType === "playlist" &&
     !isMultiYearPlaylist(v) &&
@@ -1608,12 +1612,20 @@ function renderAdminUnknownList() {
   if (badge) badge.textContent = `${unknown.length}개`;
   if (playlistBadge) playlistBadge.textContent = `${undatedPlaylists.length}개`;
 
+  const unknownCountEl = $("#adminReviewUnknownCount");
+  const descChangeEl = $("#adminDescriptionChangeCount");
+  const completeEl = $("#adminReviewComplete");
+
+  if (unknownCountEl) unknownCountEl.textContent = String(ordinaryUnknown.length);
+  if (descChangeEl) descChangeEl.textContent = String(descriptionChanges.length);
+  if (completeEl) completeEl.hidden = unknown.length !== 0;
+
   const tabCount = $("#adminReviewTabCount");
   if (tabCount) tabCount.textContent = String(unknown.length);
 
   wrap.innerHTML = unknown.length
     ? unknown.map(v => adminReviewItemHtml(v)).join("")
-    : `<p class="admin-help">현재 날짜 확인이 필요한 일반 영상이 없습니다.</p>`;
+    : `<div class="admin-empty-complete"><span>✓</span><div><strong>정리 완료</strong><p>현재 날짜 확인이 필요한 일반 영상이 없습니다.</p></div></div>`;
 
   if (playlistWrap) {
     playlistWrap.innerHTML = undatedPlaylists.length

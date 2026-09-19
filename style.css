@@ -2443,3 +2443,236 @@ mark{
   border-color:#e2dbe8;
   color:#75697d;
 }
+
+
+/* v15 usability cleanup */
+
+/* Public summary: only useful public-facing total remains. */
+.hero-stats-public{
+  display:flex;
+}
+.hero-stats-public span{
+  padding:6px 10px;
+}
+
+/* Admin mode behaves as a dedicated workspace. */
+body.admin-mode-open .public-archive-ui{
+  display:none !important;
+}
+body.admin-mode-open main.container{
+  padding-top:14px;
+}
+body.admin-mode-open #adminPanel{
+  margin-top:0;
+}
+body.admin-mode-open .site-header .channel-link{
+  display:none;
+}
+body.admin-mode-open .site-header{
+  box-shadow:0 1px 0 rgba(73,55,87,.08);
+}
+body.admin-mode-open .header-inner{
+  min-height:52px;
+}
+
+/* View switcher: icon + text, clearer on mobile. */
+.view-toggle{
+  gap:5px;
+}
+.view-toggle-btn{
+  width:auto;
+  min-width:58px;
+  height:34px;
+  padding:0 9px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+}
+.view-icon{
+  font-size:13px;
+  line-height:1;
+}
+.view-label{
+  font-size:10px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+/* Timeline playlists form one visually separate hub. */
+.timeline-playlist-hub{
+  margin-top:28px;
+  padding:16px;
+  border:1px solid #e4d8ed;
+  border-radius:18px;
+  background:#faf7fc;
+}
+.timeline-playlist-hub .timeline-year-heading{
+  padding-bottom:12px;
+  border-bottom:1px solid #e8dfee;
+}
+.timeline-playlist-hub .timeline-year-heading > div{
+  min-width:0;
+}
+.timeline-section-note{
+  margin:4px 0 0;
+  color:#8b8091;
+  font-size:10px;
+  font-weight:600;
+}
+.timeline-playlist-hub .timeline-month{
+  margin-top:14px;
+  padding:12px;
+  border-radius:14px;
+  background:#fff;
+}
+.timeline-playlist-hub .timeline-month h3{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.timeline-playlist-hub .timeline-month h3 small{
+  font-size:9px;
+  color:#998da0;
+  font-weight:800;
+}
+
+/* Review status overview. */
+.admin-review-overview{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:12px;
+}
+.admin-review-overview-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 14px;
+  border:1px solid #e5dde9;
+  border-radius:12px;
+  background:#fff;
+}
+.admin-review-overview-item span{
+  color:#776b7d;
+  font-size:10px;
+  font-weight:800;
+}
+.admin-review-overview-item strong{
+  font-size:18px;
+  color:#574463;
+}
+.admin-review-overview-item.description-change{
+  background:#faf6fd;
+}
+.admin-review-complete{
+  grid-column:1/-1;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px 14px;
+  border:1px solid #d9e6dc;
+  border-radius:12px;
+  background:#f6faf7;
+}
+.admin-review-complete[hidden]{
+  display:none;
+}
+.admin-review-complete-icon{
+  width:28px;
+  height:28px;
+  flex:0 0 28px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e4f0e7;
+  color:#4d7056;
+  font-weight:900;
+}
+.admin-review-complete strong,
+.admin-review-complete small{
+  display:block;
+}
+.admin-review-complete strong{
+  color:#4e6554;
+  font-size:11px;
+}
+.admin-review-complete small{
+  margin-top:2px;
+  color:#839087;
+  font-size:9px;
+}
+.admin-empty-complete{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:16px;
+  border:1px dashed #dbe4dd;
+  border-radius:12px;
+  background:#fbfdfb;
+}
+.admin-empty-complete>span{
+  display:grid;
+  place-items:center;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:#e6f0e8;
+  color:#54705a;
+  font-weight:900;
+}
+.admin-empty-complete strong{
+  display:block;
+  color:#56695a;
+  font-size:11px;
+}
+.admin-empty-complete p{
+  margin:3px 0 0;
+  color:#8a948c;
+  font-size:10px;
+}
+
+/* Mobile control spacing and readability. */
+@media (max-width:620px){
+  .toolbar-primary{
+    gap:8px;
+  }
+  .mobile-filter-toggle{
+    min-height:40px;
+    padding:0 12px;
+  }
+  .result-header{
+    gap:9px;
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .result-meta{
+    width:100%;
+  }
+  .view-toggle{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+  }
+  .view-toggle-btn{
+    width:100%;
+    min-width:0;
+    height:38px;
+  }
+  .view-label{
+    display:inline;
+    font-size:10px;
+  }
+  .admin-review-overview{
+    grid-template-columns:1fr;
+  }
+  .admin-review-complete{
+    grid-column:auto;
+  }
+  .timeline-playlist-hub{
+    padding:12px;
+    margin-top:20px;
+  }
+}
