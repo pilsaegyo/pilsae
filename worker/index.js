@@ -25,8 +25,55 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/channel-branding" && request.method === "GET") {
+        if (!env.YOUTUBE_API_KEY) {
+          throw new HttpError(500, "YOUTUBE_API_KEY Secret이 없습니다.");
+        }
+
+        const handle = env.YOUTUBE_HANDLE || "@pilsae";
+        const cache = caches.default;
+        const cacheKey = new Request(`${url.origin}/channel-branding-cache?handle=${encodeURIComponent(handle)}`);
+
+        let cached = await cache.match(cacheKey);
+        if (cached) {
+          const headers = new Headers(cached.headers);
+          headers.set("Access-Control-Allow-Origin", corsHeaders(env, origin)["Access-Control-Allow-Origin"]);
+          headers.set("Vary", "Origin");
+          return new Response(cached.body, { status: cached.status, headers });
+        }
+
+        const channel = await getChannel(handle, env.YOUTUBE_API_KEY);
+        const branding = extractChannelBranding(channel, handle);
+
+        const response = new Response(JSON.stringify({
+          ok: true,
+          channelId: channel.id,
+          ...branding
+        }), {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "public, max-age=3600",
+            ...corsHeaders(env, origin),
+          }
+        });
+
+        const cacheCopy = response.clone();
+        const cacheHeaders = new Headers(cacheCopy.headers);
+        cacheHeaders.delete("Access-Control-Allow-Origin");
+        cacheHeaders.delete("Vary");
+        await cache.put(cacheKey, new Response(cacheCopy.body, {
+          status: cacheCopy.status,
+          headers: cacheHeaders
+        }));
+
+        return response;
+      }
+
       if (url.pathname === "/sync-videos" && request.method === "POST") {
         requireAdmin(request, env);
+        const syncRequestBody = await request.json().catch(() => ({}));
+        const previewOnly = syncRequestBody?.previewOnly === true;
 
         const owner = env.GITHUB_OWNER || "pilsaegyo";
         const repo = env.GITHUB_REPO || "pilsae";
@@ -59,9 +106,45 @@ export default {
           items.push(...videos);
         }
 
+        const existingPayload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        }) || { videos: [] };
+        const existingById = new Map((existingPayload.videos || []).map(v => [String(v.id), v]));
+
         const normalized = items
           .map(normalizeYoutubeVideo)
           .filter(Boolean)
+          .map(video => {
+            const old = existingById.get(String(video.id));
+            if (!old) return video;
+            const manualDates = (old.dates || []).filter(d => d?.manual === true);
+            const oldDescription = normalizeDescriptionForCompare(old.description || "");
+            const newDescription = normalizeDescriptionForCompare(video.description || "");
+            const descriptionChanged = oldDescription !== newDescription;
+            const shouldReviewManualDate = manualDates.length > 0 && descriptionChanged;
+
+            return {
+              ...video,
+              dates: shouldReviewManualDate ? [] : manualDates,
+              previousManualDates: shouldReviewManualDate
+                ? manualDates
+                : (Array.isArray(old.previousManualDates) ? old.previousManualDates : []),
+              manualDateReviewPending: shouldReviewManualDate
+                ? true
+                : old.manualDateReviewPending === true,
+              descriptionChangedAfterManual: shouldReviewManualDate
+                ? true
+                : old.descriptionChangedAfterManual === true,
+              ignoredDateCandidates: Array.isArray(old.ignoredDateCandidates) ? old.ignoredDateCandidates.map(String) : [],
+              contentType: old.contentType === "playlist" ? "playlist" : "video",
+              playlistScope: old.playlistScope === "multi-year" ? "multi-year"
+                : old.playlistScope === "undated" ? "undated"
+                : "",
+              parseStatus: shouldReviewManualDate
+                ? "needs_review"
+                : (manualDates.length ? "parsed" : video.parseStatus)
+            };
+          })
           .sort((a, b) =>
             String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""))
           );
@@ -74,8 +157,20 @@ export default {
             id: channel.id,
             title: channel.snippet?.title || "",
             handle,
+            ...extractChannelBranding(channel, handle),
           },
         };
+
+        const syncPreview = buildSyncPreview(existingPayload.videos || [], normalized);
+
+        if (previewOnly) {
+          return jsonResponse({
+            ok: true,
+            preview: true,
+            total: normalized.length,
+            ...syncPreview
+          }, 200, env, origin);
+        }
 
         const result = await updateGithubFile({
           env,
@@ -93,14 +188,20 @@ export default {
 
         const branding = extractChannelBranding(channel, handle);
         const mergedConfig = {
+          ...existingConfig,
+
+          // User-managed settings are never replaced by a YouTube sync.
           title: existingConfig.title || "날짜로 다시 찾는 영상 기록",
           channelHandle: existingConfig.channelHandle || handle,
-          channelTitle: branding.channelTitle || existingConfig.channelTitle || "",
           faviconDataUrl: existingConfig.faviconDataUrl || "",
           faviconUrl: existingConfig.faviconUrl || "./assets/favicon-p.png",
+          adminApiUrl: existingConfig.adminApiUrl || `https://${new URL(request.url).host}`,
+
+          // Only YouTube-owned branding is refreshed.
+          channelTitle: branding.channelTitle || existingConfig.channelTitle || "",
           profileImageUrl: branding.profileImageUrl || existingConfig.profileImageUrl || "",
           bannerImageUrl: branding.bannerImageUrl || existingConfig.bannerImageUrl || "",
-          adminApiUrl: existingConfig.adminApiUrl || `https://${new URL(request.url).host}`,
+
           updatedAt: new Date().toISOString(),
           syncedFromYoutubeAt: new Date().toISOString(),
         };
@@ -124,6 +225,276 @@ export default {
           configCommitUrl: configResult.commit?.html_url || null,
           bannerImageUrl: mergedConfig.bannerImageUrl,
           profileImageUrl: mergedConfig.profileImageUrl,
+          ...syncPreview,
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/accept-description-date" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const videoId = String(body.videoId || "").trim();
+        if (!videoId) throw new HttpError(400, "영상 ID가 필요합니다.");
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+
+        video.manualDateReviewPending = false;
+        video.descriptionChangedAfterManual = false;
+        video.previousManualDates = [];
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Accept description date for ${videoId}`
+        });
+
+        return jsonResponse({
+          ok: true,
+          videoId,
+          commitUrl: result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/apply-date-overrides" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const videoId = String(body.videoId || "").trim();
+        const dates = Array.isArray(body.dates) ? body.dates : [];
+
+        if (!videoId || !dates.length || dates.length > 20) {
+          throw new HttpError(400, "적용할 날짜 목록이 올바르지 않습니다.");
+        }
+
+        const normalizedDates = dates.map(entry => {
+          const sourceDate = String(entry?.sourceDate || "").trim();
+          const precision = ["day","month","year"].includes(entry?.precision) ? entry.precision : "day";
+          if (!/^(19|20)\d{2}-\d{2}-\d{2}$/.test(sourceDate)) {
+            throw new HttpError(400, "날짜 형식이 올바르지 않습니다.");
+          }
+          return {
+            sourceDate,
+            source: "admin",
+            precision,
+            inferred: precision !== "day",
+            manual: true
+          };
+        });
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+
+        const currentDates = Array.isArray(video.dates) ? video.dates : [];
+        const merged = [...currentDates];
+
+        for (const entry of normalizedDates) {
+          const key = `${entry.sourceDate}|${entry.precision}`;
+          if (!merged.some(x => `${x.sourceDate}|${x.precision || "day"}` === key)) {
+            merged.push(entry);
+          }
+        }
+
+        video.dates = merged;
+        video.sourceDate = merged[0]?.sourceDate || video.sourceDate || null;
+        video.parseStatus = "parsed";
+        video.manualDateReviewPending = false;
+        video.descriptionChangedAfterManual = false;
+        video.previousManualDates = [];
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Apply ${normalizedDates.length} manual date override(s) to ${videoId}`
+        });
+
+        return jsonResponse({
+          ok: true,
+          videoId,
+          dates: normalizedDates,
+          commitUrl: result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/apply-date-override" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+        const videoId = String(body.videoId || "").trim();
+        const sourceDate = String(body.sourceDate || "").trim();
+        const precision = String(body.precision || "month").trim();
+        const candidateKey = String(body.candidateKey || body.candidateRaw || "").trim();
+
+        if (!videoId || !/^\d{4}-\d{2}-\d{2}$/.test(sourceDate) || !["day","month","year"].includes(precision)) {
+          throw new HttpError(400, "날짜 후보 적용 값이 올바르지 않습니다.");
+        }
+
+        const payload = await readGithubJsonFile({ env, owner, repo, branch, path: "data/videos.json" });
+        if (!payload || !Array.isArray(payload.videos)) throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+
+        const dates = Array.isArray(video.dates) ? video.dates : [];
+        const manualEntry = { sourceDate, source: "admin", precision, inferred: precision !== "day", manual: true };
+        if (!dates.some(d => d?.sourceDate === sourceDate && (d?.precision || "day") === precision)) dates.push(manualEntry);
+        video.dates = dates;
+        video.parseStatus = "parsed";
+        video.manualDateReviewPending = false;
+        video.descriptionChangedAfterManual = false;
+        video.previousManualDates = [];
+        if (candidateKey && Array.isArray(video.ignoredDateCandidates)) {
+          video.ignoredDateCandidates = video.ignoredDateCandidates.filter(x => String(x) !== candidateKey);
+        }
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Apply date override for ${videoId}`
+        });
+        return jsonResponse({ ok:true, videoId, sourceDate, precision, commitUrl:result.commit?.html_url || null }, 200, env, origin);
+      }
+
+      if (url.pathname === "/ignore-date-candidate" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+        const videoId = String(body.videoId || "").trim();
+        const candidateKey = String(body.candidateKey || body.candidateRaw || "").trim();
+        if (!videoId || !candidateKey || candidateKey.length > 120) {
+          throw new HttpError(400, "제외할 날짜 후보가 올바르지 않습니다.");
+        }
+
+        const payload = await readGithubJsonFile({ env, owner, repo, branch, path: "data/videos.json" });
+        if (!payload || !Array.isArray(payload.videos)) throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+        video.ignoredDateCandidates = [...new Set([...(video.ignoredDateCandidates || []).map(String), candidateKey])];
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Ignore date candidate for ${videoId}`
+        });
+        return jsonResponse({ ok:true, videoId, candidateKey, commitUrl:result.commit?.html_url || null }, 200, env, origin);
+      }
+
+      if (url.pathname === "/set-playlist-scope" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const videoId = String(body.videoId || "").trim();
+        const playlistScope = String(body.playlistScope || "").trim();
+
+        if (!videoId || !["multi-year", "undated"].includes(playlistScope)) {
+          throw new HttpError(400, "플레이리스트 범위 값이 올바르지 않습니다.");
+        }
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+        if (video.contentType !== "playlist") {
+          throw new HttpError(400, "플레이리스트로 지정된 영상만 범위를 설정할 수 있습니다.");
+        }
+
+        video.playlistScope = playlistScope;
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Set playlist scope ${playlistScope} for ${videoId}`
+        });
+
+        return jsonResponse({
+          ok: true,
+          videoId,
+          playlistScope,
+          commitUrl: result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/set-content-type" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const videoId = String(body.videoId || "").trim();
+        const contentType = String(body.contentType || "video").trim();
+
+        if (!videoId || !["video", "playlist"].includes(contentType)) {
+          throw new HttpError(400, "콘텐츠 유형 값이 올바르지 않습니다.");
+        }
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+
+        video.contentType = contentType;
+        if (contentType === "playlist") {
+          if (!["multi-year", "undated"].includes(video.playlistScope)) {
+            video.playlistScope = Array.isArray(video.dates) && video.dates.length ? "" : "undated";
+          }
+        } else {
+          video.playlistScope = "";
+        }
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `${contentType === "playlist" ? "Mark playlist" : "Mark regular video"} ${videoId}`
+        });
+
+        return jsonResponse({
+          ok: true,
+          videoId,
+          contentType,
+          commitUrl: result.commit?.html_url || null
         }, 200, env, origin);
       }
 
@@ -304,11 +675,27 @@ async function getVideos(ids, apiKey) {
   if (!ids.length) return [];
 
   const data = await youtubeFetch("videos", {
-    part: "snippet,status",
+    part: "snippet,status,contentDetails",
     id: ids.join(","),
   }, apiKey);
 
   return data.items || [];
+}
+
+function normalizeDescriptionForCompare(value="") {
+  return String(value || "")
+    .replace(/\r\n?/g, "\n")
+    .trim();
+}
+
+function parseIso8601Duration(value="") {
+  const m = String(value || "").match(/^P(?:(\d+)D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);
+  if (!m) return 0;
+  const days = Number(m[1] || 0);
+  const hours = Number(m[2] || 0);
+  const minutes = Number(m[3] || 0);
+  const seconds = Number(m[4] || 0);
+  return days * 86400 + hours * 3600 + minutes * 60 + seconds;
 }
 
 function normalizeYoutubeVideo(video) {
@@ -324,6 +711,8 @@ function normalizeYoutubeVideo(video) {
     "";
 
   const description = String(s.description || "");
+  const duration = String(video.contentDetails?.duration || "");
+  const durationSeconds = parseIso8601Duration(duration);
 
   return {
     id: String(video.id),
@@ -333,8 +722,13 @@ function normalizeYoutubeVideo(video) {
     sourceDate: null,
     publishedAt: String(s.publishedAt || ""),
     thumbnail,
+    duration,
+    durationSeconds,
     parseStatus: "needs_review",
+    contentType: "video",
+    playlistScope: "",
     dates: [],
+    ignoredDateCandidates: [],
   };
 }
 
@@ -377,6 +771,85 @@ function extractChannelBranding(channel, handle) {
   };
 }
 
+function compactPreviewText(value, max=90) {
+  const clean = String(value || "").replace(/\s+/g, " ").trim();
+  return clean.length > max ? clean.slice(0, max - 1) + "…" : clean;
+}
+
+function buildSyncPreview(existingVideos, nextVideos) {
+  const existingById = new Map((existingVideos || []).map(v => [String(v.id), v]));
+  const nextById = new Map((nextVideos || []).map(v => [String(v.id), v]));
+  const changes = [];
+
+  let added = 0;
+  let titleChanged = 0;
+  let descriptionChanged = 0;
+  let unchanged = 0;
+
+  for (const next of (nextVideos || [])) {
+    const old = existingById.get(String(next.id));
+
+    if (!old) {
+      added += 1;
+      changes.push({
+        kind: "신규",
+        id: String(next.id || ""),
+        title: String(next.title || "")
+      });
+      continue;
+    }
+
+    let changed = false;
+
+    if (String(old.title || "") !== String(next.title || "")) {
+      titleChanged += 1;
+      changed = true;
+      changes.push({
+        kind: "제목 변경",
+        id: String(next.id || ""),
+        title: String(next.title || ""),
+        before: compactPreviewText(old.title),
+        after: compactPreviewText(next.title)
+      });
+    }
+
+    if (normalizeDescriptionForCompare(old.description || "") !== normalizeDescriptionForCompare(next.description || "")) {
+      descriptionChanged += 1;
+      changed = true;
+      changes.push({
+        kind: "설명 변경",
+        id: String(next.id || ""),
+        title: String(next.title || old.title || ""),
+        before: compactPreviewText(old.description),
+        after: compactPreviewText(next.description)
+      });
+    }
+
+    if (!changed) unchanged += 1;
+  }
+
+  let removed = 0;
+  for (const old of (existingVideos || [])) {
+    if (!nextById.has(String(old.id))) {
+      removed += 1;
+      changes.push({
+        kind: "삭제 후보",
+        id: String(old.id || ""),
+        title: String(old.title || "")
+      });
+    }
+  }
+
+  return {
+    added,
+    titleChanged,
+    descriptionChanged,
+    removed,
+    unchanged,
+    changes
+  };
+}
+
 async function readGithubJsonFile({ env, owner, repo, branch, path }) {
   const apiPath = path.split("/").map(encodeURIComponent).join("/");
   const url = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${apiPath}?ref=${encodeURIComponent(branch)}`;
@@ -396,8 +869,7 @@ async function readGithubJsonFile({ env, owner, repo, branch, path }) {
   }
 
   const data = await res.json();
-  const content = String(data.content || "").replace(/
-/g, "");
+  const content = String(data.content || "").replace(/\n/g, "");
   if (!content) return null;
   return JSON.parse(fromBase64Utf8(content));
 }

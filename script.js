@@ -17,6 +17,7 @@ let videos = [];
 const PAGE_SIZE = 60;
 let visibleLimit = PAGE_SIZE;
 let mobileSuggestionExpanded = false;
+let lastSyncPreview = null;
 const $ = (sel) => document.querySelector(sel);
 
 function escapeHTML(value="") {
@@ -730,6 +731,118 @@ async function adminApi(path, options={}) {
   return data;
 }
 
+function formatAdminDateTime(value) {
+  if (!value) return "기록 없음";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return "기록 없음";
+  return new Intl.DateTimeFormat("ko-KR", {
+    year:"numeric", month:"2-digit", day:"2-digit",
+    hour:"2-digit", minute:"2-digit"
+  }).format(dt);
+}
+
+function adminHealthIssues() {
+  const issues = [];
+  const idCounts = new Map();
+
+  videos.forEach(v => {
+    const id = String(v.id || "");
+    if (id) idCounts.set(id, (idCounts.get(id) || 0) + 1);
+  });
+
+  idCounts.forEach((count, id) => {
+    if (count > 1) {
+      issues.push({ type:"중복 ID", severity:"high", title:id, detail:`같은 YouTube ID가 ${count}번 존재합니다.` });
+    }
+  });
+
+  const currentYear = new Date().getFullYear();
+
+  videos.forEach(v => {
+    const title = v.title || v.id || "제목 없음";
+
+    if (!String(v.thumbnail || "").trim()) {
+      issues.push({ type:"썸네일 없음", severity:"medium", title, detail:"썸네일 URL이 비어 있습니다." });
+    }
+
+    if (!String(v.source || "").trim()) {
+      issues.push({ type:"출처 없음", severity:"low", title, detail:"출처 정보가 없습니다." });
+    }
+
+    if (v.contentType !== "playlist" && (v.type === "unknown" || !(v.dates || []).some(d => d?.sourceDate))) {
+      issues.push({ type:"날짜 미확인", severity:"medium", title, detail:"일반 영상의 날짜가 확인되지 않았습니다." });
+    }
+
+    if (v.manualDateReviewPending || v.descriptionChangedAfterManual) {
+      issues.push({ type:"설명 변경 재검토", severity:"high", title, detail:"수동 날짜 지정 후 설명이 변경되어 재검토가 필요합니다." });
+    }
+
+    for (const d of (v.dates || [])) {
+      const raw = String(d?.sourceDate || "");
+      const year = Number(raw.slice(0,4));
+      if (raw && (!/^(19|20)\d{2}-\d{2}-\d{2}$/.test(raw) || year > currentYear + 1)) {
+        issues.push({ type:"날짜 형식 확인", severity:"high", title, detail:`확인이 필요한 날짜: ${raw}` });
+        break;
+      }
+    }
+
+    if (v.contentType === "playlist" && !isMultiYearPlaylist(v) && v.playlistScope !== "undated" && v.type === "unknown") {
+      issues.push({ type:"플레이리스트 분류 확인", severity:"low", title, detail:"다년도 또는 연도 미지정 분류를 확인해 주세요." });
+    }
+  });
+
+  return issues;
+}
+
+function renderAdminDashboard() {
+  if (!$("#dashTotal")) return;
+
+  const total = videos.length;
+  const review = videos.filter(v =>
+    v.contentType !== "playlist" &&
+    (v.type === "unknown" || v.manualDateReviewPending)
+  ).length;
+  const descriptionReview = videos.filter(v => v.manualDateReviewPending || v.descriptionChangedAfterManual).length;
+  const playlists = videos.filter(v => v.contentType === "playlist").length;
+  const unknown = videos.filter(v => v.contentType !== "playlist" && v.type === "unknown").length;
+
+  $("#dashTotal").textContent = `${total}개`;
+  $("#dashReview").textContent = `${review}개`;
+  $("#dashDescription").textContent = `${descriptionReview}개`;
+  $("#dashPlaylists").textContent = `${playlists}개`;
+  $("#dashUnknown").textContent = `${unknown}개`;
+  $("#dashLastSync").textContent = formatAdminDateTime(siteConfig.syncedFromYoutubeAt);
+
+  const issues = adminHealthIssues();
+  const badge = $("#adminHealthBadge");
+  const summary = $("#adminHealthSummary");
+  const list = $("#adminHealthList");
+
+  if (badge) badge.textContent = `${issues.length}건`;
+
+  if (summary) {
+    const counts = new Map();
+    issues.forEach(issue => counts.set(issue.type, (counts.get(issue.type) || 0) + 1));
+    summary.innerHTML = issues.length
+      ? [...counts.entries()].map(([type,count]) =>
+          `<span class="admin-health-chip">${escapeHTML(type)} <b>${count}</b></span>`
+        ).join("")
+      : `<span class="admin-health-ok">✓ 현재 자동 점검에서 이상 항목이 없습니다.</span>`;
+  }
+
+  if (list) {
+    list.innerHTML = issues.length
+      ? issues.slice(0, 40).map(issue => `
+          <div class="admin-health-item severity-${escapeHTML(issue.severity)}">
+            <span class="admin-health-type">${escapeHTML(issue.type)}</span>
+            <div><strong>${escapeHTML(issue.title)}</strong><small>${escapeHTML(issue.detail)}</small></div>
+          </div>
+        `).join("") +
+        (issues.length > 40 ? `<p class="admin-help">총 ${issues.length}건 중 앞 40건만 표시합니다.</p>` : "")
+      : "";
+  }
+}
+
 function updateAdminSummary() {
   const total = videos.length;
   const review = videos.filter(v =>
@@ -741,6 +854,8 @@ function updateAdminSummary() {
   if ($("#adminCurrentTotal")) $("#adminCurrentTotal").textContent = `${total}개`;
   if ($("#adminParsedTotal")) $("#adminParsedTotal").textContent = `${parsed}개`;
   if ($("#adminReviewTotal")) $("#adminReviewTotal").textContent = `${review}개`;
+
+  renderAdminDashboard();
 }
 
 function allYears() {
@@ -1753,51 +1868,6 @@ function renderEmptyStateActions() {
   wrap.innerHTML = actions.join("");
 }
 
-async function copyCurrentViewLink() {
-  // Ensure the URL reflects the currently selected filters/view before copying.
-  syncUrlState({ replace:true });
-  const url = location.href;
-  const labels = [
-    $("#copyCurrentLinkLabel"),
-    $("#copyCurrentLinkQuickLabel")
-  ].filter(Boolean);
-
-  try {
-    if (navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(url);
-    } else {
-      const textarea = document.createElement("textarea");
-      textarea.value = url;
-      textarea.setAttribute("readonly", "");
-      textarea.style.position = "fixed";
-      textarea.style.opacity = "0";
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      textarea.remove();
-    }
-
-    labels.forEach(label => {
-      label.textContent = label.id === "copyCurrentLinkQuickLabel" ? "복사됨" : "링크가 복사됐어요";
-    });
-    window.setTimeout(() => {
-      labels.forEach(label => {
-        label.textContent = label.id === "copyCurrentLinkQuickLabel" ? "링크 복사" : "현재 화면 링크 복사";
-      });
-    }, 1600);
-  } catch (err) {
-    console.warn("현재 화면 링크 복사 실패", err);
-    labels.forEach(label => {
-      label.textContent = "복사 실패";
-    });
-    window.setTimeout(() => {
-      labels.forEach(label => {
-        label.textContent = label.id === "copyCurrentLinkQuickLabel" ? "링크 복사" : "현재 화면 링크 복사";
-      });
-    }, 1600);
-  }
-}
-
 function render() {
   $("#loadingState")?.setAttribute("hidden", "");
 
@@ -2163,6 +2233,48 @@ function setSiteHelp(open) {
   }
 }
 
+function renderSyncPreview(data) {
+  const panel = $("#syncPreviewPanel");
+  if (!panel || !data) return;
+
+  lastSyncPreview = data;
+  panel.hidden = false;
+
+  $("#syncPreviewAdded").textContent = String(data.added || 0);
+  $("#syncPreviewTitle").textContent = String(data.titleChanged || 0);
+  $("#syncPreviewDescription").textContent = String(data.descriptionChanged || 0);
+  $("#syncPreviewRemoved").textContent = String(data.removed || 0);
+  $("#syncPreviewUnchanged").textContent = String(data.unchanged || 0);
+
+  const details = $("#syncPreviewDetails");
+  if (details) {
+    const rows = Array.isArray(data.changes) ? data.changes : [];
+    details.innerHTML = rows.length
+      ? rows.slice(0, 30).map(change => `
+          <div class="sync-preview-item">
+            <span class="sync-preview-kind">${escapeHTML(change.kind || "변경")}</span>
+            <div>
+              <strong>${escapeHTML(change.title || change.id || "제목 없음")}</strong>
+              ${change.before ? `<small>이전: ${escapeHTML(change.before)}</small>` : ""}
+              ${change.after ? `<small>변경: ${escapeHTML(change.after)}</small>` : ""}
+            </div>
+          </div>
+        `).join("") + (rows.length > 30 ? `<p class="admin-help">상세 변경 ${rows.length}건 중 앞 30건만 표시합니다.</p>` : "")
+      : `<p class="admin-help">변경되는 영상이 없습니다.</p>`;
+  }
+
+  const applyBtn = $("#syncYoutubeVideos");
+  if (applyBtn) applyBtn.disabled = false;
+}
+
+function resetSyncPreview() {
+  lastSyncPreview = null;
+  const panel = $("#syncPreviewPanel");
+  const applyBtn = $("#syncYoutubeVideos");
+  if (panel) panel.hidden = true;
+  if (applyBtn) applyBtn.disabled = true;
+}
+
 function bindEvents() {
   $("#siteHelpBtn")?.addEventListener("click", () => {
     const panel = $("#siteHelpPanel");
@@ -2171,8 +2283,6 @@ function bindEvents() {
 
   $("#siteHelpClose")?.addEventListener("click", () => setSiteHelp(false));
   $("#siteHelpBackdrop")?.addEventListener("click", () => setSiteHelp(false));
-  $("#copyCurrentLinkBtn")?.addEventListener("click", copyCurrentViewLink);
-  $("#copyCurrentLinkQuickBtn")?.addEventListener("click", copyCurrentViewLink);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !$("#siteHelpPanel")?.hidden) {
@@ -2593,7 +2703,7 @@ function bindEvents() {
 
   document.querySelectorAll("[data-admin-tab]").forEach(btn => {
     btn.addEventListener("click", () => {
-      const tab = btn.dataset.adminTab || "sync";
+      const tab = btn.dataset.adminTab || "dashboard";
       setAdminTab(tab);
       if (tab === "content") renderAdminContentList();
     });
@@ -2752,6 +2862,45 @@ function bindEvents() {
     }
   });
 
+  $("#previewYoutubeSync")?.addEventListener("click", async () => {
+    const button = $("#previewYoutubeSync");
+    const status = $("#syncStatus");
+
+    if (!getAdminToken()) {
+      setAdminStatus(status, "먼저 ADMIN_TOKEN을 입력하고 '이 세션에서 사용'을 눌러 주세요.", "error");
+      return;
+    }
+
+    button.disabled = true;
+    resetSyncPreview();
+    setAdminStatus(status, "YouTube 최신 상태와 현재 데이터를 비교하는 중입니다…", "loading");
+
+    try {
+      const data = await adminApi("/sync-videos", {
+        method: "POST",
+        body: JSON.stringify({ previewOnly:true })
+      });
+
+      renderSyncPreview(data);
+      const changed = Number(data.added || 0) + Number(data.titleChanged || 0) +
+        Number(data.descriptionChanged || 0) + Number(data.removed || 0);
+
+      setAdminStatus(
+        status,
+        changed
+          ? `미리보기 완료 · 변경 대상 ${changed}건. 내용을 확인한 뒤 '변경사항 적용'을 눌러 주세요.`
+          : "미리보기 완료 · 현재 YouTube와 동일하여 적용할 변경사항이 없습니다.",
+        changed ? "success" : "success"
+      );
+
+      if (!changed && $("#syncYoutubeVideos")) $("#syncYoutubeVideos").disabled = true;
+    } catch (err) {
+      setAdminStatus(status, err.message, "error");
+    } finally {
+      button.disabled = false;
+    }
+  });
+
   $("#syncYoutubeVideos")?.addEventListener("click", async () => {
     const button = $("#syncYoutubeVideos");
     const status = $("#syncStatus");
@@ -2761,17 +2910,22 @@ function bindEvents() {
       return;
     }
 
+    if (!lastSyncPreview) {
+      setAdminStatus(status, "먼저 변경사항 미리보기를 실행해 주세요.", "error");
+      return;
+    }
+
     button.disabled = true;
     setAdminStatus(
       status,
-      "YouTube에서 전체 영상 목록을 가져오고 GitHub videos.json을 교체하는 중입니다. 잠시 기다려 주세요…",
+      "확인한 변경사항을 GitHub videos.json에 적용하는 중입니다. 잠시 기다려 주세요…",
       "loading"
     );
 
     try {
       const data = await adminApi("/sync-videos", {
         method: "POST",
-        body: "{}"
+        body: JSON.stringify({ previewOnly:false })
       });
 
       setAdminStatus(
@@ -2779,9 +2933,9 @@ function bindEvents() {
         `업데이트 완료 · ${data.total}개 영상 · 채널 프로필/헤더 이미지 동기화 포함. Cloudflare 새 배포가 완료되면 새로고침해 주세요.`,
         "success"
       );
+      resetSyncPreview();
     } catch (err) {
       setAdminStatus(status, err.message, "error");
-    } finally {
       button.disabled = false;
     }
   });
