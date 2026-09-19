@@ -1,6 +1,14 @@
 {
   "backups": [
     {
+      "id": "1789835420731-2",
+      "slot": 2,
+      "path": "data/backups/videos-2.json",
+      "reason": "manual",
+      "createdAt": "2026-09-19T16:30:20.731Z",
+      "total": 641
+    },
+    {
       "id": "1789832697811-1",
       "slot": 1,
       "path": "data/backups/videos-1.json",
@@ -9,6 +17,6 @@
       "total": 641
     }
   ],
-  "nextSlot": 2,
-  "updatedAt": "2026-09-19T15:44:57.811Z"
+  "nextSlot": 3,
+  "updatedAt": "2026-09-19T16:30:20.731Z"
 }
