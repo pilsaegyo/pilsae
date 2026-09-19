@@ -1,6 +1,16 @@
 {
   "entries": [
     {
+      "id": "d3bcfdbd-edcd-4864-b1ef-3f38ecde54b8",
+      "action": "playlist_scope",
+      "videoId": "aJopPbP0Odk",
+      "title": "이 목소리에 한번 빠지면 못 나옵니다 | 🎧 𝓹𝓪𝓻𝓽 𝓹𝓵𝓪𝔂𝓵𝓲𝓼𝓽｜01-02 신혜성 노래 모음.zip |  #신혜성",
+      "before": "multi-year",
+      "after": "undated",
+      "undoOf": "",
+      "changedAt": "2026-09-19T12:41:25.919Z"
+    },
+    {
       "id": "67309447-a17f-4bdd-a894-5c7ebf3a78e4",
       "action": "playlist_scope",
       "videoId": "aJopPbP0Odk",
@@ -11,5 +21,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-19T12:31:07.152Z"
-}\n
+  "updatedAt": "2026-09-19T12:41:25.919Z"
+}
