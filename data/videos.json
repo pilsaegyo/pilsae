@@ -1333,7 +1333,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "standard",
+      "videoFormatSource": "manual",
+      "videoFormatConfidence": "",
+      "videoFormatReason": ""
     },
     {
       "id": "pUCKnfeLPWE",
@@ -14298,7 +14302,7 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T16:50:01.221Z",
+  "generatedAt": "2026-09-19T17:36:05.960Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
