@@ -5210,7 +5210,7 @@
       "durationSeconds": 6478,
       "parseStatus": "parsed",
       "contentType": "playlist",
-      "playlistScope": "undated",
+      "playlistScope": "multi-year",
       "dates": [
         {
           "sourceDate": "1998-01-01",
@@ -12814,7 +12814,7 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T12:41:51.572Z",
+  "generatedAt": "2026-09-19T12:44:58.059Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
