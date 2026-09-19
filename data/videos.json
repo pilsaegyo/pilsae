@@ -2815,11 +2815,19 @@
       "title": "신화 새우깡 #신혜성 #신화",
       "description": "제목 : [공식] 신화 새우깡 CF 촬영현장\n채널 : 셩공시대님\n링크 : https://youtu.be/yYPydW6WIPo?si=HitzWoXIz-wuQS4q\n\n제목 : [공식] 신화 새우깡 CF NG 모음\n채널 : 셩공시대님\n링크 : https://youtu.be/aR2PiTLrla8?si=zUm3zJSwxUl4ivQL\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "제목 : [공식] 신화 새우깡 CF 촬영현장",
-      "sourceDate": null,
+      "sourceDate": "2001-01-01",
       "publishedAt": "2026-01-13T12:31:00Z",
       "thumbnail": "https://i.ytimg.com/vi/WPaMhgL8wiM/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8101,7 +8109,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:15:12.223Z",
+  "generatedAt": "2026-09-19T04:19:27.795Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
