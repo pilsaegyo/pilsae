@@ -385,20 +385,22 @@ export default {
               playlistScope: old.playlistScope === "multi-year" ? "multi-year"
                 : old.playlistScope === "undated" ? "undated"
                 : "",
-              videoFormat: ["manual", "confirmed"].includes(old.videoFormatSource) && ["standard", "shorts"].includes(old.videoFormat)
+              videoFormat: ["manual", "confirmed", "youtube"].includes(old.videoFormatSource) && ["standard", "shorts"].includes(old.videoFormat)
                 ? old.videoFormat
                 : video.videoFormat,
-              videoFormatSource: ["manual", "confirmed"].includes(old.videoFormatSource)
+              videoFormatSource: ["manual", "confirmed", "youtube"].includes(old.videoFormatSource)
                 ? old.videoFormatSource
                 : "auto",
-              videoFormatConfidence: ["manual", "confirmed"].includes(old.videoFormatSource)
+              videoFormatConfidence: ["manual", "confirmed", "youtube"].includes(old.videoFormatSource)
                 ? ""
                 : (video.videoFormatConfidence || ""),
               videoFormatReason: old.videoFormatSource === "confirmed"
                 ? (old.videoFormatReason || "관리자가 자동 판별 결과를 확인했습니다.")
-                : old.videoFormatSource === "manual"
-                  ? ""
-                  : (video.videoFormatReason || ""),
+                : old.videoFormatSource === "youtube"
+                  ? (old.videoFormatReason || "YouTube 공개 페이지에서 Shorts 분류를 확인했습니다.")
+                  : old.videoFormatSource === "manual"
+                    ? ""
+                    : (video.videoFormatReason || ""),
               parseStatus: shouldReviewManualDate
                 ? "needs_review"
                 : (manualDates.length ? "parsed" : video.parseStatus)
@@ -866,6 +868,111 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/probe-video-formats" && request.method === "POST") {
+        requireAdmin(request, env);
+
+        const body = await request.json();
+        const videoIds = Array.isArray(body.videoIds)
+          ? [...new Set(body.videoIds.map(x => String(x || "").trim()).filter(Boolean))]
+          : [];
+
+        if (!videoIds.length) {
+          throw new HttpError(400, "확인할 영상 ID가 없습니다.");
+        }
+        if (videoIds.length > 20) {
+          throw new HttpError(400, "한 번에 최대 20개까지 확인할 수 있습니다.");
+        }
+
+        const results = await Promise.all(videoIds.map(probeYoutubeVideoFormat));
+        return jsonResponse({ ok:true, results }, 200, env, origin);
+      }
+
+      if (url.pathname === "/apply-video-format-probes" && request.method === "POST") {
+        requireAdmin(request, env);
+
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const valid = (Array.isArray(body.results) ? body.results : [])
+          .map(item => ({
+            videoId:String(item?.videoId || "").trim(),
+            videoFormat:String(item?.videoFormat || "").trim(),
+            reason:String(item?.reason || "").trim()
+          }))
+          .filter(item => item.videoId && ["standard","shorts"].includes(item.videoFormat));
+
+        if (!valid.length) {
+          throw new HttpError(400, "저장할 자동 확인 결과가 없습니다.");
+        }
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path:"data/videos.json"
+        });
+
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        await createAdminBackup({
+          env, owner, repo, branch,
+          currentPayload: payload,
+          reason: "before_format_verify"
+        });
+
+        const byId = new Map(valid.map(item => [item.videoId, item]));
+        const applied = [];
+
+        for (const video of payload.videos) {
+          const item = byId.get(String(video.id));
+          if (!item) continue;
+
+          // Explicit human decisions always win.
+          if (["manual", "confirmed"].includes(video.videoFormatSource)) continue;
+
+          video.videoFormat = item.videoFormat;
+          video.videoFormatSource = "youtube";
+          video.videoFormatConfidence = "";
+          video.videoFormatReason = item.reason ||
+            "YouTube 공개 페이지에서 Shorts 분류를 확인했습니다.";
+
+          applied.push({
+            videoId:String(video.id),
+            videoFormat:video.videoFormat,
+            reason:video.videoFormatReason
+          });
+        }
+
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path:"data/videos.json",
+          contentText:JSON.stringify(payload, null, 2) + "\n",
+          message:`Verify YouTube video formats (${applied.length})`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry:{
+            action:"video_format_youtube_verify",
+            title:"YouTube 동영상 타입 자동 확인",
+            before:{ pending:valid.length },
+            after:{
+              applied:applied.length,
+              shorts:applied.filter(x => x.videoFormat === "shorts").length,
+              standard:applied.filter(x => x.videoFormat === "standard").length
+            }
+          }
+        });
+
+        return jsonResponse({
+          ok:true,
+          results:applied,
+          commitUrl:result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
       if (url.pathname === "/confirm-video-format" && request.method === "POST") {
         requireAdmin(request, env);
 
@@ -874,9 +981,14 @@ export default {
         const branch = env.GITHUB_BRANCH || "main";
         const body = await request.json();
         const videoId = String(body.videoId || "").trim();
+        const requestedFormat = String(body.videoFormat || "").trim();
 
         if (!videoId) {
           throw new HttpError(400, "확인할 영상 ID가 필요합니다.");
+        }
+
+        if (requestedFormat && !["standard", "shorts"].includes(requestedFormat)) {
+          throw new HttpError(400, "확인할 동영상 타입 값이 올바르지 않습니다.");
         }
 
         const payload = await readGithubJsonFile({
@@ -890,12 +1002,16 @@ export default {
         const video = payload.videos.find(v => String(v.id) === videoId);
         if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
 
-        if (!["standard", "shorts"].includes(video.videoFormat)) {
+        const currentFormat = ["standard", "shorts"].includes(video.videoFormat)
+          ? video.videoFormat
+          : (["standard", "shorts"].includes(requestedFormat) ? requestedFormat : "");
+
+        if (!currentFormat) {
           throw new HttpError(400, "현재 동영상 타입을 확인할 수 없습니다.");
         }
 
         const before = {
-          videoFormat: video.videoFormat,
+          videoFormat: currentFormat,
           videoFormatSource: ["manual", "confirmed"].includes(video.videoFormatSource)
             ? video.videoFormatSource
             : "auto",
@@ -903,6 +1019,7 @@ export default {
           videoFormatReason: String(video.videoFormatReason || "")
         };
 
+        video.videoFormat = currentFormat;
         video.videoFormatSource = "confirmed";
         video.videoFormatConfidence = "";
         video.videoFormatReason = "관리자가 자동 판별 결과를 확인했습니다.";
@@ -1247,6 +1364,65 @@ function detectYoutubeVideoFormat(video) {
     return { format:"shorts", confidence:"low", reason:"2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요" };
   }
   return { format:"standard", confidence:"high", reason:"자동 기준상 일반동영상" };
+}
+
+function extractYoutubeShortsEligibility(html="") {
+  const match = String(html || "").match(/"isShortsEligible"\s*:\s*(true|false)/);
+  return match ? match[1] === "true" : null;
+}
+
+async function probeYoutubeVideoFormat(videoId) {
+  const id = String(videoId || "").trim();
+
+  try {
+    const response = await fetch(
+      `https://www.youtube.com/watch?v=${encodeURIComponent(id)}&hl=en`,
+      {
+        method: "GET",
+        redirect: "follow",
+        headers: {
+          "User-Agent": "Mozilla/5.0 (compatible; PilsaeArchive/1.0)",
+          "Accept": "text/html,application/xhtml+xml",
+          "Accept-Language": "en-US,en;q=0.8"
+        }
+      }
+    );
+
+    if (!response.ok) {
+      return { videoId:id, videoFormat:"", reason:`YouTube 응답 ${response.status}` };
+    }
+
+    const html = await response.text();
+    const eligible = extractYoutubeShortsEligibility(html);
+
+    if (eligible === true) {
+      return {
+        videoId:id,
+        videoFormat:"shorts",
+        reason:"YouTube 공개 페이지에서 Shorts 분류 확인"
+      };
+    }
+
+    if (eligible === false) {
+      return {
+        videoId:id,
+        videoFormat:"standard",
+        reason:"YouTube 공개 페이지에서 일반동영상 분류 확인"
+      };
+    }
+
+    return {
+      videoId:id,
+      videoFormat:"",
+      reason:"YouTube 페이지에서 Shorts 분류값을 찾지 못함"
+    };
+  } catch (error) {
+    return {
+      videoId:id,
+      videoFormat:"",
+      reason:`YouTube 확인 실패: ${String(error?.message || error)}`
+    };
+  }
 }
 
 function normalizeYoutubeVideo(video) {

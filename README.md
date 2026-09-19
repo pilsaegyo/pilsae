@@ -700,3 +700,22 @@
 - 일반동영상/Shorts 버튼으로 직접 변경하면 기존처럼 수동 지정으로 저장.
 - 확인 작업도 관리자 변경 이력에 기록되고 되돌리기 지원.
 - Worker 변경 있음.
+
+
+## v25.2 현재 판별 확정 오류 수정
+- 기존 videos.json에 `videoFormat` 필드가 아직 저장되지 않은 영상도 관리자 화면에서는 클라이언트에서 정상화된 타입을 표시할 수 있었음.
+- 이 상태에서 `현재 판별 확정`을 누르면 Worker가 raw videos.json만 보고 타입이 없다고 판단해 `현재 동영상 타입을 확인할 수 없습니다.` 오류가 발생하던 문제 수정.
+- 확정 요청 시 현재 화면에서 판별된 `standard/shorts` 값을 함께 전달하고, Worker는 저장된 값이 없으면 전달받은 현재 판별값을 사용해 `confirmed` 상태로 저장.
+- Worker 변경 있음.
+
+
+## v25.3 YouTube Shorts 자동 일괄 확인
+- 관리자 콘텐츠 분류에 `확인 필요 영상 자동 확인` 버튼 추가.
+- 현재 확인 필요 영상을 15개씩 자동 처리하므로 600개를 하나씩 수동 확정할 필요 없음.
+- Worker가 각 영상의 YouTube 공개 watch 페이지를 읽고 player microformat의 `isShortsEligible` 값을 우선 확인.
+- 명확히 판별된 결과만 `videoFormatSource=youtube`로 일괄 저장.
+- 자동 확인 불가 항목만 `확인 필요`에 남음.
+- 수동 지정/관리자 확인 완료 값은 자동 확인이 덮어쓰지 않음.
+- 대량 반영 전 자동 복원 지점 생성.
+- 공식 YouTube Data API의 Shorts 전용 필드가 아니라 YouTube 공개 페이지의 player microformat 신호를 이용하는 best-effort 방식임.
+- Worker 변경 있음.

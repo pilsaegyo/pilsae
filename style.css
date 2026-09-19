@@ -4841,3 +4841,39 @@ h1,h2,h3,.brand-main{font-weight:650}
   background:#eee4f3;
   outline:none;
 }
+
+
+/* v25.3 bulk YouTube Shorts verification */
+.admin-video-format-verify{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin:0 0 12px;
+  padding:13px 14px;
+  border:1px solid #e8e0ec;
+  border-radius:13px;
+  background:#faf8fb;
+}
+.admin-video-format-verify > div{min-width:0}
+.admin-video-format-verify strong{
+  display:block;
+  margin-bottom:3px;
+  font-size:12px;
+  color:#5d4d68;
+}
+.admin-video-format-verify .admin-help{
+  margin:0;
+  max-width:680px;
+}
+.admin-video-format-verify button{
+  flex:0 0 auto;
+  min-height:38px;
+}
+@media (max-width:620px){
+  .admin-video-format-verify{
+    align-items:stretch;
+    flex-direction:column;
+  }
+  .admin-video-format-verify button{width:100%}
+}
