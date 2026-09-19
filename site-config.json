@@ -1,10 +1,7 @@
 {
-  "title": "날짜로 다시 찾는 영상 기록",
+  "title": "필새 아카이브",
   "channelHandle": "@pilsae",
-  "channelTitle": "필새",
   "faviconDataUrl": "",
-  "faviconUrl": "./assets/favicon-p.png",
-  "profileImageUrl": "",
-  "bannerImageUrl": "",
-  "adminApiUrl": "https://pilsae-admin-api.hyesung.workers.dev"
+  "adminApiUrl": "https://pilsae-admin-api.hyesung.workers.dev",
+  "updatedAt": "2026-09-19T00:23:06.217Z"
 }
