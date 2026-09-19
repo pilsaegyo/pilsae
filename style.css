@@ -4724,3 +4724,375 @@ select{
     padding:0 12px;
   }
 }
+
+
+/* v24.5 design polish -------------------------------------------------- */
+
+/* 1) Desktop compact search: search first, filters quieter and tighter */
+@media (min-width:901px){
+  .toolbar-panel.is-compact-sticky{
+    grid-template-columns:minmax(300px,1.55fr) minmax(610px,2.8fr);
+    gap:7px;
+    padding:7px 9px;
+  }
+
+  .toolbar-panel.is-compact-sticky .filter-extra{
+    grid-template-columns:
+      minmax(96px,.75fr)
+      minmax(104px,.82fr)
+      minmax(108px,.86fr)
+      minmax(108px,.86fr)
+      minmax(136px,1.05fr)
+      auto;
+    gap:6px;
+  }
+
+  .toolbar-panel.is-compact-sticky .field{
+    min-height:42px;
+    padding:4px 8px 3px;
+  }
+
+  .toolbar-panel.is-compact-sticky .search-field{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .toolbar-panel.is-compact-sticky .search-control{
+    min-height:32px;
+  }
+
+  .toolbar-panel.is-compact-sticky .reset-filter-button{
+    min-height:42px;
+    padding:0 11px;
+    white-space:nowrap;
+  }
+}
+
+/* 2) Public views: same information rhythm — date > title > source */
+.video-grid.list-view .source{
+  display:block;
+  margin-top:4px;
+  font-size:10px;
+  line-height:1.4;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.video-grid.list-view .source-context-link{
+  max-width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  vertical-align:bottom;
+}
+
+.timeline-source{
+  margin-top:4px;
+  color:#8b828f;
+  font-size:9px;
+  line-height:1.4;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.timeline-item-date{
+  margin-bottom:3px;
+}
+
+.timeline-title{
+  line-height:1.42;
+}
+
+/* Type icon should stay useful but not dominate thumbnails. */
+.video-format-icon{
+  width:26px;
+  height:26px;
+  background:rgba(23,21,26,.72);
+  box-shadow:0 2px 7px rgba(0,0,0,.10);
+}
+
+.video-format-icon svg{
+  width:16px;
+  height:16px;
+}
+
+.list-view .video-format-icon,
+.timeline-thumb .video-format-icon{
+  width:22px;
+  height:22px;
+  right:6px;
+  bottom:6px;
+}
+
+.list-view .video-format-icon svg,
+.timeline-thumb .video-format-icon svg{
+  width:14px;
+  height:14px;
+}
+
+/* Archive cards: less "floating app card", more calm archive surface. */
+.video-card{
+  box-shadow:0 4px 14px rgba(60,48,80,.035);
+}
+
+.video-card:hover{
+  transform:translateY(-2px);
+  border-color:#e0d8e8;
+  box-shadow:0 8px 20px rgba(77,58,108,.065);
+}
+
+/* 3) Admin: lower box density, retain borders only where hierarchy matters */
+.admin-page .admin-card{
+  margin:10px 0;
+  padding:18px;
+  border-color:#ece7ef;
+  border-radius:16px;
+  box-shadow:none;
+}
+
+.admin-page .admin-dashboard-card{
+  min-height:82px;
+  padding:13px 14px;
+  border-color:#ebe5ee;
+  border-radius:14px;
+  box-shadow:none;
+}
+
+.admin-page .admin-health-card,
+.admin-page .admin-content-card,
+.admin-page .admin-history-card{
+  border-color:#e8e1eb;
+  background:rgba(255,255,255,.82);
+}
+
+.admin-page .admin-content-item,
+.admin-page .admin-health-item,
+.admin-page .admin-review-item{
+  border-color:#eee9f1;
+  box-shadow:none;
+}
+
+.admin-page .admin-content-item{
+  padding-top:12px;
+  padding-bottom:12px;
+}
+
+.admin-page .playlist-scope-block,
+.admin-page .video-format-admin-block{
+  background:#faf8fb;
+  border-color:#ece6ef;
+  border-radius:11px;
+}
+
+.admin-page .admin-review-heading{
+  margin-bottom:10px;
+}
+
+.admin-page .admin-help{
+  line-height:1.5;
+}
+
+@media (max-width:620px){
+  .timeline-source{
+    font-size:9px;
+  }
+
+  .video-grid.list-view .source{
+    font-size:9px;
+  }
+}
+
+
+/* v24.7 regression restoration --------------------------------------- */
+
+/* Stable PC compact toolbar:
+   keep a placeholder in normal flow and make only the compact bar fixed.
+   This prevents height changes from moving the scroll threshold. */
+@media (min-width:621px){
+  .toolbar-panel{
+    position:relative;
+    top:auto;
+  }
+
+  .toolbar-fixed-placeholder[hidden]{
+    display:none;
+  }
+
+  .toolbar-fixed-placeholder{
+    display:block;
+    width:100%;
+  }
+
+  .toolbar-panel.is-compact-sticky{
+    position:fixed;
+    top:72px;
+    left:50%;
+    right:auto;
+    width:min(1180px,calc(100% - 36px));
+    margin:0;
+    transform:translateX(-50%);
+    z-index:38;
+  }
+
+  body.compact-toolbar-active .timeline-year-heading{
+    top:132px;
+  }
+
+  body.compact-toolbar-active .timeline-playlists .timeline-year-heading{
+    top:auto;
+  }
+}
+
+/* Restore the softer, chip-like typography that existed before the
+   Shorts/filter work branched from an earlier stylesheet. */
+:root{
+  --type-strong:600;
+  --type-medium:550;
+  --type-soft:500;
+}
+
+.card-title,
+.video-grid.list-view .card-title,
+.timeline-title,
+.admin-content-copy strong,
+.admin-unknown-top > strong{
+  font-weight:var(--type-strong);
+  letter-spacing:-.018em;
+}
+
+.card-title{
+  line-height:1.42;
+}
+
+.date-chip,
+.date-context-link{
+  font-weight:var(--type-medium);
+  letter-spacing:-.008em;
+  line-height:1.25;
+}
+
+.year-summary-chip,
+.badge,
+.precision-badge,
+.admin-content-badge,
+.admin-reason-badge{
+  font-weight:600!important;
+  letter-spacing:-.008em;
+}
+
+.video-grid:not(.list-view) .date-chip{
+  font-size:11.5px;
+  padding:6px 9px;
+}
+
+.video-grid.list-view .date-chip{
+  font-size:10.5px;
+  font-weight:var(--type-medium);
+}
+
+.timeline-item-date{
+  font-weight:var(--type-medium);
+  letter-spacing:-.008em;
+}
+
+.timeline-item-date span{
+  font-weight:var(--type-soft);
+}
+
+.source,
+.note,
+.card-meta,
+.timeline-meta,
+.timeline-years,
+.timeline-source,
+.admin-content-copy small{
+  font-weight:var(--type-soft);
+  letter-spacing:-.008em;
+}
+
+.content-action-btn,
+.content-type-toggle,
+.playlist-scope-btn,
+.video-format-btn,
+.playlist-scope-current strong{
+  font-weight:600;
+  letter-spacing:-.006em;
+}
+
+.content-action-btn{
+  font-size:10.5px;
+}
+
+.content-action-icon{
+  font-weight:600;
+}
+
+.admin-tab,
+.admin-count-badge,
+.active-filter-chip,
+.date-more-btn,
+.search-match>span{
+  font-weight:600;
+}
+
+h1,h2,h3,
+.brand-main{
+  font-weight:650;
+}
+
+/* Restore the desktop mixed-year date layout:
+   year summary on its own row, visible dates three across. */
+@media (min-width:621px){
+  .video-grid:not(.list-view) .dates:has(.year-summary-chip){
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:7px;
+    align-items:stretch;
+  }
+
+  .video-grid:not(.list-view) .dates:has(.year-summary-chip) .year-summary-chip{
+    grid-column:1/-1;
+    width:auto;
+    max-width:100%;
+    white-space:normal;
+    overflow:visible;
+    text-overflow:clip;
+    line-height:1.35;
+    justify-content:flex-start;
+    padding:7px 10px;
+  }
+
+  .video-grid:not(.list-view) .dates:has(.year-summary-chip) > .date-chip,
+  .video-grid:not(.list-view) .dates:has(.year-summary-chip) > .date-extra:not([hidden]) .date-chip{
+    width:100%;
+    min-width:0;
+    justify-content:center;
+    text-align:center;
+    padding:6px 5px;
+    white-space:nowrap;
+  }
+
+  .video-grid:not(.list-view) .dates:has(.year-summary-chip) > .date-extra:not([hidden]){
+    display:contents;
+  }
+
+  .video-grid:not(.list-view) .dates:has(.year-summary-chip) .date-more-btn{
+    grid-column:1/-1;
+    justify-self:start;
+  }
+}
+
+@media (max-width:620px){
+  .card-title,
+  .video-grid.list-view .card-title,
+  .timeline-title{
+    font-weight:600;
+  }
+
+  .date-chip,
+  .date-context-link{
+    font-weight:550;
+  }
+}

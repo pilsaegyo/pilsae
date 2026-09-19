@@ -2885,57 +2885,80 @@ function setupCompactStickyToolbar() {
   const toolbar = document.querySelector(".toolbar-panel");
   if (!toolbar || document.body.classList.contains("admin-page")) return;
 
-  // Anchor the trigger to a separate zero-height marker so changing the
-  // toolbar's own height cannot move the threshold and cause flicker.
-  const anchor = document.createElement("span");
-  anchor.className = "toolbar-sticky-anchor";
-  anchor.setAttribute("aria-hidden", "true");
-  toolbar.before(anchor);
+  const placeholder = document.createElement("div");
+  placeholder.className = "toolbar-fixed-placeholder";
+  placeholder.hidden = true;
+  toolbar.before(placeholder);
 
   let triggerY = 0;
+  let normalOuterHeight = 0;
   let compact = false;
   let resizeTimer = 0;
 
-  const measure = () => {
-    const rect = anchor.getBoundingClientRect();
+  const readNormalMetrics = () => {
+    const rect = toolbar.getBoundingClientRect();
+    const styles = getComputedStyle(toolbar);
+    const marginBottom = parseFloat(styles.marginBottom) || 0;
+
+    normalOuterHeight = Math.ceil(rect.height + marginBottom);
     triggerY = window.scrollY + rect.top - 72;
+    placeholder.style.height = `${normalOuterHeight}px`;
+  };
+
+  const setCompact = (next) => {
+    if (compact === next) return;
+    compact = next;
+
+    if (compact) {
+      placeholder.hidden = false;
+      toolbar.classList.add("is-compact-sticky");
+      document.body.classList.add("compact-toolbar-active");
+    } else {
+      toolbar.classList.remove("is-compact-sticky");
+      document.body.classList.remove("compact-toolbar-active");
+      placeholder.hidden = true;
+    }
   };
 
   const update = () => {
     const desktop = window.matchMedia("(min-width: 621px)").matches;
 
     if (!desktop) {
-      compact = false;
-      toolbar.classList.remove("is-compact-sticky");
+      setCompact(false);
       return;
     }
 
     const y = window.scrollY;
 
-    // Small hysteresis gap prevents rapid compact/normal toggling when the
-    // user scrolls around the exact sticky boundary.
-    if (!compact && y >= triggerY + 10) {
-      compact = true;
-      toolbar.classList.add("is-compact-sticky");
-    } else if (compact && y <= triggerY - 26) {
-      compact = false;
-      toolbar.classList.remove("is-compact-sticky");
+    // Enter slightly after the bar reaches the header; leave only after
+    // scrolling clearly above that point. The placeholder prevents any
+    // document-height jump while the toolbar becomes fixed.
+    if (!compact && y >= triggerY + 12) {
+      setCompact(true);
+    } else if (compact && y <= triggerY - 42) {
+      setCompact(false);
     }
   };
 
-  const onResize = () => {
-    window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(() => {
-      measure();
-      update();
-    }, 120);
+  const remeasure = () => {
+    const wasCompact = compact;
+
+    if (wasCompact) {
+      setCompact(false);
+    }
+
+    readNormalMetrics();
+    update();
   };
 
-  measure();
+  readNormalMetrics();
   update();
 
   window.addEventListener("scroll", update, { passive:true });
-  window.addEventListener("resize", onResize);
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(remeasure, 140);
+  });
 }
 
 function bindEvents() {
