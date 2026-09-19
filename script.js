@@ -16,7 +16,7 @@ let siteConfig = {
 let videos = [];
 const PAGE_SIZE = 60;
 let visibleLimit = PAGE_SIZE;
-let mobileSearchExpanded = false;
+let mobileSuggestionExpanded = false;
 const $ = (sel) => document.querySelector(sel);
 
 function escapeHTML(value="") {
@@ -997,7 +997,7 @@ function searchSuggestionItems(query) {
   const rank = { "제목": 0, "날짜": 1, "출처": 2 };
   return items
     .sort((a,b) => (rank[a.kind] ?? 9) - (rank[b.kind] ?? 9))
-    .slice(0, 6);
+    .slice(0, 12);
 }
 
 function renderSearchSuggestions() {
@@ -1011,30 +1011,50 @@ function renderSearchSuggestions() {
   if (!items.length) {
     wrap.hidden = true;
     wrap.innerHTML = "";
+    wrap.classList.remove("is-expanded");
     input.setAttribute("aria-expanded", "false");
+    mobileSuggestionExpanded = false;
     return;
   }
 
-  wrap.innerHTML = items.map((item, index) => `
-    <button type="button" class="search-suggestion-item" role="option"
-      data-search-suggestion="${escapeHTML(item.value)}" data-suggestion-index="${index}">
-      <span class="search-suggestion-kind">${escapeHTML(item.kind)}</span>
-      <span class="search-suggestion-copy">
-        <strong>${highlightMatch(item.label, q)}</strong>
-        ${item.meta ? `<small>${escapeHTML(item.meta)}</small>` : ""}
-      </span>
-    </button>
-  `).join("");
+  const isMobile = window.matchMedia("(max-width: 620px)").matches;
+  const visibleItems = isMobile && !mobileSuggestionExpanded
+    ? items.slice(0, 3)
+    : items;
+  const hiddenCount = Math.max(0, items.length - visibleItems.length);
+
+  wrap.innerHTML = `
+    <div class="search-suggestion-list">
+      ${visibleItems.map((item, index) => `
+        <button type="button" class="search-suggestion-item" role="option"
+          data-search-suggestion="${escapeHTML(item.value)}" data-suggestion-index="${index}">
+          <span class="search-suggestion-kind">${escapeHTML(item.kind)}</span>
+          <span class="search-suggestion-copy">
+            <strong>${highlightMatch(item.label, q)}</strong>
+            ${item.meta ? `<small>${escapeHTML(item.meta)}</small>` : ""}
+          </span>
+        </button>
+      `).join("")}
+    </div>
+    ${isMobile && items.length > 3 ? `
+      <button type="button" class="search-suggestion-more" data-search-suggestion-more>
+        ${mobileSuggestionExpanded ? "접기" : `${hiddenCount}개 더보기`}
+      </button>
+    ` : ""}
+  `;
 
   wrap.hidden = false;
+  wrap.classList.toggle("is-expanded", isMobile && mobileSuggestionExpanded);
   input.setAttribute("aria-expanded", "true");
 }
 
 function hideSearchSuggestions() {
   const wrap = $("#searchSuggestions");
   const input = $("#searchInput");
+  mobileSuggestionExpanded = false;
   if (wrap) {
     wrap.hidden = true;
+    wrap.classList.remove("is-expanded");
     wrap.querySelectorAll(".search-suggestion-item.is-active").forEach(el => el.classList.remove("is-active"));
   }
   if (input) input.setAttribute("aria-expanded", "false");
@@ -1079,7 +1099,6 @@ function applyActiveSearchSuggestion() {
 }
 
 function resetPublicFilters() {
-  mobileSearchExpanded = false;
   $("#searchInput").value = "";
   $("#yearFilter").value = "";
   $("#typeFilter").value = "";
@@ -1643,30 +1662,6 @@ function scrollTimelineYearIntoView(year) {
   target?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-function isMobileViewport() {
-  return window.matchMedia("(max-width: 620px)").matches;
-}
-
-function updateMobileSearchSummary(totalRows, query) {
-  const wrap = $("#mobileSearchSummary");
-  const text = $("#mobileSearchSummaryText");
-  const btn = $("#mobileSearchMoreBtn");
-  if (!wrap || !text || !btn) return;
-
-  const searching = isMobileViewport() && String(query || "").trim().length > 0 && totalRows > 3;
-  wrap.hidden = !searching;
-
-  if (!searching) {
-    mobileSearchExpanded = false;
-    btn.setAttribute("aria-expanded", "false");
-    return;
-  }
-
-  text.textContent = `검색 결과 ${totalRows}개`;
-  btn.textContent = mobileSearchExpanded ? "접기" : `${totalRows - 3}개 더보기`;
-  btn.setAttribute("aria-expanded", mobileSearchExpanded ? "true" : "false");
-}
-
 function render() {
   $("#loadingState")?.setAttribute("hidden", "");
 
@@ -1687,15 +1682,7 @@ function render() {
 
   renderActiveFilterChips();
   const rows = filteredVideos();
-  const q = $("#searchInput")?.value?.trim() || "";
-  const mode = currentView();
-
-  let visibleRows;
-  if (mode !== "timeline" && isMobileViewport() && q && rows.length > 3) {
-    visibleRows = mobileSearchExpanded ? rows : rows.slice(0, 3);
-  } else {
-    visibleRows = rows.slice(0, visibleLimit);
-  }
+  const visibleRows = rows.slice(0, visibleLimit);
 
   // Public result summary intentionally excludes internal date-review counts.
   // This also avoids mismatches where a multi-year playlist has raw type=unknown
@@ -1704,13 +1691,10 @@ function render() {
     ? `<span class="result-total">전체 ${videos.length}개</span><span class="result-divider">·</span><strong>현재 결과 ${rows.length}개</strong>`
     : "";
 
+  const mode = currentView();
   $("#videoGrid").innerHTML = mode === "timeline"
     ? renderTimeline(rows)
     : visibleRows.map(renderCard).join("");
-
-  const mobileSearchScrollable = mode !== "timeline" && isMobileViewport() && q && rows.length > 3 && mobileSearchExpanded;
-  $("#videoGrid").classList.toggle("mobile-search-scroll", mobileSearchScrollable);
-  updateMobileSearchSummary(rows.length, q);
   $("#emptyState").hidden = rows.length !== 0;
   if (!rows.length) {
     const detail = $("#emptyStateDetail");
@@ -1724,7 +1708,7 @@ function render() {
 
   const moreBtn = $("#loadMoreBtn");
   if (moreBtn) {
-    if (mode === "timeline" || (isMobileViewport() && q && rows.length > 3)) {
+    if (mode === "timeline") {
       moreBtn.hidden = true;
     } else {
       const remaining = rows.length - visibleRows.length;
@@ -2254,7 +2238,6 @@ function bindEvents() {
       $("#searchInput").value = dateContext.dataset.contextDate || "";
       updateSearchClearButton();
       visibleLimit = PAGE_SIZE;
-      mobileSearchExpanded = false;
       hideSearchSuggestions();
       syncUrlState({ replace:true });
       render();
@@ -2267,7 +2250,6 @@ function bindEvents() {
       $("#searchInput").value = sourceContext.dataset.contextSource || "";
       updateSearchClearButton();
       visibleLimit = PAGE_SIZE;
-      mobileSearchExpanded = false;
       hideSearchSuggestions();
       syncUrlState({ replace:true });
       render();
@@ -2285,12 +2267,19 @@ function bindEvents() {
       return;
     }
 
+    const suggestionMore = event.target.closest("button[data-search-suggestion-more]");
+    if (suggestionMore) {
+      mobileSuggestionExpanded = !mobileSuggestionExpanded;
+      renderSearchSuggestions();
+      return;
+    }
+
     const suggestion = event.target.closest("button[data-search-suggestion]");
     if (suggestion) {
       $("#searchInput").value = suggestion.dataset.searchSuggestion || "";
       updateSearchClearButton();
       visibleLimit = PAGE_SIZE;
-      mobileSearchExpanded = false;
+      mobileSuggestionExpanded = false;
       hideSearchSuggestions();
       syncUrlState({ replace:true });
       render();
@@ -2319,15 +2308,22 @@ function bindEvents() {
       id === "searchInput" ? "input" : "change",
       () => {
         visibleLimit = PAGE_SIZE;
-        if (id === "searchInput") mobileSearchExpanded = false;
         syncUrlState({ replace: id === "searchInput" });
         render();
         if (id === "searchInput") {
+          mobileSuggestionExpanded = false;
           updateSearchClearButton();
           renderSearchSuggestions();
         }
       }
     );
+  });
+
+  window.addEventListener("resize", () => {
+    if (!window.matchMedia("(max-width: 620px)").matches && mobileSuggestionExpanded) {
+      mobileSuggestionExpanded = false;
+      if (!$("#searchSuggestions")?.hidden) renderSearchSuggestions();
+    }
   });
 
   document.addEventListener("click", (event) => {
@@ -2358,21 +2354,12 @@ function bindEvents() {
 
   $("#clearSearchBtn")?.addEventListener("click", () => {
     $("#searchInput").value = "";
-    mobileSearchExpanded = false;
     updateSearchClearButton();
     hideSearchSuggestions();
     visibleLimit = PAGE_SIZE;
     syncUrlState({ replace:true });
     render();
     $("#searchInput").focus();
-  });
-
-  $("#mobileSearchMoreBtn")?.addEventListener("click", () => {
-    mobileSearchExpanded = !mobileSearchExpanded;
-    render();
-    if (!mobileSearchExpanded) {
-      $("#mobileSearchSummary")?.scrollIntoView({ behavior:"smooth", block:"nearest" });
-    }
   });
 
   $("#loadMoreBtn").addEventListener("click", () => {
@@ -2446,14 +2433,6 @@ function bindEvents() {
     if (!backToTopBtn) return;
     backToTopBtn.hidden = window.scrollY < 700 || document.body.classList.contains("admin-mode-open");
   };
-  window.addEventListener("resize", () => {
-    if (!isMobileViewport() && mobileSearchExpanded) {
-      mobileSearchExpanded = false;
-      $("#videoGrid")?.classList.remove("mobile-search-scroll");
-      render();
-    }
-  });
-
   window.addEventListener("scroll", updateBackToTop, { passive:true });
   backToTopBtn?.addEventListener("click", () => {
     window.scrollTo({ top:0, behavior:"smooth" });
