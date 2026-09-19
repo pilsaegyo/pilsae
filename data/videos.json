@@ -4691,11 +4691,19 @@
       "title": "서로 멱살 잡는 아이돌 멤버",
       "description": "내가 맨날 복습하고싶은 부분만 편집해서 보정...\n\n✂️ 신혜성 & 에릭 CUT.zip｜〈신화방송 10화 서로 멱살 잡는 물과 기름〉 #신화 #신혜성 #에릭\n\n\nhttps://youtu.be/k6eeMhWYgfE?si=GGVy1dFhs-or284H\nhttps://youtu.be/BYUBXm2Ec7A?si=va4Zm458v2MBL2-W\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん #릭셩 #ricsung\nシン・ヘソン  #ヘソン",
       "source": "내가 맨날 복습하고싶은 부분만 편집해서 보정...",
-      "sourceDate": null,
+      "sourceDate": "2012-05-19",
       "publishedAt": "2025-08-21T13:30:03Z",
       "thumbnail": "https://i.ytimg.com/vi/2_HGORTr-pY/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2012-05-19",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8275,7 +8283,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:07:43.063Z",
+  "generatedAt": "2026-09-19T05:20:01.425Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
