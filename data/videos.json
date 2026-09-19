@@ -5271,11 +5271,19 @@
       "title": "사람들을 잘 유혹하고 꾀고 나쁜 길로 인도하고 아주 안 좋아요 #신혜성 #에릭 #신화",
       "description": "신화방송 ep 18 cut\n\n#신화방송 #예능숏츠 #싢방 #예능레전드 #예능\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "신화방송 ep 18 cut",
-      "sourceDate": null,
+      "sourceDate": "2012-07-14",
       "publishedAt": "2025-07-22T11:00:50Z",
       "thumbnail": "https://i.ytimg.com/vi/Ovw544t6aLo/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2012-07-14",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8307,7 +8315,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:21:39.670Z",
+  "generatedAt": "2026-09-19T05:22:10.017Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
