@@ -12,6 +12,7 @@
       "durationSeconds": 91,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -27,6 +28,7 @@
       "durationSeconds": 167,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -42,6 +44,7 @@
       "durationSeconds": 78,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -57,6 +60,7 @@
       "durationSeconds": 126,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -72,6 +76,7 @@
       "durationSeconds": 76,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -87,6 +92,7 @@
       "durationSeconds": 155,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -102,6 +108,7 @@
       "durationSeconds": 109,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -117,6 +124,7 @@
       "durationSeconds": 119,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -132,6 +140,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -147,6 +156,7 @@
       "durationSeconds": 169,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -162,6 +172,7 @@
       "durationSeconds": 116,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -177,6 +188,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -192,6 +204,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -207,6 +220,7 @@
       "durationSeconds": 95,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -222,6 +236,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -237,6 +252,7 @@
       "durationSeconds": 98,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -252,6 +268,7 @@
       "durationSeconds": 75,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -267,6 +284,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -282,6 +300,7 @@
       "durationSeconds": 172,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -297,6 +316,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -312,6 +332,7 @@
       "durationSeconds": 140,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -327,6 +348,7 @@
       "durationSeconds": 170,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -342,6 +364,7 @@
       "durationSeconds": 154,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -357,6 +380,7 @@
       "durationSeconds": 50,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -372,6 +396,7 @@
       "durationSeconds": 76,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -387,6 +412,7 @@
       "durationSeconds": 119,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -402,6 +428,7 @@
       "durationSeconds": 57,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -417,6 +444,7 @@
       "durationSeconds": 120,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -432,6 +460,7 @@
       "durationSeconds": 63,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -447,6 +476,7 @@
       "durationSeconds": 86,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -462,6 +492,7 @@
       "durationSeconds": 40,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -477,6 +508,7 @@
       "durationSeconds": 162,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -492,6 +524,7 @@
       "durationSeconds": 92,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -507,6 +540,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -522,6 +556,7 @@
       "durationSeconds": 138,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -537,6 +572,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -552,6 +588,7 @@
       "durationSeconds": 199,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -567,6 +604,7 @@
       "durationSeconds": 121,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -582,6 +620,7 @@
       "durationSeconds": 54,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -597,6 +636,7 @@
       "durationSeconds": 94,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -612,6 +652,7 @@
       "durationSeconds": 90,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -627,6 +668,7 @@
       "durationSeconds": 72,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -642,6 +684,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -657,6 +700,7 @@
       "durationSeconds": 64,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -672,6 +716,7 @@
       "durationSeconds": 106,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -687,6 +732,7 @@
       "durationSeconds": 123,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -702,6 +748,7 @@
       "durationSeconds": 71,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -717,6 +764,7 @@
       "durationSeconds": 338,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -732,6 +780,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -747,6 +796,7 @@
       "durationSeconds": 160,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -762,6 +812,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -777,6 +828,7 @@
       "durationSeconds": 67,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -792,6 +844,7 @@
       "durationSeconds": 136,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -807,6 +860,7 @@
       "durationSeconds": 52,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -822,6 +876,7 @@
       "durationSeconds": 209,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -837,6 +892,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -852,6 +908,7 @@
       "durationSeconds": 772,
       "parseStatus": "needs_review",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -867,6 +924,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -882,6 +940,7 @@
       "durationSeconds": 89,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -897,6 +956,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -912,6 +972,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -927,6 +988,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -942,6 +1004,7 @@
       "durationSeconds": 134,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -957,6 +1020,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -972,6 +1036,7 @@
       "durationSeconds": 53,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -987,6 +1052,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1002,6 +1068,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1017,6 +1084,7 @@
       "durationSeconds": 118,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1032,6 +1100,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1047,6 +1116,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1062,6 +1132,7 @@
       "durationSeconds": 90,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1077,6 +1148,7 @@
       "durationSeconds": 141,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1092,6 +1164,7 @@
       "durationSeconds": 618,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1107,6 +1180,7 @@
       "durationSeconds": 68,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1122,6 +1196,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1137,6 +1212,7 @@
       "durationSeconds": 162,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1152,6 +1228,7 @@
       "durationSeconds": 45,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1167,6 +1244,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1182,6 +1260,7 @@
       "durationSeconds": 373,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1197,6 +1276,7 @@
       "durationSeconds": 24,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1212,6 +1292,7 @@
       "durationSeconds": 62,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1227,6 +1308,7 @@
       "durationSeconds": 60,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -1250,6 +1332,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1265,6 +1348,7 @@
       "durationSeconds": 73,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1280,6 +1364,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1295,6 +1380,7 @@
       "durationSeconds": 70,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1310,6 +1396,7 @@
       "durationSeconds": 282,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1325,6 +1412,7 @@
       "durationSeconds": 46,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1340,6 +1428,7 @@
       "durationSeconds": 43,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1355,6 +1444,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1370,6 +1460,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1385,6 +1476,7 @@
       "durationSeconds": 100,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1400,6 +1492,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1415,6 +1508,7 @@
       "durationSeconds": 136,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1430,6 +1524,7 @@
       "durationSeconds": 171,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1445,6 +1540,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1460,6 +1556,7 @@
       "durationSeconds": 147,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1475,6 +1572,7 @@
       "durationSeconds": 310,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1490,6 +1588,7 @@
       "durationSeconds": 50,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1505,6 +1604,7 @@
       "durationSeconds": 69,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1520,6 +1620,7 @@
       "durationSeconds": 723,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1535,6 +1636,7 @@
       "durationSeconds": 132,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1550,6 +1652,7 @@
       "durationSeconds": 107,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1565,6 +1668,7 @@
       "durationSeconds": 73,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1580,6 +1684,7 @@
       "durationSeconds": 74,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1595,6 +1700,7 @@
       "durationSeconds": 110,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1610,6 +1716,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1625,6 +1732,7 @@
       "durationSeconds": 280,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1640,6 +1748,7 @@
       "durationSeconds": 158,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1655,6 +1764,7 @@
       "durationSeconds": 32,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1670,6 +1780,7 @@
       "durationSeconds": 177,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1685,6 +1796,7 @@
       "durationSeconds": 88,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1700,6 +1812,7 @@
       "durationSeconds": 115,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1715,6 +1828,7 @@
       "durationSeconds": 62,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1730,6 +1844,7 @@
       "durationSeconds": 89,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1745,6 +1860,7 @@
       "durationSeconds": 264,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1760,6 +1876,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1775,6 +1892,7 @@
       "durationSeconds": 241,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1790,6 +1908,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1805,6 +1924,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1820,6 +1940,7 @@
       "durationSeconds": 72,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1835,6 +1956,7 @@
       "durationSeconds": 159,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1850,6 +1972,7 @@
       "durationSeconds": 136,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1865,6 +1988,7 @@
       "durationSeconds": 161,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1880,6 +2004,7 @@
       "durationSeconds": 128,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1895,6 +2020,7 @@
       "durationSeconds": 135,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1910,6 +2036,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1925,6 +2052,7 @@
       "durationSeconds": 80,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -1948,6 +2076,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1963,6 +2092,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1978,6 +2108,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -1993,6 +2124,7 @@
       "durationSeconds": 72,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2008,6 +2140,7 @@
       "durationSeconds": 128,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2023,6 +2156,7 @@
       "durationSeconds": 141,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2038,6 +2172,7 @@
       "durationSeconds": 142,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2053,6 +2188,7 @@
       "durationSeconds": 111,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2068,6 +2204,7 @@
       "durationSeconds": 89,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2083,6 +2220,7 @@
       "durationSeconds": 92,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2098,6 +2236,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2113,6 +2252,7 @@
       "durationSeconds": 62,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2128,6 +2268,7 @@
       "durationSeconds": 5530,
       "parseStatus": "needs_review",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2143,6 +2284,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2158,6 +2300,7 @@
       "durationSeconds": 66,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2173,6 +2316,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2188,6 +2332,7 @@
       "durationSeconds": 5387,
       "parseStatus": "needs_review",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2203,6 +2348,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2218,6 +2364,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2233,6 +2380,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2248,6 +2396,7 @@
       "durationSeconds": 95,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2263,6 +2412,7 @@
       "durationSeconds": 75,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2278,6 +2428,7 @@
       "durationSeconds": 124,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2005-01-01",
@@ -2301,6 +2452,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2316,6 +2468,7 @@
       "durationSeconds": 104,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2331,6 +2484,7 @@
       "durationSeconds": 402,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2346,6 +2500,7 @@
       "durationSeconds": 85,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2361,6 +2516,7 @@
       "durationSeconds": 111,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2376,6 +2532,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2391,6 +2548,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1998-01-01",
@@ -2414,6 +2572,7 @@
       "durationSeconds": 60,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -2458,6 +2617,7 @@
       "durationSeconds": 78,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2473,6 +2633,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2488,6 +2649,7 @@
       "durationSeconds": 52,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2005-01-01",
@@ -2511,6 +2673,7 @@
       "durationSeconds": 74,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -2534,6 +2697,7 @@
       "durationSeconds": 84,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2549,6 +2713,7 @@
       "durationSeconds": 357,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2564,6 +2729,7 @@
       "durationSeconds": 178,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2579,6 +2745,7 @@
       "durationSeconds": 178,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2012-11-11",
@@ -2602,6 +2769,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2617,6 +2785,7 @@
       "durationSeconds": 76,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2632,6 +2801,7 @@
       "durationSeconds": 67,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2647,6 +2817,7 @@
       "durationSeconds": 92,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2662,6 +2833,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2677,6 +2849,7 @@
       "durationSeconds": 103,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2692,6 +2865,7 @@
       "durationSeconds": 165,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2707,6 +2881,7 @@
       "durationSeconds": 63,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -2730,6 +2905,7 @@
       "durationSeconds": 521,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2745,6 +2921,7 @@
       "durationSeconds": 50,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2003-01-01",
@@ -2775,6 +2952,7 @@
       "durationSeconds": 176,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2790,6 +2968,7 @@
       "durationSeconds": 172,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1998-01-01",
@@ -2813,6 +2992,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2828,6 +3008,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2843,6 +3024,7 @@
       "durationSeconds": 177,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2858,6 +3040,7 @@
       "durationSeconds": 125,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2873,6 +3056,7 @@
       "durationSeconds": 126,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2888,6 +3072,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2903,6 +3088,7 @@
       "durationSeconds": 65,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2918,6 +3104,7 @@
       "durationSeconds": 135,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2933,6 +3120,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2948,6 +3136,7 @@
       "durationSeconds": 118,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2963,6 +3152,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2978,6 +3168,7 @@
       "durationSeconds": 168,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -2993,6 +3184,7 @@
       "durationSeconds": 80,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3008,6 +3200,7 @@
       "durationSeconds": 71,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3023,6 +3216,7 @@
       "durationSeconds": 142,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3038,6 +3232,7 @@
       "durationSeconds": 115,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3053,6 +3248,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3068,6 +3264,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3083,6 +3280,7 @@
       "durationSeconds": 133,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3098,6 +3296,7 @@
       "durationSeconds": 161,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3113,6 +3312,7 @@
       "durationSeconds": 178,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3128,6 +3328,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3143,6 +3344,7 @@
       "durationSeconds": 50,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3158,6 +3360,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3173,6 +3376,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3188,6 +3392,7 @@
       "durationSeconds": 128,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3203,6 +3408,7 @@
       "durationSeconds": 822,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3218,6 +3424,7 @@
       "durationSeconds": 161,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3233,6 +3440,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3248,6 +3456,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3263,6 +3472,7 @@
       "durationSeconds": 291,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3278,6 +3488,7 @@
       "durationSeconds": 88,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3293,6 +3504,7 @@
       "durationSeconds": 160,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3308,6 +3520,7 @@
       "durationSeconds": 205,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3323,6 +3536,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3338,6 +3552,7 @@
       "durationSeconds": 88,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3353,6 +3568,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3368,6 +3584,7 @@
       "durationSeconds": 116,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-05-01",
@@ -3391,6 +3608,7 @@
       "durationSeconds": 160,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2012-12-31",
@@ -3414,6 +3632,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3429,6 +3648,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3444,6 +3664,7 @@
       "durationSeconds": 179,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -3467,6 +3688,7 @@
       "durationSeconds": 57,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3482,6 +3704,7 @@
       "durationSeconds": 160,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3497,6 +3720,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3512,6 +3736,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3527,6 +3752,7 @@
       "durationSeconds": 82,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3542,6 +3768,7 @@
       "durationSeconds": 178,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -3565,6 +3792,7 @@
       "durationSeconds": 178,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2007-01-01",
@@ -3588,6 +3816,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3603,6 +3832,7 @@
       "durationSeconds": 127,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3618,6 +3848,7 @@
       "durationSeconds": 69,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -3641,6 +3872,7 @@
       "durationSeconds": 167,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3656,6 +3888,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3671,6 +3904,7 @@
       "durationSeconds": 266,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3686,6 +3920,7 @@
       "durationSeconds": 176,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-11-19",
@@ -3709,6 +3944,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3724,6 +3960,7 @@
       "durationSeconds": 68,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3739,6 +3976,7 @@
       "durationSeconds": 144,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3754,6 +3992,7 @@
       "durationSeconds": 127,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3769,6 +4008,7 @@
       "durationSeconds": 136,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -3799,6 +4039,7 @@
       "durationSeconds": 118,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3814,6 +4055,7 @@
       "durationSeconds": 177,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -3837,6 +4079,7 @@
       "durationSeconds": 178,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3852,6 +4095,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3867,6 +4111,7 @@
       "durationSeconds": 178,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3882,6 +4127,7 @@
       "durationSeconds": 47,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3897,6 +4143,7 @@
       "durationSeconds": 116,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3912,6 +4159,7 @@
       "durationSeconds": 100,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3927,6 +4175,7 @@
       "durationSeconds": 641,
       "parseStatus": "needs_review",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3942,6 +4191,7 @@
       "durationSeconds": 173,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3957,6 +4207,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3972,6 +4223,7 @@
       "durationSeconds": 96,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -3987,6 +4239,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4002,6 +4255,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4017,6 +4271,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2002-01-01",
@@ -4047,6 +4302,7 @@
       "durationSeconds": 643,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4062,6 +4318,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1998-01-01",
@@ -4106,6 +4363,7 @@
       "durationSeconds": 62,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -4129,14 +4387,15 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
     {
       "id": "aJopPbP0Odk",
       "title": "이 목소리에 한번 빠지면 못 나옵니다 | 🎧 𝓹𝓪𝓻𝓽 𝓹𝓵𝓪𝔂𝓵𝓲𝓼𝓽｜01-02 신혜성 노래 모음.zip |  #신혜성",
-      "description": "03 시절 영상컨텐츠 일부 포함\n3월~11월까지의 유투브 활동 결산 컨텐츠\n노래 파트의 앞뒤 연결성을 위해 타인 파트 일부 포함입니다.\n안넣은 노래가 있다면 그건 저의 초이스...\n\n00:00 Just 2 Be With U\n02:29 Hey, Come On!\n04:41 Shinhwa Knight\n06:30 Wild Eyes\n08:17 Falling In Love\n11:03 Never Can Rewind\n13:40 Trippin\n16:09 이별... 그리고 (Sure I Know)\n18:57 Dark\n21:35 Egotism (97年 4月 1日)\n22:28 바램 (I Swear...)\n27:11 너를 안아(자유롭게 나는거야)\n29:04 12 ： 00N\n31:36 인형\n35:31 Until\n38:33 Here I Am\n41:04 My Romance\n44:17 We Wish You A Merry Christmas\n46:55 White Love\n49:50 Now and forever\n54:05 CHAOS\n56:44 S.O.S. (Story of Sadness)\n59:04 사랑\n01:01:21 아스피린\n01:02:39 찬찬찬\n01:03:57 난 알아요\n01:05:33 이등병의 편지\n01:06:45 안녕이라고 말하지마\n01:08:15 My love\n01:12:46 한 사람을 위한 마음\n01:17:15 My Life Style\n01:19:47 I Love You\n01:23:02 Maybe\n01:25:54 Into My Heart\n01:29:05 I Pray 4 U\n01:30:55 Perfect Man\n01:32:57 Shout\n01:35:12 Free\n01:37:41 Fly High\n01:39:56 Endless Love\n01:41:47 Come Back To My Life\n01:43:46 Honesty\n01:45:34 Red Angel\n01:47:46 Last Zone\n01:49:24 Reason\n01:51:20 너 사랑 안에 (In Your Love)\n01:54:26 Hero\n\n\n017031 행복채널 (셩공시대님 - https://www.youtube.com/watch?v=-kmiUM69_wM)\n011013 뮤직플러스 (셩공시대님 - https://www.youtube.com/watch?v=bi8HTnpWeVU)\n010825 MNET 가요BEST27 (셩공시대님 - https://www.youtube.com/watch?v=y3idOhiZ1I8)\n010704 MNET 가요발전소 (셩공시대님 - https://www.youtube.com/watch?v=0RJDylEpkYw)\n\n#신혜성 #신혜성노래 #신화노래 #신화플리\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-      "source": "03 시절 영상컨텐츠 일부 포함",
+      "description": "2001년, 2002년\n\n03 시절 영상컨텐츠 일부 포함\n3월~11월까지의 유투브 활동 결산 컨텐츠\n노래 파트의 앞뒤 연결성을 위해 타인 파트 일부 포함입니다.\n안넣은 노래가 있다면 그건 저의 초이스...\n\n00:00 Just 2 Be With U\n02:29 Hey, Come On!\n04:41 Shinhwa Knight\n06:30 Wild Eyes\n08:17 Falling In Love\n11:03 Never Can Rewind\n13:40 Trippin\n16:09 이별... 그리고 (Sure I Know)\n18:57 Dark\n21:35 Egotism (97年 4月 1日)\n22:28 바램 (I Swear...)\n27:11 너를 안아(자유롭게 나는거야)\n29:04 12 ： 00N\n31:36 인형\n35:31 Until\n38:33 Here I Am\n41:04 My Romance\n44:17 We Wish You A Merry Christmas\n46:55 White Love\n49:50 Now and forever\n54:05 CHAOS\n56:44 S.O.S. (Story of Sadness)\n59:04 사랑\n01:01:21 아스피린\n01:02:39 찬찬찬\n01:03:57 난 알아요\n01:05:33 이등병의 편지\n01:06:45 안녕이라고 말하지마\n01:08:15 My love\n01:12:46 한 사람을 위한 마음\n01:17:15 My Life Style\n01:19:47 I Love You\n01:23:02 Maybe\n01:25:54 Into My Heart\n01:29:05 I Pray 4 U\n01:30:55 Perfect Man\n01:32:57 Shout\n01:35:12 Free\n01:37:41 Fly High\n01:39:56 Endless Love\n01:41:47 Come Back To My Life\n01:43:46 Honesty\n01:45:34 Red Angel\n01:47:46 Last Zone\n01:49:24 Reason\n01:51:20 너 사랑 안에 (In Your Love)\n01:54:26 Hero\n\n\n017031 행복채널 (셩공시대님 - https://www.youtube.com/watch?v=-kmiUM69_wM)\n011013 뮤직플러스 (셩공시대님 - https://www.youtube.com/watch?v=bi8HTnpWeVU)\n010825 MNET 가요BEST27 (셩공시대님 - https://www.youtube.com/watch?v=y3idOhiZ1I8)\n010704 MNET 가요발전소 (셩공시대님 - https://www.youtube.com/watch?v=0RJDylEpkYw)\n\n#신혜성 #신혜성노래 #신화노래 #신화플리\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "2001년, 2002년",
       "sourceDate": null,
       "publishedAt": "2025-11-26T23:40:00Z",
       "thumbnail": "https://i.ytimg.com/vi/aJopPbP0Odk/maxresdefault.jpg",
@@ -4144,6 +4403,7 @@
       "durationSeconds": 6970,
       "parseStatus": "needs_review",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4159,6 +4419,7 @@
       "durationSeconds": 6478,
       "parseStatus": "parsed",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1998-01-01",
@@ -4196,6 +4457,7 @@
       "durationSeconds": 72,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2007-01-01",
@@ -4219,6 +4481,7 @@
       "durationSeconds": 176,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4234,6 +4497,7 @@
       "durationSeconds": 109,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4249,6 +4513,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4264,6 +4529,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4279,6 +4545,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4294,6 +4561,7 @@
       "durationSeconds": 159,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4309,6 +4577,7 @@
       "durationSeconds": 178,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4324,6 +4593,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4339,6 +4609,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4354,6 +4625,7 @@
       "durationSeconds": 93,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4369,6 +4641,7 @@
       "durationSeconds": 129,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4384,6 +4657,7 @@
       "durationSeconds": 91,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4399,6 +4673,7 @@
       "durationSeconds": 177,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4414,6 +4689,7 @@
       "durationSeconds": 57,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4429,6 +4705,7 @@
       "durationSeconds": 73,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4444,6 +4721,7 @@
       "durationSeconds": 226,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4459,6 +4737,7 @@
       "durationSeconds": 90,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4474,6 +4753,7 @@
       "durationSeconds": 142,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4489,6 +4769,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4504,6 +4785,7 @@
       "durationSeconds": 55,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4519,6 +4801,7 @@
       "durationSeconds": 57,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4534,6 +4817,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4549,6 +4833,7 @@
       "durationSeconds": 169,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4564,6 +4849,7 @@
       "durationSeconds": 49,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -4587,6 +4873,7 @@
       "durationSeconds": 78,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4602,6 +4889,7 @@
       "durationSeconds": 142,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4617,6 +4905,7 @@
       "durationSeconds": 110,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4632,6 +4921,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4647,6 +4937,7 @@
       "durationSeconds": 256,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4662,6 +4953,7 @@
       "durationSeconds": 176,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4677,6 +4969,7 @@
       "durationSeconds": 478,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4692,6 +4985,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4707,6 +5001,7 @@
       "durationSeconds": 167,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4722,6 +5017,7 @@
       "durationSeconds": 111,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4737,6 +5033,7 @@
       "durationSeconds": 138,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4752,6 +5049,7 @@
       "durationSeconds": 356,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-14",
@@ -4775,6 +5073,7 @@
       "durationSeconds": 179,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4790,6 +5089,7 @@
       "durationSeconds": 79,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4805,6 +5105,7 @@
       "durationSeconds": 49,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4820,6 +5121,7 @@
       "durationSeconds": 66,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4835,6 +5137,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4850,6 +5153,7 @@
       "durationSeconds": 178,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4865,6 +5169,7 @@
       "durationSeconds": 134,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4880,6 +5185,7 @@
       "durationSeconds": 149,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4895,6 +5201,7 @@
       "durationSeconds": 141,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2006-01-01",
@@ -4918,6 +5225,7 @@
       "durationSeconds": 71,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4933,6 +5241,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4948,6 +5257,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4963,6 +5273,7 @@
       "durationSeconds": 148,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4978,6 +5289,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -4993,6 +5305,7 @@
       "durationSeconds": 74,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5008,6 +5321,7 @@
       "durationSeconds": 34,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -5031,6 +5345,7 @@
       "durationSeconds": 114,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5046,6 +5361,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5061,6 +5377,7 @@
       "durationSeconds": 25,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5076,6 +5393,7 @@
       "durationSeconds": 167,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5091,6 +5409,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5106,6 +5425,7 @@
       "durationSeconds": 177,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5121,6 +5441,7 @@
       "durationSeconds": 6359,
       "parseStatus": "needs_review",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5136,6 +5457,7 @@
       "durationSeconds": 244,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -5159,6 +5481,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5174,6 +5497,7 @@
       "durationSeconds": 223,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5189,6 +5513,7 @@
       "durationSeconds": 276,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5204,6 +5529,7 @@
       "durationSeconds": 85,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5219,6 +5545,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5234,6 +5561,7 @@
       "durationSeconds": 40,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5249,6 +5577,7 @@
       "durationSeconds": 159,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5264,6 +5593,7 @@
       "durationSeconds": 65,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5279,6 +5609,7 @@
       "durationSeconds": 90,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5294,6 +5625,7 @@
       "durationSeconds": 80,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5309,6 +5641,7 @@
       "durationSeconds": 146,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5324,6 +5657,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5339,6 +5673,7 @@
       "durationSeconds": 104,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5354,6 +5689,7 @@
       "durationSeconds": 38,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1998-01-01",
@@ -5398,6 +5734,7 @@
       "durationSeconds": 57,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -5421,6 +5758,7 @@
       "durationSeconds": 167,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5436,6 +5774,7 @@
       "durationSeconds": 55,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5451,6 +5790,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2013-01-06",
@@ -5474,6 +5814,7 @@
       "durationSeconds": 4153,
       "parseStatus": "needs_review",
       "contentType": "playlist",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5489,6 +5830,7 @@
       "durationSeconds": 62,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5504,6 +5846,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2011-01-01",
@@ -5527,6 +5870,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5542,6 +5886,7 @@
       "durationSeconds": 181,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5557,6 +5902,7 @@
       "durationSeconds": 145,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5572,6 +5918,7 @@
       "durationSeconds": 297,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-03-11",
@@ -5595,6 +5942,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5610,6 +5958,7 @@
       "durationSeconds": 170,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5625,6 +5974,7 @@
       "durationSeconds": 102,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5640,6 +5990,7 @@
       "durationSeconds": 222,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5655,6 +6006,7 @@
       "durationSeconds": 174,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5670,6 +6022,7 @@
       "durationSeconds": 226,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5685,6 +6038,7 @@
       "durationSeconds": 159,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5700,6 +6054,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5715,6 +6070,7 @@
       "durationSeconds": 64,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5730,6 +6086,7 @@
       "durationSeconds": 797,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5745,6 +6102,7 @@
       "durationSeconds": 839,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5760,6 +6118,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5775,6 +6134,7 @@
       "durationSeconds": 177,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2012-05-19",
@@ -5798,6 +6158,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5813,6 +6174,7 @@
       "durationSeconds": 99,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5828,6 +6190,7 @@
       "durationSeconds": 81,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5843,6 +6206,7 @@
       "durationSeconds": 256,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5858,6 +6222,7 @@
       "durationSeconds": 80,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5873,6 +6238,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5888,6 +6254,7 @@
       "durationSeconds": 655,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5903,6 +6270,7 @@
       "durationSeconds": 122,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5918,6 +6286,7 @@
       "durationSeconds": 152,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5933,6 +6302,7 @@
       "durationSeconds": 34,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5948,6 +6318,7 @@
       "durationSeconds": 364,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5963,6 +6334,7 @@
       "durationSeconds": 76,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -5978,6 +6350,7 @@
       "durationSeconds": 59,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2013-01-01",
@@ -6001,6 +6374,7 @@
       "durationSeconds": 47,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6016,6 +6390,7 @@
       "durationSeconds": 151,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6031,6 +6406,7 @@
       "durationSeconds": 90,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6046,6 +6422,7 @@
       "durationSeconds": 63,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2013-04-21",
@@ -6069,6 +6446,7 @@
       "durationSeconds": 136,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6084,6 +6462,7 @@
       "durationSeconds": 264,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6099,6 +6478,7 @@
       "durationSeconds": 168,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6114,6 +6494,7 @@
       "durationSeconds": 136,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6129,6 +6510,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6144,6 +6526,7 @@
       "durationSeconds": 72,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6159,6 +6542,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6174,6 +6558,7 @@
       "durationSeconds": 224,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6189,6 +6574,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6204,6 +6590,7 @@
       "durationSeconds": 84,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6219,6 +6606,7 @@
       "durationSeconds": 110,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6234,6 +6622,7 @@
       "durationSeconds": 128,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6249,6 +6638,7 @@
       "durationSeconds": 113,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6264,6 +6654,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2015-01-01",
@@ -6287,6 +6678,7 @@
       "durationSeconds": 53,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6302,6 +6694,7 @@
       "durationSeconds": 59,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2012-07-07",
@@ -6325,6 +6718,7 @@
       "durationSeconds": 60,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2012-07-07",
@@ -6348,6 +6742,7 @@
       "durationSeconds": 102,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6363,6 +6758,7 @@
       "durationSeconds": 77,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6378,6 +6774,7 @@
       "durationSeconds": 232,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6393,6 +6790,7 @@
       "durationSeconds": 173,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6408,6 +6806,7 @@
       "durationSeconds": 173,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6423,6 +6822,7 @@
       "durationSeconds": 115,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6438,6 +6838,7 @@
       "durationSeconds": 62,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6453,6 +6854,7 @@
       "durationSeconds": 169,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6468,6 +6870,7 @@
       "durationSeconds": 148,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6483,6 +6886,7 @@
       "durationSeconds": 117,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6498,6 +6902,7 @@
       "durationSeconds": 60,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2012-07-14",
@@ -6521,6 +6926,7 @@
       "durationSeconds": 134,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -6544,6 +6950,7 @@
       "durationSeconds": 110,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -6567,6 +6974,7 @@
       "durationSeconds": 139,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -6590,6 +6998,7 @@
       "durationSeconds": 80,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6605,6 +7014,7 @@
       "durationSeconds": 110,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6620,6 +7030,7 @@
       "durationSeconds": 108,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6635,6 +7046,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6650,6 +7062,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6665,6 +7078,7 @@
       "durationSeconds": 159,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6680,6 +7094,7 @@
       "durationSeconds": 156,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6695,6 +7110,7 @@
       "durationSeconds": 176,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6710,6 +7126,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6725,6 +7142,7 @@
       "durationSeconds": 124,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6740,6 +7158,7 @@
       "durationSeconds": 269,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6755,6 +7174,7 @@
       "durationSeconds": 62,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -6778,6 +7198,7 @@
       "durationSeconds": 77,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6793,6 +7214,7 @@
       "durationSeconds": 72,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6808,6 +7230,7 @@
       "durationSeconds": 81,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6823,6 +7246,7 @@
       "durationSeconds": 86,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6838,6 +7262,7 @@
       "durationSeconds": 170,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -6861,6 +7286,7 @@
       "durationSeconds": 80,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2015-01-01",
@@ -6884,6 +7310,7 @@
       "durationSeconds": 78,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6899,6 +7326,7 @@
       "durationSeconds": 57,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -6922,6 +7350,7 @@
       "durationSeconds": 109,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6937,6 +7366,7 @@
       "durationSeconds": 109,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6952,6 +7382,7 @@
       "durationSeconds": 53,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6967,6 +7398,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -6982,6 +7414,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2016-01-01",
@@ -7012,6 +7445,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7027,6 +7461,7 @@
       "durationSeconds": 100,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7042,6 +7477,7 @@
       "durationSeconds": 145,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7057,6 +7493,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7072,6 +7509,7 @@
       "durationSeconds": 66,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7087,6 +7525,7 @@
       "durationSeconds": 170,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7102,6 +7541,7 @@
       "durationSeconds": 168,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7117,6 +7557,7 @@
       "durationSeconds": 135,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7132,6 +7573,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7147,6 +7589,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7162,6 +7605,7 @@
       "durationSeconds": 173,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7177,6 +7621,7 @@
       "durationSeconds": 172,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7192,6 +7637,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7207,6 +7653,7 @@
       "durationSeconds": 45,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7222,6 +7669,7 @@
       "durationSeconds": 40,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7237,6 +7685,7 @@
       "durationSeconds": 66,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7252,6 +7701,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7267,6 +7717,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7282,6 +7733,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7297,6 +7749,7 @@
       "durationSeconds": 55,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7312,6 +7765,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7327,6 +7781,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7342,6 +7797,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7357,6 +7813,7 @@
       "durationSeconds": 121,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7372,6 +7829,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7387,6 +7845,7 @@
       "durationSeconds": 128,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7402,6 +7861,7 @@
       "durationSeconds": 170,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7417,6 +7877,7 @@
       "durationSeconds": 164,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7432,6 +7893,7 @@
       "durationSeconds": 110,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7447,6 +7909,7 @@
       "durationSeconds": 45,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7462,6 +7925,7 @@
       "durationSeconds": 322,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7477,6 +7941,7 @@
       "durationSeconds": 111,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7492,6 +7957,7 @@
       "durationSeconds": 152,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7507,6 +7973,7 @@
       "durationSeconds": 151,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7522,6 +7989,7 @@
       "durationSeconds": 143,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7537,6 +8005,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7552,6 +8021,7 @@
       "durationSeconds": 161,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7567,6 +8037,7 @@
       "durationSeconds": 96,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7582,6 +8053,7 @@
       "durationSeconds": 108,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7597,6 +8069,7 @@
       "durationSeconds": 66,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7612,6 +8085,7 @@
       "durationSeconds": 76,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7627,6 +8101,7 @@
       "durationSeconds": 87,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7642,6 +8117,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7657,6 +8133,7 @@
       "durationSeconds": 71,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7672,6 +8149,7 @@
       "durationSeconds": 81,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7687,6 +8165,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7702,6 +8181,7 @@
       "durationSeconds": 115,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7717,6 +8197,7 @@
       "durationSeconds": 180,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7732,6 +8213,7 @@
       "durationSeconds": 128,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7747,6 +8229,7 @@
       "durationSeconds": 109,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "1999-01-01",
@@ -7770,6 +8253,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7785,6 +8269,7 @@
       "durationSeconds": 119,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7800,6 +8285,7 @@
       "durationSeconds": 168,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7815,6 +8301,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7830,6 +8317,7 @@
       "durationSeconds": 110,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7845,6 +8333,7 @@
       "durationSeconds": 120,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7860,6 +8349,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7875,6 +8365,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7890,6 +8381,7 @@
       "durationSeconds": 278,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7905,6 +8397,7 @@
       "durationSeconds": 104,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7920,6 +8413,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7935,6 +8429,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7950,6 +8445,7 @@
       "durationSeconds": 230,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -7965,6 +8461,7 @@
       "durationSeconds": 62,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2012-07-07",
@@ -7988,6 +8485,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8003,6 +8501,7 @@
       "durationSeconds": 117,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8018,6 +8517,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8033,6 +8533,7 @@
       "durationSeconds": 61,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -8056,6 +8557,7 @@
       "durationSeconds": 88,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8071,6 +8573,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8086,6 +8589,7 @@
       "durationSeconds": 49,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8101,6 +8605,7 @@
       "durationSeconds": 88,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8116,6 +8621,7 @@
       "durationSeconds": 67,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8131,6 +8637,7 @@
       "durationSeconds": 122,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8146,6 +8653,7 @@
       "durationSeconds": 54,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8161,6 +8669,7 @@
       "durationSeconds": 50,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8176,6 +8685,7 @@
       "durationSeconds": 104,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8191,6 +8701,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8206,6 +8717,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8221,6 +8733,7 @@
       "durationSeconds": 121,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8236,6 +8749,7 @@
       "durationSeconds": 112,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8251,6 +8765,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8266,6 +8781,7 @@
       "durationSeconds": 54,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8281,6 +8797,7 @@
       "durationSeconds": 70,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8296,6 +8813,7 @@
       "durationSeconds": 37,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8311,6 +8829,7 @@
       "durationSeconds": 93,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8326,6 +8845,7 @@
       "durationSeconds": 91,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2006-01-01",
@@ -8349,6 +8869,7 @@
       "durationSeconds": 151,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8364,6 +8885,7 @@
       "durationSeconds": 195,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8379,6 +8901,7 @@
       "durationSeconds": 56,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -8402,6 +8925,7 @@
       "durationSeconds": 660,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8417,6 +8941,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8432,6 +8957,7 @@
       "durationSeconds": 193,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8447,6 +8973,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8462,6 +8989,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8477,6 +9005,7 @@
       "durationSeconds": 58,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8492,6 +9021,7 @@
       "durationSeconds": 118,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8507,6 +9037,7 @@
       "durationSeconds": 109,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8522,6 +9053,7 @@
       "durationSeconds": 344,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8537,6 +9069,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8552,6 +9085,7 @@
       "durationSeconds": 122,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8567,6 +9101,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8582,6 +9117,7 @@
       "durationSeconds": 98,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8597,6 +9133,7 @@
       "durationSeconds": 100,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8612,6 +9149,7 @@
       "durationSeconds": 450,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8627,6 +9165,7 @@
       "durationSeconds": 94,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8642,6 +9181,7 @@
       "durationSeconds": 54,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8657,6 +9197,7 @@
       "durationSeconds": 56,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8672,6 +9213,7 @@
       "durationSeconds": 36,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8687,6 +9229,7 @@
       "durationSeconds": 55,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8702,6 +9245,7 @@
       "durationSeconds": 127,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8717,6 +9261,7 @@
       "durationSeconds": 33,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8732,6 +9277,7 @@
       "durationSeconds": 26,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8747,6 +9293,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8762,6 +9309,7 @@
       "durationSeconds": 329,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8777,6 +9325,7 @@
       "durationSeconds": 108,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8792,6 +9341,7 @@
       "durationSeconds": 104,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8807,6 +9357,7 @@
       "durationSeconds": 78,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8822,6 +9373,7 @@
       "durationSeconds": 31,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8837,6 +9389,7 @@
       "durationSeconds": 45,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8852,6 +9405,7 @@
       "durationSeconds": 52,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -8875,6 +9429,7 @@
       "durationSeconds": 51,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8890,6 +9445,7 @@
       "durationSeconds": 29,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8905,6 +9461,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8920,6 +9477,7 @@
       "durationSeconds": 22,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8935,6 +9493,7 @@
       "durationSeconds": 113,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -8958,6 +9517,7 @@
       "durationSeconds": 89,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8973,6 +9533,7 @@
       "durationSeconds": 98,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -8988,6 +9549,7 @@
       "durationSeconds": 230,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2007-10-11",
@@ -9011,6 +9573,7 @@
       "durationSeconds": 38,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9026,6 +9589,7 @@
       "durationSeconds": 267,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9041,6 +9605,7 @@
       "durationSeconds": 41,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -9064,6 +9629,7 @@
       "durationSeconds": 42,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9079,6 +9645,7 @@
       "durationSeconds": 50,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -9102,6 +9669,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9117,6 +9685,7 @@
       "durationSeconds": 60,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9132,6 +9701,7 @@
       "durationSeconds": 50,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2002-01-01",
@@ -9155,6 +9725,7 @@
       "durationSeconds": 59,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9170,6 +9741,7 @@
       "durationSeconds": 50,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9185,6 +9757,7 @@
       "durationSeconds": 246,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9200,6 +9773,7 @@
       "durationSeconds": 69,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9215,6 +9789,7 @@
       "durationSeconds": 88,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9230,6 +9805,7 @@
       "durationSeconds": 49,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9245,6 +9821,7 @@
       "durationSeconds": 36,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9260,6 +9837,7 @@
       "durationSeconds": 30,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9275,6 +9853,7 @@
       "durationSeconds": 26,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9290,6 +9869,7 @@
       "durationSeconds": 32,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9305,6 +9885,7 @@
       "durationSeconds": 29,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9320,6 +9901,7 @@
       "durationSeconds": 47,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9335,6 +9917,7 @@
       "durationSeconds": 81,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9350,6 +9933,7 @@
       "durationSeconds": 63,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9365,6 +9949,7 @@
       "durationSeconds": 15,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-11-19",
@@ -9388,6 +9973,7 @@
       "durationSeconds": 107,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9403,6 +9989,7 @@
       "durationSeconds": 10,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9418,6 +10005,7 @@
       "durationSeconds": 12,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9433,6 +10021,7 @@
       "durationSeconds": 160,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9448,6 +10037,7 @@
       "durationSeconds": 48,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9463,6 +10053,7 @@
       "durationSeconds": 8,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2000-01-01",
@@ -9486,6 +10077,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9501,6 +10093,7 @@
       "durationSeconds": 185,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9516,6 +10109,7 @@
       "durationSeconds": 30,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9531,6 +10125,7 @@
       "durationSeconds": 57,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9546,6 +10141,7 @@
       "durationSeconds": 236,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9561,6 +10157,7 @@
       "durationSeconds": 50,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9576,6 +10173,7 @@
       "durationSeconds": 97,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9591,6 +10189,7 @@
       "durationSeconds": 53,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-10-28",
@@ -9614,6 +10213,7 @@
       "durationSeconds": 254,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9629,6 +10229,7 @@
       "durationSeconds": 17,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2001-01-01",
@@ -9652,6 +10253,7 @@
       "durationSeconds": 281,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9667,6 +10269,7 @@
       "durationSeconds": 259,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9682,6 +10285,7 @@
       "durationSeconds": 172,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2005-01-01",
@@ -9705,6 +10309,7 @@
       "durationSeconds": 85,
       "parseStatus": "parsed",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [
         {
           "sourceDate": "2005-01-01",
@@ -9728,6 +10333,7 @@
       "durationSeconds": 28,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9743,6 +10349,7 @@
       "durationSeconds": 40,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9758,6 +10365,7 @@
       "durationSeconds": 23,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9773,6 +10381,7 @@
       "durationSeconds": 76,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9788,6 +10397,7 @@
       "durationSeconds": 80,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9803,6 +10413,7 @@
       "durationSeconds": 34,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9818,6 +10429,7 @@
       "durationSeconds": 271,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9833,6 +10445,7 @@
       "durationSeconds": 128,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9848,6 +10461,7 @@
       "durationSeconds": 150,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9863,6 +10477,7 @@
       "durationSeconds": 118,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9878,6 +10493,7 @@
       "durationSeconds": 105,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9893,6 +10509,7 @@
       "durationSeconds": 40,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9908,6 +10525,7 @@
       "durationSeconds": 61,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9923,6 +10541,7 @@
       "durationSeconds": 62,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9938,6 +10557,7 @@
       "durationSeconds": 50,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9953,6 +10573,7 @@
       "durationSeconds": 131,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9968,6 +10589,7 @@
       "durationSeconds": 119,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9983,6 +10605,7 @@
       "durationSeconds": 94,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -9998,6 +10621,7 @@
       "durationSeconds": 33,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10013,6 +10637,7 @@
       "durationSeconds": 125,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10028,6 +10653,7 @@
       "durationSeconds": 196,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10043,6 +10669,7 @@
       "durationSeconds": 124,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10058,6 +10685,7 @@
       "durationSeconds": 205,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10073,6 +10701,7 @@
       "durationSeconds": 210,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10088,6 +10717,7 @@
       "durationSeconds": 213,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10103,6 +10733,7 @@
       "durationSeconds": 208,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10118,6 +10749,7 @@
       "durationSeconds": 158,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10133,6 +10765,7 @@
       "durationSeconds": 282,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10148,6 +10781,7 @@
       "durationSeconds": 237,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10163,6 +10797,7 @@
       "durationSeconds": 204,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10178,6 +10813,7 @@
       "durationSeconds": 283,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10193,6 +10829,7 @@
       "durationSeconds": 317,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10208,6 +10845,7 @@
       "durationSeconds": 247,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10223,6 +10861,7 @@
       "durationSeconds": 311,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     },
@@ -10238,12 +10877,13 @@
       "durationSeconds": 171,
       "parseStatus": "needs_review",
       "contentType": "video",
+      "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:24:37.640Z",
+  "generatedAt": "2026-09-19T05:42:33.509Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
