@@ -2436,17 +2436,9 @@
       "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": [],
-      "previousManualDates": [
-        {
-          "sourceDate": "1999-01-01",
-          "source": "admin",
-          "precision": "year",
-          "inferred": true,
-          "manual": true
-        }
-      ],
-      "manualDateReviewPending": true,
-      "descriptionChangedAfterManual": true
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "rSZlKThr1JY",
@@ -12803,7 +12795,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T06:00:33.647Z",
+  "generatedAt": "2026-09-19T06:07:16.064Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
