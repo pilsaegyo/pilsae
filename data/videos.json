@@ -3566,11 +3566,19 @@
       "title": "방글방글 해피 히히캣 #신혜성 #신화",
       "description": "2001 뮤직큐\n재보정 + 숏츠 스타일 재편집 \n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "2001 뮤직큐",
-      "sourceDate": null,
+      "sourceDate": "2001-01-01",
       "publishedAt": "2025-11-03T10:30:42Z",
       "thumbnail": "https://i.ytimg.com/vi/pTq9qhIecvE/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7849,7 +7857,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:09:26.890Z",
+  "generatedAt": "2026-09-19T04:09:36.721Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
