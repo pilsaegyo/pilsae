@@ -4530,3 +4530,31 @@ select{
     bottom:6px;
   }
 }
+
+
+/* v24.1 admin content progressive loading */
+.admin-content-load-more-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:14px;
+}
+
+.admin-content-load-more{
+  min-width:150px;
+  min-height:38px;
+  padding:8px 16px;
+  border:1px solid #d8d1dc;
+  border-radius:10px;
+  background:#fff;
+  color:#65596b;
+  font-size:9px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.admin-content-load-more:hover,
+.admin-content-load-more:focus-visible{
+  border-color:#bfaec8;
+  background:#f8f4fa;
+  outline:none;
+}

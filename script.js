@@ -23,6 +23,7 @@ let adminReviewSort = "priority";
 let adminHistoryLoaded = false;
 let adminHealthFilter = "all";
 let adminContentMode = "all";
+let adminContentVisibleLimit = 30;
 let adminBackupsLoaded = false;
 const $ = (sel) => document.querySelector(sel);
 
@@ -2350,12 +2351,13 @@ function renderAdminUnknownList() {
 }
 function renderAdminContentList() {
   const wrap = $("#adminContentList");
+  const loadMoreBtn = $("#adminContentLoadMore");
   if (!wrap) return;
 
   const q = ($("#adminContentSearch")?.value || "").trim().toLowerCase();
 
   // Keep already-classified playlists visible for management.
-  // For new playlist candidates, only surface videos 6 minutes or longer.
+  // Video-format mode shows the full archive because Shorts can be very short.
   let rows = adminContentMode === "video-format"
     ? [...videos]
     : videos.filter(v =>
@@ -2373,29 +2375,27 @@ function renderAdminContentList() {
 
   if (q) {
     rows = rows.filter(v => `${v.title} ${v.description}`.toLowerCase().includes(q));
-  } else {
-    rows = rows
-      .sort((a,b) => {
-        if (adminContentMode === "video-format") {
-          if (a.videoFormat === "shorts" && b.videoFormat !== "shorts") return -1;
-          if (a.videoFormat !== "shorts" && b.videoFormat === "shorts") return 1;
-          return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
-        }
-        if (a.contentType === "playlist" && b.contentType !== "playlist") return -1;
-        if (a.contentType !== "playlist" && b.contentType === "playlist") return 1;
-        return Number(b.durationSeconds || 0) - Number(a.durationSeconds || 0);
-      })
-      .slice(0, adminContentMode === "video-format" ? 50 : 30);
   }
 
-  if (q) rows = rows.slice(0, 50);
+  rows.sort((a,b) => {
+    if (adminContentMode === "video-format") {
+      if (a.videoFormat === "shorts" && b.videoFormat !== "shorts") return -1;
+      if (a.videoFormat !== "shorts" && b.videoFormat === "shorts") return 1;
+      return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
+    }
+    if (a.contentType === "playlist" && b.contentType !== "playlist") return -1;
+    if (a.contentType !== "playlist" && b.contentType === "playlist") return 1;
+    return Number(b.durationSeconds || 0) - Number(a.durationSeconds || 0);
+  });
 
   if (!rows.length) {
-    wrap.innerHTML = `<p class="admin-help">6분 이상 영상 또는 기존 플레이리스트 중 검색 결과가 없습니다.</p>`;
+    wrap.innerHTML = `<p class="admin-help">조건에 맞는 영상이 없습니다.</p>`;
+    if (loadMoreBtn) loadMoreBtn.hidden = true;
     return;
   }
 
-  wrap.innerHTML = rows.map(v => `
+  const visibleRows = rows.slice(0, adminContentVisibleLimit);
+  wrap.innerHTML = visibleRows.map(v => `
     <div class="admin-content-item">
       <div class="admin-content-thumb">${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}</div>
       <div class="admin-content-copy">
@@ -2464,6 +2464,14 @@ function renderAdminContentList() {
       </div>
     </div>
   `).join("");
+
+  if (loadMoreBtn) {
+    const remaining = rows.length - visibleRows.length;
+    loadMoreBtn.hidden = remaining <= 0;
+    loadMoreBtn.textContent = remaining > 0
+      ? `더보기 (${Math.min(30, remaining)}개)`
+      : "더보기";
+  }
 }
 
 function adminHistoryActionLabel(action) {
@@ -2675,6 +2683,7 @@ function routeAdminAction(route, { videoId="", healthType="" }={}) {
 
   if (route === "content-playlists") {
     adminContentMode = "playlists";
+    adminContentVisibleLimit = 30;
     if ($("#adminContentSearch")) $("#adminContentSearch").value = "";
     setAdminTab("content");
     renderAdminContentList();
@@ -3378,11 +3387,20 @@ function bindEvents() {
 
   const adminContentSearch = $("#adminContentSearch");
   if (adminContentSearch) {
-    adminContentSearch.addEventListener("input", renderAdminContentList);
+    adminContentSearch.addEventListener("input", () => {
+      adminContentVisibleLimit = 30;
+      renderAdminContentList();
+    });
   }
 
   $("#adminContentMode")?.addEventListener("change", (event) => {
     adminContentMode = event.target.value || "all";
+    adminContentVisibleLimit = 30;
+    renderAdminContentList();
+  });
+
+  $("#adminContentLoadMore")?.addEventListener("click", () => {
+    adminContentVisibleLimit += 30;
     renderAdminContentList();
   });
 

@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=24" />
+  <link rel="stylesheet" href="./style.css?v=24.1" />
 </head>
-<body class="admin-page admin-locked" data-build="24">
+<body class="admin-page admin-locked" data-build="24.1">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -247,10 +247,12 @@
                 <option value="video-format">동영상 타입 관리</option>
               </select>
             </label>
-            <p class="admin-content-note">검색 전에는 최대 30개만 표시됩니다. 검색하면 최대 50개까지 확인할 수 있습니다.</p>
           </div>
 
           <div id="adminContentList" class="admin-content-list"></div>
+          <div class="admin-content-load-more-wrap">
+            <button id="adminContentLoadMore" class="admin-content-load-more" type="button" hidden>더보기</button>
+          </div>
         </div>
       </div>
 
@@ -312,6 +314,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=24" defer></script>
+  <script src="./script.js?v=24.1" defer></script>
 </body>
 </html>
