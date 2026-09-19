@@ -382,6 +382,9 @@ export default {
                 : old.descriptionChangedAfterManual === true,
               ignoredDateCandidates: Array.isArray(old.ignoredDateCandidates) ? old.ignoredDateCandidates.map(String) : [],
               contentType: old.contentType === "playlist" ? "playlist" : "video",
+              url: /youtube\.com\/shorts\//i.test(String(old.url || ""))
+                ? String(old.url)
+                : video.url,
               playlistScope: old.playlistScope === "multi-year" ? "multi-year"
                 : old.playlistScope === "undated" ? "undated"
                 : "",
@@ -1450,6 +1453,7 @@ function normalizeYoutubeVideo(video) {
     sourceDate: null,
     publishedAt: String(s.publishedAt || ""),
     thumbnail,
+    url: `https://www.youtube.com/watch?v=${encodeURIComponent(video.id)}`,
     duration,
     durationSeconds,
     videoFormat: formatAssessment.format,

@@ -527,10 +527,15 @@ function mergeDateEntries(existing, extracted) {
   return merged;
 }
 
-function assessAutoVideoFormat({ title="", description="", durationSeconds=0, publishedAt="", currentFormat="" }={}) {
+function assessAutoVideoFormat({ title="", description="", durationSeconds=0, publishedAt="", currentFormat="", url="" }={}) {
   const duration = Number(durationSeconds || 0);
   const text = `${title} ${description}`.toLowerCase();
   const published = String(publishedAt || "").slice(0, 10);
+  const savedUrl = String(url || "");
+
+  if (/youtube\.com\/shorts\//i.test(savedUrl)) {
+    return { format:"shorts", confidence:"high", reason:"저장된 YouTube 주소가 /shorts/ 형식" };
+  }
 
   if (/(^|\s|#)shorts?\b/i.test(text)) {
     return { format:"shorts", confidence:"high", reason:"제목/설명에 Shorts 표기" };
@@ -558,7 +563,8 @@ function normalizeVideoFormat(v) {
     title:v?.title || "",
     description:v?.description || "",
     durationSeconds:v?.durationSeconds || 0,
-    publishedAt:v?.publishedAt || ""
+    publishedAt:v?.publishedAt || "",
+    url:v?.url || v?.youtubeUrl || ""
   }).format;
 }
 
@@ -588,7 +594,8 @@ function videoFormatAssessment(v) {
       description:v?.description || "",
       durationSeconds:v?.durationSeconds || 0,
       publishedAt:v?.publishedAt || "",
-      currentFormat:v?.videoFormat || ""
+      currentFormat:v?.videoFormat || "",
+      url:v?.url || v?.youtubeUrl || ""
     });
     confidence = fallback.confidence;
     reason = fallback.reason;
@@ -696,7 +703,7 @@ function normalizeVideo(v, idx=0) {
     ),
     type,
     sortDate,
-    url: youtubeUrlFromId(v.id)
+    url: String(v.url || v.youtubeUrl || "").trim() || youtubeUrlFromId(v.id)
   };
 }
 
@@ -2638,12 +2645,225 @@ function renderVideoFormatPreview(results=[]) {
   wrap.hidden = false;
 }
 
-async function previewPendingVideoFormats() {
-  const button = $("#adminVerifyVideoFormats");
+function wait(ms) {
+  return new Promise(resolve => window.setTimeout(resolve, ms));
+}
+
+async function probeVideoFormatBatchWithRetry(videoIds, {
+  attempts=3,
+  retryDelayMs=1200
+}={}) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await adminApi("/probe-video-formats", {
+        method: "POST",
+        body: JSON.stringify({ videoIds })
+      });
+    } catch (err) {
+      lastError = err;
+
+      if (attempt < attempts) {
+        await wait(retryDelayMs * attempt);
+      }
+    }
+  }
+
+  throw lastError || new Error("자동 확인 요청에 실패했습니다.");
+}
+
+let adminVideoFormatDiagnosticStage = 0;
+
+function diagnosticSampleTargets(targets, limit) {
+  if (targets.length <= limit) return [...targets];
+
+  const sampleItems = stratifiedVideoFormatSample(
+    targets.map(v => ({ videoId:v.id, videoFormat:v.videoFormat || "" })),
+    limit
+  );
+
+  const byId = new Map(targets.map(v => [String(v.id), v]));
+  return sampleItems.map(item => byId.get(String(item.videoId))).filter(Boolean);
+}
+
+function renderVideoFormatDiagnostic({
+  stage=0,
+  total=0,
+  checked=0,
+  resolved=0,
+  unresolved=0,
+  networkFailed=0,
+  canContinue=false,
+  message=""
+}={}) {
+  const wrap = $("#adminVideoFormatDiagnostic");
+  if (!wrap) return;
+
+  const rate = checked ? Math.round((resolved / checked) * 100) : 0;
+
+  wrap.innerHTML = `
+    <div class="format-diagnostic-grid">
+      <div><span>단계</span><strong>${stage || "-"}</strong></div>
+      <div><span>검사</span><strong>${checked}/${total || checked}</strong></div>
+      <div><span>판별 성공</span><strong>${resolved}</strong></div>
+      <div><span>판별불가</span><strong>${unresolved}</strong></div>
+      <div><span>네트워크 실패</span><strong>${networkFailed}</strong></div>
+      <div><span>성공률</span><strong>${rate}%</strong></div>
+    </div>
+    <p class="format-diagnostic-message ${canContinue ? "ok" : "warn"}">${escapeHTML(message)}</p>
+  `;
+  wrap.hidden = false;
+}
+
+async function runVideoFormatDiagnostic(limit, stage) {
+  const status = $("#adminVideoFormatVerifyStatus");
+  const targets = videos.filter(v => videoFormatAssessment(v).needsReview);
+  const stage5 = $("#adminVerifyVideoFormats5");
+  const stage20 = $("#adminVerifyVideoFormats20");
+  const stageAll = $("#adminVerifyVideoFormatsAll");
+
+  if (!targets.length) {
+    setAdminStatus(status, "현재 자동 확인이 필요한 영상이 없습니다.", "success");
+    return;
+  }
+
+  const sampleTargets = diagnosticSampleTargets(
+    targets,
+    Math.min(limit, targets.length)
+  );
+
+  [stage5, stage20, stageAll].forEach(btn => {
+    if (btn) btn.disabled = true;
+  });
+
+  const results = [];
+  let networkFailed = 0;
+
+  try {
+    const batchSize = 5;
+
+    for (let i = 0; i < sampleTargets.length; i += batchSize) {
+      const batch = sampleTargets.slice(i, i + batchSize);
+
+      setAdminStatus(
+        status,
+        `${stage}단계 진단 중… ${Math.min(i + batch.length, sampleTargets.length)}/${sampleTargets.length}`,
+        "loading"
+      );
+
+      try {
+        const data = await probeVideoFormatBatchWithRetry(
+          batch.map(v => v.id),
+          { attempts:3, retryDelayMs:1200 }
+        );
+
+        const received = Array.isArray(data.results) ? data.results : [];
+        results.push(...received);
+
+        const got = new Set(received.map(x => String(x.videoId || "")));
+        for (const v of batch) {
+          if (!got.has(String(v.id))) {
+            results.push({
+              videoId:v.id,
+              videoFormat:"",
+              reason:"자동 확인 응답 누락"
+            });
+          }
+        }
+      } catch (err) {
+        networkFailed += batch.length;
+        for (const v of batch) {
+          results.push({
+            videoId:v.id,
+            videoFormat:"",
+            reason:"자동 확인 네트워크 실패"
+          });
+        }
+      }
+
+      if (i + batchSize < sampleTargets.length) {
+        await wait(400);
+      }
+    }
+
+    const resolved = results.filter(
+      x => ["standard","shorts"].includes(x.videoFormat)
+    ).length;
+    const unresolved = results.length - resolved;
+
+    let canContinue = false;
+    let message = "";
+
+    if (stage === 1) {
+      canContinue =
+        networkFailed === 0 &&
+        resolved >= Math.max(3, Math.ceil(results.length * 0.6));
+
+      message = canContinue
+        ? "5개 진단이 정상입니다. 20개 테스트로 범위를 넓혀도 됩니다."
+        : "5개 진단에서 실패/판별불가 비율이 높습니다. 전체 검사는 아직 실행하지 않는 것이 안전합니다.";
+
+      adminVideoFormatDiagnosticStage = canContinue ? 1 : 0;
+
+      if (stage5) stage5.disabled = false;
+      if (stage20) stage20.disabled = !canContinue;
+      if (stageAll) stageAll.disabled = true;
+    } else {
+      canContinue =
+        networkFailed <= 1 &&
+        resolved >= Math.ceil(results.length * 0.8);
+
+      message = canContinue
+        ? "20개 테스트 결과가 안정적입니다. 이제 전체 미리보기를 실행할 수 있습니다."
+        : "20개 테스트에서 안정성이 충분하지 않습니다. 전체 미리보기는 잠금 상태로 유지합니다.";
+
+      adminVideoFormatDiagnosticStage = canContinue ? 2 : 1;
+
+      if (stage5) stage5.disabled = false;
+      if (stage20) stage20.disabled = false;
+      if (stageAll) stageAll.disabled = !canContinue;
+    }
+
+    renderVideoFormatDiagnostic({
+      stage,
+      total:sampleTargets.length,
+      checked:results.length,
+      resolved,
+      unresolved,
+      networkFailed,
+      canContinue,
+      message
+    });
+
+    setAdminStatus(
+      status,
+      `${stage}단계 완료 · 판별 성공 ${resolved} · 판별불가 ${unresolved} · 네트워크 실패 ${networkFailed}`,
+      canContinue ? "success" : "error"
+    );
+  } catch (err) {
+    if (stage5) stage5.disabled = false;
+    if (stage20) stage20.disabled = adminVideoFormatDiagnosticStage < 1;
+    if (stageAll) stageAll.disabled = adminVideoFormatDiagnosticStage < 2;
+    setAdminStatus(status, `${stage}단계 진단 오류: ${err.message}`, "error");
+  }
+}
+
+async function previewAllPendingVideoFormats() {
+  const button = $("#adminVerifyVideoFormatsAll");
   const status = $("#adminVideoFormatVerifyStatus");
   if (!button || !status) return;
 
   const targets = videos.filter(v => videoFormatAssessment(v).needsReview);
+
+  if (adminVideoFormatDiagnosticStage < 2) {
+    setAdminStatus(
+      status,
+      "먼저 5개 진단과 20개 테스트를 통과해야 전체 미리보기를 실행할 수 있습니다.",
+      "error"
+    );
+    return;
+  }
 
   if (!targets.length) {
     setAdminStatus(status, "현재 자동 확인이 필요한 영상이 없습니다.", "success");
@@ -2656,25 +2876,66 @@ async function previewPendingVideoFormats() {
   adminVideoFormatSampleLimits.shorts = 12;
   adminVideoFormatSampleLimits.standard = 12;
   adminVideoFormatSampleLimits.unresolved = 12;
-  const batchSize = 15;
+
+  // YouTube 공개 페이지를 여러 개 동시에 확인하면 일시적으로
+  // 네트워크/Worker fetch가 끊길 수 있어 작은 묶음으로 나눠 처리한다.
+  const batchSize = 5;
   const results = [];
+  let failedBatches = 0;
+  let processed = 0;
 
   try {
     for (let i = 0; i < targets.length; i += batchSize) {
       const batch = targets.slice(i, i + batchSize);
+      const ids = batch.map(v => v.id);
 
       setAdminStatus(
         status,
-        `미리보기 검사 중… ${Math.min(i + batch.length, targets.length)}/${targets.length}`,
+        `미리보기 검사 중… ${Math.min(processed + batch.length, targets.length)}/${targets.length}` +
+          (failedBatches ? ` · 재시도 실패 묶음 ${failedBatches}개` : ""),
         "loading"
       );
 
-      const data = await adminApi("/probe-video-formats", {
-        method: "POST",
-        body: JSON.stringify({ videoIds: batch.map(v => v.id) })
-      });
+      try {
+        const data = await probeVideoFormatBatchWithRetry(ids, {
+          attempts: 3,
+          retryDelayMs: 1200
+        });
 
-      results.push(...(data.results || []));
+        const received = Array.isArray(data.results) ? data.results : [];
+        const receivedIds = new Set(received.map(x => String(x.videoId || "")));
+
+        results.push(...received);
+
+        // 응답에서 누락된 영상도 미리보기 자체는 계속 진행하도록 판별불가로 남긴다.
+        for (const v of batch) {
+          if (!receivedIds.has(String(v.id))) {
+            results.push({
+              videoId: v.id,
+              videoFormat: "",
+              reason: "자동 확인 응답 누락 · 다시 시도 필요"
+            });
+          }
+        }
+      } catch (err) {
+        failedBatches += 1;
+
+        // 한 묶음이 실패해도 300개 전체 검사를 중단하지 않는다.
+        for (const v of batch) {
+          results.push({
+            videoId: v.id,
+            videoFormat: "",
+            reason: `자동 확인 네트워크 실패 · 다시 시도 필요`
+          });
+        }
+      }
+
+      processed += batch.length;
+
+      // 연속 요청으로 YouTube/Worker 쪽이 과부하되지 않도록 짧게 쉬어간다.
+      if (i + batchSize < targets.length) {
+        await wait(350);
+      }
     }
 
     renderVideoFormatPreview(results);
@@ -2683,10 +2944,14 @@ async function previewPendingVideoFormats() {
     const standard = results.filter(x => x.videoFormat === "standard").length;
     const unresolved = results.length - shorts - standard;
 
+    const suffix = failedBatches
+      ? ` · 네트워크 실패 묶음 ${failedBatches}개는 판별불가로 남김`
+      : "";
+
     setAdminStatus(
       status,
-      `미리보기 완료 · Shorts ${shorts}개 · 일반동영상 ${standard}개 · 판별불가 ${unresolved}개`,
-      "success"
+      `미리보기 완료 · Shorts ${shorts}개 · 일반동영상 ${standard}개 · 판별불가 ${unresolved}개${suffix}`,
+      failedBatches ? "success" : "success"
     );
   } catch (err) {
     setAdminStatus(status, `미리보기 검사 중 오류: ${err.message}`, "error");
@@ -3987,7 +4252,9 @@ function bindEvents() {
   });
 
 
-  $("#adminVerifyVideoFormats")?.addEventListener("click", previewPendingVideoFormats);
+  $("#adminVerifyVideoFormats5")?.addEventListener("click", () => runVideoFormatDiagnostic(5, 1));
+  $("#adminVerifyVideoFormats20")?.addEventListener("click", () => runVideoFormatDiagnostic(20, 2));
+  $("#adminVerifyVideoFormatsAll")?.addEventListener("click", previewAllPendingVideoFormats);
 
   const adminContentSearch = $("#adminContentSearch");
   if (adminContentSearch) {

@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=25.5" />
+  <link rel="stylesheet" href="./style.css?v=25.7" />
 </head>
-<body class="admin-page admin-locked" data-build="25.5">
+<body class="admin-page admin-locked" data-build="25.7">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -236,11 +236,16 @@
           <div class="admin-video-format-verify">
             <div>
               <strong>YouTube Shorts 자동 확인</strong>
-              <p class="admin-help">먼저 미리보기로 전체 후보를 검사합니다. 결과를 확인한 뒤에만 일괄 저장할 수 있습니다.</p>
+              <p class="admin-help">대상 수가 많아 먼저 5개 진단 → 20개 테스트 → 전체 미리보기 순서로 확인합니다. 앞 단계가 정상일 때만 다음 단계가 열립니다.</p>
             </div>
-            <button id="adminVerifyVideoFormats" class="ghost-button" type="button">자동 확인 미리보기</button>
+            <div class="admin-video-format-stage-actions">
+              <button id="adminVerifyVideoFormats5" class="ghost-button" type="button">1단계 · 5개 진단</button>
+              <button id="adminVerifyVideoFormats20" class="ghost-button" type="button" disabled>2단계 · 20개 테스트</button>
+              <button id="adminVerifyVideoFormatsAll" class="ghost-button" type="button" disabled>3단계 · 전체 미리보기</button>
+            </div>
           </div>
           <div id="adminVideoFormatVerifyStatus" class="admin-status"></div>
+          <div id="adminVideoFormatDiagnostic" class="admin-video-format-diagnostic" hidden></div>
           <div id="adminVideoFormatPreview" class="admin-video-format-preview" hidden></div>
 
           <div class="admin-content-toolbar">
@@ -325,6 +330,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=25.5" defer></script>
+  <script src="./script.js?v=25.7" defer></script>
 </body>
 </html>
