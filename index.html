@@ -6,9 +6,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=20" />
+  <link rel="stylesheet" href="./style.css?v=20.1" />
 </head>
-<body class="site-config-pending" data-build="20">
+<body class="site-config-pending" data-build="20.1">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -141,7 +141,12 @@
 
     <div class="result-header public-archive-ui">
       <section id="resultMeta" class="result-meta" aria-live="polite"></section>
-      <div class="view-toggle" role="group" aria-label="보기 방식">
+      <div class="result-actions">
+        <button id="copyCurrentLinkQuickBtn" class="quick-share-btn" type="button" aria-label="현재 화면 링크 복사" title="현재 화면 링크 복사">
+          <span class="quick-share-icon" aria-hidden="true">↗</span>
+          <span id="copyCurrentLinkQuickLabel" class="quick-share-label">링크 복사</span>
+        </button>
+        <div class="view-toggle" role="group" aria-label="보기 방식">
         <button id="gridViewBtn" class="view-toggle-btn active" type="button" aria-label="카드형 보기" title="카드형 보기">
           <span class="view-icon" aria-hidden="true">▦</span><span class="view-label">카드</span>
         </button>
@@ -151,6 +156,7 @@
         <button id="timelineViewBtn" class="view-toggle-btn" type="button" aria-label="연도·월 아카이브 보기" title="연도·월 아카이브 보기">
           <span class="view-icon" aria-hidden="true">≡</span><span class="view-label">연도·월</span>
         </button>
+        </div>
       </div>
     </div>
     <section id="loadingState" class="loading-state public-archive-ui" aria-live="polite">
@@ -188,6 +194,6 @@
     <span>필새 영상 아카이브</span>
   </footer>
 
-  <script src="./script.js?v=20" defer></script>
+  <script src="./script.js?v=20.1" defer></script>
 </body>
 </html>

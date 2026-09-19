@@ -1473,7 +1473,10 @@ function timelineBucket(v) {
 
 function timelineItemHtml(v, bucket) {
   const primary = bucket.entry;
-  const extraCount = Math.max(0, (v.dates || []).filter(d => d?.sourceDate).length - 1);
+  const dateCount = (v.dates || []).filter(d => d?.sourceDate).length;
+  const extraCount = Math.max(0, dateCount - 1);
+  const years = videoYears(v);
+
   const precisionBadge = bucket.kind === "month-only"
     ? `<span class="precision-badge month-only">일자 미상</span>`
     : bucket.kind === "year-only"
@@ -1486,6 +1489,22 @@ function timelineItemHtml(v, bucket) {
         ? `<span class="precision-badge unknown">날짜 미확인</span>`
         : "";
 
+  const primaryLabel = bucket.kind === "playlist-multiyear"
+    ? "여러 연도 수록"
+    : bucket.kind === "playlist-undated"
+      ? "연도 미지정"
+      : timelineDateLabel(primary);
+
+  const extraDateHtml =
+    bucket.kind === "playlist-multiyear" || bucket.kind === "playlist-undated" || bucket.kind === "unknown"
+      ? ""
+      : (extraCount ? `<span>외 ${extraCount}개 날짜</span>` : "");
+
+  const yearSummaryHtml =
+    (bucket.kind === "playlist-multiyear" || v.type === "mixed") && years.length
+      ? `<div class="timeline-years">${years.map(escapeHTML).join(" · ")}</div>`
+      : "";
+
   return `
     <article class="timeline-item ${escapeHTML(bucket.kind)}">
       <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
@@ -1493,12 +1512,12 @@ function timelineItemHtml(v, bucket) {
       </a>
       <div class="timeline-item-body">
         <div class="timeline-item-date">
-          ${escapeHTML(timelineDateLabel(primary))}
-          ${extraCount ? `<span>외 ${extraCount}개 날짜</span>` : ""}
+          ${escapeHTML(primaryLabel)}
+          ${extraDateHtml}
           ${precisionBadge}
         </div>
         <a class="timeline-title youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a>
-        ${v.type === "mixed" ? `<div class="timeline-years">${videoYears(v).map(escapeHTML).join(" · ")}</div>` : ""}
+        ${yearSummaryHtml}
       </div>
     </article>`;
 }
@@ -1738,7 +1757,10 @@ async function copyCurrentViewLink() {
   // Ensure the URL reflects the currently selected filters/view before copying.
   syncUrlState({ replace:true });
   const url = location.href;
-  const label = $("#copyCurrentLinkLabel");
+  const labels = [
+    $("#copyCurrentLinkLabel"),
+    $("#copyCurrentLinkQuickLabel")
+  ].filter(Boolean);
 
   try {
     if (navigator.clipboard?.writeText) {
@@ -1755,20 +1777,24 @@ async function copyCurrentViewLink() {
       textarea.remove();
     }
 
-    if (label) {
-      label.textContent = "링크가 복사됐어요";
-      window.setTimeout(() => {
-        if (label) label.textContent = "현재 화면 링크 복사";
-      }, 1600);
-    }
+    labels.forEach(label => {
+      label.textContent = label.id === "copyCurrentLinkQuickLabel" ? "복사됨" : "링크가 복사됐어요";
+    });
+    window.setTimeout(() => {
+      labels.forEach(label => {
+        label.textContent = label.id === "copyCurrentLinkQuickLabel" ? "링크 복사" : "현재 화면 링크 복사";
+      });
+    }, 1600);
   } catch (err) {
     console.warn("현재 화면 링크 복사 실패", err);
-    if (label) {
-      label.textContent = "복사하지 못했어요";
-      window.setTimeout(() => {
-        if (label) label.textContent = "현재 화면 링크 복사";
-      }, 1600);
-    }
+    labels.forEach(label => {
+      label.textContent = "복사 실패";
+    });
+    window.setTimeout(() => {
+      labels.forEach(label => {
+        label.textContent = label.id === "copyCurrentLinkQuickLabel" ? "링크 복사" : "현재 화면 링크 복사";
+      });
+    }, 1600);
   }
 }
 
@@ -2146,6 +2172,7 @@ function bindEvents() {
   $("#siteHelpClose")?.addEventListener("click", () => setSiteHelp(false));
   $("#siteHelpBackdrop")?.addEventListener("click", () => setSiteHelp(false));
   $("#copyCurrentLinkBtn")?.addEventListener("click", copyCurrentViewLink);
+  $("#copyCurrentLinkQuickBtn")?.addEventListener("click", copyCurrentViewLink);
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !$("#siteHelpPanel")?.hidden) {
