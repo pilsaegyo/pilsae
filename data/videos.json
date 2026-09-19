@@ -2077,11 +2077,19 @@
       "title": "불량 발레리노 신혜성 #신혜성 #신화",
       "description": "신화방송 Ep 35,36\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "신화방송 Ep 35,36",
-      "sourceDate": null,
+      "sourceDate": "2012-11-11",
       "publishedAt": "2026-03-30T10:15:00Z",
       "thumbnail": "https://i.ytimg.com/vi/2ALFOrnH_Ao/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2012-11-11",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8267,7 +8275,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:01:09.912Z",
+  "generatedAt": "2026-09-19T05:07:43.063Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
