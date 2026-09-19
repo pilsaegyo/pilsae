@@ -162,33 +162,158 @@ function extractDatesFromText(text="") {
     addDay(m[1], m[2], m[3]);
   }
 
-  // 3) YYYYMMDD
+  // 3) YY.MM.DD / YY-MM-DD / YY/MM/DD e.g. 08.11.08 => 2008-11-08
+  for (const m of input.matchAll(/(?<!\d)(\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})(?!\d)/g)) {
+    addDay(normalizeTwoDigitYear(m[1]), m[2], m[3]);
+  }
+
+  // 4) YYYYMMDD
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})(\d{2})(\d{2})(?!\d)/g)) {
     addDay(m[1], m[2], m[3]);
   }
 
-  // 4) YYMMDD e.g. 150227, 010826, 981025
+  // 5) YYMMDD e.g. 150227, 010826, 981025
   for (const m of input.matchAll(/(?<!\d)(\d{2})(\d{2})(\d{2})(?!\d)/g)) {
     const y = normalizeTwoDigitYear(m[1]);
     addDay(y, m[2], m[3]);
   }
 
-  // 5) YYYY년 M월
+  // 6) YYYY년 M월
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월(?!\s*\d+\s*일)/g)) {
     addMonth(m[1], m[2]);
   }
 
-  // 6) YYYY.MM / YYYY-MM / YYYY/MM
+  // 7) YYYY.MM / YYYY-MM / YYYY/MM
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})[.\-/](\d{1,2})(?![.\-/]\d|\d)/g)) {
     addMonth(m[1], m[2]);
   }
 
-  // 7) YYYY년 / YYYY년도
+  // 8) YYYY년 / YYYY년도
   for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년(?:도)?(?!\s*\d+\s*월)/g)) {
     addYear(m[1]);
   }
 
   return found;
+}
+
+function extractReviewDateCandidates(title="", description="", ignored=[]) {
+  const ignoredSet = new Set((ignored || []).map(String));
+  const found = [];
+
+  const addCandidate = ({raw, sourceDate, precision, display, sourceLocation, context}) => {
+    if (!raw || !sourceDate) return;
+    const candidateKey = `${sourceLocation}|${raw}|${precision}`;
+
+    // Backward compatibility: old v10 stored just the raw YYMM token.
+    if (ignoredSet.has(candidateKey) || ignoredSet.has(raw)) return;
+
+    if (found.some(x => x.candidateKey === candidateKey)) return;
+
+    found.push({
+      raw,
+      candidateKey,
+      sourceDate,
+      precision,
+      display,
+      sourceLocation,
+      context: String(context || "").trim()
+    });
+  };
+
+  const inspectTitle = (text) => {
+    const line = String(text || "").trim();
+    if (!line) return;
+
+    // TITLE: YY.MM.DD / YY-MM-DD / YY/MM/DD
+    // Candidate only — title never auto-confirms a date.
+    let m = line.match(/^(\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})(?:$|\s+|[^\d])/);
+    if (m) {
+      const year = normalizeTwoDigitYear(m[1]);
+      const month = Number(m[2]);
+      const day = Number(m[3]);
+      if (isValidDate(year, month, day)) {
+        addCandidate({
+          raw: m[0].trim().replace(/[^\d./-]+$/,""),
+          sourceDate: `${year}-${pad2(month)}-${pad2(day)}`,
+          precision: "day",
+          display: `${year}.${pad2(month)}.${pad2(day)}`,
+          sourceLocation: "title",
+          context: line
+        });
+      }
+    }
+
+    // TITLE: YYMMDD
+    m = line.match(/^(\d{2})(\d{2})(\d{2})(?:$|\s+|[^\d])/);
+    if (m) {
+      const year = normalizeTwoDigitYear(m[1]);
+      const month = Number(m[2]);
+      const day = Number(m[3]);
+      if (isValidDate(year, month, day)) {
+        addCandidate({
+          raw: `${m[1]}${m[2]}${m[3]}`,
+          sourceDate: `${year}-${pad2(month)}-${pad2(day)}`,
+          precision: "day",
+          display: `${year}.${pad2(month)}.${pad2(day)}`,
+          sourceLocation: "title",
+          context: line
+        });
+      }
+    }
+
+    // TITLE: YYMM — deliberately conservative.
+    // Only at the very start and month must be 01~12.
+    m = line.match(/^(\d{2})(0[1-9]|1[0-2])(?:$|\s+|[^\d])/);
+    if (m) {
+      const year = normalizeTwoDigitYear(m[1]);
+      const month = Number(m[2]);
+      addCandidate({
+        raw: `${m[1]}${m[2]}`,
+        sourceDate: `${year}-${pad2(month)}-01`,
+        precision: "month",
+        display: `${year}.${pad2(month)}`,
+        sourceLocation: "title",
+        context: line
+      });
+    }
+  };
+
+  const inspectDescription = (text) => {
+    const input = removeHashtagsFromDescription(text || "");
+
+    for (const rawLine of input.split(/\r?\n/)) {
+      const line = rawLine.trim();
+      if (!line) continue;
+
+      // Description YY.MM.DD is already auto-confirmed by extractDatesFromText().
+      // We therefore only need conservative YYMM candidates here.
+      const m = line.match(/^(\d{2})(0[1-9]|1[0-2])(?:$|\s+|[^\d])/);
+      if (!m) continue;
+
+      const year = normalizeTwoDigitYear(m[1]);
+      const month = Number(m[2]);
+
+      addCandidate({
+        raw: `${m[1]}${m[2]}`,
+        sourceDate: `${year}-${pad2(month)}-01`,
+        precision: "month",
+        display: `${year}.${pad2(month)}`,
+        sourceLocation: "description",
+        context: line
+      });
+    }
+  };
+
+  inspectTitle(title);
+  inspectDescription(description);
+
+  // Exact-day candidates are more informative than month candidates.
+  const rank = { day: 2, month: 1 };
+  return found.sort((a,b) => (rank[b.precision] || 0) - (rank[a.precision] || 0));
+}
+
+function candidateSourceLabel(sourceLocation="") {
+  return sourceLocation === "title" ? "제목에서 발견" : "설명에서 발견";
 }
 
 function normalizeDateEntry(entry) {
@@ -206,7 +331,8 @@ function normalizeDateEntry(entry) {
       sourceDate: String(entry.sourceDate || ""),
       source: String(entry.source || ""),
       precision: String(entry.precision || "day"),
-      inferred: Boolean(entry.inferred)
+      inferred: Boolean(entry.inferred),
+      manual: Boolean(entry.manual)
     };
   }
   return null;
@@ -256,7 +382,8 @@ function mergeDateEntries(existing, extracted) {
         sourceDate: e.sourceDate,
         source: "",
         precision: e.precision || "day",
-        inferred: Boolean(e.inferred)
+        inferred: Boolean(e.inferred),
+        manual: Boolean(e.manual)
       });
     }
   };
@@ -315,6 +442,12 @@ function normalizeVideo(v, idx=0) {
     thumbnail: String(v.thumbnail || ""),
     parseStatus: validDates.length ? "parsed" : String(v.parseStatus || ""),
     dates: dateEntries,
+    ignoredDateCandidates: Array.isArray(v.ignoredDateCandidates) ? v.ignoredDateCandidates.map(String) : [],
+    dateCandidates: validDates.length ? [] : extractReviewDateCandidates(
+      v.title || "",
+      v.description || "",
+      v.ignoredDateCandidates || []
+    ),
     type,
     sortDate,
     url: youtubeUrlFromId(v.id)
@@ -588,6 +721,7 @@ function renderDates(v) {
 
 function unknownReason(v) {
   if (v.type !== "unknown") return "";
+  if (Array.isArray(v.dateCandidates) && v.dateCandidates.length) return "월 날짜 후보 있음";
   const raw = String(v.description || "");
   if (!raw.trim()) return "영상 설명 없음";
 
@@ -1190,7 +1324,31 @@ function renderAdminUnknownList() {
           <span class="admin-reason-badge">${escapeHTML(unknownReason(v))}</span>
         </div>
         <p>${escapeHTML(descriptionPreview(v.description))}</p>
-        <a class="youtube-video-link admin-youtube-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">YouTube에서 설명 확인</a>
+        ${(v.dateCandidates || []).map(c => `
+          <div class="date-candidate-box">
+            <div class="date-candidate-info">
+              <div class="date-candidate-heading">
+                <span class="date-candidate-label">날짜 후보</span>
+                <span class="candidate-source-badge ${escapeHTML(c.sourceLocation)}">${escapeHTML(candidateSourceLabel(c.sourceLocation))}</span>
+              </div>
+              <strong>${escapeHTML(c.display)}</strong>
+              <small>원문 ${escapeHTML(c.raw)} · ${escapeHTML(c.context)}</small>
+            </div>
+            <div class="date-candidate-actions">
+              <button type="button" class="candidate-apply-btn"
+                data-candidate-apply="${escapeHTML(v.id)}"
+                data-candidate-date="${escapeHTML(c.sourceDate)}"
+                data-candidate-precision="${escapeHTML(c.precision)}"
+                data-candidate-key="${escapeHTML(c.candidateKey)}">${escapeHTML(c.display)}로 적용</button>
+              <button type="button" class="candidate-ignore-btn"
+                data-candidate-ignore="${escapeHTML(v.id)}"
+                data-candidate-key="${escapeHTML(c.candidateKey)}">날짜 아님</button>
+            </div>
+          </div>`).join("")}
+        <div class="admin-review-links">
+          <a class="youtube-video-link admin-youtube-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">YouTube에서 설명 확인</a>
+          <span class="candidate-status" data-candidate-status="${escapeHTML(v.id)}"></span>
+        </div>
       </div>
     </article>
   `).join("");
@@ -1236,7 +1394,7 @@ function downloadJSON(data, filename) {
 }
 
 function bindEvents() {
-  document.addEventListener("click", (event) => {
+  document.addEventListener("click", async (event) => {
     const dateToggle = event.target.closest("button[data-date-toggle]");
     if (dateToggle) {
       const key = dateToggle.dataset.dateToggle;
@@ -1250,6 +1408,75 @@ function bindEvents() {
     const filterChip = event.target.closest("button[data-clear-filter]");
     if (filterChip) {
       clearOneFilter(filterChip.dataset.clearFilter || "");
+      return;
+    }
+
+    const candidateApply = event.target.closest("button[data-candidate-apply]");
+    if (candidateApply) {
+      const videoId = candidateApply.dataset.candidateApply || "";
+      const sourceDate = candidateApply.dataset.candidateDate || "";
+      const precision = candidateApply.dataset.candidatePrecision || "month";
+      const candidateKey = candidateApply.dataset.candidateKey || "";
+      const status = document.querySelector(`[data-candidate-status="${CSS.escape(videoId)}"]`);
+
+      candidateApply.disabled = true;
+      if (status) status.textContent = "GitHub에 적용 중…";
+      try {
+        await adminApi("/apply-date-override", {
+          method: "POST",
+          body: JSON.stringify({ videoId, sourceDate, precision, candidateKey })
+        });
+
+        const v = videos.find(x => x.id === videoId);
+        if (v) {
+          v.dates = mergeDateEntries(v.dates, [{
+            sourceDate,
+            source:"admin",
+            precision,
+            inferred: precision !== "day",
+            manual:true
+          }]);
+          v.type = "single";
+          v.sortDate = sourceDate;
+          v.parseStatus = "parsed";
+          v.dateCandidates = [];
+        }
+        render();
+        if (status) status.textContent = "적용 완료 · 배포 후 전체 사이트에 반영";
+      } catch (err) {
+        candidateApply.disabled = false;
+        if (status) status.textContent = err.message;
+      }
+      return;
+    }
+
+    const candidateIgnore = event.target.closest("button[data-candidate-ignore]");
+    if (candidateIgnore) {
+      const videoId = candidateIgnore.dataset.candidateIgnore || "";
+      const candidateKey = candidateIgnore.dataset.candidateKey || "";
+      const status = document.querySelector(`[data-candidate-status="${CSS.escape(videoId)}"]`);
+
+      candidateIgnore.disabled = true;
+      if (status) status.textContent = "후보 제외 저장 중…";
+      try {
+        await adminApi("/ignore-date-candidate", {
+          method: "POST",
+          body: JSON.stringify({ videoId, candidateKey })
+        });
+        const v = videos.find(x => x.id === videoId);
+        if (v) {
+          v.ignoredDateCandidates = [...new Set([...(v.ignoredDateCandidates || []), candidateKey])];
+          v.dateCandidates = extractReviewDateCandidates(
+            v.title || "",
+            v.description || "",
+            v.ignoredDateCandidates
+          );
+        }
+        render();
+      } catch (err) {
+        candidateIgnore.disabled = false;
+        if (status) status.textContent = err.message;
+      }
       return;
     }
 
@@ -1475,9 +1702,11 @@ function bindEvents() {
           dates: v.dates.map(d => ({
             sourceDate: d.sourceDate,
             source: "",
-            precision: "day",
-            inferred: false
-          }))
+            precision: d.precision || "day",
+            inferred: Boolean(d.inferred),
+            manual: Boolean(d.manual)
+          })),
+          ignoredDateCandidates: v.ignoredDateCandidates || []
         })),
         total: videos.length
       },

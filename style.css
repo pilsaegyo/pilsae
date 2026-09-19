@@ -1565,3 +1565,97 @@ mark{
     padding:7px 8px;
   }
 }
+
+
+/* v10 conservative YYMM candidate review */
+.date-candidate-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin:10px 0;
+  padding:11px 12px;
+  border:1px solid #dfd2ec;
+  border-radius:13px;
+  background:#f7f2fc;
+}
+.date-candidate-box>div:first-child{min-width:0}
+.date-candidate-label{
+  display:inline-block;
+  margin-right:7px;
+  color:#7c6690;
+  font-size:10px;
+  font-weight:850;
+}
+.date-candidate-box strong{color:#57416c;font-size:14px}
+.date-candidate-box small{
+  display:block;
+  margin-top:4px;
+  color:#8c8295;
+  font-size:10px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.date-candidate-actions{display:flex;gap:6px;flex:0 0 auto}
+.date-candidate-actions button{
+  border:0;
+  border-radius:9px;
+  padding:7px 9px;
+  font-size:11px;
+  font-weight:800;
+}
+.candidate-apply-btn{background:#604b7c;color:#fff}
+.candidate-ignore-btn{background:#ebe7ee;color:#665d6d}
+.admin-review-links{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.candidate-status{font-size:10px;color:#7b6d85}
+@media(max-width:620px){
+  .date-candidate-box{display:block}
+  .date-candidate-actions{margin-top:9px}
+  .date-candidate-actions button{flex:1}
+}
+
+
+/* v10.1 date candidate source clarity */
+.date-candidate-heading{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:5px;
+}
+.candidate-source-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 6px;
+  border-radius:999px;
+  font-size:9px;
+  font-weight:850;
+}
+.candidate-source-badge.title{
+  background:#ede6f8;
+  color:#634e7e;
+}
+.candidate-source-badge.description{
+  background:#eef1f6;
+  color:#596576;
+}
+.date-candidate-info strong{
+  display:block;
+  margin-bottom:3px;
+}
+.date-candidate-info small{
+  display:block;
+  line-height:1.45;
+}
+@media (max-width:620px){
+  .date-candidate-box{
+    align-items:flex-start;
+  }
+  .date-candidate-actions{
+    width:100%;
+  }
+  .date-candidate-actions button{
+    flex:1;
+  }
+}
