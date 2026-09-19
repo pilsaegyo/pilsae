@@ -1833,3 +1833,22 @@ mark{
     width:100%;
   }
 }
+
+
+/* v12 admin compact playlist candidate list */
+.admin-classify-search{
+  max-width:560px;
+}
+.admin-content-list{
+  max-height:540px;
+  overflow:auto;
+  padding-right:4px;
+}
+.admin-content-item{
+  min-height:68px;
+}
+.admin-content-copy small{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}

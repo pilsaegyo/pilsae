@@ -374,6 +374,39 @@ function parseManualDateInput(value="") {
   return null;
 }
 
+function parseManualDateList(value="") {
+  const input = String(value || "").trim();
+  if (!input) return [];
+
+  // Multiple values: "2007, 2006" / "2007,2006"
+  const parts = input.split(/\s*,\s*/).filter(Boolean);
+  const parsed = parts.map(parseManualDateInput);
+
+  if (parsed.some(x => !x)) return null;
+
+  const deduped = [];
+  const seen = new Set();
+  for (const item of parsed) {
+    const key = `${item.sourceDate}|${item.precision}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      deduped.push(item);
+    }
+  }
+  return deduped;
+}
+
+function formatDuration(seconds=0) {
+  const s = Number(seconds) || 0;
+  if (!s) return "";
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = s % 60;
+  return h
+    ? `${h}:${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`
+    : `${m}:${String(sec).padStart(2,"0")}`;
+}
+
 function contentTypeLabel(value="video") {
   return value === "playlist" ? "플레이리스트" : "일반 영상";
 }
@@ -506,6 +539,8 @@ function normalizeVideo(v, idx=0) {
     dates: dateEntries,
     ignoredDateCandidates: Array.isArray(v.ignoredDateCandidates) ? v.ignoredDateCandidates.map(String) : [],
     contentType: v.contentType === "playlist" ? "playlist" : "video",
+    durationSeconds: Number(v.durationSeconds || 0),
+    duration: String(v.duration || ""),
     dateCandidates: validDates.length ? [] : extractReviewDateCandidates(
       v.title || "",
       v.description || "",
@@ -1410,7 +1445,7 @@ function manualDateControl(v) {
     <div class="manual-date-box">
       <div>
         <span class="manual-date-label">직접 날짜 입력</span>
-        <small>연도 <b>2007</b> · 연월 <b>2007.05</b> · 날짜 <b>2007.05.21</b></small>
+        <small>연도 <b>2007</b> · 여러 연도 <b>2007, 2006</b> · 연월 <b>2007.05</b> · 날짜 <b>2007.05.21</b></small>
       </div>
       <div class="manual-date-row">
         <input type="text" inputmode="numeric" data-manual-date-input="${escapeHTML(v.id)}" placeholder="YYYY / YYYY.MM / YYYY.MM.DD" />
@@ -1500,21 +1535,30 @@ function renderAdminContentList() {
   if (!wrap) return;
 
   const q = ($("#adminContentSearch")?.value || "").trim().toLowerCase();
-  let rows = videos;
+
+  // Keep already-classified playlists visible for management.
+  // For new playlist candidates, only surface videos 6 minutes or longer.
+  let rows = videos.filter(v =>
+    v.contentType === "playlist" ||
+    Number(v.durationSeconds || 0) >= 360
+  );
 
   if (q) {
     rows = rows.filter(v => `${v.title} ${v.description}`.toLowerCase().includes(q));
   } else {
-    // Without a search, prioritize already-classified playlists.
-    const playlists = rows.filter(v => v.contentType === "playlist");
-    const others = rows.filter(v => v.contentType !== "playlist").slice(0, Math.max(0, 20 - playlists.length));
-    rows = [...playlists, ...others];
+    rows = rows
+      .sort((a,b) => {
+        if (a.contentType === "playlist" && b.contentType !== "playlist") return -1;
+        if (a.contentType !== "playlist" && b.contentType === "playlist") return 1;
+        return Number(b.durationSeconds || 0) - Number(a.durationSeconds || 0);
+      })
+      .slice(0, 30);
   }
 
-  rows = rows.slice(0, 50);
+  if (q) rows = rows.slice(0, 50);
 
   if (!rows.length) {
-    wrap.innerHTML = `<p class="admin-help">검색 결과가 없습니다.</p>`;
+    wrap.innerHTML = `<p class="admin-help">6분 이상 영상 또는 기존 플레이리스트 중 검색 결과가 없습니다.</p>`;
     return;
   }
 
@@ -1523,7 +1567,10 @@ function renderAdminContentList() {
       <div class="admin-content-thumb">${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}</div>
       <div class="admin-content-copy">
         <strong>${escapeHTML(v.title)}</strong>
-        <small>${escapeHTML(v.dates.map(displayDate).filter(Boolean).join(", ") || "날짜 없음")}</small>
+        <small>
+          ${escapeHTML(v.dates.map(displayDate).filter(Boolean).join(", ") || "날짜 없음")}
+          ${v.durationSeconds ? ` · ${escapeHTML(formatDuration(v.durationSeconds))}` : ""}
+        </small>
       </div>
       <button type="button"
         class="content-type-toggle ${v.contentType === "playlist" ? "is-playlist" : ""}"
@@ -1597,36 +1644,40 @@ function bindEvents() {
       const videoId = manualDateApply.dataset.manualDateApply || "";
       const input = document.querySelector(`[data-manual-date-input="${CSS.escape(videoId)}"]`);
       const status = document.querySelector(`[data-candidate-status="${CSS.escape(videoId)}"]`);
-      const parsed = parseManualDateInput(input?.value || "");
+      const parsedList = parseManualDateList(input?.value || "");
 
-      if (!parsed) {
-        if (status) status.textContent = "형식을 확인해 주세요: 2007 / 2007.05 / 2007.05.21";
+      if (!parsedList || !parsedList.length) {
+        if (status) status.textContent = "형식을 확인해 주세요: 2007 / 2007, 2006 / 2007.05 / 2007.05.21";
         input?.focus();
         return;
       }
 
       manualDateApply.disabled = true;
-      if (status) status.textContent = `${parsed.display} 적용 중…`;
+      const displayText = parsedList.map(x => x.display).join(", ");
+      if (status) status.textContent = `${displayText} 적용 중…`;
 
       try {
-        await adminApi("/apply-date-override", {
+        await adminApi("/apply-date-overrides", {
           method: "POST",
           body: JSON.stringify({
             videoId,
-            sourceDate: parsed.sourceDate,
-            precision: parsed.precision
+            dates: parsedList.map(x => ({
+              sourceDate: x.sourceDate,
+              precision: x.precision
+            }))
           })
         });
 
         const v = videos.find(x => x.id === videoId);
         if (v) {
-          v.dates = mergeDateEntries(v.dates, [{
+          const additions = parsedList.map(parsed => ({
             sourceDate: parsed.sourceDate,
             source: "admin",
             precision: parsed.precision,
             inferred: parsed.precision !== "day",
             manual: true
-          }]);
+          }));
+          v.dates = mergeDateEntries(v.dates, additions);
           const years = [...new Set(v.dates.map(d => d.sourceDate.slice(0,4)))];
           v.type = years.length > 1 ? "mixed" : "single";
           v.sortDate = [...v.dates.map(d => d.sourceDate)].sort().reverse()[0] || "";
@@ -1634,7 +1685,7 @@ function bindEvents() {
           v.dateCandidates = [];
         }
         render();
-        if (status) status.textContent = `${parsed.display} 적용 완료 · 배포 후 전체 사이트에 반영`;
+        if (status) status.textContent = `${displayText} 적용 완료 · ${parsedList.length > 1 ? "혼합 연도 분류 반영" : "배포 후 전체 사이트에 반영"}`;
       } catch (err) {
         manualDateApply.disabled = false;
         if (status) status.textContent = err.message;
