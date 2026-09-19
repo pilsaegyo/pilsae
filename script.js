@@ -1798,6 +1798,7 @@ function timelineItemHtml(v, bucket) {
     <article class="timeline-item ${escapeHTML(bucket.kind)}">
       <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
         ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
+        ${videoFormatIconHtml(v)}
       </a>
       <div class="timeline-item-body">
         <div class="timeline-item-date">
