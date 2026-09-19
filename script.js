@@ -2880,6 +2880,16 @@ function resetSyncPreview() {
 
 
 
+function updateCompactDateTypeLabel(compact) {
+  const select = $("#typeFilter");
+  if (!select) return;
+
+  const option = [...select.options].find(o => o.value === "");
+  if (!option) return;
+
+  option.textContent = compact ? "전체 날짜" : "전체 날짜 유형";
+}
+
 function setupCompactStickyToolbar() {
   const toolbar = document.querySelector(".toolbar-panel");
   if (!toolbar || document.body.classList.contains("admin-page")) return;
@@ -2918,6 +2928,7 @@ function setupCompactStickyToolbar() {
       placeholder.hidden = true;
     }
 
+    updateCompactDateTypeLabel(compact);
   };
 
   const update = () => {

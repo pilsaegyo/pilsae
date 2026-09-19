@@ -5175,3 +5175,22 @@ h1,h2,h3,
     padding-right:20px;
   }
 }
+
+
+/* v24.11 filter alignment + compact date label */
+@media (min-width:621px){
+  .toolbar-panel:not(.is-compact-sticky) .filter-extra{
+    grid-template-columns:
+      minmax(150px,1fr)
+      minmax(150px,1fr)
+      minmax(150px,1fr)
+      minmax(150px,1fr)
+      minmax(170px,1fr)
+      auto;
+  }
+
+  .toolbar-panel:not(.is-compact-sticky) .reset-filter-button{
+    justify-self:end;
+    min-width:108px;
+  }
+}
