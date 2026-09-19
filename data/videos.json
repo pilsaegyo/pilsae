@@ -5092,11 +5092,19 @@
       "title": "워 아이 니 我爱你 #신혜성 #신화",
       "description": "00` MTV Summer Summit In Taiwan 무대 cut\n숏츠 저작권때문에 노래 다 자름 카메라 워킹도 노답\n그럼에도 포기할 수 없었던 이유: 홍합셩, 화이트 의상, 땀, 워아이니 박제\n\n오디오 변환까지 하긴 귀찮아서..한쪽으로 대충..들으세여 원본영상이 오디오가 스테레오네여 킁\n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "00` MTV Summer Summit In Taiwan 무대 cut",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-07-21T13:01:29Z",
       "thumbnail": "https://i.ytimg.com/vi/hYjuklseW3I/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7921,7 +7929,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:11:39.697Z",
+  "generatedAt": "2026-09-19T04:11:51.270Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
