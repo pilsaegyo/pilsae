@@ -7607,11 +7607,19 @@
       "title": "✂️ 〈올어바웃신화 아이비클럽〉｜신혜성 CUT.zip #신화 #신혜성",
       "description": "올어신 교복 신혜성은 옳다 신혜성 확대 ver #신혜성 #신화 #shinhwa #shinhyesung \n\n덕질용으로 편집...........문제되면 영상은 휘리릭내려갑니다......",
       "source": "올어신 교복 신혜성은 옳다 신혜성 확대 ver #신혜성 #신화 #shinhwa #shinhyesung",
-      "sourceDate": null,
+      "sourceDate": "2005-01-01",
       "publishedAt": "2025-05-03T01:40:11Z",
       "thumbnail": "https://i.ytimg.com/vi/UqSOHZfBhs8/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2005-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8056,7 +8064,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:14:25.705Z",
+  "generatedAt": "2026-09-19T04:14:33.731Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
