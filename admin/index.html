@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=26.0-step3f" />
+  <link rel="stylesheet" href="./style.css?v=26.0-step4" />
 </head>
-<body class="admin-page admin-locked" data-build="26.0-step3f">
+<body class="admin-page admin-locked" data-build="26.0-step4">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -331,6 +331,36 @@
 
             <div id="deployCommitResult" class="deploy-commit-result" hidden></div>
 
+            <section id="deployLiveStatus" class="deploy-live-status" hidden aria-live="polite">
+              <div class="deploy-live-head">
+                <div>
+                  <strong>배포 상태</strong>
+                  <small id="deployLiveVersion">-</small>
+                </div>
+                <button id="refreshDeployStatusBtn" class="admin-icon-button" type="button"
+                  aria-label="배포 상태 새로고침" title="배포 상태 새로고침">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20 6v5h-5M4 18v-5h5M6.1 9A7 7 0 0 1 18.5 6.5L20 8M4 16l1.5 1.5A7 7 0 0 0 17.9 15"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="deploy-live-grid">
+                <div class="deploy-live-item" data-deploy-status="github">
+                  <span class="deploy-live-dot" aria-hidden="true"></span>
+                  <div><strong>GitHub</strong><small>대기 중</small></div>
+                </div>
+                <div class="deploy-live-item" data-deploy-status="site">
+                  <span class="deploy-live-dot" aria-hidden="true"></span>
+                  <div><strong>사이트</strong><small>대기 중</small></div>
+                </div>
+                <div class="deploy-live-item" data-deploy-status="worker">
+                  <span class="deploy-live-dot" aria-hidden="true"></span>
+                  <div><strong>Admin Worker</strong><small>대기 중</small></div>
+                </div>
+              </div>
+              <p id="deployLiveSummary" class="deploy-live-summary"></p>
+            </section>
+
             <div class="deploy-file-list-head">
               <strong>ZIP 내부 파일</strong>
               <span id="deployAllowedCount">0개 확인</span>
@@ -385,6 +415,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=26.0-step3f" defer></script>
+  <script src="./script.js?v=26.0-step4" defer></script>
 </body>
 </html>

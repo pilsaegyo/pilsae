@@ -50,6 +50,18 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/deploy-runtime-info" && request.method === "GET") {
+        requireAdmin(request, env);
+
+        const metadata = env.CF_VERSION_METADATA || {};
+        return jsonResponse({
+          ok:true,
+          versionId:String(metadata.id || ""),
+          versionTag:String(metadata.tag || ""),
+          versionTimestamp:String(metadata.timestamp || "")
+        }, 200, env, origin);
+      }
+
       if (url.pathname === "/deploy-patch" && request.method === "POST") {
         requireAdmin(request, env);
 

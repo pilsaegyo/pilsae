@@ -5859,3 +5859,128 @@ h1,h2,h3,.brand-main{font-weight:650}
 .deploy-upload-box-first{
   margin-top:0;
 }
+
+
+/* v26.0 Step 4 - deployment status monitor */
+.deploy-live-status{
+  margin-top:10px;
+  padding:12px;
+  border:1px solid #e3dce7;
+  border-radius:12px;
+  background:#fbf9fc;
+}
+
+.deploy-live-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.deploy-live-head>div{
+  min-width:0;
+}
+
+.deploy-live-head strong{
+  display:block;
+  color:#584764;
+  font-size:11px;
+}
+
+.deploy-live-head small{
+  display:block;
+  margin-top:2px;
+  color:#9a91a0;
+  font-size:9px;
+}
+
+.deploy-live-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;
+  margin-top:10px;
+}
+
+.deploy-live-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+  padding:9px 10px;
+  border:1px solid #ece6ef;
+  border-radius:10px;
+  background:#fff;
+}
+
+.deploy-live-dot{
+  flex:0 0 auto;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#c9c2ce;
+}
+
+.deploy-live-item>div{
+  min-width:0;
+}
+
+.deploy-live-item strong{
+  display:block;
+  color:#65566f;
+  font-size:10px;
+}
+
+.deploy-live-item small{
+  display:block;
+  margin-top:2px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#9a919f;
+  font-size:8.5px;
+}
+
+.deploy-live-item.waiting .deploy-live-dot{
+  background:#b59365;
+  animation:deploy-status-pulse 1.2s ease-in-out infinite;
+}
+
+.deploy-live-item.success .deploy-live-dot{
+  background:#5f8b69;
+}
+
+.deploy-live-item.error .deploy-live-dot{
+  background:#b76572;
+}
+
+.deploy-live-item.muted{
+  background:#f6f4f7;
+}
+
+.deploy-live-item.muted .deploy-live-dot{
+  background:#c9c4cd;
+}
+
+.deploy-live-summary{
+  margin:9px 0 0;
+  color:#867c8d;
+  font-size:9px;
+  line-height:1.5;
+}
+
+@keyframes deploy-status-pulse{
+  0%,100%{opacity:.45;transform:scale(.92)}
+  50%{opacity:1;transform:scale(1.08)}
+}
+
+@media(max-width:760px){
+  .deploy-live-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .deploy-live-item.waiting .deploy-live-dot{
+    animation:none;
+  }
+}

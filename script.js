@@ -3659,7 +3659,8 @@ let deployPatchState = {
   headSha:"",
   repo:"",
   branch:"",
-  ready:false
+  ready:false,
+  workerVersionId:""
 };
 
 function resetDeployPatchState() {
@@ -3671,7 +3672,8 @@ function resetDeployPatchState() {
     headSha:"",
     repo:"",
     branch:"",
-    ready:false
+    ready:false,
+    workerVersionId:""
   };
 
   const btn = $("#deployPatchCommitBtn");
@@ -3782,6 +3784,198 @@ async function extractDeployZipTextFiles(arrayBuffer, normalizedEntries) {
   return files;
 }
 
+
+const DEPLOY_MONITOR_STORAGE_KEY = "pilsae_deploy_monitor_v1";
+let deployMonitorTimer = 0;
+
+function deployStatusNode(kind) {
+  return document.querySelector(`[data-deploy-status="${kind}"]`);
+}
+
+function setDeployStatus(kind, state, text) {
+  const node = deployStatusNode(kind);
+  if (!node) return;
+
+  node.classList.remove("waiting", "success", "error", "muted");
+  node.classList.add(state || "waiting");
+
+  const copy = node.querySelector("small");
+  if (copy) copy.textContent = text || "";
+}
+
+function saveDeployMonitor(state) {
+  try {
+    localStorage.setItem(DEPLOY_MONITOR_STORAGE_KEY, JSON.stringify(state));
+  } catch {}
+}
+
+function readDeployMonitor() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(DEPLOY_MONITOR_STORAGE_KEY) || "null");
+    if (!parsed || typeof parsed !== "object") return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function clearDeployMonitor() {
+  try {
+    localStorage.removeItem(DEPLOY_MONITOR_STORAGE_KEY);
+  } catch {}
+  window.clearTimeout(deployMonitorTimer);
+}
+
+function showDeployMonitor(state) {
+  const panel = $("#deployLiveStatus");
+  if (!panel || !state) return;
+
+  panel.hidden = false;
+
+  const version = state.targetVersion
+    ? `v${state.targetVersion}`
+    : String(state.commitSha || "").slice(0, 12);
+
+  if ($("#deployLiveVersion")) {
+    $("#deployLiveVersion").textContent = version || "최근 배포";
+  }
+
+  setDeployStatus("github", "success",
+    state.commitSha ? `커밋 ${String(state.commitSha).slice(0, 12)}` : "커밋 완료");
+
+  if (state.siteChanged) {
+    setDeployStatus("site", state.siteDone ? "success" : "waiting",
+      state.siteDone ? `v${state.targetVersion} 반영 완료` : "Cloudflare 배포 대기 중");
+  } else {
+    setDeployStatus("site", "muted", "사이트 변경 없음");
+  }
+
+  if (state.workerChanged) {
+    setDeployStatus("worker", state.workerDone ? "success" : "waiting",
+      state.workerDone ? "새 Worker 버전 반영 완료" : "Cloudflare 배포 대기 중");
+  } else {
+    setDeployStatus("worker", "muted", "Worker 변경 없음");
+  }
+
+  const done = (!state.siteChanged || state.siteDone) &&
+    (!state.workerChanged || state.workerDone);
+
+  if ($("#deployLiveSummary")) {
+    $("#deployLiveSummary").textContent = done
+      ? "배포 반영이 완료되었습니다."
+      : "GitHub 커밋은 완료되었습니다. Cloudflare 반영을 확인하는 중입니다…";
+  }
+}
+
+async function fetchDeployedSiteBuild() {
+  const url = new URL("/admin/", location.origin);
+  url.searchParams.set("__deploy_check", String(Date.now()));
+
+  const res = await fetch(url.toString(), { cache:"no-store" });
+  if (!res.ok) throw new Error(`사이트 확인 실패 (${res.status})`);
+
+  const html = await res.text();
+  const match = html.match(/\bdata-build=["']([^"']+)["']/i);
+  return match?.[1] ? String(match[1]).trim() : "";
+}
+
+async function fetchWorkerRuntimeInfo() {
+  return adminApi("/deploy-runtime-info", { method:"GET" });
+}
+
+async function refreshDeployMonitor({ schedule=true }={}) {
+  const state = readDeployMonitor();
+  if (!state) return;
+
+  const maxAge = 10 * 60 * 1000;
+  if (Date.now() - Number(state.startedAt || 0) > maxAge) {
+    if ($("#deployLiveStatus")) $("#deployLiveStatus").hidden = false;
+    setDeployStatus("github", "success", `커밋 ${String(state.commitSha || "").slice(0, 12)}`);
+    if (state.siteChanged && !state.siteDone) {
+      setDeployStatus("site", "error", "확인 시간 초과");
+    }
+    if (state.workerChanged && !state.workerDone) {
+      setDeployStatus("worker", "error", "확인 시간 초과");
+    }
+    if ($("#deployLiveSummary")) {
+      $("#deployLiveSummary").textContent =
+        "자동 확인 시간이 초과되었습니다. Cloudflare Builds에서 상태를 확인해 주세요.";
+    }
+    return;
+  }
+
+  showDeployMonitor(state);
+
+  if (state.siteChanged && !state.siteDone && state.targetVersion) {
+    try {
+      const deployedBuild = await fetchDeployedSiteBuild();
+      if (deployedBuild === state.targetVersion) {
+        state.siteDone = true;
+        state.siteBuild = deployedBuild;
+      }
+    } catch {}
+  }
+
+  if (state.workerChanged && !state.workerDone) {
+    try {
+      const runtime = await fetchWorkerRuntimeInfo();
+      const currentId = String(runtime.versionId || "");
+      if (currentId && currentId !== String(state.previousWorkerVersionId || "")) {
+        state.workerDone = true;
+        state.workerVersionId = currentId;
+        state.workerTimestamp = String(runtime.versionTimestamp || "");
+      }
+    } catch {}
+  }
+
+  saveDeployMonitor(state);
+  showDeployMonitor(state);
+
+  const done = (!state.siteChanged || state.siteDone) &&
+    (!state.workerChanged || state.workerDone);
+
+  window.clearTimeout(deployMonitorTimer);
+  if (!done && schedule) {
+    deployMonitorTimer = window.setTimeout(() => {
+      refreshDeployMonitor({ schedule:true });
+    }, 5000);
+  }
+}
+
+function startDeployMonitor({
+  commitSha,
+  commitUrl,
+  targetVersion,
+  siteChanged,
+  workerChanged,
+  previousWorkerVersionId
+}) {
+  clearDeployMonitor();
+
+  const state = {
+    commitSha:String(commitSha || ""),
+    commitUrl:String(commitUrl || ""),
+    targetVersion:String(targetVersion || ""),
+    siteChanged:Boolean(siteChanged),
+    workerChanged:Boolean(workerChanged),
+    previousWorkerVersionId:String(previousWorkerVersionId || ""),
+    siteDone:false,
+    workerDone:false,
+    startedAt:Date.now()
+  };
+
+  saveDeployMonitor(state);
+  showDeployMonitor(state);
+  refreshDeployMonitor({ schedule:true });
+}
+
+function restoreDeployMonitor() {
+  const state = readDeployMonitor();
+  if (!state) return;
+  showDeployMonitor(state);
+  refreshDeployMonitor({ schedule:true });
+}
+
 async function loadDeployContext() {
   const repoInfo = $("#deployRepositoryInfo");
   const hint = $("#deployCommitHint");
@@ -3793,6 +3987,13 @@ async function loadDeployContext() {
     deployPatchState.headSha = String(data.headSha || "");
     deployPatchState.repo = String(data.repo || "");
     deployPatchState.branch = String(data.branch || "");
+
+    try {
+      const runtime = await fetchWorkerRuntimeInfo();
+      deployPatchState.workerVersionId = String(runtime.versionId || "");
+    } catch {
+      deployPatchState.workerVersionId = "";
+    }
 
     if (!deployPatchState.headSha) {
       throw new Error("현재 GitHub HEAD SHA를 확인하지 못했습니다.");
@@ -3866,6 +4067,18 @@ async function commitDeployPatch() {
       ? `Deploy ${patchVersion} from admin`
       : `Deploy archive patch from admin`;
 
+    const filePaths = new Set(files.map(file => file.path));
+    const siteChanged = [
+      "index.html",
+      "script.js",
+      "style.css",
+      "admin/index.html"
+    ].some(path => filePaths.has(path));
+    const workerChanged = [
+      "worker/index.js",
+      "worker/wrangler.jsonc"
+    ].some(path => filePaths.has(path));
+
     setAdminStatus(status, `${files.length}개 파일을 GitHub에 단일 커밋으로 반영하는 중입니다…`, "loading");
 
     const data = await adminApi("/deploy-patch", {
@@ -3902,6 +4115,15 @@ async function commitDeployPatch() {
         <small>GitHub 연동 Cloudflare 배포는 저장소 설정에 따라 자동으로 이어집니다.</small>
       `;
     }
+
+    startDeployMonitor({
+      commitSha:data.commitSha,
+      commitUrl:data.commitUrl,
+      targetVersion:patchVersion,
+      siteChanged,
+      workerChanged,
+      previousWorkerVersionId:deployPatchState.workerVersionId
+    });
 
     btn.textContent = "배포 완료";
     btn.disabled = true;
@@ -4588,6 +4810,10 @@ function bindEvents() {
 
   $("#deployPatchCommitBtn")?.addEventListener("click", () => {
     commitDeployPatch();
+  });
+
+  $("#refreshDeployStatusBtn")?.addEventListener("click", () => {
+    refreshDeployMonitor({ schedule:false });
   });
 
   $("#siteHelpBtn")?.addEventListener("click", () => {
@@ -5583,6 +5809,7 @@ function bindEvents() {
 
 (async function init() {
   syncAdminBuildVersion();
+  restoreDeployMonitor();
   await loadSiteConfig();
   applySiteConfig();
   loadLiveChannelBranding();

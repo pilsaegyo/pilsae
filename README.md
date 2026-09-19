@@ -955,3 +955,16 @@
 - `ChatGPT에서 받은 배포 ZIP을 그대로 선택해 파일 구성을 먼저 검사합니다.` 안내 문구 삭제.
 - 상단 단계 배지(`2단계 · GitHub 커밋`)도 함께 제거해 개인용 관리자 화면을 더 간결하게 정리.
 - ZIP 선택/드래그앤드롭/검사/커밋/자동배포 기능은 그대로 유지.
+
+
+## v26.0-step4 · Step 4 배포 상태 확인
+- GitHub 커밋 완료 후 관리자 배포 탭에서 배포 상태 패널 자동 표시.
+- `GitHub / 사이트 / Admin Worker` 세 단계로 구분해 상태 확인.
+- 사이트 변경이 있으면 실제 `/admin/`의 `data-build`가 업로드 ZIP 버전과 일치하는지 5초 간격으로 확인.
+- Worker 변경이 있으면 Cloudflare `version_metadata` binding의 Worker version ID가 이전 버전에서 변경되었는지 확인.
+- `worker/wrangler.jsonc`에 `CF_VERSION_METADATA` binding 추가.
+- Admin API에 `/deploy-runtime-info` 추가.
+- 상태 확인은 최대 10분, 완료 시 자동 중지.
+- 최근 확인 상태는 localStorage에 보관되어 관리자 페이지를 새로 열어도 이어서 확인.
+- 수동 새로고침 버튼 제공.
+- Cloudflare API Token 추가 없이 기존 자동배포 흐름 안에서 실제 반영 여부를 확인.
