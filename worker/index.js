@@ -25,6 +25,120 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/admin-history" && request.method === "GET") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+
+        const history = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/admin-history.json"
+        }) || { entries: [] };
+
+        return jsonResponse({
+          ok: true,
+          entries: Array.isArray(history.entries) ? history.entries.slice(0, 100) : []
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/undo-admin-history" && request.method === "POST") {
+        requireAdmin(request, env);
+
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const historyId = String(body.historyId || "").trim();
+        if (!historyId) {
+          throw new HttpError(400, "되돌릴 변경 이력 ID가 필요합니다.");
+        }
+
+        const historyPayload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/admin-history.json"
+        }) || { entries: [] };
+
+        const historyEntries = Array.isArray(historyPayload.entries)
+          ? historyPayload.entries
+          : [];
+
+        const entry = historyEntries.find(item => String(item?.id || "") === historyId);
+        if (!entry) {
+          throw new HttpError(404, "해당 변경 이력을 찾지 못했습니다.");
+        }
+
+        const undoableActions = new Set([
+          "manual_date",
+          "candidate_date",
+          "ignore_candidate",
+          "accept_description_date",
+          "content_type",
+          "playlist_scope"
+        ]);
+
+        if (!undoableActions.has(String(entry.action || "")) || !entry.videoId) {
+          throw new HttpError(400, "이 변경 이력은 되돌리기를 지원하지 않습니다.");
+        }
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const video = payload.videos.find(v => String(v.id) === String(entry.videoId));
+        if (!video) {
+          throw new HttpError(404, "변경 대상 영상을 찾지 못했습니다.");
+        }
+
+        // Safety guard: only undo when the fields touched by this history entry
+        // still match the recorded "after" state. This prevents an older undo
+        // from overwriting a newer administrator change.
+        if (!historyEntryMatchesCurrentState(entry, video)) {
+          throw new HttpError(
+            409,
+            "이 이력 이후 같은 항목이 다시 변경되어 자동 되돌리기를 할 수 없습니다. 최신 변경 이력을 확인해 주세요."
+          );
+        }
+
+        const currentBeforeUndo = snapshotHistoryState(entry.action, video);
+        applyHistoryBeforeState(entry, video);
+
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env,
+          owner,
+          repo,
+          branch,
+          path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Undo admin history ${historyId} for ${entry.videoId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "undo",
+            videoId: String(entry.videoId),
+            title: String(video.title || entry.title || entry.videoId),
+            before: currentBeforeUndo,
+            after: snapshotHistoryState(entry.action, video),
+            undoOf: historyId
+          }
+        });
+
+        return jsonResponse({
+          ok: true,
+          historyId,
+          videoId: String(entry.videoId),
+          video,
+          commitUrl: result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
       if (url.pathname === "/channel-branding" && request.method === "GET") {
         if (!env.YOUTUBE_API_KEY) {
           throw new HttpError(500, "YOUTUBE_API_KEY Secret이 없습니다.");
@@ -216,6 +330,22 @@ export default {
           message: "Sync YouTube channel branding",
         });
 
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "sync_apply",
+            title: "YouTube 영상 동기화",
+            before: { total: (existingPayload.videos || []).length },
+            after: {
+              total: normalized.length,
+              added: syncPreview.added,
+              titleChanged: syncPreview.titleChanged,
+              descriptionChanged: syncPreview.descriptionChanged,
+              removed: syncPreview.removed
+            }
+          }
+        });
+
         return jsonResponse({
           ok: true,
           total: normalized.length,
@@ -248,6 +378,10 @@ export default {
 
         const video = payload.videos.find(v => String(v.id) === videoId);
         if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+        const historyBefore = {
+          previousManualDates: Array.isArray(video.previousManualDates) ? video.previousManualDates : [],
+          dates: Array.isArray(video.dates) ? video.dates : []
+        };
 
         video.manualDateReviewPending = false;
         video.descriptionChangedAfterManual = false;
@@ -258,6 +392,17 @@ export default {
           env, owner, repo, branch, path: "data/videos.json",
           contentText: JSON.stringify(payload, null, 2) + "\n",
           message: `Accept description date for ${videoId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "accept_description_date",
+            videoId,
+            title: video.title || videoId,
+            before: historyBefore,
+            after: { dates: video.dates || [] }
+          }
         });
 
         return jsonResponse({
@@ -306,6 +451,7 @@ export default {
         const video = payload.videos.find(v => String(v.id) === videoId);
         if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
 
+        const historyBeforeDates = Array.isArray(video.dates) ? video.dates : [];
         const currentDates = Array.isArray(video.dates) ? video.dates : [];
         const merged = [...currentDates];
 
@@ -328,6 +474,17 @@ export default {
           env, owner, repo, branch, path: "data/videos.json",
           contentText: JSON.stringify(payload, null, 2) + "\n",
           message: `Apply ${normalizedDates.length} manual date override(s) to ${videoId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "manual_date",
+            videoId,
+            title: video.title || videoId,
+            before: historyBeforeDates,
+            after: video.dates || []
+          }
         });
 
         return jsonResponse({
@@ -358,6 +515,7 @@ export default {
         const video = payload.videos.find(v => String(v.id) === videoId);
         if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
 
+        const historyBeforeDates = Array.isArray(video.dates) ? video.dates : [];
         const dates = Array.isArray(video.dates) ? video.dates : [];
         const manualEntry = { sourceDate, source: "admin", precision, inferred: precision !== "day", manual: true };
         if (!dates.some(d => d?.sourceDate === sourceDate && (d?.precision || "day") === precision)) dates.push(manualEntry);
@@ -375,6 +533,16 @@ export default {
           env, owner, repo, branch, path: "data/videos.json",
           contentText: JSON.stringify(payload, null, 2) + "\n",
           message: `Apply date override for ${videoId}`
+        });
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "candidate_date",
+            videoId,
+            title: video.title || videoId,
+            before: historyBeforeDates,
+            after: video.dates || []
+          }
         });
         return jsonResponse({ ok:true, videoId, sourceDate, precision, commitUrl:result.commit?.html_url || null }, 200, env, origin);
       }
@@ -395,6 +563,7 @@ export default {
         if (!payload || !Array.isArray(payload.videos)) throw new HttpError(404, "videos.json을 찾지 못했습니다.");
         const video = payload.videos.find(v => String(v.id) === videoId);
         if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+        const historyBeforeIgnored = Array.isArray(video.ignoredDateCandidates) ? video.ignoredDateCandidates.map(String) : [];
         video.ignoredDateCandidates = [...new Set([...(video.ignoredDateCandidates || []).map(String), candidateKey])];
         payload.generatedAt = new Date().toISOString();
 
@@ -402,6 +571,16 @@ export default {
           env, owner, repo, branch, path: "data/videos.json",
           contentText: JSON.stringify(payload, null, 2) + "\n",
           message: `Ignore date candidate for ${videoId}`
+        });
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "ignore_candidate",
+            videoId,
+            title: video.title || videoId,
+            before: historyBeforeIgnored,
+            after: video.ignoredDateCandidates || []
+          }
         });
         return jsonResponse({ ok:true, videoId, candidateKey, commitUrl:result.commit?.html_url || null }, 200, env, origin);
       }
@@ -433,6 +612,7 @@ export default {
           throw new HttpError(400, "플레이리스트로 지정된 영상만 범위를 설정할 수 있습니다.");
         }
 
+        const historyBeforeScope = video.playlistScope || "";
         video.playlistScope = playlistScope;
         payload.generatedAt = new Date().toISOString();
 
@@ -440,6 +620,17 @@ export default {
           env, owner, repo, branch, path: "data/videos.json",
           contentText: JSON.stringify(payload, null, 2) + "\n",
           message: `Set playlist scope ${playlistScope} for ${videoId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "playlist_scope",
+            videoId,
+            title: video.title || videoId,
+            before: historyBeforeScope,
+            after: playlistScope
+          }
         });
 
         return jsonResponse({
@@ -474,6 +665,10 @@ export default {
         const video = payload.videos.find(v => String(v.id) === videoId);
         if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
 
+        const historyBeforeContent = {
+          contentType: video.contentType || "video",
+          playlistScope: video.playlistScope || ""
+        };
         video.contentType = contentType;
         if (contentType === "playlist") {
           if (!["multi-year", "undated"].includes(video.playlistScope)) {
@@ -488,6 +683,20 @@ export default {
           env, owner, repo, branch, path: "data/videos.json",
           contentText: JSON.stringify(payload, null, 2) + "\n",
           message: `${contentType === "playlist" ? "Mark playlist" : "Mark regular video"} ${videoId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "content_type",
+            videoId,
+            title: video.title || videoId,
+            before: historyBeforeContent,
+            after: {
+              contentType: video.contentType,
+              playlistScope: video.playlistScope || ""
+            }
+          }
         });
 
         return jsonResponse({
@@ -530,6 +739,12 @@ export default {
           env, owner, repo, branch, path: "site-config.json"
         }) || {};
 
+        const historyBeforeConfig = {
+          title: existingConfig.title || "",
+          channelHandle: existingConfig.channelHandle || "",
+          faviconChanged: Boolean(existingConfig.faviconDataUrl)
+        };
+
         const config = {
           ...existingConfig,
           title,
@@ -551,6 +766,20 @@ export default {
           path: "site-config.json",
           contentText: JSON.stringify(config, null, 2) + "\n",
           message: "Update site configuration",
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "site_config",
+            title: "사이트 설정",
+            before: historyBeforeConfig,
+            after: {
+              title: config.title,
+              channelHandle: config.channelHandle,
+              faviconChanged: Boolean(config.faviconDataUrl)
+            }
+          }
         });
 
         return jsonResponse({
@@ -848,6 +1077,152 @@ function buildSyncPreview(existingVideos, nextVideos) {
     unchanged,
     changes
   };
+}
+
+function normalizedComparable(value) {
+  if (Array.isArray(value)) {
+    return value.map(item => normalizedComparable(item));
+  }
+  if (value && typeof value === "object") {
+    const out = {};
+    for (const key of Object.keys(value).sort()) {
+      // Ignore volatile / derived values that do not define the admin action.
+      if (["updatedAt", "generatedAt"].includes(key)) continue;
+      out[key] = normalizedComparable(value[key]);
+    }
+    return out;
+  }
+  return value ?? null;
+}
+
+function sameHistoryValue(a, b) {
+  return JSON.stringify(normalizedComparable(a)) === JSON.stringify(normalizedComparable(b));
+}
+
+function snapshotHistoryState(action, video) {
+  const kind = String(action || "");
+
+  if (kind === "manual_date" || kind === "candidate_date") {
+    return Array.isArray(video.dates) ? video.dates : [];
+  }
+
+  if (kind === "ignore_candidate") {
+    return Array.isArray(video.ignoredDateCandidates)
+      ? video.ignoredDateCandidates.map(String)
+      : [];
+  }
+
+  if (kind === "accept_description_date") {
+    return {
+      previousManualDates: Array.isArray(video.previousManualDates) ? video.previousManualDates : [],
+      dates: Array.isArray(video.dates) ? video.dates : []
+    };
+  }
+
+  if (kind === "content_type") {
+    return {
+      contentType: video.contentType || "video",
+      playlistScope: video.playlistScope || ""
+    };
+  }
+
+  if (kind === "playlist_scope") {
+    return video.playlistScope || "";
+  }
+
+  return null;
+}
+
+function historyEntryMatchesCurrentState(entry, video) {
+  return sameHistoryValue(snapshotHistoryState(entry.action, video), entry.after);
+}
+
+function applyHistoryBeforeState(entry, video) {
+  const action = String(entry.action || "");
+  const before = entry.before;
+
+  if (action === "manual_date" || action === "candidate_date") {
+    video.dates = Array.isArray(before) ? before : [];
+    video.parseStatus = video.dates.length ? "parsed" : "needs_review";
+    video.manualDateReviewPending = false;
+    video.descriptionChangedAfterManual = false;
+    return;
+  }
+
+  if (action === "ignore_candidate") {
+    video.ignoredDateCandidates = Array.isArray(before) ? before.map(String) : [];
+    return;
+  }
+
+  if (action === "accept_description_date") {
+    const prior = before && typeof before === "object" ? before : {};
+    video.previousManualDates = Array.isArray(prior.previousManualDates)
+      ? prior.previousManualDates
+      : [];
+    video.dates = Array.isArray(prior.dates) ? prior.dates : [];
+    video.manualDateReviewPending = true;
+    video.descriptionChangedAfterManual = true;
+    video.parseStatus = "needs_review";
+    return;
+  }
+
+  if (action === "content_type") {
+    const prior = before && typeof before === "object" ? before : {};
+    video.contentType = prior.contentType === "playlist" ? "playlist" : "video";
+    video.playlistScope = ["multi-year", "undated"].includes(prior.playlistScope)
+      ? prior.playlistScope
+      : "";
+    return;
+  }
+
+  if (action === "playlist_scope") {
+    video.playlistScope = ["multi-year", "undated"].includes(before) ? before : "";
+    return;
+  }
+
+  throw new HttpError(400, "지원하지 않는 되돌리기 작업입니다.");
+}
+
+async function appendAdminHistory({ env, owner, repo, branch, entry }) {
+  try {
+    const current = await readGithubJsonFile({
+      env, owner, repo, branch, path: "data/admin-history.json"
+    }) || { entries: [] };
+
+    const entries = Array.isArray(current.entries) ? current.entries : [];
+    const now = new Date().toISOString();
+    const normalizedEntry = {
+      id: typeof crypto !== "undefined" && crypto.randomUUID
+        ? crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(36).slice(2,8)}`,
+      action: String(entry?.action || "admin_change"),
+      videoId: String(entry?.videoId || ""),
+      title: String(entry?.title || ""),
+      before: entry?.before ?? null,
+      after: entry?.after ?? null,
+      undoOf: String(entry?.undoOf || ""),
+      changedAt: now
+    };
+
+    const payload = {
+      entries: [normalizedEntry, ...entries].slice(0, 100),
+      updatedAt: now
+    };
+
+    await updateGithubFile({
+      env,
+      owner,
+      repo,
+      branch,
+      path: "data/admin-history.json",
+      contentText: JSON.stringify(payload, null, 2) + "\\n",
+      message: `Record admin history: ${normalizedEntry.action}`
+    });
+  } catch (err) {
+    // The primary admin action has already succeeded. History is best-effort
+    // and must not turn a successful data change into a failed UI response.
+    console.warn("admin history write failed", err);
+  }
 }
 
 async function readGithubJsonFile({ env, owner, repo, branch, path }) {

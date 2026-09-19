@@ -18,6 +18,9 @@ const PAGE_SIZE = 60;
 let visibleLimit = PAGE_SIZE;
 let mobileSuggestionExpanded = false;
 let lastSyncPreview = null;
+let adminReviewFilter = "all";
+let adminReviewSort = "priority";
+let adminHistoryLoaded = false;
 const $ = (sel) => document.querySelector(sel);
 
 function escapeHTML(value="") {
@@ -1972,6 +1975,46 @@ function manualDateControl(v) {
   `;
 }
 
+function adminReviewReason(v) {
+  if (v.manualDateReviewPending || v.descriptionChangedAfterManual) {
+    return { key:"description", label:"설명 변경 재검토", priority:0 };
+  }
+
+  if (Array.isArray(v.dateCandidates) && v.dateCandidates.length) {
+    return { key:"candidate", label:"날짜 후보 있음", priority:1 };
+  }
+
+  const reason = unknownReason(v);
+  if (reason === "날짜처럼 보이는 표기 확인 필요" || reason === "해시태그에만 날짜 표기가 있음") {
+    return { key:"date-like", label:"날짜 표기 확인", priority:2 };
+  }
+
+  return { key:"no-date", label:"날짜 정보 없음", priority:3 };
+}
+
+function adminReviewReasonDetail(v) {
+  const reason = adminReviewReason(v);
+
+  if (reason.key === "description") {
+    const previous = (v.previousManualDates || []).map(displayDate).filter(Boolean).join(", ");
+    const next = (v.dates || []).map(displayDate).filter(Boolean).join(", ");
+    if (previous && next) return `이전 수동 날짜 ${previous} · 새 설명 인식 ${next}`;
+    if (previous) return `이전 수동 날짜 ${previous} · 새 설명에서는 날짜 미인식`;
+    return "수동 날짜 지정 이후 영상 설명이 변경되었습니다.";
+  }
+
+  if (reason.key === "candidate") {
+    const candidate = v.dateCandidates?.[0];
+    return candidate ? `${candidateSourceLabel(candidate.sourceLocation)}에서 ${candidate.display} 후보를 찾았습니다.` : "적용 가능한 날짜 후보가 있습니다.";
+  }
+
+  if (reason.key === "date-like") {
+    return unknownReason(v);
+  }
+
+  return "설명에서 자동으로 인식할 수 있는 날짜를 찾지 못했습니다.";
+}
+
 function adminReviewItemHtml(v, {playlistUndated=false}={}) {
   return `
     <article class="admin-unknown-item">
@@ -1983,9 +2026,10 @@ function adminReviewItemHtml(v, {playlistUndated=false}={}) {
           <strong>${escapeHTML(v.title)}</strong>
           <div class="admin-review-badges">
             ${v.contentType === "playlist" ? `<span class="admin-content-badge playlist">플레이리스트</span>` : ""}
-            <span class="admin-reason-badge">${escapeHTML(playlistUndated ? "연도 미지정" : unknownReason(v))}</span>
+            <span class="admin-reason-badge">${escapeHTML(playlistUndated ? "연도 미지정" : adminReviewReason(v).label)}</span>
           </div>
         </div>
+        ${!playlistUndated ? `<div class="admin-review-reason-detail">${escapeHTML(adminReviewReasonDetail(v))}</div>` : ""}
         <p>${escapeHTML(descriptionPreview(v.description))}</p>
         ${!playlistUndated ? (v.dateCandidates || []).map(c => `
           <div class="date-candidate-box">
@@ -2046,8 +2090,50 @@ function renderAdminUnknownList() {
     v.contentType !== "playlist" &&
     (v.type === "unknown" || v.manualDateReviewPending)
   );
+
+  const categorized = unknown.map(v => ({ v, reason: adminReviewReason(v) }));
   const ordinaryUnknown = unknown.filter(v => !v.manualDateReviewPending);
   const descriptionChanges = unknown.filter(v => v.manualDateReviewPending);
+
+  const counts = {
+    all: categorized.length,
+    description: categorized.filter(x => x.reason.key === "description").length,
+    candidate: categorized.filter(x => x.reason.key === "candidate").length,
+    "date-like": categorized.filter(x => x.reason.key === "date-like").length,
+    "no-date": categorized.filter(x => x.reason.key === "no-date").length
+  };
+
+  const setCount = (id, value) => {
+    const el = $(id);
+    if (el) el.textContent = String(value);
+  };
+  setCount("#reviewFilterAllCount", counts.all);
+  setCount("#reviewFilterDescriptionCount", counts.description);
+  setCount("#reviewFilterCandidateCount", counts.candidate);
+  setCount("#reviewFilterDateLikeCount", counts["date-like"]);
+  setCount("#reviewFilterNoDateCount", counts["no-date"]);
+
+  document.querySelectorAll("[data-review-filter]").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.reviewFilter === adminReviewFilter);
+  });
+  if ($("#adminReviewSort")) $("#adminReviewSort").value = adminReviewSort;
+
+  let visible = categorized.filter(x =>
+    adminReviewFilter === "all" || x.reason.key === adminReviewFilter
+  );
+
+  visible.sort((a,b) => {
+    if (adminReviewSort === "upload-desc") {
+      return String(b.v.publishedAt || "").localeCompare(String(a.v.publishedAt || ""));
+    }
+    if (adminReviewSort === "upload-asc") {
+      return String(a.v.publishedAt || "").localeCompare(String(b.v.publishedAt || ""));
+    }
+
+    const p = a.reason.priority - b.reason.priority;
+    if (p !== 0) return p;
+    return String(b.v.publishedAt || "").localeCompare(String(a.v.publishedAt || ""));
+  });
 
   const undatedPlaylists = videos.filter(v =>
     v.contentType === "playlist" &&
@@ -2055,7 +2141,11 @@ function renderAdminUnknownList() {
     (v.type === "unknown" || v.manualDateReviewPending)
   );
 
-  if (badge) badge.textContent = `${unknown.length}개`;
+  if (badge) {
+    badge.textContent = adminReviewFilter === "all"
+      ? `${unknown.length}개`
+      : `${visible.length} / ${unknown.length}개`;
+  }
   if (playlistBadge) playlistBadge.textContent = `${undatedPlaylists.length}개`;
 
   const unknownCountEl = $("#adminReviewUnknownCount");
@@ -2069,9 +2159,11 @@ function renderAdminUnknownList() {
   const tabCount = $("#adminReviewTabCount");
   if (tabCount) tabCount.textContent = String(unknown.length);
 
-  wrap.innerHTML = unknown.length
-    ? unknown.map(v => adminReviewItemHtml(v)).join("")
-    : `<div class="admin-empty-complete"><span>✓</span><div><strong>정리 완료</strong><p>현재 날짜 확인이 필요한 일반 영상이 없습니다.</p></div></div>`;
+  wrap.innerHTML = visible.length
+    ? visible.map(({v}) => adminReviewItemHtml(v)).join("")
+    : unknown.length
+      ? `<div class="admin-empty-complete muted"><span>–</span><div><strong>해당 유형의 검토 항목이 없습니다.</strong><p>다른 검토 유형을 선택해 주세요.</p></div></div>`
+      : `<div class="admin-empty-complete"><span>✓</span><div><strong>정리 완료</strong><p>현재 날짜 확인이 필요한 일반 영상이 없습니다.</p></div></div>`;
 
   if (playlistWrap) {
     playlistWrap.innerHTML = undatedPlaylists.length
@@ -2081,7 +2173,6 @@ function renderAdminUnknownList() {
 
   renderAdminContentList();
 }
-
 function renderAdminContentList() {
   const wrap = $("#adminContentList");
   if (!wrap) return;
@@ -2161,6 +2252,127 @@ function renderAdminContentList() {
       </div>
     </div>
   `).join("");
+}
+
+function adminHistoryActionLabel(action) {
+  const labels = {
+    sync_apply: "YouTube 동기화",
+    manual_date: "수동 날짜 적용",
+    candidate_date: "날짜 후보 적용",
+    ignore_candidate: "날짜 후보 제외",
+    accept_description_date: "새 설명 날짜 사용",
+    content_type: "콘텐츠 유형 변경",
+    playlist_scope: "플레이리스트 범위 변경",
+    site_config: "사이트 설정 변경",
+    undo: "변경 되돌리기"
+  };
+  return labels[action] || action || "관리자 변경";
+}
+
+function adminHistoryValueText(value) {
+  if (value == null || value === "") return "없음";
+  if (Array.isArray(value)) {
+    return value.map(x => {
+      if (typeof x === "object" && x?.sourceDate) return x.sourceDate;
+      return String(x);
+    }).join(", ") || "없음";
+  }
+  if (typeof value === "object") {
+    return Object.entries(value)
+      .map(([k,v]) => `${k}: ${Array.isArray(v) ? v.join(", ") : String(v ?? "")}`)
+      .join(" · ");
+  }
+  return String(value);
+}
+
+function canUndoAdminHistoryEntry(entry) {
+  return [
+    "manual_date",
+    "candidate_date",
+    "ignore_candidate",
+    "accept_description_date",
+    "content_type",
+    "playlist_scope"
+  ].includes(String(entry?.action || "")) && Boolean(entry?.videoId);
+}
+
+function adminUndoSummary(entry) {
+  const action = String(entry?.action || "");
+  if (action === "manual_date" || action === "candidate_date" || action === "accept_description_date") {
+    return "이 영상의 날짜 관련 상태를 변경 전으로 되돌립니다.";
+  }
+  if (action === "ignore_candidate") {
+    return "무시한 날짜 후보 상태를 변경 전으로 되돌립니다.";
+  }
+  if (action === "content_type") {
+    return "영상/플레이리스트 분류를 변경 전으로 되돌립니다.";
+  }
+  if (action === "playlist_scope") {
+    return "플레이리스트 범위를 변경 전으로 되돌립니다.";
+  }
+  return "이 변경을 이전 상태로 되돌립니다.";
+}
+
+function renderAdminHistory(entries=[]) {
+  const wrap = $("#adminHistoryList");
+  if (!wrap) return;
+
+  if (!entries.length) {
+    wrap.innerHTML = `<div class="admin-empty-complete muted"><span>–</span><div><strong>아직 저장된 변경 이력이 없습니다.</strong><p>날짜 적용이나 콘텐츠 분류 변경부터 기록됩니다.</p></div></div>`;
+    return;
+  }
+
+  wrap.innerHTML = entries.map(entry => `
+    <div class="admin-history-item ${entry.action === "undo" ? "is-undo" : ""}">
+      <div class="admin-history-meta">
+        <span class="admin-history-action">${escapeHTML(adminHistoryActionLabel(entry.action))}</span>
+        <time>${escapeHTML(formatAdminDateTime(entry.changedAt))}</time>
+      </div>
+      <div class="admin-history-body">
+        <div class="admin-history-title-row">
+          <div>
+            <strong>${escapeHTML(entry.title || entry.videoId || "사이트 설정")}</strong>
+            ${entry.videoId ? `<small class="admin-history-video-id">영상 ID · ${escapeHTML(entry.videoId)}</small>` : ""}
+          </div>
+          ${canUndoAdminHistoryEntry(entry)
+            ? `<button type="button" class="admin-history-undo-btn"
+                data-admin-history-undo="${escapeHTML(entry.id || "")}"
+                data-admin-history-title="${escapeHTML(entry.title || entry.videoId || "해당 영상")}"
+                data-admin-history-summary="${escapeHTML(adminUndoSummary(entry))}">
+                되돌리기
+              </button>`
+            : ""}
+        </div>
+        <div class="admin-history-change">
+          <span><b>이전</b> ${escapeHTML(adminHistoryValueText(entry.before))}</span>
+          <span><b>변경</b> ${escapeHTML(adminHistoryValueText(entry.after))}</span>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+
+async function loadAdminHistory({ force=false }={}) {
+  const status = $("#adminHistoryStatus");
+  if (!$("#adminHistoryList")) return;
+  if (adminHistoryLoaded && !force) return;
+
+  if (!getAdminToken()) {
+    setAdminStatus(status, "변경 이력을 보려면 먼저 ADMIN_TOKEN을 적용해 주세요.", "error");
+    return;
+  }
+
+  setAdminStatus(status, "최근 변경 이력을 불러오는 중입니다…", "loading");
+
+  try {
+    const data = await adminApi("/admin-history", { method:"GET" });
+    renderAdminHistory(Array.isArray(data.entries) ? data.entries : []);
+    adminHistoryLoaded = true;
+    setAdminStatus(status, `최근 ${Array.isArray(data.entries) ? data.entries.length : 0}건을 불러왔습니다.`, "success");
+  } catch (err) {
+    setAdminStatus(status, err.message, "error");
+  }
 }
 
 function setAdminTab(tabName) {
@@ -2300,6 +2512,45 @@ function bindEvents() {
       }
     }
 
+    const undoHistoryButton = event.target.closest("button[data-admin-history-undo]");
+    if (undoHistoryButton) {
+      const historyId = undoHistoryButton.dataset.adminHistoryUndo || "";
+      const title = undoHistoryButton.dataset.adminHistoryTitle || "해당 영상";
+      const summary = undoHistoryButton.dataset.adminHistorySummary || "이 변경을 이전 상태로 되돌립니다.";
+
+      if (!historyId) return;
+
+      const ok = window.confirm(`${title}\n\n${summary}\n\n되돌리기를 실행할까요?`);
+      if (!ok) return;
+
+      const historyStatus = $("#adminHistoryStatus");
+      undoHistoryButton.disabled = true;
+      setAdminStatus(historyStatus, "이전 상태로 되돌리는 중입니다…", "loading");
+
+      try {
+        const data = await adminApi("/undo-admin-history", {
+          method: "POST",
+          body: JSON.stringify({ historyId })
+        });
+
+        if (data.video) {
+          const normalized = normalizeVideo(data.video);
+          const index = videos.findIndex(v => String(v.id) === String(normalized.id));
+          if (index >= 0) videos[index] = normalized;
+          else videos.push(normalized);
+          render();
+        }
+
+        adminHistoryLoaded = false;
+        await loadAdminHistory({ force:true });
+        setAdminStatus(historyStatus, "변경을 이전 상태로 되돌렸습니다.", "success");
+      } catch (err) {
+        setAdminStatus(historyStatus, err.message, "error");
+        undoHistoryButton.disabled = false;
+      }
+      return;
+    }
+
     const emptyAction = event.target.closest("button[data-empty-action]");
     if (emptyAction) {
       const action = emptyAction.dataset.emptyAction || "";
@@ -2349,6 +2600,7 @@ function bindEvents() {
       if (status) status.textContent = "새 설명 날짜 적용 중…";
 
       try {
+        adminHistoryLoaded = false;
         await adminApi("/accept-description-date", {
           method: "POST",
           body: JSON.stringify({ videoId })
@@ -2387,6 +2639,7 @@ function bindEvents() {
       if (status) status.textContent = `${displayText} 적용 중…`;
 
       try {
+        adminHistoryLoaded = false;
         await adminApi("/apply-date-overrides", {
           method: "POST",
           body: JSON.stringify({
@@ -2433,6 +2686,7 @@ function bindEvents() {
       playlistScopeBtn.disabled = true;
 
       try {
+        adminHistoryLoaded = false;
         await adminApi("/set-playlist-scope", {
           method: "POST",
           body: JSON.stringify({ videoId, playlistScope })
@@ -2455,6 +2709,7 @@ function bindEvents() {
       contentToggle.disabled = true;
 
       try {
+        adminHistoryLoaded = false;
         await adminApi("/set-content-type", {
           method: "POST",
           body: JSON.stringify({ videoId, contentType })
@@ -2486,6 +2741,7 @@ function bindEvents() {
       candidateApply.disabled = true;
       if (status) status.textContent = "GitHub에 적용 중…";
       try {
+        adminHistoryLoaded = false;
         await adminApi("/apply-date-override", {
           method: "POST",
           body: JSON.stringify({ videoId, sourceDate, precision, candidateKey })
@@ -2526,6 +2782,7 @@ function bindEvents() {
       candidateIgnore.disabled = true;
       if (status) status.textContent = "후보 제외 저장 중…";
       try {
+        adminHistoryLoaded = false;
         await adminApi("/ignore-date-candidate", {
           method: "POST",
           body: JSON.stringify({ videoId, candidateKey })
@@ -2706,6 +2963,7 @@ function bindEvents() {
       const tab = btn.dataset.adminTab || "dashboard";
       setAdminTab(tab);
       if (tab === "content") renderAdminContentList();
+      if (tab === "history") loadAdminHistory();
     });
   });
 
@@ -2760,6 +3018,20 @@ function bindEvents() {
   if (adminContentSearch) {
     adminContentSearch.addEventListener("input", renderAdminContentList);
   }
+
+  document.querySelectorAll("[data-review-filter]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      adminReviewFilter = btn.dataset.reviewFilter || "all";
+      renderAdminUnknownList();
+    });
+  });
+
+  $("#adminReviewSort")?.addEventListener("change", (event) => {
+    adminReviewSort = event.target.value || "priority";
+    renderAdminUnknownList();
+  });
+
+  $("#refreshAdminHistory")?.addEventListener("click", () => loadAdminHistory({ force:true }));
 
   const backToTopBtn = $("#backToTopBtn");
   const updateBackToTop = () => {
@@ -2839,7 +3111,8 @@ function bindEvents() {
     setAdminStatus(status, "GitHub에 사이트 설정을 저장하는 중입니다…", "loading");
 
     try {
-      const data = await adminApi("/update-site-config", {
+      const data = adminHistoryLoaded = false;
+      await adminApi("/update-site-config", {
         method: "POST",
         body: JSON.stringify({
           title,
@@ -2923,6 +3196,7 @@ function bindEvents() {
     );
 
     try {
+      adminHistoryLoaded = false;
       const data = await adminApi("/sync-videos", {
         method: "POST",
         body: JSON.stringify({ previewOnly:false })

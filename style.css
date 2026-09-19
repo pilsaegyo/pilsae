@@ -3896,3 +3896,264 @@ select{
     width:100%;
   }
 }
+
+
+/* v22 review queue + admin history */
+.admin-review-queue-toolbar{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:12px;
+  margin:14px 0 12px;
+}
+
+.admin-review-filter-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.admin-review-filter-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  min-height:34px;
+  padding:7px 10px;
+  border:1px solid #e4dce8;
+  border-radius:999px;
+  background:#fff;
+  color:#756a79;
+  font-size:9px;
+  font-weight:750;
+}
+
+.admin-review-filter-chip b{
+  min-width:17px;
+  padding:1px 5px;
+  border-radius:999px;
+  background:#f2edf4;
+  color:#65566e;
+  font-size:8px;
+}
+
+.admin-review-filter-chip.active{
+  border-color:#766087;
+  background:#f4eff7;
+  color:#594665;
+}
+
+.admin-review-filter-chip.active b{
+  background:#fff;
+}
+
+.admin-review-sort{
+  flex:0 0 auto;
+  display:grid;
+  gap:5px;
+}
+
+.admin-review-sort span{
+  color:#8a7f8e;
+  font-size:9px;
+  font-weight:700;
+}
+
+.admin-review-sort select{
+  min-height:34px;
+  border:1px solid #dfd8e3;
+  border-radius:10px;
+  background:#fff;
+  padding:6px 28px 6px 9px;
+  color:#5f5463;
+  font-size:9px;
+}
+
+.admin-review-reason-detail{
+  margin:8px 0 7px;
+  padding:8px 10px;
+  border-radius:10px;
+  background:#f7f3f8;
+  color:#75677c;
+  font-size:9px;
+  line-height:1.5;
+}
+
+.admin-empty-complete.muted{
+  opacity:.78;
+}
+
+.admin-small-button{
+  min-height:34px;
+  padding:7px 10px;
+  border:1px solid #dfd8e3;
+  border-radius:10px;
+  background:#fff;
+  color:#6b5e70;
+  font-size:9px;
+  font-weight:750;
+}
+
+.admin-history-list{
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+
+.admin-history-item{
+  display:grid;
+  grid-template-columns:148px minmax(0,1fr);
+  gap:14px;
+  padding:12px 13px;
+  border:1px solid #ebe5ee;
+  border-radius:13px;
+  background:#fff;
+}
+
+.admin-history-meta{
+  display:grid;
+  align-content:start;
+  gap:5px;
+}
+
+.admin-history-action{
+  width:max-content;
+  max-width:100%;
+  padding:4px 7px;
+  border-radius:999px;
+  background:#f2edf4;
+  color:#634f70;
+  font-size:8px;
+  font-weight:800;
+}
+
+.admin-history-meta time{
+  color:#938896;
+  font-size:8px;
+  line-height:1.4;
+}
+
+.admin-history-body strong{
+  display:block;
+  color:#453b49;
+  font-size:11px;
+  line-height:1.45;
+}
+
+.admin-history-video-id{
+  display:block;
+  margin-top:2px;
+  color:#9b919d;
+  font-size:8px;
+}
+
+.admin-history-change{
+  display:grid;
+  gap:4px;
+  margin-top:7px;
+}
+
+.admin-history-change span{
+  color:#817584;
+  font-size:9px;
+  line-height:1.5;
+  word-break:break-word;
+}
+
+.admin-history-change b{
+  display:inline-block;
+  min-width:29px;
+  margin-right:4px;
+  color:#5e5263;
+}
+
+@media (max-width:760px){
+  .admin-review-queue-toolbar{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .admin-review-sort{
+    width:100%;
+  }
+
+  .admin-review-sort select{
+    width:100%;
+  }
+
+  .admin-review-filter-chips{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    padding-bottom:2px;
+    scrollbar-width:none;
+  }
+
+  .admin-review-filter-chips::-webkit-scrollbar{
+    display:none;
+  }
+
+  .admin-review-filter-chip{
+    flex:0 0 auto;
+  }
+
+  .admin-history-item{
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+
+  .admin-history-meta{
+    grid-template-columns:max-content 1fr;
+    align-items:center;
+  }
+
+  .admin-history-meta time{
+    text-align:right;
+  }
+}
+
+
+/* v22.1 simple history undo */
+.admin-history-title-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.admin-history-undo-btn{
+  flex:0 0 auto;
+  min-height:30px;
+  padding:6px 9px;
+  border:1px solid #d9d0de;
+  border-radius:9px;
+  background:#fff;
+  color:#6a5874;
+  font-size:8px;
+  font-weight:800;
+}
+
+.admin-history-undo-btn:hover,
+.admin-history-undo-btn:focus-visible{
+  border-color:#bfaec9;
+  background:#f7f2f9;
+  outline:none;
+}
+
+.admin-history-undo-btn:disabled{
+  cursor:not-allowed;
+  opacity:.45;
+}
+
+.admin-history-item.is-undo{
+  background:#faf9fb;
+}
+
+.admin-history-item.is-undo .admin-history-action{
+  background:#ece9ef;
+  color:#786f7d;
+}
+
+@media (max-width:760px){
+  .admin-history-title-row{
+    gap:8px;
+  }
+}
