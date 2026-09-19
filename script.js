@@ -2296,9 +2296,44 @@ function timelineDateLabel(entry) {
   return raw.replace(/-/g, ".");
 }
 
-function timelineBucket(v) {
-  // An explicitly multi-year playlist belongs in the separate playlist bucket
-  // even when an old/single representative date (e.g. 2001) already exists.
+function timelineEntryForYear(v, selectedYear="") {
+  if (!selectedYear) return timelinePrimaryEntry(v);
+
+  const entries = (v.dates || [])
+    .filter(d =>
+      d?.sourceDate &&
+      String(d.sourceDate).startsWith(`${selectedYear}-`)
+    )
+    .sort((a,b) => String(b.sourceDate).localeCompare(String(a.sourceDate)));
+
+  return entries[0] || null;
+}
+
+function timelineBucket(v, selectedYear="") {
+  // When a year filter is active, the timeline must be anchored to that year.
+  // Example: a mixed video with 2007 / 2001 / 1998 appears under its 1998 date
+  // while the 1998 filter is selected, rather than under its global latest date.
+  const yearScopedEntry = timelineEntryForYear(v, selectedYear);
+
+  if (selectedYear && yearScopedEntry) {
+    const year = selectedYear;
+
+    if (yearScopedEntry.precision === "year") {
+      return { kind: "year-only", year, month: "", entry: yearScopedEntry, yearScoped:true };
+    }
+
+    const month = yearScopedEntry.sourceDate.slice(5,7);
+    return {
+      kind: yearScopedEntry.precision === "month" ? "month-only" : "dated",
+      year,
+      month,
+      entry: yearScopedEntry,
+      yearScoped:true
+    };
+  }
+
+  // Without a year filter, explicitly multi-year playlists stay in their
+  // separate playlist hub as before.
   if (isMultiYearPlaylist(v)) {
     return { kind: "playlist-multiyear", year: "", month: "", entry: null };
   }
@@ -2381,13 +2416,14 @@ function timelineItemHtml(v, bucket) {
 }
 
 function renderTimeline(rows) {
+  const selectedYear = $("#yearFilter")?.value || "";
   const yearGroups = new Map();
   const multiYearPlaylists = [];
   const undatedPlaylists = [];
   const unknown = [];
 
   for (const v of rows) {
-    const bucket = timelineBucket(v);
+    const bucket = timelineBucket(v, selectedYear);
 
     if (bucket.kind === "playlist-multiyear") {
       multiYearPlaylists.push({ v, bucket });
@@ -2457,7 +2493,7 @@ function renderTimeline(rows) {
             ${group.yearOnly.length ? `
               <button type="button" class="timeline-month-jump"
                 data-timeline-month-jump="${escapeHTML(year)}-year-only">
-                <span>연도만</span><small>${group.yearOnly.length}</small>
+                <span>${selectedYear ? "월 미확인" : "연도만"}</span><small>${group.yearOnly.length}</small>
               </button>
             ` : ""}
           </nav>
@@ -2466,7 +2502,11 @@ function renderTimeline(rows) {
 
     for (const month of [...group.months.keys()].sort((a,b) => Number(b) - Number(a))) {
       const items = group.months.get(month)
-        .sort((a,b) => timelinePrimaryDate(b.v).localeCompare(timelinePrimaryDate(a.v)));
+        .sort((a,b) =>
+          String(b.bucket?.entry?.sourceDate || "").localeCompare(
+            String(a.bucket?.entry?.sourceDate || "")
+          )
+        );
 
       parts.push(`
         <div class="timeline-month" id="timeline-${escapeHTML(year)}-${escapeHTML(month)}">
@@ -2482,7 +2522,7 @@ function renderTimeline(rows) {
       const items = group.yearOnly.sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"));
       parts.push(`
         <div class="timeline-month timeline-year-only-group" id="timeline-${escapeHTML(year)}-year-only">
-          <h3>연도만 확인</h3>
+          <h3>${selectedYear ? `${escapeHTML(year)}년 · 월 미확인` : "연도만 확인"}</h3>
           <div class="timeline-items">
             ${items.map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
           </div>
