@@ -3223,11 +3223,40 @@
       "title": "소녀들의 첫사랑 기준 신혜성 리즈시절 사진 (ai - Fanmade)",
       "description": "언젠가 나에게 스며 든 널 향한 감정은 날 덩그러니 이곳에 남겨두고 \n*\n제목 : 셩공시대님의 잡지 스캔본 사진, 동완 직찍 공개 사진, 핀터레스트 등등\n링크 : 1. https://timeofsung.tistory.com/\n2. https://x.com/timeofsung\n\n✨ FANMADE | 연습용 영상 ✨\n 추억 속 잡지 사진을 AI로 영상화해본 팬메이드 실험입니다.  \n오래된 순간들을 조금 더 선명하게 되살려보고자 만든 개인적인 연습 작업으로,  \n상업적 목적이나 수익 창출은 전혀 없습니다.\n권리자의 요청이 있을 경우 영상은 즉시 삭제하겠습니다. \n❌️do not re-upload❌️\n\n원본 연결점을 위해 리컬러링 有\n신혜성의 과거 레전드 사진을 한 영상으로 감상해보세요.\n얼굴 변형 방지를 위해 다이다믹한 동작 액션은 최대한 자제하여 제작되었습니다.\n어색한 점은 이해해주세요. 감사합니다. \n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "언젠가 나에게 스며 든 널 향한 감정은 날 덩그러니 이곳에 남겨두고",
-      "sourceDate": null,
+      "sourceDate": "1998-01-01",
       "publishedAt": "2025-11-27T13:30:45Z",
       "thumbnail": "https://i.ytimg.com/vi/cSSw3TQd8Js/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1998-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "1999-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8124,7 +8153,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:19:43.209Z",
+  "generatedAt": "2026-09-19T04:19:57.773Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
