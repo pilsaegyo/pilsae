@@ -798,6 +798,13 @@ function formatAdminDateTime(value) {
   }).format(dt);
 }
 
+function adminReviewQueueVideos() {
+  return videos.filter(v =>
+    v.contentType !== "playlist" &&
+    (v.type === "unknown" || v.manualDateReviewPending || v.descriptionChangedAfterManual)
+  );
+}
+
 function adminHealthIssues() {
   const issues = [];
   const idCounts = new Map();
@@ -831,7 +838,23 @@ function adminHealthIssues() {
     }
 
     if (v.manualDateReviewPending || v.descriptionChangedAfterManual) {
-      issues.push({ type:"설명 변경 재검토", severity:"high", videoId:v.id, title, detail:"수동 날짜 지정 후 설명이 변경되어 재검토가 필요합니다." });
+      if (v.contentType === "playlist") {
+        issues.push({
+          type:"플레이리스트 설명 변경 확인",
+          severity:"high",
+          videoId:v.id,
+          title,
+          detail:"플레이리스트의 수동 날짜 지정 이후 설명이 변경되었습니다."
+        });
+      } else {
+        issues.push({
+          type:"설명 변경 재검토",
+          severity:"high",
+          videoId:v.id,
+          title,
+          detail:"수동 날짜 지정 후 설명이 변경되어 재검토가 필요합니다."
+        });
+      }
     }
 
     for (const d of (v.dates || [])) {
@@ -854,7 +877,7 @@ function adminHealthIssues() {
 function adminHealthRoute(issue) {
   const type = String(issue?.type || "");
   if (type === "날짜 미확인" || type === "설명 변경 재검토") return "review";
-  if (type === "플레이리스트 분류 확인") return "content";
+  if (type === "플레이리스트 분류 확인" || type === "플레이리스트 설명 변경 확인") return "content";
   return "";
 }
 
@@ -862,13 +885,16 @@ function renderAdminDashboard() {
   if (!$("#dashTotal")) return;
 
   const total = videos.length;
-  const review = videos.filter(v =>
-    v.contentType !== "playlist" &&
-    (v.type === "unknown" || v.manualDateReviewPending)
+  const reviewQueue = adminReviewQueueVideos();
+  const review = reviewQueue.length;
+  const descriptionReview = reviewQueue.filter(v =>
+    v.manualDateReviewPending || v.descriptionChangedAfterManual
   ).length;
-  const descriptionReview = videos.filter(v => v.manualDateReviewPending || v.descriptionChangedAfterManual).length;
   const playlists = videos.filter(v => v.contentType === "playlist").length;
-  const unknown = videos.filter(v => v.contentType !== "playlist" && v.type === "unknown").length;
+  const unknown = reviewQueue.filter(v =>
+    v.type === "unknown" &&
+    !(v.manualDateReviewPending || v.descriptionChangedAfterManual)
+  ).length;
 
   $("#dashTotal").textContent = `${total}개`;
   $("#dashReview").textContent = `${review}개`;
@@ -923,10 +949,7 @@ function renderAdminDashboard() {
 
 function updateAdminSummary() {
   const total = videos.length;
-  const review = videos.filter(v =>
-    v.contentType !== "playlist" &&
-    (v.type === "unknown" || v.manualDateReviewPending)
-  ).length;
+  const review = adminReviewQueueVideos().length;
   const parsed = total - review;
 
   if ($("#adminCurrentTotal")) $("#adminCurrentTotal").textContent = `${total}개`;
@@ -2161,14 +2184,15 @@ function renderAdminUnknownList() {
   const playlistBadge = $("#adminUndatedPlaylistBadge");
   if (!wrap) return;
 
-  const unknown = videos.filter(v =>
-    v.contentType !== "playlist" &&
-    (v.type === "unknown" || v.manualDateReviewPending)
-  );
+  const unknown = adminReviewQueueVideos();
 
   const categorized = unknown.map(v => ({ v, reason: adminReviewReason(v) }));
-  const ordinaryUnknown = unknown.filter(v => !v.manualDateReviewPending);
-  const descriptionChanges = unknown.filter(v => v.manualDateReviewPending);
+  const ordinaryUnknown = unknown.filter(v =>
+    !(v.manualDateReviewPending || v.descriptionChangedAfterManual)
+  );
+  const descriptionChanges = unknown.filter(v =>
+    v.manualDateReviewPending || v.descriptionChangedAfterManual
+  );
 
   const counts = {
     all: categorized.length,

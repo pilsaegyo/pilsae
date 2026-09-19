@@ -537,3 +537,12 @@
 - 새 파일은 Worker가 필요 시 자동 생성: `data/admin-backups-index.json`, `data/backups/videos-1.json` ~ `videos-3.json`.
 - `data/videos.json`, `site-config.json`은 배포 ZIP에 포함하지 않음.
 - Worker 변경 필수.
+
+
+## v23.1 대시보드/건강검사 카운트 정합성 수정
+- 대시보드 카운트와 날짜 검토 탭이 서로 다른 조건으로 계산되던 문제 수정.
+- `날짜 검토 필요`, `설명 변경 재검토`, `날짜 미확인` 카운트를 실제 날짜 검토 큐와 동일한 기준으로 계산.
+- `descriptionChangedAfterManual`도 날짜 검토 큐에 동일하게 포함.
+- 플레이리스트의 설명 변경 이슈는 일반 날짜 검토 카운트에 섞지 않고 `플레이리스트 설명 변경 확인`으로 분리하여 콘텐츠 분류로 연결.
+- 대시보드 숫자를 눌렀는데 대상 탭에서 0건으로 보이는 불일치 방지.
+- Worker 변경 없음.
