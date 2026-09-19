@@ -418,7 +418,15 @@ function contentTypeLabel(value="video") {
 
 function isMultiYearPlaylist(v) {
   if (!v || v.contentType !== "playlist") return false;
+
+  // Explicit admin classification always wins.
+  // This is important when a playlist still keeps historical date entries:
+  // choosing "연도 미지정" must not be overridden merely because those
+  // preserved dates span multiple years.
   if (v.playlistScope === "multi-year") return true;
+  if (v.playlistScope === "undated") return false;
+
+  // Only unclassified playlists fall back to automatic multi-year detection.
   return videoYears(v).length > 1;
 }
 
