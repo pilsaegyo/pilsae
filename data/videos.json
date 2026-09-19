@@ -3826,11 +3826,19 @@
       "title": "아퍼요오오오~ 욱씬욱씬거려요오~~ 전진을 고발합니다 #신혜성 #전진 #에릭 #신화",
       "description": "2006 shinhwa Personal History\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "2006 shinhwa Personal History",
-      "sourceDate": null,
+      "sourceDate": "2006-01-01",
       "publishedAt": "2025-10-11T03:00:29Z",
       "thumbnail": "https://i.ytimg.com/vi/FI40GtJqhRM/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2006-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7857,7 +7865,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:09:36.721Z",
+  "generatedAt": "2026-09-19T04:09:51.832Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
