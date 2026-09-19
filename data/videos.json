@@ -6059,11 +6059,19 @@
       "title": "쿨쿨띠 드렁슨 푸데푸데냥 #신혜성 #신화",
       "description": "제목 : \n[방송] 99년 Mnet - 가요발전소2000 - 파워게스트 - 신화\n채널 : 셩공시대님 유투브\n링크 : https://youtu.be/uMYLk3Pxsdo?t=810\n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン",
       "source": "제목 :",
-      "sourceDate": null,
+      "sourceDate": "1999-01-01",
       "publishedAt": "2025-06-19T09:14:49Z",
       "thumbnail": "https://i.ytimg.com/vi/6d6ENhu7fY0/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1999-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7976,7 +7984,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:12:42.174Z",
+  "generatedAt": "2026-09-19T04:12:49.837Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
