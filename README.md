@@ -898,3 +898,12 @@
 - 배포 성공 시 commit SHA와 GitHub 커밋 링크 표시.
 - `site-config.json`, `data/videos.json`은 계속 배포 패치 대상에서 제외.
 - 이번 단계는 Admin API Worker 변경이 있으므로 `/deploy-context`, `/deploy-patch`가 실제 Worker에 배포되어야 동작함.
+
+
+## v26.0 Step 3A · Worker 자동배포 준비
+- 관리자 배포 패치 허용 파일에 `worker/wrangler.jsonc` 추가.
+- `worker/wrangler.jsonc`가 ZIP에 포함되면 Worker 변경 있음으로 표시.
+- Admin API Worker의 서버측 허용 목록에도 `worker/wrangler.jsonc` 추가.
+- 다음 Step 3B에서 Wrangler 설정 파일을 GitHub에 추가해 Cloudflare Git 연동 준비.
+- 아직 Cloudflare Worker 자동 배포 자체는 활성화하지 않음.
+- 이 Step 3A는 실행 중인 Admin API Worker에도 수동으로 한 번 반영해야 함.

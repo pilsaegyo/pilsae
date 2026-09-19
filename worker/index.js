@@ -1914,7 +1914,8 @@ const DEPLOY_PATCH_ALLOWED_FILES = new Set([
   "README.md",
   "README_ADMIN_SYNC.md",
   "admin/index.html",
-  "worker/index.js"
+  "worker/index.js",
+  "worker/wrangler.jsonc"
 ]);
 
 function githubHeaders(env) {

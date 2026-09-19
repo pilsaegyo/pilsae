@@ -3502,7 +3502,8 @@ const DEPLOY_ALLOWED_FILES = new Set([
   "README.md",
   "README_ADMIN_SYNC.md",
   "admin/index.html",
-  "worker/index.js"
+  "worker/index.js",
+  "worker/wrangler.jsonc"
 ]);
 
 const DEPLOY_BLOCKED_FILES = new Set([
@@ -3925,7 +3926,9 @@ function renderDeployPatchPreview(file, entries) {
   const allowed = files.filter(x => x.state === "allowed");
   const blocked = files.filter(x => x.state === "blocked");
   const ignored = files.filter(x => x.state === "ignored");
-  const workerChanged = allowed.some(x => x.path === "worker/index.js");
+  const workerChanged = allowed.some(x =>
+    x.path === "worker/index.js" || x.path === "worker/wrangler.jsonc"
+  );
 
   $("#deployZipName").textContent = file.name;
   $("#deployZipSize").textContent = formatDeployBytes(file.size);
