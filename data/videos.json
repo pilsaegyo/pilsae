@@ -7099,11 +7099,19 @@
       "title": "세상에는 말이야 부러움이란 거를 모르는 놈도 있거든 그게 누구냐면 바로 신화창조 1기야 #신혜성 #신화 #에릭",
       "description": "부탁이 있습니다.. 한번만 검색해서 봐주시렵니까 안보신분들\n신혜성의 초절정 아가시절 & 돌아버린 신화의 미친 라이브 감상가능합니다 진짜 왜 이걸 이제 알앗나 후회하실겁니다 ㅠㅠ 제발 제발 \n[출처 안내(검색 추천)]\n1. 신화 - Chaos - quality sound.ver MV (셩공시대님)\n(https://www.youtube.com/watch?v=_IIwAmol67Y)\n2. 신화 - SHINHWA 2001 1st Live Concert (최강꼴리건님)\n(https://youtu.be/8hSEd5t8awk?si=31Lu9mzDTUCjypHm)\n\n#shinhwa #shinhyesung #concert #kpop #stage  #申惠星 #神话 #シンファ\n\nシン・ヘソン",
       "source": "부탁이 있습니다.. 한번만 검색해서 봐주시렵니까 안보신분들",
-      "sourceDate": null,
+      "sourceDate": "2001-01-01",
       "publishedAt": "2025-05-15T22:38:05Z",
       "thumbnail": "https://i.ytimg.com/vi/iJdyqhPnAEk/sddefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8024,7 +8032,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:13:39.593Z",
+  "generatedAt": "2026-09-19T04:13:47.868Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
