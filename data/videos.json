@@ -3800,11 +3800,19 @@
       "title": "✦ 신혜성 - Now And Forever + first love VCR｜2001 1st Live Concert ｜Sound clean ver ✦ #신혜성 #신화",
       "description": "제목 : 신화 - 2001 First Mythology 1st Live Concert Part 2\n채널 : 최강꼴리건 님\n링크 : https://youtu.be/8hSEd5t8awk?t=609\n\n* 가사 의역 다수\nvcr 앞부분이 first love라서 함께 붙였습니다\n\n0:00 VCR (bgm. 宇多田ヒカル(utada hikaru) - first love)\n1:41 now and forever STAGE\n\nSound Edit & Color Grading\n노래 듣다가 관객 소리가 거슬려서 clean ver 후다닥\n\n감사합니다 🐱\n같이 덕질해요 \n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "제목 : 신화 - 2001 First Mythology 1st Live Concert Part 2",
-      "sourceDate": null,
+      "sourceDate": "2001-01-14",
       "publishedAt": "2025-10-17T11:30:19Z",
       "thumbnail": "https://i.ytimg.com/vi/T0N6ZHeG5fc/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-01-14",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8199,7 +8207,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:35:00.042Z",
+  "generatedAt": "2026-09-19T04:59:47.398Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
