@@ -98,6 +98,8 @@
 
     <div id="activeFilterChips" class="active-filter-chips" aria-live="polite"></div>
 
+    <nav id="yearJumpBar" class="year-jump-bar" aria-label="연도 빠른 이동" hidden></nav>
+
     <div class="result-header">
       <section id="resultMeta" class="result-meta" aria-live="polite"></section>
       <div class="view-toggle" role="group" aria-label="보기 방식">
@@ -113,8 +115,15 @@
       </div>
     </div>
     <section id="loadingState" class="loading-state" aria-live="polite">
-      <span class="loading-dot" aria-hidden="true"></span>
-      영상 목록을 불러오는 중입니다.
+      <div class="loading-message"><span class="loading-dot" aria-hidden="true"></span>영상 목록을 불러오는 중입니다.</div>
+      <div class="skeleton-grid" aria-hidden="true">
+        <article class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><span></span><span></span><span></span></div></article>
+        <article class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><span></span><span></span><span></span></div></article>
+        <article class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><span></span><span></span><span></span></div></article>
+        <article class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><span></span><span></span><span></span></div></article>
+        <article class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><span></span><span></span><span></span></div></article>
+        <article class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><span></span><span></span><span></span></div></article>
+      </div>
     </section>
 
     <section id="videoGrid" class="video-grid" aria-live="polite"></section>

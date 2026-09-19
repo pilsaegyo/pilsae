@@ -608,10 +608,60 @@ function descriptionPreview(text, max=190) {
   return clean.length > max ? clean.slice(0, max).trim() + "…" : clean;
 }
 
+function escapeRegExp(value="") {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function highlightMatch(text, query) {
+  const raw = String(text || "");
+  const q = String(query || "").trim();
+  if (!q) return escapeHTML(raw);
+
+  const regex = new RegExp(`(${escapeRegExp(q)})`, "ig");
+  return raw.split(regex).map((part, idx) =>
+    idx % 2 === 1
+      ? `<mark>${escapeHTML(part)}</mark>`
+      : escapeHTML(part)
+  ).join("");
+}
+
+function searchContextSnippet(v, query) {
+  const q = String(query || "").trim();
+  if (!q) return "";
+
+  const candidates = [
+    { label: "설명", text: v.description || "" },
+    { label: "출처", text: v.source || "" }
+  ];
+
+  const qLower = q.toLowerCase();
+  for (const candidate of candidates) {
+    const normalized = String(candidate.text || "").replace(/\s+/g, " ").trim();
+    const idx = normalized.toLowerCase().indexOf(qLower);
+    if (idx === -1) continue;
+
+    const radius = 52;
+    const start = Math.max(0, idx - radius);
+    const end = Math.min(normalized.length, idx + q.length + radius);
+    const prefix = start > 0 ? "…" : "";
+    const suffix = end < normalized.length ? "…" : "";
+    const snippet = normalized.slice(start, end);
+    return `<p class="search-match"><span>${candidate.label}</span>${prefix}${highlightMatch(snippet, q)}${suffix}</p>`;
+  }
+
+  const dateText = (v.dates || []).map(displayDate).join(" · ");
+  if (dateText.toLowerCase().includes(qLower)) {
+    return `<p class="search-match"><span>날짜</span>${highlightMatch(dateText, q)}</p>`;
+  }
+
+  return "";
+}
+
 function renderCard(v) {
   const thumb = v.thumbnail
     ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />`
     : `<div class="thumb-placeholder">썸네일 없음</div>`;
+  const q = $("#searchInput")?.value?.trim() || "";
 
   return `
     <article class="video-card">
@@ -620,13 +670,13 @@ function renderCard(v) {
       </a>
       <div class="card-body">
         <div class="card-top">
-          <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a></h2>
+          <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${highlightMatch(v.title, q)}</a></h2>
           <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type)}</span>
         </div>
 
         <div class="dates">${renderDates(v)}</div>
-
-        ${v.source ? `<p class="source">출처 · ${escapeHTML(v.source)}</p>` : ""}
+        ${searchContextSnippet(v, q)}
+        ${v.source ? `<p class="source">출처 · ${highlightMatch(v.source, q)}</p>` : ""}
         ${v.type === "unknown"
           ? `<p class="note">${escapeHTML(unknownReason(v))}</p>`
           : ""}
@@ -638,7 +688,6 @@ function renderCard(v) {
     </article>
   `;
 }
-
 function filteredVideos() {
   const q = $("#searchInput").value.trim().toLowerCase();
   const year = $("#yearFilter").value;
@@ -698,6 +747,52 @@ function filteredVideos() {
   return rows;
 }
 
+function readUrlState() {
+  const params = new URLSearchParams(location.search);
+  return {
+    q: params.get("q") || "",
+    year: params.get("year") || "",
+    type: params.get("type") || "",
+    sort: params.get("sort") || "source-desc",
+    view: params.get("view") || ""
+  };
+}
+
+function applyUrlStateToControls() {
+  const state = readUrlState();
+  if ($("#searchInput")) $("#searchInput").value = state.q;
+  if ($("#yearFilter") && [...$("#yearFilter").options].some(o => o.value === state.year)) {
+    $("#yearFilter").value = state.year;
+  }
+  if ($("#typeFilter") && [...$("#typeFilter").options].some(o => o.value === state.type)) {
+    $("#typeFilter").value = state.type;
+  }
+  if ($("#sortFilter") && [...$("#sortFilter").options].some(o => o.value === state.sort)) {
+    $("#sortFilter").value = state.sort;
+  }
+}
+
+function syncUrlState({ replace=false }={}) {
+  const params = new URLSearchParams();
+  const q = $("#searchInput")?.value?.trim() || "";
+  const year = $("#yearFilter")?.value || "";
+  const type = $("#typeFilter")?.value || "";
+  const sort = $("#sortFilter")?.value || "source-desc";
+  const view = currentView();
+
+  if (q) params.set("q", q);
+  if (year) params.set("year", year);
+  if (type) params.set("type", type);
+  if (sort !== "source-desc") params.set("sort", sort);
+  if (view !== defaultViewMode()) params.set("view", view);
+  if (location.hash === "#admin") params.set("admin", "1");
+
+  const qs = params.toString();
+  const next = `${location.pathname}${qs ? `?${qs}` : ""}${location.hash}`;
+  const method = replace ? "replaceState" : "pushState";
+  history[method]({}, "", next);
+}
+
 function currentActiveFilters() {
   const filters = [];
   const q = $("#searchInput")?.value?.trim() || "";
@@ -733,12 +828,22 @@ function clearOneFilter(key) {
   if (key === "type") $("#typeFilter").value = "";
   if (key === "sort") $("#sortFilter").value = "source-desc";
   visibleLimit = PAGE_SIZE;
+  syncUrlState();
   render();
 }
 
+function defaultViewMode() {
+  return window.matchMedia("(max-width: 620px)").matches ? "list" : "grid";
+}
+
 function currentView() {
+  const urlView = readUrlState().view;
+  if (["grid", "list", "timeline"].includes(urlView)) return urlView;
+
   const saved = localStorage.getItem(STORAGE_VIEW);
-  return ["grid", "list", "timeline"].includes(saved) ? saved : "grid";
+  if (["grid", "list", "timeline"].includes(saved)) return saved;
+
+  return defaultViewMode();
 }
 
 function applyViewMode() {
@@ -758,9 +863,10 @@ function applyViewMode() {
 }
 
 function setViewMode(mode) {
-  const normalized = ["grid", "list", "timeline"].includes(mode) ? mode : "grid";
+  const normalized = ["grid", "list", "timeline"].includes(mode) ? mode : defaultViewMode();
   localStorage.setItem(STORAGE_VIEW, normalized);
   visibleLimit = PAGE_SIZE;
+  syncUrlState();
   render();
 }
 
@@ -942,6 +1048,36 @@ function renderTimeline(rows) {
   return parts.join("");
 }
 
+function renderYearJumpBar() {
+  const bar = $("#yearJumpBar");
+  if (!bar) return;
+
+  const mode = currentView();
+  if (mode !== "timeline") {
+    bar.hidden = true;
+    bar.innerHTML = "";
+    return;
+  }
+
+  const years = allYears();
+  const current = $("#yearFilter")?.value || "";
+  bar.innerHTML = `
+    <button type="button" class="year-jump-chip ${current ? "" : "active"}" data-year-jump="">전체</button>
+    ${years.map(y => `<button type="button" class="year-jump-chip ${current === y ? "active" : ""}" data-year-jump="${escapeHTML(y)}">${escapeHTML(y)}</button>`).join("")}
+  `;
+  bar.hidden = false;
+}
+
+function scrollTimelineYearIntoView(year) {
+  if (!year) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+  const target = [...document.querySelectorAll(".timeline-year-heading h2")]
+    .find(el => el.textContent.trim() === year)?.closest(".timeline-year");
+  target?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function render() {
   $("#loadingState")?.setAttribute("hidden", "");
 
@@ -991,6 +1127,7 @@ function render() {
   }
 
   applyViewMode();
+  renderYearJumpBar();
   renderAdminList();
   renderAdminUnknownList();
   updateAdminSummary();
@@ -1109,6 +1246,17 @@ function bindEvents() {
       return;
     }
 
+    const yearJump = event.target.closest("button[data-year-jump]");
+    if (yearJump) {
+      const year = yearJump.dataset.yearJump || "";
+      $("#yearFilter").value = year;
+      visibleLimit = PAGE_SIZE;
+      syncUrlState();
+      render();
+      window.setTimeout(() => scrollTimelineYearIntoView(year), 30);
+      return;
+    }
+
     const link = event.target.closest("a.youtube-video-link");
     if (!link) return;
     openYoutubeVideo(event, link.dataset.videoId || "");
@@ -1119,6 +1267,7 @@ function bindEvents() {
       id === "searchInput" ? "input" : "change",
       () => {
         visibleLimit = PAGE_SIZE;
+        syncUrlState({ replace: id === "searchInput" });
         render();
       }
     );
@@ -1130,6 +1279,7 @@ function bindEvents() {
     $("#typeFilter").value = "";
     $("#sortFilter").value = "source-desc";
     visibleLimit = PAGE_SIZE;
+    syncUrlState();
     render();
     const toolbarPanel = document.querySelector(".toolbar-panel");
     const mobileFilterToggle = $("#mobileFilterToggle");
@@ -1150,6 +1300,12 @@ function bindEvents() {
 
   document.querySelectorAll("[data-admin-tab]").forEach(btn => {
     btn.addEventListener("click", () => setAdminTab(btn.dataset.adminTab || "sync"));
+  });
+
+  window.addEventListener("popstate", () => {
+    applyUrlStateToControls();
+    visibleLimit = PAGE_SIZE;
+    render();
   });
 
   const mobileFilterToggle = $("#mobileFilterToggle");
@@ -1333,7 +1489,9 @@ function bindEvents() {
   try {
     await loadInitialData();
     rebuildYearFilter();
+    applyUrlStateToControls();
     bindEvents();
+    syncUrlState({ replace: true });
     render();
   } catch (err) {
     console.error(err);
