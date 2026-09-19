@@ -3551,34 +3551,6 @@ select{
 
 
 /* v20 user navigation polish */
-.site-help-share{
-  width:100%;
-  min-height:40px;
-  margin-top:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  border:1px solid #ded4e5;
-  border-radius:11px;
-  background:#fff;
-  color:#5f4a70;
-  font-size:10px;
-  font-weight:750;
-  transition:background .15s ease,border-color .15s ease,transform .15s ease;
-}
-
-.site-help-share:hover,
-.site-help-share:focus-visible{
-  background:#f7f2fa;
-  border-color:#cdbbd9;
-  outline:none;
-}
-
-.site-help-share:active{
-  transform:scale(.985);
-}
-
 .empty-state-actions{
   display:flex;
   flex-wrap:wrap;
@@ -3635,41 +3607,6 @@ select{
 
 
 /* v20.1 quick share + multiyear timeline polish */
-.result-actions{
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-
-.quick-share-btn{
-  min-height:36px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  border:1px solid #ded8e2;
-  border-radius:10px;
-  background:#fff;
-  color:#6d626f;
-  padding:7px 10px;
-  font-size:10px;
-  font-weight:750;
-  white-space:nowrap;
-}
-
-.quick-share-btn:hover,
-.quick-share-btn:focus-visible{
-  border-color:#cbbfd1;
-  background:#faf7fb;
-  color:#5f4a70;
-  outline:none;
-}
-
-.quick-share-icon{
-  font-size:13px;
-  line-height:1;
-}
-
 .timeline-item.playlist-multiyear .timeline-item-date{
   color:#6d5a78;
 }
@@ -3681,29 +3618,41 @@ select{
   line-height:1.5;
 }
 
+
+
+
+/* v20.2 cleaner result header */
+.result-header{
+  align-items:center;
+}
+
+.result-meta{
+  min-width:0;
+}
+
+.view-toggle{
+  flex:0 0 auto;
+}
+
 @media (max-width:620px){
-  .result-actions{
-    gap:6px;
+  .result-header{
+    gap:8px;
   }
 
-  .quick-share-btn{
-    width:36px;
-    min-width:36px;
-    min-height:36px;
-    padding:0;
-    border-radius:10px;
+  .view-toggle{
+    margin-left:auto;
   }
+}
 
-  .quick-share-label{
-    position:absolute;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-    clip:rect(0,0,0,0);
-    white-space:nowrap;
-  }
 
-  .quick-share-icon{
-    font-size:14px;
+/* v20.3 desktop hero handle refinement */
+@media (min-width:621px){
+  .hero-handle{
+    margin:0 0 8px;
+    transform:translateY(4px);
+    font-size:10px;
+    line-height:1.2;
+    font-weight:600;
+    letter-spacing:.015em;
   }
 }
