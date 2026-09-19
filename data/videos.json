@@ -7452,11 +7452,19 @@
       "title": "기도 레몬셩의 첫사랑 비주얼 이거 박제 안 하고 넘어가긴 아쉬워 #신혜성 #신화",
       "description": "cr. [공식] 신화창조 4기 팬미팅 셩공시대님 \n(https://www.youtube.com/watch?v=qBldZBa-Z_U)\n꼭!!!!!!!!!!!! full 버전 보고 저와 행복의 밀레니엄 즐겨주세요\n\n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン",
       "source": "cr. [공식] 신화창조 4기 팬미팅 셩공시대님",
-      "sourceDate": null,
+      "sourceDate": "2000-11-19",
       "publishedAt": "2025-05-10T12:39:38Z",
       "thumbnail": "https://i.ytimg.com/vi/oVfy2zyJQ50/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-11-19",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8161,7 +8169,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:20:06.642Z",
+  "generatedAt": "2026-09-19T04:20:48.061Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
