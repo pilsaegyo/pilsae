@@ -6809,3 +6809,135 @@ h1,h2,h3,.brand-main{font-weight:650}
     flex-basis:100%;
   }
 }
+
+
+/* v26.5 automatic review queue + weekly backup */
+.admin-new-review-strip{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-height:32px;
+  margin:-5px 0 12px;
+  padding:6px 9px;
+  border:1px solid #ebe5ee;
+  border-radius:10px;
+  background:#fbfafc;
+}
+
+.admin-new-review-strip>div:first-child{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  flex:0 0 auto;
+}
+
+.admin-new-review-strip strong{
+  color:#65566e;
+  font-size:8.5px;
+}
+
+.admin-new-review-strip>div:first-child>span:last-child{
+  color:#8b8090;
+  font-size:8px;
+  font-weight:700;
+}
+
+.admin-new-review-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#6d9577;
+}
+
+.admin-new-review-strip.has-review .admin-new-review-dot{
+  background:#b18c50;
+}
+
+.admin-new-review-breakdown{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  min-width:0;
+}
+
+.admin-new-review-breakdown button{
+  min-height:24px;
+  padding:4px 7px;
+  border:1px solid #e2dae7;
+  border-radius:999px;
+  background:#fff;
+  color:#6f5e78;
+  font-size:7.5px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.admin-new-review-breakdown button:hover{
+  background:#f5f0f7;
+}
+
+.admin-new-review-ok{
+  margin-left:auto;
+  color:#6d8b75;
+  font-size:7.5px;
+  font-weight:800;
+}
+
+.admin-auto-backup-strip{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:29px;
+  margin:-5px 0 10px;
+  padding:5px 9px;
+  border:1px solid #ece6ef;
+  border-radius:9px;
+  background:#fff;
+  color:#918694;
+  font-size:7.5px;
+}
+
+.admin-auto-backup-strip>div{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.admin-auto-backup-strip strong{
+  color:#675970;
+  font-size:8px;
+}
+
+.admin-auto-backup-strip small{
+  margin-left:auto;
+  color:#a096a4;
+  font-size:7.2px;
+}
+
+.admin-auto-backup-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#6d9276;
+  box-shadow:0 0 0 3px rgba(109,146,118,.08);
+}
+
+@media(max-width:680px){
+  .admin-new-review-strip,
+  .admin-auto-backup-strip{
+    flex-wrap:wrap;
+  }
+
+  .admin-new-review-ok,
+  .admin-auto-backup-strip small{
+    margin-left:0;
+  }
+
+  .admin-new-review-breakdown{
+    flex-basis:100%;
+  }
+
+  .admin-auto-backup-strip small{
+    flex-basis:100%;
+  }
+}

@@ -725,6 +725,8 @@ function normalizeVideo(v, idx=0) {
     playlistScope: v.playlistScope === "multi-year" ? "multi-year"
       : v.playlistScope === "undated" ? "undated"
       : "",
+    playlistCandidate: v.playlistCandidate === true,
+    firstSeenAt: String(v.firstSeenAt || ""),
     durationSeconds: Number(v.durationSeconds || 0),
     duration: String(v.duration || ""),
     videoFormat: normalizedVideoFormat,
@@ -1328,6 +1330,88 @@ function adminHealthRoute(issue) {
   return "";
 }
 
+
+function currentSyncNewVideos() {
+  const syncAt = new Date(siteConfig.syncedFromYoutubeAt || "");
+  if (Number.isNaN(syncAt.getTime())) return [];
+
+  // firstSeenAt is stamped by the Worker only when a video first enters the archive.
+  // A small tolerance covers the videos.json -> site-config.json commit gap.
+  const lowerBound = syncAt.getTime() - 15 * 60 * 1000;
+  const upperBound = syncAt.getTime() + 15 * 60 * 1000;
+
+  return videos.filter(v => {
+    const seen = new Date(v.firstSeenAt || "");
+    if (Number.isNaN(seen.getTime())) return false;
+    const time = seen.getTime();
+    return time >= lowerBound && time <= upperBound;
+  });
+}
+
+function newReviewKind(v) {
+  const kinds = [];
+
+  if (
+    v.contentType !== "playlist" &&
+    (v.type === "unknown" || v.manualDateReviewPending || v.descriptionChangedAfterManual)
+  ) {
+    kinds.push("date");
+  }
+
+  if (
+    v.contentType !== "playlist" &&
+    videoFormatAssessment(v).needsReview
+  ) {
+    kinds.push("format");
+  }
+
+  if (
+    v.contentType !== "playlist" &&
+    v.playlistCandidate === true
+  ) {
+    kinds.push("playlist");
+  }
+
+  return kinds;
+}
+
+function renderNewReviewSummary() {
+  const totalEl = $("#newReviewTotal");
+  const breakdown = $("#newReviewBreakdown");
+  const okay = $("#newReviewOkay");
+  if (!totalEl || !breakdown || !okay) return;
+
+  const newVideos = currentSyncNewVideos();
+  const counts = { date:0, format:0, playlist:0 };
+  const uniqueReviewIds = new Set();
+
+  newVideos.forEach(v => {
+    const kinds = newReviewKind(v);
+    if (kinds.length) uniqueReviewIds.add(v.id);
+    kinds.forEach(kind => {
+      if (kind in counts) counts[kind] += 1;
+    });
+  });
+
+  const total = uniqueReviewIds.size;
+  totalEl.textContent = `새 검토 ${total}건`;
+
+  const chips = [];
+  if (counts.date) {
+    chips.push(`<button type="button" data-dashboard-route="review-all">날짜 ${counts.date}</button>`);
+  }
+  if (counts.format) {
+    chips.push(`<button type="button" data-dashboard-route="content-video-review">영상 타입 ${counts.format}</button>`);
+  }
+  if (counts.playlist) {
+    chips.push(`<button type="button" data-dashboard-route="content-candidates">플레이리스트 ${counts.playlist}</button>`);
+  }
+
+  breakdown.innerHTML = chips.join("");
+  okay.hidden = total > 0;
+  $("#adminNewReviewStrip")?.classList.toggle("has-review", total > 0);
+}
+
 function renderAdminDashboard() {
   if (!$("#dashTotal")) return;
 
@@ -1350,6 +1434,7 @@ function renderAdminDashboard() {
   $("#dashUnknown").textContent = `${unknown}개`;
   $("#dashLastSync").textContent = formatAdminDateTime(siteConfig.syncedFromYoutubeAt);
   renderDashboardBuildVersion();
+  renderNewReviewSummary();
 
   const issues = adminHealthIssues();
   const badge = $("#adminHealthBadge");
@@ -4790,6 +4875,26 @@ function routeAdminAction(route, { videoId="", healthType="" }={}) {
     adminContentMode = "playlists";
     adminContentVisibleLimit = 30;
     if ($("#adminContentSearch")) $("#adminContentSearch").value = "";
+    setAdminTab("content");
+    renderAdminContentList();
+    return;
+  }
+
+  if (route === "content-video-review") {
+    adminContentMode = "video-format-review";
+    adminContentVisibleLimit = 30;
+    if ($("#adminContentSearch")) $("#adminContentSearch").value = "";
+    if ($("#adminContentMode")) $("#adminContentMode").value = "video-format-review";
+    setAdminTab("content");
+    renderAdminContentList();
+    return;
+  }
+
+  if (route === "content-candidates") {
+    adminContentMode = "candidates";
+    adminContentVisibleLimit = 30;
+    if ($("#adminContentSearch")) $("#adminContentSearch").value = "";
+    if ($("#adminContentMode")) $("#adminContentMode").value = "candidates";
     setAdminTab("content");
     renderAdminContentList();
     return;

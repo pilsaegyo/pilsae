@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=26.4-auto-sync" />
+  <link rel="stylesheet" href="./style.css?v=26.5-auto-review-backup" />
 </head>
-<body class="admin-page admin-locked" data-build="26.4-auto-sync">
+<body class="admin-page admin-locked" data-build="26.5-auto-review-backup">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -126,6 +126,16 @@
           </button>
         </div>
 
+        <div id="adminNewReviewStrip" class="admin-new-review-strip" aria-label="이번 동기화 새 검토">
+          <div>
+            <span class="admin-new-review-dot" aria-hidden="true"></span>
+            <strong>이번 동기화</strong>
+            <span id="newReviewTotal">새 검토 0건</span>
+          </div>
+          <div id="newReviewBreakdown" class="admin-new-review-breakdown"></div>
+          <span id="newReviewOkay" class="admin-new-review-ok">자동 판별 완료</span>
+        </div>
+
         <div class="admin-dashboard-grid">
           <div class="admin-dashboard-card"><span>전체 영상</span><strong id="dashTotal">0</strong></div>
           <button class="admin-dashboard-card admin-dashboard-action" type="button" data-dashboard-route="review-all"><span>날짜 검토 필요</span><strong id="dashReview">0</strong><small>바로 확인</small></button>
@@ -195,6 +205,15 @@
             </div>
             <span id="adminAutoSyncNext">다음 실행 계산 중</span>
             <small>변경이 있을 때만 자동 적용</small>
+          </div>
+
+          <div class="admin-auto-backup-strip" aria-label="주간 자동 백업 일정">
+            <div>
+              <span class="admin-auto-backup-dot" aria-hidden="true"></span>
+              <strong>주간 백업 ON</strong>
+              <span>매주 일요일 03:00</span>
+            </div>
+            <small>영상 · 사이트 설정 · 변경 이력 / 최근 4주 보관</small>
           </div>
 
           <div class="sync-summary admin-sync-summary">
@@ -542,6 +561,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=26.4-auto-sync" defer></script>
+  <script src="./script.js?v=26.5-auto-review-backup" defer></script>
 </body>
 </html>

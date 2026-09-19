@@ -526,13 +526,19 @@ const worker = {
           env, owner, repo, branch, path: "data/videos.json"
         }) || { videos: [] };
         const existingById = new Map((existingPayload.videos || []).map(v => [String(v.id), v]));
+        const syncSeenAt = new Date().toISOString();
 
         const normalized = items
           .map(normalizeYoutubeVideo)
           .filter(Boolean)
           .map(video => {
             const old = existingById.get(String(video.id));
-            if (!old) return video;
+            if (!old) {
+              return {
+                ...video,
+                firstSeenAt:syncSeenAt
+              };
+            }
             const manualDates = (old.dates || []).filter(d => d?.manual === true);
             const oldDescription = normalizeDescriptionForCompare(old.description || "");
             const newDescription = normalizeDescriptionForCompare(video.description || "");
@@ -553,6 +559,10 @@ const worker = {
                 : old.descriptionChangedAfterManual === true,
               ignoredDateCandidates: Array.isArray(old.ignoredDateCandidates) ? old.ignoredDateCandidates.map(String) : [],
               contentType: old.contentType === "playlist" ? "playlist" : "video",
+              playlistCandidate: old.contentType === "playlist"
+                ? false
+                : (old.playlistCandidate === true || video.playlistCandidate === true),
+              firstSeenAt: String(old.firstSeenAt || ""),
               url: /youtube\.com\/shorts\//i.test(String(old.url || ""))
                 ? String(old.url)
                 : video.url,
@@ -1388,6 +1398,11 @@ const worker = {
   },
 
   async scheduled(controller, env, ctx) {
+    const cron = String(controller?.cron || "");
+    if (cron === "0 18 * * 6") {
+      ctx.waitUntil(runWeeklyArchiveBackup(env, controller));
+      return;
+    }
     ctx.waitUntil(runScheduledYoutubeSync(env, controller));
   },
 };
@@ -1469,6 +1484,57 @@ async function runScheduledYoutubeSync(env, controller) {
     });
   } catch (error) {
     console.error("[auto-sync] failed", {
+      scheduledAt,
+      cron,
+      error:String(error?.message || error || "unknown error")
+    });
+  }
+}
+
+
+async function runWeeklyArchiveBackup(env, controller) {
+  const scheduledAt = new Date(controller?.scheduledTime || Date.now()).toISOString();
+  const cron = String(controller?.cron || "0 18 * * 6");
+
+  const owner = env.GITHUB_OWNER || "pilsaegyo";
+  const repo = env.GITHUB_REPO || "pilsae";
+  const branch = env.GITHUB_BRANCH || "main";
+
+  if (!env.GITHUB_TOKEN) {
+    console.error("[weekly-backup] GITHUB_TOKEN is missing", { scheduledAt, cron });
+    return;
+  }
+
+  try {
+    const [videosPayload, siteConfigPayload, historyPayload] = await Promise.all([
+      readGithubJsonFile({ env, owner, repo, branch, path:"data/videos.json" }),
+      readGithubJsonFile({ env, owner, repo, branch, path:"site-config.json" }),
+      readGithubJsonFile({ env, owner, repo, branch, path:"data/admin-history.json" })
+    ]);
+
+    if (!videosPayload || !Array.isArray(videosPayload.videos)) {
+      throw new Error("videos.json을 읽지 못했습니다.");
+    }
+
+    const backup = await createWeeklyArchiveBackup({
+      env,
+      owner,
+      repo,
+      branch,
+      videosPayload,
+      siteConfigPayload:siteConfigPayload || {},
+      historyPayload:historyPayload || { entries:[] }
+    });
+
+    console.log("[weekly-backup] completed", {
+      scheduledAt,
+      cron,
+      id:backup.id,
+      slot:backup.slot,
+      total:backup.total
+    });
+  } catch (error) {
+    console.error("[weekly-backup] failed", {
       scheduledAt,
       cron,
       error:String(error?.message || error || "unknown error")
@@ -1687,6 +1753,22 @@ async function probeYoutubeVideoFormat(videoId) {
   }
 }
 
+
+function detectPlaylistCandidate(title="", description="") {
+  const text = `${title} ${description}`.toLowerCase();
+  return [
+    "플레이리스트",
+    "playlist",
+    "노래 모음",
+    "노래모음",
+    "곡 모음",
+    "곡모음",
+    "전곡",
+    "모음집",
+    "合集"
+  ].some(keyword => text.includes(keyword));
+}
+
 function normalizeYoutubeVideo(video) {
   if (!video?.id || !video?.snippet) return null;
 
@@ -1722,6 +1804,8 @@ function normalizeYoutubeVideo(video) {
     parseStatus: "needs_review",
     contentType: "video",
     playlistScope: "",
+    playlistCandidate: detectPlaylistCandidate(s.title || "", description),
+    firstSeenAt: "",
     dates: [],
     ignoredDateCandidates: [],
   };
@@ -1921,6 +2005,85 @@ async function createAdminBackup({
       updatedAt: createdAt
     }, null, 2) + "\n",
     message: `Update admin backup index slot ${slot}`
+  });
+
+  return backup;
+}
+
+
+async function createWeeklyArchiveBackup({
+  env,
+  owner,
+  repo,
+  branch,
+  videosPayload,
+  siteConfigPayload,
+  historyPayload
+}) {
+  const indexPath = "data/weekly-backups-index.json";
+  const currentIndex = await readGithubJsonFile({
+    env, owner, repo, branch, path:indexPath
+  }) || { nextSlot:1, backups:[] };
+
+  const existing = Array.isArray(currentIndex.backups)
+    ? currentIndex.backups
+    : [];
+
+  let slot = Number(currentIndex.nextSlot || 1);
+  if (![1,2,3,4].includes(slot)) slot = 1;
+
+  const createdAt = new Date().toISOString();
+  const id = `weekly-${Date.now()}-${slot}`;
+  const path = `data/weekly-backups/weekly-${slot}.json`;
+
+  const snapshot = {
+    backupType:"weekly_full",
+    createdAt,
+    videos:videosPayload,
+    siteConfig:siteConfigPayload || {},
+    adminHistory:historyPayload || { entries:[] }
+  };
+
+  await updateGithubFile({
+    env,
+    owner,
+    repo,
+    branch,
+    path,
+    contentText:JSON.stringify(snapshot, null, 2) + "\n",
+    message:`Create weekly archive backup slot ${slot}`
+  });
+
+  const backup = {
+    id,
+    slot,
+    path,
+    reason:"weekly",
+    createdAt,
+    total:Array.isArray(videosPayload?.videos) ? videosPayload.videos.length : 0
+  };
+
+  const backups = [
+    backup,
+    ...existing.filter(item => Number(item.slot || 0) !== slot)
+  ]
+    .sort((a,b) => String(b.createdAt || "").localeCompare(String(a.createdAt || "")))
+    .slice(0, 4);
+
+  const nextSlot = slot % 4 + 1;
+
+  await updateGithubFile({
+    env,
+    owner,
+    repo,
+    branch,
+    path:indexPath,
+    contentText:JSON.stringify({
+      backups,
+      nextSlot,
+      updatedAt:createdAt
+    }, null, 2) + "\n",
+    message:`Update weekly backup index slot ${slot}`
   });
 
   return backup;
