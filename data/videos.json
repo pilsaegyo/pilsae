@@ -7055,11 +7055,19 @@
       "title": "✂️ 071011｜해피투게더｜신혜성 CUT.zip #신혜성 #신화 #fanedit",
       "description": "덕심으로 쇽쇽 편집\n내려갈수도 있을듯..그전까지는 같이봐용\n#신혜성 #신화 #shinhwa #shinhyesung\n\n#신혜성예능 #예능 #신혜성몰아보기",
       "source": "덕심으로 쇽쇽 편집",
-      "sourceDate": null,
+      "sourceDate": "2007-10-11",
       "publishedAt": "2025-05-16T13:04:23Z",
       "thumbnail": "https://i.ytimg.com/vi/0nK34iY4gi4/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2007-10-11",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8016,7 +8024,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:13:27.110Z",
+  "generatedAt": "2026-09-19T04:13:39.593Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
