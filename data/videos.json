@@ -6519,11 +6519,19 @@
       "title": "로맨스 소설에서나 보던 장면 총집합 #신혜성 #신화",
       "description": "Shinhwa Photo Album Personal History Photobook\n\n노란색 필터 영상 실화냐 눈을 의심했도다\n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン",
       "source": "Shinhwa Photo Album Personal History Photobook",
-      "sourceDate": null,
+      "sourceDate": "2006-01-01",
       "publishedAt": "2025-05-30T17:14:59Z",
       "thumbnail": "https://i.ytimg.com/vi/IyEvasJboH8/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2006-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7984,7 +7992,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:12:49.837Z",
+  "generatedAt": "2026-09-19T04:13:00.593Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
