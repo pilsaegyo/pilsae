@@ -2011,8 +2011,49 @@ function downloadJSON(data, filename) {
   a.remove();
 }
 
+function setSiteHelp(open) {
+  const panel = $("#siteHelpPanel");
+  const backdrop = $("#siteHelpBackdrop");
+  const button = $("#siteHelpBtn");
+  if (!panel || !button) return;
+
+  panel.hidden = !open;
+  if (backdrop) backdrop.hidden = !open;
+  button.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("site-help-open", open);
+
+  if (open) {
+    window.setTimeout(() => $("#siteHelpClose")?.focus(), 0);
+  } else {
+    button.focus({ preventScroll:true });
+  }
+}
+
 function bindEvents() {
+  $("#siteHelpBtn")?.addEventListener("click", () => {
+    const panel = $("#siteHelpPanel");
+    setSiteHelp(Boolean(panel?.hidden));
+  });
+
+  $("#siteHelpClose")?.addEventListener("click", () => setSiteHelp(false));
+  $("#siteHelpBackdrop")?.addEventListener("click", () => setSiteHelp(false));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !$("#siteHelpPanel")?.hidden) {
+      setSiteHelp(false);
+    }
+  });
+
   document.addEventListener("click", async (event) => {
+    const helpPanel = $("#siteHelpPanel");
+    if (helpPanel && !helpPanel.hidden) {
+      const insideHelp = event.target.closest("#siteHelpPanel");
+      const helpButton = event.target.closest("#siteHelpBtn");
+      if (!insideHelp && !helpButton && !window.matchMedia("(max-width: 620px)").matches) {
+        setSiteHelp(false);
+      }
+    }
+
     const dateToggle = event.target.closest("button[data-date-toggle]");
     if (dateToggle) {
       const key = dateToggle.dataset.dateToggle;

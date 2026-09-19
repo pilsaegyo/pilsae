@@ -6,18 +6,43 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=19.4" />
+  <link rel="stylesheet" href="./style.css?v=19.5" />
 </head>
-<body class="site-config-pending" data-build="19.4">
+<body class="site-config-pending" data-build="19.5">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
         <span class="brand-main">필새 영상 아카이브</span>
         <span class="brand-handle">@pilsae</span>
       </a>
-      <a class="channel-link" href="https://www.youtube.com/@pilsae" target="_blank" rel="noopener noreferrer">채널 보기</a>
+      <div class="header-actions">
+        <button id="siteHelpBtn" class="site-help-button" type="button"
+          aria-label="사이트 이용 안내" aria-haspopup="dialog" aria-expanded="false">?</button>
+        <a class="channel-link" href="https://www.youtube.com/@pilsae" target="_blank" rel="noopener noreferrer">채널 보기</a>
+      </div>
     </div>
   </header>
+
+  <div id="siteHelpBackdrop" class="site-help-backdrop" hidden></div>
+  <aside id="siteHelpPanel" class="site-help-panel" role="dialog" aria-modal="false"
+    aria-labelledby="siteHelpTitle" hidden>
+    <div class="site-help-head">
+      <div>
+        <p class="site-help-eyebrow">SITE GUIDE</p>
+        <h2 id="siteHelpTitle">필새 영상 아카이브 안내</h2>
+      </div>
+      <button id="siteHelpClose" class="site-help-close" type="button" aria-label="안내 닫기">×</button>
+    </div>
+    <p class="site-help-intro">영상 설명에 기록된 날짜와 출처를 기준으로 정리한 아카이브입니다.</p>
+    <div class="site-help-list">
+      <div><strong>검색</strong><span>제목 · 출처 · 날짜로 영상을 찾을 수 있어요.</span></div>
+      <div><strong>연도·월</strong><span>시기별로 영상을 모아보고 빠르게 이동할 수 있어요.</span></div>
+      <div><strong>날짜 클릭</strong><span>같은 날짜로 분류된 영상을 바로 모아볼 수 있어요.</span></div>
+      <div><strong>출처 클릭</strong><span>같은 출처의 영상을 한 번에 확인할 수 있어요.</span></div>
+      <div><strong>플레이리스트</strong><span>여러 영상이 묶인 콘텐츠는 별도로 구분해 표시해요.</span></div>
+    </div>
+    <p class="site-help-note">날짜를 확인할 수 없는 영상은 <b>날짜 미확인</b>으로 표시됩니다.</p>
+  </aside>
 
   <main class="container">
     <section class="hero hero-branded public-archive-ui" id="channelHero">
@@ -157,6 +182,6 @@
     <span>필새 영상 아카이브</span>
   </footer>
 
-  <script src="./script.js?v=19.4" defer></script>
+  <script src="./script.js?v=19.5" defer></script>
 </body>
 </html>
