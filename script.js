@@ -899,6 +899,7 @@ async function verifyAdminToken({ silent=false }={}) {
     sessionStorage.setItem(ADMIN_TOKEN_SESSION_KEY, token);
     setAdminAuthenticated(true);
     setAdminStatus(status, "", "");
+    loadDashboardDeployInfo();
     return true;
   } catch (err) {
     sessionStorage.removeItem(ADMIN_TOKEN_SESSION_KEY);
@@ -949,6 +950,81 @@ function formatAdminDateTime(value) {
   }).format(dt);
 }
 
+
+function renderDashboardBuildVersion() {
+  const el = $("#dashBuildVersion");
+  if (!el) return;
+  const build = String(document.body?.dataset?.build || "").trim();
+  el.textContent = build ? `v${build}` : "확인 불가";
+}
+
+async function loadDashboardDeployInfo() {
+  renderDashboardBuildVersion();
+
+  const dateEl = $("#dashLastDeploy");
+  const linkEl = $("#dashDeployCommit");
+  if (!dateEl) return;
+
+  if (!getAdminToken()) {
+    dateEl.textContent = "로그인 후 확인";
+    if (linkEl) linkEl.hidden = true;
+    return;
+  }
+
+  try {
+    const data = await adminApi("/deploy-context", { method:"GET" });
+    dateEl.textContent = formatAdminDateTime(data.headCommittedAt);
+
+    if (linkEl) {
+      if (data.headUrl) {
+        linkEl.href = String(data.headUrl);
+        linkEl.textContent = String(data.headSha || "").slice(0, 7) || "커밋 보기";
+        linkEl.title = String(data.headMessage || "최근 GitHub 커밋");
+        linkEl.hidden = false;
+      } else {
+        linkEl.hidden = true;
+      }
+    }
+  } catch {
+    dateEl.textContent = "확인 실패";
+    if (linkEl) linkEl.hidden = true;
+  }
+}
+
+function healthSeverityLabel(severity="") {
+  if (severity === "high") return "오류";
+  if (severity === "medium") return "검토";
+  return "정보";
+}
+
+function validateHealthDate(raw="") {
+  const value = String(raw || "").trim();
+  if (!value) return { valid:true, reason:"" };
+
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) {
+    return { valid:false, reason:`날짜 형식이 YYYY-MM-DD가 아닙니다: ${value}` };
+  }
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+
+  if (year < 1900 || year > 2099 || !isValidDate(year, month, day)) {
+    return { valid:false, reason:`실제로 존재하지 않는 날짜입니다: ${value}` };
+  }
+
+  const candidate = new Date(year, month - 1, day);
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+
+  if (candidate.getTime() > today.getTime()) {
+    return { valid:false, reason:`현재보다 미래 날짜입니다: ${value}` };
+  }
+
+  return { valid:true, reason:"" };
+}
+
 function adminReviewQueueVideos() {
   return videos.filter(v =>
     v.contentType !== "playlist" &&
@@ -961,31 +1037,56 @@ function adminHealthIssues() {
   const idCounts = new Map();
 
   videos.forEach(v => {
-    const id = String(v.id || "");
+    const id = String(v.id || "").trim();
     if (id) idCounts.set(id, (idCounts.get(id) || 0) + 1);
   });
 
   idCounts.forEach((count, id) => {
     if (count > 1) {
-      issues.push({ type:"중복 ID", severity:"high", title:id, detail:`같은 YouTube ID가 ${count}번 존재합니다.` });
+      issues.push({
+        type:"중복 ID",
+        severity:"high",
+        title:id,
+        detail:`같은 YouTube ID가 ${count}번 존재합니다. 공개 목록 중복이나 수정 대상 오인으로 이어질 수 있습니다.`
+      });
     }
   });
 
-  const currentYear = new Date().getFullYear();
-
   videos.forEach(v => {
     const title = v.title || v.id || "제목 없음";
+    const dates = Array.isArray(v.dates) ? v.dates : [];
 
     if (!String(v.thumbnail || "").trim()) {
-      issues.push({ type:"썸네일 없음", severity:"medium", videoId:v.id, title, detail:"썸네일 URL이 비어 있습니다." });
+      issues.push({
+        type:"썸네일 없음",
+        severity:"low",
+        videoId:v.id,
+        title,
+        detail:"썸네일 URL이 비어 있습니다. 영상 검색 자체에는 영향이 없지만 카드 이미지가 표시되지 않을 수 있습니다."
+      });
     }
 
     if (!String(v.source || "").trim()) {
-      issues.push({ type:"출처 없음", severity:"low", videoId:v.id, title, detail:"출처 정보가 없습니다." });
+      issues.push({
+        type:"출처 없음",
+        severity:"low",
+        videoId:v.id,
+        title,
+        detail:"출처 메타데이터가 비어 있습니다. 공개 검색/날짜 필터에는 직접 영향이 없습니다."
+      });
     }
 
-    if (v.contentType !== "playlist" && (v.type === "unknown" || !(v.dates || []).some(d => d?.sourceDate))) {
-      issues.push({ type:"날짜 미확인", severity:"medium", videoId:v.id, title, detail:"일반 영상의 날짜가 확인되지 않았습니다." });
+    if (
+      v.contentType !== "playlist" &&
+      (v.type === "unknown" || !dates.some(d => String(d?.sourceDate || "").trim()))
+    ) {
+      issues.push({
+        type:"날짜 미확인",
+        severity:"medium",
+        videoId:v.id,
+        title,
+        detail:"일반 영상에 확정된 날짜가 없어 날짜/연도 탐색에서 정확히 분류되지 않습니다."
+      });
     }
 
     if (v.manualDateReviewPending || v.descriptionChangedAfterManual) {
@@ -994,40 +1095,68 @@ function adminHealthIssues() {
           v.playlistScope === "multi-year" ||
           v.playlistScope === "undated";
 
-        // Once an administrator explicitly confirms the playlist scope,
-        // its old manual-date review state is no longer actionable.
-        // Keep the underlying history, but remove it from dashboard health.
         if (!hasConfirmedPlaylistScope) {
           issues.push({
             type:"플레이리스트 설명 변경 확인",
-            severity:"high",
+            severity:"medium",
             videoId:v.id,
             title,
-            detail:"플레이리스트의 수동 날짜 지정 이후 설명이 변경되었습니다."
+            detail:"수동 날짜 지정 이후 설명이 바뀌었습니다. 현재 플레이리스트 범위가 여전히 맞는지 확인이 필요합니다."
           });
         }
       } else {
         issues.push({
           type:"설명 변경 재검토",
-          severity:"high",
+          severity:"medium",
           videoId:v.id,
           title,
-          detail:"수동 날짜 지정 후 설명이 변경되어 재검토가 필요합니다."
+          detail:"수동 날짜 지정 이후 설명이 바뀌어 기존 날짜가 여전히 맞는지 확인이 필요합니다."
         });
       }
     }
 
-    for (const d of (v.dates || [])) {
-      const raw = String(d?.sourceDate || "");
-      const year = Number(raw.slice(0,4));
-      if (raw && (!/^(19|20)\d{2}-\d{2}-\d{2}$/.test(raw) || year > currentYear + 1)) {
-        issues.push({ type:"날짜 형식 확인", severity:"high", videoId:v.id, title, detail:`확인이 필요한 날짜: ${raw}` });
+    for (const d of dates) {
+      const raw = String(d?.sourceDate || "").trim();
+      const check = validateHealthDate(raw);
+      if (raw && !check.valid) {
+        issues.push({
+          type:"날짜 데이터 오류",
+          severity:"high",
+          videoId:v.id,
+          title,
+          detail:check.reason
+        });
         break;
       }
     }
 
-    if (v.contentType === "playlist" && !isMultiYearPlaylist(v) && v.playlistScope !== "undated" && v.type === "unknown") {
-      issues.push({ type:"플레이리스트 분류 확인", severity:"low", videoId:v.id, title, detail:"다년도 또는 연도 미지정 분류를 확인해 주세요." });
+    if (
+      v.contentType === "playlist" &&
+      !isMultiYearPlaylist(v) &&
+      v.playlistScope !== "undated" &&
+      v.type === "unknown"
+    ) {
+      issues.push({
+        type:"플레이리스트 분류 확인",
+        severity:"medium",
+        videoId:v.id,
+        title,
+        detail:"플레이리스트가 다년도인지 연도 미지정인지 아직 확정되지 않았습니다."
+      });
+    }
+
+    if (
+      v.contentType !== "playlist" &&
+      typeof videoFormatAssessment === "function" &&
+      videoFormatAssessment(v).needsReview
+    ) {
+      issues.push({
+        type:"영상 타입 확인",
+        severity:"medium",
+        videoId:v.id,
+        title,
+        detail:"일반 동영상/Shorts 자동 판별 결과를 아직 확인하지 않았습니다."
+      });
     }
   });
 
@@ -1037,7 +1166,11 @@ function adminHealthIssues() {
 function adminHealthRoute(issue) {
   const type = String(issue?.type || "");
   if (type === "날짜 미확인" || type === "설명 변경 재검토") return "review";
-  if (type === "플레이리스트 분류 확인" || type === "플레이리스트 설명 변경 확인") return "content";
+  if (
+    type === "플레이리스트 분류 확인" ||
+    type === "플레이리스트 설명 변경 확인" ||
+    type === "영상 타입 확인"
+  ) return "content";
   return "";
 }
 
@@ -1062,6 +1195,7 @@ function renderAdminDashboard() {
   $("#dashPlaylists").textContent = `${playlists}개`;
   $("#dashUnknown").textContent = `${unknown}개`;
   $("#dashLastSync").textContent = formatAdminDateTime(siteConfig.syncedFromYoutubeAt);
+  renderDashboardBuildVersion();
 
   const issues = adminHealthIssues();
   const badge = $("#adminHealthBadge");
@@ -1091,7 +1225,10 @@ function renderAdminDashboard() {
           const route = adminHealthRoute(issue);
           return `
             <div class="admin-health-item severity-${escapeHTML(issue.severity)}">
-              <span class="admin-health-type">${escapeHTML(issue.type)}</span>
+              <div class="admin-health-type-wrap">
+                <span class="admin-health-level">${escapeHTML(healthSeverityLabel(issue.severity))}</span>
+                <span class="admin-health-type">${escapeHTML(issue.type)}</span>
+              </div>
               <div><strong>${escapeHTML(issue.title)}</strong><small>${escapeHTML(issue.detail)}</small></div>
               ${route ? `<button type="button" class="admin-health-go"
                 data-health-route="${escapeHTML(route)}"
@@ -5644,13 +5781,21 @@ function bindEvents() {
 
   let pendingFaviconDataUrl = "";
 
+  $("#faviconChooseBtn")?.addEventListener("click", () => {
+    $("#faviconInput")?.click();
+  });
+
   $("#faviconInput")?.addEventListener("change", () => {
     const file = $("#faviconInput").files?.[0];
     if (!file) return;
 
+    const fileName = $("#faviconFileName");
+    if (fileName) fileName.textContent = file.name || "선택된 파일";
+
     if (file.size > 200 * 1024) {
       setAdminStatus($("#siteSettingsStatus"), "파비콘은 200KB 이하를 권장합니다.", "error");
       $("#faviconInput").value = "";
+      if ($("#faviconFileName")) $("#faviconFileName").textContent = "선택된 파일 없음";
       return;
     }
 
@@ -5688,6 +5833,8 @@ function bindEvents() {
 
       siteConfig = { ...siteConfig, ...data.config };
       pendingFaviconDataUrl = "";
+      if ($("#faviconFileName")) $("#faviconFileName").textContent = "선택된 파일 없음";
+      if ($("#faviconInput")) $("#faviconInput").value = "";
       applySiteConfig();
       setAdminStatus(
         status,

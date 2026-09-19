@@ -41,12 +41,23 @@ export default {
         const repo = env.GITHUB_REPO || "pilsae";
         const branch = env.GITHUB_BRANCH || "main";
         const head = await getGithubBranchHead({ env, owner, repo, branch });
+        const latestCommit = await githubJsonFetch(
+          `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/commits/${encodeURIComponent(head.objectSha)}`,
+          { env }
+        );
 
         return jsonResponse({
           ok:true,
           repo:`${owner}/${repo}`,
           branch,
-          headSha:head.objectSha
+          headSha:head.objectSha,
+          headMessage:String(latestCommit?.commit?.message || "").split("\n")[0],
+          headCommittedAt:String(
+            latestCommit?.commit?.committer?.date ||
+            latestCommit?.commit?.author?.date ||
+            ""
+          ),
+          headUrl:String(latestCommit?.html_url || "")
         }, 200, env, origin);
       }
 
