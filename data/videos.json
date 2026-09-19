@@ -5264,11 +5264,19 @@
       "title": "이 얼굴에 너같은 목소리가 너 말곤 없다고 #신혜성리즈 #신혜성 #신화",
       "description": "제목 : [공식] All your Dreams M/V 촬영현장 NG모음 full.ver\n채널 : 셩공시대\n링크 : https://www.youtube.com/watch?v=bh4GRAcAGjw&t=1s\n\n채널주 입덕 인정 결정타 장면이었습니다\n혜성붐을 기원합니다\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン\n#1세대아이돌 #아이돌 #신혜성리즈 #리즈 #리즈시절 #추억 #추억소환 #아이돌리즈\n#kpop #kpopshorts \n\n재업시 원출처(셩공시대님) 링크 표기",
       "source": "제목 : [공식] All your Dreams M/V 촬영현장 NG모음 full.ver",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-07-12T13:00:19Z",
       "thumbnail": "https://i.ytimg.com/vi/BdFKn6DDujI/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7937,7 +7945,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:11:58.215Z",
+  "generatedAt": "2026-09-19T04:12:07.682Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
