@@ -7053,10 +7053,14 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T00:38:23.980Z",
+  "generatedAt": "2026-09-19T00:43:09.401Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
-    "handle": "@pilsae"
+    "handle": "@pilsae",
+    "channelTitle": "필새",
+    "channelHandle": "@pilsae",
+    "profileImageUrl": "https://yt3.ggpht.com/mR1PCdtNYCxgiUKf6GDqY14p0IrKMDLS1wKmnSpgSoqqZ0NPbRasyDbV0Qx-5LtAjfh8p2k0mg=s800-c-k-c0x00ffffff-no-rj",
+    "bannerImageUrl": "https://yt3.googleusercontent.com/7h1JRQTL61CmesqiZV2lr-jX7YFm6p4b0AydZFlJXqnSAbKcHj46SjJsIbdcVwI3YWMNkFPT6A"
   }
 }
