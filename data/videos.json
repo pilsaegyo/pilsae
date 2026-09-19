@@ -3040,11 +3040,26 @@
       "title": "메리크리스마스 #신혜성 #신화",
       "description": "크리스마스 모음집\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "크리스마스 모음집",
-      "sourceDate": null,
+      "sourceDate": "2001-01-01",
       "publishedAt": "2025-12-25T10:30:11Z",
       "thumbnail": "https://i.ytimg.com/vi/HJiSMOCDXu8/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2003-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8244,7 +8259,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:00:46.577Z",
+  "generatedAt": "2026-09-19T05:00:56.288Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
