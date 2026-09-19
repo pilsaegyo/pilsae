@@ -5531,11 +5531,19 @@
       "title": "난 널 절대로 빗겨나지 않아 #신혜성 #에릭 #신화",
       "description": "#신혜성 #에릭 #신화 #shinhwa #shinhyesung #eric #muneric #申惠星 #神话 #シンファ \n#kpop #kpopedit #kpopidol #kpopconcerts #fanedit #문정혁 #신화에릭\n#moonjunghyuk #文晸赫\n#stagemix #표적 #아이돌 #무대장인 #무대모음 #무대영상 \n이제 안해야지..",
       "source": "이제 안해야지..",
-      "sourceDate": null,
+      "sourceDate": "2015-01-01",
       "publishedAt": "2025-07-10T23:15:04Z",
       "thumbnail": "https://i.ytimg.com/vi/p8qqxO5dADo/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2015-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8259,7 +8267,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:00:56.288Z",
+  "generatedAt": "2026-09-19T05:01:09.912Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
