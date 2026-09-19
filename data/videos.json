@@ -4015,11 +4015,19 @@
       "title": "우리가 공유한 사랑 흔들어 깨우고 싶어 | 신화 - 소망(Desire)｜신화 SHINHWA 무대 교차편집 STAGE MIX",
       "description": "[원본 영상 링크 안내]\nhttps://youtu.be/4S7fjhKqqZ8?si=2QXzJiH9wYLMXqKv\n1999 - 신화 - 소망 Live.ver | 셩공시대님\nhttps://youtu.be/akyUjiLP5bk?si=kc9jld3PMAGz_nJe\n소망 (Desire) Live  |  foreverLiteNite님 (난민에릭님 영상)\n https://youtu.be/jm4m7TkQUWw?si=HneXy2uuNjj2fkXK\n[Live] 1999 M Net Frame Concert - Desire [全克].rmvb | JUN MUN님\n\n#stagemix #신화 #교차편집 #소망 #1세대아이돌 #무대편집\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン\n#이민우 #문정혁 #전진 #앤디 #김동완",
       "source": "[원본 영상 링크 안내]",
-      "sourceDate": null,
+      "sourceDate": "1999-01-01",
       "publishedAt": "2025-09-25T03:00:58Z",
       "thumbnail": "https://i.ytimg.com/vi/nv31Igs10t0/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1999-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7865,7 +7873,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:09:51.832Z",
+  "generatedAt": "2026-09-19T04:10:01.778Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
