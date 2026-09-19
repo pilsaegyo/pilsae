@@ -3561,6 +3561,7 @@ function readZipCentralDirectory(arrayBuffer) {
     const nameLen = view.getUint16(pos + 28, true);
     const extraLen = view.getUint16(pos + 30, true);
     const commentLen = view.getUint16(pos + 32, true);
+    const localHeaderOffset = view.getUint32(pos + 42, true);
 
     const nameStart = pos + 46;
     const nameEnd = nameStart + nameLen;
@@ -3578,6 +3579,7 @@ function readZipCentralDirectory(arrayBuffer) {
       method,
       compressedSize,
       uncompressedSize,
+      localHeaderOffset,
       directory: rawName.endsWith("/")
     });
 
@@ -3647,6 +3649,272 @@ function normalizeDeployZipEntries(entries=[]) {
     .filter(item => item.path && !item.path.endsWith(".DS_Store"));
 }
 
+
+let deployPatchState = {
+  file:null,
+  entries:[],
+  normalized:[],
+  hash:"",
+  headSha:"",
+  repo:"",
+  branch:"",
+  ready:false
+};
+
+function resetDeployPatchState() {
+  deployPatchState = {
+    file:null,
+    entries:[],
+    normalized:[],
+    hash:"",
+    headSha:"",
+    repo:"",
+    branch:"",
+    ready:false
+  };
+
+  const btn = $("#deployPatchCommitBtn");
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "GitHub에 커밋하고 배포";
+  }
+
+  const repoInfo = $("#deployRepositoryInfo");
+  const result = $("#deployCommitResult");
+  if (repoInfo) repoInfo.hidden = true;
+  if (result) {
+    result.hidden = true;
+    result.innerHTML = "";
+  }
+}
+
+async function sha256Hex(arrayBuffer) {
+  const digest = await crypto.subtle.digest("SHA-256", arrayBuffer);
+  return [...new Uint8Array(digest)]
+    .map(byte => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function inflateZipBytes(bytes) {
+  if (typeof DecompressionStream !== "function") {
+    throw new Error("이 브라우저는 ZIP 압축 해제를 지원하지 않습니다. 최신 Chrome/Edge/Safari에서 다시 시도해 주세요.");
+  }
+
+  let stream;
+  try {
+    stream = new DecompressionStream("deflate-raw");
+  } catch {
+    throw new Error("이 브라우저는 ZIP Deflate 압축 해제를 지원하지 않습니다.");
+  }
+
+  const response = new Response(
+    new Blob([bytes]).stream().pipeThrough(stream)
+  );
+  return new Uint8Array(await response.arrayBuffer());
+}
+
+async function extractDeployZipTextFiles(arrayBuffer, normalizedEntries) {
+  const view = new DataView(arrayBuffer);
+  const allBytes = new Uint8Array(arrayBuffer);
+  const decoder = new TextDecoder("utf-8");
+
+  const allowed = normalizedEntries.filter(item => item.state === "allowed");
+
+  if (!allowed.length) {
+    throw new Error("배포할 허용 파일이 없습니다.");
+  }
+
+  const totalUncompressed = allowed.reduce((sum, item) => sum + Number(item.uncompressedSize || 0), 0);
+  if (totalUncompressed > 6 * 1024 * 1024) {
+    throw new Error("배포할 파일의 전체 압축 해제 크기는 6MB를 넘을 수 없습니다.");
+  }
+
+  const files = [];
+
+  for (const item of allowed) {
+    if (item.uncompressedSize > 2 * 1024 * 1024) {
+      throw new Error(`${item.path} 파일이 2MB를 초과합니다.`);
+    }
+
+    const pos = Number(item.localHeaderOffset);
+    if (!Number.isFinite(pos) || pos < 0 || pos + 30 > allBytes.length) {
+      throw new Error(`${item.path}의 ZIP 위치 정보가 올바르지 않습니다.`);
+    }
+
+    if (view.getUint32(pos, true) !== 0x04034b50) {
+      throw new Error(`${item.path}의 ZIP 로컬 헤더가 올바르지 않습니다.`);
+    }
+
+    const nameLen = view.getUint16(pos + 26, true);
+    const extraLen = view.getUint16(pos + 28, true);
+    const dataStart = pos + 30 + nameLen + extraLen;
+    const dataEnd = dataStart + Number(item.compressedSize || 0);
+
+    if (dataStart < 0 || dataEnd > allBytes.length) {
+      throw new Error(`${item.path}의 압축 데이터 범위가 올바르지 않습니다.`);
+    }
+
+    const compressed = allBytes.slice(dataStart, dataEnd);
+    let decodedBytes;
+
+    if (item.method === 0) {
+      decodedBytes = compressed;
+    } else if (item.method === 8) {
+      decodedBytes = await inflateZipBytes(compressed);
+    } else {
+      throw new Error(`${item.path}은 지원하지 않는 ZIP 압축 방식입니다. (method ${item.method})`);
+    }
+
+    if (
+      item.uncompressedSize &&
+      decodedBytes.byteLength !== item.uncompressedSize
+    ) {
+      throw new Error(`${item.path} 압축 해제 크기가 예상값과 다릅니다.`);
+    }
+
+    files.push({
+      path:item.path,
+      contentText:decoder.decode(decodedBytes)
+    });
+  }
+
+  return files;
+}
+
+async function loadDeployContext() {
+  const repoInfo = $("#deployRepositoryInfo");
+  const hint = $("#deployCommitHint");
+
+  if (hint) hint.textContent = "GitHub 저장소의 현재 브랜치 상태를 확인하는 중입니다…";
+
+  try {
+    const data = await adminApi("/deploy-context", { method:"GET" });
+    deployPatchState.headSha = String(data.headSha || "");
+    deployPatchState.repo = String(data.repo || "");
+    deployPatchState.branch = String(data.branch || "");
+
+    if (!deployPatchState.headSha) {
+      throw new Error("현재 GitHub HEAD SHA를 확인하지 못했습니다.");
+    }
+
+    if ($("#deployRepoBranch")) {
+      $("#deployRepoBranch").textContent =
+        `${deployPatchState.repo} · ${deployPatchState.branch}`;
+    }
+    if ($("#deployHeadSha")) {
+      $("#deployHeadSha").textContent =
+        `검사 기준 HEAD · ${deployPatchState.headSha.slice(0, 12)}`;
+    }
+    if (repoInfo) repoInfo.hidden = false;
+
+    deployPatchState.ready = true;
+
+    const btn = $("#deployPatchCommitBtn");
+    if (btn) btn.disabled = false;
+    if (hint) hint.textContent = "ZIP 검사와 GitHub HEAD 확인이 완료되었습니다.";
+  } catch (err) {
+    deployPatchState.ready = false;
+    const btn = $("#deployPatchCommitBtn");
+    if (btn) btn.disabled = true;
+    if (hint) hint.textContent = `GitHub 상태 확인 실패 · ${err.message}`;
+    throw err;
+  }
+}
+
+async function commitDeployPatch() {
+  const status = $("#deployPatchStatus");
+  const btn = $("#deployPatchCommitBtn");
+  const resultBox = $("#deployCommitResult");
+
+  if (!deployPatchState.ready || !deployPatchState.file || !deployPatchState.headSha) {
+    setAdminStatus(status, "먼저 ZIP 검사를 완료해 주세요.", "error");
+    return;
+  }
+
+  const allowed = deployPatchState.normalized.filter(x => x.state === "allowed");
+  const blocked = deployPatchState.normalized.filter(x => x.state === "blocked");
+  if (!allowed.length || blocked.length) {
+    setAdminStatus(status, "차단 파일이 없는 정상 ZIP만 배포할 수 있습니다.", "error");
+    return;
+  }
+
+  const confirmed = window.confirm(
+    `${allowed.length}개 파일을 ${deployPatchState.repo}의 ${deployPatchState.branch} 브랜치에 한 번의 커밋으로 반영합니다.\n\n계속할까요?`
+  );
+  if (!confirmed) return;
+
+  btn.disabled = true;
+  btn.textContent = "GitHub 커밋 중…";
+  if (resultBox) {
+    resultBox.hidden = true;
+    resultBox.innerHTML = "";
+  }
+  setAdminStatus(status, "ZIP 무결성을 다시 확인하고 GitHub 커밋을 준비하는 중입니다…", "loading");
+
+  try {
+    const buffer = await deployPatchState.file.arrayBuffer();
+    const currentHash = await sha256Hex(buffer);
+
+    if (currentHash !== deployPatchState.hash) {
+      throw new Error("검사한 ZIP과 현재 ZIP 내용이 달라졌습니다. 파일을 다시 선택해 검사해 주세요.");
+    }
+
+    const files = await extractDeployZipTextFiles(buffer, deployPatchState.normalized);
+
+    setAdminStatus(status, `${files.length}개 파일을 GitHub에 단일 커밋으로 반영하는 중입니다…`, "loading");
+
+    const data = await adminApi("/deploy-patch", {
+      method:"POST",
+      body:JSON.stringify({
+        expectedHeadSha:deployPatchState.headSha,
+        patchHash:deployPatchState.hash,
+        files,
+        message:`Deploy ${document.body.dataset.build || "archive patch"} from admin`
+      })
+    });
+
+    deployPatchState.headSha = String(data.commitSha || deployPatchState.headSha);
+
+    if ($("#deployHeadSha")) {
+      $("#deployHeadSha").textContent =
+        `배포 완료 HEAD · ${deployPatchState.headSha.slice(0, 12)}`;
+    }
+
+    setAdminStatus(
+      status,
+      `GitHub 커밋 완료 · ${Number(data.fileCount || files.length)}개 파일이 반영되었습니다.`,
+      "success"
+    );
+
+    if (resultBox) {
+      resultBox.hidden = false;
+      resultBox.innerHTML = `
+        <strong>GitHub 커밋 완료</strong>
+        <span>${escapeHTML(String(data.commitSha || "").slice(0, 12))} · ${escapeHTML(String(data.message || ""))}</span>
+        ${data.commitUrl
+          ? `<a href="${escapeHTML(data.commitUrl)}" target="_blank" rel="noopener noreferrer">GitHub 커밋 확인</a>`
+          : ""}
+        <small>GitHub 연동 Cloudflare 배포는 저장소 설정에 따라 자동으로 이어집니다.</small>
+      `;
+    }
+
+    btn.textContent = "배포 완료";
+    btn.disabled = true;
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = "GitHub에 커밋하고 배포";
+
+    if (String(err.message || "").includes("GitHub 브랜치가 ZIP 검사 이후 변경")) {
+      deployPatchState.ready = false;
+      btn.disabled = true;
+      const hint = $("#deployCommitHint");
+      if (hint) hint.textContent = "GitHub 브랜치가 변경되었습니다. ZIP을 다시 선택해 최신 HEAD 기준으로 검사해 주세요.";
+    }
+
+    setAdminStatus(status, err.message, "error");
+  }
+}
+
 function renderDeployPatchPreview(file, entries) {
   const preview = $("#deployPatchPreview");
   const list = $("#deployPatchFiles");
@@ -3698,6 +3966,8 @@ async function inspectDeployZip(file) {
   const status = $("#deployPatchStatus");
   const preview = $("#deployPatchPreview");
 
+  resetDeployPatchState();
+
   if (!file) {
     if (preview) preview.hidden = true;
     setAdminStatus(status, "", "");
@@ -3721,11 +3991,16 @@ async function inspectDeployZip(file) {
   try {
     const buffer = await file.arrayBuffer();
     const entries = readZipCentralDirectory(buffer);
-
-    renderDeployPatchPreview(file, entries);
-
     const normalized = normalizeDeployZipEntries(entries);
     const blocked = normalized.filter(x => x.state === "blocked").length;
+    const allowed = normalized.filter(x => x.state === "allowed").length;
+
+    deployPatchState.file = file;
+    deployPatchState.entries = entries;
+    deployPatchState.normalized = normalized;
+    deployPatchState.hash = await sha256Hex(buffer);
+
+    renderDeployPatchPreview(file, entries);
 
     setAdminStatus(
       status,
@@ -3734,6 +4009,18 @@ async function inspectDeployZip(file) {
         : "ZIP 검사 완료 · 파일 구성이 정상입니다.",
       blocked ? "error" : "success"
     );
+
+    if (!blocked && allowed) {
+      try {
+        await loadDeployContext();
+      } catch (contextError) {
+        setAdminStatus(
+          status,
+          `ZIP 검사는 통과했지만 GitHub 상태 확인에 실패했습니다. ${contextError.message}`,
+          "error"
+        );
+      }
+    }
   } catch (err) {
     if (preview) preview.hidden = true;
     setAdminStatus(status, `ZIP 검사 오류: ${err.message}`, "error");
@@ -4189,6 +4476,10 @@ function bindEvents() {
   $("#deployPatchZip")?.addEventListener("change", (event) => {
     const file = event.target.files?.[0] || null;
     inspectDeployZip(file);
+  });
+
+  $("#deployPatchCommitBtn")?.addEventListener("click", () => {
+    commitDeployPatch();
   });
 
   $("#siteHelpBtn")?.addEventListener("click", () => {

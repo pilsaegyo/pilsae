@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=26.0-step1" />
+  <link rel="stylesheet" href="./style.css?v=26.0-step2" />
 </head>
-<body class="admin-page admin-locked" data-build="26.0-step1">
+<body class="admin-page admin-locked" data-build="26.0-step2">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -305,7 +305,7 @@
               <h3>배포 패치</h3>
               <p class="admin-help">ChatGPT에서 받은 배포 ZIP을 그대로 선택해 파일 구성을 먼저 검사합니다.</p>
             </div>
-            <span class="admin-deploy-step-badge">1단계 · ZIP 검사</span>
+            <span class="admin-deploy-step-badge">2단계 · GitHub 커밋</span>
           </div>
 
           <div class="deploy-upload-box">
@@ -330,6 +330,13 @@
             </div>
 
             <div id="deployValidationBanner" class="deploy-validation-banner"></div>
+            <div id="deployRepositoryInfo" class="deploy-repository-info" hidden>
+              <span>대상 저장소</span>
+              <strong id="deployRepoBranch">-</strong>
+              <small id="deployHeadSha">현재 HEAD 확인 중</small>
+            </div>
+
+            <div id="deployCommitResult" class="deploy-commit-result" hidden></div>
 
             <div class="deploy-file-list-head">
               <strong>ZIP 내부 파일</strong>
@@ -339,10 +346,10 @@
 
             <div class="deploy-next-step">
               <div>
-                <strong>1단계에서는 실제 배포하지 않습니다.</strong>
-                <p>ZIP 구성과 허용 파일만 확인합니다. 다음 단계에서 GitHub 자동 커밋을 연결합니다.</p>
+                <strong>검사한 ZIP을 GitHub에 한 번의 커밋으로 반영합니다.</strong>
+                <p id="deployCommitHint">현재 브랜치 상태를 확인한 뒤 배포 버튼이 활성화됩니다.</p>
               </div>
-              <button id="deployPatchCommitBtn" type="button" disabled>GitHub 배포 · 2단계 예정</button>
+              <button id="deployPatchCommitBtn" type="button" disabled>GitHub에 커밋하고 배포</button>
             </div>
           </section>
         </div>
@@ -385,6 +392,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=26.0-step1" defer></script>
+  <script src="./script.js?v=26.0-step2" defer></script>
 </body>
 </html>

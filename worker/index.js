@@ -33,6 +33,75 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/deploy-context" && request.method === "GET") {
+        requireAdmin(request, env);
+
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const head = await getGithubBranchHead({ env, owner, repo, branch });
+
+        return jsonResponse({
+          ok:true,
+          repo:`${owner}/${repo}`,
+          branch,
+          headSha:head.objectSha
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/deploy-patch" && request.method === "POST") {
+        requireAdmin(request, env);
+
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+
+        const expectedHeadSha = String(body.expectedHeadSha || "").trim();
+        const patchHash = String(body.patchHash || "").trim();
+        const message = String(body.message || "Deploy archive patch from admin").trim();
+        const files = Array.isArray(body.files) ? body.files : [];
+
+        if (!expectedHeadSha) {
+          throw new HttpError(400, "ZIP 검사 기준 GitHub HEAD SHA가 필요합니다.");
+        }
+
+        if (!/^[a-f0-9]{64}$/i.test(patchHash)) {
+          throw new HttpError(400, "ZIP 무결성 해시가 올바르지 않습니다.");
+        }
+
+        const normalizedFiles = validateDeployPatchFiles(files);
+
+        const currentHead = await getGithubBranchHead({ env, owner, repo, branch });
+        if (currentHead.objectSha !== expectedHeadSha) {
+          throw new HttpError(
+            409,
+            "GitHub 브랜치가 ZIP 검사 이후 변경되었습니다. ZIP을 다시 선택해 최신 HEAD 기준으로 검사해 주세요."
+          );
+        }
+
+        const result = await createGithubPatchCommit({
+          env,
+          owner,
+          repo,
+          branch,
+          parentCommitSha:currentHead.objectSha,
+          files:normalizedFiles,
+          message
+        });
+
+        return jsonResponse({
+          ok:true,
+          repo:`${owner}/${repo}`,
+          branch,
+          fileCount:normalizedFiles.length,
+          commitSha:result.commitSha,
+          commitUrl:result.commitUrl,
+          message,
+          patchHash
+        }, 200, env, origin);
+      }
+
       if (url.pathname === "/admin-history" && request.method === "GET") {
         requireAdmin(request, env);
         const owner = env.GITHUB_OWNER || "pilsaegyo";
@@ -1835,6 +1904,226 @@ async function appendAdminHistory({ env, owner, repo, branch, entry }) {
     // and must not turn a successful data change into a failed UI response.
     console.warn("admin history write failed", err);
   }
+}
+
+
+const DEPLOY_PATCH_ALLOWED_FILES = new Set([
+  "index.html",
+  "script.js",
+  "style.css",
+  "README.md",
+  "README_ADMIN_SYNC.md",
+  "admin/index.html",
+  "worker/index.js"
+]);
+
+function githubHeaders(env) {
+  return {
+    "Accept":"application/vnd.github+json",
+    "Authorization":`Bearer ${env.GITHUB_TOKEN}`,
+    "X-GitHub-Api-Version":GITHUB_API_VERSION,
+    "User-Agent":"pilsae-archive-worker"
+  };
+}
+
+function validateDeployPatchFiles(files) {
+  if (!Array.isArray(files) || !files.length) {
+    throw new HttpError(400, "배포할 파일이 없습니다.");
+  }
+  if (files.length > DEPLOY_PATCH_ALLOWED_FILES.size) {
+    throw new HttpError(400, "배포 파일 수가 허용 범위를 초과했습니다.");
+  }
+
+  const seen = new Set();
+  let totalBytes = 0;
+
+  return files.map(item => {
+    const path = String(item?.path || "").replace(/\\/g, "/").replace(/^\/+/, "");
+    const contentText = String(item?.contentText ?? "");
+
+    if (
+      !path ||
+      path.includes("../") ||
+      path.startsWith(".") ||
+      !DEPLOY_PATCH_ALLOWED_FILES.has(path)
+    ) {
+      throw new HttpError(400, `배포가 허용되지 않은 파일입니다: ${path || "(빈 경로)"}`);
+    }
+
+    if (seen.has(path)) {
+      throw new HttpError(400, `중복 파일이 포함되어 있습니다: ${path}`);
+    }
+    seen.add(path);
+
+    const bytes = new TextEncoder().encode(contentText).byteLength;
+    if (bytes > 2 * 1024 * 1024) {
+      throw new HttpError(413, `${path} 파일이 2MB를 초과합니다.`);
+    }
+
+    totalBytes += bytes;
+    if (totalBytes > 6 * 1024 * 1024) {
+      throw new HttpError(413, "배포 파일 전체 크기가 6MB를 초과합니다.");
+    }
+
+    return { path, contentText };
+  });
+}
+
+async function getGithubBranchHead({ env, owner, repo, branch }) {
+  const headers = githubHeaders(env);
+  const refUrl = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/git/ref/heads/${encodeURIComponent(branch)}`;
+
+  const refRes = await fetch(refUrl, { headers });
+  const refData = await refRes.json().catch(() => ({}));
+
+  if (!refRes.ok) {
+    throw new HttpError(
+      refRes.status,
+      refData?.message || `GitHub 브랜치 조회 실패 (${refRes.status})`
+    );
+  }
+
+  const objectSha = String(refData?.object?.sha || "");
+  if (!objectSha) {
+    throw new HttpError(500, "GitHub 브랜치 HEAD SHA를 확인하지 못했습니다.");
+  }
+
+  return {
+    refSha:String(refData?.node_id || ""),
+    objectSha
+  };
+}
+
+async function githubJsonFetch(url, { env, method="GET", body }={}) {
+  const res = await fetch(url, {
+    method,
+    headers:{
+      ...githubHeaders(env),
+      ...(body ? {"Content-Type":"application/json"} : {})
+    },
+    body:body ? JSON.stringify(body) : undefined
+  });
+
+  const data = await res.json().catch(() => ({}));
+
+  if (!res.ok) {
+    throw new HttpError(
+      res.status,
+      data?.message || `GitHub API 오류 (${res.status})`
+    );
+  }
+
+  return data;
+}
+
+async function createGithubPatchCommit({
+  env,
+  owner,
+  repo,
+  branch,
+  parentCommitSha,
+  files,
+  message
+}) {
+  const base = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}`;
+
+  const parentCommit = await githubJsonFetch(
+    `${base}/git/commits/${encodeURIComponent(parentCommitSha)}`,
+    { env }
+  );
+
+  const baseTreeSha = String(parentCommit?.tree?.sha || "");
+  if (!baseTreeSha) {
+    throw new HttpError(500, "기준 Git tree SHA를 확인하지 못했습니다.");
+  }
+
+  const treeItems = [];
+
+  for (const file of files) {
+    const blob = await githubJsonFetch(
+      `${base}/git/blobs`,
+      {
+        env,
+        method:"POST",
+        body:{
+          content:toBase64Utf8(file.contentText),
+          encoding:"base64"
+        }
+      }
+    );
+
+    if (!blob?.sha) {
+      throw new HttpError(500, `${file.path} Git blob 생성에 실패했습니다.`);
+    }
+
+    treeItems.push({
+      path:file.path,
+      mode:"100644",
+      type:"blob",
+      sha:blob.sha
+    });
+  }
+
+  const tree = await githubJsonFetch(
+    `${base}/git/trees`,
+    {
+      env,
+      method:"POST",
+      body:{
+        base_tree:baseTreeSha,
+        tree:treeItems
+      }
+    }
+  );
+
+  if (!tree?.sha) {
+    throw new HttpError(500, "Git tree 생성에 실패했습니다.");
+  }
+
+  const commit = await githubJsonFetch(
+    `${base}/git/commits`,
+    {
+      env,
+      method:"POST",
+      body:{
+        message,
+        tree:tree.sha,
+        parents:[parentCommitSha]
+      }
+    }
+  );
+
+  if (!commit?.sha) {
+    throw new HttpError(500, "Git commit 생성에 실패했습니다.");
+  }
+
+  // Re-check branch HEAD immediately before advancing the ref.
+  // This is the final optimistic-lock guard against overwriting another commit.
+  const latest = await getGithubBranchHead({ env, owner, repo, branch });
+  if (latest.objectSha !== parentCommitSha) {
+    throw new HttpError(
+      409,
+      "GitHub 브랜치가 배포 준비 중 변경되었습니다. 다시 검사한 후 배포해 주세요."
+    );
+  }
+
+  const ref = await githubJsonFetch(
+    `${base}/git/refs/heads/${encodeURIComponent(branch)}`,
+    {
+      env,
+      method:"PATCH",
+      body:{
+        sha:commit.sha,
+        force:false
+      }
+    }
+  );
+
+  return {
+    commitSha:commit.sha,
+    commitUrl:`https://github.com/${owner}/${repo}/commit/${commit.sha}`,
+    ref
+  };
 }
 
 async function readGithubJsonFile({ env, owner, repo, branch, path }) {

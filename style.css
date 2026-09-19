@@ -5751,3 +5751,73 @@ h1,h2,h3,.brand-main{font-weight:650}
   .deploy-next-step{align-items:stretch;flex-direction:column}
   .deploy-next-step button{width:100%}
 }
+
+
+/* v26.0 step 2 - GitHub commit deployment */
+.deploy-repository-info{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:3px 10px;
+  align-items:center;
+  margin-top:10px;
+  padding:10px 12px;
+  border:1px solid #e6dfea;
+  border-radius:11px;
+  background:#fbf9fc;
+}
+.deploy-repository-info span{
+  grid-row:1/3;
+  color:#918798;
+  font-size:9px;
+  font-weight:800;
+}
+.deploy-repository-info strong{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#5c4969;
+  font-size:11px;
+}
+.deploy-repository-info small{
+  color:#9a91a0;
+  font-size:9px;
+}
+.deploy-commit-result{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:5px 9px;
+  margin-top:10px;
+  padding:11px 12px;
+  border:1px solid #d5e5da;
+  border-radius:11px;
+  background:#f3faf5;
+  color:#42604b;
+}
+.deploy-commit-result strong{
+  flex:0 0 100%;
+  font-size:11px;
+}
+.deploy-commit-result span{
+  font-size:10px;
+  font-weight:750;
+}
+.deploy-commit-result a{
+  font-size:10px;
+  font-weight:800;
+  text-decoration:underline;
+}
+.deploy-commit-result small{
+  flex:0 0 100%;
+  color:#73887a;
+  font-size:9px;
+}
+#deployPatchCommitBtn:not(:disabled){
+  background:#5f4b73;
+  color:#fff;
+  cursor:pointer;
+}
+#deployPatchCommitBtn:not(:disabled):hover{
+  background:#503f61;
+}

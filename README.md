@@ -883,3 +883,18 @@
 - 외부 ZIP 라이브러리 의존성 없음.
 - 기존 v25.16 기능 전부 유지.
 - Worker 변경 없음.
+
+
+## v26.0 Step 2 · GitHub 단일 커밋 배포
+- 1단계 ZIP 검사 후 Admin API Worker의 `/deploy-context`에서 현재 GitHub branch HEAD SHA 확인.
+- 검사 시 ZIP 전체 SHA-256을 저장하고, 실제 배포 직전에 같은 ZIP을 다시 읽어 해시가 동일한지 재검증.
+- 브라우저에서 ZIP의 허용 파일만 실제 압축 해제.
+- 지원 압축 방식: Store(method 0), Deflate(method 8 / DecompressionStream).
+- GitHub 배포 요청 시 `expectedHeadSha`, ZIP hash, 허용 파일 내용만 Worker로 전달.
+- Worker에서 허용 경로/중복/파일 크기/총 크기를 다시 검증.
+- GitHub Git Data API(blob → tree → commit → ref)를 사용해 여러 파일을 하나의 커밋으로 반영.
+- 검사 이후 branch HEAD가 바뀌면 409로 배포 차단.
+- ref 갱신 직전에도 HEAD를 다시 확인해 동시 커밋 덮어쓰기 방지.
+- 배포 성공 시 commit SHA와 GitHub 커밋 링크 표시.
+- `site-config.json`, `data/videos.json`은 계속 배포 패치 대상에서 제외.
+- 이번 단계는 Admin API Worker 변경이 있으므로 `/deploy-context`, `/deploy-patch`가 실제 Worker에 배포되어야 동작함.
