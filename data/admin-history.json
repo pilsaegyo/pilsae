@@ -1,6 +1,22 @@
 {
   "entries": [
     {
+      "id": "26a206d0-8c22-4b03-b8e2-77f4eaf211c3",
+      "action": "content_type",
+      "videoId": "6lFRz67Aaco",
+      "title": "혜너스 꽃이 피었습니다",
+      "before": {
+        "contentType": "video",
+        "playlistScope": ""
+      },
+      "after": {
+        "contentType": "playlist",
+        "playlistScope": "undated"
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-19T18:45:44.327Z"
+    },
+    {
       "id": "f33b383f-0293-4f7f-9efa-5fe4ebcf5d00",
       "action": "content_type",
       "videoId": "LzhdAvpww7Y",
@@ -207,5 +223,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-19T18:45:32.396Z"
+  "updatedAt": "2026-09-19T18:45:44.327Z"
 }
