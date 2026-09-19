@@ -2834,24 +2834,57 @@ function setupCompactStickyToolbar() {
   const toolbar = document.querySelector(".toolbar-panel");
   if (!toolbar || document.body.classList.contains("admin-page")) return;
 
-  let stickyStart = 0;
+  // Anchor the trigger to a separate zero-height marker so changing the
+  // toolbar's own height cannot move the threshold and cause flicker.
+  const anchor = document.createElement("span");
+  anchor.className = "toolbar-sticky-anchor";
+  anchor.setAttribute("aria-hidden", "true");
+  toolbar.before(anchor);
+
+  let triggerY = 0;
+  let compact = false;
+  let resizeTimer = 0;
 
   const measure = () => {
-    toolbar.classList.remove("is-compact-sticky");
-    const rect = toolbar.getBoundingClientRect();
-    stickyStart = window.scrollY + rect.top - 84;
-    update();
+    const rect = anchor.getBoundingClientRect();
+    triggerY = window.scrollY + rect.top - 72;
   };
 
   const update = () => {
     const desktop = window.matchMedia("(min-width: 621px)").matches;
-    const shouldCompact = desktop && window.scrollY >= stickyStart;
-    toolbar.classList.toggle("is-compact-sticky", shouldCompact);
+
+    if (!desktop) {
+      compact = false;
+      toolbar.classList.remove("is-compact-sticky");
+      return;
+    }
+
+    const y = window.scrollY;
+
+    // Small hysteresis gap prevents rapid compact/normal toggling when the
+    // user scrolls around the exact sticky boundary.
+    if (!compact && y >= triggerY + 10) {
+      compact = true;
+      toolbar.classList.add("is-compact-sticky");
+    } else if (compact && y <= triggerY - 26) {
+      compact = false;
+      toolbar.classList.remove("is-compact-sticky");
+    }
   };
 
+  const onResize = () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      measure();
+      update();
+    }, 120);
+  };
+
+  measure();
+  update();
+
   window.addEventListener("scroll", update, { passive:true });
-  window.addEventListener("resize", measure);
-  window.setTimeout(measure, 0);
+  window.addEventListener("resize", onResize);
 }
 
 function bindEvents() {
