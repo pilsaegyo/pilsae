@@ -1215,7 +1215,7 @@ async function appendAdminHistory({ env, owner, repo, branch, entry }) {
       repo,
       branch,
       path: "data/admin-history.json",
-      contentText: JSON.stringify(payload, null, 2) + "\\n",
+      contentText: JSON.stringify(payload, null, 2) + "\n",
       message: `Record admin history: ${normalizedEntry.action}`
     });
   } catch (err) {
@@ -1246,7 +1246,22 @@ async function readGithubJsonFile({ env, owner, repo, branch, path }) {
   const data = await res.json();
   const content = String(data.content || "").replace(/\n/g, "");
   if (!content) return null;
-  return JSON.parse(fromBase64Utf8(content));
+
+  const decoded = fromBase64Utf8(content);
+
+  try {
+    return JSON.parse(decoded);
+  } catch (err) {
+    // v22/v22.1 could accidentally append the two literal characters "\\n"
+    // after admin-history.json. Recover that specific trailing artifact so the
+    // history screen can open again, then the next history write will save
+    // valid JSON with a real newline.
+    const repaired = decoded.replace(/\\n\s*$/, "").trimEnd();
+    if (repaired !== decoded) {
+      return JSON.parse(repaired);
+    }
+    throw err;
+  }
 }
 
 function fromBase64Utf8(base64) {
