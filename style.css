@@ -5648,3 +5648,31 @@ h1,h2,h3,.brand-main{font-weight:650}
     transform:none;
   }
 }
+
+
+/* v25.15 small accessibility + deployment visibility polish */
+.admin-mode-label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+
+.admin-build-version{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 6px;
+  border:1px solid #ded4e7;
+  border-radius:999px;
+  background:#fff;
+  color:#887b93;
+  font-size:9px;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.02em;
+}
+
+.view-toggle-btn[aria-pressed="true"]{
+  background:var(--soft);
+  color:var(--text);
+}

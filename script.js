@@ -55,6 +55,23 @@ function youtubeUrlForVideo(videoOrId, format="") {
     : youtubeUrlFromId(id);
 }
 
+function applyVideoFormatState(v, format, {
+  source,
+  reason,
+  confidence=""
+}={}) {
+  if (!v) return;
+
+  const normalized = format === "shorts" ? "shorts" : "standard";
+  v.videoFormat = normalized;
+  v.url = youtubeUrlForVideo(v.id, normalized);
+
+  if (source) v.videoFormatSource = source;
+  if (confidence !== undefined) v.videoFormatConfidence = confidence;
+  if (reason !== undefined) v.videoFormatReason = String(reason || "");
+}
+
+
 function isAndroidMobile() {
   return /Android/i.test(navigator.userAgent || "");
 }
@@ -641,7 +658,8 @@ function videoFormatAssessmentLabel(v) {
 
 
 function videoFormatIconHtml(v) {
-  const isShorts = v?.videoFormat === "shorts";
+  const format = v?.videoFormat === "shorts" ? "shorts" : "standard";
+  const isShorts = format === "shorts";
   const label = isShorts ? "Shorts" : "일반 동영상";
   const icon = isShorts
     ? `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.1 3.7c1.1-1.6 3.3-2 4.9-.9l3 2.1c1.6 1.1 2 3.3.9 4.9l-1 1.4 1.1.8c1.6 1.1 2 3.3.9 4.9l-2.1 3c-1.1 1.6-3.3 2-4.9.9l-3-2.1c-1.6-1.1-2-3.3-.9-4.9l1-1.4-1.1-.8c-1.6-1.1-2-3.3-.9-4.9l2.1-3Z"/><path class="format-play" d="m10.5 8.8 4.3 3.2-4.3 3.2V8.8Z"/></svg>`
@@ -1443,6 +1461,7 @@ function renderSearchSuggestions() {
     wrap.innerHTML = "";
     wrap.classList.remove("is-expanded");
     input.setAttribute("aria-expanded", "false");
+    input.removeAttribute("aria-activedescendant");
     mobileSuggestionExpanded = false;
     return;
   }
@@ -1457,6 +1476,8 @@ function renderSearchSuggestions() {
     <div class="search-suggestion-list">
       ${visibleItems.map((item, index) => `
         <button type="button" class="search-suggestion-item" role="option"
+          id="searchSuggestion-${index}"
+          aria-selected="false"
           data-search-suggestion="${escapeHTML(item.value)}" data-suggestion-index="${index}">
           <span class="search-suggestion-kind">${escapeHTML(item.kind)}</span>
           <span class="search-suggestion-copy">
@@ -1485,9 +1506,15 @@ function hideSearchSuggestions() {
   if (wrap) {
     wrap.hidden = true;
     wrap.classList.remove("is-expanded");
-    wrap.querySelectorAll(".search-suggestion-item.is-active").forEach(el => el.classList.remove("is-active"));
+    wrap.querySelectorAll(".search-suggestion-item").forEach(el => {
+      el.classList.remove("is-active");
+      el.setAttribute("aria-selected", "false");
+    });
   }
-  if (input) input.setAttribute("aria-expanded", "false");
+  if (input) {
+    input.setAttribute("aria-expanded", "false");
+    input.removeAttribute("aria-activedescendant");
+  }
 }
 
 function updateSearchClearButton() {
@@ -1509,9 +1536,21 @@ function moveSearchSuggestion(direction) {
     ? (direction > 0 ? 0 : items.length - 1)
     : (index + direction + items.length) % items.length;
 
-  items.forEach(el => el.classList.remove("is-active"));
-  items[index].classList.add("is-active");
-  items[index].scrollIntoView({ block:"nearest" });
+  items.forEach(el => {
+    el.classList.remove("is-active");
+    el.setAttribute("aria-selected", "false");
+  });
+
+  const active = items[index];
+  active.classList.add("is-active");
+  active.setAttribute("aria-selected", "true");
+
+  const input = $("#searchInput");
+  if (input && active.id) {
+    input.setAttribute("aria-activedescendant", active.id);
+  }
+
+  active.scrollIntoView({ block:"nearest" });
   return true;
 }
 
@@ -1573,7 +1612,9 @@ function renderCard(v) {
 
   return `
     <article class="video-card">
-      <a class="thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
+      <a class="thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}"
+        href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer"
+        aria-label="${escapeHTML(v.title)} YouTube에서 보기">
         ${thumb}
         ${statusBadge ? `<span class="thumb-status-badges">${statusBadge}</span>` : ""}
         ${videoFormatIconHtml(v)}
@@ -1804,6 +1845,10 @@ function applyViewMode() {
   gridBtn.classList.toggle("active", mode === "grid");
   listBtn.classList.toggle("active", mode === "list");
   timelineBtn.classList.toggle("active", mode === "timeline");
+
+  gridBtn.setAttribute("aria-pressed", String(mode === "grid"));
+  listBtn.setAttribute("aria-pressed", String(mode === "list"));
+  timelineBtn.setAttribute("aria-pressed", String(mode === "timeline"));
 }
 
 function setViewMode(mode) {
@@ -1915,7 +1960,9 @@ function timelineItemHtml(v, bucket) {
 
   return `
     <article class="timeline-item ${escapeHTML(bucket.kind)}">
-      <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
+      <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}"
+        href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer"
+        aria-label="${escapeHTML(v.title)} YouTube에서 보기">
         ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
         ${videoFormatIconHtml(v)}
       </a>
@@ -3249,11 +3296,11 @@ async function applyVideoFormatPreview() {
       const item = appliedMap.get(String(v.id));
       if (!item) return;
 
-      v.videoFormat = item.videoFormat === "shorts" ? "shorts" : "standard";
-      v.videoFormatSource = "youtube";
-      v.videoFormatConfidence = "";
-      v.videoFormatReason = item.reason ||
-        "YouTube 공개 페이지에서 Shorts 분류를 확인했습니다.";
+      applyVideoFormatState(v, item.videoFormat, {
+        source:"youtube",
+        confidence:"",
+        reason:item.reason || "YouTube 공개 페이지에서 Shorts 분류를 확인했습니다."
+      });
     });
 
     adminHistoryLoaded = false;
@@ -4186,10 +4233,11 @@ function bindEvents() {
         const v = videos.find(x => x.id === videoId);
         removeVideoFormatProbeCache([videoId]);
         if (v) {
-          v.videoFormat = data.videoFormat === "shorts" ? "shorts" : "standard";
-          v.videoFormatSource = "confirmed";
-          v.videoFormatConfidence = "";
-          v.videoFormatReason = data.videoFormatReason || "관리자가 자동 판별 결과를 확인했습니다.";
+          applyVideoFormatState(v, data.videoFormat, {
+            source:"confirmed",
+            confidence:"",
+            reason:data.videoFormatReason || "관리자가 자동 판별 결과를 확인했습니다."
+          });
         }
 
         render();
@@ -4217,10 +4265,11 @@ function bindEvents() {
         const v = videos.find(x => x.id === videoId);
         removeVideoFormatProbeCache([videoId]);
         if (v) {
-          v.videoFormat = data.videoFormat === "shorts" ? "shorts" : "standard";
-          v.videoFormatSource = "manual";
-          v.videoFormatConfidence = "";
-          v.videoFormatReason = "";
+          applyVideoFormatState(v, data.videoFormat, {
+            source:"manual",
+            confidence:"",
+            reason:""
+          });
         }
         render();
         renderAdminContentList();

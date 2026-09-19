@@ -846,3 +846,25 @@
 - `prefers-reduced-motion` 사용자는 확대 애니메이션 비활성화.
 - v25.13의 로딩 placeholder / 다시 시도 / Focus Trap과 v25.12 Shorts 링크 분리 기능 유지.
 - Worker 변경 없음.
+
+
+## v25.15 배포 확인 + 접근성 소규모 보완
+- 관리자 상단에 현재 빌드 `v25.15` 표시 추가.
+- 카드 / 목록 / 연도·월 보기 버튼에 `aria-pressed` 상태를 실제 선택 상태와 동기화.
+- 검색 자동완성 항목에 `aria-selected` 적용.
+- 키보드 ↑/↓ 이동 시 검색창의 `aria-activedescendant`가 현재 활성 추천 항목을 가리키도록 보완.
+- 자동완성 닫기/결과 없음 시 관련 ARIA 상태를 정리.
+- 카드형 및 연도·월 보기 썸네일 링크에 `영상 제목 + YouTube에서 보기` aria-label 추가.
+- 디자인/레이아웃/필터 동작은 변경하지 않음.
+- v25.14까지의 썸네일 hover, Shorts 링크, 로딩/재시도/Focus Trap 및 판별 캐시 기능 유지.
+- Worker 변경 없음.
+
+
+## v25.16 동영상 타입 아이콘/링크 동기화 버그 수정
+- 관리자에서 일반동영상/Shorts 타입을 수동 변경할 때 `videoFormat`만 바꾸지 않고 YouTube URL도 동시에 갱신하도록 통합.
+- `applyVideoFormatState()`로 타입, URL, source, reason 상태 갱신을 한 곳에서 처리.
+- 수동 타입 지정, 현재 판별 확정, YouTube 자동 확인 일괄 적용 모두 동일한 상태 갱신 로직 사용.
+- 카드/목록/연도·월 렌더링의 타입 아이콘은 갱신된 `videoFormat`을 즉시 반영.
+- 일반동영상으로 변경 시 일반동영상 아이콘 + `/watch?v=` 링크, Shorts로 변경 시 Shorts 아이콘 + `/shorts/` 링크가 함께 바뀜.
+- v25.15까지의 접근성/빌드표시/썸네일 hover/로딩/재시도/판별 캐시 기능 유지.
+- Worker 변경 없음.
