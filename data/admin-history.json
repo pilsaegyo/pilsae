@@ -1,6 +1,16 @@
 {
   "entries": [
     {
+      "id": "41ab99a4-f51c-4069-9ecb-dd731d9d6f48",
+      "action": "playlist_scope",
+      "videoId": "efTvEN3GK08",
+      "title": "신혜성 미성, 아직도 돌판에 대체제가 없더라 | 🎧 𝓹𝓪𝓻𝓽 𝓹𝓵𝓪𝔂𝓵𝓲𝓼𝓽｜98-00 신혜성 노래 모음.zip  #신혜성",
+      "before": "undated",
+      "after": "multi-year",
+      "undoOf": "",
+      "changedAt": "2026-09-19T12:45:02.650Z"
+    },
+    {
       "id": "4ad61424-5dda-46cf-9f2a-1c5ea53154a8",
       "action": "undo",
       "videoId": "aJopPbP0Odk",
@@ -31,5 +41,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-19T12:41:54.324Z"
+  "updatedAt": "2026-09-19T12:45:02.650Z"
 }
