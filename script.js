@@ -3494,6 +3494,252 @@ function renderAdminContentList() {
   }
 }
 
+
+const DEPLOY_ALLOWED_FILES = new Set([
+  "index.html",
+  "script.js",
+  "style.css",
+  "README.md",
+  "README_ADMIN_SYNC.md",
+  "admin/index.html",
+  "worker/index.js"
+]);
+
+const DEPLOY_BLOCKED_FILES = new Set([
+  "site-config.json",
+  "data/videos.json",
+  ".env",
+  ".dev.vars",
+  "wrangler.toml"
+]);
+
+function formatDeployBytes(bytes=0) {
+  const n = Number(bytes || 0);
+  if (n < 1024) return `${n} B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+  return `${(n / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+function readZipCentralDirectory(arrayBuffer) {
+  const bytes = new Uint8Array(arrayBuffer);
+  const view = new DataView(arrayBuffer);
+  const decoder = new TextDecoder("utf-8");
+
+  let eocd = -1;
+  const min = Math.max(0, bytes.length - 65557);
+
+  for (let i = bytes.length - 22; i >= min; i -= 1) {
+    if (
+      bytes[i] === 0x50 &&
+      bytes[i + 1] === 0x4b &&
+      bytes[i + 2] === 0x05 &&
+      bytes[i + 3] === 0x06
+    ) {
+      eocd = i;
+      break;
+    }
+  }
+
+  if (eocd < 0) {
+    throw new Error("올바른 ZIP 파일이 아니거나 지원하지 않는 ZIP 형식입니다.");
+  }
+
+  const totalEntries = view.getUint16(eocd + 10, true);
+  const centralOffset = view.getUint32(eocd + 16, true);
+
+  const entries = [];
+  let pos = centralOffset;
+
+  for (let n = 0; n < totalEntries; n += 1) {
+    if (pos + 46 > bytes.length || view.getUint32(pos, true) !== 0x02014b50) {
+      throw new Error("ZIP 파일 목록을 읽는 중 오류가 발생했습니다.");
+    }
+
+    const method = view.getUint16(pos + 10, true);
+    const compressedSize = view.getUint32(pos + 20, true);
+    const uncompressedSize = view.getUint32(pos + 24, true);
+    const nameLen = view.getUint16(pos + 28, true);
+    const extraLen = view.getUint16(pos + 30, true);
+    const commentLen = view.getUint16(pos + 32, true);
+
+    const nameStart = pos + 46;
+    const nameEnd = nameStart + nameLen;
+
+    if (nameEnd > bytes.length) {
+      throw new Error("ZIP 파일명이 손상되어 있습니다.");
+    }
+
+    const rawName = decoder.decode(bytes.slice(nameStart, nameEnd))
+      .replace(/\\/g, "/")
+      .replace(/^\/+/, "");
+
+    entries.push({
+      rawName,
+      method,
+      compressedSize,
+      uncompressedSize,
+      directory: rawName.endsWith("/")
+    });
+
+    pos = nameEnd + extraLen + commentLen;
+  }
+
+  return entries;
+}
+
+function deployCommonRoot(entries=[]) {
+  const files = entries.filter(x => !x.directory && x.rawName);
+  if (!files.length) return "";
+
+  const firstParts = files[0].rawName.split("/");
+  if (firstParts.length < 2) return "";
+
+  const root = firstParts[0];
+  return files.every(item => item.rawName.startsWith(`${root}/`))
+    ? `${root}/`
+    : "";
+}
+
+function normalizeDeployZipEntries(entries=[]) {
+  const root = deployCommonRoot(entries);
+
+  return entries
+    .filter(item => !item.directory)
+    .map(item => {
+      const path = root && item.rawName.startsWith(root)
+        ? item.rawName.slice(root.length)
+        : item.rawName;
+
+      const unsafePath =
+        !path ||
+        path.startsWith("/") ||
+        path.includes("../") ||
+        path.includes("/../") ||
+        /^[A-Za-z]:/.test(path);
+
+      const blocked = DEPLOY_BLOCKED_FILES.has(path);
+      const allowed = DEPLOY_ALLOWED_FILES.has(path);
+      const hiddenOrSystem =
+        path.startsWith(".") ||
+        path.includes("/.") ||
+        path === "__MACOSX" ||
+        path.startsWith("__MACOSX/");
+
+      let state = "allowed";
+      let reason = "배포 허용";
+
+      if (unsafePath) {
+        state = "blocked";
+        reason = "안전하지 않은 경로";
+      } else if (blocked) {
+        state = "blocked";
+        reason = "자동 배포에서 보호되는 파일";
+      } else if (hiddenOrSystem) {
+        state = "ignored";
+        reason = "시스템/숨김 파일";
+      } else if (!allowed) {
+        state = "blocked";
+        reason = "허용 목록에 없는 파일";
+      }
+
+      return { ...item, path, state, reason };
+    })
+    .filter(item => item.path && !item.path.endsWith(".DS_Store"));
+}
+
+function renderDeployPatchPreview(file, entries) {
+  const preview = $("#deployPatchPreview");
+  const list = $("#deployPatchFiles");
+  const banner = $("#deployValidationBanner");
+  if (!preview || !list || !banner) return;
+
+  const files = normalizeDeployZipEntries(entries);
+  const allowed = files.filter(x => x.state === "allowed");
+  const blocked = files.filter(x => x.state === "blocked");
+  const ignored = files.filter(x => x.state === "ignored");
+  const workerChanged = allowed.some(x => x.path === "worker/index.js");
+
+  $("#deployZipName").textContent = file.name;
+  $("#deployZipSize").textContent = formatDeployBytes(file.size);
+  $("#deployFileCount").textContent = `${allowed.length}개`;
+  $("#deployWorkerState").textContent = workerChanged ? "변경 있음" : "변경 없음";
+  $("#deployAllowedCount").textContent =
+    `${allowed.length}개 허용` +
+    (blocked.length ? ` · ${blocked.length}개 차단` : "") +
+    (ignored.length ? ` · ${ignored.length}개 무시` : "");
+
+  if (!allowed.length) {
+    banner.className = "deploy-validation-banner error";
+    banner.innerHTML = `<strong>배포 가능한 파일이 없습니다.</strong><span>ZIP 내부 구성을 확인해 주세요.</span>`;
+  } else if (blocked.length) {
+    banner.className = "deploy-validation-banner error";
+    banner.innerHTML = `<strong>차단된 파일이 있어 배포할 수 없습니다.</strong><span>보호 파일 또는 허용되지 않은 경로를 제거해 주세요.</span>`;
+  } else {
+    banner.className = "deploy-validation-banner success";
+    banner.innerHTML = `<strong>ZIP 구성이 정상입니다.</strong><span>다음 단계에서 이 파일들을 GitHub 단일 커밋으로 연결할 수 있습니다.</span>`;
+  }
+
+  list.innerHTML = files.map(item => `
+    <div class="deploy-file-row ${escapeHTML(item.state)}">
+      <span class="deploy-file-state" aria-hidden="true">${
+        item.state === "allowed" ? "✓" : item.state === "ignored" ? "–" : "!"
+      }</span>
+      <div class="deploy-file-copy">
+        <strong>${escapeHTML(item.path)}</strong>
+        <small>${escapeHTML(item.reason)} · ${escapeHTML(formatDeployBytes(item.uncompressedSize))}</small>
+      </div>
+    </div>
+  `).join("");
+
+  preview.hidden = false;
+}
+
+async function inspectDeployZip(file) {
+  const status = $("#deployPatchStatus");
+  const preview = $("#deployPatchPreview");
+
+  if (!file) {
+    if (preview) preview.hidden = true;
+    setAdminStatus(status, "", "");
+    return;
+  }
+
+  if (!/\.zip$/i.test(file.name)) {
+    if (preview) preview.hidden = true;
+    setAdminStatus(status, "ZIP 파일만 선택할 수 있습니다.", "error");
+    return;
+  }
+
+  if (file.size > 20 * 1024 * 1024) {
+    if (preview) preview.hidden = true;
+    setAdminStatus(status, "배포 패치 ZIP은 20MB 이하만 검사할 수 있습니다.", "error");
+    return;
+  }
+
+  setAdminStatus(status, "ZIP 내부 파일을 검사하는 중입니다…", "loading");
+
+  try {
+    const buffer = await file.arrayBuffer();
+    const entries = readZipCentralDirectory(buffer);
+
+    renderDeployPatchPreview(file, entries);
+
+    const normalized = normalizeDeployZipEntries(entries);
+    const blocked = normalized.filter(x => x.state === "blocked").length;
+
+    setAdminStatus(
+      status,
+      blocked
+        ? `ZIP 검사 완료 · 차단 파일 ${blocked}개를 확인해 주세요.`
+        : "ZIP 검사 완료 · 파일 구성이 정상입니다.",
+      blocked ? "error" : "success"
+    );
+  } catch (err) {
+    if (preview) preview.hidden = true;
+    setAdminStatus(status, `ZIP 검사 오류: ${err.message}`, "error");
+  }
+}
+
 function adminHistoryActionLabel(action) {
   const labels = {
     sync_apply: "YouTube 동기화",
@@ -3940,6 +4186,11 @@ function setupCompactStickyToolbar() {
 }
 
 function bindEvents() {
+  $("#deployPatchZip")?.addEventListener("change", (event) => {
+    const file = event.target.files?.[0] || null;
+    inspectDeployZip(file);
+  });
+
   $("#siteHelpBtn")?.addEventListener("click", () => {
     const panel = $("#siteHelpPanel");
     setSiteHelp(Boolean(panel?.hidden));

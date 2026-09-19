@@ -868,3 +868,18 @@
 - 일반동영상으로 변경 시 일반동영상 아이콘 + `/watch?v=` 링크, Shorts로 변경 시 Shorts 아이콘 + `/shorts/` 링크가 함께 바뀜.
 - v25.15까지의 접근성/빌드표시/썸네일 hover/로딩/재시도/판별 캐시 기능 유지.
 - Worker 변경 없음.
+
+
+## v26.0 Step 1 · 관리자 배포 ZIP 검사
+- 관리자에 `배포` 탭 추가.
+- ChatGPT에서 받은 ZIP을 압축 해제하지 않고 그대로 선택 가능.
+- 브라우저에서 ZIP Central Directory를 읽어 내부 파일명/크기만 안전하게 미리 검사.
+- ZIP에 한 겹의 최상위 폴더가 있어도 자동으로 제거해 실제 배포 경로 기준으로 표시.
+- 허용 파일: index.html, script.js, style.css, README.md, README_ADMIN_SYNC.md, admin/index.html, worker/index.js.
+- 보호 파일 `site-config.json`, `data/videos.json`은 차단.
+- `.env`, `.dev.vars`, wrangler.toml, 임의 파일 및 상위 경로(`../`)도 차단.
+- Worker 변경 포함 여부를 미리 표시.
+- 1단계에서는 GitHub 커밋/배포를 수행하지 않음. 2단계 버튼은 비활성화 상태.
+- 외부 ZIP 라이브러리 의존성 없음.
+- 기존 v25.16 기능 전부 유지.
+- Worker 변경 없음.

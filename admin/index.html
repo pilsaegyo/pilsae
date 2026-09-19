@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=25.16" />
+  <link rel="stylesheet" href="./style.css?v=26.0-step1" />
 </head>
-<body class="admin-page admin-locked" data-build="25.16">
+<body class="admin-page admin-locked" data-build="26.0-step1">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -89,6 +89,7 @@
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="review">날짜 검토 <span id="adminReviewTabCount" class="admin-tab-count">0</span></button>
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="content"><span class="admin-tab-icon" aria-hidden="true">♫</span> 콘텐츠 분류</button>
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="history">변경 이력</button>
+        <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="deploy">배포</button>
         <button class="admin-tab" type="button" role="tab" aria-selected="false" data-admin-tab="settings">사이트 설정</button>
       </div>
 
@@ -296,7 +297,58 @@
         </div>
       </div>
 
-      <div class="admin-tab-panel" data-admin-panel="settings" hidden>
+      
+      <div class="admin-tab-panel" data-admin-panel="deploy" hidden>
+        <div class="admin-card admin-deploy-card">
+          <div class="admin-review-heading">
+            <div>
+              <h3>배포 패치</h3>
+              <p class="admin-help">ChatGPT에서 받은 배포 ZIP을 그대로 선택해 파일 구성을 먼저 검사합니다.</p>
+            </div>
+            <span class="admin-deploy-step-badge">1단계 · ZIP 검사</span>
+          </div>
+
+          <div class="deploy-upload-box">
+            <label class="deploy-file-button" for="deployPatchZip">
+              <span class="deploy-file-icon" aria-hidden="true">ZIP</span>
+              <span>
+                <strong>배포 ZIP 선택</strong>
+                <small>압축을 풀지 않고 그대로 선택하세요.</small>
+              </span>
+            </label>
+            <input id="deployPatchZip" type="file" accept=".zip,application/zip" hidden />
+          </div>
+
+          <div id="deployPatchStatus" class="admin-status"></div>
+
+          <section id="deployPatchPreview" class="deploy-preview" hidden>
+            <div class="deploy-summary-grid">
+              <div><span>파일명</span><strong id="deployZipName">-</strong></div>
+              <div><span>ZIP 크기</span><strong id="deployZipSize">-</strong></div>
+              <div><span>변경 파일</span><strong id="deployFileCount">0개</strong></div>
+              <div><span>Worker</span><strong id="deployWorkerState">변경 없음</strong></div>
+            </div>
+
+            <div id="deployValidationBanner" class="deploy-validation-banner"></div>
+
+            <div class="deploy-file-list-head">
+              <strong>ZIP 내부 파일</strong>
+              <span id="deployAllowedCount">0개 확인</span>
+            </div>
+            <div id="deployPatchFiles" class="deploy-file-list"></div>
+
+            <div class="deploy-next-step">
+              <div>
+                <strong>1단계에서는 실제 배포하지 않습니다.</strong>
+                <p>ZIP 구성과 허용 파일만 확인합니다. 다음 단계에서 GitHub 자동 커밋을 연결합니다.</p>
+              </div>
+              <button id="deployPatchCommitBtn" type="button" disabled>GitHub 배포 · 2단계 예정</button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+<div class="admin-tab-panel" data-admin-panel="settings" hidden>
         <div class="admin-card">
           <h3>사이트 설정</h3>
           <div class="settings-grid">
@@ -333,6 +385,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=25.16" defer></script>
+  <script src="./script.js?v=26.0-step1" defer></script>
 </body>
 </html>
