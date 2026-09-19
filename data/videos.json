@@ -853,7 +853,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "uCD-9xYY13I",
@@ -986,7 +990,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "34dMu81nL9k",
@@ -1830,7 +1838,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "QDAR0jGIczs",
@@ -2172,7 +2184,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "t8iXoBgRjoU",
@@ -2362,7 +2378,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "standard",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 일반동영상 분류 확인"
     },
     {
       "id": "FO6-R3pd5oU",
@@ -2514,7 +2534,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "vU-ouaY0J5U",
@@ -3305,7 +3329,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "qERTSCrbWII",
@@ -3602,7 +3630,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "mYxtDDArfHs",
@@ -3697,7 +3729,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "4Us9w47WeMg",
@@ -3773,7 +3809,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "OIlvkIqmCk4",
@@ -3982,7 +4022,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "5c7p_3E6_VU",
@@ -4077,7 +4121,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "79bJPUdCEiM",
@@ -5158,7 +5206,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "ecHNHwFJfnQ",
@@ -5420,7 +5472,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "oIwHsrN9oiE",
@@ -5515,7 +5571,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "Hjao0HkfhNY",
@@ -5903,7 +5963,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "vZWvE_tTdvc",
@@ -6006,7 +6070,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "UQzfSSoGSu8",
@@ -6147,7 +6215,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "AZoydj7A9Ik",
@@ -6223,7 +6295,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "q3T0S2hrceU",
@@ -7003,7 +7079,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "mGqfCO8NK-8",
@@ -7041,7 +7121,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "kUoJPOOmGnc",
@@ -7410,7 +7494,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "9FhWio1bAcw",
@@ -7692,7 +7780,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "DXMpRwlFRME",
@@ -8039,7 +8131,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "zjTNP7VC1UQ",
@@ -8077,7 +8173,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "ySlN6j3CH5Y",
@@ -8196,7 +8296,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "2hFntY1T4LQ",
@@ -8223,7 +8327,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "Ar9pSdPY_Kw",
@@ -8413,7 +8521,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "fyqSBeowLJg",
@@ -8745,7 +8857,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "8LurcW7RXRA",
@@ -8859,7 +8975,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "j-S8zlNK8cQ",
@@ -8916,7 +9036,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "hrQJ7JP9zVk",
@@ -9277,7 +9401,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "poQrlwS72EA",
@@ -9817,7 +9945,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "rFPBNsSUmfA",
@@ -10270,7 +10402,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "O60C1ykiJjs",
@@ -10403,7 +10539,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "IyEvasJboH8",
@@ -10571,7 +10711,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "6ws3nxZt5rk",
@@ -10989,7 +11133,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "Pi1LW4v0YcI",
@@ -11233,7 +11381,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "shorts",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 Shorts 분류 확인"
     },
     {
       "id": "0nK34iY4gi4",
@@ -12396,7 +12548,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "standard",
+      "videoFormatSource": "youtube",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "YouTube 공개 페이지에서 일반동영상 분류 확인"
     },
     {
       "id": "QUrMFUG0WhE",
@@ -12818,7 +12974,7 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T16:22:19.054Z",
+  "generatedAt": "2026-09-19T16:30:23.151Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
