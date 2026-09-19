@@ -5332,11 +5332,19 @@
       "title": "너 진짜 고양이야? #신혜성 #신화",
       "description": "2000 우리들의스타 미모 박제용! \n2000 우리들의스타 신화편\nhttps://youtu.be/TS2DFKtN_lg?si=23yz-3U1tEahHWzp\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "2000 우리들의스타 미모 박제용!",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-07-11T09:30:11Z",
       "thumbnail": "https://i.ytimg.com/vi/9o7Mk3cEjxY/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7945,7 +7953,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:12:07.682Z",
+  "generatedAt": "2026-09-19T04:12:15.604Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
