@@ -1165,3 +1165,180 @@ body{
 .video-grid.list-view .date-extra:not([hidden]){
   display:contents;
 }
+
+
+/* v8: timeline archive view */
+.video-grid.timeline-view{
+  display:block;
+}
+.timeline-year{
+  margin:0 0 38px;
+}
+.timeline-year-heading{
+  position:sticky;
+  top:74px;
+  z-index:4;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 0 12px;
+  background:linear-gradient(180deg,var(--bg) 72%,rgba(250,249,252,0));
+}
+.timeline-year-heading h2{
+  margin:0;
+  font-size:34px;
+  letter-spacing:-.045em;
+  color:#4f4263;
+}
+.timeline-year-heading span{
+  padding:5px 8px;
+  border-radius:999px;
+  background:#eee7f7;
+  color:#746088;
+  font-size:11px;
+  font-weight:800;
+}
+.timeline-month{
+  display:grid;
+  grid-template-columns:76px minmax(0,1fr);
+  gap:18px;
+  padding:10px 0 22px;
+  border-top:1px solid #ece7f0;
+}
+.timeline-month>h3{
+  margin:6px 0 0;
+  color:#8b8197;
+  font-size:13px;
+}
+.timeline-items{display:flex;flex-direction:column}
+.timeline-item{
+  display:grid;
+  grid-template-columns:118px minmax(0,1fr);
+  gap:14px;
+  align-items:center;
+  min-height:86px;
+  padding:10px 0;
+  border-bottom:1px solid #f0edf3;
+}
+.timeline-thumb{
+  display:block;
+  width:118px;
+  aspect-ratio:16/9;
+  border-radius:11px;
+  overflow:hidden;
+  background:#eeeaf1;
+}
+.timeline-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.timeline-item-date{
+  display:flex;
+  gap:7px;
+  align-items:center;
+  margin-bottom:5px;
+  color:#675677;
+  font-size:12px;
+  font-weight:850;
+}
+.timeline-item-date span{
+  color:#94899f;
+  font-size:10px;
+  font-weight:700;
+}
+.timeline-title{
+  display:block;
+  font-size:15px;
+  line-height:1.45;
+  font-weight:800;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.timeline-years{
+  margin-top:5px;
+  color:#958a9e;
+  font-size:11px;
+}
+.timeline-unknown .timeline-year-heading h2{font-size:24px;color:#855f6b}
+
+/* v8: simplified multi-date cards */
+.year-summary-chip{
+  width:100%;
+  justify-content:flex-start;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.date-more-btn{
+  background:#f6f2f9;
+  border-color:#e4dceb;
+  color:#6c587d;
+}
+.date-extra[hidden]{display:none!important}
+.date-extra:not([hidden]){display:contents}
+
+/* v8: admin tabs */
+.admin-tabs{
+  display:flex;
+  gap:6px;
+  margin:14px 0;
+  padding:5px;
+  border:1px solid #e8e2ed;
+  border-radius:15px;
+  background:#f7f4fa;
+  overflow-x:auto;
+}
+.admin-tab{
+  flex:1 0 auto;
+  border:0;
+  border-radius:11px;
+  background:transparent;
+  color:#776d80;
+  padding:10px 13px;
+  font-size:13px;
+  font-weight:800;
+}
+.admin-tab.active{
+  background:#fff;
+  color:#59466f;
+  box-shadow:0 4px 13px rgba(71,53,91,.08);
+}
+.admin-tab-count{
+  display:inline-grid;
+  place-items:center;
+  min-width:18px;
+  height:18px;
+  margin-left:4px;
+  padding:0 5px;
+  border-radius:999px;
+  background:#eadff5;
+  color:#6a5384;
+  font-size:10px;
+}
+.admin-tab-panel[hidden]{display:none!important}
+
+@media (max-width:620px){
+  .view-toggle-btn{width:31px}
+  .timeline-year{margin-bottom:26px}
+  .timeline-year-heading{top:60px;padding-top:8px}
+  .timeline-year-heading h2{font-size:27px}
+  .timeline-month{
+    display:block;
+    padding:8px 0 17px;
+  }
+  .timeline-month>h3{
+    margin:0 0 5px;
+    font-size:12px;
+  }
+  .timeline-item{
+    grid-template-columns:84px minmax(0,1fr);
+    gap:10px;
+    min-height:68px;
+    padding:8px 0;
+  }
+  .timeline-thumb{width:84px;border-radius:8px}
+  .timeline-title{font-size:13px}
+  .timeline-item-date{font-size:11px;margin-bottom:3px}
+  .timeline-years{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .year-summary-chip{font-size:10px}
+  .date-more-btn{font-size:10px;padding:5px 7px}
+  .admin-tabs{position:sticky;top:60px;z-index:7;background:rgba(247,244,250,.95);backdrop-filter:blur(10px)}
+}

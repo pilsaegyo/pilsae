@@ -560,36 +560,29 @@ function renderDates(v) {
 
   const years = videoYears(v);
   const isMobile = window.matchMedia("(max-width: 620px)").matches;
-  const limit = isMobile ? 2 : 3;
-  const displayItems = [];
-
-  // 혼합영상은 먼저 연도 요약을 보여주고 세부 날짜를 이어서 표시.
-  if (v.type === "mixed") {
-    displayItems.push({
-      html: `<span class="year-summary-chip">${years.map(escapeHTML).join(" · ")}</span>`,
-      summary: true
-    });
-  }
-
-  let prevYear = "";
-  valid.forEach((d) => {
-    const year = d.sourceDate.slice(0,4);
-    const includeYear = v.type === "mixed" || year !== prevYear;
-    displayItems.push({
-      html: `<span class="date-chip">${escapeHTML(shortDisplayDate(d, includeYear))}</span>`,
-      summary: false
-    });
-    prevYear = year;
-  });
-
-  const visible = displayItems.slice(0, limit);
-  const hidden = displayItems.slice(limit);
+  const dateLimit = isMobile ? 2 : 3;
   const key = escapeHTML(v.id);
 
-  return visible.map(x => x.html).join("") +
-    hidden.map(x => `<span class="date-extra" data-date-group="${key}" hidden>${x.html}</span>`).join("") +
+  const summary = v.type === "mixed"
+    ? `<span class="year-summary-chip">${years.slice(0,6).map(escapeHTML).join(" · ")}${years.length > 6 ? ` · +${years.length - 6}` : ""}</span>`
+    : "";
+
+  let prevYear = "";
+  const dateHtml = valid.map((d) => {
+    const year = d.sourceDate.slice(0,4);
+    const includeYear = v.type === "mixed" || year !== prevYear;
+    prevYear = year;
+    return `<span class="date-chip">${escapeHTML(shortDisplayDate(d, includeYear))}</span>`;
+  });
+
+  const visible = dateHtml.slice(0, dateLimit);
+  const hidden = dateHtml.slice(dateLimit);
+
+  return summary +
+    visible.join("") +
+    hidden.map(html => `<span class="date-extra" data-date-group="${key}" hidden>${html}</span>`).join("") +
     (hidden.length
-      ? `<button class="date-more-btn" type="button" data-date-toggle="${key}" data-more-count="${hidden.length}">+${hidden.length}개</button>`
+      ? `<button class="date-more-btn" type="button" data-date-toggle="${key}" data-more-count="${hidden.length}">날짜 ${hidden.length}개 더보기</button>`
       : "");
 }
 
@@ -744,7 +737,8 @@ function clearOneFilter(key) {
 }
 
 function currentView() {
-  return localStorage.getItem(STORAGE_VIEW) === "list" ? "list" : "grid";
+  const saved = localStorage.getItem(STORAGE_VIEW);
+  return ["grid", "list", "timeline"].includes(saved) ? saved : "grid";
 }
 
 function applyViewMode() {
@@ -752,17 +746,99 @@ function applyViewMode() {
   const grid = $("#videoGrid");
   const gridBtn = $("#gridViewBtn");
   const listBtn = $("#listViewBtn");
+  const timelineBtn = $("#timelineViewBtn");
 
-  if (!grid || !gridBtn || !listBtn) return;
+  if (!grid || !gridBtn || !listBtn || !timelineBtn) return;
 
   grid.classList.toggle("list-view", mode === "list");
+  grid.classList.toggle("timeline-view", mode === "timeline");
   gridBtn.classList.toggle("active", mode === "grid");
   listBtn.classList.toggle("active", mode === "list");
+  timelineBtn.classList.toggle("active", mode === "timeline");
 }
 
 function setViewMode(mode) {
-  localStorage.setItem(STORAGE_VIEW, mode === "list" ? "list" : "grid");
-  applyViewMode();
+  const normalized = ["grid", "list", "timeline"].includes(mode) ? mode : "grid";
+  localStorage.setItem(STORAGE_VIEW, normalized);
+  visibleLimit = PAGE_SIZE;
+  render();
+}
+
+function timelinePrimaryDate(v) {
+  const dates = v.dates.map(d => d.sourceDate).filter(Boolean).sort().reverse();
+  return dates[0] || "";
+}
+
+function timelineMonthLabel(sourceDate) {
+  if (!sourceDate) return "날짜 미확인";
+  const [,month] = sourceDate.split("-");
+  return `${Number(month)}월`;
+}
+
+function renderTimeline(rows) {
+  const grouped = new Map();
+  const unknown = [];
+
+  for (const v of rows) {
+    const primary = timelinePrimaryDate(v);
+    if (!primary) {
+      unknown.push(v);
+      continue;
+    }
+    const year = primary.slice(0,4);
+    const month = primary.slice(5,7);
+    if (!grouped.has(year)) grouped.set(year, new Map());
+    const yearMap = grouped.get(year);
+    if (!yearMap.has(month)) yearMap.set(month, []);
+    yearMap.get(month).push(v);
+  }
+
+  const parts = [];
+  const years = [...grouped.keys()].sort((a,b) => Number(b)-Number(a));
+  for (const year of years) {
+    const months = grouped.get(year);
+    parts.push(`<section class="timeline-year"><div class="timeline-year-heading"><h2>${escapeHTML(year)}</h2><span>${[...months.values()].reduce((n,arr)=>n+arr.length,0)}개</span></div>`);
+    for (const month of [...months.keys()].sort((a,b) => Number(b)-Number(a))) {
+      const items = months.get(month).sort((a,b) => timelinePrimaryDate(b).localeCompare(timelinePrimaryDate(a)));
+      parts.push(`<div class="timeline-month"><h3>${escapeHTML(timelineMonthLabel(`${year}-${month}-01`))}</h3><div class="timeline-items">`);
+      for (const v of items) {
+        const primary = timelinePrimaryDate(v);
+        const extraCount = Math.max(0, v.dates.filter(d => d.sourceDate).length - 1);
+        parts.push(`
+          <article class="timeline-item">
+            <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
+              ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
+            </a>
+            <div class="timeline-item-body">
+              <div class="timeline-item-date">${escapeHTML(primary.replace(/-/g,"."))}${extraCount ? `<span>외 ${extraCount}개 날짜</span>` : ""}</div>
+              <a class="timeline-title youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a>
+              ${v.type === "mixed" ? `<div class="timeline-years">${videoYears(v).map(escapeHTML).join(" · ")}</div>` : ""}
+            </div>
+          </article>`);
+      }
+      parts.push(`</div></div>`);
+    }
+    parts.push(`</section>`);
+  }
+
+  if (unknown.length) {
+    parts.push(`<section class="timeline-year timeline-unknown"><div class="timeline-year-heading"><h2>날짜 미확인</h2><span>${unknown.length}개</span></div><div class="timeline-items">`);
+    for (const v of unknown) {
+      parts.push(`
+        <article class="timeline-item">
+          <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
+            ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
+          </a>
+          <div class="timeline-item-body">
+            <div class="timeline-item-date">날짜 미확인</div>
+            <a class="timeline-title youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a>
+          </div>
+        </article>`);
+    }
+    parts.push(`</div></section>`);
+  }
+
+  return parts.join("");
 }
 
 function render() {
@@ -794,16 +870,23 @@ function render() {
       (unknownCount ? `<span class="result-submeta">· 날짜 미확인 ${unknownCount}개</span>` : "")
     : "";
 
-  $("#videoGrid").innerHTML = visibleRows.map(renderCard).join("");
+  const mode = currentView();
+  $("#videoGrid").innerHTML = mode === "timeline"
+    ? renderTimeline(rows)
+    : visibleRows.map(renderCard).join("");
   $("#emptyState").hidden = rows.length !== 0;
 
   const moreBtn = $("#loadMoreBtn");
   if (moreBtn) {
-    const remaining = rows.length - visibleRows.length;
-    moreBtn.hidden = remaining <= 0;
-    moreBtn.textContent = remaining > 0
-      ? `더 보기 (${Math.min(PAGE_SIZE, remaining)}개)`
-      : "더 보기";
+    if (mode === "timeline") {
+      moreBtn.hidden = true;
+    } else {
+      const remaining = rows.length - visibleRows.length;
+      moreBtn.hidden = remaining <= 0;
+      moreBtn.textContent = remaining > 0
+        ? `더 보기 (${Math.min(PAGE_SIZE, remaining)}개)`
+        : "더 보기";
+    }
   }
 
   applyViewMode();
@@ -843,6 +926,8 @@ function renderAdminUnknownList() {
 
   const unknown = videos.filter(v => v.type === "unknown");
   if (badge) badge.textContent = `${unknown.length}개`;
+  const tabCount = $("#adminReviewTabCount");
+  if (tabCount) tabCount.textContent = String(unknown.length);
 
   if (!unknown.length) {
     wrap.innerHTML = `<p class="admin-help">현재 날짜 확인이 필요한 영상이 없습니다.</p>`;
@@ -864,6 +949,19 @@ function renderAdminUnknownList() {
       </div>
     </article>
   `).join("");
+}
+
+function setAdminTab(tabName) {
+  document.querySelectorAll("[data-admin-tab]").forEach(btn => {
+    const active = btn.dataset.adminTab === tabName;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", String(active));
+  });
+  document.querySelectorAll("[data-admin-panel]").forEach(panel => {
+    const active = panel.dataset.adminPanel === tabName;
+    panel.classList.toggle("active", active);
+    panel.hidden = !active;
+  });
 }
 
 function setAdmin(open) {
@@ -900,7 +998,7 @@ function bindEvents() {
       const extras = [...document.querySelectorAll(`[data-date-group="${CSS.escape(key)}"]`)];
       const opening = extras.some(el => el.hidden);
       extras.forEach(el => el.hidden = !opening);
-      dateToggle.textContent = opening ? "접기" : `+${dateToggle.dataset.moreCount}개`;
+      dateToggle.textContent = opening ? "날짜 접기" : `날짜 ${dateToggle.dataset.moreCount}개 더보기`;
       return;
     }
 
@@ -947,6 +1045,11 @@ function bindEvents() {
 
   $("#gridViewBtn").addEventListener("click", () => setViewMode("grid"));
   $("#listViewBtn").addEventListener("click", () => setViewMode("list"));
+  $("#timelineViewBtn").addEventListener("click", () => setViewMode("timeline"));
+
+  document.querySelectorAll("[data-admin-tab]").forEach(btn => {
+    btn.addEventListener("click", () => setAdminTab(btn.dataset.adminTab || "sync"));
+  });
 
   const mobileFilterToggle = $("#mobileFilterToggle");
   const toolbarPanel = document.querySelector(".toolbar-panel");
