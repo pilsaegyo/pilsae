@@ -550,6 +550,11 @@ function normalizeVideo(v, idx=0) {
     thumbnail: String(v.thumbnail || ""),
     parseStatus: validDates.length ? "parsed" : String(v.parseStatus || ""),
     dates: dateEntries,
+    manualDateReviewPending: v.manualDateReviewPending === true,
+    previousManualDates: Array.isArray(v.previousManualDates)
+      ? v.previousManualDates.map(normalizeDateEntry).filter(Boolean)
+      : [],
+    descriptionChangedAfterManual: v.descriptionChangedAfterManual === true,
     ignoredDateCandidates: Array.isArray(v.ignoredDateCandidates) ? v.ignoredDateCandidates.map(String) : [],
     contentType: v.contentType === "playlist" ? "playlist" : "video",
     playlistScope: v.playlistScope === "multi-year" ? "multi-year"
@@ -720,7 +725,10 @@ async function adminApi(path, options={}) {
 
 function updateAdminSummary() {
   const total = videos.length;
-  const review = videos.filter(v => v.type === "unknown" && v.contentType !== "playlist").length;
+  const review = videos.filter(v =>
+    v.contentType !== "playlist" &&
+    (v.type === "unknown" || v.manualDateReviewPending)
+  ).length;
   const parsed = total - review;
 
   if ($("#adminCurrentTotal")) $("#adminCurrentTotal").textContent = `${total}개`;
@@ -834,6 +842,7 @@ function renderDates(v) {
 }
 
 function unknownReason(v) {
+  if (v.manualDateReviewPending) return "수동 날짜 이후 설명 변경";
   if (v.type !== "unknown") return "";
   if (Array.isArray(v.dateCandidates) && v.dateCandidates.length) return "월 날짜 후보 있음";
   const raw = String(v.description || "");
@@ -922,7 +931,7 @@ function renderCard(v) {
           <div class="card-badges">
             ${v.contentType === "playlist" ? `<span class="badge playlist">플레이리스트</span>` : ""}
             ${isMultiYearPlaylist(v) ? `<span class="badge playlist-multiyear">다년도</span>` : ""}
-            <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type)}</span>
+            <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type, v)}</span>
           </div>
         </div>
 
@@ -1173,11 +1182,14 @@ function timelineDateLabel(entry) {
 }
 
 function timelineBucket(v) {
+  // An explicitly multi-year playlist belongs in the separate playlist bucket
+  // even when an old/single representative date (e.g. 2001) already exists.
+  if (isMultiYearPlaylist(v)) {
+    return { kind: "playlist-multiyear", year: "", month: "", entry: null };
+  }
+
   const primary = timelinePrimaryEntry(v);
   if (!primary) {
-    if (isMultiYearPlaylist(v)) {
-      return { kind: "playlist-multiyear", year: "", month: "", entry: null };
-    }
     return v.contentType === "playlist"
       ? { kind: "playlist-undated", year: "", month: "", entry: null }
       : { kind: "unknown", year: "", month: "", entry: null };
@@ -1538,6 +1550,23 @@ function adminReviewItemHtml(v, {playlistUndated=false}={}) {
                 data-candidate-key="${escapeHTML(c.candidateKey)}">날짜 아님</button>
             </div>
           </div>`).join("") : ""}
+        ${v.manualDateReviewPending ? `
+          <div class="description-change-review">
+            <div class="description-change-head">
+              <span>설명 변경 감지</span>
+              <strong>기존 수동 날짜를 보류했습니다.</strong>
+            </div>
+            ${v.previousManualDates?.length ? `
+              <small>이전 수동 날짜: ${escapeHTML(v.previousManualDates.map(displayDate).filter(Boolean).join(", "))}</small>
+            ` : ""}
+            ${v.dates?.length ? `
+              <small>새 설명에서 인식된 날짜: ${escapeHTML(v.dates.map(displayDate).filter(Boolean).join(", "))}</small>
+              <button type="button" class="accept-description-date-btn" data-accept-description-date="${escapeHTML(v.id)}">새 설명 날짜 사용</button>
+            ` : `
+              <small>새 설명에서는 날짜를 찾지 못했습니다. 아래에서 날짜를 다시 입력해 주세요.</small>
+            `}
+          </div>
+        ` : ""}
         ${manualDateControl(v)}
         <div class="admin-review-links">
           <a class="youtube-video-link admin-youtube-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">YouTube에서 확인</a>
@@ -1555,11 +1584,14 @@ function renderAdminUnknownList() {
   const playlistBadge = $("#adminUndatedPlaylistBadge");
   if (!wrap) return;
 
-  const unknown = videos.filter(v => v.type === "unknown" && v.contentType !== "playlist");
+  const unknown = videos.filter(v =>
+    v.contentType !== "playlist" &&
+    (v.type === "unknown" || v.manualDateReviewPending)
+  );
   const undatedPlaylists = videos.filter(v =>
-    v.type === "unknown" &&
     v.contentType === "playlist" &&
-    !isMultiYearPlaylist(v)
+    !isMultiYearPlaylist(v) &&
+    (v.type === "unknown" || v.manualDateReviewPending)
   );
 
   if (badge) badge.textContent = `${unknown.length}개`;
@@ -1619,28 +1651,42 @@ function renderAdminContentList() {
       <div class="admin-content-copy">
         <strong>${escapeHTML(v.title)}</strong>
         <small>
-          ${escapeHTML(v.dates.map(displayDate).filter(Boolean).join(", ") || "날짜 없음")}
+          ${isMultiYearPlaylist(v)
+            ? `다년도 플레이리스트${v.dates.length ? ` · 기존 대표 날짜 ${escapeHTML(v.dates.map(displayDate).filter(Boolean).join(", "))}` : ""}`
+            : escapeHTML(v.dates.map(displayDate).filter(Boolean).join(", ") || "날짜 없음")}
           ${v.durationSeconds ? ` · ${escapeHTML(formatDuration(v.durationSeconds))}` : ""}
         </small>
       </div>
       <div class="admin-content-actions">
         <button type="button"
-          class="content-type-toggle ${v.contentType === "playlist" ? "is-playlist" : ""}"
+          class="content-action-btn content-type-toggle ${v.contentType === "playlist" ? "is-playlist" : ""}"
           data-content-type-toggle="${escapeHTML(v.id)}"
           data-next-content-type="${v.contentType === "playlist" ? "video" : "playlist"}">
-          ${v.contentType === "playlist" ? "플레이리스트 해제" : "플레이리스트로 지정"}
+          <span class="content-action-icon" aria-hidden="true">${v.contentType === "playlist" ? "✓" : "♫"}</span>
+          <span>${v.contentType === "playlist" ? "플레이리스트 해제" : "플레이리스트로 지정"}</span>
         </button>
         ${v.contentType === "playlist" ? `
-          <div class="playlist-scope-actions">
-            <span>${escapeHTML(playlistScopeLabel(v))}</span>
-            <button type="button"
-              class="playlist-scope-btn ${isMultiYearPlaylist(v) ? "active" : ""}"
-              data-playlist-scope="${escapeHTML(v.id)}"
-              data-playlist-scope-value="multi-year">다년도로 지정</button>
-            <button type="button"
-              class="playlist-scope-btn ${!isMultiYearPlaylist(v) && v.playlistScope === "undated" ? "active" : ""}"
-              data-playlist-scope="${escapeHTML(v.id)}"
-              data-playlist-scope-value="undated">연도 미지정</button>
+          <div class="playlist-scope-block">
+            <div class="playlist-scope-current">
+              <span>현재 분류</span>
+              <strong>${escapeHTML(playlistScopeLabel(v))}</strong>
+            </div>
+            <div class="playlist-scope-actions">
+              <button type="button"
+                class="content-action-btn playlist-scope-btn ${isMultiYearPlaylist(v) ? "active" : ""}"
+                data-playlist-scope="${escapeHTML(v.id)}"
+                data-playlist-scope-value="multi-year">
+                <span class="content-action-icon" aria-hidden="true">⇄</span>
+                <span>다년도로 지정</span>
+              </button>
+              <button type="button"
+                class="content-action-btn playlist-scope-btn ${!isMultiYearPlaylist(v) && v.playlistScope === "undated" ? "active" : ""}"
+                data-playlist-scope="${escapeHTML(v.id)}"
+                data-playlist-scope-value="undated">
+                <span class="content-action-icon" aria-hidden="true">?</span>
+                <span>연도 미지정</span>
+              </button>
+            </div>
           </div>
         ` : ""}
       </div>
@@ -1719,6 +1765,34 @@ function bindEvents() {
       return;
     }
 
+    const acceptDescriptionDate = event.target.closest("button[data-accept-description-date]");
+    if (acceptDescriptionDate) {
+      const videoId = acceptDescriptionDate.dataset.acceptDescriptionDate || "";
+      const status = document.querySelector(`[data-candidate-status="${CSS.escape(videoId)}"]`);
+      acceptDescriptionDate.disabled = true;
+      if (status) status.textContent = "새 설명 날짜 적용 중…";
+
+      try {
+        await adminApi("/accept-description-date", {
+          method: "POST",
+          body: JSON.stringify({ videoId })
+        });
+
+        const v = videos.find(x => x.id === videoId);
+        if (v) {
+          v.manualDateReviewPending = false;
+          v.descriptionChangedAfterManual = false;
+          v.previousManualDates = [];
+        }
+        render();
+        if (status) status.textContent = "새 설명 날짜를 기준으로 사용합니다.";
+      } catch (err) {
+        acceptDescriptionDate.disabled = false;
+        if (status) status.textContent = err.message;
+      }
+      return;
+    }
+
     const manualDateApply = event.target.closest("button[data-manual-date-apply]");
     if (manualDateApply) {
       const videoId = manualDateApply.dataset.manualDateApply || "";
@@ -1763,6 +1837,9 @@ function bindEvents() {
           v.sortDate = [...v.dates.map(d => d.sourceDate)].sort().reverse()[0] || "";
           v.parseStatus = "parsed";
           v.dateCandidates = [];
+          v.manualDateReviewPending = false;
+          v.descriptionChangedAfterManual = false;
+          v.previousManualDates = [];
         }
         render();
         if (status) status.textContent = `${displayText} 적용 완료 · ${parsedList.length > 1 ? "혼합 연도 분류 반영" : "배포 후 전체 사이트에 반영"}`;
@@ -1851,6 +1928,9 @@ function bindEvents() {
           v.sortDate = sourceDate;
           v.parseStatus = "parsed";
           v.dateCandidates = [];
+          v.manualDateReviewPending = false;
+          v.descriptionChangedAfterManual = false;
+          v.previousManualDates = [];
         }
         render();
         if (status) status.textContent = "적용 완료 · 배포 후 전체 사이트에 반영";
