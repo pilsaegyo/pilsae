@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "id": "8b603720-fe86-4ac4-bdd8-9b398f5cdb4c",
+      "action": "site_config",
+      "videoId": "",
+      "title": "사이트 설정",
+      "before": {
+        "title": "셩냥이😸🤟",
+        "channelHandle": "@pilsae",
+        "faviconChanged": false
+      },
+      "after": {
+        "title": "셩냥이 돼지😸🤟",
+        "channelHandle": "@pilsae",
+        "faviconChanged": false
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-19T13:31:57.341Z"
+    },
+    {
       "id": "2deaad57-6a4c-4e76-9783-b14d5bb67f54",
       "action": "playlist_scope",
       "videoId": "efTvEN3GK08",
@@ -69,5 +87,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-19T13:14:05.097Z"
+  "updatedAt": "2026-09-19T13:31:57.341Z"
 }
