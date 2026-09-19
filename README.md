@@ -938,3 +938,13 @@
 - 예: Step 3D ZIP이면 `Deploy 26.0-step3d from admin`.
 - ZIP에 버전 정보가 없으면 `Deploy archive patch from admin`으로 안전하게 fallback.
 - Worker 자동배포 테스트용 주석은 기능상 영향이 없어 그대로 유지.
+
+
+## v26.0-step3e · 배포 ZIP Drag & Drop
+- 관리자 `배포 ZIP 선택` 영역에 ZIP 파일을 끌어다 놓아 바로 검사 가능.
+- 기존 클릭 → 파일 선택 방식도 그대로 유지.
+- 드래그 중에는 업로드 영역의 테두리/배경이 강조되어 drop 가능 상태를 표시.
+- 잘못해서 영역 밖에 파일을 놓았을 때 브라우저가 파일을 새 탭으로 열지 않도록 방지.
+- ZIP 여러 개를 동시에 끌어오면 첫 번째 파일만 검사하고 안내 표시.
+- 키보드 Enter/Space로도 파일 선택창을 열 수 있도록 보완.
+- 기존 ZIP 검사 → GitHub 단일 커밋 → Cloudflare 자동배포 흐름 유지.

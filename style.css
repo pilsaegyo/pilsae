@@ -5821,3 +5821,35 @@ h1,h2,h3,.brand-main{font-weight:650}
 #deployPatchCommitBtn:not(:disabled):hover{
   background:#503f61;
 }
+
+
+/* v26.0 step 3E - deploy ZIP drag & drop */
+.deploy-file-button{
+  outline:none;
+}
+
+.deploy-file-button.is-dragover{
+  border-color:#7f6993;
+  background:#f3edf8;
+  box-shadow:0 0 0 3px rgba(109,82,132,.10);
+}
+
+.deploy-file-button.is-dragover .deploy-file-icon{
+  transform:translateY(-1px) scale(1.04);
+  background:#59416f;
+}
+
+.deploy-file-button:focus-visible{
+  border-color:#8e75a5;
+  box-shadow:0 0 0 3px rgba(109,82,132,.12);
+}
+
+.deploy-file-icon{
+  transition:transform .16s ease, background .16s ease;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .deploy-file-icon{
+    transition:none;
+  }
+}

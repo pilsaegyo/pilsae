@@ -3969,6 +3969,32 @@ function renderDeployPatchPreview(file, entries) {
   preview.hidden = false;
 }
 
+
+function setDeployDropActive(active) {
+  const zone = $("#deployDropZone");
+  if (!zone) return;
+  zone.classList.toggle("is-dragover", Boolean(active));
+}
+
+function handleDeployDroppedFiles(fileList) {
+  const files = [...(fileList || [])];
+  const file = files[0] || null;
+
+  if (!file) return;
+
+  if (files.length > 1) {
+    setAdminStatus(
+      $("#deployPatchStatus"),
+      "ZIP 파일은 한 번에 1개만 업로드할 수 있습니다. 첫 번째 파일만 확인합니다.",
+      "error"
+    );
+  }
+
+  // Drag & drop cannot programmatically assign FileList to the native input
+  // in every browser. The deploy flow only needs the File object itself.
+  inspectDeployZip(file);
+}
+
 async function inspectDeployZip(file) {
   const status = $("#deployPatchStatus");
   const preview = $("#deployPatchPreview");
@@ -4508,6 +4534,56 @@ function bindEvents() {
   $("#deployPatchZip")?.addEventListener("change", (event) => {
     const file = event.target.files?.[0] || null;
     inspectDeployZip(file);
+  });
+
+  const deployDropZone = $("#deployDropZone");
+  if (deployDropZone) {
+    ["dragenter", "dragover"].forEach(type => {
+      deployDropZone.addEventListener(type, (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (event.dataTransfer) {
+          event.dataTransfer.dropEffect = "copy";
+        }
+
+        setDeployDropActive(true);
+      });
+    });
+
+    ["dragleave", "dragend"].forEach(type => {
+      deployDropZone.addEventListener(type, (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setDeployDropActive(false);
+      });
+    });
+
+    deployDropZone.addEventListener("drop", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      setDeployDropActive(false);
+      handleDeployDroppedFiles(event.dataTransfer?.files);
+    });
+
+    deployDropZone.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        $("#deployPatchZip")?.click();
+      }
+    });
+  }
+
+  // Prevent the browser from opening a dragged file if the user misses
+  // the drop zone while dragging over the admin page.
+  ["dragover", "drop"].forEach(type => {
+    document.addEventListener(type, (event) => {
+      const zone = $("#deployDropZone");
+      if (!zone || zone.contains(event.target)) return;
+      if (event.dataTransfer?.types?.includes("Files")) {
+        event.preventDefault();
+      }
+    });
   });
 
   $("#deployPatchCommitBtn")?.addEventListener("click", () => {

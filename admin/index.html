@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=26.0-step3d" />
+  <link rel="stylesheet" href="./style.css?v=26.0-step3e" />
 </head>
-<body class="admin-page admin-locked" data-build="26.0-step3d">
+<body class="admin-page admin-locked" data-build="26.0-step3e">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -309,11 +309,12 @@
           </div>
 
           <div class="deploy-upload-box">
-            <label class="deploy-file-button" for="deployPatchZip">
+            <label id="deployDropZone" class="deploy-file-button" for="deployPatchZip"
+              role="button" tabindex="0" aria-describedby="deployDropHint">
               <span class="deploy-file-icon" aria-hidden="true">ZIP</span>
               <span>
                 <strong>배포 ZIP 선택</strong>
-                <small>압축을 풀지 않고 그대로 선택하세요.</small>
+                <small id="deployDropHint">압축을 풀지 않고 그대로 선택하거나 이 영역에 끌어다 놓으세요.</small>
               </span>
             </label>
             <input id="deployPatchZip" type="file" accept=".zip,application/zip" hidden />
@@ -392,6 +393,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=26.0-step3d" defer></script>
+  <script src="./script.js?v=26.0-step3e" defer></script>
 </body>
 </html>
