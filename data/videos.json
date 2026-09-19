@@ -5444,11 +5444,26 @@
       "title": "네 태도, 상상을 불러일으키는 네 태도 #신혜성 #에릭 #신화",
       "description": "2016 Shinhwa 18th Anniversary Concert Hero\n17th Anniversary We Finale Concert \n2015 SHINHWA 17th ANNIVERSARY CONCERT \"WE\"\n2017 SUMMER LIVE MOVE\n\n신화 콘서트 give it 2 me 신혜성 에릭 일부 파트 교차 편집\n숏츠 저작권상 1분으로 맞추느라 그냥 1분 분량으로 만들었어요\n\n하이라이트댓글 영역이 ㅠㅠㅠ 가사를 가려서 숏츠 댓글은 막아놨어요\n큰 전체화면 버전은 동영상에 올려두었습니다  높은 화질 넓은 화면으로 크게 봐주세용 길이는 똑같습니다 ❤️\n\n#stagemix \n#신혜성 #에릭 #신화 #shinhwa #shinhyesung #eric #muneric #申惠星 #神话 #シンファ \n#kpop #kpopedit #kpopidol #kpopconcerts #stagemix #무대모음 #무대영상",
       "source": "2016 Shinhwa 18th Anniversary Concert Hero",
-      "sourceDate": null,
+      "sourceDate": "2016-01-01",
       "publishedAt": "2025-07-08T13:04:09Z",
       "thumbnail": "https://i.ytimg.com/vi/tk5aosZ2r04/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2016-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2015-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7961,7 +7976,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:12:24.708Z",
+  "generatedAt": "2026-09-19T04:12:42.174Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
