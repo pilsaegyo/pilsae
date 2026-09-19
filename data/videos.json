@@ -3184,11 +3184,26 @@
       "title": "내 눈엔 너만 보여 #신혜성 #신화",
       "description": "https://www.youtube.com/watch?v=-Oz2QeJ-b5g\nhttps://www.youtube.com/watch?v=PSHmoYKo1Rc\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "https://www.youtube.com/watch?v=-Oz2QeJ-b5g",
-      "sourceDate": null,
+      "sourceDate": "2002-01-01",
       "publishedAt": "2025-12-08T11:30:48Z",
       "thumbnail": "https://i.ytimg.com/vi/e7P78F4N3hg/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2002-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2003-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8109,7 +8124,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:19:27.795Z",
+  "generatedAt": "2026-09-19T04:19:43.209Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
