@@ -4,8 +4,9 @@
   "channelTitle": "필새",
   "faviconDataUrl": "",
   "faviconUrl": "./assets/favicon-p.png",
-  "profileImageUrl": "",
-  "bannerImageUrl": "",
+  "profileImageUrl": "https://yt3.ggpht.com/mR1PCdtNYCxgiUKf6GDqY14p0IrKMDLS1wKmnSpgSoqqZ0NPbRasyDbV0Qx-5LtAjfh8p2k0mg=s800-c-k-c0x00ffffff-no-rj",
+  "bannerImageUrl": "https://yt3.googleusercontent.com/7h1JRQTL61CmesqiZV2lr-jX7YFm6p4b0AydZFlJXqnSAbKcHj46SjJsIbdcVwI3YWMNkFPT6A",
   "adminApiUrl": "https://pilsae-admin-api.hyesung.workers.dev",
-  "updatedAt": "2026-09-19T11:02:55.032Z"
+  "updatedAt": "2026-09-19T12:08:01.649Z",
+  "syncedFromYoutubeAt": "2026-09-19T12:08:01.649Z"
 }
