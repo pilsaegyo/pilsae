@@ -3309,11 +3309,33 @@
       "title": "신혜성 미성, 아직도 돌판에 대체제가 없더라 | 🎧 𝓹𝓪𝓻𝓽 𝓹𝓵𝓪𝔂𝓵𝓲𝓼𝓽｜98-00 신혜성 노래 모음.zip  #신혜성",
       "description": "노래의 앞뒤 연결성을 위해 타인 파트 일부 포함\n안넣은 노래가 있다면 그건 저의 초이스...\n3월~11월까지의 유투브 활동 결산 컨텐츠\n\n00:00 해결사\n02:17 으쌰으쌰\n03:59 천일유혼\n06:50 늘 내가 원하는 것은\n09:14 눈물\n10:51 키가 자랐어요\n11:54 비상구\n14:00 누에\n15:22 감사\n17:48 OH! 사랑해\n21:59 이 밤의 끝을 잡고 \n24:39 yo!\n26:03 T.O.P\n28:45 원\n30:29 Nothing\n32:53 침묵을 깨고 (Breakin' the Silence)\n34:42 소망\n36:59 리턴\n39:12 너의 곁에서 (Forever with You)\n43:07 Coda\n45:24 Give it\n47:11 Nears\n50:16 Merry Chirstmas\n53:30 I Wanna be\n55:29 only one\n56:59 All Your Dreams\n58:47 first love\n01:01:36 Jam #1\n01:03:08 Never Come to Me\n01:05:07 change\n01:06:53 Vortex\n01:09:03 White Night\n01:12:25 cyber love\n01:14:25 Soul\n01:17:16 To My Family (나의 가족에게)\n01:19:42 Wedding March (너의 곁에서 II)\n01:22:40 기도\n01:25:11 루돌프 사슴코 (Rudolph The-Nosed Reindeer)\n01:27:08 White Paradise\n01:28:44 이별속의 아픔\n01:33:10 할 수 있다면\n01:34:14 달려달려\n01:36:08 IT'S OVER NOW (with 에릭)\n01:40:32 비처럼 음악처럼\n01:44:35 나만의 친구\n01:46:32 BM; Peace B (ID; Peace B 개사)\n01:47:44 진이가 나와 결혼을 해준다면\n\n#신혜성 #신혜성노래 #신화노래 #신화플리\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "노래의 앞뒤 연결성을 위해 타인 파트 일부 포함",
-      "sourceDate": null,
+      "sourceDate": "1998-01-01",
       "publishedAt": "2025-11-26T15:01:27Z",
       "thumbnail": "https://i.ytimg.com/vi/efTvEN3GK08/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1998-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "1999-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": [],
       "contentType": "playlist"
     },
@@ -8169,7 +8191,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:20:48.061Z",
+  "generatedAt": "2026-09-19T04:21:07.262Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
