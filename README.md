@@ -129,3 +129,10 @@
 - 공개 방문자에게 관리자 버튼 숨김
   - `?admin=1` 또는 `#admin`으로 접근한 경우에만 관리자 진입 버튼 표시
 - 검색 placeholder를 실제 검색 범위에 맞게 수정
+
+
+## 채널 브랜딩 헤더 반영
+- 사이트 상단 hero 영역이 YouTube 채널 배너 이미지를 배경으로 사용합니다.
+- 채널 프로필 이미지는 원형 아바타로 자동 반영됩니다.
+- `YouTube 영상 정보 업데이트`를 누르면 `data/videos.json`뿐 아니라 `site-config.json`의 `bannerImageUrl`, `profileImageUrl`, `channelTitle`도 함께 갱신됩니다.
+- 기본 파비콘은 `assets/favicon-p.png`(연보라 배경 + 흰색 P)입니다.

@@ -5,7 +5,11 @@ const ADMIN_TOKEN_SESSION_KEY = "pilsaeAdminToken";
 let siteConfig = {
   title: DEFAULT_TITLE,
   channelHandle: "@pilsae",
+  channelTitle: "필새",
   faviconDataUrl: "",
+  faviconUrl: "./assets/favicon-p.png",
+  profileImageUrl: "",
+  bannerImageUrl: "",
   adminApiUrl: "https://pilsae-admin-api.hyesung.workers.dev"
 };
 
@@ -321,6 +325,9 @@ function applySiteConfig() {
   const brandHandle = document.querySelector(".brand-handle");
   if (brandHandle) brandHandle.textContent = handle;
 
+  const heroHandle = $("#heroHandle");
+  if (heroHandle) heroHandle.textContent = handle;
+
   const channelLink = document.querySelector(".channel-link");
   if (channelLink) {
     const cleanHandle = handle.startsWith("@") ? handle : `@${handle}`;
@@ -328,11 +335,30 @@ function applySiteConfig() {
   }
 
   const favicon = $("#dynamicFavicon");
-  if (favicon && siteConfig.faviconDataUrl) {
-    favicon.href = siteConfig.faviconDataUrl;
+  const faviconHref = siteConfig.faviconDataUrl || siteConfig.faviconUrl || "data:,";
+  if (favicon) favicon.href = faviconHref;
+
+  const heroBanner = $("#heroBannerImage");
+  if (heroBanner) {
+    const bannerUrl = String(siteConfig.bannerImageUrl || "").trim();
+    if (bannerUrl) {
+      heroBanner.style.backgroundImage = `url("${bannerUrl.replace(/"/g, "%22")}")`;
+      heroBanner.classList.add("has-image");
+    } else {
+      heroBanner.style.backgroundImage = "";
+      heroBanner.classList.remove("has-image");
+    }
   }
 
-  renderFaviconPreview(siteConfig.faviconDataUrl || "");
+  const heroAvatar = $("#heroAvatar");
+  if (heroAvatar) {
+    const profileUrl = String(siteConfig.profileImageUrl || "").trim();
+    heroAvatar.innerHTML = profileUrl
+      ? `<img src="${escapeHTML(profileUrl)}" alt="${escapeHTML(handle)} 프로필 이미지" loading="lazy" />`
+      : `<span class="hero-avatar-fallback">P</span>`;
+  }
+
+  renderFaviconPreview(siteConfig.faviconDataUrl || siteConfig.faviconUrl || "");
 }
 
 function renderFaviconPreview(dataUrl) {
@@ -826,7 +852,7 @@ function bindEvents() {
 
       setAdminStatus(
         status,
-        `업데이트 완료 · ${data.total}개 영상 · GitHub commit 생성됨. Cloudflare 새 배포가 완료되면 새로고침해 주세요.`,
+        `업데이트 완료 · ${data.total}개 영상 · 채널 프로필/헤더 이미지 동기화 포함. Cloudflare 새 배포가 완료되면 새로고침해 주세요.`,
         "success"
       );
     } catch (err) {

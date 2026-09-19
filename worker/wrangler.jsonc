@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pilsae-admin-api",
+  "main": "index.js",
+  "compatibility_date": "2026-09-19",
+  "vars": {
+    "GITHUB_OWNER": "pilsaegyo",
+    "GITHUB_REPO": "pilsae",
+    "GITHUB_BRANCH": "main",
+    "YOUTUBE_HANDLE": "@pilsae",
+    "ALLOWED_ORIGIN": "https://pilsae.hyesung.workers.dev"
+  }
+}

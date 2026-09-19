@@ -77,3 +77,10 @@ videos.json 자체는 YouTube 원본 제목/설명을 저장합니다.
 - ADMIN_TOKEN 입력값을 업데이트 버튼 클릭 시 자동 적용
 - 별도로 '토큰 적용' 버튼을 누르지 않아도 됨
 - 401 인증 실패 시 더 명확한 오류 메시지 표시
+
+
+## 채널 브랜딩 헤더 반영
+- 사이트 상단 hero 영역이 YouTube 채널 배너 이미지를 배경으로 사용합니다.
+- 채널 프로필 이미지는 원형 아바타로 자동 반영됩니다.
+- `YouTube 영상 정보 업데이트`를 누르면 `data/videos.json`뿐 아니라 `site-config.json`의 `bannerImageUrl`, `profileImageUrl`, `channelTitle`도 함께 갱신됩니다.
+- 기본 파비콘은 `assets/favicon-p.png`(연보라 배경 + 흰색 P)입니다.
