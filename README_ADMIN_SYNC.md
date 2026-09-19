@@ -84,3 +84,10 @@ videos.json 자체는 YouTube 원본 제목/설명을 저장합니다.
 - 채널 프로필 이미지는 원형 아바타로 자동 반영됩니다.
 - `YouTube 영상 정보 업데이트`를 누르면 `data/videos.json`뿐 아니라 `site-config.json`의 `bannerImageUrl`, `profileImageUrl`, `channelTitle`도 함께 갱신됩니다.
 - 기본 파비콘은 `assets/favicon-p.png`(연보라 배경 + 흰색 P)입니다.
+
+
+## v2 프로필 이미지 수정
+- 프로필 이미지는 YouTube `channels.list`의 `snippet.thumbnails.high.url`을 그대로 사용함.
+- 사이트가 열릴 때 `/channel-branding`에서 현재 채널 브랜딩을 한 번 더 읽으므로 `site-config.json`이 오래돼도 실제 채널 프로필이 우선 적용됨.
+- `/channel-branding` 응답은 Worker에서 1시간 캐시해 API 쿼터 낭비를 줄임.
+- P 이미지는 YouTube 프로필을 가져오지 못했을 때만 fallback으로 표시됨.

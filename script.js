@@ -307,6 +307,28 @@ async function loadSiteConfig() {
   }
 }
 
+async function loadLiveChannelBranding() {
+  const base = String(siteConfig.adminApiUrl || "").replace(/\/$/, "");
+  if (!base) return;
+
+  try {
+    const res = await fetch(`${base}/channel-branding`, { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data?.ok) return;
+
+    // YouTube channels.list의 snippet.thumbnails.high URL을 그대로 사용.
+    if (data.profileImageUrl) siteConfig.profileImageUrl = data.profileImageUrl;
+    if (data.bannerImageUrl) siteConfig.bannerImageUrl = data.bannerImageUrl;
+    if (data.channelTitle) siteConfig.channelTitle = data.channelTitle;
+    if (data.channelHandle) siteConfig.channelHandle = data.channelHandle;
+
+    applySiteConfig();
+  } catch (err) {
+    console.warn("YouTube 채널 브랜딩 실시간 로드 실패", err);
+  }
+}
+
 function applySiteConfig() {
   const title = siteConfig.title || DEFAULT_TITLE;
   $("#mainTitle").textContent = title;
@@ -892,6 +914,7 @@ function bindEvents() {
 (async function init() {
   await loadSiteConfig();
   applySiteConfig();
+  loadLiveChannelBranding();
   $("#emptyState").hidden = true;
 
   try {
