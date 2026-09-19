@@ -629,8 +629,10 @@ async function loadLiveChannelBranding() {
 
 function applySiteConfig() {
   const title = siteConfig.title || DEFAULT_TITLE;
-  $("#mainTitle").textContent = title;
+  const mainTitle = $("#mainTitle");
+  if (mainTitle) mainTitle.textContent = title;
   document.title = `${title} | 필새 영상 아카이브`;
+  document.body.classList.remove("site-config-pending");
 
   const titleInput = $("#titleInput");
   if (titleInput) titleInput.value = title;
@@ -2327,11 +2329,21 @@ function bindEvents() {
   });
 
   document.addEventListener("click", (event) => {
-    const insideSearchField = event.target.closest(".search-field");
-    const insideSuggestions = event.target.closest("#searchSuggestions");
+    const searchField = document.querySelector(".search-field");
+    const suggestions = $("#searchSuggestions");
+    const path = typeof event.composedPath === "function" ? event.composedPath() : [];
 
-    // The suggestion dropdown sits next to .search-field in the DOM,
-    // so clicks on "더보기/접기" must also count as inside the search UI.
+    // "더보기" re-renders #searchSuggestions during this same click event.
+    // Use the event's original propagation path instead of only event.target.closest(),
+    // because the clicked button may already have been detached from the DOM.
+    const insideSearchField =
+      (searchField && path.includes(searchField)) ||
+      Boolean(event.target.closest?.(".search-field"));
+    const insideSuggestions =
+      (suggestions && path.includes(suggestions)) ||
+      Boolean(event.target.closest?.("#searchSuggestions")) ||
+      Boolean(event.target.closest?.("[data-search-suggestion-more]"));
+
     if (!insideSearchField && !insideSuggestions) {
       hideSearchSuggestions();
     }

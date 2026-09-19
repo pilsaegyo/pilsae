@@ -3172,3 +3172,14 @@ body.admin-mode-open .header-inner{
     top:52px;
   }
 }
+
+
+/* v19.2: avoid fallback title flash while site-config.json is loading */
+.site-config-pending #mainTitle{
+  visibility:hidden;
+}
+
+/* Keep the hero height stable while the saved title is being resolved. */
+.site-config-pending .hero-copy #mainTitle{
+  min-height:1.25em;
+}
