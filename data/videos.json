@@ -4652,11 +4652,19 @@
       "title": "데뷔 15주년 아이돌의 화보 #신혜성 #에릭 #전진 #신화",
       "description": "2013 ShinHwa 15th Making PhotoBook \n\n컨텐츠 기억용\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン\n#에릭 #전진 #문정혁",
       "source": "2013 ShinHwa 15th Making PhotoBook",
-      "sourceDate": null,
+      "sourceDate": "2013-01-01",
       "publishedAt": "2025-08-13T10:30:20Z",
       "thumbnail": "https://i.ytimg.com/vi/Lgz9-k7KuVQ/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2013-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7889,7 +7897,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:10:21.129Z",
+  "generatedAt": "2026-09-19T04:10:57.953Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
