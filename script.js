@@ -952,6 +952,49 @@ function formatAdminDateTime(value) {
 }
 
 
+
+function renderAutoSyncSchedule() {
+  const el = $("#adminAutoSyncNext");
+  if (!el) return;
+
+  // Fixed daily schedule: 20:00 Asia/Seoul (11:00 UTC).
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone:"Asia/Seoul",
+    year:"numeric",
+    month:"2-digit",
+    day:"2-digit",
+    hour:"2-digit",
+    minute:"2-digit",
+    hourCycle:"h23"
+  }).formatToParts(now);
+
+  const values = Object.fromEntries(
+    parts.filter(part => part.type !== "literal").map(part => [part.type, part.value])
+  );
+
+  const y = Number(values.year);
+  const m = Number(values.month);
+  const d = Number(values.day);
+  const hh = Number(values.hour);
+  const mm = Number(values.minute);
+
+  // 20:00 KST == 11:00 UTC. Build an absolute UTC instant for display.
+  const todayRun = new Date(Date.UTC(y, m - 1, d, 11, 0, 0));
+  const nextRun = (hh < 20 || (hh === 20 && mm < 1))
+    ? todayRun
+    : new Date(todayRun.getTime() + 24 * 60 * 60 * 1000);
+
+  el.textContent = `다음 실행 · ${new Intl.DateTimeFormat("ko-KR", {
+    timeZone:"Asia/Seoul",
+    month:"2-digit",
+    day:"2-digit",
+    hour:"2-digit",
+    minute:"2-digit",
+    hourCycle:"h23"
+  }).format(nextRun)}`;
+}
+
 function renderDashboardBuildVersion() {
   const el = $("#dashBuildVersion");
   if (!el) return;
@@ -6071,6 +6114,7 @@ function bindEvents() {
 
 (async function init() {
   syncAdminBuildVersion();
+  renderAutoSyncSchedule();
   restoreDeployMonitor();
   await loadSiteConfig();
   applySiteConfig();

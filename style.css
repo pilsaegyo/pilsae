@@ -6747,3 +6747,65 @@ h1,h2,h3,.brand-main{font-weight:650}
     margin-left:auto;
   }
 }
+
+
+/* v26.4 daily automatic YouTube sync */
+.admin-auto-sync-strip{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:32px;
+  margin:-3px 0 10px;
+  padding:6px 9px;
+  border:1px solid #e8e2eb;
+  border-radius:10px;
+  background:#fbfafc;
+  color:#887d8d;
+  font-size:8px;
+}
+
+.admin-auto-sync-strip>div{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.admin-auto-sync-strip strong{
+  color:#605269;
+  font-size:8.5px;
+}
+
+.admin-auto-sync-strip>span{
+  margin-left:auto;
+  color:#6e6077;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.admin-auto-sync-strip small{
+  color:#a097a4;
+  font-size:7.5px;
+  white-space:nowrap;
+}
+
+.admin-auto-sync-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#669272;
+  box-shadow:0 0 0 3px rgba(102,146,114,.10);
+}
+
+@media(max-width:620px){
+  .admin-auto-sync-strip{
+    flex-wrap:wrap;
+  }
+
+  .admin-auto-sync-strip>span{
+    margin-left:0;
+  }
+
+  .admin-auto-sync-strip small{
+    flex-basis:100%;
+  }
+}

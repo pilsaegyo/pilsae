@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=26.3-system-status" />
+  <link rel="stylesheet" href="./style.css?v=26.4-auto-sync" />
 </head>
-<body class="admin-page admin-locked" data-build="26.3-system-status">
+<body class="admin-page admin-locked" data-build="26.4-auto-sync">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -185,6 +185,16 @@
               <p class="admin-help">YouTube의 최신 정보와 현재 데이터를 비교한 뒤 필요한 변경만 적용합니다.</p>
             </div>
             <span class="admin-section-note">수동 날짜 · 콘텐츠 분류 유지</span>
+          </div>
+
+          <div class="admin-auto-sync-strip" aria-label="자동 영상 동기화 일정">
+            <div>
+              <span class="admin-auto-sync-dot" aria-hidden="true"></span>
+              <strong>자동 동기화 ON</strong>
+              <span>매일 20:00</span>
+            </div>
+            <span id="adminAutoSyncNext">다음 실행 계산 중</span>
+            <small>변경이 있을 때만 자동 적용</small>
           </div>
 
           <div class="sync-summary admin-sync-summary">
@@ -532,6 +542,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=26.3-system-status" defer></script>
+  <script src="./script.js?v=26.4-auto-sync" defer></script>
 </body>
 </html>

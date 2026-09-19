@@ -1,7 +1,7 @@
 // v26.0-step3c: Cloudflare Git auto-deploy verification marker.
 const GITHUB_API_VERSION = "2026-03-10";
 
-export default {
+const worker = {
   async fetch(request, env) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin") || "";
@@ -1386,7 +1386,95 @@ export default {
       return jsonResponse({ ok: false, error: message }, status, env, origin);
     }
   },
+
+  async scheduled(controller, env, ctx) {
+    ctx.waitUntil(runScheduledYoutubeSync(env, controller));
+  },
 };
+
+export default worker;
+
+
+async function runScheduledYoutubeSync(env, controller) {
+  const scheduledAt = new Date(controller?.scheduledTime || Date.now()).toISOString();
+  const cron = String(controller?.cron || "0 11 * * *");
+
+  if (!env.ADMIN_TOKEN) {
+    console.error("[auto-sync] ADMIN_TOKEN is missing", { scheduledAt, cron });
+    return;
+  }
+
+  const selfUrl = String(
+    env.ADMIN_API_SELF_URL || "https://pilsae-admin-api.hyesung.workers.dev"
+  ).replace(/\/$/, "");
+
+  const headers = {
+    "Content-Type":"application/json",
+    "Authorization":`Bearer ${env.ADMIN_TOKEN}`
+  };
+
+  try {
+    // First run the existing preview logic. This guarantees that a day with
+    // no YouTube changes produces no GitHub commit and no needless deploy.
+    const previewRequest = new Request(`${selfUrl}/sync-videos`, {
+      method:"POST",
+      headers,
+      body:JSON.stringify({ previewOnly:true })
+    });
+    const previewResponse = await worker.fetch(previewRequest, env);
+    const preview = await previewResponse.json().catch(() => ({}));
+
+    if (!previewResponse.ok || !preview?.ok) {
+      throw new Error(preview?.error || `preview failed (${previewResponse.status})`);
+    }
+
+    const changed =
+      Number(preview.added || 0) +
+      Number(preview.titleChanged || 0) +
+      Number(preview.descriptionChanged || 0) +
+      Number(preview.removed || 0);
+
+    if (changed <= 0) {
+      console.log("[auto-sync] no changes", {
+        scheduledAt,
+        cron,
+        total:Number(preview.total || 0)
+      });
+      return;
+    }
+
+    // Re-run the same route in apply mode. The route performs a fresh YouTube
+    // read, creates the normal restore point, preserves manual metadata, and
+    // writes the same admin history entry as a manual sync.
+    const applyRequest = new Request(`${selfUrl}/sync-videos`, {
+      method:"POST",
+      headers,
+      body:JSON.stringify({ previewOnly:false })
+    });
+    const applyResponse = await worker.fetch(applyRequest, env);
+    const applied = await applyResponse.json().catch(() => ({}));
+
+    if (!applyResponse.ok || !applied?.ok) {
+      throw new Error(applied?.error || `apply failed (${applyResponse.status})`);
+    }
+
+    console.log("[auto-sync] applied", {
+      scheduledAt,
+      cron,
+      total:Number(applied.total || 0),
+      added:Number(applied.added || 0),
+      titleChanged:Number(applied.titleChanged || 0),
+      descriptionChanged:Number(applied.descriptionChanged || 0),
+      removed:Number(applied.removed || 0)
+    });
+  } catch (error) {
+    console.error("[auto-sync] failed", {
+      scheduledAt,
+      cron,
+      error:String(error?.message || error || "unknown error")
+    });
+  }
+}
 
 class HttpError extends Error {
   constructor(status, message) {
