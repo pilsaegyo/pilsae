@@ -2429,3 +2429,17 @@ mark{
     min-height:44px;
   }
 }
+
+
+/* v14.5 다년도 플레이리스트 표시 보정 */
+.multiyear-date-chip{
+  background:#f1e8fa;
+  border-color:#dccbed;
+  color:#654a80;
+  font-weight:850;
+}
+.playlist-undated-chip{
+  background:#f4f1f7;
+  border-color:#e2dbe8;
+  color:#75697d;
+}

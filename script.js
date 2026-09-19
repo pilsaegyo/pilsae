@@ -768,7 +768,8 @@ function rebuildYearFilter() {
   if ([...select.options].some(o => o.value === current)) select.value = current;
 }
 
-function typeLabel(type) {
+function typeLabel(type, v=null) {
+  if (v && isMultiYearPlaylist(v)) return "다년도";
   return type === "mixed" ? "혼합 영상"
        : type === "unknown" ? "날짜 확인 필요"
        : "단일 날짜";
@@ -810,6 +811,12 @@ function renderDates(v) {
     .sort((a,b) => b.sourceDate.localeCompare(a.sourceDate));
 
   if (!valid.length) {
+    if (isMultiYearPlaylist(v)) {
+      return `<span class="date-chip multiyear-date-chip">여러 연도 수록</span>`;
+    }
+    if (v.contentType === "playlist" && v.playlistScope === "undated") {
+      return `<span class="date-chip playlist-undated-chip">연도 미지정</span>`;
+    }
     return `<span class="date-chip unknown-date-chip">날짜 미확인</span>`;
   }
 
@@ -938,7 +945,7 @@ function renderCard(v) {
         <div class="dates">${renderDates(v)}</div>
         ${searchContextSnippet(v, q)}
         ${v.source ? `<p class="source">출처 · ${highlightMatch(v.source, q)}</p>` : ""}
-        ${v.type === "unknown"
+        ${v.type === "unknown" && !isMultiYearPlaylist(v)
           ? `<p class="note">${escapeHTML(unknownReason(v))}</p>`
           : ""}
 
@@ -969,12 +976,16 @@ function filteredVideos() {
       v.source,
       v.parseStatus,
       contentTypeLabel(v.contentType),
+      isMultiYearPlaylist(v) ? "다년도 플레이리스트 혼합 연도" : "",
       ...searchableDates
     ].join(" ").toLowerCase();
 
     const qok = !q || haystack.includes(q);
     const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
-    const tok = !type || v.type === type;
+    const effectiveDateType = isMultiYearPlaylist(v)
+      ? "mixed"
+      : v.type;
+    const tok = !type || effectiveDateType === type;
     const cok = !contentType || v.contentType === contentType;
 
     return qok && yok && tok && cok;
