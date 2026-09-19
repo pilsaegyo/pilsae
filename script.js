@@ -37,6 +37,24 @@ function youtubeUrlFromId(id="") {
   return id ? `https://www.youtube.com/watch?v=${encodeURIComponent(id)}` : "";
 }
 
+function youtubeShortsUrlFromId(id="") {
+  return id ? `https://www.youtube.com/shorts/${encodeURIComponent(id)}` : "";
+}
+
+function youtubeUrlForVideo(videoOrId, format="") {
+  const id = typeof videoOrId === "object"
+    ? String(videoOrId?.id || "")
+    : String(videoOrId || "");
+
+  const resolvedFormat = typeof videoOrId === "object"
+    ? String(videoOrId?.videoFormat || "")
+    : String(format || "");
+
+  return resolvedFormat === "shorts"
+    ? youtubeShortsUrlFromId(id)
+    : youtubeUrlFromId(id);
+}
+
 function isAndroidMobile() {
   return /Android/i.test(navigator.userAgent || "");
 }
@@ -48,32 +66,31 @@ function isIOSMobile() {
 function openYoutubeVideo(event, videoId) {
   if (!videoId) return;
 
-  const webUrl = youtubeUrlFromId(videoId);
+  const video = videos.find(v => String(v.id) === String(videoId));
+  const isShorts = video?.videoFormat === "shorts";
+  const webUrl = youtubeUrlForVideo(video || videoId, isShorts ? "shorts" : "standard");
 
-  // Desktop keeps the normal new-tab YouTube behavior.
+  // Desktop anchors already carry the correct /shorts/ or /watch?v= URL.
   if (!isAndroidMobile() && !isIOSMobile()) return;
 
   event.preventDefault();
 
   if (isAndroidMobile()) {
     const fallback = encodeURIComponent(webUrl);
+    const intentPath = isShorts
+      ? `www.youtube.com/shorts/${encodeURIComponent(videoId)}`
+      : `www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+
     window.location.href =
-      `intent://www.youtube.com/watch?v=${encodeURIComponent(videoId)}` +
+      `intent://${intentPath}` +
       `#Intent;scheme=https;package=com.google.android.youtube;` +
       `S.browser_fallback_url=${fallback};end`;
     return;
   }
 
-  // iOS: try the YouTube app first, then fall back to the normal URL
-  // if the app is not available.
-  const appUrl = `youtube://watch?v=${encodeURIComponent(videoId)}`;
-  window.location.href = appUrl;
-
-  window.setTimeout(() => {
-    if (!document.hidden) {
-      window.location.href = webUrl;
-    }
-  }, 900);
+  // On iOS, use the universal HTTPS link so Shorts keeps the /shorts/ route.
+  // This lets the YouTube app/browser decide the correct player type.
+  window.location.href = webUrl;
 }
 
 
@@ -668,6 +685,8 @@ function normalizeVideo(v, idx=0) {
     ? [...validDates].sort().reverse()[0]
     : "";
 
+  const normalizedVideoFormat = normalizeVideoFormat(v);
+
   return {
     id: String(v.id || `video-${idx}`),
     title: String(v.title || "제목 없음"),
@@ -690,7 +709,7 @@ function normalizeVideo(v, idx=0) {
       : "",
     durationSeconds: Number(v.durationSeconds || 0),
     duration: String(v.duration || ""),
-    videoFormat: normalizeVideoFormat(v),
+    videoFormat: normalizedVideoFormat,
     videoFormatSource: ["manual", "confirmed", "youtube"].includes(v.videoFormatSource) ? v.videoFormatSource : "auto",
     videoFormatConfidence: ["high", "medium", "low"].includes(v.videoFormatConfidence)
       ? v.videoFormatConfidence
@@ -703,7 +722,7 @@ function normalizeVideo(v, idx=0) {
     ),
     type,
     sortDate,
-    url: String(v.url || v.youtubeUrl || "").trim() || youtubeUrlFromId(v.id)
+    url: youtubeUrlForVideo(v.id, normalizedVideoFormat)
   };
 }
 

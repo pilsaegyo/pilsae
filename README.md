@@ -808,3 +808,15 @@
 - PC는 기존 `날짜 N개 더보기 / 날짜 접기` 텍스트 버튼 유지.
 - v25.9의 미리보기 성공 캐시/재검사 제외 및 확정 버튼 정리 기능을 그대로 포함.
 - Worker 변경 없음.
+
+
+## v25.12 SITE GUIDE + YouTube 재생 경로
+- SITE GUIDE를 최신 기능 기준으로 4개 항목으로 축약.
+- 검색/필터, 날짜, 보기 방식, 썸네일 표시만 남기고 중복 설명 제거.
+- 여러 날짜 `+N`과 `날짜 미확인` 설명을 한 줄로 요약.
+- `videoFormat=shorts` 영상은 YouTube 링크를 `https://www.youtube.com/shorts/VIDEO_ID`로 생성.
+- 일반 동영상은 기존 `https://www.youtube.com/watch?v=VIDEO_ID` 유지.
+- PC에서도 Shorts 클릭 시 Shorts URL로 열림.
+- Android 앱 intent도 Shorts는 `/shorts/VIDEO_ID`, 일반 영상은 `/watch?v=VIDEO_ID`로 분리.
+- iOS는 universal HTTPS 링크를 사용해 Shorts 경로를 유지.
+- Worker 변경 없음.
