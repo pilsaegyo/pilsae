@@ -2215,11 +2215,19 @@
       "title": "신화 멤버들 중에 누가 가장 여자를 밝혀요? #신혜성 #신화",
       "description": "98` MNET 핫라인2727\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "98` MNET 핫라인2727",
-      "sourceDate": null,
+      "sourceDate": "1998-01-01",
       "publishedAt": "2026-03-21T10:30:05Z",
       "thumbnail": "https://i.ytimg.com/vi/6sFwgegQ6ZY/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1998-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7817,7 +7825,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:08:07.295Z",
+  "generatedAt": "2026-09-19T04:08:20.142Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
