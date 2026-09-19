@@ -5131,11 +5131,19 @@
       "title": "방송 꼭 내보내주세요 입모양 그대로 #신혜성 #신화",
       "description": "신화방송 17 \n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "신화방송 17",
-      "sourceDate": null,
+      "sourceDate": "2012-07-07",
       "publishedAt": "2025-07-28T11:00:56Z",
       "thumbnail": "https://i.ytimg.com/vi/XQLO3c04HFA/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2012-07-07",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8291,7 +8299,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:20:34.449Z",
+  "generatedAt": "2026-09-19T05:20:44.579Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
