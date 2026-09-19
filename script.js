@@ -1023,42 +1023,80 @@ function allYears() {
   return [...years].sort((a,b) => Number(b) - Number(a));
 }
 
-function yearVideoCounts() {
+function matchesFiltersExceptYear(v) {
+  const q = ($("#searchInput")?.value || "").trim().toLowerCase();
+  const type = $("#typeFilter")?.value || "";
+  const contentType = $("#contentTypeFilter")?.value || "";
+  const videoFormat = $("#videoFormatFilter")?.value || "";
+
+  const searchableDates = (v.dates || []).flatMap(d => [
+    d.sourceDate,
+    d.source,
+    displayDate(d)
+  ]);
+
+  const haystack = [
+    v.title,
+    v.description,
+    v.source,
+    v.parseStatus,
+    contentTypeLabel(v.contentType),
+    videoFormatLabel(v.videoFormat),
+    isMultiYearPlaylist(v) ? "다년도 플레이리스트 혼합 연도" : "",
+    ...searchableDates
+  ].join(" ").toLowerCase();
+
+  const qok = !q || haystack.includes(q);
+  const tok = !type || effectiveDateType(v) === type;
+  const cok = !contentType || v.contentType === contentType;
+  const fok = !videoFormat || v.videoFormat === videoFormat;
+
+  return qok && tok && cok && fok;
+}
+
+function contextualYearRows() {
+  return videos.filter(matchesFiltersExceptYear);
+}
+
+function yearVideoCounts(rows=contextualYearRows()) {
   const counts = new Map();
-  videos.forEach(v => {
+
+  rows.forEach(v => {
     const years = new Set(
       (v.dates || [])
         .map(d => String(d.sourceDate || "").slice(0,4))
         .filter(y => /^(19|20)\d{2}$/.test(y))
     );
+
     years.forEach(y => counts.set(y, (counts.get(y) || 0) + 1));
   });
+
   return counts;
 }
 
 
 function rebuildYearFilter() {
   const select = $("#yearFilter");
+  if (!select) return;
+
   const current = select.value;
+  const rows = contextualYearRows();
+  const counts = yearVideoCounts(rows);
 
-  const counts = new Map();
-  videos.forEach(v => {
-    const years = new Set(
-      v.dates
-        .map(d => String(d.sourceDate || "").slice(0,4))
-        .filter(y => /^(19|20)\d{2}$/.test(y))
-    );
-    years.forEach(y => counts.set(y, (counts.get(y) || 0) + 1));
-  });
+  // Keep every archive year available, but make each count reflect the
+  // currently active non-year filters (e.g. Shorts, content/date type, search).
+  const years = allYears();
 
-  select.innerHTML = `<option value="">전체 연도</option>` +
-    [...counts.keys()]
-      .sort((a,b) => Number(b) - Number(a))
-      .map(y => `<option value="${y}">${y} (${counts.get(y)})</option>`)
+  select.innerHTML = `<option value="">전체 연도 (${rows.length})</option>` +
+    years
+      .map(y => `<option value="${y}">${y} (${counts.get(y) || 0})</option>`)
       .join("");
 
-  if ([...select.options].some(o => o.value === current)) select.value = current;
+  if ([...select.options].some(o => o.value === current)) {
+    select.value = current;
+  }
 }
+
 
 function typeLabel(type, v=null) {
   if (v && isMultiYearPlaylist(v)) return "다년도";
@@ -1807,6 +1845,7 @@ function timelineItemHtml(v, bucket) {
           ${precisionBadge}
         </div>
         <a class="timeline-title youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a>
+        ${v.source ? `<div class="timeline-source">출처 · ${escapeHTML(v.source)}</div>` : ""}
         ${yearSummaryHtml}
       </div>
     </article>`;
@@ -1993,17 +2032,24 @@ function renderYearJumpBar() {
     return;
   }
 
-  const years = allYears();
-  const counts = yearVideoCounts();
+  const contextualRows = contextualYearRows();
+  const counts = yearVideoCounts(contextualRows);
   const current = $("#yearFilter")?.value || "";
+
+  // Only show years that actually contain results under the other active
+  // filters. If the currently selected year reaches 0, keep it visible so
+  // the user can understand why the result is empty and remove it.
+  const years = allYears().filter(y => (counts.get(y) || 0) > 0 || y === current);
+
   bar.innerHTML = `
     <button type="button" class="year-jump-chip ${current ? "" : "active"}" data-year-jump="">
-      <span>전체</span><small>${videos.length}</small>
+      <span>전체</span><small>${contextualRows.length}</small>
     </button>
     ${years.map(y => `<button type="button" class="year-jump-chip ${current === y ? "active" : ""}" data-year-jump="${escapeHTML(y)}"><span>${escapeHTML(y)}</span><small>${counts.get(y) || 0}</small></button>`).join("")}
   `;
   bar.hidden = false;
 }
+
 
 function scrollTimelineYearIntoView(year) {
   if (!year) {
@@ -2057,6 +2103,11 @@ function render() {
   if ($("#heroTotal")) $("#heroTotal").textContent = `${videos.length}`;
   if ($("#heroKnown")) $("#heroKnown").textContent = `${allKnown}`;
   if ($("#heroUnknown")) $("#heroUnknown").textContent = `${allUnknown}`;
+
+  // Year counts are contextual: they reflect every active filter except
+  // the year itself, so the number on a year chip matches the result count
+  // you will get after selecting that year.
+  rebuildYearFilter();
 
   const activeFilterCount = currentActiveFilters().length;
   const filterCountEl = $("#activeFilterCount");
