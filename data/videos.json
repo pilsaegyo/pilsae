@@ -2699,11 +2699,19 @@
       "title": "어? 야~ 신혜성이 모창 실력이 저 정도였나? #신혜성 #신화",
       "description": "2012-2013 Shin Hye Sung Concert The Year's Journey \n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "2012-2013 Shin Hye Sung Concert The Year's Journey",
-      "sourceDate": null,
+      "sourceDate": "2012-12-31",
       "publishedAt": "2026-01-26T10:30:22Z",
       "thumbnail": "https://i.ytimg.com/vi/_fyrQK-ib5c/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2012-12-31",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8191,7 +8199,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:21:07.262Z",
+  "generatedAt": "2026-09-19T04:35:00.042Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
