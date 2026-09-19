@@ -5191,7 +5191,7 @@
       "durationSeconds": 6970,
       "parseStatus": "needs_review",
       "contentType": "playlist",
-      "playlistScope": "multi-year",
+      "playlistScope": "undated",
       "dates": [],
       "ignoredDateCandidates": [],
       "previousManualDates": [],
@@ -12814,7 +12814,7 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T12:37:23.289Z",
+  "generatedAt": "2026-09-19T12:41:21.761Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
