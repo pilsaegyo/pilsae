@@ -7131,11 +7131,19 @@
       "title": "이거 보면 고장극 드라마 한편 정주행 때려야 함 느낌 알죠 #신혜성 #신화",
       "description": "CR.https://youtu.be/5OkiIL3c8xU?si=Ga_TjKrcmKN9J4JP\n출처 : 셩공시대님 유투브 (제목: [공식] 2000 - 신화 - Only One MV 촬영현장 스케치)\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン",
       "source": "CR.https://youtu.be/5OkiIL3c8xU?si=Ga_TjKrcmKN9J4JP",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-05-15T11:45:40Z",
       "thumbnail": "https://i.ytimg.com/vi/7b8dgcpaQJI/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8064,7 +8072,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:14:33.731Z",
+  "generatedAt": "2026-09-19T04:14:40.920Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
