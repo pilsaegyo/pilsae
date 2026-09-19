@@ -2436,34 +2436,236 @@ function renderAdminUnknownList() {
 
   renderAdminContentList();
 }
-async function autoVerifyPendingVideoFormats() {
+let adminVideoFormatPreviewResults = [];
+const adminVideoFormatSampleLimits = {
+  shorts: 12,
+  standard: 12,
+  unresolved: 12
+};
+
+function videoFormatPreviewSortKey(item) {
+  const v = videos.find(x => x.id === item.videoId);
+  return {
+    duration: Number(v?.durationSeconds || 0),
+    publishedAt: String(v?.publishedAt || ""),
+    title: String(v?.title || "")
+  };
+}
+
+function stratifiedVideoFormatSample(items, limit) {
+  if (items.length <= limit) return [...items];
+
+  const enriched = items.map(item => {
+    const meta = videoFormatPreviewSortKey(item);
+    const durationBucket =
+      meta.duration <= 60 ? "0-60"
+      : meta.duration <= 120 ? "61-120"
+      : meta.duration <= 180 ? "121-180"
+      : "181+";
+
+    const year = meta.publishedAt.slice(0,4) || "unknown";
+    return { item, meta, group: `${durationBucket}|${year}` };
+  });
+
+  const groups = new Map();
+  for (const row of enriched) {
+    if (!groups.has(row.group)) groups.set(row.group, []);
+    groups.get(row.group).push(row);
+  }
+
+  for (const rows of groups.values()) {
+    rows.sort((a,b) =>
+      b.meta.publishedAt.localeCompare(a.meta.publishedAt) ||
+      a.meta.duration - b.meta.duration ||
+      a.meta.title.localeCompare(b.meta.title)
+    );
+  }
+
+  const orderedGroups = [...groups.values()]
+    .sort((a,b) => b.length - a.length);
+
+  const picked = [];
+  let round = 0;
+
+  while (picked.length < limit) {
+    let added = false;
+
+    for (const rows of orderedGroups) {
+      if (rows[round]) {
+        picked.push(rows[round].item);
+        added = true;
+        if (picked.length >= limit) break;
+      }
+    }
+
+    if (!added) break;
+    round += 1;
+  }
+
+  return picked;
+}
+
+function videoFormatPreviewSampleHtml(items, label, emptyText, key) {
+  const limit = adminVideoFormatSampleLimits[key] || 12;
+  const rows = stratifiedVideoFormatSample(items, limit);
+  const remaining = Math.max(0, items.length - rows.length);
+
+  if (!rows.length) {
+    return `
+      <section class="format-preview-group">
+        <div class="format-preview-heading">
+          <strong>${escapeHTML(label)}</strong>
+          <span>0개</span>
+        </div>
+        <p class="admin-help">${escapeHTML(emptyText)}</p>
+      </section>
+    `;
+  }
+
+  return `
+    <section class="format-preview-group">
+      <div class="format-preview-heading">
+        <strong>${escapeHTML(label)}</strong>
+        <span>${items.length}개 · 샘플 ${rows.length}개</span>
+      </div>
+
+      <div class="format-preview-list">
+        ${rows.map(item => {
+          const v = videos.find(x => x.id === item.videoId);
+          return `
+            <div class="format-preview-item">
+              <div class="format-preview-thumb">
+                ${v?.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
+              </div>
+              <div class="format-preview-copy">
+                <strong>${escapeHTML(v?.title || item.videoId)}</strong>
+                <small>
+                  ${escapeHTML(videoFormatLabel(item.videoFormat))}
+                  ${v?.durationSeconds ? ` · ${escapeHTML(formatDuration(v.durationSeconds))}` : ""}
+                  ${v?.publishedAt ? ` · ${escapeHTML(String(v.publishedAt).slice(0,10))}` : ""}
+                </small>
+                <small>${escapeHTML(item.reason || "")}</small>
+              </div>
+              ${v?.url ? `
+                <a class="format-preview-open youtube-video-link"
+                  data-video-id="${escapeHTML(v.id)}"
+                  href="${escapeHTML(v.url)}"
+                  target="_blank"
+                  rel="noopener noreferrer">영상 보기</a>
+              ` : ""}
+            </div>
+          `;
+        }).join("")}
+      </div>
+
+      ${remaining ? `
+        <button type="button"
+          class="format-preview-more"
+          data-format-preview-more="${escapeHTML(key)}">
+          샘플 더보기 (+${Math.min(12, remaining)}개)
+        </button>
+      ` : ""}
+    </section>
+  `;
+}
+
+function renderVideoFormatPreview(results=[]) {
+  const wrap = $("#adminVideoFormatPreview");
+  if (!wrap) return;
+
+  adminVideoFormatPreviewResults = Array.isArray(results) ? results : [];
+
+  const shorts = adminVideoFormatPreviewResults.filter(x => x.videoFormat === "shorts");
+  const standard = adminVideoFormatPreviewResults.filter(x => x.videoFormat === "standard");
+  const unresolved = adminVideoFormatPreviewResults.filter(
+    x => !["standard","shorts"].includes(x.videoFormat)
+  );
+
+  const applyable = shorts.length + standard.length;
+  const reviewedSampleCount =
+    Math.min(adminVideoFormatSampleLimits.shorts, shorts.length) +
+    Math.min(adminVideoFormatSampleLimits.standard, standard.length) +
+    Math.min(adminVideoFormatSampleLimits.unresolved, unresolved.length);
+
+  wrap.innerHTML = `
+    <div class="format-preview-summary">
+      <div>
+        <span>검사 결과</span>
+        <strong>${adminVideoFormatPreviewResults.length}개</strong>
+      </div>
+      <div>
+        <span>Shorts</span>
+        <strong>${shorts.length}개</strong>
+      </div>
+      <div>
+        <span>일반동영상</span>
+        <strong>${standard.length}개</strong>
+      </div>
+      <div>
+        <span>판별불가</span>
+        <strong>${unresolved.length}개</strong>
+      </div>
+    </div>
+
+    <div class="format-preview-note">
+      재생시간과 업로드 연도가 섞이도록 샘플을 분산해서 보여줍니다.
+      현재 화면에서 최대 ${reviewedSampleCount}개 샘플을 확인 중입니다.
+      필요하면 각 분류의 ‘샘플 더보기’를 눌러 12개씩 추가로 확인하세요.
+    </div>
+
+    ${videoFormatPreviewSampleHtml(shorts, "Shorts 샘플", "Shorts로 판별된 영상이 없습니다.", "shorts")}
+    ${videoFormatPreviewSampleHtml(standard, "일반동영상 샘플", "일반동영상으로 판별된 영상이 없습니다.", "standard")}
+    ${videoFormatPreviewSampleHtml(unresolved, "판별불가 샘플", "판별불가 영상이 없습니다.", "unresolved")}
+
+    <div class="format-preview-actions">
+      <div class="format-preview-reviewed-count">
+        샘플 확인 가능 수 · ${reviewedSampleCount}개
+      </div>
+      <button type="button"
+        id="adminApplyVideoFormatPreview"
+        class="ghost-button format-preview-apply"
+        ${applyable ? "" : "disabled"}>
+        확인 결과 ${applyable}개 일괄 적용
+      </button>
+      <button type="button"
+        id="adminClearVideoFormatPreview"
+        class="ghost-button">
+        미리보기 닫기
+      </button>
+    </div>
+  `;
+
+  wrap.hidden = false;
+}
+
+async function previewPendingVideoFormats() {
   const button = $("#adminVerifyVideoFormats");
   const status = $("#adminVideoFormatVerifyStatus");
   if (!button || !status) return;
 
   const targets = videos.filter(v => videoFormatAssessment(v).needsReview);
+
   if (!targets.length) {
     setAdminStatus(status, "현재 자동 확인이 필요한 영상이 없습니다.", "success");
+    $("#adminVideoFormatPreview")?.setAttribute("hidden", "");
     return;
   }
 
-  const ok = window.confirm(
-    `확인 필요 영상 ${targets.length}개를 YouTube에서 자동 확인할까요?\n\n` +
-    `사람이 하나씩 확정하지 않아도 됩니다. 자동 확인이 불가능한 영상만 목록에 남습니다.`
-  );
-  if (!ok) return;
-
   button.disabled = true;
+  adminVideoFormatPreviewResults = [];
+  adminVideoFormatSampleLimits.shorts = 12;
+  adminVideoFormatSampleLimits.standard = 12;
+  adminVideoFormatSampleLimits.unresolved = 12;
   const batchSize = 15;
-  const verified = [];
-  const unresolved = [];
+  const results = [];
 
   try {
     for (let i = 0; i < targets.length; i += batchSize) {
       const batch = targets.slice(i, i + batchSize);
+
       setAdminStatus(
         status,
-        `YouTube 확인 중… ${Math.min(i + batch.length, targets.length)}/${targets.length}`,
+        `미리보기 검사 중… ${Math.min(i + batch.length, targets.length)}/${targets.length}`,
         "loading"
       );
 
@@ -2472,54 +2674,107 @@ async function autoVerifyPendingVideoFormats() {
         body: JSON.stringify({ videoIds: batch.map(v => v.id) })
       });
 
-      for (const item of (data.results || [])) {
-        if (["standard", "shorts"].includes(item.videoFormat)) verified.push(item);
-        else unresolved.push(item);
-      }
+      results.push(...(data.results || []));
     }
 
-    if (verified.length) {
-      setAdminStatus(status, `자동 확인 ${verified.length}개 완료 · 결과 저장 중…`, "loading");
+    renderVideoFormatPreview(results);
 
-      const applied = await adminApi("/apply-video-format-probes", {
-        method: "POST",
-        body: JSON.stringify({ results: verified })
-      });
+    const shorts = results.filter(x => x.videoFormat === "shorts").length;
+    const standard = results.filter(x => x.videoFormat === "standard").length;
+    const unresolved = results.length - shorts - standard;
 
-      const appliedMap = new Map(
-        (applied.results || []).map(item => [String(item.videoId), item])
-      );
-
-      videos.forEach(v => {
-        const item = appliedMap.get(String(v.id));
-        if (!item) return;
-
-        v.videoFormat = item.videoFormat === "shorts" ? "shorts" : "standard";
-        v.videoFormatSource = "youtube";
-        v.videoFormatConfidence = "";
-        v.videoFormatReason = item.reason ||
-          "YouTube 공개 페이지에서 Shorts 분류를 확인했습니다.";
-      });
-
-      adminHistoryLoaded = false;
-      adminBackupsLoaded = false;
-    }
-
-    render();
-    renderAdminContentList();
-
-    const remaining = videos.filter(v => videoFormatAssessment(v).needsReview).length;
     setAdminStatus(
       status,
-      `자동 확인 ${verified.length}개 · 자동 확인 불가 ${unresolved.length}개 · 남은 확인 필요 ${remaining}개`,
+      `미리보기 완료 · Shorts ${shorts}개 · 일반동영상 ${standard}개 · 판별불가 ${unresolved}개`,
       "success"
     );
   } catch (err) {
-    setAdminStatus(status, `자동 확인 중 오류: ${err.message}`, "error");
+    setAdminStatus(status, `미리보기 검사 중 오류: ${err.message}`, "error");
   } finally {
     button.disabled = false;
   }
 }
+
+async function applyVideoFormatPreview() {
+  const status = $("#adminVideoFormatVerifyStatus");
+  const button = $("#adminApplyVideoFormatPreview");
+  const applyable = adminVideoFormatPreviewResults.filter(
+    x => ["standard","shorts"].includes(x.videoFormat)
+  );
+
+  if (!applyable.length) {
+    setAdminStatus(status, "적용할 자동 확인 결과가 없습니다.", "error");
+    return;
+  }
+
+  const shorts = applyable.filter(x => x.videoFormat === "shorts").length;
+  const standard = applyable.length - shorts;
+
+  const ok = window.confirm(
+    `미리보기 결과 ${applyable.length}개를 실제 데이터에 적용할까요?\n\n` +
+    `Shorts ${shorts}개 · 일반동영상 ${standard}개\n\n` +
+    `적용 직전에 자동 백업을 생성합니다.`
+  );
+  if (!ok) return;
+
+  if (button) button.disabled = true;
+  setAdminStatus(status, `확인 결과 ${applyable.length}개 저장 중…`, "loading");
+
+  try {
+    const applied = await adminApi("/apply-video-format-probes", {
+      method: "POST",
+      body: JSON.stringify({ results: applyable })
+    });
+
+    const appliedMap = new Map(
+      (applied.results || []).map(item => [String(item.videoId), item])
+    );
+
+    videos.forEach(v => {
+      const item = appliedMap.get(String(v.id));
+      if (!item) return;
+
+      v.videoFormat = item.videoFormat === "shorts" ? "shorts" : "standard";
+      v.videoFormatSource = "youtube";
+      v.videoFormatConfidence = "";
+      v.videoFormatReason = item.reason ||
+        "YouTube 공개 페이지에서 Shorts 분류를 확인했습니다.";
+    });
+
+    adminHistoryLoaded = false;
+    adminBackupsLoaded = false;
+
+    const unresolved = adminVideoFormatPreviewResults.filter(
+      x => !["standard","shorts"].includes(x.videoFormat)
+    );
+
+    render();
+    renderAdminContentList();
+
+    if (unresolved.length) {
+      renderVideoFormatPreview(unresolved);
+    } else {
+      const preview = $("#adminVideoFormatPreview");
+      if (preview) {
+        preview.hidden = true;
+        preview.innerHTML = "";
+      }
+      adminVideoFormatPreviewResults = [];
+    }
+
+    const remaining = videos.filter(v => videoFormatAssessment(v).needsReview).length;
+    setAdminStatus(
+      status,
+      `일괄 적용 완료 · ${applied.results?.length || 0}개 반영 · 남은 확인 필요 ${remaining}개`,
+      "success"
+    );
+  } catch (err) {
+    setAdminStatus(status, `일괄 적용 중 오류: ${err.message}`, "error");
+  } finally {
+    if (button) button.disabled = false;
+  }
+}
+
 
 function renderAdminContentList() {
   const wrap = $("#adminContentList");
@@ -3330,6 +3585,34 @@ function bindEvents() {
       return;
     }
 
+    const formatPreviewMoreBtn = event.target.closest("button[data-format-preview-more]");
+    if (formatPreviewMoreBtn) {
+      const key = formatPreviewMoreBtn.dataset.formatPreviewMore || "";
+      if (Object.prototype.hasOwnProperty.call(adminVideoFormatSampleLimits, key)) {
+        adminVideoFormatSampleLimits[key] += 12;
+        renderVideoFormatPreview(adminVideoFormatPreviewResults);
+      }
+      return;
+    }
+
+    const applyVideoFormatPreviewBtn = event.target.closest("#adminApplyVideoFormatPreview");
+    if (applyVideoFormatPreviewBtn) {
+      await applyVideoFormatPreview();
+      return;
+    }
+
+    const clearVideoFormatPreviewBtn = event.target.closest("#adminClearVideoFormatPreview");
+    if (clearVideoFormatPreviewBtn) {
+      adminVideoFormatPreviewResults = [];
+      const preview = $("#adminVideoFormatPreview");
+      if (preview) {
+        preview.hidden = true;
+        preview.innerHTML = "";
+      }
+      setAdminStatus($("#adminVideoFormatVerifyStatus"), "미리보기를 닫았습니다.", "");
+      return;
+    }
+
     const videoFormatConfirmBtn = event.target.closest("button[data-video-format-confirm]");
     if (videoFormatConfirmBtn) {
       const videoId = videoFormatConfirmBtn.dataset.videoFormatConfirm || "";
@@ -3704,7 +3987,7 @@ function bindEvents() {
   });
 
 
-  $("#adminVerifyVideoFormats")?.addEventListener("click", autoVerifyPendingVideoFormats);
+  $("#adminVerifyVideoFormats")?.addEventListener("click", previewPendingVideoFormats);
 
   const adminContentSearch = $("#adminContentSearch");
   if (adminContentSearch) {
