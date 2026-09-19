@@ -931,8 +931,8 @@ function searchContextSnippet(v, query) {
   if (!q) return "";
 
   const candidates = [
-    { label: "설명", text: v.description || "" },
-    { label: "출처", text: v.source || "" }
+    { label: "설명", text: v.description || "", radius: 110, className: "description-search-match" },
+    { label: "출처", text: v.source || "", radius: 52, className: "" }
   ];
 
   const qLower = q.toLowerCase();
@@ -941,13 +941,14 @@ function searchContextSnippet(v, query) {
     const idx = normalized.toLowerCase().indexOf(qLower);
     if (idx === -1) continue;
 
-    const radius = 52;
+    const radius = candidate.radius || 52;
     const start = Math.max(0, idx - radius);
     const end = Math.min(normalized.length, idx + q.length + radius);
     const prefix = start > 0 ? "…" : "";
     const suffix = end < normalized.length ? "…" : "";
     const snippet = normalized.slice(start, end);
-    return `<p class="search-match"><span>${candidate.label}</span>${prefix}${highlightMatch(snippet, q)}${suffix}</p>`;
+    const extraClass = candidate.className ? ` ${candidate.className}` : "";
+    return `<p class="search-match${extraClass}"><span>${candidate.label}</span>${prefix}${highlightMatch(snippet, q)}${suffix}</p>`;
   }
 
   const dateText = (v.dates || []).map(displayDate).join(" · ");
@@ -2327,7 +2328,14 @@ function bindEvents() {
   });
 
   document.addEventListener("click", (event) => {
-    if (!event.target.closest(".search-field")) hideSearchSuggestions();
+    const insideSearchField = event.target.closest(".search-field");
+    const insideSuggestions = event.target.closest("#searchSuggestions");
+
+    // The suggestion dropdown sits next to .search-field in the DOM,
+    // so clicks on "더보기/접기" must also count as inside the search UI.
+    if (!insideSearchField && !insideSuggestions) {
+      hideSearchSuggestions();
+    }
   });
 
   $("#searchInput").addEventListener("keydown", (event) => {

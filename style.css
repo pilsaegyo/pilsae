@@ -1562,7 +1562,14 @@ mark{
     -webkit-line-clamp:2;
     overflow:hidden;
     font-size:11px;
-    padding:7px 8px;
+    line-height:1.55;
+    padding:7px 8px 8px;
+  }
+
+  .search-match.description-search-match{
+    -webkit-line-clamp:3;
+    line-height:1.6;
+    padding-bottom:9px;
   }
 }
 
