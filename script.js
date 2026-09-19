@@ -645,6 +645,23 @@ function render() {
 
   $("#videoCount").textContent = `${videos.length}개`;
 
+  const allUnknown = videos.filter(v => v.type === "unknown").length;
+  const allKnown = videos.length - allUnknown;
+  if ($("#heroTotal")) $("#heroTotal").textContent = `${videos.length}`;
+  if ($("#heroKnown")) $("#heroKnown").textContent = `${allKnown}`;
+  if ($("#heroUnknown")) $("#heroUnknown").textContent = `${allUnknown}`;
+
+  const activeFilterCount = [
+    $("#yearFilter")?.value,
+    $("#typeFilter")?.value,
+    ($("#sortFilter")?.value || "source-desc") !== "source-desc" ? "sort" : ""
+  ].filter(Boolean).length;
+  const filterCountEl = $("#activeFilterCount");
+  if (filterCountEl) {
+    filterCountEl.textContent = String(activeFilterCount);
+    filterCountEl.hidden = activeFilterCount === 0;
+  }
+
   const rows = filteredVideos();
   const visibleRows = rows.slice(0, visibleLimit);
 
@@ -739,6 +756,12 @@ function bindEvents() {
     $("#sortFilter").value = "source-desc";
     visibleLimit = PAGE_SIZE;
     render();
+    const toolbarPanel = document.querySelector(".toolbar-panel");
+    const mobileFilterToggle = $("#mobileFilterToggle");
+    if (window.matchMedia("(max-width: 620px)").matches && toolbarPanel && mobileFilterToggle) {
+      toolbarPanel.classList.remove("mobile-open");
+      mobileFilterToggle.setAttribute("aria-expanded", "false");
+    }
   });
 
   $("#loadMoreBtn").addEventListener("click", () => {
@@ -748,6 +771,16 @@ function bindEvents() {
 
   $("#gridViewBtn").addEventListener("click", () => setViewMode("grid"));
   $("#listViewBtn").addEventListener("click", () => setViewMode("list"));
+
+  const mobileFilterToggle = $("#mobileFilterToggle");
+  const toolbarPanel = document.querySelector(".toolbar-panel");
+  if (mobileFilterToggle && toolbarPanel) {
+    mobileFilterToggle.addEventListener("click", () => {
+      const open = !toolbarPanel.classList.contains("mobile-open");
+      toolbarPanel.classList.toggle("mobile-open", open);
+      mobileFilterToggle.setAttribute("aria-expanded", String(open));
+    });
+  }
 
   const adminAllowed =
     new URLSearchParams(location.search).get("admin") === "1" ||
