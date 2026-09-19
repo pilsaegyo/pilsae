@@ -4402,7 +4402,7 @@
       "duration": "PT1H56M10S",
       "durationSeconds": 6970,
       "parseStatus": "needs_review",
-      "contentType": "playlist",
+      "contentType": "video",
       "playlistScope": "",
       "dates": [],
       "ignoredDateCandidates": []
@@ -10883,7 +10883,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:42:33.509Z",
+  "generatedAt": "2026-09-19T05:46:16.415Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
