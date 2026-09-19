@@ -261,6 +261,22 @@ function extractReviewDateCandidates(title="", description="", ignored=[]) {
       }
     }
 
+    // TITLE: explicit 4-digit year takes priority over YYMM.
+    // e.g. "2007 콘텐츠 이름" => 2007년, NOT 2020.07.
+    m = line.match(/^((?:19|20)\d{2})(?:$|\s+|[^\d])/);
+    if (m) {
+      const year = Number(m[1]);
+      addCandidate({
+        raw: m[1],
+        sourceDate: `${year}-01-01`,
+        precision: "year",
+        display: `${year}년`,
+        sourceLocation: "title",
+        context: line
+      });
+      return;
+    }
+
     // TITLE: YYMM — deliberately conservative.
     // Only at the very start and month must be 01~12.
     m = line.match(/^(\d{2})(0[1-9]|1[0-2])(?:$|\s+|[^\d])/);
@@ -314,6 +330,52 @@ function extractReviewDateCandidates(title="", description="", ignored=[]) {
 
 function candidateSourceLabel(sourceLocation="") {
   return sourceLocation === "title" ? "제목에서 발견" : "설명에서 발견";
+}
+
+function parseManualDateInput(value="") {
+  const input = String(value || "").trim();
+
+  let m = input.match(/^((?:19|20)\d{2})$/);
+  if (m) {
+    return {
+      sourceDate: `${m[1]}-01-01`,
+      precision: "year",
+      display: `${m[1]}년`
+    };
+  }
+
+  m = input.match(/^((?:19|20)\d{2})[.\-/](\d{1,2})$/);
+  if (m) {
+    const y = Number(m[1]);
+    const month = Number(m[2]);
+    if (month >= 1 && month <= 12) {
+      return {
+        sourceDate: `${y}-${pad2(month)}-01`,
+        precision: "month",
+        display: `${y}.${pad2(month)}`
+      };
+    }
+  }
+
+  m = input.match(/^((?:19|20)\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})$/);
+  if (m) {
+    const y = Number(m[1]);
+    const month = Number(m[2]);
+    const day = Number(m[3]);
+    if (isValidDate(y, month, day)) {
+      return {
+        sourceDate: `${y}-${pad2(month)}-${pad2(day)}`,
+        precision: "day",
+        display: `${y}.${pad2(month)}.${pad2(day)}`
+      };
+    }
+  }
+
+  return null;
+}
+
+function contentTypeLabel(value="video") {
+  return value === "playlist" ? "플레이리스트" : "일반 영상";
 }
 
 function normalizeDateEntry(entry) {
@@ -443,6 +505,7 @@ function normalizeVideo(v, idx=0) {
     parseStatus: validDates.length ? "parsed" : String(v.parseStatus || ""),
     dates: dateEntries,
     ignoredDateCandidates: Array.isArray(v.ignoredDateCandidates) ? v.ignoredDateCandidates.map(String) : [],
+    contentType: v.contentType === "playlist" ? "playlist" : "video",
     dateCandidates: validDates.length ? [] : extractReviewDateCandidates(
       v.title || "",
       v.description || "",
@@ -805,7 +868,10 @@ function renderCard(v) {
       <div class="card-body">
         <div class="card-top">
           <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${highlightMatch(v.title, q)}</a></h2>
-          <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type)}</span>
+          <div class="card-badges">
+            ${v.contentType === "playlist" ? `<span class="badge playlist">플레이리스트</span>` : ""}
+            <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type)}</span>
+          </div>
         </div>
 
         <div class="dates">${renderDates(v)}</div>
@@ -826,6 +892,7 @@ function filteredVideos() {
   const q = $("#searchInput").value.trim().toLowerCase();
   const year = $("#yearFilter").value;
   const type = $("#typeFilter").value;
+  const contentType = $("#contentTypeFilter")?.value || "";
   const sortMode = $("#sortFilter")?.value || "source-desc";
 
   const rows = videos.filter(v => {
@@ -840,14 +907,16 @@ function filteredVideos() {
       v.description,
       v.source,
       v.parseStatus,
+      contentTypeLabel(v.contentType),
       ...searchableDates
     ].join(" ").toLowerCase();
 
     const qok = !q || haystack.includes(q);
     const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
     const tok = !type || v.type === type;
+    const cok = !contentType || v.contentType === contentType;
 
-    return qok && yok && tok;
+    return qok && yok && tok && cok;
   });
 
   const sourceCompare = (a,b) => {
@@ -887,6 +956,7 @@ function readUrlState() {
     q: params.get("q") || "",
     year: params.get("year") || "",
     type: params.get("type") || "",
+    content: params.get("content") || "",
     sort: params.get("sort") || "source-desc",
     view: params.get("view") || ""
   };
@@ -901,6 +971,9 @@ function applyUrlStateToControls() {
   if ($("#typeFilter") && [...$("#typeFilter").options].some(o => o.value === state.type)) {
     $("#typeFilter").value = state.type;
   }
+  if ($("#contentTypeFilter") && [...$("#contentTypeFilter").options].some(o => o.value === state.content)) {
+    $("#contentTypeFilter").value = state.content;
+  }
   if ($("#sortFilter") && [...$("#sortFilter").options].some(o => o.value === state.sort)) {
     $("#sortFilter").value = state.sort;
   }
@@ -911,6 +984,7 @@ function syncUrlState({ replace=false, viewOverride="" }={}) {
   const q = $("#searchInput")?.value?.trim() || "";
   const year = $("#yearFilter")?.value || "";
   const type = $("#typeFilter")?.value || "";
+  const content = $("#contentTypeFilter")?.value || "";
   const sort = $("#sortFilter")?.value || "source-desc";
   const view = ["grid", "list", "timeline"].includes(viewOverride)
     ? viewOverride
@@ -919,6 +993,7 @@ function syncUrlState({ replace=false, viewOverride="" }={}) {
   if (q) params.set("q", q);
   if (year) params.set("year", year);
   if (type) params.set("type", type);
+  if (content) params.set("content", content);
   if (sort !== "source-desc") params.set("sort", sort);
   if (view !== defaultViewMode()) params.set("view", view);
   if (location.hash === "#admin") params.set("admin", "1");
@@ -934,11 +1009,13 @@ function currentActiveFilters() {
   const q = $("#searchInput")?.value?.trim() || "";
   const year = $("#yearFilter")?.value || "";
   const type = $("#typeFilter")?.value || "";
+  const content = $("#contentTypeFilter")?.value || "";
   const sort = $("#sortFilter")?.value || "source-desc";
 
   if (q) filters.push({ key:"search", label:`검색: ${q}` });
   if (year) filters.push({ key:"year", label:`${year}년` });
   if (type) filters.push({ key:"type", label:typeLabel(type) });
+  if (content) filters.push({ key:"content", label:contentTypeLabel(content) });
   if (sort !== "source-desc") {
     const option = $("#sortFilter")?.selectedOptions?.[0];
     filters.push({ key:"sort", label:option?.textContent || "정렬 변경" });
@@ -962,6 +1039,7 @@ function clearOneFilter(key) {
   if (key === "search") $("#searchInput").value = "";
   if (key === "year") $("#yearFilter").value = "";
   if (key === "type") $("#typeFilter").value = "";
+  if (key === "content") $("#contentTypeFilter").value = "";
   if (key === "sort") $("#sortFilter").value = "source-desc";
   visibleLimit = PAGE_SIZE;
   syncUrlState();
@@ -1045,7 +1123,9 @@ function timelineDateLabel(entry) {
 function timelineBucket(v) {
   const primary = timelinePrimaryEntry(v);
   if (!primary) {
-    return { kind: "unknown", year: "", month: "", entry: null };
+    return v.contentType === "playlist"
+      ? { kind: "playlist-undated", year: "", month: "", entry: null }
+      : { kind: "unknown", year: "", month: "", entry: null };
   }
 
   const year = primary.sourceDate.slice(0,4);
@@ -1070,6 +1150,8 @@ function timelineItemHtml(v, bucket) {
     ? `<span class="precision-badge month-only">일자 미상</span>`
     : bucket.kind === "year-only"
       ? `<span class="precision-badge year-only">월·일 미상</span>`
+      : bucket.kind === "playlist-undated"
+        ? `<span class="precision-badge playlist-undated">연도 미지정</span>`
       : bucket.kind === "unknown"
         ? `<span class="precision-badge unknown">날짜 미확인</span>`
         : "";
@@ -1093,10 +1175,16 @@ function timelineItemHtml(v, bucket) {
 
 function renderTimeline(rows) {
   const yearGroups = new Map();
+  const undatedPlaylists = [];
   const unknown = [];
 
   for (const v of rows) {
     const bucket = timelineBucket(v);
+
+    if (bucket.kind === "playlist-undated") {
+      undatedPlaylists.push({ v, bucket });
+      continue;
+    }
 
     if (bucket.kind === "unknown") {
       unknown.push({ v, bucket });
@@ -1167,6 +1255,25 @@ function renderTimeline(rows) {
     }
 
     parts.push(`</section>`);
+  }
+
+  if (undatedPlaylists.length) {
+    parts.push(`
+      <section class="timeline-year timeline-playlists">
+        <div class="timeline-year-heading">
+          <h2>플레이리스트</h2>
+          <span>${undatedPlaylists.length}개</span>
+        </div>
+        <div class="timeline-month timeline-playlist-undated-group">
+          <h3>연도 미지정</h3>
+          <div class="timeline-items">
+            ${undatedPlaylists
+              .sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"))
+              .map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+          </div>
+        </div>
+      </section>
+    `);
   }
 
   if (unknown.length) {
@@ -1298,22 +1405,23 @@ function renderAdminList() {
     : "");
 }
 
-function renderAdminUnknownList() {
-  const wrap = $("#adminUnknownList");
-  const badge = $("#adminUnknownBadge");
-  if (!wrap) return;
+function manualDateControl(v) {
+  return `
+    <div class="manual-date-box">
+      <div>
+        <span class="manual-date-label">직접 날짜 입력</span>
+        <small>연도 <b>2007</b> · 연월 <b>2007.05</b> · 날짜 <b>2007.05.21</b></small>
+      </div>
+      <div class="manual-date-row">
+        <input type="text" inputmode="numeric" data-manual-date-input="${escapeHTML(v.id)}" placeholder="YYYY / YYYY.MM / YYYY.MM.DD" />
+        <button type="button" data-manual-date-apply="${escapeHTML(v.id)}">적용</button>
+      </div>
+    </div>
+  `;
+}
 
-  const unknown = videos.filter(v => v.type === "unknown");
-  if (badge) badge.textContent = `${unknown.length}개`;
-  const tabCount = $("#adminReviewTabCount");
-  if (tabCount) tabCount.textContent = String(unknown.length);
-
-  if (!unknown.length) {
-    wrap.innerHTML = `<p class="admin-help">현재 날짜 확인이 필요한 영상이 없습니다.</p>`;
-    return;
-  }
-
-  wrap.innerHTML = unknown.map(v => `
+function adminReviewItemHtml(v, {playlistUndated=false}={}) {
+  return `
     <article class="admin-unknown-item">
       <div class="admin-unknown-thumb">
         ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
@@ -1321,10 +1429,13 @@ function renderAdminUnknownList() {
       <div class="admin-unknown-body">
         <div class="admin-unknown-top">
           <strong>${escapeHTML(v.title)}</strong>
-          <span class="admin-reason-badge">${escapeHTML(unknownReason(v))}</span>
+          <div class="admin-review-badges">
+            ${v.contentType === "playlist" ? `<span class="admin-content-badge playlist">플레이리스트</span>` : ""}
+            <span class="admin-reason-badge">${escapeHTML(playlistUndated ? "연도 미지정" : unknownReason(v))}</span>
+          </div>
         </div>
         <p>${escapeHTML(descriptionPreview(v.description))}</p>
-        ${(v.dateCandidates || []).map(c => `
+        ${!playlistUndated ? (v.dateCandidates || []).map(c => `
           <div class="date-candidate-box">
             <div class="date-candidate-info">
               <div class="date-candidate-heading">
@@ -1344,13 +1455,83 @@ function renderAdminUnknownList() {
                 data-candidate-ignore="${escapeHTML(v.id)}"
                 data-candidate-key="${escapeHTML(c.candidateKey)}">날짜 아님</button>
             </div>
-          </div>`).join("")}
+          </div>`).join("") : ""}
+        ${manualDateControl(v)}
         <div class="admin-review-links">
-          <a class="youtube-video-link admin-youtube-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">YouTube에서 설명 확인</a>
+          <a class="youtube-video-link admin-youtube-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">YouTube에서 확인</a>
           <span class="candidate-status" data-candidate-status="${escapeHTML(v.id)}"></span>
         </div>
       </div>
     </article>
+  `;
+}
+
+function renderAdminUnknownList() {
+  const wrap = $("#adminUnknownList");
+  const badge = $("#adminUnknownBadge");
+  const playlistWrap = $("#adminUndatedPlaylistList");
+  const playlistBadge = $("#adminUndatedPlaylistBadge");
+  if (!wrap) return;
+
+  const unknown = videos.filter(v => v.type === "unknown" && v.contentType !== "playlist");
+  const undatedPlaylists = videos.filter(v => v.type === "unknown" && v.contentType === "playlist");
+
+  if (badge) badge.textContent = `${unknown.length}개`;
+  if (playlistBadge) playlistBadge.textContent = `${undatedPlaylists.length}개`;
+
+  const tabCount = $("#adminReviewTabCount");
+  if (tabCount) tabCount.textContent = String(unknown.length);
+
+  wrap.innerHTML = unknown.length
+    ? unknown.map(v => adminReviewItemHtml(v)).join("")
+    : `<p class="admin-help">현재 날짜 확인이 필요한 일반 영상이 없습니다.</p>`;
+
+  if (playlistWrap) {
+    playlistWrap.innerHTML = undatedPlaylists.length
+      ? undatedPlaylists.map(v => adminReviewItemHtml(v, {playlistUndated:true})).join("")
+      : `<p class="admin-help">현재 연도 미지정 플레이리스트가 없습니다.</p>`;
+  }
+
+  renderAdminContentList();
+}
+
+function renderAdminContentList() {
+  const wrap = $("#adminContentList");
+  if (!wrap) return;
+
+  const q = ($("#adminContentSearch")?.value || "").trim().toLowerCase();
+  let rows = videos;
+
+  if (q) {
+    rows = rows.filter(v => `${v.title} ${v.description}`.toLowerCase().includes(q));
+  } else {
+    // Without a search, prioritize already-classified playlists.
+    const playlists = rows.filter(v => v.contentType === "playlist");
+    const others = rows.filter(v => v.contentType !== "playlist").slice(0, Math.max(0, 20 - playlists.length));
+    rows = [...playlists, ...others];
+  }
+
+  rows = rows.slice(0, 50);
+
+  if (!rows.length) {
+    wrap.innerHTML = `<p class="admin-help">검색 결과가 없습니다.</p>`;
+    return;
+  }
+
+  wrap.innerHTML = rows.map(v => `
+    <div class="admin-content-item">
+      <div class="admin-content-thumb">${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}</div>
+      <div class="admin-content-copy">
+        <strong>${escapeHTML(v.title)}</strong>
+        <small>${escapeHTML(v.dates.map(displayDate).filter(Boolean).join(", ") || "날짜 없음")}</small>
+      </div>
+      <button type="button"
+        class="content-type-toggle ${v.contentType === "playlist" ? "is-playlist" : ""}"
+        data-content-type-toggle="${escapeHTML(v.id)}"
+        data-next-content-type="${v.contentType === "playlist" ? "video" : "playlist"}">
+        ${v.contentType === "playlist" ? "플레이리스트 해제" : "플레이리스트로 지정"}
+      </button>
+    </div>
   `).join("");
 }
 
@@ -1408,6 +1589,77 @@ function bindEvents() {
     const filterChip = event.target.closest("button[data-clear-filter]");
     if (filterChip) {
       clearOneFilter(filterChip.dataset.clearFilter || "");
+      return;
+    }
+
+    const manualDateApply = event.target.closest("button[data-manual-date-apply]");
+    if (manualDateApply) {
+      const videoId = manualDateApply.dataset.manualDateApply || "";
+      const input = document.querySelector(`[data-manual-date-input="${CSS.escape(videoId)}"]`);
+      const status = document.querySelector(`[data-candidate-status="${CSS.escape(videoId)}"]`);
+      const parsed = parseManualDateInput(input?.value || "");
+
+      if (!parsed) {
+        if (status) status.textContent = "형식을 확인해 주세요: 2007 / 2007.05 / 2007.05.21";
+        input?.focus();
+        return;
+      }
+
+      manualDateApply.disabled = true;
+      if (status) status.textContent = `${parsed.display} 적용 중…`;
+
+      try {
+        await adminApi("/apply-date-override", {
+          method: "POST",
+          body: JSON.stringify({
+            videoId,
+            sourceDate: parsed.sourceDate,
+            precision: parsed.precision
+          })
+        });
+
+        const v = videos.find(x => x.id === videoId);
+        if (v) {
+          v.dates = mergeDateEntries(v.dates, [{
+            sourceDate: parsed.sourceDate,
+            source: "admin",
+            precision: parsed.precision,
+            inferred: parsed.precision !== "day",
+            manual: true
+          }]);
+          const years = [...new Set(v.dates.map(d => d.sourceDate.slice(0,4)))];
+          v.type = years.length > 1 ? "mixed" : "single";
+          v.sortDate = [...v.dates.map(d => d.sourceDate)].sort().reverse()[0] || "";
+          v.parseStatus = "parsed";
+          v.dateCandidates = [];
+        }
+        render();
+        if (status) status.textContent = `${parsed.display} 적용 완료 · 배포 후 전체 사이트에 반영`;
+      } catch (err) {
+        manualDateApply.disabled = false;
+        if (status) status.textContent = err.message;
+      }
+      return;
+    }
+
+    const contentToggle = event.target.closest("button[data-content-type-toggle]");
+    if (contentToggle) {
+      const videoId = contentToggle.dataset.contentTypeToggle || "";
+      const contentType = contentToggle.dataset.nextContentType || "video";
+      contentToggle.disabled = true;
+
+      try {
+        await adminApi("/set-content-type", {
+          method: "POST",
+          body: JSON.stringify({ videoId, contentType })
+        });
+        const v = videos.find(x => x.id === videoId);
+        if (v) v.contentType = contentType === "playlist" ? "playlist" : "video";
+        render();
+      } catch (err) {
+        contentToggle.disabled = false;
+        alert(err.message);
+      }
       return;
     }
 
@@ -1496,7 +1748,7 @@ function bindEvents() {
     openYoutubeVideo(event, link.dataset.videoId || "");
   });
 
-  ["searchInput", "yearFilter", "typeFilter", "sortFilter"].forEach(id => {
+  ["searchInput", "yearFilter", "typeFilter", "contentTypeFilter", "sortFilter"].forEach(id => {
     $("#" + id).addEventListener(
       id === "searchInput" ? "input" : "change",
       () => {
@@ -1511,6 +1763,7 @@ function bindEvents() {
     $("#searchInput").value = "";
     $("#yearFilter").value = "";
     $("#typeFilter").value = "";
+    $("#contentTypeFilter").value = "";
     $("#sortFilter").value = "source-desc";
     visibleLimit = PAGE_SIZE;
     syncUrlState();
@@ -1563,6 +1816,11 @@ function bindEvents() {
   $("#adminEntry").addEventListener("click", () => setAdmin(true));
   $("#closeAdmin").addEventListener("click", () => setAdmin(false));
 
+
+  const adminContentSearch = $("#adminContentSearch");
+  if (adminContentSearch) {
+    adminContentSearch.addEventListener("input", renderAdminContentList);
+  }
 
   const savedAdminToken = getAdminToken();
   if ($("#adminTokenInput") && savedAdminToken) {
