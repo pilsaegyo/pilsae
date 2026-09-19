@@ -4587,3 +4587,99 @@ select{
   width:15px;
   height:15px;
 }
+
+
+/* v24.3 compact sticky filter on desktop */
+@media (min-width:621px){
+  .toolbar-panel{
+    transition:
+      padding .18s ease,
+      border-radius .18s ease,
+      box-shadow .18s ease,
+      background .18s ease;
+  }
+
+  .toolbar-panel.is-compact-sticky{
+    padding:8px 10px;
+    border-radius:16px;
+    background:rgba(255,255,255,.97);
+    box-shadow:0 12px 28px rgba(38,31,43,.10);
+  }
+
+  .toolbar-panel.is-compact-sticky .stat-card{
+    display:none;
+  }
+
+  .toolbar-panel.is-compact-sticky .field{
+    min-height:44px;
+  }
+
+  .toolbar-panel.is-compact-sticky .field{
+    min-height:44px;
+    padding:5px 9px 4px;
+    border-radius:12px;
+  }
+
+  .toolbar-panel.is-compact-sticky .field > span{
+    display:none;
+  }
+
+  .toolbar-panel.is-compact-sticky .field input,
+  .toolbar-panel.is-compact-sticky .field select{
+    font-size:13px;
+    line-height:1.25;
+  }
+
+  .toolbar-panel.is-compact-sticky .search-icon{
+    font-size:17px;
+  }
+
+  .toolbar-panel.is-compact-sticky .reset-filter-button{
+    min-height:44px;
+    border-radius:12px;
+    padding:0 13px;
+    font-size:12px;
+  }
+
+  .toolbar-panel.is-compact-sticky .filter-extra{
+    margin-top:0;
+    gap:7px;
+  }
+}
+
+@media (min-width:901px){
+  .toolbar-panel.is-compact-sticky{
+    display:grid;
+    grid-template-columns:minmax(260px,1.25fr) minmax(620px,3fr);
+    align-items:center;
+    gap:8px;
+  }
+
+  .toolbar-panel.is-compact-sticky .toolbar-primary{
+    display:block;
+  }
+
+  .toolbar-panel.is-compact-sticky .filter-extra{
+    grid-template-columns:
+      minmax(110px,.85fr)
+      minmax(120px,.95fr)
+      minmax(120px,.95fr)
+      minmax(120px,.95fr)
+      minmax(145px,1.1fr)
+      auto;
+  }
+}
+
+@media (min-width:621px) and (max-width:900px){
+  .toolbar-panel.is-compact-sticky .toolbar-primary{
+    grid-template-columns:1fr;
+  }
+
+  .toolbar-panel.is-compact-sticky .filter-extra{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .toolbar-panel.is-compact-sticky .reset-filter-button{
+    min-height:44px;
+  }
+}

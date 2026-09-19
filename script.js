@@ -2829,6 +2829,31 @@ function resetSyncPreview() {
   if (applyBtn) applyBtn.disabled = true;
 }
 
+
+function setupCompactStickyToolbar() {
+  const toolbar = document.querySelector(".toolbar-panel");
+  if (!toolbar || document.body.classList.contains("admin-page")) return;
+
+  let stickyStart = 0;
+
+  const measure = () => {
+    toolbar.classList.remove("is-compact-sticky");
+    const rect = toolbar.getBoundingClientRect();
+    stickyStart = window.scrollY + rect.top - 84;
+    update();
+  };
+
+  const update = () => {
+    const desktop = window.matchMedia("(min-width: 621px)").matches;
+    const shouldCompact = desktop && window.scrollY >= stickyStart;
+    toolbar.classList.toggle("is-compact-sticky", shouldCompact);
+  };
+
+  window.addEventListener("scroll", update, { passive:true });
+  window.addEventListener("resize", measure);
+  window.setTimeout(measure, 0);
+}
+
 function bindEvents() {
   $("#siteHelpBtn")?.addEventListener("click", () => {
     const panel = $("#siteHelpPanel");
@@ -3508,6 +3533,7 @@ function bindEvents() {
     window.scrollTo({ top:0, behavior:"smooth" });
   });
   updateBackToTop();
+  setupCompactStickyToolbar();
   updateSearchClearButton();
 
   const savedAdminToken = sessionStorage.getItem(ADMIN_TOKEN_SESSION_KEY) || "";
