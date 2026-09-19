@@ -3128,3 +3128,47 @@ body.admin-mode-open .header-inner{
     min-height:48px;
   }
 }
+
+
+/* v19 dedicated admin page */
+.admin-page{
+  background:#f7f4f9;
+}
+.admin-page .admin-page-container{
+  padding-top:18px;
+  padding-bottom:40px;
+}
+.admin-page #adminPanel{
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+}
+.admin-page #adminPanel[hidden]{
+  display:block;
+}
+.admin-page .admin-mode-bar{
+  position:static;
+}
+.admin-page .admin-site-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.admin-page .admin-bootstrap{
+  display:none !important;
+}
+.admin-public-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+}
+@media (max-width:620px){
+  .admin-page .admin-page-container{
+    padding-top:10px;
+  }
+  .admin-page .admin-tabs{
+    top:52px;
+  }
+}

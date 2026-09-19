@@ -1980,10 +1980,9 @@ function setAdmin(open, { auto=false }={}) {
   if (open) {
     const params = new URLSearchParams(location.search);
     const queryAdmin = params.get("admin") === "1";
+    const dedicatedAdmin = /\/admin\/?$/.test(location.pathname);
 
-    // When entering through ?admin=1, keep the clean query URL and show
-    // the admin workspace at the top instead of making the user scroll.
-    if (!queryAdmin && location.hash !== "#admin") {
+    if (!dedicatedAdmin && !queryAdmin && location.hash !== "#admin") {
       location.hash = "admin";
     }
 
@@ -2403,32 +2402,35 @@ function bindEvents() {
     });
   }
 
-  const adminAllowed =
+  const isAdminPage = /\/admin\/?$/.test(location.pathname);
+  const legacyAdminRequest =
     new URLSearchParams(location.search).get("admin") === "1" ||
     location.hash === "#admin";
 
-  if (adminAllowed) {
+  // Old bookmarks such as /?admin=1 now move to the dedicated admin page.
+  if (legacyAdminRequest && !isAdminPage) {
+    location.replace("./admin/");
+    return;
+  }
+
+  if (isAdminPage) {
     const panel = $("#adminPanel");
     const main = document.querySelector("main.container");
 
-    // Put the admin workspace at the very top in admin mode.
     if (panel && main && main.firstElementChild !== panel) {
       main.prepend(panel);
     }
 
-    $("#adminEntry").hidden = false;
     setAdmin(true, { auto:true });
   }
 
-  $("#adminEntry").addEventListener("click", () => {
-    const panel = $("#adminPanel");
-    const main = document.querySelector("main.container");
-    if (panel && main && main.firstElementChild !== panel) {
-      main.prepend(panel);
-    }
-    setAdmin(true);
+  $("#adminEntry")?.addEventListener("click", () => {
+    location.href = "./admin/";
   });
-  $("#closeAdmin").addEventListener("click", () => setAdmin(false));
+  $("#closeAdmin")?.addEventListener("click", () => {
+    if (isAdminPage) location.href = "./";
+    else setAdmin(false);
+  });
 
 
   const adminContentSearch = $("#adminContentSearch");
@@ -2453,7 +2455,7 @@ function bindEvents() {
     $("#adminTokenInput").value = savedAdminToken;
   }
 
-  $("#saveAdminToken").addEventListener("click", () => {
+  $("#saveAdminToken")?.addEventListener("click", () => {
     const token = $("#adminTokenInput").value.trim();
     if (!token) {
       setAdminStatus($("#adminApiStatus"), "ADMIN_TOKEN을 입력해 주세요.", "error");
@@ -2463,7 +2465,7 @@ function bindEvents() {
     setAdminStatus($("#adminApiStatus"), "관리자 토큰이 적용되었습니다.", "success");
   });
 
-  $("#checkAdminApi").addEventListener("click", async () => {
+  $("#checkAdminApi")?.addEventListener("click", async () => {
     const status = $("#adminApiStatus");
     setAdminStatus(status, "Worker 연결을 확인하는 중입니다…", "loading");
     try {
@@ -2501,7 +2503,7 @@ function bindEvents() {
     reader.readAsDataURL(file);
   });
 
-  $("#saveSiteSettings").addEventListener("click", async () => {
+  $("#saveSiteSettings")?.addEventListener("click", async () => {
     const status = $("#siteSettingsStatus");
     const title = $("#titleInput").value.trim();
     const channelHandle = $("#channelHandleInput").value.trim() || "@pilsae";
@@ -2571,7 +2573,7 @@ function bindEvents() {
     }
   });
 
-  $("#exportData").addEventListener("click", () => {
+  $("#exportData")?.addEventListener("click", () => {
     downloadJSON(
       {
         videos: videos.map(v => ({
@@ -2622,5 +2624,5 @@ function bindEvents() {
       `<strong>데이터를 불러오지 못했습니다.</strong><p>잠시 후 새로고침해 주세요.</p>`;
   }
 
-  if (location.hash === "#admin") setAdmin(true);
+  if (location.hash === "#admin" && $("#adminPanel")) setAdmin(true);
 })();
