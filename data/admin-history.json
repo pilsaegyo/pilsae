@@ -1,6 +1,22 @@
 {
   "entries": [
     {
+      "id": "50006082-fa53-465e-82b9-b1783485c033",
+      "action": "video_format_youtube_verify",
+      "videoId": "",
+      "title": "YouTube 동영상 타입 자동 확인",
+      "before": {
+        "pending": 42
+      },
+      "after": {
+        "applied": 42,
+        "shorts": 41,
+        "standard": 1
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-19T16:32:24.089Z"
+    },
+    {
       "id": "187a87c4-d3a8-4649-a6c5-0bf32debedd5",
       "action": "video_format_youtube_verify",
       "videoId": "",
@@ -123,5 +139,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-19T16:30:24.798Z"
+  "updatedAt": "2026-09-19T16:32:24.089Z"
 }
