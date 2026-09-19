@@ -1,6 +1,22 @@
 {
   "entries": [
     {
+      "id": "f33b383f-0293-4f7f-9efa-5fe4ebcf5d00",
+      "action": "content_type",
+      "videoId": "LzhdAvpww7Y",
+      "title": "못 잡아먹어서 안달인 에릭과 신혜성 역사 깊은 물과 기름 라디오 음성 모음집 1탄",
+      "before": {
+        "contentType": "video",
+        "playlistScope": ""
+      },
+      "after": {
+        "contentType": "playlist",
+        "playlistScope": "undated"
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-19T18:45:32.396Z"
+    },
+    {
       "id": "71770188-94f3-40d6-902c-af6979d79755",
       "action": "content_type",
       "videoId": "-MuNc-FvCI0",
@@ -191,5 +207,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-19T18:45:17.106Z"
+  "updatedAt": "2026-09-19T18:45:32.396Z"
 }
