@@ -390,6 +390,12 @@ export default {
               videoFormatSource: old.videoFormatSource === "manual"
                 ? "manual"
                 : "auto",
+              videoFormatConfidence: old.videoFormatSource === "manual"
+                ? ""
+                : (video.videoFormatConfidence || ""),
+              videoFormatReason: old.videoFormatSource === "manual"
+                ? ""
+                : (video.videoFormatReason || ""),
               parseStatus: shouldReviewManualDate
                 ? "needs_review"
                 : (manualDates.length ? "parsed" : video.parseStatus)
@@ -1146,20 +1152,16 @@ function detectYoutubeVideoFormat(video) {
     ...(Array.isArray(snippet.tags) ? snippet.tags : [])
   ].join(" ").toLowerCase();
 
-  // YouTube Data API does not expose a direct Shorts boolean.
-  // This heuristic is intentionally overridable from the admin page.
-  if (/(^|\s|#)shorts?\b/i.test(text)) return "shorts";
-  if (durationSeconds > 0 && durationSeconds <= 60) return "shorts";
-
-  if (
-    publishedAt.slice(0, 10) >= "2024-10-15" &&
-    durationSeconds > 0 &&
-    durationSeconds <= 180
-  ) {
-    return "shorts";
+  if (/(^|\s|#)shorts?\b/i.test(text)) {
+    return { format:"shorts", confidence:"high", reason:"YouTube 메타데이터에 Shorts 표기" };
   }
-
-  return "standard";
+  if (durationSeconds > 0 && durationSeconds <= 60) {
+    return { format:"shorts", confidence:"medium", reason:"재생시간 60초 이하" };
+  }
+  if (publishedAt.slice(0,10) >= "2024-10-15" && durationSeconds > 0 && durationSeconds <= 180) {
+    return { format:"shorts", confidence:"low", reason:"2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요" };
+  }
+  return { format:"standard", confidence:"high", reason:"자동 기준상 일반동영상" };
 }
 
 function normalizeYoutubeVideo(video) {
@@ -1177,6 +1179,7 @@ function normalizeYoutubeVideo(video) {
   const description = String(s.description || "");
   const duration = String(video.contentDetails?.duration || "");
   const durationSeconds = parseIso8601Duration(duration);
+  const formatAssessment = detectYoutubeVideoFormat(video);
 
   return {
     id: String(video.id),
@@ -1188,8 +1191,10 @@ function normalizeYoutubeVideo(video) {
     thumbnail,
     duration,
     durationSeconds,
-    videoFormat: detectYoutubeVideoFormat(video),
+    videoFormat: formatAssessment.format,
     videoFormatSource: "auto",
+    videoFormatConfidence: formatAssessment.confidence,
+    videoFormatReason: formatAssessment.reason,
     parseStatus: "needs_review",
     contentType: "video",
     playlistScope: "",

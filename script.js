@@ -527,37 +527,84 @@ function mergeDateEntries(existing, extracted) {
   return merged;
 }
 
-function autoVideoFormat({ title="", description="", durationSeconds=0, publishedAt="" }={}) {
+function assessAutoVideoFormat({ title="", description="", durationSeconds=0, publishedAt="", currentFormat="" }={}) {
   const duration = Number(durationSeconds || 0);
   const text = `${title} ${description}`.toLowerCase();
-
-  // YouTube Data API does not expose a direct "is Shorts" property.
-  // Use a practical heuristic and allow an administrator to override it.
-  if (/(^|\s|#)shorts?\b/i.test(text)) return "shorts";
-  if (duration > 0 && duration <= 60) return "shorts";
-
   const published = String(publishedAt || "").slice(0, 10);
-  if (published >= "2024-10-15" && duration > 0 && duration <= 180) {
-    return "shorts";
-  }
 
-  return "standard";
+  if (/(^|\s|#)shorts?\b/i.test(text)) {
+    return { format:"shorts", confidence:"high", reason:"제목/설명에 Shorts 표기" };
+  }
+  if (duration > 0 && duration <= 60) {
+    return { format:"shorts", confidence:"medium", reason:"재생시간 60초 이하" };
+  }
+  if (published >= "2024-10-15" && duration > 0 && duration <= 180) {
+    return { format:"shorts", confidence:"low", reason:"2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요" };
+  }
+  if (currentFormat === "shorts") {
+    return { format:"shorts", confidence:"low", reason:"자동 Shorts 분류 · 근거 재확인 필요" };
+  }
+  return { format:"standard", confidence:"high", reason:"자동 기준상 일반동영상" };
+}
+
+function autoVideoFormat(input={}) {
+  return assessAutoVideoFormat(input).format;
 }
 
 function normalizeVideoFormat(v) {
   if (v?.videoFormat === "shorts") return "shorts";
   if (v?.videoFormat === "standard") return "standard";
-  return autoVideoFormat({
-    title: v?.title || "",
-    description: v?.description || "",
-    durationSeconds: v?.durationSeconds || 0,
-    publishedAt: v?.publishedAt || ""
-  });
+  return assessAutoVideoFormat({
+    title:v?.title || "",
+    description:v?.description || "",
+    durationSeconds:v?.durationSeconds || 0,
+    publishedAt:v?.publishedAt || ""
+  }).format;
 }
 
 function videoFormatLabel(format) {
   return format === "shorts" ? "Shorts" : "일반 동영상";
 }
+
+function videoFormatAssessment(v) {
+  if (v?.videoFormatSource === "manual") {
+    return { confidence:"manual", reason:"관리자 수동 지정", needsReview:false };
+  }
+
+  const confidence = ["high","medium","low"].includes(v?.videoFormatConfidence)
+    ? v.videoFormatConfidence
+    : "";
+
+  if (confidence) {
+    return {
+      confidence,
+      reason:String(v?.videoFormatReason || "YouTube 동기화 자동 판별"),
+      needsReview:confidence === "low"
+    };
+  }
+
+  const fallback = assessAutoVideoFormat({
+    title:v?.title || "",
+    description:v?.description || "",
+    durationSeconds:v?.durationSeconds || 0,
+    publishedAt:v?.publishedAt || "",
+    currentFormat:v?.videoFormat || ""
+  });
+
+  return {
+    confidence:fallback.confidence,
+    reason:fallback.reason,
+    needsReview:fallback.confidence === "low"
+  };
+}
+
+function videoFormatConfidenceLabel(confidence) {
+  if (confidence === "low") return "확신 낮음";
+  if (confidence === "medium") return "확신 보통";
+  if (confidence === "high") return "확신 높음";
+  return "수동 지정";
+}
+
 
 function videoFormatIconHtml(v) {
   const isShorts = v?.videoFormat === "shorts";
@@ -628,6 +675,10 @@ function normalizeVideo(v, idx=0) {
     duration: String(v.duration || ""),
     videoFormat: normalizeVideoFormat(v),
     videoFormatSource: v.videoFormatSource === "manual" ? "manual" : "auto",
+    videoFormatConfidence: ["high", "medium", "low"].includes(v.videoFormatConfidence)
+      ? v.videoFormatConfidence
+      : "",
+    videoFormatReason: String(v.videoFormatReason || ""),
     dateCandidates: validDates.length ? [] : extractReviewDateCandidates(
       v.title || "",
       v.description || "",
@@ -1023,19 +1074,25 @@ function allYears() {
   return [...years].sort((a,b) => Number(b) - Number(a));
 }
 
-function matchesFiltersExceptYear(v) {
-  const q = ($("#searchInput")?.value || "").trim().toLowerCase();
-  const type = $("#typeFilter")?.value || "";
-  const contentType = $("#contentTypeFilter")?.value || "";
-  const videoFormat = $("#videoFormatFilter")?.value || "";
+function currentPublicFilterState() {
+  return {
+    q:($("#searchInput")?.value || "").trim().toLowerCase(),
+    year:$("#yearFilter")?.value || "",
+    type:$("#typeFilter")?.value || "",
+    contentType:$("#contentTypeFilter")?.value || "",
+    videoFormat:$("#videoFormatFilter")?.value || "",
+    sortMode:$("#sortFilter")?.value || "source-desc"
+  };
+}
 
+function publicSearchHaystack(v) {
   const searchableDates = (v.dates || []).flatMap(d => [
     d.sourceDate,
     d.source,
     displayDate(d)
   ]);
 
-  const haystack = [
+  return [
     v.title,
     v.description,
     v.source,
@@ -1045,17 +1102,22 @@ function matchesFiltersExceptYear(v) {
     isMultiYearPlaylist(v) ? "다년도 플레이리스트 혼합 연도" : "",
     ...searchableDates
   ].join(" ").toLowerCase();
+}
 
-  const qok = !q || haystack.includes(q);
-  const tok = !type || effectiveDateType(v) === type;
-  const cok = !contentType || v.contentType === contentType;
-  const fok = !videoFormat || v.videoFormat === videoFormat;
+function videoMatchesPublicFilters(v, state=currentPublicFilterState(), {ignoreYear=false}={}) {
+  const qok = !state.q || publicSearchHaystack(v).includes(state.q);
+  const yok = ignoreYear || !state.year ||
+    (v.dates || []).some(d => String(d.sourceDate || "").startsWith(state.year));
+  const tok = !state.type || effectiveDateType(v) === state.type;
+  const cok = !state.contentType || v.contentType === state.contentType;
+  const fok = !state.videoFormat || v.videoFormat === state.videoFormat;
 
-  return qok && tok && cok && fok;
+  return qok && yok && tok && cok && fok;
 }
 
 function contextualYearRows() {
-  return videos.filter(matchesFiltersExceptYear);
+  const state = currentPublicFilterState();
+  return videos.filter(v => videoMatchesPublicFilters(v, state, {ignoreYear:true}));
 }
 
 function yearVideoCounts(rows=contextualYearRows()) {
@@ -1149,8 +1211,7 @@ function renderDates(v) {
   }
 
   const years = videoYears(v);
-  const isMobile = window.matchMedia("(max-width: 620px)").matches;
-  const dateLimit = isMobile ? 2 : 3;
+  const dateLimit = 3;
   const key = escapeHTML(v.id);
 
   const summary = v.type === "mixed"
@@ -1459,7 +1520,7 @@ function renderCard(v) {
       </a>
       <div class="card-body">
         <div class="card-meta-row">
-          <div class="dates">${renderDates(v)}</div>
+          <div class="dates ${(v.dates || []).filter(d => d.sourceDate).length > 1 ? "multi-date-grid" : ""}">${renderDates(v)}</div>
           ${statusBadge ? `<div class="card-badges">${statusBadge}</div>` : ""}
         </div>
 
@@ -1539,47 +1600,13 @@ function sortRowsByMode(rows, sortMode) {
 }
 
 function filteredVideos() {
-  const q = $("#searchInput").value.trim().toLowerCase();
-  const year = $("#yearFilter").value;
-  const type = $("#typeFilter").value;
-  const contentType = $("#contentTypeFilter")?.value || "";
-  const videoFormat = $("#videoFormatFilter")?.value || "";
-  const sortMode = $("#sortFilter")?.value || "source-desc";
-
-  const rows = videos.filter(v => {
-    const searchableDates = v.dates.flatMap(d => [
-      d.sourceDate,
-      d.source,
-      displayDate(d)
-    ]);
-
-    const haystack = [
-      v.title,
-      v.description,
-      v.source,
-      v.parseStatus,
-      contentTypeLabel(v.contentType),
-      videoFormatLabel(v.videoFormat),
-      isMultiYearPlaylist(v) ? "다년도 플레이리스트 혼합 연도" : "",
-      ...searchableDates
-    ].join(" ").toLowerCase();
-
-    const qok = !q || haystack.includes(q);
-    const yok = !year || v.dates.some(d => String(d.sourceDate || "").startsWith(year));
-    const tok = !type || effectiveDateType(v) === type;
-    const cok = !contentType || v.contentType === contentType;
-    const fok = !videoFormat || v.videoFormat === videoFormat;
-
-    return qok && yok && tok && cok && fok;
-  });
-
-  const compareBySelectedSort = sortRowsByMode(rows, sortMode);
+  const state = currentPublicFilterState();
+  const rows = videos.filter(v => videoMatchesPublicFilters(v, state));
+  const compareBySelectedSort = sortRowsByMode(rows, state.sortMode);
 
   rows.sort((a,b) => {
-    // While searching, relevance comes first. The user's selected sort
-    // remains the tie-breaker inside the same relevance group.
-    if (q) {
-      const relevanceDiff = searchRelevance(a, q) - searchRelevance(b, q);
+    if (state.q) {
+      const relevanceDiff = searchRelevance(a, state.q) - searchRelevance(b, state.q);
       if (relevanceDiff !== 0) return relevanceDiff;
     }
     return compareBySelectedSort(a,b);
@@ -2408,7 +2435,7 @@ function renderAdminContentList() {
 
   // Keep already-classified playlists visible for management.
   // Video-format mode shows the full archive because Shorts can be very short.
-  let rows = adminContentMode === "video-format"
+  let rows = ["video-format", "video-format-review"].includes(adminContentMode)
     ? [...videos]
     : videos.filter(v =>
         v.contentType === "playlist" ||
@@ -2419,6 +2446,8 @@ function renderAdminContentList() {
     rows = rows.filter(v => v.contentType === "playlist");
   } else if (adminContentMode === "candidates") {
     rows = rows.filter(v => v.contentType !== "playlist");
+  } else if (adminContentMode === "video-format-review") {
+    rows = rows.filter(v => videoFormatAssessment(v).needsReview);
   }
 
   if ($("#adminContentMode")) $("#adminContentMode").value = adminContentMode;
@@ -2428,7 +2457,12 @@ function renderAdminContentList() {
   }
 
   rows.sort((a,b) => {
-    if (adminContentMode === "video-format") {
+    if (["video-format", "video-format-review"].includes(adminContentMode)) {
+      const ac = videoFormatAssessment(a);
+      const bc = videoFormatAssessment(b);
+      const rank = { low:0, medium:1, high:2, manual:3 };
+      const confidenceDiff = (rank[ac.confidence] ?? 9) - (rank[bc.confidence] ?? 9);
+      if (confidenceDiff !== 0) return confidenceDiff;
       if (a.videoFormat === "shorts" && b.videoFormat !== "shorts") return -1;
       if (a.videoFormat !== "shorts" && b.videoFormat === "shorts") return 1;
       return String(b.publishedAt || "").localeCompare(String(a.publishedAt || ""));
@@ -2490,10 +2524,21 @@ function renderAdminContentList() {
           </div>
         ` : ""}
         <div class="video-format-admin-block">
-          <div class="playlist-scope-current">
-            <span>동영상 타입 ${v.videoFormatSource === "manual" ? "· 수동 지정" : "· 자동 판별"}</span>
-            <strong>${escapeHTML(videoFormatLabel(v.videoFormat))}</strong>
-          </div>
+          ${(() => {
+            const assessment = videoFormatAssessment(v);
+            return `
+              <div class="playlist-scope-current video-format-current">
+                <span>동영상 타입 ${v.videoFormatSource === "manual" ? "· 수동 지정" : "· 자동 판별"}</span>
+                <strong>
+                  ${escapeHTML(videoFormatLabel(v.videoFormat))}
+                  <em class="video-format-confidence confidence-${escapeHTML(assessment.confidence)}">
+                    ${escapeHTML(videoFormatConfidenceLabel(assessment.confidence))}
+                  </em>
+                </strong>
+                <small class="video-format-reason">근거 · ${escapeHTML(assessment.reason)}</small>
+              </div>
+            `;
+          })()}
           <div class="playlist-scope-actions">
             <button type="button"
               class="content-action-btn video-format-btn ${v.videoFormat === "standard" ? "active" : ""}"
@@ -2883,34 +2928,34 @@ function resetSyncPreview() {
 function updateCompactDateTypeLabel(compact) {
   const select = $("#typeFilter");
   if (!select) return;
-
   const option = [...select.options].find(o => o.value === "");
-  if (!option) return;
-
-  option.textContent = compact ? "전체 날짜" : "전체 날짜 유형";
+  if (option) option.textContent = compact ? "전체 날짜" : "전체 날짜 유형";
 }
 
 function setupCompactStickyToolbar() {
   const toolbar = document.querySelector(".toolbar-panel");
   if (!toolbar || document.body.classList.contains("admin-page")) return;
 
+  const sentinel = document.createElement("span");
+  sentinel.className = "toolbar-sticky-sentinel";
+  sentinel.setAttribute("aria-hidden", "true");
+
   const placeholder = document.createElement("div");
   placeholder.className = "toolbar-fixed-placeholder";
   placeholder.hidden = true;
+
+  toolbar.before(sentinel);
   toolbar.before(placeholder);
 
-  let triggerY = 0;
-  let normalOuterHeight = 0;
   let compact = false;
+  let normalOuterHeight = 0;
   let resizeTimer = 0;
 
-  const readNormalMetrics = () => {
+  const measureNormalHeight = () => {
+    if (compact) return;
     const rect = toolbar.getBoundingClientRect();
     const styles = getComputedStyle(toolbar);
-    const marginBottom = parseFloat(styles.marginBottom) || 0;
-
-    normalOuterHeight = Math.ceil(rect.height + marginBottom);
-    triggerY = window.scrollY + rect.top - 72;
+    normalOuterHeight = Math.ceil(rect.height + (parseFloat(styles.marginBottom) || 0));
     placeholder.style.height = `${normalOuterHeight}px`;
   };
 
@@ -2919,6 +2964,8 @@ function setupCompactStickyToolbar() {
     compact = next;
 
     if (compact) {
+      if (!normalOuterHeight) measureNormalHeight();
+      placeholder.style.height = `${normalOuterHeight}px`;
       placeholder.hidden = false;
       toolbar.classList.add("is-compact-sticky");
       document.body.classList.add("compact-toolbar-active");
@@ -2926,12 +2973,14 @@ function setupCompactStickyToolbar() {
       toolbar.classList.remove("is-compact-sticky");
       document.body.classList.remove("compact-toolbar-active");
       placeholder.hidden = true;
+      window.requestAnimationFrame(measureNormalHeight);
     }
 
     updateCompactDateTypeLabel(compact);
   };
 
-  const update = () => {
+  const observer = new IntersectionObserver((entries) => {
+    const entry = entries[0];
     const desktop = window.matchMedia("(min-width: 621px)").matches;
 
     if (!desktop) {
@@ -2939,36 +2988,23 @@ function setupCompactStickyToolbar() {
       return;
     }
 
-    const y = window.scrollY;
+    const passedHeader = entry.boundingClientRect.top <= 72;
+    setCompact(!entry.isIntersecting && passedHeader);
+  }, {
+    root:null,
+    threshold:0,
+    rootMargin:"-72px 0px 0px 0px"
+  });
 
-    // Enter slightly after the bar reaches the header; leave only after
-    // scrolling clearly above that point. The placeholder prevents any
-    // document-height jump while the toolbar becomes fixed.
-    if (!compact && y >= triggerY + 12) {
-      setCompact(true);
-    } else if (compact && y <= triggerY - 42) {
-      setCompact(false);
-    }
-  };
+  measureNormalHeight();
+  observer.observe(sentinel);
 
-  const remeasure = () => {
-    const wasCompact = compact;
-
-    if (wasCompact) {
-      setCompact(false);
-    }
-
-    readNormalMetrics();
-    update();
-  };
-
-  readNormalMetrics();
-  update();
-
-  window.addEventListener("scroll", update, { passive:true });
   window.addEventListener("resize", () => {
     window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(remeasure, 140);
+    resizeTimer = window.setTimeout(() => {
+      if (!window.matchMedia("(min-width: 621px)").matches) setCompact(false);
+      measureNormalHeight();
+    }, 140);
   });
 }
 
@@ -3206,6 +3242,8 @@ function bindEvents() {
         if (v) {
           v.videoFormat = data.videoFormat === "shorts" ? "shorts" : "standard";
           v.videoFormatSource = "manual";
+          v.videoFormatConfidence = "";
+          v.videoFormatReason = "";
         }
         render();
         renderAdminContentList();
