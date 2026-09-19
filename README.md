@@ -920,3 +920,9 @@
 - Secret 값 자체는 GitHub/ZIP에 포함하지 않음.
 - Step 3B ZIP을 관리자 배포 탭에서 GitHub에 커밋한 뒤 Cloudflare Worker Builds에 GitHub 저장소를 연결해야 자동 배포가 활성화됨.
 - 이 단계는 `worker/index.js` 코드 변경 없음.
+
+
+## v26.0 Step 3C · Admin Worker 자동배포 테스트
+- `worker/index.js` 최상단에 동작에 영향을 주지 않는 테스트 주석 1줄만 추가.
+- 목적: 관리자 ZIP 배포 → GitHub commit → Cloudflare `pilsae-admin-api` 자동 Build/Deploy 연결 확인.
+- 테스트 성공 후 주석은 남아 있어도 기능상 영향 없음.

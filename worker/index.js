@@ -1,3 +1,4 @@
+// v26.0-step3c: Cloudflare Git auto-deploy verification marker.
 const GITHUB_API_VERSION = "2026-03-10";
 
 export default {
