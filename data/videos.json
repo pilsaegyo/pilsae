@@ -1,6 +1,22 @@
 {
   "videos": [
     {
+      "id": "614pXr4EDnk",
+      "title": "동화처럼 지켜주는 가쿠란 신혜성",
+      "description": "제목 :  [SHINHWA] 2001 Falling in love, shinhwa knight\n채널 : izoasyung님\n링크 : https://youtu.be/cXzj_t3VHDc\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "제목 :  [SHINHWA] 2001 Falling in love, shinhwa knight",
+      "sourceDate": null,
+      "publishedAt": "2026-09-19T10:30:35Z",
+      "thumbnail": "https://i.ytimg.com/vi/614pXr4EDnk/maxresdefault.jpg",
+      "duration": "PT1M1S",
+      "durationSeconds": 61,
+      "parseStatus": "needs_review",
+      "contentType": "video",
+      "playlistScope": "",
+      "dates": [],
+      "ignoredDateCandidates": []
+    },
+    {
       "id": "VeGR53UOS50",
       "title": "그시절 소녀들의 첫사랑 신혜성",
       "description": "011222 프로 권격도 세계챔피언 타이틀 매치 특별공연\n\n제목 : [직캠] 권격도 행사 - 신화 - falling in love Live\n채널 : 셩공시대님 \n링크 : https://www.youtube.com/watch?v=ra35eHAlm00\n\n제목 :  [SHINHWA] 2001 Falling in love, shinhwa knight\n채널 : izoasyung님\n링크 : https://youtu.be/cXzj_t3VHDc\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
@@ -12794,8 +12810,8 @@
       "descriptionChangedAfterManual": false
     }
   ],
-  "total": 640,
-  "generatedAt": "2026-09-19T06:13:36.423Z",
+  "total": 641,
+  "generatedAt": "2026-09-19T12:07:56.627Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
