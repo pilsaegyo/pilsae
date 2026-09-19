@@ -5111,11 +5111,19 @@
       "title": "너가 인디언밥을 얼마나 길게 했는 줄 알아? #신혜성 #신화",
       "description": "신방17 \n\n아 1분 맞추기 진짜 힘들다\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "신방17",
-      "sourceDate": null,
+      "sourceDate": "2012-07-07",
       "publishedAt": "2025-07-28T13:30:26Z",
       "thumbnail": "https://i.ytimg.com/vi/Z5GyJmJWRDA/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2012-07-07",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8283,7 +8291,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:20:01.425Z",
+  "generatedAt": "2026-09-19T05:20:34.449Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
