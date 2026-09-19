@@ -1936,11 +1936,40 @@
       "title": "새침하지만 귀여운 고양이, 어눌하지만 착한 강아지",
       "description": "물과기름 모음집\n\n제목 : [방송] 99년 Mnet - 가요발전소2000 - 파워게스트 - 신화\n채널 : 셩공시대님\n링크 : https://youtu.be/uMYLk3Pxsdo\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン\n#물과기름",
       "source": "물과기름 모음집",
-      "sourceDate": null,
+      "sourceDate": "1999-01-01",
       "publishedAt": "2026-04-03T10:30:31Z",
       "thumbnail": "https://i.ytimg.com/vi/QpJpOloLlYU/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1999-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2003-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8215,7 +8244,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:00:21.818Z",
+  "generatedAt": "2026-09-19T05:00:46.577Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
