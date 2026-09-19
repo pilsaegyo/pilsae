@@ -4696,3 +4696,120 @@ h1,h2,h3,
     margin-left:10px;
   }
 }
+
+
+/* v23.6 playlist timeline structural fix
+   Playlist hub is a separate archive section, not part of the sticky year axis. */
+.timeline-playlists{
+  margin-top:42px;
+  padding-top:28px;
+  border-top:1px solid #e8e0ec;
+}
+
+/* Critical fix: the generic year heading is sticky.
+   Playlist heading must be normal flow or it can overlap thumbnails/items. */
+.timeline-playlists .timeline-year-heading{
+  position:relative;
+  top:auto;
+  z-index:1;
+  margin:0 0 18px;
+  padding:0;
+  background:none;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.timeline-playlists .timeline-year-heading > div{
+  min-width:0;
+}
+
+.timeline-playlists .timeline-year-heading h2{
+  margin:0;
+}
+
+.timeline-playlists .timeline-section-note{
+  margin:6px 0 0;
+}
+
+/* Playlist subgroups no longer use the 76px month-axis column.
+   This removes the visual collision with the left timeline rail. */
+.timeline-playlists .timeline-month{
+  display:block;
+  margin:0;
+  padding:18px 0 24px;
+  border-top:1px solid #eee8f1;
+}
+
+.timeline-playlists .timeline-month:first-of-type{
+  border-top:0;
+  padding-top:8px;
+}
+
+.timeline-playlists .timeline-month > h3{
+  margin:0 0 12px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  line-height:1.35;
+}
+
+.timeline-playlists .timeline-month > h3::before{
+  display:none!important;
+}
+
+.timeline-playlists .timeline-month > h3 small{
+  font-weight:500;
+  color:#978b9f;
+}
+
+/* Playlist items occupy the full content width and cannot rise into the heading. */
+.timeline-playlists .timeline-items{
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+.timeline-playlists .timeline-item{
+  position:relative;
+  z-index:0;
+  width:100%;
+}
+
+.timeline-playlists .timeline-item:first-child{
+  padding-top:10px;
+}
+
+/* Remove the small axis-cover hack from v23.5; no axis is used here anymore. */
+.timeline-playlists::before{
+  display:none;
+}
+
+@media (max-width:620px){
+  .timeline-playlists{
+    margin-top:30px;
+    padding-top:22px;
+  }
+
+  .timeline-playlists .timeline-year-heading{
+    margin-left:0;
+    margin-bottom:14px;
+    align-items:center;
+  }
+
+  .timeline-playlists .timeline-month,
+  .timeline-playlists .timeline-year-only-group,
+  .timeline-playlists .timeline-playlist-undated-group{
+    margin-left:0;
+  }
+
+  .timeline-playlists .timeline-month{
+    padding:15px 0 20px;
+  }
+
+  .timeline-playlists .timeline-month > h3{
+    margin-bottom:8px;
+  }
+}
