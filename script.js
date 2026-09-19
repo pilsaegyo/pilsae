@@ -568,41 +568,64 @@ function videoFormatLabel(format) {
 
 function videoFormatAssessment(v) {
   if (v?.videoFormatSource === "manual") {
-    return { confidence:"manual", reason:"관리자 수동 지정", needsReview:false };
-  }
-
-  const confidence = ["high","medium","low"].includes(v?.videoFormatConfidence)
-    ? v.videoFormatConfidence
-    : "";
-
-  if (confidence) {
     return {
-      confidence,
-      reason:String(v?.videoFormatReason || "YouTube 동기화 자동 판별"),
-      needsReview:confidence === "low"
+      status: "manual",
+      label: "수동 지정",
+      reason: "관리자가 동영상 타입을 직접 변경했습니다.",
+      needsReview: false
     };
   }
 
-  const fallback = assessAutoVideoFormat({
-    title:v?.title || "",
-    description:v?.description || "",
-    durationSeconds:v?.durationSeconds || 0,
-    publishedAt:v?.publishedAt || "",
-    currentFormat:v?.videoFormat || ""
-  });
+  if (v?.videoFormatSource === "confirmed") {
+    return {
+      status: "confirmed",
+      label: "확인 완료",
+      reason: String(v?.videoFormatReason || "관리자가 자동 판별 결과를 확인했습니다."),
+      needsReview: false
+    };
+  }
+
+  const savedConfidence = ["high", "medium", "low"].includes(v?.videoFormatConfidence)
+    ? v.videoFormatConfidence
+    : "";
+
+  let confidence = savedConfidence;
+  let reason = String(v?.videoFormatReason || "").trim();
+
+  if (!confidence) {
+    const fallback = assessAutoVideoFormat({
+      title:v?.title || "",
+      description:v?.description || "",
+      durationSeconds:v?.durationSeconds || 0,
+      publishedAt:v?.publishedAt || "",
+      currentFormat:v?.videoFormat || ""
+    });
+    confidence = fallback.confidence;
+    reason = fallback.reason;
+  }
+
+  // Do not expose an abstract "confidence score" to the administrator.
+  // The useful distinction is whether API-only evidence is sufficient or
+  // whether a human should confirm the visible video format.
+  if (confidence === "low") {
+    return {
+      status: "review",
+      label: "확인 필요",
+      reason: reason || "YouTube API 정보만으로 Shorts 여부를 확정하기 어렵습니다.",
+      needsReview: true
+    };
+  }
 
   return {
-    confidence:fallback.confidence,
-    reason:fallback.reason,
-    needsReview:fallback.confidence === "low"
+    status: "auto",
+    label: "자동 판별",
+    reason: reason || "YouTube 메타데이터 기준으로 자동 판별했습니다.",
+    needsReview: false
   };
 }
 
-function videoFormatConfidenceLabel(confidence) {
-  if (confidence === "low") return "확신 낮음";
-  if (confidence === "medium") return "확신 보통";
-  if (confidence === "high") return "확신 높음";
-  return "수동 지정";
+function videoFormatAssessmentLabel(v) {
+  return videoFormatAssessment(v).label;
 }
 
 
@@ -674,7 +697,7 @@ function normalizeVideo(v, idx=0) {
     durationSeconds: Number(v.durationSeconds || 0),
     duration: String(v.duration || ""),
     videoFormat: normalizeVideoFormat(v),
-    videoFormatSource: v.videoFormatSource === "manual" ? "manual" : "auto",
+    videoFormatSource: ["manual", "confirmed"].includes(v.videoFormatSource) ? v.videoFormatSource : "auto",
     videoFormatConfidence: ["high", "medium", "low"].includes(v.videoFormatConfidence)
       ? v.videoFormatConfidence
       : "",
@@ -2526,17 +2549,23 @@ function renderAdminContentList() {
         <div class="video-format-admin-block">
           ${(() => {
             const assessment = videoFormatAssessment(v);
+            const prefix = assessment.needsReview ? "확인 사유" : "판별 근거";
             return `
               <div class="playlist-scope-current video-format-current">
-                <span>동영상 타입 ${v.videoFormatSource === "manual" ? "· 수동 지정" : "· 자동 판별"}</span>
-                <strong>
-                  ${escapeHTML(videoFormatLabel(v.videoFormat))}
-                  <em class="video-format-confidence confidence-${escapeHTML(assessment.confidence)}">
-                    ${escapeHTML(videoFormatConfidenceLabel(assessment.confidence))}
-                  </em>
-                </strong>
-                <small class="video-format-reason">근거 · ${escapeHTML(assessment.reason)}</small>
+                <span>동영상 타입 · ${escapeHTML(assessment.label)}</span>
+                <strong>${escapeHTML(videoFormatLabel(v.videoFormat))}</strong>
+                <small class="video-format-reason ${assessment.needsReview ? "needs-review" : ""}">
+                  ${escapeHTML(prefix)} · ${escapeHTML(assessment.reason)}
+                </small>
               </div>
+              ${v.videoFormatSource === "auto" ? `
+                <button type="button"
+                  class="content-action-btn video-format-confirm-btn ${assessment.needsReview ? "attention" : ""}"
+                  data-video-format-confirm="${escapeHTML(v.id)}">
+                  <span class="content-action-icon" aria-hidden="true">✓</span>
+                  <span>현재 판별 확정</span>
+                </button>
+              ` : ""}
             `;
           })()}
           <div class="playlist-scope-actions">
@@ -2581,7 +2610,8 @@ function adminHistoryActionLabel(action) {
     site_config: "사이트 설정 변경",
     undo: "변경 되돌리기",
     backup_restore: "백업 복원",
-    video_format: "동영상 타입 변경"
+    video_format: "동영상 타입 변경",
+    video_format_confirm: "동영상 타입 확인"
   };
   return labels[action] || action || "관리자 변경";
 }
@@ -2610,7 +2640,8 @@ function canUndoAdminHistoryEntry(entry) {
     "accept_description_date",
     "content_type",
     "playlist_scope",
-    "video_format"
+    "video_format",
+    "video_format_confirm"
   ].includes(String(entry?.action || "")) && Boolean(entry?.videoId);
 }
 
@@ -2630,6 +2661,9 @@ function adminUndoSummary(entry) {
   }
   if (action === "video_format") {
     return "일반동영상/Shorts 타입을 변경 전으로 되돌립니다.";
+  }
+  if (action === "video_format_confirm") {
+    return "관리자 확인 상태를 자동 판별 상태로 되돌립니다.";
   }
   return "이 변경을 이전 상태로 되돌립니다.";
 }
@@ -3220,6 +3254,35 @@ function bindEvents() {
         renderAdminContentList();
       } catch (err) {
         playlistScopeBtn.disabled = false;
+        alert(err.message);
+      }
+      return;
+    }
+
+    const videoFormatConfirmBtn = event.target.closest("button[data-video-format-confirm]");
+    if (videoFormatConfirmBtn) {
+      const videoId = videoFormatConfirmBtn.dataset.videoFormatConfirm || "";
+      videoFormatConfirmBtn.disabled = true;
+
+      try {
+        adminHistoryLoaded = false;
+        const data = await adminApi("/confirm-video-format", {
+          method: "POST",
+          body: JSON.stringify({ videoId })
+        });
+
+        const v = videos.find(x => x.id === videoId);
+        if (v) {
+          v.videoFormat = data.videoFormat === "shorts" ? "shorts" : "standard";
+          v.videoFormatSource = "confirmed";
+          v.videoFormatConfidence = "";
+          v.videoFormatReason = data.videoFormatReason || "관리자가 자동 판별 결과를 확인했습니다.";
+        }
+
+        render();
+        renderAdminContentList();
+      } catch (err) {
+        videoFormatConfirmBtn.disabled = false;
         alert(err.message);
       }
       return;

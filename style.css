@@ -4805,3 +4805,39 @@ h1,h2,h3,.brand-main{font-weight:650}
 .admin-page .video-format-admin-block{
   background:#faf8fb;border-color:#ece6ef;border-radius:11px;
 }
+
+
+/* v25.1 compact date label size + clearer admin format review */
+@media (min-width:621px){
+  .toolbar-panel.is-compact-sticky #typeFilter{
+    font-size:11px;
+    letter-spacing:-.01em;
+  }
+}
+
+.video-format-reason.needs-review{
+  color:#8a5d66;
+  font-weight:600;
+}
+
+.video-format-confirm-btn{
+  width:100%;
+  margin:8px 0 7px;
+  justify-content:center;
+  border-color:#d8cde0;
+  background:#f7f2fa;
+  color:#63526f;
+}
+
+.video-format-confirm-btn.attention{
+  border-color:#cdb8d6;
+  background:#f1e8f5;
+  color:#5e476d;
+}
+
+.video-format-confirm-btn:hover,
+.video-format-confirm-btn:focus-visible{
+  border-color:#bba7c5;
+  background:#eee4f3;
+  outline:none;
+}

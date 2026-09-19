@@ -82,7 +82,8 @@ export default {
           "accept_description_date",
           "content_type",
           "playlist_scope",
-          "video_format"
+          "video_format",
+          "video_format_confirm"
         ]);
 
         if (!undoableActions.has(String(entry.action || "")) || !entry.videoId) {
@@ -384,18 +385,20 @@ export default {
               playlistScope: old.playlistScope === "multi-year" ? "multi-year"
                 : old.playlistScope === "undated" ? "undated"
                 : "",
-              videoFormat: old.videoFormatSource === "manual" && ["standard", "shorts"].includes(old.videoFormat)
+              videoFormat: ["manual", "confirmed"].includes(old.videoFormatSource) && ["standard", "shorts"].includes(old.videoFormat)
                 ? old.videoFormat
                 : video.videoFormat,
-              videoFormatSource: old.videoFormatSource === "manual"
-                ? "manual"
+              videoFormatSource: ["manual", "confirmed"].includes(old.videoFormatSource)
+                ? old.videoFormatSource
                 : "auto",
-              videoFormatConfidence: old.videoFormatSource === "manual"
+              videoFormatConfidence: ["manual", "confirmed"].includes(old.videoFormatSource)
                 ? ""
                 : (video.videoFormatConfidence || ""),
-              videoFormatReason: old.videoFormatSource === "manual"
-                ? ""
-                : (video.videoFormatReason || ""),
+              videoFormatReason: old.videoFormatSource === "confirmed"
+                ? (old.videoFormatReason || "관리자가 자동 판별 결과를 확인했습니다.")
+                : old.videoFormatSource === "manual"
+                  ? ""
+                  : (video.videoFormatReason || ""),
               parseStatus: shouldReviewManualDate
                 ? "needs_review"
                 : (manualDates.length ? "parsed" : video.parseStatus)
@@ -819,11 +822,17 @@ export default {
           videoFormat: ["standard", "shorts"].includes(video.videoFormat)
             ? video.videoFormat
             : "standard",
-          videoFormatSource: video.videoFormatSource === "manual" ? "manual" : "auto"
+          videoFormatSource: ["manual", "confirmed"].includes(video.videoFormatSource)
+            ? video.videoFormatSource
+            : "auto",
+          videoFormatConfidence: String(video.videoFormatConfidence || ""),
+          videoFormatReason: String(video.videoFormatReason || "")
         };
 
         video.videoFormat = videoFormat;
         video.videoFormatSource = "manual";
+        video.videoFormatConfidence = "";
+        video.videoFormatReason = "";
         payload.generatedAt = new Date().toISOString();
 
         const result = await updateGithubFile({
@@ -841,7 +850,9 @@ export default {
             before,
             after: {
               videoFormat: video.videoFormat,
-              videoFormatSource: video.videoFormatSource
+              videoFormatSource: video.videoFormatSource,
+              videoFormatConfidence: "",
+              videoFormatReason: ""
             }
           }
         });
@@ -851,6 +862,80 @@ export default {
           videoId,
           videoFormat,
           videoFormatSource: "manual",
+          commitUrl: result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/confirm-video-format" && request.method === "POST") {
+        requireAdmin(request, env);
+
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json();
+        const videoId = String(body.videoId || "").trim();
+
+        if (!videoId) {
+          throw new HttpError(400, "확인할 영상 ID가 필요합니다.");
+        }
+
+        const payload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+
+        if (!payload || !Array.isArray(payload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const video = payload.videos.find(v => String(v.id) === videoId);
+        if (!video) throw new HttpError(404, "해당 영상을 찾지 못했습니다.");
+
+        if (!["standard", "shorts"].includes(video.videoFormat)) {
+          throw new HttpError(400, "현재 동영상 타입을 확인할 수 없습니다.");
+        }
+
+        const before = {
+          videoFormat: video.videoFormat,
+          videoFormatSource: ["manual", "confirmed"].includes(video.videoFormatSource)
+            ? video.videoFormatSource
+            : "auto",
+          videoFormatConfidence: String(video.videoFormatConfidence || ""),
+          videoFormatReason: String(video.videoFormatReason || "")
+        };
+
+        video.videoFormatSource = "confirmed";
+        video.videoFormatConfidence = "";
+        video.videoFormatReason = "관리자가 자동 판별 결과를 확인했습니다.";
+        payload.generatedAt = new Date().toISOString();
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch, path: "data/videos.json",
+          contentText: JSON.stringify(payload, null, 2) + "\n",
+          message: `Confirm video format ${video.videoFormat} for ${videoId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "video_format_confirm",
+            videoId,
+            title: video.title || videoId,
+            before,
+            after: {
+              videoFormat: video.videoFormat,
+              videoFormatSource: "confirmed",
+              videoFormatConfidence: "",
+              videoFormatReason: video.videoFormatReason
+            }
+          }
+        });
+
+        return jsonResponse({
+          ok: true,
+          videoId,
+          videoFormat: video.videoFormat,
+          videoFormatSource: "confirmed",
+          videoFormatReason: video.videoFormatReason,
           commitUrl: result.commit?.html_url || null
         }, 200, env, origin);
       }
@@ -1453,12 +1538,16 @@ function snapshotHistoryState(action, video) {
     return video.playlistScope || "";
   }
 
-  if (kind === "video_format") {
+  if (kind === "video_format" || kind === "video_format_confirm") {
     return {
       videoFormat: ["standard", "shorts"].includes(video.videoFormat)
         ? video.videoFormat
         : "standard",
-      videoFormatSource: video.videoFormatSource === "manual" ? "manual" : "auto"
+      videoFormatSource: ["manual", "confirmed"].includes(video.videoFormatSource)
+        ? video.videoFormatSource
+        : "auto",
+      videoFormatConfidence: String(video.videoFormatConfidence || ""),
+      videoFormatReason: String(video.videoFormatReason || "")
     };
   }
 
@@ -1512,10 +1601,14 @@ function applyHistoryBeforeState(entry, video) {
     return;
   }
 
-  if (action === "video_format") {
+  if (action === "video_format" || action === "video_format_confirm") {
     const prior = before && typeof before === "object" ? before : {};
     video.videoFormat = prior.videoFormat === "shorts" ? "shorts" : "standard";
-    video.videoFormatSource = prior.videoFormatSource === "manual" ? "manual" : "auto";
+    video.videoFormatSource = ["manual", "confirmed"].includes(prior.videoFormatSource)
+      ? prior.videoFormatSource
+      : "auto";
+    video.videoFormatConfidence = String(prior.videoFormatConfidence || "");
+    video.videoFormatReason = String(prior.videoFormatReason || "");
     return;
   }
 
