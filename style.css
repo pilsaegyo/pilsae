@@ -6347,3 +6347,260 @@ h1,h2,h3,.brand-main{font-weight:650}
     width:100%;
   }
 }
+
+
+/* v26.2 admin sync + content top UI */
+.admin-section-heading{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:14px;
+}
+
+.admin-section-heading h3{
+  margin:2px 0 0;
+}
+
+.admin-section-heading .admin-help{
+  margin:5px 0 0;
+  max-width:720px;
+}
+
+.admin-section-kicker,
+.admin-mini-label{
+  display:block;
+  color:#9a88a5;
+  font-size:7.5px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.admin-section-note{
+  flex:0 0 auto;
+  padding:5px 8px;
+  border:1px solid #e8e0ec;
+  border-radius:999px;
+  background:#faf7fb;
+  color:#7a6b82;
+  font-size:8px;
+  font-weight:800;
+}
+
+/* sync */
+.admin-sync-card{
+  padding:18px;
+}
+
+.admin-sync-summary{
+  margin:0 0 12px;
+  gap:8px;
+}
+
+.admin-sync-summary>div{
+  min-height:78px;
+  padding:11px 12px;
+  border-color:#e8e2eb;
+  background:#fbfafc;
+}
+
+.admin-sync-summary span{
+  font-size:8.5px;
+}
+
+.admin-sync-summary strong{
+  margin-top:2px;
+  color:#3e3544;
+  font-size:19px;
+}
+
+.admin-sync-summary small{
+  margin-top:3px;
+  color:#9a909f;
+  font-size:7.5px;
+}
+
+.admin-sync-flow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.admin-sync-flow-step{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:10px;
+  padding:11px;
+  border:1px solid #e8e1eb;
+  border-radius:12px;
+  background:#fff;
+}
+
+.admin-sync-step-no{
+  width:25px;
+  height:25px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:#f0e9f5;
+  color:#705b80;
+  font-size:9px;
+  font-weight:900;
+}
+
+.admin-sync-flow-step strong{
+  display:block;
+  color:#55495c;
+  font-size:9.5px;
+}
+
+.admin-sync-flow-step small{
+  display:block;
+  margin-top:3px;
+  color:#948a99;
+  font-size:8px;
+  line-height:1.4;
+}
+
+.admin-sync-flow-step .sync-button,
+.admin-sync-flow-step .sync-apply-button{
+  min-height:36px;
+  padding:8px 12px;
+  border-radius:9px;
+  font-size:9px;
+}
+
+/* content */
+.admin-content-heading{
+  margin-bottom:10px;
+}
+
+.admin-content-guide{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+.admin-content-guide>div{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:8px;
+  padding:9px 10px;
+  border:1px solid #ebe5ee;
+  border-radius:10px;
+  background:#fbfafc;
+}
+
+.admin-content-guide b{
+  align-self:start;
+  padding:2px 6px;
+  border-radius:999px;
+  background:#eee7f3;
+  color:#6d587b;
+  font-size:7.5px;
+  white-space:nowrap;
+}
+
+.admin-content-guide span{
+  color:#827786;
+  font-size:8px;
+  line-height:1.45;
+}
+
+.admin-content-guide span strong{
+  color:#66576f;
+  font-size:inherit;
+}
+
+.admin-video-format-verify-compact{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:14px;
+  padding:12px;
+  border:1px solid #e7e0eb;
+  border-radius:12px;
+  background:#fff;
+}
+
+.admin-video-format-copy>strong{
+  display:block;
+  margin-top:2px;
+  color:#55485d;
+  font-size:10px;
+}
+
+.admin-video-format-copy .admin-help{
+  margin:4px 0 0;
+  max-width:640px;
+  font-size:8px;
+}
+
+.admin-format-flow-text{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  margin-top:7px;
+  color:#8b7f91;
+  font-size:7.5px;
+  font-weight:700;
+}
+
+.admin-format-flow-text i{
+  color:#b0a6b5;
+  font-style:normal;
+}
+
+.admin-video-format-verify-compact .admin-video-format-stage-actions{
+  display:flex;
+  gap:6px;
+  flex-wrap:nowrap;
+}
+
+.admin-video-format-verify-compact .ghost-button{
+  min-height:34px;
+  padding:8px 10px;
+  border-radius:9px;
+  font-size:8.5px;
+  white-space:nowrap;
+}
+
+@media(max-width:820px){
+  .admin-section-heading{
+    flex-direction:column;
+  }
+
+  .admin-section-note{
+    align-self:flex-start;
+  }
+
+  .admin-sync-flow{
+    grid-template-columns:1fr;
+  }
+
+  .admin-content-guide{
+    grid-template-columns:1fr;
+  }
+
+  .admin-video-format-verify-compact{
+    grid-template-columns:1fr;
+  }
+
+  .admin-video-format-verify-compact .admin-video-format-stage-actions{
+    flex-wrap:wrap;
+  }
+}
+
+@media(max-width:560px){
+  .admin-sync-flow-step{
+    grid-template-columns:auto minmax(0,1fr);
+  }
+
+  .admin-sync-flow-step .sync-button,
+  .admin-sync-flow-step .sync-apply-button{
+    grid-column:1/-1;
+    width:100%;
+  }
+}
