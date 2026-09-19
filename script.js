@@ -2444,6 +2444,88 @@ function renderAdminUnknownList() {
   renderAdminContentList();
 }
 let adminVideoFormatPreviewResults = [];
+const VIDEO_FORMAT_PREVIEW_CACHE_KEY = "pilsae_video_format_preview_cache_v1";
+
+function readVideoFormatPreviewCache() {
+  try {
+    const raw = sessionStorage.getItem(VIDEO_FORMAT_PREVIEW_CACHE_KEY);
+    const parsed = raw ? JSON.parse(raw) : {};
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeVideoFormatPreviewCache(cache) {
+  try {
+    sessionStorage.setItem(
+      VIDEO_FORMAT_PREVIEW_CACHE_KEY,
+      JSON.stringify(cache || {})
+    );
+  } catch {}
+}
+
+function cachedVideoFormatProbeResults() {
+  const cache = readVideoFormatPreviewCache();
+  return Object.values(cache).filter(item =>
+    item &&
+    item.videoId &&
+    ["standard", "shorts"].includes(item.videoFormat)
+  );
+}
+
+function cacheSuccessfulVideoFormatProbes(results=[]) {
+  const cache = readVideoFormatPreviewCache();
+
+  for (const item of results) {
+    if (!item?.videoId || !["standard", "shorts"].includes(item.videoFormat)) continue;
+
+    cache[String(item.videoId)] = {
+      videoId: String(item.videoId),
+      videoFormat: item.videoFormat === "shorts" ? "shorts" : "standard",
+      reason: String(item.reason || "YouTube 자동 확인 성공")
+    };
+  }
+
+  writeVideoFormatPreviewCache(cache);
+}
+
+function removeVideoFormatProbeCache(videoIds=[]) {
+  const cache = readVideoFormatPreviewCache();
+
+  for (const id of videoIds) {
+    delete cache[String(id)];
+  }
+
+  writeVideoFormatPreviewCache(cache);
+}
+
+function pendingVideoFormatTargets() {
+  const cachedIds = new Set(
+    cachedVideoFormatProbeResults().map(item => String(item.videoId))
+  );
+
+  return videos.filter(v =>
+    videoFormatAssessment(v).needsReview &&
+    !cachedIds.has(String(v.id))
+  );
+}
+
+function videoFormatProbeProgress() {
+  const allTargets = videos.filter(v => videoFormatAssessment(v).needsReview);
+  const cachedIds = new Set(
+    cachedVideoFormatProbeResults().map(item => String(item.videoId))
+  );
+
+  const cachedCount = allTargets.filter(v => cachedIds.has(String(v.id))).length;
+
+  return {
+    total: allTargets.length,
+    cached: cachedCount,
+    remaining: Math.max(0, allTargets.length - cachedCount)
+  };
+}
+
 const adminVideoFormatSampleLimits = {
   shorts: 12,
   standard: 12,
@@ -2718,7 +2800,7 @@ function renderVideoFormatDiagnostic({
 
 async function runVideoFormatDiagnostic(limit, stage) {
   const status = $("#adminVideoFormatVerifyStatus");
-  const targets = videos.filter(v => videoFormatAssessment(v).needsReview);
+  const targets = pendingVideoFormatTargets();
   const stage5 = $("#adminVerifyVideoFormats5");
   const stage20 = $("#adminVerifyVideoFormats20");
   const stageAll = $("#adminVerifyVideoFormatsAll");
@@ -2760,6 +2842,7 @@ async function runVideoFormatDiagnostic(limit, stage) {
 
         const received = Array.isArray(data.results) ? data.results : [];
         results.push(...received);
+        cacheSuccessfulVideoFormatProbes(received);
 
         const got = new Set(received.map(x => String(x.videoId || "")));
         for (const v of batch) {
@@ -2836,9 +2919,12 @@ async function runVideoFormatDiagnostic(limit, stage) {
       message
     });
 
+    const progress = videoFormatProbeProgress();
+
     setAdminStatus(
       status,
-      `${stage}단계 완료 · 판별 성공 ${resolved} · 판별불가 ${unresolved} · 네트워크 실패 ${networkFailed}`,
+      `${stage}단계 완료 · 판별 성공 ${resolved} · 판별불가 ${unresolved} · 네트워크 실패 ${networkFailed}` +
+        ` · 미리 판별 ${progress.cached}개 · 남은 검사 ${progress.remaining}개`,
       canContinue ? "success" : "error"
     );
   } catch (err) {
@@ -2854,7 +2940,7 @@ async function previewAllPendingVideoFormats() {
   const status = $("#adminVideoFormatVerifyStatus");
   if (!button || !status) return;
 
-  const targets = videos.filter(v => videoFormatAssessment(v).needsReview);
+  const targets = pendingVideoFormatTargets();
 
   if (adminVideoFormatDiagnosticStage < 2) {
     setAdminStatus(
@@ -2866,8 +2952,20 @@ async function previewAllPendingVideoFormats() {
   }
 
   if (!targets.length) {
-    setAdminStatus(status, "현재 자동 확인이 필요한 영상이 없습니다.", "success");
-    $("#adminVideoFormatPreview")?.setAttribute("hidden", "");
+    const cached = cachedVideoFormatProbeResults();
+
+    if (cached.length) {
+      renderVideoFormatPreview(cached);
+      const progress = videoFormatProbeProgress();
+      setAdminStatus(
+        status,
+        `추가 검사할 영상이 없습니다. 미리 판별 ${progress.cached}개 결과를 확인하고 일괄 적용할 수 있습니다.`,
+        "success"
+      );
+    } else {
+      setAdminStatus(status, "현재 자동 확인이 필요한 영상이 없습니다.", "success");
+      $("#adminVideoFormatPreview")?.setAttribute("hidden", "");
+    }
     return;
   }
 
@@ -2880,7 +2978,7 @@ async function previewAllPendingVideoFormats() {
   // YouTube 공개 페이지를 여러 개 동시에 확인하면 일시적으로
   // 네트워크/Worker fetch가 끊길 수 있어 작은 묶음으로 나눠 처리한다.
   const batchSize = 5;
-  const results = [];
+  const results = [...cachedVideoFormatProbeResults()];
   let failedBatches = 0;
   let processed = 0;
 
@@ -2892,6 +2990,7 @@ async function previewAllPendingVideoFormats() {
       setAdminStatus(
         status,
         `미리보기 검사 중… ${Math.min(processed + batch.length, targets.length)}/${targets.length}` +
+          ` · 미리 판별 ${cachedVideoFormatProbeResults().length}개` +
           (failedBatches ? ` · 재시도 실패 묶음 ${failedBatches}개` : ""),
         "loading"
       );
@@ -2906,6 +3005,7 @@ async function previewAllPendingVideoFormats() {
         const receivedIds = new Set(received.map(x => String(x.videoId || "")));
 
         results.push(...received);
+        cacheSuccessfulVideoFormatProbes(received);
 
         // 응답에서 누락된 영상도 미리보기 자체는 계속 진행하도록 판별불가로 남긴다.
         for (const v of batch) {
@@ -2948,10 +3048,13 @@ async function previewAllPendingVideoFormats() {
       ? ` · 네트워크 실패 묶음 ${failedBatches}개는 판별불가로 남김`
       : "";
 
+    const progress = videoFormatProbeProgress();
+
     setAdminStatus(
       status,
-      `미리보기 완료 · Shorts ${shorts}개 · 일반동영상 ${standard}개 · 판별불가 ${unresolved}개${suffix}`,
-      failedBatches ? "success" : "success"
+      `미리보기 완료 · Shorts ${shorts}개 · 일반동영상 ${standard}개 · 판별불가 ${unresolved}개` +
+        ` · 미리 판별 ${progress.cached}개 · 남은 검사 ${progress.remaining}개${suffix}`,
+      "success"
     );
   } catch (err) {
     setAdminStatus(status, `미리보기 검사 중 오류: ${err.message}`, "error");
@@ -2994,6 +3097,8 @@ async function applyVideoFormatPreview() {
     const appliedMap = new Map(
       (applied.results || []).map(item => [String(item.videoId), item])
     );
+
+    removeVideoFormatProbeCache([...appliedMap.keys()]);
 
     videos.forEach(v => {
       const item = appliedMap.get(String(v.id));
@@ -3042,6 +3147,15 @@ async function applyVideoFormatPreview() {
 
 
 function renderAdminContentList() {
+  const progressStatus = $("#adminVideoFormatVerifyStatus");
+  if (progressStatus && !progressStatus.textContent.trim()) {
+    const progress = videoFormatProbeProgress();
+    if (progress.total) {
+      progressStatus.textContent =
+        `전체 후보 ${progress.total}개 · 미리 판별 ${progress.cached}개 · 남은 검사 ${progress.remaining}개`;
+    }
+  }
+
   const wrap = $("#adminContentList");
   const loadMoreBtn = $("#adminContentLoadMore");
   if (!wrap) return;
@@ -3148,7 +3262,7 @@ function renderAdminContentList() {
                   ${escapeHTML(prefix)} · ${escapeHTML(assessment.reason)}
                 </small>
               </div>
-              ${v.videoFormatSource === "auto" ? `
+              ${v.videoFormatSource === "auto" && assessment.needsReview ? `
                 <button type="button"
                   class="content-action-btn video-format-confirm-btn ${assessment.needsReview ? "attention" : ""}"
                   data-video-format-confirm="${escapeHTML(v.id)}">
@@ -3894,6 +4008,7 @@ function bindEvents() {
         });
 
         const v = videos.find(x => x.id === videoId);
+        removeVideoFormatProbeCache([videoId]);
         if (v) {
           v.videoFormat = data.videoFormat === "shorts" ? "shorts" : "standard";
           v.videoFormatSource = "confirmed";
@@ -3924,6 +4039,7 @@ function bindEvents() {
         });
 
         const v = videos.find(x => x.id === videoId);
+        removeVideoFormatProbeCache([videoId]);
         if (v) {
           v.videoFormat = data.videoFormat === "shorts" ? "shorts" : "standard";
           v.videoFormatSource = "manual";
