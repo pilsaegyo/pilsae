@@ -2254,3 +2254,178 @@ mark{
   font-size:10px;
   font-weight:900;
 }
+
+
+/* v14.4 콘텐츠 분류 목록 폭/겹침 개선 */
+.admin-tab-panel[data-admin-panel="content"] .admin-card{
+  width:100%;
+  max-width:none;
+}
+
+.admin-content-card{
+  overflow:visible;
+}
+
+.admin-content-list{
+  width:100%;
+  max-height:none;
+  overflow:visible;
+  padding-right:0;
+}
+
+.admin-content-item{
+  display:grid;
+  grid-template-columns:112px minmax(0,1fr);
+  grid-template-areas:
+    "thumb copy"
+    "actions actions";
+  gap:10px 14px;
+  align-items:start;
+  padding:16px 0;
+}
+
+.admin-content-thumb{
+  grid-area:thumb;
+  width:112px;
+  aspect-ratio:16/9;
+}
+
+.admin-content-copy{
+  grid-area:copy;
+  min-width:0;
+  padding-top:2px;
+}
+
+.admin-content-copy strong{
+  display:block;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+  line-height:1.45;
+  font-size:13px;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+
+.admin-content-copy small{
+  display:block;
+  margin-top:6px;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+  line-height:1.45;
+  font-size:10px;
+}
+
+.admin-content-actions{
+  grid-area:actions;
+  width:100%;
+  min-width:0;
+  display:grid;
+  grid-template-columns:minmax(180px,0.9fr) minmax(320px,1.5fr);
+  gap:10px;
+  align-items:stretch;
+}
+
+.admin-content-actions > .content-type-toggle{
+  width:100%;
+  height:100%;
+  min-height:48px;
+}
+
+.playlist-scope-block{
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  margin:0;
+  padding:10px;
+}
+
+.playlist-scope-current{
+  margin-bottom:8px;
+}
+
+.playlist-scope-actions{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:8px;
+}
+
+.playlist-scope-btn{
+  width:100%;
+  min-width:0;
+  min-height:42px;
+}
+
+.content-action-btn{
+  box-sizing:border-box;
+  min-width:0;
+  white-space:normal;
+  overflow:visible;
+}
+
+.content-action-btn span:last-child{
+  min-width:0;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+
+@media (min-width:1100px){
+  .admin-content-item{
+    grid-template-columns:128px minmax(0,1fr) minmax(420px,520px);
+    grid-template-areas:"thumb copy actions";
+    gap:16px;
+    align-items:center;
+  }
+
+  .admin-content-thumb{
+    width:128px;
+  }
+
+  .admin-content-actions{
+    display:grid;
+    grid-template-columns:minmax(160px,.8fr) minmax(250px,1.25fr);
+    gap:10px;
+  }
+}
+
+@media (max-width:760px){
+  .admin-content-item{
+    grid-template-columns:92px minmax(0,1fr);
+    grid-template-areas:
+      "thumb copy"
+      "actions actions";
+    gap:10px 12px;
+  }
+
+  .admin-content-thumb{
+    width:92px;
+  }
+
+  .admin-content-actions{
+    grid-template-columns:1fr;
+  }
+
+  .playlist-scope-actions{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:480px){
+  .admin-content-item{
+    grid-template-columns:76px minmax(0,1fr);
+    gap:9px 10px;
+  }
+
+  .admin-content-thumb{
+    width:76px;
+  }
+
+  .playlist-scope-actions{
+    grid-template-columns:1fr;
+  }
+
+  .content-action-btn{
+    min-height:44px;
+  }
+}
