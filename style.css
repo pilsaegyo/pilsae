@@ -4458,3 +4458,120 @@ select{
 .admin-icon-button:active svg{
   transform:rotate(25deg);
 }
+
+
+/* v23.3 typography polish — lighter, chip-like visual tone */
+:root{
+  --type-strong:600;
+  --type-medium:550;
+  --type-soft:500;
+}
+
+/* Main content titles: reduce the heavy/bold impression */
+.card-title,
+.video-grid.list-view .card-title,
+.timeline-title,
+.admin-content-copy strong,
+.admin-unknown-top > strong{
+  font-weight:var(--type-strong);
+  letter-spacing:-.018em;
+}
+
+/* Card title keeps presence without looking blocky */
+.card-title{
+  line-height:1.42;
+}
+
+/* Date chips: match the cleaner year/mixed-year chip tone */
+.date-chip,
+.date-context-link{
+  font-weight:var(--type-medium);
+  letter-spacing:-.008em;
+  line-height:1.25;
+}
+
+.year-summary-chip,
+.badge,
+.precision-badge,
+.admin-content-badge,
+.admin-reason-badge{
+  font-weight:600!important;
+  letter-spacing:-.008em;
+}
+
+/* Full dates were visually heavier than year/mixed-year labels */
+.video-grid:not(.list-view) .date-chip{
+  font-size:11.5px;
+  padding:6px 9px;
+}
+
+.video-grid.list-view .date-chip{
+  font-size:10.5px;
+  font-weight:var(--type-medium);
+}
+
+.timeline-item-date{
+  font-weight:var(--type-medium);
+  letter-spacing:-.008em;
+}
+
+.timeline-item-date span{
+  font-weight:var(--type-soft);
+}
+
+/* Supporting text */
+.source,
+.note,
+.card-meta,
+.timeline-meta,
+.timeline-years,
+.admin-content-copy small{
+  font-weight:var(--type-soft);
+  letter-spacing:-.008em;
+}
+
+/* Admin content controls: keep the same soft typography as the purple chips */
+.content-action-btn,
+.content-type-toggle,
+.playlist-scope-btn,
+.playlist-scope-current strong{
+  font-weight:600;
+  letter-spacing:-.006em;
+}
+
+.content-action-btn{
+  font-size:10.5px;
+}
+
+.content-action-icon{
+  font-weight:600;
+}
+
+/* Small UI labels should stay legible but not overly bold */
+.admin-tab,
+.admin-count-badge,
+.active-filter-chip,
+.date-more-btn,
+.search-match>span{
+  font-weight:600;
+}
+
+/* Keep major page headings distinct, but soften excessive weight */
+h1,h2,h3,
+.brand-main{
+  font-weight:650;
+}
+
+/* Mobile: preserve the lighter tone at smaller sizes */
+@media (max-width:620px){
+  .card-title,
+  .video-grid.list-view .card-title,
+  .timeline-title{
+    font-weight:600;
+  }
+
+  .date-chip,
+  .date-context-link{
+    font-weight:550;
+  }
+}
