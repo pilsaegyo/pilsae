@@ -1928,3 +1928,64 @@ mark{
     top:101px;
   }
 }
+
+
+/* v14 multi-year playlist */
+.badge.playlist-multiyear{
+  background:#f4ecff;
+  border-color:#dfd0f2;
+  color:#684d85;
+}
+.precision-badge.playlist-multiyear{
+  background:#f0e7fa;
+  color:#684d85!important;
+}
+.timeline-playlist-multiyear-group>h3{
+  color:#694f84;
+  font-weight:850;
+}
+.timeline-playlist-multiyear-group>h3::before{
+  background:#8768a5;
+}
+.admin-content-actions{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:7px;
+  min-width:168px;
+}
+.playlist-scope-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5px;
+}
+.playlist-scope-actions>span{
+  grid-column:1/-1;
+  text-align:right;
+  color:#8a7c94;
+  font-size:9px;
+  font-weight:800;
+}
+.playlist-scope-btn{
+  border:1px solid #e1d7e8;
+  border-radius:8px;
+  background:#fff;
+  color:#6e5c79;
+  padding:7px 6px;
+  font-size:9px;
+  font-weight:850;
+}
+.playlist-scope-btn.active{
+  background:#eee5f8;
+  border-color:#d6c4e7;
+  color:#5e4579;
+}
+@media (max-width:620px){
+  .admin-content-actions{
+    grid-column:1/-1;
+    min-width:0;
+  }
+  .playlist-scope-actions>span{
+    text-align:left;
+  }
+}

@@ -411,6 +411,19 @@ function contentTypeLabel(value="video") {
   return value === "playlist" ? "플레이리스트" : "일반 영상";
 }
 
+function isMultiYearPlaylist(v) {
+  if (!v || v.contentType !== "playlist") return false;
+  if (v.playlistScope === "multi-year") return true;
+  return videoYears(v).length > 1;
+}
+
+function playlistScopeLabel(v) {
+  if (!v || v.contentType !== "playlist") return "";
+  if (isMultiYearPlaylist(v)) return "다년도 플레이리스트";
+  if (v.playlistScope === "undated" || !(v.dates || []).length) return "연도 미지정";
+  return "연도 지정";
+}
+
 function normalizeDateEntry(entry) {
   if (!entry) return null;
   if (typeof entry === "string") {
@@ -539,6 +552,9 @@ function normalizeVideo(v, idx=0) {
     dates: dateEntries,
     ignoredDateCandidates: Array.isArray(v.ignoredDateCandidates) ? v.ignoredDateCandidates.map(String) : [],
     contentType: v.contentType === "playlist" ? "playlist" : "video",
+    playlistScope: v.playlistScope === "multi-year" ? "multi-year"
+      : v.playlistScope === "undated" ? "undated"
+      : "",
     durationSeconds: Number(v.durationSeconds || 0),
     duration: String(v.duration || ""),
     dateCandidates: validDates.length ? [] : extractReviewDateCandidates(
@@ -704,7 +720,7 @@ async function adminApi(path, options={}) {
 
 function updateAdminSummary() {
   const total = videos.length;
-  const review = videos.filter(v => v.type === "unknown").length;
+  const review = videos.filter(v => v.type === "unknown" && v.contentType !== "playlist").length;
   const parsed = total - review;
 
   if ($("#adminCurrentTotal")) $("#adminCurrentTotal").textContent = `${total}개`;
@@ -905,6 +921,7 @@ function renderCard(v) {
           <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${highlightMatch(v.title, q)}</a></h2>
           <div class="card-badges">
             ${v.contentType === "playlist" ? `<span class="badge playlist">플레이리스트</span>` : ""}
+            ${isMultiYearPlaylist(v) ? `<span class="badge playlist-multiyear">다년도</span>` : ""}
             <span class="badge ${escapeHTML(v.type)}">${typeLabel(v.type)}</span>
           </div>
         </div>
@@ -1158,6 +1175,9 @@ function timelineDateLabel(entry) {
 function timelineBucket(v) {
   const primary = timelinePrimaryEntry(v);
   if (!primary) {
+    if (isMultiYearPlaylist(v)) {
+      return { kind: "playlist-multiyear", year: "", month: "", entry: null };
+    }
     return v.contentType === "playlist"
       ? { kind: "playlist-undated", year: "", month: "", entry: null }
       : { kind: "unknown", year: "", month: "", entry: null };
@@ -1185,6 +1205,8 @@ function timelineItemHtml(v, bucket) {
     ? `<span class="precision-badge month-only">일자 미상</span>`
     : bucket.kind === "year-only"
       ? `<span class="precision-badge year-only">월·일 미상</span>`
+      : bucket.kind === "playlist-multiyear"
+        ? `<span class="precision-badge playlist-multiyear">다년도</span>`
       : bucket.kind === "playlist-undated"
         ? `<span class="precision-badge playlist-undated">연도 미지정</span>`
       : bucket.kind === "unknown"
@@ -1210,11 +1232,17 @@ function timelineItemHtml(v, bucket) {
 
 function renderTimeline(rows) {
   const yearGroups = new Map();
+  const multiYearPlaylists = [];
   const undatedPlaylists = [];
   const unknown = [];
 
   for (const v of rows) {
     const bucket = timelineBucket(v);
+
+    if (bucket.kind === "playlist-multiyear") {
+      multiYearPlaylists.push({ v, bucket });
+      continue;
+    }
 
     if (bucket.kind === "playlist-undated") {
       undatedPlaylists.push({ v, bucket });
@@ -1290,6 +1318,25 @@ function renderTimeline(rows) {
     }
 
     parts.push(`</section>`);
+  }
+
+  if (multiYearPlaylists.length) {
+    parts.push(`
+      <section class="timeline-year timeline-playlists timeline-playlists-multiyear">
+        <div class="timeline-year-heading">
+          <h2>플레이리스트</h2>
+          <span>${multiYearPlaylists.length}개</span>
+        </div>
+        <div class="timeline-month timeline-playlist-multiyear-group">
+          <h3>다년도 플레이리스트</h3>
+          <div class="timeline-items">
+            ${multiYearPlaylists
+              .sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"))
+              .map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+          </div>
+        </div>
+      </section>
+    `);
   }
 
   if (undatedPlaylists.length) {
@@ -1509,7 +1556,11 @@ function renderAdminUnknownList() {
   if (!wrap) return;
 
   const unknown = videos.filter(v => v.type === "unknown" && v.contentType !== "playlist");
-  const undatedPlaylists = videos.filter(v => v.type === "unknown" && v.contentType === "playlist");
+  const undatedPlaylists = videos.filter(v =>
+    v.type === "unknown" &&
+    v.contentType === "playlist" &&
+    !isMultiYearPlaylist(v)
+  );
 
   if (badge) badge.textContent = `${unknown.length}개`;
   if (playlistBadge) playlistBadge.textContent = `${undatedPlaylists.length}개`;
@@ -1572,12 +1623,27 @@ function renderAdminContentList() {
           ${v.durationSeconds ? ` · ${escapeHTML(formatDuration(v.durationSeconds))}` : ""}
         </small>
       </div>
-      <button type="button"
-        class="content-type-toggle ${v.contentType === "playlist" ? "is-playlist" : ""}"
-        data-content-type-toggle="${escapeHTML(v.id)}"
-        data-next-content-type="${v.contentType === "playlist" ? "video" : "playlist"}">
-        ${v.contentType === "playlist" ? "플레이리스트 해제" : "플레이리스트로 지정"}
-      </button>
+      <div class="admin-content-actions">
+        <button type="button"
+          class="content-type-toggle ${v.contentType === "playlist" ? "is-playlist" : ""}"
+          data-content-type-toggle="${escapeHTML(v.id)}"
+          data-next-content-type="${v.contentType === "playlist" ? "video" : "playlist"}">
+          ${v.contentType === "playlist" ? "플레이리스트 해제" : "플레이리스트로 지정"}
+        </button>
+        ${v.contentType === "playlist" ? `
+          <div class="playlist-scope-actions">
+            <span>${escapeHTML(playlistScopeLabel(v))}</span>
+            <button type="button"
+              class="playlist-scope-btn ${isMultiYearPlaylist(v) ? "active" : ""}"
+              data-playlist-scope="${escapeHTML(v.id)}"
+              data-playlist-scope-value="multi-year">다년도로 지정</button>
+            <button type="button"
+              class="playlist-scope-btn ${!isMultiYearPlaylist(v) && v.playlistScope === "undated" ? "active" : ""}"
+              data-playlist-scope="${escapeHTML(v.id)}"
+              data-playlist-scope-value="undated">연도 미지정</button>
+          </div>
+        ` : ""}
+      </div>
     </div>
   `).join("");
 }
@@ -1707,6 +1773,28 @@ function bindEvents() {
       return;
     }
 
+    const playlistScopeBtn = event.target.closest("button[data-playlist-scope]");
+    if (playlistScopeBtn) {
+      const videoId = playlistScopeBtn.dataset.playlistScope || "";
+      const playlistScope = playlistScopeBtn.dataset.playlistScopeValue || "";
+      playlistScopeBtn.disabled = true;
+
+      try {
+        await adminApi("/set-playlist-scope", {
+          method: "POST",
+          body: JSON.stringify({ videoId, playlistScope })
+        });
+        const v = videos.find(x => x.id === videoId);
+        if (v) v.playlistScope = playlistScope;
+        render();
+        renderAdminContentList();
+      } catch (err) {
+        playlistScopeBtn.disabled = false;
+        alert(err.message);
+      }
+      return;
+    }
+
     const contentToggle = event.target.closest("button[data-content-type-toggle]");
     if (contentToggle) {
       const videoId = contentToggle.dataset.contentTypeToggle || "";
@@ -1719,7 +1807,13 @@ function bindEvents() {
           body: JSON.stringify({ videoId, contentType })
         });
         const v = videos.find(x => x.id === videoId);
-        if (v) v.contentType = contentType === "playlist" ? "playlist" : "video";
+        if (v) {
+          v.contentType = contentType === "playlist" ? "playlist" : "video";
+          if (v.contentType === "playlist" && !v.playlistScope && !(v.dates || []).length) {
+            v.playlistScope = "undated";
+          }
+          if (v.contentType !== "playlist") v.playlistScope = "";
+        }
         render();
       } catch (err) {
         contentToggle.disabled = false;
