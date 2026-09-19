@@ -3970,11 +3970,19 @@
       "title": "대롱대롱 그루밍 고양이 #신혜성 #신화",
       "description": "99` 베스트토요일 - 당신도 주인공\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "99` 베스트토요일 - 당신도 주인공",
-      "sourceDate": null,
+      "sourceDate": "1999-01-01",
       "publishedAt": "2025-10-04T10:30:34Z",
       "thumbnail": "https://i.ytimg.com/vi/qOte32hvykY/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1999-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8153,7 +8161,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:19:57.773Z",
+  "generatedAt": "2026-09-19T04:20:06.642Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
