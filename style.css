@@ -5155,3 +5155,88 @@ h1,h2,h3,.brand-main{font-weight:650}
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
+
+
+/* v25.8 PC multi-date card + timeline playlist regression fix */
+
+/* PC 카드: 플레이리스트 배지가 날짜 영역 폭을 잡아먹어
+   3열 날짜 숫자가 겹치던 문제를 막는다. */
+@media (min-width:621px){
+  .video-grid:not(.list-view):not(.timeline-view) .card-meta-row:has(.dates.multi-date-grid){
+    display:block;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .card-meta-row:has(.dates.multi-date-grid) .dates{
+    width:100%;
+    min-width:0;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .card-meta-row:has(.dates.multi-date-grid) .card-badges{
+    justify-content:flex-start;
+    margin-top:7px;
+  }
+
+  /* PC에서도 모바일과 비슷한 크기로 날짜 숫자를 유지 */
+  .video-grid:not(.list-view):not(.timeline-view) .dates.multi-date-grid > .date-chip,
+  .video-grid:not(.list-view):not(.timeline-view) .dates.multi-date-grid > .date-extra:not([hidden]) .date-chip{
+    min-width:0;
+    padding:5px 4px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:9.5px;
+    line-height:1.25;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .dates.multi-date-grid .year-summary-chip{
+    font-size:10px;
+  }
+
+  .video-grid:not(.list-view):not(.timeline-view) .dates.multi-date-grid .date-more-btn{
+    font-size:9.5px;
+  }
+}
+
+/* 연도·월 보기의 플레이리스트 허브:
+   일반 타임라인의 76px 월 라벨 열을 상속해서 긴 '다년도 플레이리스트'
+   제목과 영상 목록이 겹치던 문제를 제거한다. */
+.timeline-playlist-hub .timeline-month{
+  display:block;
+  grid-template-columns:none;
+  gap:0;
+}
+
+.timeline-playlist-hub .timeline-month > h3{
+  margin:0 0 9px;
+  padding-left:10px;
+  min-width:0;
+  white-space:normal;
+  line-height:1.4;
+}
+
+.timeline-playlist-hub .timeline-month > .timeline-items{
+  width:100%;
+  min-width:0;
+}
+
+.timeline-playlist-hub .timeline-item{
+  width:100%;
+  min-width:0;
+  box-sizing:border-box;
+}
+
+.timeline-playlist-hub .timeline-item-body{
+  min-width:0;
+}
+
+.timeline-playlist-hub .timeline-title,
+.timeline-playlist-hub .timeline-source,
+.timeline-playlist-hub .timeline-years{
+  max-width:100%;
+}
+
+@media (max-width:620px){
+  .timeline-playlist-hub .timeline-month > h3{
+    margin-bottom:6px;
+  }
+}
