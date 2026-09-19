@@ -5853,3 +5853,9 @@ h1,h2,h3,.brand-main{font-weight:650}
     transition:none;
   }
 }
+
+
+/* v26.0 step 3F - deploy header cleanup */
+.deploy-upload-box-first{
+  margin-top:0;
+}
