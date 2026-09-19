@@ -2943,11 +2943,19 @@
       "title": "왜 제가 얘기를 하려고 하는데 갑자기 이런 이벤트를 하시는 거에여~~? 레몬셩 애교 #신혜성 #신화",
       "description": "신화창조 4기 팬미팅\n\n숏츠 형식 통일 및 재보정......\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "신화창조 4기 팬미팅",
-      "sourceDate": null,
+      "sourceDate": "2000-11-19",
       "publishedAt": "2025-12-30T10:30:12Z",
       "thumbnail": "https://i.ytimg.com/vi/I4ZwooSnt_Q/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-11-19",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8207,7 +8215,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:59:47.398Z",
+  "generatedAt": "2026-09-19T05:00:21.818Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
