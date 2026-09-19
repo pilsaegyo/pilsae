@@ -1992,11 +1992,19 @@
       "title": "뮤비 촬영장 신혜성 전진과 즐거운 한때 신혜성 미모 미쳤냐고 #신혜성 #신화",
       "description": "제목 : [공식] 신화 - Hey,come on M/V 촬영현장\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=w6RivfKWTbw\n\n재업시 본영상 링크 출처, 원본영상 링크 출처 표기 \n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "제목 : [공식] 신화 - Hey,come on M/V 촬영현장",
-      "sourceDate": null,
+      "sourceDate": "2001-01-01",
       "publishedAt": "2026-04-01T10:30:19Z",
       "thumbnail": "https://i.ytimg.com/vi/mFMLacsiqVw/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7794,7 +7802,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T03:19:33.088Z",
+  "generatedAt": "2026-09-19T04:07:26.530Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
