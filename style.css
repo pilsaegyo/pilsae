@@ -3069,3 +3069,58 @@ body.admin-mode-open .header-inner{
     scroll-margin-top:112px;
   }
 }
+
+
+/* v18.1 mobile search result collapsing */
+.mobile-search-summary{
+  display:none;
+}
+
+@media (max-width:620px){
+  .mobile-search-summary{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin:10px 0 8px;
+    padding:9px 10px;
+    border:1px solid #e2d9e7;
+    border-radius:11px;
+    background:#faf7fc;
+    color:#75697c;
+    font-size:10px;
+    font-weight:800;
+  }
+
+  .mobile-search-summary[hidden]{
+    display:none;
+  }
+
+  .mobile-search-more-btn{
+    flex:0 0 auto;
+    border:1px solid #d8cae3;
+    border-radius:9px;
+    background:#f0e7f7;
+    color:#5f4875;
+    padding:7px 9px;
+    font-size:9px;
+    font-weight:900;
+  }
+
+  #videoGrid.mobile-search-scroll{
+    max-height:68vh;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    padding-right:3px;
+    scroll-behavior:smooth;
+  }
+
+  #videoGrid.mobile-search-scroll::-webkit-scrollbar{
+    width:5px;
+  }
+
+  #videoGrid.mobile-search-scroll::-webkit-scrollbar-thumb{
+    background:#d8cce0;
+    border-radius:999px;
+  }
+}

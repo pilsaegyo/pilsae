@@ -6,9 +6,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=18" />
+  <link rel="stylesheet" href="./style.css?v=18.1" />
 </head>
-<body data-build="18">
+<body data-build="18.1">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -135,6 +135,11 @@
         <article class="skeleton-card"><div class="skeleton-thumb"></div><div class="skeleton-body"><span></span><span></span><span></span></div></article>
       </div>
     </section>
+
+    <div id="mobileSearchSummary" class="mobile-search-summary public-archive-ui" hidden>
+      <span id="mobileSearchSummaryText"></span>
+      <button id="mobileSearchMoreBtn" class="mobile-search-more-btn" type="button" aria-expanded="false"></button>
+    </div>
 
     <section id="videoGrid" class="video-grid public-archive-ui" aria-live="polite"></section>
 
@@ -300,6 +305,6 @@
     <button id="adminEntry" class="admin-entry" type="button" aria-label="관리자 화면" hidden>관리</button>
   </footer>
 
-  <script src="./script.js?v=18" defer></script>
+  <script src="./script.js?v=18.1" defer></script>
 </body>
 </html>
