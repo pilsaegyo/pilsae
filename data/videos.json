@@ -5112,11 +5112,19 @@
       "title": "체크셔츠 홍합셩 #신혜성 #신화",
       "description": "2000 MTV Summer Summit In Taiwan cut \n비주얼 박제용 입니다. (개인 저장용) \n인터뷰 내용도 귀여운듯..ㅎㅎ \n\n오디오 변환까지 하긴 귀찮아서..한쪽으로 대충..들으세여 원본영상이 오디오가 스테레오네여 킁\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "2000 MTV Summer Summit In Taiwan cut",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-07-21T11:17:53Z",
       "thumbnail": "https://i.ytimg.com/vi/2hFntY1T4LQ/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7929,7 +7937,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:11:51.270Z",
+  "generatedAt": "2026-09-19T04:11:58.215Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
