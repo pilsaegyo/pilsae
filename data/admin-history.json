@@ -1,6 +1,26 @@
 {
   "entries": [
     {
+      "id": "9263734a-9834-4c47-b840-3248dcd38bee",
+      "action": "video_format",
+      "videoId": "xJ9q3-LGeEQ",
+      "title": "울고 웃던 기억들이 마음을 떠나지 않아 우리 행복했었잖아 | 신화 - Heaven | 무대 교차편집 STAGE MIX",
+      "before": {
+        "videoFormat": "standard",
+        "videoFormatSource": "auto",
+        "videoFormatConfidence": "",
+        "videoFormatReason": ""
+      },
+      "after": {
+        "videoFormat": "standard",
+        "videoFormatSource": "manual",
+        "videoFormatConfidence": "",
+        "videoFormatReason": ""
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-19T17:36:08.717Z"
+    },
+    {
       "id": "5bdf116d-9903-4506-acdc-a0f3f1d1cb8d",
       "action": "video_format_youtube_verify",
       "videoId": "",
@@ -155,5 +175,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-19T16:50:03.051Z"
+  "updatedAt": "2026-09-19T17:36:08.717Z"
 }
