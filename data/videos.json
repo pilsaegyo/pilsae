@@ -3,8 +3,8 @@
     {
       "id": "614pXr4EDnk",
       "title": "동화처럼 지켜주는 가쿠란 신혜성",
-      "description": "제목 :  [SHINHWA] 2001 Falling in love, shinhwa knight\n채널 : izoasyung님\n링크 : https://youtu.be/cXzj_t3VHDc\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-      "source": "제목 :  [SHINHWA] 2001 Falling in love, shinhwa knight",
+      "description": "011222 프로 권격도 세계챔피언 타이틀 매치 특별공연\n\n제목 :  [SHINHWA] 2001 Falling in love, shinhwa knight\n채널 : izoasyung님\n링크 : https://youtu.be/cXzj_t3VHDc\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "011222 프로 권격도 세계챔피언 타이틀 매치 특별공연",
       "sourceDate": null,
       "publishedAt": "2026-09-19T10:30:35Z",
       "thumbnail": "https://i.ytimg.com/vi/614pXr4EDnk/maxresdefault.jpg",
@@ -14,7 +14,10 @@
       "contentType": "video",
       "playlistScope": "",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "VeGR53UOS50",
@@ -12811,7 +12814,7 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T12:07:56.627Z",
+  "generatedAt": "2026-09-19T12:11:27.186Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
