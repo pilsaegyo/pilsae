@@ -1342,3 +1342,96 @@ body{
   .date-more-btn{font-size:10px;padding:5px 7px}
   .admin-tabs{position:sticky;top:60px;z-index:7;background:rgba(247,244,250,.95);backdrop-filter:blur(10px)}
 }
+
+
+/* v8.1 precision-aware timeline */
+.timeline-year-only-group{
+  margin-top:10px;
+  border-top:1px dashed #ded5e7;
+  padding-top:16px;
+}
+.timeline-year-only-group>h3{
+  color:#6e5a82;
+  font-weight:850;
+}
+.timeline-year-only-group .timeline-item{
+  background:linear-gradient(90deg,rgba(243,238,249,.72),rgba(255,255,255,0));
+  border-radius:12px;
+  padding-left:10px;
+  padding-right:10px;
+}
+.timeline-unknown-group{
+  border-top:1px dashed #eadadf;
+}
+.timeline-unknown-group>h3{
+  color:#8b5f6c;
+  font-weight:850;
+}
+.precision-badge{
+  display:inline-flex;
+  align-items:center;
+  padding:3px 6px;
+  border-radius:999px;
+  font-size:9px!important;
+  font-weight:850!important;
+  line-height:1.2;
+}
+.precision-badge.month-only{
+  background:#f1ebf8;
+  color:#6c5882!important;
+}
+.precision-badge.year-only{
+  background:#eee8f4;
+  color:#665473!important;
+}
+.precision-badge.unknown{
+  background:#f8edef;
+  color:#8a5866!important;
+}
+.timeline-item.month-only .timeline-item-date{
+  color:#69567b;
+}
+.timeline-item.year-only .timeline-item-date{
+  color:#62536e;
+}
+.timeline-item.unknown .timeline-item-date{
+  color:#855f6b;
+}
+
+/* make archive grouping easier to scan */
+.timeline-month>h3{
+  position:relative;
+  padding-left:10px;
+}
+.timeline-month>h3::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.42em;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:#b7a5ca;
+}
+.timeline-year-only-group>h3::before{
+  background:#8d73a8;
+}
+.timeline-unknown-group>h3::before{
+  background:#a96e7d;
+}
+
+@media (max-width:620px){
+  .timeline-year-only-group{
+    padding-top:12px;
+  }
+  .timeline-year-only-group .timeline-item{
+    padding-left:7px;
+    padding-right:7px;
+  }
+  .precision-badge{
+    display:none;
+  }
+  .timeline-item-date{
+    flex-wrap:wrap;
+  }
+}

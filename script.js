@@ -764,78 +764,179 @@ function setViewMode(mode) {
   render();
 }
 
-function timelinePrimaryDate(v) {
-  const dates = v.dates.map(d => d.sourceDate).filter(Boolean).sort().reverse();
-  return dates[0] || "";
+function timelinePrimaryEntry(v) {
+  const entries = (v.dates || [])
+    .filter(d => d?.sourceDate)
+    .sort((a,b) => String(b.sourceDate).localeCompare(String(a.sourceDate)));
+  return entries[0] || null;
 }
 
-function timelineMonthLabel(sourceDate) {
-  if (!sourceDate) return "날짜 미확인";
-  const [,month] = sourceDate.split("-");
+function timelinePrimaryDate(v) {
+  return timelinePrimaryEntry(v)?.sourceDate || "";
+}
+
+function timelineMonthLabel(month) {
   return `${Number(month)}월`;
 }
 
+function timelineDateLabel(entry) {
+  if (!entry?.sourceDate) return "날짜 미확인";
+  const raw = String(entry.sourceDate);
+
+  if (entry.precision === "year") {
+    return `${raw.slice(0,4)}년`;
+  }
+
+  if (entry.precision === "month") {
+    const [y,m] = raw.split("-");
+    return `${y}.${m} · 일자 미상`;
+  }
+
+  return raw.replace(/-/g, ".");
+}
+
+function timelineBucket(v) {
+  const primary = timelinePrimaryEntry(v);
+  if (!primary) {
+    return { kind: "unknown", year: "", month: "", entry: null };
+  }
+
+  const year = primary.sourceDate.slice(0,4);
+
+  if (primary.precision === "year") {
+    return { kind: "year-only", year, month: "", entry: primary };
+  }
+
+  const month = primary.sourceDate.slice(5,7);
+  return {
+    kind: primary.precision === "month" ? "month-only" : "dated",
+    year,
+    month,
+    entry: primary
+  };
+}
+
+function timelineItemHtml(v, bucket) {
+  const primary = bucket.entry;
+  const extraCount = Math.max(0, (v.dates || []).filter(d => d?.sourceDate).length - 1);
+  const precisionBadge = bucket.kind === "month-only"
+    ? `<span class="precision-badge month-only">일자 미상</span>`
+    : bucket.kind === "year-only"
+      ? `<span class="precision-badge year-only">월·일 미상</span>`
+      : bucket.kind === "unknown"
+        ? `<span class="precision-badge unknown">날짜 미확인</span>`
+        : "";
+
+  return `
+    <article class="timeline-item ${escapeHTML(bucket.kind)}">
+      <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
+        ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
+      </a>
+      <div class="timeline-item-body">
+        <div class="timeline-item-date">
+          ${escapeHTML(timelineDateLabel(primary))}
+          ${extraCount ? `<span>외 ${extraCount}개 날짜</span>` : ""}
+          ${precisionBadge}
+        </div>
+        <a class="timeline-title youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a>
+        ${v.type === "mixed" ? `<div class="timeline-years">${videoYears(v).map(escapeHTML).join(" · ")}</div>` : ""}
+      </div>
+    </article>`;
+}
+
 function renderTimeline(rows) {
-  const grouped = new Map();
+  const yearGroups = new Map();
   const unknown = [];
 
   for (const v of rows) {
-    const primary = timelinePrimaryDate(v);
-    if (!primary) {
-      unknown.push(v);
+    const bucket = timelineBucket(v);
+
+    if (bucket.kind === "unknown") {
+      unknown.push({ v, bucket });
       continue;
     }
-    const year = primary.slice(0,4);
-    const month = primary.slice(5,7);
-    if (!grouped.has(year)) grouped.set(year, new Map());
-    const yearMap = grouped.get(year);
-    if (!yearMap.has(month)) yearMap.set(month, []);
-    yearMap.get(month).push(v);
+
+    if (!yearGroups.has(bucket.year)) {
+      yearGroups.set(bucket.year, {
+        months: new Map(),
+        yearOnly: []
+      });
+    }
+
+    const group = yearGroups.get(bucket.year);
+
+    if (bucket.kind === "year-only") {
+      group.yearOnly.push({ v, bucket });
+      continue;
+    }
+
+    if (!group.months.has(bucket.month)) {
+      group.months.set(bucket.month, []);
+    }
+
+    group.months.get(bucket.month).push({ v, bucket });
   }
 
   const parts = [];
-  const years = [...grouped.keys()].sort((a,b) => Number(b)-Number(a));
+  const years = [...yearGroups.keys()].sort((a,b) => Number(b) - Number(a));
+
   for (const year of years) {
-    const months = grouped.get(year);
-    parts.push(`<section class="timeline-year"><div class="timeline-year-heading"><h2>${escapeHTML(year)}</h2><span>${[...months.values()].reduce((n,arr)=>n+arr.length,0)}개</span></div>`);
-    for (const month of [...months.keys()].sort((a,b) => Number(b)-Number(a))) {
-      const items = months.get(month).sort((a,b) => timelinePrimaryDate(b).localeCompare(timelinePrimaryDate(a)));
-      parts.push(`<div class="timeline-month"><h3>${escapeHTML(timelineMonthLabel(`${year}-${month}-01`))}</h3><div class="timeline-items">`);
-      for (const v of items) {
-        const primary = timelinePrimaryDate(v);
-        const extraCount = Math.max(0, v.dates.filter(d => d.sourceDate).length - 1);
-        parts.push(`
-          <article class="timeline-item">
-            <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
-              ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
-            </a>
-            <div class="timeline-item-body">
-              <div class="timeline-item-date">${escapeHTML(primary.replace(/-/g,"."))}${extraCount ? `<span>외 ${extraCount}개 날짜</span>` : ""}</div>
-              <a class="timeline-title youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a>
-              ${v.type === "mixed" ? `<div class="timeline-years">${videoYears(v).map(escapeHTML).join(" · ")}</div>` : ""}
-            </div>
-          </article>`);
-      }
-      parts.push(`</div></div>`);
+    const group = yearGroups.get(year);
+    const monthCount = [...group.months.values()].reduce((sum, arr) => sum + arr.length, 0);
+    const totalCount = monthCount + group.yearOnly.length;
+
+    parts.push(`
+      <section class="timeline-year">
+        <div class="timeline-year-heading">
+          <h2>${escapeHTML(year)}</h2>
+          <span>${totalCount}개</span>
+        </div>
+    `);
+
+    for (const month of [...group.months.keys()].sort((a,b) => Number(b) - Number(a))) {
+      const items = group.months.get(month)
+        .sort((a,b) => timelinePrimaryDate(b.v).localeCompare(timelinePrimaryDate(a.v)));
+
+      parts.push(`
+        <div class="timeline-month">
+          <h3>${escapeHTML(timelineMonthLabel(month))}</h3>
+          <div class="timeline-items">
+            ${items.map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+          </div>
+        </div>
+      `);
     }
+
+    if (group.yearOnly.length) {
+      const items = group.yearOnly.sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"));
+      parts.push(`
+        <div class="timeline-month timeline-year-only-group">
+          <h3>연도만 확인</h3>
+          <div class="timeline-items">
+            ${items.map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
+          </div>
+        </div>
+      `);
+    }
+
     parts.push(`</section>`);
   }
 
   if (unknown.length) {
-    parts.push(`<section class="timeline-year timeline-unknown"><div class="timeline-year-heading"><h2>날짜 미확인</h2><span>${unknown.length}개</span></div><div class="timeline-items">`);
-    for (const v of unknown) {
-      parts.push(`
-        <article class="timeline-item">
-          <a class="timeline-thumb youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
-            ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
-          </a>
-          <div class="timeline-item-body">
-            <div class="timeline-item-date">날짜 미확인</div>
-            <a class="timeline-title youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(v.title)}</a>
+    parts.push(`
+      <section class="timeline-year timeline-unknown">
+        <div class="timeline-year-heading">
+          <h2>날짜 미확인</h2>
+          <span>${unknown.length}개</span>
+        </div>
+        <div class="timeline-month timeline-unknown-group">
+          <h3>확인 필요</h3>
+          <div class="timeline-items">
+            ${unknown.map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
           </div>
-        </article>`);
-    }
-    parts.push(`</div></section>`);
+        </div>
+      </section>
+    `);
   }
 
   return parts.join("");
