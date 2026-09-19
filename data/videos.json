@@ -4340,11 +4340,19 @@
       "title": "✂️ 010311｜슈퍼tv 일요일은 즐거워｜신혜성 보정 CUT.zip #신혜성 #신화 #fanedit",
       "description": "신혜성만 짜름 \n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "신혜성만 짜름",
-      "sourceDate": null,
+      "sourceDate": "2001-03-11",
       "publishedAt": "2025-08-29T13:30:18Z",
       "thumbnail": "https://i.ytimg.com/vi/CVNMygHNQ7g/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-03-11",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7897,7 +7905,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:10:57.953Z",
+  "generatedAt": "2026-09-19T04:11:12.701Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
