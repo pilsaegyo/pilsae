@@ -5096,3 +5096,32 @@ h1,h2,h3,
     font-weight:550;
   }
 }
+
+
+/* v24.8 compact filter width correction */
+@media (min-width:901px){
+  .toolbar-panel.is-compact-sticky{
+    grid-template-columns:minmax(280px,1.35fr) minmax(650px,3fr);
+  }
+
+  .toolbar-panel.is-compact-sticky .filter-extra{
+    grid-template-columns:
+      minmax(126px,.95fr)   /* 전체 연도 + 건수 */
+      minmax(112px,.88fr)   /* 날짜 유형 */
+      minmax(116px,.92fr)   /* 콘텐츠 유형 */
+      minmax(116px,.92fr)   /* 동영상 타입 */
+      minmax(142px,1.08fr)  /* 정렬 */
+      auto;
+  }
+
+  .toolbar-panel.is-compact-sticky .field select{
+    width:100%;
+    min-width:0;
+    padding-right:22px;
+    text-overflow:ellipsis;
+  }
+
+  .toolbar-panel.is-compact-sticky #yearFilter{
+    font-size:12.5px;
+  }
+}
