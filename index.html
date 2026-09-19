@@ -6,9 +6,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=25.12" />
+  <link rel="stylesheet" href="./style.css?v=25.14" />
 </head>
-<body class="site-config-pending" data-build="25.12">
+<body class="site-config-pending" data-build="25.14">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -24,7 +24,7 @@
   </header>
 
   <div id="siteHelpBackdrop" class="site-help-backdrop" hidden></div>
-  <aside id="siteHelpPanel" class="site-help-panel" role="dialog" aria-modal="false"
+  <aside id="siteHelpPanel" class="site-help-panel" role="dialog" aria-modal="true"
     aria-labelledby="siteHelpTitle" hidden>
     <div class="site-help-head">
       <div>
@@ -38,6 +38,7 @@
       <div><strong>찾기</strong><span>검색 · 연도 · 날짜 · 타입 필터를 함께 사용할 수 있어요.</span></div>
       <div><strong>날짜</strong><span>날짜를 누르면 같은 시기의 영상을 모아볼 수 있어요.</span></div>
       <div><strong>보기</strong><span>카드 · 목록 · 연도/월 보기로 바꿔볼 수 있어요.</span></div>
+      <div><strong>재생</strong><span>썸네일이나 제목을 누르면 YouTube로 이동해요.</span></div>
       <div><strong>표시</strong><span>썸네일 배지와 아이콘으로 플레이리스트 · 다년도 · Shorts를 구분해요.</span></div>
     </div>
     <p class="site-help-note">여러 날짜는 <b>+N</b>으로 펼치며, 날짜가 없으면 <b>날짜 미확인</b>으로 표시됩니다.</p>
@@ -57,7 +58,7 @@
           <h1 id="mainTitle">날짜로 다시 찾는 영상 기록</h1>
           <p class="hero-description">영상 설명에 기록된 원본 날짜와 출처를 기준으로 정리했습니다.</p>
           <div class="hero-stats hero-stats-public" aria-label="아카이브 요약">
-            <span><b id="heroTotal">—</b>개의 영상 기록</span>
+            <span><b id="heroTotal" class="count-placeholder" aria-label="영상 수 불러오는 중">—</b>개의 영상 기록</span>
           </div>
         </div>
       </div>
@@ -67,7 +68,7 @@
       <div class="toolbar-primary">
         <div class="stat-card">
           <span class="stat-label">전체 영상</span>
-          <strong id="videoCount">—개</strong>
+          <strong id="videoCount" class="count-placeholder" aria-label="영상 수 불러오는 중">—개</strong>
         </div>
 
         <label class="field search-field">
@@ -192,6 +193,6 @@
     <span>필새 영상 아카이브</span>
   </footer>
 
-  <script src="./script.js?v=25.12" defer></script>
+  <script src="./script.js?v=25.14" defer></script>
 </body>
 </html>

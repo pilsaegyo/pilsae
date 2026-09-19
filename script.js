@@ -1593,9 +1593,6 @@ function renderCard(v) {
           ? `<p class="note">${escapeHTML(unknownReason(v))}</p>`
           : ""}
 
-        <a class="card-link youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">
-          YouTube에서 보기
-        </a>
       </div>
     </article>
   `;
@@ -2177,8 +2174,114 @@ function renderEmptyStateActions() {
   wrap.innerHTML = actions.join("");
 }
 
+function setPublicCountLoading(loading) {
+  ["#heroTotal", "#videoCount"].forEach(selector => {
+    const el = $(selector);
+    if (!el) return;
+
+    el.classList.toggle("count-placeholder", Boolean(loading));
+
+    if (loading) {
+      el.setAttribute("aria-label", "영상 수 불러오는 중");
+      el.textContent = selector === "#videoCount" ? "—개" : "—";
+    } else {
+      el.removeAttribute("aria-label");
+    }
+  });
+}
+
+function siteHelpFocusableElements() {
+  const panel = $("#siteHelpPanel");
+  if (!panel || panel.hidden) return [];
+
+  return [...panel.querySelectorAll(
+    'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  )].filter(el => !el.hidden && el.getClientRects().length > 0);
+}
+
+function trapSiteHelpFocus(event) {
+  if (event.key !== "Tab") return false;
+
+  const panel = $("#siteHelpPanel");
+  if (!panel || panel.hidden) return false;
+
+  const focusable = siteHelpFocusableElements();
+  if (!focusable.length) {
+    event.preventDefault();
+    panel.focus?.();
+    return true;
+  }
+
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  const active = document.activeElement;
+
+  if (event.shiftKey) {
+    if (active === first || !panel.contains(active)) {
+      event.preventDefault();
+      last.focus();
+      return true;
+    }
+  } else if (active === last || !panel.contains(active)) {
+    event.preventDefault();
+    first.focus();
+    return true;
+  }
+
+  return false;
+}
+
+async function loadArchiveDataAndRender() {
+  setPublicCountLoading(true);
+
+  await loadInitialData();
+  rebuildYearFilter();
+  applyUrlStateToControls();
+  syncUrlState({ replace: true });
+  render();
+}
+
+function showPublicLoadError(error) {
+  console.error(error);
+
+  $("#loadingState")?.setAttribute("hidden", "");
+  setPublicCountLoading(false);
+
+  const heroTotal = $("#heroTotal");
+  const videoCount = $("#videoCount");
+  if (heroTotal) heroTotal.textContent = "—";
+  if (videoCount) videoCount.textContent = "—개";
+
+  const resultMeta = $("#resultMeta");
+  if (resultMeta) resultMeta.textContent = "영상 목록을 불러오지 못했습니다.";
+
+  const emptyState = $("#emptyState");
+  if (!emptyState) return;
+
+  emptyState.hidden = false;
+  emptyState.innerHTML = `
+    <strong>데이터를 불러오지 못했습니다.</strong>
+    <p>네트워크 상태를 확인한 뒤 다시 시도해 주세요.</p>
+    <button id="retryArchiveLoadBtn" class="empty-reset-btn public-retry-btn" type="button">다시 시도</button>
+  `;
+
+  $("#retryArchiveLoadBtn")?.addEventListener("click", async (event) => {
+    const button = event.currentTarget;
+    button.disabled = true;
+    button.textContent = "불러오는 중…";
+    emptyState.hidden = true;
+
+    try {
+      await loadArchiveDataAndRender();
+    } catch (retryError) {
+      showPublicLoadError(retryError);
+    }
+  }, { once: true });
+}
+
 function render() {
   $("#loadingState")?.setAttribute("hidden", "");
+  setPublicCountLoading(false);
 
   $("#videoCount").textContent = `${videos.length}개`;
 
@@ -3799,8 +3902,16 @@ function bindEvents() {
   $("#siteHelpBackdrop")?.addEventListener("click", () => setSiteHelp(false));
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !$("#siteHelpPanel")?.hidden) {
+    const helpOpen = !$("#siteHelpPanel")?.hidden;
+
+    if (event.key === "Escape" && helpOpen) {
+      event.preventDefault();
       setSiteHelp(false);
+      return;
+    }
+
+    if (helpOpen) {
+      trapSiteHelpFocus(event);
     }
   });
 
@@ -4777,20 +4888,14 @@ function bindEvents() {
   loadLiveChannelBranding();
   $("#emptyState").hidden = true;
 
+  // Bind public controls before data fetch so SITE GUIDE and retry/error UX
+  // remain functional even when videos.json fails to load.
+  bindEvents();
+
   try {
-    await loadInitialData();
-    rebuildYearFilter();
-    applyUrlStateToControls();
-    bindEvents();
-    syncUrlState({ replace: true });
-    render();
+    await loadArchiveDataAndRender();
   } catch (err) {
-    console.error(err);
-    $("#loadingState")?.setAttribute("hidden", "");
-    $("#resultMeta").textContent = "영상 목록을 불러오지 못했습니다.";
-    $("#emptyState").hidden = false;
-    $("#emptyState").innerHTML =
-      `<strong>데이터를 불러오지 못했습니다.</strong><p>잠시 후 새로고침해 주세요.</p>`;
+    showPublicLoadError(err);
   }
 
   if (location.hash === "#admin" && $("#adminPanel")) setAdmin(true);

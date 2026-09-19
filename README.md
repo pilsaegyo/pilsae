@@ -820,3 +820,29 @@
 - Android 앱 intent도 Shorts는 `/shorts/VIDEO_ID`, 일반 영상은 `/watch?v=VIDEO_ID`로 분리.
 - iOS는 universal HTTPS 링크를 사용해 Shorts 경로를 유지.
 - Worker 변경 없음.
+
+
+## v25.13 로딩/오류/접근성 마무리
+- 상단 `—개` 카운트를 은은한 pulse placeholder로 변경.
+- 숫자 영역에 min-width를 확보해 실제 카운트가 들어올 때 주변 문구가 흔들리는 현상 완화.
+- `prefers-reduced-motion` 사용자는 placeholder 애니메이션 비활성화.
+- `videos.json` 로드 실패 시 `다시 시도` 버튼을 제공하고 페이지 전체 새로고침 없이 데이터를 재요청.
+- 재시도 중에는 버튼을 비활성화하고 `불러오는 중…` 상태 표시.
+- SITE GUIDE에 Tab / Shift+Tab 포커스 트랩 적용.
+- SITE GUIDE의 `aria-modal`을 true로 정리하고 Esc 닫기 / 닫은 뒤 원래 도움말 버튼 포커스 복원 유지.
+- 데이터 로딩 실패 상태에서도 SITE GUIDE와 공용 이벤트가 정상 동작하도록 이벤트 바인딩 시점 정리.
+- `/` 검색 단축키는 추가하지 않음.
+- v25.12 Shorts/일반영상 YouTube 경로 분리와 이전 기능 모두 유지.
+- Worker 변경 없음.
+
+
+## v25.14 썸네일 클릭 유도 + 카드 CTA 정리
+- 카드 하단의 `YouTube에서 보기` 버튼 제거.
+- SITE GUIDE에 `썸네일이나 제목을 누르면 YouTube로 이동` 안내 추가.
+- PC에서 썸네일에 마우스를 올리면 이미지가 살짝 밝아지고 중앙에 작은 재생 아이콘이 나타나도록 처리.
+- 썸네일 확대는 매우 약하게 적용해 카드가 과하게 움직이지 않도록 조정.
+- `cursor:pointer`로 클릭 가능한 요소임을 명확히 표시.
+- 터치 환경에는 hover 재생 아이콘을 강제로 표시하지 않음.
+- `prefers-reduced-motion` 사용자는 확대 애니메이션 비활성화.
+- v25.13의 로딩 placeholder / 다시 시도 / Focus Trap과 v25.12 Shorts 링크 분리 기능 유지.
+- Worker 변경 없음.
