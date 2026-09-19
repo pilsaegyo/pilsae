@@ -5196,7 +5196,11 @@
       "ignoredDateCandidates": [],
       "previousManualDates": [],
       "manualDateReviewPending": false,
-      "descriptionChangedAfterManual": false
+      "descriptionChangedAfterManual": false,
+      "videoFormat": "standard",
+      "videoFormatSource": "confirmed",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
     },
     {
       "id": "efTvEN3GK08",
@@ -12814,7 +12818,7 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T13:14:00.623Z",
+  "generatedAt": "2026-09-19T16:22:19.054Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
