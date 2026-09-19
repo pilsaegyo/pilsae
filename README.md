@@ -926,3 +926,15 @@
 - `worker/index.js` 최상단에 동작에 영향을 주지 않는 테스트 주석 1줄만 추가.
 - 목적: 관리자 ZIP 배포 → GitHub commit → Cloudflare `pilsae-admin-api` 자동 Build/Deploy 연결 확인.
 - 테스트 성공 후 주석은 남아 있어도 기능상 영향 없음.
+
+
+## v26.0-step3d · Worker 자동배포 재시도 + 빌드 버전 표시 수정
+- `worker/wrangler.jsonc`의 `compatibility_date`를 `2026-09-01`로 변경.
+  - UTC 날짜 경계에서도 미래 날짜로 판정되지 않도록 충분히 과거 날짜 사용.
+- 관리자 상단 빌드 배지의 `v25.15` 하드코딩 제거.
+- 관리자 빌드 번호는 이제 `body[data-build]` 값을 자동으로 표시.
+- 향후 버전 변경 시 배지 문구를 별도로 수정할 필요 없음.
+- GitHub 자동 커밋 메시지도 현재 관리자 페이지 버전이 아니라 **업로드 ZIP 내부의 `admin/index.html`/`index.html`의 `data-build`** 값을 읽어 생성.
+- 예: Step 3D ZIP이면 `Deploy 26.0-step3d from admin`.
+- ZIP에 버전 정보가 없으면 `Deploy archive patch from admin`으로 안전하게 fallback.
+- Worker 자동배포 테스트용 주석은 기능상 영향이 없어 그대로 유지.

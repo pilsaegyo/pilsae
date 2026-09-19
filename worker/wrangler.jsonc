@@ -1,7 +1,7 @@
 {
   "name": "pilsae-admin-api",
   "main": "index.js",
-  "compatibility_date": "2026-09-20",
+  "compatibility_date": "2026-09-01",
   "workers_dev": true,
   "keep_vars": true,
   "secrets": {

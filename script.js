@@ -3861,6 +3861,10 @@ async function commitDeployPatch() {
     }
 
     const files = await extractDeployZipTextFiles(buffer, deployPatchState.normalized);
+    const patchVersion = deployVersionFromFiles(files);
+    const commitMessage = patchVersion
+      ? `Deploy ${patchVersion} from admin`
+      : `Deploy archive patch from admin`;
 
     setAdminStatus(status, `${files.length}개 파일을 GitHub에 단일 커밋으로 반영하는 중입니다…`, "loading");
 
@@ -3870,7 +3874,7 @@ async function commitDeployPatch() {
         expectedHeadSha:deployPatchState.headSha,
         patchHash:deployPatchState.hash,
         files,
-        message:`Deploy ${document.body.dataset.build || "archive patch"} from admin`
+        message:commitMessage
       })
     });
 
@@ -4328,6 +4332,31 @@ function downloadJSON(data, filename) {
   a.click();
   URL.revokeObjectURL(a.href);
   a.remove();
+}
+
+
+function syncAdminBuildVersion() {
+  const el = $("#adminBuildVersion");
+  if (!el) return;
+
+  const build = String(document.body?.dataset?.build || "").trim();
+  el.textContent = build ? `v${build}` : "버전 확인 불가";
+  el.title = build ? `현재 배포 빌드 v${build}` : "현재 배포 빌드 정보를 확인할 수 없습니다.";
+}
+
+function deployVersionFromFiles(files=[]) {
+  const preferred = [
+    files.find(file => file.path === "admin/index.html"),
+    files.find(file => file.path === "index.html")
+  ].filter(Boolean);
+
+  for (const file of preferred) {
+    const text = String(file.contentText || "");
+    const match = text.match(/\bdata-build=["']([^"']+)["']/i);
+    if (match?.[1]) return String(match[1]).trim();
+  }
+
+  return "";
 }
 
 function setSiteHelp(open) {
@@ -5477,6 +5506,7 @@ function bindEvents() {
 }
 
 (async function init() {
+  syncAdminBuildVersion();
   await loadSiteConfig();
   applySiteConfig();
   loadLiveChannelBranding();
