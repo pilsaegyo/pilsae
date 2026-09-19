@@ -4620,3 +4620,79 @@ h1,h2,h3,
     justify-self:start;
   }
 }
+
+
+/* v23.5 timeline playlist section separation */
+.timeline-playlists{
+  position:relative;
+  margin-top:34px;
+  padding-top:26px;
+  border-top:1px solid #e8e0ec;
+}
+
+/* Break the visual continuity of the main date-axis before playlists start. */
+.timeline-playlists::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:-1px;
+  width:54px;
+  height:3px;
+  background:var(--bg);
+}
+
+/* Give the playlist hub its own left rhythm instead of sitting on the date axis. */
+.timeline-playlists .timeline-year-heading{
+  margin-left:18px;
+  padding-left:0;
+}
+
+.timeline-playlists .timeline-year-heading::before{
+  display:none;
+}
+
+.timeline-playlists .timeline-year-heading h2{
+  margin-bottom:6px;
+}
+
+/* The first playlist subgroup was visually colliding with the axis/title. */
+.timeline-playlists .timeline-month,
+.timeline-playlists .timeline-year-only-group,
+.timeline-playlists .timeline-playlist-undated-group{
+  margin-left:18px;
+}
+
+.timeline-playlists .timeline-month>h3,
+.timeline-playlists .timeline-year-only-group>h3,
+.timeline-playlists .timeline-playlist-undated-group>h3{
+  margin-top:10px;
+  padding-left:0;
+}
+
+.timeline-playlists .timeline-month>h3::before,
+.timeline-playlists .timeline-year-only-group>h3::before,
+.timeline-playlists .timeline-playlist-undated-group>h3::before{
+  display:none;
+}
+
+.timeline-playlists .timeline-items{
+  margin-top:7px;
+}
+
+.timeline-playlists .timeline-item:first-child{
+  padding-top:12px;
+}
+
+@media (max-width:620px){
+  .timeline-playlists{
+    margin-top:26px;
+    padding-top:20px;
+  }
+
+  .timeline-playlists .timeline-year-heading,
+  .timeline-playlists .timeline-month,
+  .timeline-playlists .timeline-year-only-group,
+  .timeline-playlists .timeline-playlist-undated-group{
+    margin-left:10px;
+  }
+}
