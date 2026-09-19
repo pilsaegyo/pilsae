@@ -762,9 +762,6 @@ function yearVideoCounts() {
   return counts;
 }
 
-function playlistCount() {
-  return videos.filter(v => v.contentType === "playlist").length;
-}
 
 function rebuildYearFilter() {
   const select = $("#yearFilter");
@@ -1017,21 +1014,69 @@ function renderSearchSuggestions() {
 function hideSearchSuggestions() {
   const wrap = $("#searchSuggestions");
   const input = $("#searchInput");
-  if (wrap) wrap.hidden = true;
+  if (wrap) {
+    wrap.hidden = true;
+    wrap.querySelectorAll(".search-suggestion-item.is-active").forEach(el => el.classList.remove("is-active"));
+  }
   if (input) input.setAttribute("aria-expanded", "false");
 }
 
-function renderQuickBrowseBar() {
-  const btn = $("#playlistQuickBtn");
-  const count = $("#playlistQuickCount");
-  if (!btn || !count) return;
+function updateSearchClearButton() {
+  const btn = $("#clearSearchBtn");
+  const input = $("#searchInput");
+  if (!btn || !input) return;
+  btn.hidden = !input.value.trim();
+}
 
-  const total = playlistCount();
-  count.textContent = String(total);
+function moveSearchSuggestion(direction) {
+  const wrap = $("#searchSuggestions");
+  if (!wrap || wrap.hidden) return false;
 
-  const active = ($("#contentTypeFilter")?.value || "") === "playlist";
-  btn.classList.toggle("active", active);
-  btn.setAttribute("aria-pressed", active ? "true" : "false");
+  const items = [...wrap.querySelectorAll(".search-suggestion-item")];
+  if (!items.length) return false;
+
+  let index = items.findIndex(el => el.classList.contains("is-active"));
+  index = index < 0
+    ? (direction > 0 ? 0 : items.length - 1)
+    : (index + direction + items.length) % items.length;
+
+  items.forEach(el => el.classList.remove("is-active"));
+  items[index].classList.add("is-active");
+  items[index].scrollIntoView({ block:"nearest" });
+  return true;
+}
+
+function applyActiveSearchSuggestion() {
+  const active = $("#searchSuggestions")?.querySelector(".search-suggestion-item.is-active");
+  if (!active) return false;
+
+  $("#searchInput").value = active.dataset.searchSuggestion || "";
+  updateSearchClearButton();
+  visibleLimit = PAGE_SIZE;
+  hideSearchSuggestions();
+  syncUrlState({ replace:true });
+  render();
+  return true;
+}
+
+function resetPublicFilters() {
+  $("#searchInput").value = "";
+  $("#yearFilter").value = "";
+  $("#typeFilter").value = "";
+  $("#contentTypeFilter").value = "";
+  $("#sortFilter").value = "source-desc";
+  hideSearchSuggestions();
+  updateSearchClearButton();
+  visibleLimit = PAGE_SIZE;
+  syncUrlState();
+  render();
+
+  const toolbarPanel = document.querySelector(".toolbar-panel");
+  const mobileFilterToggle = $("#mobileFilterToggle");
+  if (window.matchMedia("(max-width: 620px)").matches && toolbarPanel && mobileFilterToggle) {
+    toolbarPanel.classList.remove("mobile-open");
+    mobileFilterToggle.setAttribute("aria-expanded", "false");
+  }
 }
 
 function renderCard(v) {
@@ -1572,8 +1617,6 @@ function render() {
   }
 
   renderActiveFilterChips();
-  renderQuickBrowseBar();
-
   const rows = filteredVideos();
   const visibleRows = rows.slice(0, visibleLimit);
 
@@ -1589,6 +1632,15 @@ function render() {
     ? renderTimeline(rows)
     : visibleRows.map(renderCard).join("");
   $("#emptyState").hidden = rows.length !== 0;
+  if (!rows.length) {
+    const detail = $("#emptyStateDetail");
+    const active = currentActiveFilters();
+    if (detail) {
+      detail.textContent = active.length
+        ? `${active.map(x => x.label).join(" · ")} 조건에서는 결과가 없습니다.`
+        : "검색어나 필터를 변경해 보세요.";
+    }
+  }
 
   const moreBtn = $("#loadMoreBtn");
   if (moreBtn) {
@@ -2120,6 +2172,7 @@ function bindEvents() {
     const suggestion = event.target.closest("button[data-search-suggestion]");
     if (suggestion) {
       $("#searchInput").value = suggestion.dataset.searchSuggestion || "";
+      updateSearchClearButton();
       visibleLimit = PAGE_SIZE;
       hideSearchSuggestions();
       syncUrlState({ replace:true });
@@ -2127,15 +2180,6 @@ function bindEvents() {
       return;
     }
 
-    const playlistQuick = event.target.closest("#playlistQuickBtn");
-    if (playlistQuick) {
-      const select = $("#contentTypeFilter");
-      select.value = select.value === "playlist" ? "" : "playlist";
-      visibleLimit = PAGE_SIZE;
-      syncUrlState();
-      render();
-      return;
-    }
 
     const yearJump = event.target.closest("button[data-year-jump]");
     if (yearJump) {
@@ -2160,7 +2204,10 @@ function bindEvents() {
         visibleLimit = PAGE_SIZE;
         syncUrlState({ replace: id === "searchInput" });
         render();
-        if (id === "searchInput") renderSearchSuggestions();
+        if (id === "searchInput") {
+          updateSearchClearButton();
+          renderSearchSuggestions();
+        }
       }
     );
   });
@@ -2170,28 +2217,35 @@ function bindEvents() {
   });
 
   $("#searchInput").addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown") {
+      if (moveSearchSuggestion(1)) event.preventDefault();
+      return;
+    }
+    if (event.key === "ArrowUp") {
+      if (moveSearchSuggestion(-1)) event.preventDefault();
+      return;
+    }
+    if (event.key === "Enter") {
+      if (applyActiveSearchSuggestion()) event.preventDefault();
+      return;
+    }
     if (event.key === "Escape") {
       hideSearchSuggestions();
       $("#searchInput").blur();
     }
   });
 
-  $("#resetFilters").addEventListener("click", () => {
+  $("#resetFilters").addEventListener("click", resetPublicFilters);
+  $("#emptyResetBtn")?.addEventListener("click", resetPublicFilters);
+
+  $("#clearSearchBtn")?.addEventListener("click", () => {
     $("#searchInput").value = "";
+    updateSearchClearButton();
     hideSearchSuggestions();
-    $("#yearFilter").value = "";
-    $("#typeFilter").value = "";
-    $("#contentTypeFilter").value = "";
-    $("#sortFilter").value = "source-desc";
     visibleLimit = PAGE_SIZE;
-    syncUrlState();
+    syncUrlState({ replace:true });
     render();
-    const toolbarPanel = document.querySelector(".toolbar-panel");
-    const mobileFilterToggle = $("#mobileFilterToggle");
-    if (window.matchMedia("(max-width: 620px)").matches && toolbarPanel && mobileFilterToggle) {
-      toolbarPanel.classList.remove("mobile-open");
-      mobileFilterToggle.setAttribute("aria-expanded", "false");
-    }
+    $("#searchInput").focus();
   });
 
   $("#loadMoreBtn").addEventListener("click", () => {
@@ -2259,6 +2313,18 @@ function bindEvents() {
   if (adminContentSearch) {
     adminContentSearch.addEventListener("input", renderAdminContentList);
   }
+
+  const backToTopBtn = $("#backToTopBtn");
+  const updateBackToTop = () => {
+    if (!backToTopBtn) return;
+    backToTopBtn.hidden = window.scrollY < 700 || document.body.classList.contains("admin-mode-open");
+  };
+  window.addEventListener("scroll", updateBackToTop, { passive:true });
+  backToTopBtn?.addEventListener("click", () => {
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
+  updateBackToTop();
+  updateSearchClearButton();
 
   const savedAdminToken = getAdminToken();
   if ($("#adminTokenInput") && savedAdminToken) {

@@ -6,9 +6,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=16" />
+  <link rel="stylesheet" href="./style.css?v=17" />
 </head>
-<body data-build="16">
+<body data-build="17">
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -52,6 +52,7 @@
             <span class="search-icon" aria-hidden="true">⌕</span>
             <input id="searchInput" type="search" placeholder="제목 · 출처 · 날짜 검색" autocomplete="off"
               aria-autocomplete="list" aria-controls="searchSuggestions" aria-expanded="false" />
+            <button id="clearSearchBtn" class="clear-search-btn" type="button" aria-label="검색어 지우기" hidden>×</button>
           </div>
           <div id="searchSuggestions" class="search-suggestions" role="listbox" hidden></div>
         </label>
@@ -107,14 +108,6 @@
 
     <div id="activeFilterChips" class="active-filter-chips public-archive-ui" aria-live="polite"></div>
 
-    <div id="quickBrowseBar" class="quick-browse-bar public-archive-ui" aria-label="빠른 탐색">
-      <button id="playlistQuickBtn" class="quick-browse-chip" type="button" aria-pressed="false">
-        <span aria-hidden="true">♫</span>
-        <span>플레이리스트</span>
-        <small id="playlistQuickCount">0</small>
-      </button>
-    </div>
-
     <nav id="yearJumpBar" class="year-jump-bar public-archive-ui" aria-label="연도 빠른 이동" hidden></nav>
 
     <div class="result-header public-archive-ui">
@@ -150,9 +143,12 @@
     </div>
 
     <section id="emptyState" class="empty-state public-archive-ui" hidden>
-      <strong>표시할 영상이 없습니다.</strong>
-      <p>검색어나 필터를 변경해 보세요.</p>
+      <strong>조건에 맞는 영상이 없습니다.</strong>
+      <p id="emptyStateDetail">검색어나 필터를 변경해 보세요.</p>
+      <button id="emptyResetBtn" class="empty-reset-btn" type="button">검색·필터 초기화</button>
     </section>
+
+    <button id="backToTopBtn" class="back-to-top public-archive-ui" type="button" aria-label="맨 위로 이동" hidden>↑</button>
 
     <section id="adminPanel" class="admin-panel" hidden>
       <div class="admin-mode-bar">
@@ -304,6 +300,6 @@
     <button id="adminEntry" class="admin-entry" type="button" aria-label="관리자 화면" hidden>관리</button>
   </footer>
 
-  <script src="./script.js?v=16" defer></script>
+  <script src="./script.js?v=17" defer></script>
 </body>
 </html>
