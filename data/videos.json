@@ -6563,11 +6563,19 @@
       "title": "신혜성 리즈 시절 핵심 정리 딱 정해준다 #신혜성 #신화",
       "description": "#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン\n#리즈시절 #2001신혜성 #HyesungVisual #KpopVisualKing #KpopPrince #레전드짤 #미모최전성기 #KpopShorts #StageLegend #kpopperformance \n#1세대아이돌 #레전드아이돌 #추억소환\n#Kpop #KpopShorts #KpopFyp #KpopEdits #1stGenKpop #KpopHistory #legendaryidol \n#ShinhwaChangjo #LegendaryVisual #KpopIcons #KpopRoyalty #TimelessIdol #ClassicKpop #90sKpop #2000sKpop #wildeyes",
       "source": "シン・ヘソン",
-      "sourceDate": null,
+      "sourceDate": "2001-01-01",
       "publishedAt": "2025-05-27T13:38:31Z",
       "thumbnail": "https://i.ytimg.com/vi/r7nbfJkg4z4/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7992,7 +8000,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:13:00.593Z",
+  "generatedAt": "2026-09-19T04:13:08.552Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
