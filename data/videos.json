@@ -7619,11 +7619,19 @@
       "title": "전진 아기새랑 놀기 둘만의 세상 진짜 재밌어 보이네 그렇게 좋냐? ㅋㅋ 교복 신혜성  #신혜성 #shorts",
       "description": "#신혜성 #shorts #shinhwa #shinhyesung  #申惠星 #神话 #シンファ \n\nシン・ヘソン",
       "source": "シン・ヘソン",
-      "sourceDate": null,
+      "sourceDate": "2005-01-01",
       "publishedAt": "2025-05-03T01:37:21Z",
       "thumbnail": "https://i.ytimg.com/vi/RvSW1NK8D9Y/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2005-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8048,7 +8056,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:14:16.594Z",
+  "generatedAt": "2026-09-19T04:14:25.705Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
