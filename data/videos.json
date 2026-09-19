@@ -4191,11 +4191,40 @@
       "title": "화보 장인 신혜성의 화보 모아보기 (ai - Fanmade) #신혜성 #신화",
       "description": "제목 : 셩공시대님의 잡지 스캔본 사진 모음\n출처 : 셩공시대님 블로그 및 핀터레스트\n링크 : https://timeofsung.tistory.com/\n\n✨ FANMADE | 연습용 영상 ✨\n 추억 속 잡지 사진을 AI로 영상화해본 팬메이드 실험입니다.  \n오래된 순간들을 조금 더 선명하게 되살려보고자 만든 개인적인 연습 작업으로,  \n상업적 목적이나 수익 창출은 전혀 없습니다.  \n영상에 등장하는 인물의 초상권과 저작권은 해당 아티스트와 소속사에 귀속됩니다.  \n권리자의 요청이 있을 경우 영상은 즉시 삭제하겠습니다. \ndo not re-upload\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "제목 : 셩공시대님의 잡지 스캔본 사진 모음",
-      "sourceDate": null,
+      "sourceDate": "1998-01-01",
       "publishedAt": "2025-09-07T06:15:04Z",
       "thumbnail": "https://i.ytimg.com/vi/urO7CAoClRY/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "1998-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "1999-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2001-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8072,7 +8101,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:14:40.920Z",
+  "generatedAt": "2026-09-19T04:15:12.223Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
