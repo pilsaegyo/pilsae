@@ -772,13 +772,15 @@ function applyUrlStateToControls() {
   }
 }
 
-function syncUrlState({ replace=false }={}) {
+function syncUrlState({ replace=false, viewOverride="" }={}) {
   const params = new URLSearchParams();
   const q = $("#searchInput")?.value?.trim() || "";
   const year = $("#yearFilter")?.value || "";
   const type = $("#typeFilter")?.value || "";
   const sort = $("#sortFilter")?.value || "source-desc";
-  const view = currentView();
+  const view = ["grid", "list", "timeline"].includes(viewOverride)
+    ? viewOverride
+    : currentView();
 
   if (q) params.set("q", q);
   if (year) params.set("year", year);
@@ -864,9 +866,14 @@ function applyViewMode() {
 
 function setViewMode(mode) {
   const normalized = ["grid", "list", "timeline"].includes(mode) ? mode : defaultViewMode();
+
   localStorage.setItem(STORAGE_VIEW, normalized);
+
+  // The URL may still contain the previous view mode.
+  // Write the newly clicked mode first so currentView() immediately sees it.
+  syncUrlState({ viewOverride: normalized });
+
   visibleLimit = PAGE_SIZE;
-  syncUrlState();
   render();
 }
 
