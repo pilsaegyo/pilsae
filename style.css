@@ -6941,3 +6941,252 @@ h1,h2,h3,.brand-main{font-weight:650}
     flex-basis:100%;
   }
 }
+
+
+/* v26.6 dashboard + mobile polish */
+
+/* desktop: system + latest-sync state share one quiet row */
+.admin-ops-status-row{
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);
+  gap:8px;
+  margin-bottom:12px;
+}
+
+.admin-ops-status-row .admin-system-strip,
+.admin-ops-status-row .admin-new-review-strip{
+  margin:0;
+  min-height:34px;
+}
+
+/* healthy data card collapses to a quiet status line */
+.admin-health-card.is-healthy{
+  padding-top:14px;
+  padding-bottom:14px;
+}
+
+.admin-health-card.is-healthy .admin-review-heading{
+  margin-bottom:0;
+}
+
+.admin-health-card.is-healthy .admin-review-heading .admin-help,
+.admin-health-card.is-healthy .admin-health-criteria,
+.admin-health-card.is-healthy .admin-health-list{
+  display:none;
+}
+
+.admin-health-card.is-healthy .admin-health-summary{
+  margin:8px 0 0;
+}
+
+.admin-health-card.is-healthy .admin-health-ok{
+  display:inline-flex;
+  align-items:center;
+  min-height:26px;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#f1f6f2;
+  color:#55725c;
+  font-size:9px;
+}
+
+/* mobile admin header is intentionally compact */
+@media(max-width:620px){
+  .admin-page .container{
+    padding-top:18px;
+  }
+
+  .admin-mode-bar{
+    gap:8px;
+    padding:8px 9px;
+    border-radius:12px;
+  }
+
+  .admin-mode-label{
+    min-width:0;
+  }
+
+  .admin-build-version{
+    max-width:150px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .admin-mode-actions{
+    gap:5px;
+  }
+
+  .admin-mode-actions a,
+  .admin-mode-actions button{
+    min-height:32px;
+    padding:7px 9px;
+    font-size:8px;
+  }
+
+  .admin-heading{
+    margin:14px 0 10px;
+    gap:4px;
+  }
+
+  .admin-heading .eyebrow{
+    margin-bottom:4px;
+    font-size:8px;
+  }
+
+  .admin-heading h2{
+    margin:0;
+    font-size:24px;
+    line-height:1.15;
+  }
+
+  /* tabs remain horizontally swipeable without the browser scrollbar */
+  .admin-tabs{
+    top:52px;
+    margin:10px 0 12px;
+    gap:3px;
+    padding:4px;
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+    scroll-snap-type:x proximity;
+  }
+
+  .admin-tabs::-webkit-scrollbar{
+    display:none;
+  }
+
+  .admin-tab{
+    min-width:max-content;
+    padding:9px 11px;
+    font-size:10px;
+    scroll-snap-align:start;
+  }
+
+  .admin-tab-count{
+    min-width:16px;
+    height:16px;
+    padding:0 4px;
+    font-size:8px;
+  }
+
+  /* deployment summary wraps without forcing horizontal overflow */
+  .admin-deploy-summary-strip{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:5px 8px;
+    padding:8px 9px;
+  }
+
+  .admin-deploy-summary-strip>div{
+    min-width:0;
+  }
+
+  .admin-deploy-summary-strip>div+div::before{
+    display:none;
+  }
+
+  .admin-deploy-summary-strip>div:nth-child(2){
+    grid-column:1/-1;
+  }
+
+  .admin-deploy-summary-link{
+    grid-column:2;
+    grid-row:1;
+    align-self:center;
+  }
+
+  .admin-ops-status-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:7px;
+    margin-bottom:10px;
+  }
+
+  .admin-ops-status-row .admin-system-strip,
+  .admin-ops-status-row .admin-new-review-strip{
+    margin:0;
+  }
+
+  .admin-system-strip{
+    min-height:0;
+    padding:7px 8px;
+  }
+
+  .admin-system-title{
+    padding-right:0;
+  }
+
+  .admin-system-items{
+    gap:5px 8px;
+  }
+
+  .admin-system-items>span{
+    font-size:7.5px;
+  }
+
+  .admin-new-review-strip{
+    min-height:0;
+    padding:7px 8px;
+  }
+
+  /* Six dashboard cards become a clean 3x2 grid instead of leaving one orphan. */
+  .admin-dashboard-grid{
+    gap:8px;
+  }
+
+  .admin-dashboard-card,
+  .admin-dashboard-card-wide{
+    grid-column:auto;
+    min-height:96px;
+    padding:12px;
+  }
+
+  .admin-dashboard-card-wide strong{
+    font-size:10px;
+    line-height:1.45;
+  }
+
+  .admin-page .admin-health-card{
+    margin-top:10px;
+  }
+
+  .admin-health-card.is-healthy{
+    padding:12px;
+  }
+
+  .admin-health-card.is-healthy .admin-review-heading{
+    align-items:center;
+  }
+
+  .admin-health-card.is-healthy .admin-review-heading h3{
+    font-size:15px;
+  }
+
+  .admin-health-card.is-healthy .admin-health-summary{
+    margin-top:6px;
+  }
+
+  .admin-health-card:not(.is-healthy) .admin-health-criteria-grid{
+    grid-template-columns:1fr;
+  }
+
+  .admin-health-card:not(.is-healthy) .admin-health-criteria-title{
+    display:block;
+  }
+
+  .admin-health-card:not(.is-healthy) .admin-health-criteria-title span{
+    display:block;
+    margin-top:3px;
+  }
+}
+
+@media(max-width:390px){
+  .admin-dashboard-grid{
+    grid-template-columns:1fr;
+  }
+
+  .admin-dashboard-card,
+  .admin-dashboard-card-wide{
+    min-height:80px;
+  }
+}

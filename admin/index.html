@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=26.5-auto-review-backup" />
+  <link rel="stylesheet" href="./style.css?v=26.6-dashboard-mobile" />
 </head>
-<body class="admin-page admin-locked" data-build="26.5-auto-review-backup">
+<body class="admin-page admin-locked" data-build="26.6-dashboard-mobile">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -69,7 +69,7 @@
           <p class="eyebrow">ARCHIVE ADMIN</p>
           <h2>아카이브 관리자</h2>
         </div>
-        <a class="ghost-button admin-public-link" href="./">일반 아카이브 보기</a><button id="closeAdmin" type="button" hidden aria-hidden="true"></button>
+        <button id="closeAdmin" type="button" hidden aria-hidden="true"></button>
       </div>
 
       <div class="admin-card admin-auth-card">
@@ -106,34 +106,36 @@
           <a id="dashDeployCommit" class="admin-deploy-summary-link" href="#" target="_blank" rel="noopener noreferrer" hidden>커밋 보기</a>
         </div>
 
-        <div id="adminSystemStatus" class="admin-system-strip" aria-label="시스템 상태">
-          <div class="admin-system-title">
-            <span class="admin-system-dot waiting" id="systemOverallDot" aria-hidden="true"></span>
-            <strong>시스템</strong>
-            <span id="systemOverallText">확인 중</span>
+        <div class="admin-ops-status-row">
+          <div id="adminSystemStatus" class="admin-system-strip" aria-label="시스템 상태">
+            <div class="admin-system-title">
+              <span class="admin-system-dot waiting" id="systemOverallDot" aria-hidden="true"></span>
+              <strong>시스템</strong>
+              <span id="systemOverallText">확인 중</span>
+            </div>
+            <div class="admin-system-items">
+              <span data-system-item="api"><i class="waiting"></i>Admin API <b>확인 중</b></span>
+              <span data-system-item="github"><i class="waiting"></i>GitHub <b>확인 중</b></span>
+              <span data-system-item="youtube"><i class="waiting"></i>YouTube <b>확인 중</b></span>
+              <span data-system-item="worker"><i class="waiting"></i>Worker <b>확인 중</b></span>
+            </div>
+            <button id="refreshSystemStatus" class="admin-system-refresh" type="button"
+              aria-label="시스템 상태 새로고침" title="시스템 상태 새로고침">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 6v5h-5M4 18v-5h5M6.1 9A7 7 0 0 1 18.5 6.5L20 8M4 16l1.5 1.5A7 7 0 0 0 17.9 15"/>
+              </svg>
+            </button>
           </div>
-          <div class="admin-system-items">
-            <span data-system-item="api"><i class="waiting"></i>Admin API <b>확인 중</b></span>
-            <span data-system-item="github"><i class="waiting"></i>GitHub <b>확인 중</b></span>
-            <span data-system-item="youtube"><i class="waiting"></i>YouTube <b>확인 중</b></span>
-            <span data-system-item="worker"><i class="waiting"></i>Worker <b>확인 중</b></span>
-          </div>
-          <button id="refreshSystemStatus" class="admin-system-refresh" type="button"
-            aria-label="시스템 상태 새로고침" title="시스템 상태 새로고침">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20 6v5h-5M4 18v-5h5M6.1 9A7 7 0 0 1 18.5 6.5L20 8M4 16l1.5 1.5A7 7 0 0 0 17.9 15"/>
-            </svg>
-          </button>
-        </div>
 
-        <div id="adminNewReviewStrip" class="admin-new-review-strip" aria-label="이번 동기화 새 검토">
-          <div>
-            <span class="admin-new-review-dot" aria-hidden="true"></span>
-            <strong>이번 동기화</strong>
-            <span id="newReviewTotal">새 검토 0건</span>
+          <div id="adminNewReviewStrip" class="admin-new-review-strip" aria-label="이번 동기화 새 검토">
+            <div>
+              <span class="admin-new-review-dot" aria-hidden="true"></span>
+              <strong id="newReviewHeading">이번 동기화</strong>
+              <span id="newReviewTotal">새 검토 0건</span>
+            </div>
+            <div id="newReviewBreakdown" class="admin-new-review-breakdown"></div>
+            <span id="newReviewOkay" class="admin-new-review-ok">자동 판별 완료</span>
           </div>
-          <div id="newReviewBreakdown" class="admin-new-review-breakdown"></div>
-          <span id="newReviewOkay" class="admin-new-review-ok">자동 판별 완료</span>
         </div>
 
         <div class="admin-dashboard-grid">
@@ -145,7 +147,7 @@
           <button class="admin-dashboard-card admin-dashboard-card-wide admin-dashboard-action" type="button" data-dashboard-route="sync"><span>최근 YouTube 동기화</span><strong id="dashLastSync">기록 없음</strong><small>동기화 관리</small></button>
         </div>
 
-        <div class="admin-card admin-health-card">
+        <div id="adminHealthCard" class="admin-card admin-health-card">
           <div class="admin-review-heading">
             <div>
               <h3>데이터 건강검사</h3>
@@ -161,7 +163,7 @@
               </button>
             </div>
           </div>
-          <div class="admin-health-criteria">
+          <div id="adminHealthCriteria" class="admin-health-criteria">
             <div class="admin-health-criteria-title">
               <strong>검사 기준</strong>
               <span>공개 데이터에 실제로 영향을 줄 수 있는 항목만 단계별로 표시합니다.</span>
@@ -561,6 +563,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=26.5-auto-review-backup" defer></script>
+  <script src="./script.js?v=26.6-dashboard-mobile" defer></script>
 </body>
 </html>

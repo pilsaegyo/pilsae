@@ -1375,6 +1375,20 @@ function newReviewKind(v) {
   return kinds;
 }
 
+
+function formatAdminCompactDateTime(value) {
+  if (!value) return "";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return "";
+  return new Intl.DateTimeFormat("ko-KR", {
+    month:"2-digit",
+    day:"2-digit",
+    hour:"2-digit",
+    minute:"2-digit",
+    hourCycle:"h23"
+  }).format(dt);
+}
+
 function renderNewReviewSummary() {
   const totalEl = $("#newReviewTotal");
   const breakdown = $("#newReviewBreakdown");
@@ -1382,6 +1396,12 @@ function renderNewReviewSummary() {
   if (!totalEl || !breakdown || !okay) return;
 
   const newVideos = currentSyncNewVideos();
+  const heading = $("#newReviewHeading");
+  if (heading) {
+    const syncLabel = formatAdminCompactDateTime(siteConfig.syncedFromYoutubeAt);
+    heading.textContent = syncLabel ? `이번 동기화 · ${syncLabel}` : "이번 동기화";
+  }
+
   const counts = { date:0, format:0, playlist:0 };
   const uniqueReviewIds = new Set();
 
@@ -1442,6 +1462,11 @@ function renderAdminDashboard() {
   const list = $("#adminHealthList");
 
   if (badge) badge.textContent = `${issues.length}건`;
+
+  const healthCard = $("#adminHealthCard");
+  if (healthCard) {
+    healthCard.classList.toggle("is-healthy", issues.length === 0);
+  }
 
   if (summary) {
     const counts = new Map();
