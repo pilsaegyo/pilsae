@@ -7263,3 +7263,25 @@ strong,b,
     letter-spacing:-.015em;
   }
 }
+
+
+/* v26.7.1 - public video titles use Gmarket Sans in every view */
+.card-title,
+.card-title a,
+.video-grid.list-view .card-title,
+.video-grid.list-view .card-title a,
+.timeline-title,
+.timeline-title a,
+.timeline-item .timeline-title,
+.timeline-playlist-hub .timeline-title{
+  font-family:'GMarketSans', Pretendard, 'Pretendard Variable',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+  font-weight:500;
+}
+
+/* Keep title rhythm consistent across grid / list / year-month timeline. */
+.card-title,
+.video-grid.list-view .card-title,
+.timeline-title{
+  letter-spacing:-.02em;
+}
