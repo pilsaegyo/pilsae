@@ -4284,11 +4284,19 @@
       "title": "톱스타 문정혁 #에릭 #신화",
       "description": "만든 날짜 : 6/16\n스파이명월 재밌는데. \n\n#shinhwa #神话 \n#문정혁 #신화에릭 #문에릭\n#eric #muneric #moonjunghyuk #文晸赫\n#스파이명월 #드라마 #drama #dramashorts",
       "source": "만든 날짜 : 6/16",
-      "sourceDate": null,
+      "sourceDate": "2011-01-01",
       "publishedAt": "2025-09-01T10:34:45Z",
       "thumbnail": "https://i.ytimg.com/vi/pCjtaM2kDFU/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2011-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7881,7 +7889,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:10:11.875Z",
+  "generatedAt": "2026-09-19T04:10:21.129Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
