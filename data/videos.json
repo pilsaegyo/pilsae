@@ -1706,7 +1706,8 @@
       "thumbnail": "https://i.ytimg.com/vi/SAj-WCXxHho/maxresdefault.jpg",
       "parseStatus": "needs_review",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "contentType": "playlist"
     },
     {
       "id": "_3q8jN9sMm8",
@@ -7738,7 +7739,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T03:16:00.987Z",
+  "generatedAt": "2026-09-19T03:16:28.332Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
