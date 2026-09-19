@@ -385,3 +385,10 @@
 - 기존 Cloudflare `ADMIN_TOKEN` 인증과 관리자 API는 그대로 사용.
 - `site-config.json`, `data/videos.json`은 업데이트 패치에 포함하지 않음.
 - Worker 변경 없음.
+
+
+## v19.1 공개 첫 진입 오류 수정
+- 관리자 페이지 분리 후 공개 `index.html`에는 존재하지 않는 `#faviconInput`, `#syncYoutubeVideos`에 이벤트를 연결하려다 `bindEvents()`가 중단되던 문제 수정.
+- 데이터 자체는 이미 로드된 뒤 예외가 발생해, 첫 화면에서는 오류가 보이지만 이후 보기 전환 시 목록이 다시 나타나는 현상이었음.
+- 관리자 전용 요소의 이벤트 바인딩을 optional 처리하여 공개 페이지 초기화가 끝까지 정상 진행되도록 수정.
+- Worker 변경 없음.

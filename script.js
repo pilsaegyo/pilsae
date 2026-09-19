@@ -2485,7 +2485,7 @@ function bindEvents() {
 
   let pendingFaviconDataUrl = "";
 
-  $("#faviconInput").addEventListener("change", () => {
+  $("#faviconInput")?.addEventListener("change", () => {
     const file = $("#faviconInput").files?.[0];
     if (!file) return;
 
@@ -2539,7 +2539,7 @@ function bindEvents() {
     }
   });
 
-  $("#syncYoutubeVideos").addEventListener("click", async () => {
+  $("#syncYoutubeVideos")?.addEventListener("click", async () => {
     const button = $("#syncYoutubeVideos");
     const status = $("#syncStatus");
 
