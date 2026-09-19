@@ -6604,3 +6604,146 @@ h1,h2,h3,.brand-main{font-weight:650}
     width:100%;
   }
 }
+
+
+/* v26.3 compact system status */
+.admin-system-strip{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:34px;
+  margin:-4px 0 12px;
+  padding:6px 9px;
+  border:1px solid #ebe5ee;
+  border-radius:11px;
+  background:#fff;
+}
+
+.admin-system-title{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  flex:0 0 auto;
+  padding-right:9px;
+  border-right:1px solid #eee8f0;
+}
+
+.admin-system-title strong{
+  color:#62536b;
+  font-size:8.5px;
+}
+
+.admin-system-title>span:last-child{
+  color:#8e8393;
+  font-size:8px;
+  font-weight:700;
+}
+
+.admin-system-dot,
+.admin-system-items i{
+  display:inline-block;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#cbc5ce;
+}
+
+.admin-system-dot.success,
+.admin-system-items i.success{
+  background:#669272;
+}
+
+.admin-system-dot.error,
+.admin-system-items i.error{
+  background:#b76370;
+}
+
+.admin-system-dot.waiting,
+.admin-system-items i.waiting{
+  background:#b79a6d;
+}
+
+.admin-system-dot.muted,
+.admin-system-items i.muted{
+  background:#cbc5ce;
+}
+
+.admin-system-items{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  flex:1;
+}
+
+.admin-system-items>span{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  min-width:0;
+  color:#8c8190;
+  font-size:8px;
+  white-space:nowrap;
+}
+
+.admin-system-items b{
+  color:#62576a;
+  font-size:8px;
+}
+
+.admin-system-refresh{
+  width:26px;
+  height:26px;
+  flex:0 0 auto;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:0;
+  border-radius:8px;
+  background:transparent;
+  color:#918597;
+  cursor:pointer;
+}
+
+.admin-system-refresh:hover{
+  background:#f5f1f7;
+  color:#6d5b78;
+}
+
+.admin-system-refresh:disabled{
+  opacity:.45;
+  cursor:wait;
+}
+
+.admin-system-refresh svg{
+  width:13px;
+  height:13px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+@media(max-width:760px){
+  .admin-system-strip{
+    align-items:flex-start;
+    flex-wrap:wrap;
+  }
+
+  .admin-system-title{
+    border-right:0;
+    padding-right:0;
+  }
+
+  .admin-system-items{
+    order:3;
+    flex-basis:100%;
+    flex-wrap:wrap;
+    gap:6px 10px;
+  }
+
+  .admin-system-refresh{
+    margin-left:auto;
+  }
+}

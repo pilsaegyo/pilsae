@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=26.2-admin-ui" />
+  <link rel="stylesheet" href="./style.css?v=26.3-system-status" />
 </head>
-<body class="admin-page admin-locked" data-build="26.2-admin-ui">
+<body class="admin-page admin-locked" data-build="26.3-system-status">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -104,6 +104,26 @@
             <strong id="dashLastDeploy">확인 중</strong>
           </div>
           <a id="dashDeployCommit" class="admin-deploy-summary-link" href="#" target="_blank" rel="noopener noreferrer" hidden>커밋 보기</a>
+        </div>
+
+        <div id="adminSystemStatus" class="admin-system-strip" aria-label="시스템 상태">
+          <div class="admin-system-title">
+            <span class="admin-system-dot waiting" id="systemOverallDot" aria-hidden="true"></span>
+            <strong>시스템</strong>
+            <span id="systemOverallText">확인 중</span>
+          </div>
+          <div class="admin-system-items">
+            <span data-system-item="api"><i class="waiting"></i>Admin API <b>확인 중</b></span>
+            <span data-system-item="github"><i class="waiting"></i>GitHub <b>확인 중</b></span>
+            <span data-system-item="youtube"><i class="waiting"></i>YouTube <b>확인 중</b></span>
+            <span data-system-item="worker"><i class="waiting"></i>Worker <b>확인 중</b></span>
+          </div>
+          <button id="refreshSystemStatus" class="admin-system-refresh" type="button"
+            aria-label="시스템 상태 새로고침" title="시스템 상태 새로고침">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 6v5h-5M4 18v-5h5M6.1 9A7 7 0 0 1 18.5 6.5L20 8M4 16l1.5 1.5A7 7 0 0 0 17.9 15"/>
+            </svg>
+          </button>
         </div>
 
         <div class="admin-dashboard-grid">
@@ -512,6 +532,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=26.2-admin-ui" defer></script>
+  <script src="./script.js?v=26.3-system-status" defer></script>
 </body>
 </html>

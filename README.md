@@ -992,3 +992,15 @@
 - Shorts 자동 확인 영역을 더 작고 단계가 보이는 구조로 정리.
 - 버튼 문구를 `5개 진단 / 20개 테스트 / 전체 미리보기`로 단순화.
 - 기능 로직은 기존과 동일하며 이번 배포로 Step 4 배포 상태 패널 동작도 함께 확인 가능.
+
+
+## v26.3-system-status · 컴팩트 시스템 상태
+- 관리자 대시보드의 배포 정보 바로 아래에 작은 `시스템` 상태 줄 추가.
+- Admin API / GitHub / YouTube / Worker 상태를 한 줄로 표시.
+- GitHub는 실제 저장소 branch HEAD API 호출로 연결 상태 확인.
+- YouTube는 실제 Channels API 호출로 API Key와 채널 접근 상태 확인.
+- Worker는 Cloudflare version metadata의 실제 배포 version ID를 짧게 표시.
+- 모든 항목 정상 시 `시스템 · 정상`, 하나라도 실패하면 `확인 필요`.
+- 우측 새로고침 아이콘으로 수동 재검사 가능.
+- 상세 응답시간/오류 내용은 각 상태 항목 hover title로 확인 가능.
+- 이번 버전은 `worker/index.js` 변경을 포함하므로 Step 4의 Admin Worker 배포 상태 전환 테스트에 사용 가능.

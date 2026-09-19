@@ -900,6 +900,7 @@ async function verifyAdminToken({ silent=false }={}) {
     setAdminAuthenticated(true);
     setAdminStatus(status, "", "");
     loadDashboardDeployInfo();
+    loadAdminSystemStatus();
     return true;
   } catch (err) {
     sessionStorage.removeItem(ADMIN_TOKEN_SESSION_KEY);
@@ -988,6 +989,116 @@ async function loadDashboardDeployInfo() {
   } catch {
     dateEl.textContent = "확인 실패";
     if (linkEl) linkEl.hidden = true;
+  }
+}
+
+
+function setSystemStatusItem(kind, {
+  state="waiting",
+  text="확인 중",
+  title=""
+}={}) {
+  const item = document.querySelector(`[data-system-item="${kind}"]`);
+  if (!item) return;
+
+  const dot = item.querySelector("i");
+  const value = item.querySelector("b");
+
+  if (dot) {
+    dot.className = state;
+  }
+  if (value) {
+    value.textContent = text;
+  }
+  item.title = title || text;
+}
+
+function shortWorkerVersion(value="") {
+  const version = String(value || "").trim();
+  if (!version) return "정상";
+  return version.length > 8 ? version.slice(0, 8) : version;
+}
+
+async function loadAdminSystemStatus({ silent=false }={}) {
+  const overallDot = $("#systemOverallDot");
+  const overallText = $("#systemOverallText");
+  const refresh = $("#refreshSystemStatus");
+
+  if (!overallDot || !overallText) return;
+
+  if (!getAdminToken()) {
+    overallDot.className = "admin-system-dot muted";
+    overallText.textContent = "로그인 후 확인";
+    ["api","github","youtube","worker"].forEach(kind =>
+      setSystemStatusItem(kind, { state:"muted", text:"-" })
+    );
+    return;
+  }
+
+  if (!silent) {
+    overallDot.className = "admin-system-dot waiting";
+    overallText.textContent = "확인 중";
+    ["api","github","youtube","worker"].forEach(kind =>
+      setSystemStatusItem(kind, { state:"waiting", text:"확인 중" })
+    );
+  }
+
+  if (refresh) refresh.disabled = true;
+
+  try {
+    const data = await adminApi("/system-status", { method:"GET" });
+
+    setSystemStatusItem("api", {
+      state:data.adminApi?.ok ? "success" : "error",
+      text:data.adminApi?.ok ? "정상" : "오류"
+    });
+
+    setSystemStatusItem("github", {
+      state:data.github?.ok ? "success" : "error",
+      text:data.github?.ok ? "정상" : "오류",
+      title:data.github?.ok
+        ? `GitHub 정상 · ${Number(data.github.latencyMs || 0)}ms · ${data.github.detail || ""}`
+        : String(data.github?.detail || "GitHub 연결 실패")
+    });
+
+    setSystemStatusItem("youtube", {
+      state:data.youtube?.ok ? "success" : "error",
+      text:data.youtube?.ok ? "정상" : "오류",
+      title:data.youtube?.ok
+        ? `YouTube API 정상 · ${Number(data.youtube.latencyMs || 0)}ms · ${data.youtube.detail || ""}`
+        : String(data.youtube?.detail || "YouTube API 연결 실패")
+    });
+
+    setSystemStatusItem("worker", {
+      state:data.worker?.ok ? "success" : "error",
+      text:data.worker?.ok ? shortWorkerVersion(data.worker.versionId) : "오류",
+      title:data.worker?.versionTimestamp
+        ? `Worker 정상 · ${formatAdminDateTime(data.worker.versionTimestamp)}`
+        : "Worker 정상"
+    });
+
+    const allOk = Boolean(
+      data.adminApi?.ok &&
+      data.github?.ok &&
+      data.youtube?.ok &&
+      data.worker?.ok
+    );
+
+    overallDot.className = `admin-system-dot ${allOk ? "success" : "error"}`;
+    overallText.textContent = allOk ? "정상" : "확인 필요";
+  } catch (err) {
+    overallDot.className = "admin-system-dot error";
+    overallText.textContent = "확인 실패";
+    setSystemStatusItem("api", {
+      state:"error",
+      text:"오류",
+      title:String(err.message || "Admin API 상태 확인 실패")
+    });
+    ["github","youtube","worker"].forEach(kind =>
+      setSystemStatusItem(kind, { state:"muted", text:"-" })
+    );
+  } finally {
+    if (refresh) refresh.disabled = false;
   }
 }
 
@@ -5718,6 +5829,10 @@ function bindEvents() {
   $("#refreshAdminHealth")?.addEventListener("click", () => {
     adminHealthFilter = "all";
     renderAdminDashboard();
+  });
+
+  $("#refreshSystemStatus")?.addEventListener("click", () => {
+    loadAdminSystemStatus();
   });
 
   $("#refreshAdminHistory")?.addEventListener("click", () => loadAdminHistory({ force:true }));

@@ -73,6 +73,84 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/system-status" && request.method === "GET") {
+        requireAdmin(request, env);
+
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const handle = env.YOUTUBE_HANDLE || "@pilsae";
+        const metadata = env.CF_VERSION_METADATA || {};
+
+        const githubStartedAt = Date.now();
+        const youtubeStartedAt = Date.now();
+
+        const githubPromise = env.GITHUB_TOKEN
+          ? getGithubBranchHead({ env, owner, repo, branch })
+          : Promise.reject(new Error("GITHUB_TOKEN이 없습니다."));
+
+        const youtubePromise = env.YOUTUBE_API_KEY
+          ? youtubeFetch("channels", {
+              part:"id",
+              forHandle:handle,
+              maxResults:1
+            }, env.YOUTUBE_API_KEY)
+          : Promise.reject(new Error("YOUTUBE_API_KEY가 없습니다."));
+
+        const [githubResult, youtubeResult] = await Promise.allSettled([
+          githubPromise,
+          youtubePromise
+        ]);
+
+        const github = githubResult.status === "fulfilled"
+          ? {
+              ok:true,
+              latencyMs:Date.now() - githubStartedAt,
+              detail:`${owner}/${repo} · ${branch}`,
+              headSha:String(githubResult.value?.objectSha || "")
+            }
+          : {
+              ok:false,
+              latencyMs:Date.now() - githubStartedAt,
+              detail:String(githubResult.reason?.message || "GitHub 연결 실패")
+            };
+
+        const youtubeData = youtubeResult.status === "fulfilled"
+          ? youtubeResult.value
+          : null;
+        const youtubeFound = Boolean(youtubeData?.items?.length);
+
+        const youtube = youtubeResult.status === "fulfilled" && youtubeFound
+          ? {
+              ok:true,
+              latencyMs:Date.now() - youtubeStartedAt,
+              detail:handle
+            }
+          : {
+              ok:false,
+              latencyMs:Date.now() - youtubeStartedAt,
+              detail:youtubeResult.status === "rejected"
+                ? String(youtubeResult.reason?.message || "YouTube API 연결 실패")
+                : `${handle} 채널을 찾지 못했습니다.`
+            };
+
+        const workerStatus = {
+          ok:true,
+          versionId:String(metadata.id || ""),
+          versionTag:String(metadata.tag || ""),
+          versionTimestamp:String(metadata.timestamp || "")
+        };
+
+        return jsonResponse({
+          ok:github.ok && youtube.ok,
+          checkedAt:new Date().toISOString(),
+          adminApi:{ ok:true },
+          github,
+          youtube,
+          worker:workerStatus
+        }, 200, env, origin);
+      }
+
       if (url.pathname === "/deploy-patch" && request.method === "POST") {
         requireAdmin(request, env);
 
