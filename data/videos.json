@@ -5072,11 +5072,19 @@
       "title": "찹쌀떡 고양이 빚기 #신혜성 #신화",
       "description": "00` MTV Summer Summit In Taiwan 올유드 메이킹 cut\n보정 한번 해보고 싶어서 시도를... (다른 영상파일)\n잘 안되네요 깍두기 눈물난다. 색감이 안잡히네요..... 스킬부족입니다.. \n그래도 그냥 편집한 김에 박제용으로 올립니다. \n오디오 변환까지 하긴 귀찮아서..한쪽으로 대충..들으세여 원본영상이 오디오가 스테레오네여 킁\n\n풀버전 유투브 영상 링크 알려드릴게요! 여기서 full 버전 보시면 됩니다. ^ ^ \n제목 : [방송] 2000 MTV Making the Video - 신화 - All Your Dreams full.ver\n채널 : 셩공시대 님 채널\n링크 : https://youtu.be/mEi9_TlgV-4?si=75vdkY0UmwpmBX7N\n\n재업시 본영상 링크 출처, 원본영상 링크 출처 표기 \n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "00` MTV Summer Summit In Taiwan 올유드 메이킹 cut",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-07-21T14:30:00Z",
       "thumbnail": "https://i.ytimg.com/vi/0za4EmenCNM/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7913,7 +7921,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:11:22.579Z",
+  "generatedAt": "2026-09-19T04:11:39.697Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
