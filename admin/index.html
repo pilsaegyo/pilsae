@@ -7,9 +7,9 @@
   <meta name="description" content="필새 영상 아카이브 - 날짜로 다시 찾는 영상 기록" />
   <title>아카이브 관리자 | 필새 영상 아카이브</title>
   <link id="dynamicFavicon" rel="icon" href="data:," />
-  <link rel="stylesheet" href="./style.css?v=22.3" />
+  <link rel="stylesheet" href="./style.css?v=23" />
 </head>
-<body class="admin-page" data-build="22.3">
+<body class="admin-page admin-locked" data-build="23">
   <header class="site-header admin-site-header">
     <div class="header-inner">
       <a class="brand" href="./" aria-label="필새 영상 아카이브 홈">
@@ -55,7 +55,10 @@
     <section id="adminPanel" class="admin-panel" hidden>
       <div class="admin-mode-bar">
         <span>관리자 모드</span>
-        <a href="./" class="admin-back-link">일반 아카이브 보기</a>
+        <div class="admin-mode-actions">
+          <button id="adminLogoutBtn" class="admin-logout-btn" type="button" hidden>로그아웃</button>
+          <a href="./" class="admin-back-link">일반 아카이브 보기</a>
+        </div>
       </div>
       <div class="admin-heading">
         <div>
@@ -66,12 +69,12 @@
       </div>
 
       <div class="admin-card admin-auth-card">
+        <div class="admin-auth-lock-icon" aria-hidden="true">⌁</div>
         <h3>관리자 인증</h3>
-        <p class="admin-help">Cloudflare Worker의 ADMIN_TOKEN 값을 입력하세요. 현재 입력값을 업데이트 요청에 바로 사용합니다.</p>
-        <div class="admin-row">
-          <input id="adminTokenInput" type="password" autocomplete="off" placeholder="ADMIN_TOKEN 입력" />
-          <button id="saveAdminToken" type="button">토큰 적용</button>
-          <button id="checkAdminApi" class="ghost-button" type="button">연결 확인</button>
+        <p class="admin-help">관리자 화면을 보려면 ADMIN_TOKEN 인증이 필요합니다.</p>
+        <div class="admin-row admin-login-row">
+          <input id="adminTokenInput" type="password" autocomplete="current-password" placeholder="ADMIN_TOKEN 입력" />
+          <button id="saveAdminToken" type="button">관리자 로그인</button>
         </div>
         <div id="adminApiStatus" class="admin-status"></div>
       </div>
@@ -88,11 +91,11 @@
       <div class="admin-tab-panel active" data-admin-panel="dashboard">
         <div class="admin-dashboard-grid">
           <div class="admin-dashboard-card"><span>전체 영상</span><strong id="dashTotal">0</strong></div>
-          <div class="admin-dashboard-card"><span>날짜 검토 필요</span><strong id="dashReview">0</strong></div>
-          <div class="admin-dashboard-card"><span>설명 변경 재검토</span><strong id="dashDescription">0</strong></div>
-          <div class="admin-dashboard-card"><span>플레이리스트</span><strong id="dashPlaylists">0</strong></div>
-          <div class="admin-dashboard-card"><span>날짜 미확인</span><strong id="dashUnknown">0</strong></div>
-          <div class="admin-dashboard-card admin-dashboard-card-wide"><span>최근 YouTube 동기화</span><strong id="dashLastSync">기록 없음</strong></div>
+          <button class="admin-dashboard-card admin-dashboard-action" type="button" data-dashboard-route="review-all"><span>날짜 검토 필요</span><strong id="dashReview">0</strong><small>바로 확인</small></button>
+          <button class="admin-dashboard-card admin-dashboard-action" type="button" data-dashboard-route="review-description"><span>설명 변경 재검토</span><strong id="dashDescription">0</strong><small>바로 확인</small></button>
+          <button class="admin-dashboard-card admin-dashboard-action" type="button" data-dashboard-route="content-playlists"><span>플레이리스트</span><strong id="dashPlaylists">0</strong><small>바로 확인</small></button>
+          <button class="admin-dashboard-card admin-dashboard-action" type="button" data-dashboard-route="review-unknown"><span>날짜 미확인</span><strong id="dashUnknown">0</strong><small>바로 확인</small></button>
+          <button class="admin-dashboard-card admin-dashboard-card-wide admin-dashboard-action" type="button" data-dashboard-route="sync"><span>최근 YouTube 동기화</span><strong id="dashLastSync">기록 없음</strong><small>동기화 관리</small></button>
         </div>
 
         <div class="admin-card admin-health-card">
@@ -137,6 +140,20 @@
           </div>
 
           <div id="syncStatus" class="admin-status"></div>
+        </div>
+
+        <div class="admin-card admin-backup-card">
+          <div class="admin-review-heading">
+            <div>
+              <h3>안전 백업 · 복원 지점</h3>
+              <p class="admin-help">최근 3개의 서버 백업을 유지합니다. YouTube 동기화 적용 직전에는 자동으로 복원 지점을 만듭니다.</p>
+            </div>
+            <button id="createAdminBackup" class="admin-small-button" type="button">지금 백업 만들기</button>
+          </div>
+          <div id="adminBackupStatus" class="admin-status"></div>
+          <div id="adminBackupList" class="admin-backup-list">
+            <p class="admin-help">복원 지점을 불러오는 중입니다.</p>
+          </div>
         </div>
       </div>
 
@@ -212,6 +229,14 @@
               <span>영상 찾기</span>
               <input id="adminContentSearch" type="search" placeholder="제목으로 검색" autocomplete="off" />
             </label>
+            <label class="admin-content-mode">
+              <span>표시</span>
+              <select id="adminContentMode">
+                <option value="all">전체 후보</option>
+                <option value="playlists">플레이리스트만</option>
+                <option value="candidates">미분류 후보만</option>
+              </select>
+            </label>
             <p class="admin-content-note">검색 전에는 최대 30개만 표시됩니다. 검색하면 최대 50개까지 확인할 수 있습니다.</p>
           </div>
 
@@ -272,6 +297,6 @@
     </section>
   </main>
 
-  <script src="./script.js?v=22.3" defer></script>
+  <script src="./script.js?v=23" defer></script>
 </body>
 </html>

@@ -25,6 +25,14 @@ export default {
         }, 200, env, origin);
       }
 
+      if (url.pathname === "/admin-auth" && request.method === "GET") {
+        requireAdmin(request, env);
+        return jsonResponse({
+          ok: true,
+          authenticated: true
+        }, 200, env, origin);
+      }
+
       if (url.pathname === "/admin-history" && request.method === "GET") {
         requireAdmin(request, env);
         const owner = env.GITHUB_OWNER || "pilsaegyo";
@@ -135,6 +143,127 @@ export default {
           historyId,
           videoId: String(entry.videoId),
           video,
+          commitUrl: result.commit?.html_url || null
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/admin-backups" && request.method === "GET") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+
+        const index = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/admin-backups-index.json"
+        }) || { backups: [] };
+
+        return jsonResponse({
+          ok: true,
+          backups: Array.isArray(index.backups) ? index.backups.slice(0, 3) : []
+        }, 200, env, origin);
+      }
+
+      if (url.pathname === "/create-admin-backup" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json().catch(() => ({}));
+
+        const currentPayload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+        if (!currentPayload || !Array.isArray(currentPayload.videos)) {
+          throw new HttpError(404, "videos.json을 찾지 못했습니다.");
+        }
+
+        const backup = await createAdminBackup({
+          env, owner, repo, branch,
+          currentPayload,
+          reason: String(body.reason || "manual")
+        });
+
+        return jsonResponse({ ok: true, backup }, 200, env, origin);
+      }
+
+      if (url.pathname === "/restore-admin-backup" && request.method === "POST") {
+        requireAdmin(request, env);
+        const owner = env.GITHUB_OWNER || "pilsaegyo";
+        const repo = env.GITHUB_REPO || "pilsae";
+        const branch = env.GITHUB_BRANCH || "main";
+        const body = await request.json().catch(() => ({}));
+        const backupId = String(body.backupId || "").trim();
+
+        if (!backupId) {
+          throw new HttpError(400, "복원할 백업 ID가 필요합니다.");
+        }
+
+        const index = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/admin-backups-index.json"
+        }) || { backups: [] };
+        const backups = Array.isArray(index.backups) ? index.backups : [];
+        const target = backups.find(item => String(item.id || "") === backupId);
+
+        if (!target?.path) {
+          throw new HttpError(404, "선택한 복원 지점을 찾지 못했습니다.");
+        }
+
+        const snapshot = await readGithubJsonFile({
+          env, owner, repo, branch, path: String(target.path)
+        });
+        if (!snapshot || !Array.isArray(snapshot.videos)) {
+          throw new HttpError(500, "백업 데이터가 올바르지 않습니다.");
+        }
+
+        const currentPayload = await readGithubJsonFile({
+          env, owner, repo, branch, path: "data/videos.json"
+        });
+        if (!currentPayload || !Array.isArray(currentPayload.videos)) {
+          throw new HttpError(404, "현재 videos.json을 찾지 못했습니다.");
+        }
+
+        // Always preserve the state that is about to be replaced.
+        const safetyBackup = await createAdminBackup({
+          env, owner, repo, branch,
+          currentPayload,
+          reason: "before_restore",
+          avoidSlot: Number(target.slot || 0)
+        });
+
+        const restoredPayload = {
+          ...snapshot,
+          generatedAt: new Date().toISOString()
+        };
+
+        const result = await updateGithubFile({
+          env, owner, repo, branch,
+          path: "data/videos.json",
+          contentText: JSON.stringify(restoredPayload, null, 2) + "\n",
+          message: `Restore video archive backup ${backupId}`
+        });
+
+        await appendAdminHistory({
+          env, owner, repo, branch,
+          entry: {
+            action: "backup_restore",
+            title: "데이터 백업 복원",
+            before: {
+              total: currentPayload.videos.length,
+              safetyBackupId: safetyBackup.id
+            },
+            after: {
+              total: restoredPayload.videos.length,
+              restoredBackupId: backupId,
+              restoredAt: target.createdAt || ""
+            }
+          }
+        });
+
+        return jsonResponse({
+          ok: true,
+          backupId,
+          total: restoredPayload.videos.length,
+          safetyBackup,
           commitUrl: result.commit?.html_url || null
         }, 200, env, origin);
       }
@@ -285,6 +414,14 @@ export default {
             ...syncPreview
           }, 200, env, origin);
         }
+
+        // Create a restore point before replacing the archive with YouTube sync data.
+        // If backup creation fails, the sync is aborted so the existing archive remains untouched.
+        await createAdminBackup({
+          env, owner, repo, branch,
+          currentPayload: existingPayload,
+          reason: "before_sync"
+        });
 
         const result = await updateGithubFile({
           env,
@@ -1077,6 +1214,87 @@ function buildSyncPreview(existingVideos, nextVideos) {
     unchanged,
     changes
   };
+}
+
+async function createAdminBackup({
+  env,
+  owner,
+  repo,
+  branch,
+  currentPayload,
+  reason = "manual",
+  avoidSlot = 0
+}) {
+  if (!currentPayload || !Array.isArray(currentPayload.videos)) {
+    throw new HttpError(400, "백업할 영상 데이터가 올바르지 않습니다.");
+  }
+
+  const indexPath = "data/admin-backups-index.json";
+  const currentIndex = await readGithubJsonFile({
+    env, owner, repo, branch, path: indexPath
+  }) || { nextSlot: 1, backups: [] };
+
+  const existing = Array.isArray(currentIndex.backups)
+    ? currentIndex.backups
+    : [];
+
+  let slot = Number(currentIndex.nextSlot || 1);
+  if (![1,2,3].includes(slot)) slot = 1;
+
+  if (avoidSlot && slot === avoidSlot) {
+    slot = slot % 3 + 1;
+  }
+
+  const createdAt = new Date().toISOString();
+  const id = `${Date.now()}-${slot}`;
+  const path = `data/backups/videos-${slot}.json`;
+
+  await updateGithubFile({
+    env,
+    owner,
+    repo,
+    branch,
+    path,
+    contentText: JSON.stringify(currentPayload, null, 2) + "\n",
+    message: `Create admin backup slot ${slot}`
+  });
+
+  const backup = {
+    id,
+    slot,
+    path,
+    reason: ["manual", "before_sync", "before_restore"].includes(reason) ? reason : "manual",
+    createdAt,
+    total: currentPayload.videos.length
+  };
+
+  const backups = [
+    backup,
+    ...existing.filter(item => Number(item.slot || 0) !== slot)
+  ]
+    .sort((a,b) => String(b.createdAt || "").localeCompare(String(a.createdAt || "")))
+    .slice(0, 3);
+
+  let nextSlot = slot % 3 + 1;
+  if (avoidSlot && nextSlot === avoidSlot) {
+    nextSlot = nextSlot % 3 + 1;
+  }
+
+  await updateGithubFile({
+    env,
+    owner,
+    repo,
+    branch,
+    path: indexPath,
+    contentText: JSON.stringify({
+      backups,
+      nextSlot,
+      updatedAt: createdAt
+    }, null, 2) + "\n",
+    message: `Update admin backup index slot ${slot}`
+  });
+
+  return backup;
 }
 
 function normalizedComparable(value) {

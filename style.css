@@ -4157,3 +4157,260 @@ select{
     gap:8px;
   }
 }
+
+
+/* v22.4 admin authentication gate */
+.admin-page.admin-locked .admin-tabs,
+.admin-page.admin-locked .admin-tab-panel{
+  display:none !important;
+}
+
+.admin-page.admin-locked .admin-heading{
+  display:none;
+}
+
+.admin-page.admin-locked .admin-panel{
+  max-width:620px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.admin-page.admin-locked .admin-auth-card{
+  margin-top:44px;
+  padding:34px 30px;
+  text-align:center;
+}
+
+.admin-page.admin-locked .admin-auth-card .admin-help{
+  max-width:420px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.admin-auth-lock-icon{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  border:1px solid #ded5e3;
+  border-radius:50%;
+  background:#f7f3f9;
+  color:#66536f;
+  font-size:18px;
+  font-weight:800;
+}
+
+.admin-login-row{
+  max-width:440px;
+  margin:16px auto 0;
+}
+
+.admin-login-row input{
+  min-width:0;
+}
+
+.admin-mode-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.admin-logout-btn{
+  min-height:30px;
+  padding:6px 9px;
+  border:1px solid #ded7e2;
+  border-radius:9px;
+  background:#fff;
+  color:#766a7b;
+  font-size:8px;
+  font-weight:750;
+}
+
+.admin-logout-btn:hover,
+.admin-logout-btn:focus-visible{
+  border-color:#c6b8cc;
+  background:#f8f4f9;
+  outline:none;
+}
+
+@media (max-width:620px){
+  .admin-page.admin-locked .admin-auth-card{
+    margin-top:24px;
+    padding:26px 18px;
+  }
+
+  .admin-login-row{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .admin-login-row button{
+    width:100%;
+  }
+}
+
+
+/* v23 admin action links + restore points */
+.admin-dashboard-action{
+  appearance:none;
+  width:100%;
+  text-align:left;
+  font:inherit;
+  color:inherit;
+  cursor:pointer;
+}
+
+.admin-dashboard-action small{
+  display:block;
+  margin-top:8px;
+  color:#7d6d84;
+  font-size:8px;
+  font-weight:750;
+}
+
+.admin-dashboard-action:hover,
+.admin-dashboard-action:focus-visible{
+  border-color:#cfc2d6;
+  background:#fcf9fd;
+  outline:none;
+  transform:translateY(-1px);
+}
+
+.admin-health-chip{
+  appearance:none;
+  cursor:pointer;
+  font:inherit;
+}
+
+.admin-health-chip.active{
+  border-color:#c8b8d1;
+  background:#f2ebf5;
+}
+
+.admin-health-item{
+  align-items:center;
+}
+
+.admin-health-go{
+  flex:0 0 auto;
+  margin-left:auto;
+  padding:6px 9px;
+  border:1px solid #ddd4e1;
+  border-radius:9px;
+  background:#fff;
+  color:#6f6077;
+  font-size:8px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.admin-health-go:hover,
+.admin-health-go:focus-visible{
+  border-color:#c4b4cc;
+  background:#f8f4fa;
+  outline:none;
+}
+
+.admin-content-mode{
+  display:grid;
+  gap:5px;
+  min-width:150px;
+}
+
+.admin-content-mode span{
+  font-size:8px;
+  font-weight:750;
+  color:#766b7c;
+}
+
+.admin-content-mode select{
+  min-height:38px;
+}
+
+.admin-focus-item{
+  outline:2px solid #b9a2c5;
+  outline-offset:3px;
+  transition:outline-color .25s ease;
+}
+
+.admin-backup-list{
+  display:grid;
+  gap:9px;
+  margin-top:10px;
+}
+
+.admin-backup-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+}
+
+.admin-backup-item > div{
+  display:grid;
+  gap:3px;
+  min-width:0;
+}
+
+.admin-backup-item strong{
+  font-size:10px;
+}
+
+.admin-backup-item small{
+  color:var(--muted);
+  font-size:8px;
+}
+
+.admin-backup-restore-btn{
+  flex:0 0 auto;
+  min-height:32px;
+  padding:7px 10px;
+  border:1px solid #d8cedd;
+  border-radius:9px;
+  background:#fff;
+  color:#66536f;
+  font-size:8px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.admin-backup-restore-btn:hover,
+.admin-backup-restore-btn:focus-visible{
+  border-color:#baa7c4;
+  background:#f7f1f9;
+  outline:none;
+}
+
+.admin-backup-restore-btn:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+@media (max-width:620px){
+  .admin-health-item{
+    grid-template-columns:1fr;
+  }
+
+  .admin-health-go{
+    margin-left:0;
+    justify-self:start;
+  }
+
+  .admin-content-mode{
+    width:100%;
+  }
+
+  .admin-backup-item{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .admin-backup-restore-btn{
+    width:100%;
+  }
+}

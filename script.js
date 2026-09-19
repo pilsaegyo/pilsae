@@ -21,6 +21,9 @@ let lastSyncPreview = null;
 let adminReviewFilter = "all";
 let adminReviewSort = "priority";
 let adminHistoryLoaded = false;
+let adminHealthFilter = "all";
+let adminContentMode = "all";
+let adminBackupsLoaded = false;
 const $ = (sel) => document.querySelector(sel);
 
 function escapeHTML(value="") {
@@ -705,11 +708,54 @@ function renderFaviconPreview(dataUrl) {
 
 function getAdminToken() {
   const inputValue = $("#adminTokenInput")?.value?.trim() || "";
-  if (inputValue) {
-    sessionStorage.setItem(ADMIN_TOKEN_SESSION_KEY, inputValue);
-    return inputValue;
+  return inputValue || sessionStorage.getItem(ADMIN_TOKEN_SESSION_KEY) || "";
+}
+
+function setAdminAuthenticated(authenticated) {
+  if (!document.body.classList.contains("admin-page")) return;
+
+  document.body.classList.toggle("admin-locked", !authenticated);
+  document.body.classList.toggle("admin-authenticated", authenticated);
+
+  const authCard = document.querySelector(".admin-auth-card");
+  const logoutBtn = $("#adminLogoutBtn");
+
+  if (authCard) authCard.hidden = authenticated;
+  if (logoutBtn) logoutBtn.hidden = !authenticated;
+}
+
+async function verifyAdminToken({ silent=false }={}) {
+  if (!document.body.classList.contains("admin-page")) return false;
+
+  const token = $("#adminTokenInput")?.value?.trim()
+    || sessionStorage.getItem(ADMIN_TOKEN_SESSION_KEY)
+    || "";
+
+  if (!token) {
+    setAdminAuthenticated(false);
+    return false;
   }
-  return sessionStorage.getItem(ADMIN_TOKEN_SESSION_KEY) || "";
+
+  const status = $("#adminApiStatus");
+  if (!silent) setAdminStatus(status, "관리자 인증을 확인하는 중입니다…", "loading");
+
+  try {
+    if ($("#adminTokenInput")) $("#adminTokenInput").value = token;
+    const data = await adminApi("/admin-auth", { method:"GET" });
+
+    if (!data?.authenticated) throw new Error("관리자 인증에 실패했습니다.");
+
+    sessionStorage.setItem(ADMIN_TOKEN_SESSION_KEY, token);
+    setAdminAuthenticated(true);
+    setAdminStatus(status, "", "");
+    return true;
+  } catch (err) {
+    sessionStorage.removeItem(ADMIN_TOKEN_SESSION_KEY);
+    setAdminAuthenticated(false);
+    if ($("#adminTokenInput")) $("#adminTokenInput").value = "";
+    if (!silent) setAdminStatus(status, err.message, "error");
+    return false;
+  }
 }
 
 function setAdminStatus(el, message, type="") {
@@ -773,36 +819,43 @@ function adminHealthIssues() {
     const title = v.title || v.id || "제목 없음";
 
     if (!String(v.thumbnail || "").trim()) {
-      issues.push({ type:"썸네일 없음", severity:"medium", title, detail:"썸네일 URL이 비어 있습니다." });
+      issues.push({ type:"썸네일 없음", severity:"medium", videoId:v.id, title, detail:"썸네일 URL이 비어 있습니다." });
     }
 
     if (!String(v.source || "").trim()) {
-      issues.push({ type:"출처 없음", severity:"low", title, detail:"출처 정보가 없습니다." });
+      issues.push({ type:"출처 없음", severity:"low", videoId:v.id, title, detail:"출처 정보가 없습니다." });
     }
 
     if (v.contentType !== "playlist" && (v.type === "unknown" || !(v.dates || []).some(d => d?.sourceDate))) {
-      issues.push({ type:"날짜 미확인", severity:"medium", title, detail:"일반 영상의 날짜가 확인되지 않았습니다." });
+      issues.push({ type:"날짜 미확인", severity:"medium", videoId:v.id, title, detail:"일반 영상의 날짜가 확인되지 않았습니다." });
     }
 
     if (v.manualDateReviewPending || v.descriptionChangedAfterManual) {
-      issues.push({ type:"설명 변경 재검토", severity:"high", title, detail:"수동 날짜 지정 후 설명이 변경되어 재검토가 필요합니다." });
+      issues.push({ type:"설명 변경 재검토", severity:"high", videoId:v.id, title, detail:"수동 날짜 지정 후 설명이 변경되어 재검토가 필요합니다." });
     }
 
     for (const d of (v.dates || [])) {
       const raw = String(d?.sourceDate || "");
       const year = Number(raw.slice(0,4));
       if (raw && (!/^(19|20)\d{2}-\d{2}-\d{2}$/.test(raw) || year > currentYear + 1)) {
-        issues.push({ type:"날짜 형식 확인", severity:"high", title, detail:`확인이 필요한 날짜: ${raw}` });
+        issues.push({ type:"날짜 형식 확인", severity:"high", videoId:v.id, title, detail:`확인이 필요한 날짜: ${raw}` });
         break;
       }
     }
 
     if (v.contentType === "playlist" && !isMultiYearPlaylist(v) && v.playlistScope !== "undated" && v.type === "unknown") {
-      issues.push({ type:"플레이리스트 분류 확인", severity:"low", title, detail:"다년도 또는 연도 미지정 분류를 확인해 주세요." });
+      issues.push({ type:"플레이리스트 분류 확인", severity:"low", videoId:v.id, title, detail:"다년도 또는 연도 미지정 분류를 확인해 주세요." });
     }
   });
 
   return issues;
+}
+
+function adminHealthRoute(issue) {
+  const type = String(issue?.type || "");
+  if (type === "날짜 미확인" || type === "설명 변경 재검토") return "review";
+  if (type === "플레이리스트 분류 확인") return "content";
+  return "";
 }
 
 function renderAdminDashboard() {
@@ -835,22 +888,36 @@ function renderAdminDashboard() {
     const counts = new Map();
     issues.forEach(issue => counts.set(issue.type, (counts.get(issue.type) || 0) + 1));
     summary.innerHTML = issues.length
-      ? [...counts.entries()].map(([type,count]) =>
-          `<span class="admin-health-chip">${escapeHTML(type)} <b>${count}</b></span>`
+      ? `<button type="button" class="admin-health-chip ${adminHealthFilter === "all" ? "active" : ""}" data-health-filter="all">전체 <b>${issues.length}</b></button>` +
+        [...counts.entries()].map(([type,count]) =>
+          `<button type="button" class="admin-health-chip ${adminHealthFilter === type ? "active" : ""}" data-health-filter="${escapeHTML(type)}">${escapeHTML(type)} <b>${count}</b></button>`
         ).join("")
       : `<span class="admin-health-ok">✓ 현재 자동 점검에서 이상 항목이 없습니다.</span>`;
   }
 
   if (list) {
-    list.innerHTML = issues.length
-      ? issues.slice(0, 40).map(issue => `
-          <div class="admin-health-item severity-${escapeHTML(issue.severity)}">
-            <span class="admin-health-type">${escapeHTML(issue.type)}</span>
-            <div><strong>${escapeHTML(issue.title)}</strong><small>${escapeHTML(issue.detail)}</small></div>
-          </div>
-        `).join("") +
-        (issues.length > 40 ? `<p class="admin-help">총 ${issues.length}건 중 앞 40건만 표시합니다.</p>` : "")
-      : "";
+    const visibleIssues = adminHealthFilter === "all"
+      ? issues
+      : issues.filter(issue => issue.type === adminHealthFilter);
+
+    list.innerHTML = visibleIssues.length
+      ? visibleIssues.slice(0, 40).map(issue => {
+          const route = adminHealthRoute(issue);
+          return `
+            <div class="admin-health-item severity-${escapeHTML(issue.severity)}">
+              <span class="admin-health-type">${escapeHTML(issue.type)}</span>
+              <div><strong>${escapeHTML(issue.title)}</strong><small>${escapeHTML(issue.detail)}</small></div>
+              ${route ? `<button type="button" class="admin-health-go"
+                data-health-route="${escapeHTML(route)}"
+                data-health-video-id="${escapeHTML(issue.videoId || "")}"
+                data-health-type="${escapeHTML(issue.type)}">바로 확인</button>` : ""}
+            </div>
+          `;
+        }).join("") +
+        (visibleIssues.length > 40 ? `<p class="admin-help">총 ${visibleIssues.length}건 중 앞 40건만 표시합니다.</p>` : "")
+      : issues.length
+        ? `<p class="admin-help">선택한 유형의 이상 항목이 없습니다.</p>`
+        : "";
   }
 }
 
@@ -2025,7 +2092,7 @@ function adminReviewReasonDetail(v) {
 
 function adminReviewItemHtml(v, {playlistUndated=false}={}) {
   return `
-    <article class="admin-unknown-item">
+    <article class="admin-unknown-item" data-review-item-id="${escapeHTML(v.id)}">
       <div class="admin-unknown-thumb">
         ${v.thumbnail ? `<img src="${escapeHTML(v.thumbnail)}" alt="" loading="lazy" />` : ""}
       </div>
@@ -2194,6 +2261,14 @@ function renderAdminContentList() {
     Number(v.durationSeconds || 0) >= 360
   );
 
+  if (adminContentMode === "playlists") {
+    rows = rows.filter(v => v.contentType === "playlist");
+  } else if (adminContentMode === "candidates") {
+    rows = rows.filter(v => v.contentType !== "playlist");
+  }
+
+  if ($("#adminContentMode")) $("#adminContentMode").value = adminContentMode;
+
   if (q) {
     rows = rows.filter(v => `${v.title} ${v.description}`.toLowerCase().includes(q));
   } else {
@@ -2272,7 +2347,8 @@ function adminHistoryActionLabel(action) {
     content_type: "콘텐츠 유형 변경",
     playlist_scope: "플레이리스트 범위 변경",
     site_config: "사이트 설정 변경",
-    undo: "변경 되돌리기"
+    undo: "변경 되돌리기",
+    backup_restore: "백업 복원"
   };
   return labels[action] || action || "관리자 변경";
 }
@@ -2380,6 +2456,120 @@ async function loadAdminHistory({ force=false }={}) {
     setAdminStatus(status, `최근 ${Array.isArray(data.entries) ? data.entries.length : 0}건을 불러왔습니다.`, "success");
   } catch (err) {
     setAdminStatus(status, err.message, "error");
+  }
+}
+
+function backupReasonLabel(reason) {
+  const labels = {
+    manual: "수동 백업",
+    before_sync: "YouTube 동기화 직전",
+    before_restore: "복원 실행 직전"
+  };
+  return labels[String(reason || "")] || "관리자 백업";
+}
+
+function renderAdminBackups(backups=[]) {
+  const wrap = $("#adminBackupList");
+  if (!wrap) return;
+
+  if (!backups.length) {
+    wrap.innerHTML = `<div class="admin-empty-complete muted"><span>–</span><div><strong>아직 복원 지점이 없습니다.</strong><p>지금 백업을 만들거나 다음 YouTube 동기화 적용 시 자동 생성됩니다.</p></div></div>`;
+    return;
+  }
+
+  wrap.innerHTML = backups.map(item => `
+    <div class="admin-backup-item">
+      <div>
+        <strong>${escapeHTML(backupReasonLabel(item.reason))}</strong>
+        <small>${escapeHTML(formatAdminDateTime(item.createdAt))} · 영상 ${Number(item.total || 0)}개</small>
+      </div>
+      <button type="button" class="admin-backup-restore-btn"
+        data-backup-restore="${escapeHTML(item.id || "")}">
+        이 시점으로 복원
+      </button>
+    </div>
+  `).join("");
+}
+
+async function loadAdminBackups({ force=false }={}) {
+  if (!$("#adminBackupList")) return;
+  if (adminBackupsLoaded && !force) return;
+
+  const status = $("#adminBackupStatus");
+  try {
+    const data = await adminApi("/admin-backups", { method:"GET" });
+    renderAdminBackups(Array.isArray(data.backups) ? data.backups : []);
+    adminBackupsLoaded = true;
+    setAdminStatus(status, "", "");
+  } catch (err) {
+    setAdminStatus(status, err.message, "error");
+  }
+}
+
+function focusAdminReviewVideo(videoId) {
+  if (!videoId) return;
+  window.setTimeout(() => {
+    const item = document.querySelector(`[data-review-item-id="${CSS.escape(videoId)}"]`);
+    if (!item) return;
+    item.classList.add("admin-focus-item");
+    item.scrollIntoView({ behavior:"smooth", block:"center" });
+    window.setTimeout(() => item.classList.remove("admin-focus-item"), 2200);
+  }, 40);
+}
+
+function routeAdminAction(route, { videoId="", healthType="" }={}) {
+  if (route === "review-all") {
+    adminReviewFilter = "all";
+    setAdminTab("review");
+    renderAdminUnknownList();
+    return;
+  }
+
+  if (route === "review-description") {
+    adminReviewFilter = "description";
+    setAdminTab("review");
+    renderAdminUnknownList();
+    return;
+  }
+
+  if (route === "review-unknown") {
+    adminReviewFilter = "all";
+    setAdminTab("review");
+    renderAdminUnknownList();
+    return;
+  }
+
+  if (route === "content-playlists") {
+    adminContentMode = "playlists";
+    if ($("#adminContentSearch")) $("#adminContentSearch").value = "";
+    setAdminTab("content");
+    renderAdminContentList();
+    return;
+  }
+
+  if (route === "sync") {
+    setAdminTab("sync");
+    loadAdminBackups();
+    return;
+  }
+
+  if (route === "review") {
+    const v = videos.find(item => String(item.id) === String(videoId));
+    adminReviewFilter = healthType === "설명 변경 재검토"
+      ? "description"
+      : (v ? adminReviewReason(v).key : "all");
+    setAdminTab("review");
+    renderAdminUnknownList();
+    focusAdminReviewVideo(videoId);
+    return;
+  }
+
+  if (route === "content") {
+    adminContentMode = "playlists";
+    const v = videos.find(item => String(item.id) === String(videoId));
+    if ($("#adminContentSearch")) $("#adminContentSearch").value = v?.title || "";
+    setAdminTab("content");
+    renderAdminContentList();
   }
 }
 
@@ -2972,6 +3162,7 @@ function bindEvents() {
       setAdminTab(tab);
       if (tab === "content") renderAdminContentList();
       if (tab === "history") loadAdminHistory();
+      if (tab === "sync") loadAdminBackups();
     });
   });
 
@@ -3027,6 +3218,85 @@ function bindEvents() {
     adminContentSearch.addEventListener("input", renderAdminContentList);
   }
 
+  $("#adminContentMode")?.addEventListener("change", (event) => {
+    adminContentMode = event.target.value || "all";
+    renderAdminContentList();
+  });
+
+  document.addEventListener("click", (event) => {
+    const dashboardAction = event.target.closest("[data-dashboard-route]");
+    if (dashboardAction) {
+      routeAdminAction(dashboardAction.dataset.dashboardRoute || "");
+      return;
+    }
+
+    const healthFilter = event.target.closest("[data-health-filter]");
+    if (healthFilter) {
+      adminHealthFilter = healthFilter.dataset.healthFilter || "all";
+      renderAdminDashboard();
+      return;
+    }
+
+    const healthRoute = event.target.closest("[data-health-route]");
+    if (healthRoute) {
+      routeAdminAction(healthRoute.dataset.healthRoute || "", {
+        videoId: healthRoute.dataset.healthVideoId || "",
+        healthType: healthRoute.dataset.healthType || ""
+      });
+      return;
+    }
+
+    const restoreButton = event.target.closest("[data-backup-restore]");
+    if (restoreButton) {
+      const backupId = restoreButton.dataset.backupRestore || "";
+      if (!backupId) return;
+
+      const ok = window.confirm("선택한 복원 지점으로 videos.json을 되돌립니다.\n\n현재 상태도 복원 직전에 자동 백업됩니다. 계속할까요?");
+      if (!ok) return;
+
+      const status = $("#adminBackupStatus");
+      restoreButton.disabled = true;
+      setAdminStatus(status, "복원 중입니다…", "loading");
+
+      (async () => {
+        try {
+          await adminApi("/restore-admin-backup", {
+            method:"POST",
+            body: JSON.stringify({ backupId })
+          });
+          adminHistoryLoaded = false;
+          adminBackupsLoaded = false;
+          setAdminStatus(status, "복원 완료. 최신 데이터를 다시 불러옵니다…", "success");
+          window.setTimeout(() => location.reload(), 500);
+        } catch (err) {
+          restoreButton.disabled = false;
+          setAdminStatus(status, err.message, "error");
+        }
+      })();
+      return;
+    }
+  });
+
+  $("#createAdminBackup")?.addEventListener("click", async () => {
+    const button = $("#createAdminBackup");
+    const status = $("#adminBackupStatus");
+    button.disabled = true;
+    setAdminStatus(status, "현재 상태를 백업하는 중입니다…", "loading");
+    try {
+      await adminApi("/create-admin-backup", {
+        method:"POST",
+        body: JSON.stringify({ reason:"manual" })
+      });
+      adminBackupsLoaded = false;
+      await loadAdminBackups({ force:true });
+      setAdminStatus(status, "복원 지점을 만들었습니다.", "success");
+    } catch (err) {
+      setAdminStatus(status, err.message, "error");
+    } finally {
+      button.disabled = false;
+    }
+  });
+
   document.querySelectorAll("[data-review-filter]").forEach(btn => {
     btn.addEventListener("click", () => {
       adminReviewFilter = btn.dataset.reviewFilter || "all";
@@ -3053,38 +3323,49 @@ function bindEvents() {
   updateBackToTop();
   updateSearchClearButton();
 
-  const savedAdminToken = getAdminToken();
+  const savedAdminToken = sessionStorage.getItem(ADMIN_TOKEN_SESSION_KEY) || "";
   if ($("#adminTokenInput") && savedAdminToken) {
     $("#adminTokenInput").value = savedAdminToken;
   }
 
-  $("#saveAdminToken")?.addEventListener("click", () => {
-    const token = $("#adminTokenInput").value.trim();
+  $("#saveAdminToken")?.addEventListener("click", async () => {
+    const token = $("#adminTokenInput")?.value?.trim() || "";
     if (!token) {
       setAdminStatus($("#adminApiStatus"), "ADMIN_TOKEN을 입력해 주세요.", "error");
       return;
     }
-    sessionStorage.setItem(ADMIN_TOKEN_SESSION_KEY, token);
-    setAdminStatus($("#adminApiStatus"), "관리자 토큰이 적용되었습니다.", "success");
-  });
 
-  $("#checkAdminApi")?.addEventListener("click", async () => {
-    const status = $("#adminApiStatus");
-    setAdminStatus(status, "Worker 연결을 확인하는 중입니다…", "loading");
+    const button = $("#saveAdminToken");
+    button.disabled = true;
     try {
-      const data = await adminApi("/health", { method: "GET" });
-      const ok = data.youtubeConfigured && data.githubConfigured && data.adminConfigured;
-      setAdminStatus(
-        status,
-        ok
-          ? `연결 정상 · ${data.repo} · ${data.handle}`
-          : "Worker는 연결됐지만 필요한 Secret 중 일부가 없습니다.",
-        ok ? "success" : "error"
-      );
-    } catch (err) {
-      setAdminStatus(status, err.message, "error");
+      await verifyAdminToken();
+    } finally {
+      button.disabled = false;
     }
   });
+
+  $("#adminTokenInput")?.addEventListener("keydown", async (event) => {
+    if (event.key !== "Enter") return;
+    event.preventDefault();
+    $("#saveAdminToken")?.click();
+  });
+
+  $("#adminLogoutBtn")?.addEventListener("click", () => {
+    sessionStorage.removeItem(ADMIN_TOKEN_SESSION_KEY);
+    if ($("#adminTokenInput")) $("#adminTokenInput").value = "";
+    adminHistoryLoaded = false;
+    adminBackupsLoaded = false;
+    setAdminAuthenticated(false);
+    setAdminStatus($("#adminApiStatus"), "로그아웃되었습니다.", "success");
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
+
+  if (document.body.classList.contains("admin-page")) {
+    setAdminAuthenticated(false);
+    if (savedAdminToken) {
+      verifyAdminToken({ silent:true });
+    }
+  }
 
   let pendingFaviconDataUrl = "";
 
