@@ -8426,8 +8426,8 @@
       "duration": "PT6M4S",
       "durationSeconds": 364,
       "parseStatus": "needs_review",
-      "contentType": "video",
-      "playlistScope": "",
+      "contentType": "playlist",
+      "playlistScope": "undated",
       "dates": [],
       "ignoredDateCandidates": [],
       "previousManualDates": [],
@@ -14302,7 +14302,7 @@
     }
   ],
   "total": 641,
-  "generatedAt": "2026-09-19T18:45:15.147Z",
+  "generatedAt": "2026-09-19T18:45:30.539Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
