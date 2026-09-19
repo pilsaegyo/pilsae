@@ -6454,11 +6454,19 @@
       "title": "야 그럼 내가 뭐가 돼 ㅡㅡ #신혜성 #신화",
       "description": "[신화방송 17-1] [Shinhwa TV EP 17-1] ★데뷔 20주년★ 기념 몰아보기!\nhttps://youtu.be/XQnNHFcimeA?si=gGnSjWnhlRaPiT1f&t=904\n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン",
       "source": "[신화방송 17-1] [Shinhwa TV EP 17-1] ★데뷔 20주년★ 기념 몰아보기!",
-      "sourceDate": null,
+      "sourceDate": "2012-07-07",
       "publishedAt": "2025-06-09T09:32:00Z",
       "thumbnail": "https://i.ytimg.com/vi/HgxQafscyc4/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2012-07-07",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8299,7 +8307,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T05:20:44.579Z",
+  "generatedAt": "2026-09-19T05:21:39.670Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
