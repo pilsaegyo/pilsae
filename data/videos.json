@@ -1824,8 +1824,16 @@
       "sourceDate": null,
       "publishedAt": "2026-04-08T10:30:11Z",
       "thumbnail": "https://i.ytimg.com/vi/Hy-YbRM9fXM/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2005-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7706,7 +7714,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T03:15:13.212Z",
+  "generatedAt": "2026-09-19T03:15:26.300Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
