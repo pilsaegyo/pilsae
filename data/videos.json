@@ -6943,11 +6943,19 @@
       "title": "신혜성 10년후 32살에 결혼한다는데 이미 지남 #신혜성 #신화",
       "description": "#신혜성 #신화 #shinhwa #shinhyesung  #申惠星 #神话 #シンファ \nシン・ヘソン\n지금 22살이니까 일단 그렇다고 쳐요",
       "source": "シン・ヘソン",
-      "sourceDate": null,
+      "sourceDate": "2000-01-01",
       "publishedAt": "2025-05-17T23:35:23Z",
       "thumbnail": "https://i.ytimg.com/vi/Eh_FWzfxMh0/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2000-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -8000,7 +8008,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:13:08.552Z",
+  "generatedAt": "2026-09-19T04:13:17.451Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
