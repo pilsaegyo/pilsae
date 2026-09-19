@@ -1028,7 +1028,8 @@ body{
   font-weight:850;
   border:1px solid #ded0ed;
 }
-.date-extra{display:contents}
+.date-extra[hidden]{display:none!important}
+.date-extra:not([hidden]){display:contents}
 .date-more-btn{
   border:1px solid #e1d8e8;
   background:#fff;
@@ -1152,4 +1153,15 @@ body{
     -webkit-line-clamp:2;
     overflow:hidden;
   }
+}
+
+
+/* v7.1: make collapsed multi-date chips actually stay hidden */
+.video-grid .date-extra[hidden],
+.video-grid.list-view .date-extra[hidden]{
+  display:none!important;
+}
+.video-grid .date-extra:not([hidden]),
+.video-grid.list-view .date-extra:not([hidden]){
+  display:contents;
 }

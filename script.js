@@ -559,7 +559,8 @@ function renderDates(v) {
   }
 
   const years = videoYears(v);
-  const limit = 4;
+  const isMobile = window.matchMedia("(max-width: 620px)").matches;
+  const limit = isMobile ? 2 : 3;
   const displayItems = [];
 
   // 혼합영상은 먼저 연도 요약을 보여주고 세부 날짜를 이어서 표시.
