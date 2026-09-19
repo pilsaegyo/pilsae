@@ -3270,11 +3270,19 @@
       "title": "다음에 또 봐요~ 안녕~ #신혜성 #신화",
       "description": "2007 Shin Hye Sung First Tour\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "2007 Shin Hye Sung First Tour",
-      "sourceDate": null,
+      "sourceDate": "2007-01-01",
       "publishedAt": "2025-11-26T10:30:17Z",
       "thumbnail": "https://i.ytimg.com/vi/R6Sv7MzJ5Vw/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2007-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7841,7 +7849,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:08:54.823Z",
+  "generatedAt": "2026-09-19T04:09:26.890Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
