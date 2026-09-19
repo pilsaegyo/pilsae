@@ -2176,11 +2176,26 @@
       "title": "13년만에 다시 불러주는 우정송 영건즈 #신혜성 #신화",
       "description": "2003 winterStory con & 2016 HERO con\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
       "source": "2003 winterStory con & 2016 HERO con",
-      "sourceDate": null,
+      "sourceDate": "2003-01-01",
       "publishedAt": "2026-03-23T10:30:31Z",
       "thumbnail": "https://i.ytimg.com/vi/V83wMkm10t0/maxresdefault.jpg",
-      "parseStatus": "needs_review",
-      "dates": [],
+      "parseStatus": "parsed",
+      "dates": [
+        {
+          "sourceDate": "2003-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        },
+        {
+          "sourceDate": "2016-01-01",
+          "source": "admin",
+          "precision": "year",
+          "inferred": true,
+          "manual": true
+        }
+      ],
       "ignoredDateCandidates": []
     },
     {
@@ -7802,7 +7817,7 @@
     }
   ],
   "total": 640,
-  "generatedAt": "2026-09-19T04:07:26.530Z",
+  "generatedAt": "2026-09-19T04:08:07.295Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
