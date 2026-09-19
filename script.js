@@ -852,7 +852,10 @@ function renderDates(v) {
     const year = d.sourceDate.slice(0,4);
     const includeYear = v.type === "mixed" || year !== prevYear;
     prevYear = year;
-    return `<span class="date-chip">${escapeHTML(shortDisplayDate(d, includeYear))}</span>`;
+    const label = shortDisplayDate(d, includeYear);
+    return `<button class="date-chip date-context-link" type="button"
+      data-context-date="${escapeHTML(displayDate(d))}"
+      title="같은 날짜 영상 보기">${escapeHTML(label)}</button>`;
   });
 
   const visible = dateHtml.slice(0, dateLimit);
@@ -905,6 +908,21 @@ function highlightMatch(text, query) {
       ? `<mark>${escapeHTML(part)}</mark>`
       : escapeHTML(part)
   ).join("");
+}
+
+function searchMatchReason(v, query) {
+  const q = String(query || "").trim().toLowerCase();
+  if (!q) return "";
+
+  if (String(v.title || "").toLowerCase().includes(q)) return "제목 일치";
+
+  const dateText = (v.dates || []).map(displayDate).join(" · ").toLowerCase();
+  if (dateText.includes(q)) return "날짜 일치";
+
+  if (String(v.source || "").toLowerCase().includes(q)) return "출처 일치";
+  if (String(v.description || "").toLowerCase().includes(q)) return "설명 일치";
+
+  return "";
 }
 
 function searchContextSnippet(v, query) {
@@ -1110,8 +1128,10 @@ function renderCard(v) {
 
         <h2 class="card-title"><a class="youtube-video-link" data-video-id="${escapeHTML(v.id)}" href="${escapeHTML(v.url)}" target="_blank" rel="noopener noreferrer">${highlightMatch(v.title, q)}</a></h2>
 
+        ${q && searchMatchReason(v, q) ? `<div class="search-match-reason">${escapeHTML(searchMatchReason(v, q))}</div>` : ""}
         ${searchContextSnippet(v, q)}
-        ${v.source ? `<p class="source">출처 · ${highlightMatch(v.source, q)}</p>` : ""}
+        ${v.source ? `<p class="source">출처 · <button type="button" class="source-context-link"
+          data-context-source="${escapeHTML(v.source)}" title="같은 출처 영상 보기">${highlightMatch(v.source, q)}</button></p>` : ""}
         ${v.type === "unknown" && !isMultiYearPlaylist(v)
           ? `<p class="note">${escapeHTML(unknownReason(v))}</p>`
           : ""}
@@ -1471,12 +1491,35 @@ function renderTimeline(rows) {
     const monthCount = [...group.months.values()].reduce((sum, arr) => sum + arr.length, 0);
     const totalCount = monthCount + group.yearOnly.length;
 
+    const monthEntries = [...group.months.keys()]
+      .sort((a,b) => Number(a) - Number(b))
+      .map(month => ({
+        month,
+        count: group.months.get(month).length
+      }));
+
     parts.push(`
-      <section class="timeline-year">
+      <section class="timeline-year" data-timeline-year="${escapeHTML(year)}">
         <div class="timeline-year-heading">
           <h2>${escapeHTML(year)}</h2>
           <span>${totalCount}개</span>
         </div>
+        ${monthEntries.length ? `
+          <nav class="timeline-month-nav" aria-label="${escapeHTML(year)}년 월별 이동">
+            ${monthEntries.map(({month,count}) => `
+              <button type="button" class="timeline-month-jump"
+                data-timeline-month-jump="${escapeHTML(year)}-${escapeHTML(month)}">
+                <span>${Number(month)}월</span><small>${count}</small>
+              </button>
+            `).join("")}
+            ${group.yearOnly.length ? `
+              <button type="button" class="timeline-month-jump"
+                data-timeline-month-jump="${escapeHTML(year)}-year-only">
+                <span>연도만</span><small>${group.yearOnly.length}</small>
+              </button>
+            ` : ""}
+          </nav>
+        ` : ""}
     `);
 
     for (const month of [...group.months.keys()].sort((a,b) => Number(b) - Number(a))) {
@@ -1484,7 +1527,7 @@ function renderTimeline(rows) {
         .sort((a,b) => timelinePrimaryDate(b.v).localeCompare(timelinePrimaryDate(a.v)));
 
       parts.push(`
-        <div class="timeline-month">
+        <div class="timeline-month" id="timeline-${escapeHTML(year)}-${escapeHTML(month)}">
           <h3>${escapeHTML(timelineMonthLabel(month))}</h3>
           <div class="timeline-items">
             ${items.map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
@@ -1496,7 +1539,7 @@ function renderTimeline(rows) {
     if (group.yearOnly.length) {
       const items = group.yearOnly.sort((a,b) => a.v.title.localeCompare(b.v.title, "ko"));
       parts.push(`
-        <div class="timeline-month timeline-year-only-group">
+        <div class="timeline-month timeline-year-only-group" id="timeline-${escapeHTML(year)}-year-only">
           <h3>연도만 확인</h3>
           <div class="timeline-items">
             ${items.map(({v,bucket}) => timelineItemHtml(v, bucket)).join("")}
@@ -2165,6 +2208,40 @@ function bindEvents() {
       } catch (err) {
         candidateIgnore.disabled = false;
         if (status) status.textContent = err.message;
+      }
+      return;
+    }
+
+    const dateContext = event.target.closest("button[data-context-date]");
+    if (dateContext) {
+      $("#searchInput").value = dateContext.dataset.contextDate || "";
+      updateSearchClearButton();
+      visibleLimit = PAGE_SIZE;
+      hideSearchSuggestions();
+      syncUrlState({ replace:true });
+      render();
+      document.querySelector(".toolbar-panel")?.scrollIntoView({ behavior:"smooth", block:"start" });
+      return;
+    }
+
+    const sourceContext = event.target.closest("button[data-context-source]");
+    if (sourceContext) {
+      $("#searchInput").value = sourceContext.dataset.contextSource || "";
+      updateSearchClearButton();
+      visibleLimit = PAGE_SIZE;
+      hideSearchSuggestions();
+      syncUrlState({ replace:true });
+      render();
+      document.querySelector(".toolbar-panel")?.scrollIntoView({ behavior:"smooth", block:"start" });
+      return;
+    }
+
+    const monthJump = event.target.closest("button[data-timeline-month-jump]");
+    if (monthJump) {
+      const id = `timeline-${monthJump.dataset.timelineMonthJump || ""}`;
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior:"smooth", block:"start" });
       }
       return;
     }

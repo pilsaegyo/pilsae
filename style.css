@@ -2953,3 +2953,119 @@ body.admin-mode-open .header-inner{
     height:40px;
   }
 }
+
+
+/* v18 experimental context navigation */
+
+/* Existing metadata itself becomes interactive; no extra visible action buttons. */
+.date-context-link{
+  appearance:none;
+  font:inherit;
+  cursor:pointer;
+}
+.date-context-link:hover,
+.date-context-link:focus-visible{
+  border-color:#cbb8dc;
+  background:#f2eaf8;
+  color:#5f4478;
+  outline:none;
+}
+
+.source-context-link{
+  appearance:none;
+  border:0;
+  background:none;
+  padding:0;
+  color:inherit;
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+  text-decoration:underline;
+  text-decoration-color:transparent;
+  text-underline-offset:3px;
+}
+.source-context-link:hover,
+.source-context-link:focus-visible{
+  color:#604a77;
+  text-decoration-color:#cdbbda;
+  outline:none;
+}
+
+/* Only appears while a search query is active. */
+.search-match-reason{
+  display:inline-flex;
+  margin:-2px 0 7px;
+  padding:3px 6px;
+  border-radius:999px;
+  background:#f2edf6;
+  color:#75657e;
+  font-size:9px;
+  font-weight:850;
+}
+
+/* Month navigation exists only inside timeline view/year sections. */
+.timeline-month-nav{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  overflow-x:auto;
+  margin:0 0 11px;
+  padding:2px 0 4px;
+  scrollbar-width:none;
+}
+.timeline-month-nav::-webkit-scrollbar{
+  display:none;
+}
+.timeline-month-jump{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  min-height:28px;
+  border:1px solid #e1d9e7;
+  border-radius:999px;
+  background:#fff;
+  color:#74677b;
+  padding:4px 8px;
+  font-size:9px;
+  font-weight:800;
+}
+.timeline-month-jump small{
+  min-width:17px;
+  padding:1px 4px;
+  border-radius:999px;
+  background:#f1edf4;
+  color:#8a7d91;
+  text-align:center;
+  font-size:8px;
+}
+.timeline-month-jump:hover,
+.timeline-month-jump:focus-visible{
+  border-color:#cdbbd9;
+  background:#f8f4fa;
+  color:#5f4a70;
+  outline:none;
+}
+
+.timeline-month{
+  scroll-margin-top:118px;
+}
+
+@media (max-width:620px){
+  .search-match-reason{
+    margin-bottom:6px;
+  }
+  .timeline-month-nav{
+    margin-left:-2px;
+    margin-right:-2px;
+    padding-left:2px;
+    padding-right:2px;
+  }
+  .timeline-month-jump{
+    min-height:31px;
+    padding:5px 9px;
+  }
+  .timeline-month{
+    scroll-margin-top:112px;
+  }
+}
