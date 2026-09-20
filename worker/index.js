@@ -90,7 +90,7 @@ const worker = {
             changedAt:String(latestAutoApply.changedAt || ""),
             after:latestAutoApply.after || {}
           } : null,
-          note:"실행 자체의 성공/실패는 Workers Logs에도 기록됩니다."
+          note:"GitHub 반영과 공개 사이트 배포는 별도 단계입니다. Cron 실행 성공/실패는 Workers Logs에도 기록됩니다."
         }, 200, env, origin);
       }
 

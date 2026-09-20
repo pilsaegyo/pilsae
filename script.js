@@ -1047,8 +1047,12 @@ async function loadAutoSyncDiagnostics({ silent=false }={}) {
 
     title.textContent = "자동 동기화 실행 준비 정상";
 
+    const lastAutoAction = String(data.lastAutoApply?.action || "");
+    const lastAutoLabel = lastAutoAction === "auto_sync_test_apply"
+      ? "최근 자동 테스트"
+      : "최근 Cron 자동 반영";
     const lastAuto = data.lastAutoApply?.changedAt
-      ? `최근 자동 반영 · ${formatAdminDateTime(data.lastAutoApply.changedAt)}`
+      ? `${lastAutoLabel} · ${formatAdminDateTime(data.lastAutoApply.changedAt)}`
       : "자동 반영 이력 없음";
 
     const lastData = data.lastDataAppliedAt
@@ -1066,6 +1070,84 @@ async function loadAutoSyncDiagnostics({ silent=false }={}) {
   } finally {
     if (refresh) refresh.disabled = false;
   }
+}
+
+
+async function fetchLiveArchivePayload() {
+  const res = await fetch(`./data/videos.json?sync_check=${Date.now()}`, {
+    cache:"no-store"
+  });
+  if (!res.ok) throw new Error(`사이트 데이터 확인 실패 (${res.status})`);
+
+  const raw = await res.json();
+  const list = Array.isArray(raw) ? raw : raw?.videos;
+  if (!Array.isArray(list)) {
+    throw new Error("사이트 videos.json 형식이 올바르지 않습니다.");
+  }
+
+  return { raw, list };
+}
+
+function autoSyncExpectedAddedIds(data={}) {
+  return (Array.isArray(data.changes) ? data.changes : [])
+    .filter(change => change?.kind === "신규" && change?.id)
+    .map(change => String(change.id));
+}
+
+function liveArchiveMatchesAutoSync(list, data={}) {
+  const expectedTotal = Number(data.total || 0);
+  const addedIds = autoSyncExpectedAddedIds(data);
+  const ids = new Set((list || []).map(v => String(v?.id || "")));
+
+  if (expectedTotal && list.length < expectedTotal) return false;
+  if (addedIds.length && !addedIds.every(id => ids.has(id))) return false;
+  return true;
+}
+
+async function refreshAdminDataFromLivePayload(list) {
+  videos = list
+    .filter(v => !isExcludedVideo(v))
+    .map(normalizeVideo);
+
+  await loadSiteConfig();
+  applySiteConfig();
+  updateAdminSummary();
+  render();
+  renderAdminList();
+  renderAdminUnknownList();
+  renderAdminContentList();
+}
+
+async function waitForLiveArchiveSync(data={}, {
+  timeoutMs=180000,
+  intervalMs=5000
+}={}) {
+  const started = Date.now();
+  let lastError = null;
+
+  while (Date.now() - started < timeoutMs) {
+    try {
+      const payload = await fetchLiveArchivePayload();
+      if (liveArchiveMatchesAutoSync(payload.list, data)) {
+        await refreshAdminDataFromLivePayload(payload.list);
+        return {
+          ok:true,
+          elapsedMs:Date.now() - started,
+          total:payload.list.length
+        };
+      }
+    } catch (err) {
+      lastError = err;
+    }
+
+    await new Promise(resolve => setTimeout(resolve, intervalMs));
+  }
+
+  return {
+    ok:false,
+    elapsedMs:Date.now() - started,
+    error:lastError?.message || ""
+  };
 }
 
 async function runAutoSyncNow() {
@@ -1097,12 +1179,39 @@ async function runAutoSyncNow() {
         `자동 동기화 실행 성공 · 변경사항 없음 · 현재 ${Number(data.total || 0)}개 영상`,
         "success"
       );
-    } else {
-      const changed = autoSyncCountChanges(data);
+      await loadAutoSyncDiagnostics({ silent:true });
+      return;
+    }
+
+    const changed = autoSyncCountChanges(data);
+    const addedIds = autoSyncExpectedAddedIds(data);
+
+    setAdminStatus(
+      status,
+      `GitHub 데이터 반영 완료 · ${changed}건 적용 · 사이트 반영 확인 중…`,
+      "loading"
+    );
+
+    // A GitHub data commit does not mean the currently loaded static site has
+    // already received the new asset. Poll the deployed videos.json and only
+    // report "사이트 반영 완료" after the expected total/new IDs are visible.
+    const live = await waitForLiveArchiveSync(data);
+
+    if (live.ok) {
       setAdminStatus(
         status,
-        `자동 동기화 실행 성공 · ${changed}건 적용 · 신규 ${Number(data.added || 0)} / 제목 ${Number(data.titleChanged || 0)} / 설명 ${Number(data.descriptionChanged || 0)} / 삭제 ${Number(data.removed || 0)}`,
+        `자동 동기화 성공 · 신규 ${Number(data.added || 0)} / 제목 ${Number(data.titleChanged || 0)} / 설명 ${Number(data.descriptionChanged || 0)} / 삭제 ${Number(data.removed || 0)} · 사이트 반영 완료`,
         "success"
+      );
+    } else {
+      const target = addedIds.length
+        ? `신규 영상 ${addedIds.length}건`
+        : `총 ${Number(data.total || 0)}개 데이터`;
+
+      setAdminStatus(
+        status,
+        `GitHub에는 정상 반영됐지만 ${target}이 아직 공개 사이트에 배포되지 않았습니다. Cloudflare 사이트 배포 상태를 확인해 주세요.`,
+        "error"
       );
     }
 
