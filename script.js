@@ -904,6 +904,7 @@ async function verifyAdminToken({ silent=false }={}) {
     loadDashboardDeployInfo();
     loadAdminSystemStatus();
     loadAutoSyncDiagnostics({ silent:true });
+    loadVisitorStats({ silent:true });
     return true;
   } catch (err) {
     sessionStorage.removeItem(ADMIN_TOKEN_SESSION_KEY);
@@ -918,6 +919,39 @@ function setAdminStatus(el, message, type="") {
   if (!el) return;
   el.className = `admin-status ${type}`.trim();
   el.textContent = message || "";
+}
+
+
+function shouldTrackPublicVisit() {
+  if (document.body.classList.contains("admin-page")) return false;
+  if (/\/admin\/?$/.test(location.pathname)) return false;
+  return Boolean(siteConfig.adminApiUrl);
+}
+
+function trackPublicVisit() {
+  if (!shouldTrackPublicVisit()) return;
+
+  // Client-side throttle reduces needless pings on quick reloads. The Worker
+  // also enforces the same 30-minute IP-based session window server-side.
+  const key = "pilsae_visit_ping_at";
+  const now = Date.now();
+  const last = Number(localStorage.getItem(key) || 0);
+  if (Number.isFinite(last) && now - last < 30 * 60 * 1000) return;
+
+  const base = String(siteConfig.adminApiUrl || "").replace(/\/$/, "");
+  if (!base) return;
+  localStorage.setItem(key, String(now));
+
+  fetch(`${base}/track-visit`, {
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body:"{}",
+    keepalive:true,
+    cache:"no-store",
+    credentials:"omit"
+  }).catch(() => {
+    // Analytics must never interfere with the archive UX.
+  });
 }
 
 async function adminApi(path, options={}) {
@@ -955,6 +989,93 @@ function formatAdminDateTime(value) {
 }
 
 
+
+
+let adminVisitorStatsLoaded = false;
+
+function setVisitorMetric(id, value) {
+  const el = $(id);
+  if (el) el.textContent = Number(value || 0).toLocaleString("ko-KR");
+}
+
+function formatVisitorCompactDate(value) {
+  if (!value) return "-";
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return "-";
+  return new Intl.DateTimeFormat("ko-KR", {
+    month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit"
+  }).format(dt);
+}
+
+function renderVisitorStats(data={}) {
+  if (!data.configured) {
+    ["#dashVisitorTodayVisits", "#dashVisitorTodayUnique", "#dashVisitor7dVisits", "#dashVisitor90dUnique"].forEach(id => {
+      const el = $(id); if (el) el.textContent = "-";
+    });
+    setAdminStatus($("#visitorStatsStatus"), "방문 통계 저장소가 아직 연결되지 않았습니다. Worker를 한 번 배포하면 D1이 자동 생성됩니다.", "loading");
+    return;
+  }
+
+  setVisitorMetric("#dashVisitorTodayVisits", data.today?.visits);
+  setVisitorMetric("#dashVisitorTodayUnique", data.today?.unique);
+  setVisitorMetric("#dashVisitor7dVisits", data.last7Days?.visits);
+  setVisitorMetric("#dashVisitor90dUnique", data.last90Days?.unique);
+  setVisitorMetric("#visitorTodayVisits", data.today?.visits);
+  setVisitorMetric("#visitorTodayUnique", data.today?.unique);
+  setVisitorMetric("#visitor7dVisits", data.last7Days?.visits);
+  setVisitorMetric("#visitor90dUnique", data.last90Days?.unique);
+
+  const daily = Array.isArray(data.daily) ? data.daily : [];
+  const dailyEl = $("#visitorDailyChart");
+  if (dailyEl) {
+    const max = Math.max(1, ...daily.map(row => Number(row.visits || 0)));
+    dailyEl.innerHTML = daily.length ? daily.map(row => {
+      const pct = Math.max(4, Math.round(Number(row.visits || 0) / max * 100));
+      const label = String(row.day || "").slice(5).replace("-", ".");
+      return `<div class="visitor-day-row">
+        <span>${escapeHTML(label)}</span>
+        <div class="visitor-day-bar"><i style="width:${pct}%"></i></div>
+        <strong>${Number(row.visits || 0)}</strong>
+        <small>${Number(row.unique || 0)}명</small>
+      </div>`;
+    }).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
+  }
+
+  const topEl = $("#visitorTopList");
+  const top = Array.isArray(data.top) ? data.top : [];
+  if (topEl) {
+    topEl.innerHTML = top.length ? top.map(row => `<div class="admin-visitor-list-row">
+      <strong>${escapeHTML(row.visitorId || "-")}</strong>
+      <span>${Number(row.visits || 0)}회</span>
+      <small>${escapeHTML(formatVisitorCompactDate(row.lastSeenAt))}</small>
+    </div>`).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
+  }
+
+  const recentEl = $("#visitorRecentList");
+  const recent = Array.isArray(data.recent) ? data.recent : [];
+  if (recentEl) {
+    recentEl.innerHTML = recent.length ? recent.map(row => `<div class="admin-visitor-list-row recent">
+      <strong>${escapeHTML(row.visitorId || "-")}</strong>
+      <span>${escapeHTML(formatAdminDateTime(row.visitedAt))}</span>
+      <small>누적 ${Number(row.totalVisits || 0)}회</small>
+    </div>`).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
+  }
+
+  setAdminStatus($("#visitorStatsStatus"), `최근 ${Number(data.retentionDays || 90)}일 기준 · IP 원문 미보관`, "success");
+}
+
+async function loadVisitorStats({ silent=false }={}) {
+  if (!getAdminToken()) return;
+  const status = $("#visitorStatsStatus");
+  if (!silent) setAdminStatus(status, "방문 통계를 불러오는 중입니다…", "loading");
+  try {
+    const data = await adminApi("/visitor-stats", { method:"GET" });
+    renderVisitorStats(data);
+    adminVisitorStatsLoaded = true;
+  } catch (err) {
+    if (!silent) setAdminStatus(status, `방문 통계 조회 실패 · ${err.message}`, "error");
+  }
+}
 
 function renderAutoSyncSchedule() {
   const el = $("#adminAutoSyncNext");
@@ -5196,6 +5317,12 @@ function routeAdminAction(route, { videoId="", healthType="" }={}) {
     return;
   }
 
+  if (route === "visitors") {
+    setAdminTab("visitors");
+    loadVisitorStats();
+    return;
+  }
+
   if (route === "sync") {
     setAdminTab("sync");
     loadAdminBackups();
@@ -6083,6 +6210,8 @@ function bindEvents() {
     }
   });
 
+  $("#refreshVisitorStats")?.addEventListener("click", () => loadVisitorStats());
+
   $("#resetFilters").addEventListener("click", resetPublicFilters);
 
   $("#clearSearchBtn")?.addEventListener("click", () => {
@@ -6110,6 +6239,7 @@ function bindEvents() {
       setAdminTab(tab);
       if (tab === "content") renderAdminContentList();
       if (tab === "history") loadAdminHistory();
+      if (tab === "visitors") loadVisitorStats();
       if (tab === "sync") loadAdminBackups();
     });
   });
@@ -6527,6 +6657,7 @@ function bindEvents() {
   restoreDeployMonitor();
   await loadSiteConfig();
   applySiteConfig();
+  trackPublicVisit();
   loadLiveChannelBranding();
   $("#emptyState").hidden = true;
 
