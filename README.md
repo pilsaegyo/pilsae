@@ -1100,3 +1100,33 @@
 브라우저에서 실행되는 프런트엔드 코드는 사용자가 실제로 내려받은 뒤에는 DevTools에서 볼 수 있습니다.
 이번 변경은 **로그인 전에 관리자 UI와 메인 관리자 스크립트를 전달하지 않는 것**이 목적입니다.
 URL 자체까지 완전히 접근 차단하려면 Cloudflare Access 같은 엣지 인증을 `/admin/*` 앞단에 추가하는 것이 가장 강한 방식입니다.
+
+
+## v27.0-auto-sync-diagnostics · 자동 동기화 실패 진단 / Cron 재등록
+### 문제
+- 수동 YouTube 미리보기에서는 신규 영상이 정상 감지되었으나, 20:00 Cron 자동 동기화가 실행되지 않은 상태를 확인.
+- 기존 자동 실행 함수가 오류를 `catch`한 뒤 다시 throw하지 않아 실제 실패가 발생해도 scheduled invocation이 실패로 명확하게 남지 않을 수 있었음.
+
+### 수정
+- `worker/wrangler.jsonc`에 Cron Trigger를 다시 명시:
+  - `0 11 * * *` = 매일 20:00 KST YouTube 자동 동기화
+  - `0 18 * * 6` = 매주 일요일 03:00 KST 주간 백업
+- Workers Observability 로그 저장을 명시적으로 ON (`enabled: true`, sampling 100%).
+- scheduled handler가 자동 작업을 `await`하도록 변경.
+- 자동 동기화/주간 백업 실패를 더 이상 삼키지 않고 다시 throw하여 Workers Logs에 실패 invocation으로 남도록 수정.
+- 알 수 없는 Cron 표현식이 들어오면 성공 처리하지 않고 오류로 기록.
+
+### 관리자 진단
+- 영상 동기화 탭에 `자동 동기화 실행 준비 정상/확인 필요` 진단 영역 추가.
+- ADMIN_TOKEN / YOUTUBE_API_KEY / GITHUB_TOKEN 존재 여부를 Worker에서 점검.
+- 배포 설정 기준 Cron 시간, 최근 자동 반영 이력, 최근 데이터 반영 시각을 표시.
+- `자동 동기화 지금 실행` 버튼 추가.
+  - 실제 20:00 Cron과 동일한 preview → 변경 확인 → apply 로직 실행.
+  - 변경이 없으면 GitHub 데이터 변경 없이 종료.
+  - 변경이 있으면 기존 백업/수동값 보존/동기화 로직을 그대로 사용.
+- 자동 실행으로 변경이 적용된 경우 변경 이력에 `auto_sync_apply`로 구분 기록.
+- 수동 진단 버튼으로 적용된 경우 `auto_sync_test_apply`로 구분 기록.
+
+### 참고
+- 변경이 전혀 없는 Cron 실행은 기존 원칙대로 GitHub 커밋/Cloudflare 재배포를 만들지 않음.
+- 따라서 '변경 없음' 실행 기록의 장기 보관은 Workers Logs에서 확인함.

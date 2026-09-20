@@ -903,6 +903,7 @@ async function verifyAdminToken({ silent=false }={}) {
     setAdminStatus(status, "", "");
     loadDashboardDeployInfo();
     loadAdminSystemStatus();
+    loadAutoSyncDiagnostics({ silent:true });
     return true;
   } catch (err) {
     sessionStorage.removeItem(ADMIN_TOKEN_SESSION_KEY);
@@ -995,6 +996,127 @@ function renderAutoSyncSchedule() {
     minute:"2-digit",
     hourCycle:"h23"
   }).format(nextRun)}`;
+}
+
+
+function autoSyncCountChanges(data={}) {
+  return Number(data.added || 0) +
+    Number(data.titleChanged || 0) +
+    Number(data.descriptionChanged || 0) +
+    Number(data.removed || 0);
+}
+
+function setAutoSyncVisualState(state="waiting", text="상태 확인 중") {
+  const dot = $("#adminAutoSyncDot");
+  const stateEl = $("#adminAutoSyncState");
+
+  if (dot) {
+    dot.classList.remove("success", "error", "waiting");
+    dot.classList.add(state);
+  }
+  if (stateEl) stateEl.textContent = text;
+}
+
+async function loadAutoSyncDiagnostics({ silent=false }={}) {
+  const title = $("#autoSyncDiagnosticTitle");
+  const detail = $("#autoSyncDiagnosticDetail");
+  const refresh = $("#refreshAutoSyncDiagnostics");
+  if (!title || !detail || !getAdminToken()) return;
+
+  if (!silent) {
+    title.textContent = "자동 실행 상태 확인 중";
+    detail.textContent = "Cron 설정과 필수 연결 상태를 확인합니다.";
+    setAutoSyncVisualState("waiting", "상태 확인 중");
+  }
+  if (refresh) refresh.disabled = true;
+
+  try {
+    const data = await adminApi("/auto-sync-diagnostics", { method:"GET" });
+    const p = data.prerequisites || {};
+    const missing = [];
+    if (!p.adminToken) missing.push("ADMIN_TOKEN");
+    if (!p.youtubeApiKey) missing.push("YOUTUBE_API_KEY");
+    if (!p.githubToken) missing.push("GITHUB_TOKEN");
+
+    if (missing.length) {
+      title.textContent = "자동 동기화 설정 확인 필요";
+      detail.textContent = `누락 Secret · ${missing.join(", ")}`;
+      setAutoSyncVisualState("error", "설정 확인 필요");
+      return;
+    }
+
+    title.textContent = "자동 동기화 실행 준비 정상";
+
+    const lastAuto = data.lastAutoApply?.changedAt
+      ? `최근 자동 반영 · ${formatAdminDateTime(data.lastAutoApply.changedAt)}`
+      : "자동 반영 이력 없음";
+
+    const lastData = data.lastDataAppliedAt
+      ? `최근 데이터 반영 · ${formatAdminDateTime(data.lastDataAppliedAt)}`
+      : "최근 데이터 반영 기록 없음";
+
+    detail.textContent =
+      `Cron ${data.schedule?.localTime || "20:00"} KST · ${lastAuto} · ${lastData} · Workers Logs 저장 ON`;
+
+    setAutoSyncVisualState("success", "설정 정상");
+  } catch (err) {
+    title.textContent = "자동 동기화 진단 실패";
+    detail.textContent = err.message;
+    setAutoSyncVisualState("error", "진단 실패");
+  } finally {
+    if (refresh) refresh.disabled = false;
+  }
+}
+
+async function runAutoSyncNow() {
+  const button = $("#runAutoSyncNow");
+  const status = $("#autoSyncRunStatus");
+
+  if (!getAdminToken()) {
+    setAdminStatus(status, "관리자 로그인이 필요합니다.", "error");
+    return;
+  }
+
+  if (button) button.disabled = true;
+  setAdminStatus(
+    status,
+    "실제 20:00 자동 동기화와 같은 로직을 지금 실행합니다…",
+    "loading"
+  );
+
+  try {
+    adminHistoryLoaded = false;
+    const data = await adminApi("/auto-sync-run", {
+      method:"POST",
+      body:JSON.stringify({})
+    });
+
+    if (data.outcome === "no_changes") {
+      setAdminStatus(
+        status,
+        `자동 동기화 실행 성공 · 변경사항 없음 · 현재 ${Number(data.total || 0)}개 영상`,
+        "success"
+      );
+    } else {
+      const changed = autoSyncCountChanges(data);
+      setAdminStatus(
+        status,
+        `자동 동기화 실행 성공 · ${changed}건 적용 · 신규 ${Number(data.added || 0)} / 제목 ${Number(data.titleChanged || 0)} / 설명 ${Number(data.descriptionChanged || 0)} / 삭제 ${Number(data.removed || 0)}`,
+        "success"
+      );
+    }
+
+    await loadAutoSyncDiagnostics({ silent:true });
+  } catch (err) {
+    setAdminStatus(
+      status,
+      `자동 동기화 실행 실패 · ${err.message}`,
+      "error"
+    );
+    setAutoSyncVisualState("error", "실행 실패");
+  } finally {
+    if (button) button.disabled = false;
+  }
 }
 
 function renderDashboardBuildVersion() {
@@ -6172,6 +6294,14 @@ function bindEvents() {
     } catch (err) {
       setAdminStatus(status, err.message, "error");
     }
+  });
+
+  $("#refreshAutoSyncDiagnostics")?.addEventListener("click", () => {
+    loadAutoSyncDiagnostics();
+  });
+
+  $("#runAutoSyncNow")?.addEventListener("click", () => {
+    runAutoSyncNow();
   });
 
   $("#previewYoutubeSync")?.addEventListener("click", async () => {

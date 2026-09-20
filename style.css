@@ -7285,3 +7285,84 @@ strong,b,
 .timeline-title{
   letter-spacing:-.02em;
 }
+
+
+/* v27.0 automatic sync diagnostics */
+.admin-auto-sync-dot.waiting{
+  background:#a89caf;
+}
+.admin-auto-sync-dot.success{
+  background:#6d9276;
+}
+.admin-auto-sync-dot.error{
+  background:#a8646a;
+  box-shadow:0 0 0 3px rgba(168,100,106,.09);
+}
+
+.admin-auto-sync-diagnostics{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:-5px 0 10px;
+  padding:9px 10px;
+  border:1px solid #e9e3ec;
+  border-radius:11px;
+  background:#fbfafc;
+}
+
+.auto-sync-diagnostic-copy{
+  min-width:0;
+}
+
+.auto-sync-diagnostic-copy strong{
+  display:block;
+  color:#5e5166;
+  font-size:9px;
+  line-height:1.45;
+}
+
+.auto-sync-diagnostic-copy small{
+  display:block;
+  margin-top:2px;
+  color:#948a97;
+  font-size:7.5px;
+  line-height:1.5;
+}
+
+.auto-sync-diagnostic-actions{
+  display:flex;
+  flex:0 0 auto;
+  gap:6px;
+}
+
+.auto-sync-diagnostic-actions .admin-small-button{
+  min-height:30px;
+  padding:6px 9px;
+  font-size:7.5px;
+}
+
+.auto-sync-diagnostic-actions .admin-small-button.primary{
+  border-color:#6b5780;
+  background:#6b5780;
+  color:#fff;
+}
+
+#autoSyncRunStatus{
+  margin:-3px 0 9px;
+}
+
+@media(max-width:620px){
+  .admin-auto-sync-diagnostics{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .auto-sync-diagnostic-actions{
+    width:100%;
+  }
+
+  .auto-sync-diagnostic-actions .admin-small-button{
+    flex:1;
+  }
+}
