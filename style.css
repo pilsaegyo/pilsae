@@ -7418,3 +7418,45 @@ strong,b,
   .admin-visitor-list-row,.admin-visitor-list-row.recent{grid-template-columns:1fr auto}
   .admin-visitor-list-row small{grid-column:1/-1}
 }
+
+
+/* v27.4 lifetime visit counter */
+.admin-visitor-dashboard-grid,
+.admin-visitor-summary-grid{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+}
+
+.admin-visitor-dashboard-grid .visitor-lifetime,
+.admin-visitor-summary-grid .visitor-lifetime{
+  background:#f7f3fa;
+  border-color:#dfd4e6;
+}
+
+.admin-visitor-dashboard-grid .visitor-lifetime strong,
+.admin-visitor-summary-grid .visitor-lifetime strong{
+  color:#5f4c70;
+}
+
+@media(max-width:760px){
+  .admin-visitor-dashboard-grid,
+  .admin-visitor-summary-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .admin-visitor-dashboard-grid .visitor-lifetime,
+  .admin-visitor-summary-grid .visitor-lifetime{
+    grid-column:1/-1;
+  }
+}
+
+@media(max-width:390px){
+  .admin-visitor-dashboard-grid,
+  .admin-visitor-summary-grid{
+    grid-template-columns:1fr;
+  }
+
+  .admin-visitor-dashboard-grid .visitor-lifetime,
+  .admin-visitor-summary-grid .visitor-lifetime{
+    grid-column:auto;
+  }
+}

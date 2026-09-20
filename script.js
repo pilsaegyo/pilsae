@@ -1009,13 +1009,15 @@ function formatVisitorCompactDate(value) {
 
 function renderVisitorStats(data={}) {
   if (!data.configured) {
-    ["#dashVisitorTodayVisits", "#dashVisitorTodayUnique", "#dashVisitor7dVisits", "#dashVisitor90dUnique"].forEach(id => {
+    ["#dashVisitorLifetimeVisits", "#dashVisitorTodayVisits", "#dashVisitorTodayUnique", "#dashVisitor7dVisits", "#dashVisitor90dUnique", "#visitorLifetimeVisits"].forEach(id => {
       const el = $(id); if (el) el.textContent = "-";
     });
     setAdminStatus($("#visitorStatsStatus"), "방문 통계 저장소가 아직 연결되지 않았습니다. Worker를 한 번 배포하면 D1이 자동 생성됩니다.", "loading");
     return;
   }
 
+  setVisitorMetric("#dashVisitorLifetimeVisits", data.lifetime?.visits);
+  setVisitorMetric("#visitorLifetimeVisits", data.lifetime?.visits);
   setVisitorMetric("#dashVisitorTodayVisits", data.today?.visits);
   setVisitorMetric("#dashVisitorTodayUnique", data.today?.unique);
   setVisitorMetric("#dashVisitor7dVisits", data.last7Days?.visits);
