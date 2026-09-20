@@ -21,7 +21,10 @@
       "playlistCandidate": false,
       "firstSeenAt": "2026-09-20T12:32:57.524Z",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "614pXr4EDnk",
@@ -9186,7 +9189,7 @@
     {
       "id": "rLvzFYWT_5A",
       "title": "네가 보내주는 고양이 릴스가 좋아 #에릭 #신혜성 #신화",
-      "description": "고양이릴스 \n고양이숏츠\n고양이 모음..\n\n170901 삼시세끼 바다목장 \n010728 동거동락\n071013 스타골든벨\n2003 2B FREE 지면광고 CF 촬영현장\n신화만18세 EP3\n신화방송 작은신화 EP1\nBrand New Story DVD - Diary 07\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン\n#문정혁 #신화에릭 #문에릭\n#eric #muneric #moonjunghyuk #文晸赫",
+      "description": "고양이릴스 \n고양이숏츠\n고양이 모음..\n\n170901 삼시세끼 바다목장 \n010728 동거동락\n071013 스타골든벨\n2003년 2B FREE 지면광고 CF 촬영현장\n2018년 신화만18세 EP3\n2012년 신화방송 작은신화 EP1\n2004년 Brand New Story DVD - Diary 07\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン\n#문정혁 #신화에릭 #문에릭\n#eric #muneric #moonjunghyuk #文晸赫",
       "source": "고양이릴스",
       "sourceDate": null,
       "publishedAt": "2025-09-04T14:30:53Z",
@@ -17324,7 +17327,7 @@
     }
   ],
   "total": 642,
-  "generatedAt": "2026-09-20T13:08:13.341Z",
+  "generatedAt": "2026-09-20T13:33:18.625Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
