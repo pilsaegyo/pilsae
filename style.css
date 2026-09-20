@@ -7460,3 +7460,136 @@ strong,b,
     grid-column:auto;
   }
 }
+
+
+/* v27.6 compact visitor detail tabs */
+.admin-visitor-daily-section{
+  margin-top:12px;
+}
+
+.admin-visitor-detail-section{
+  margin-top:10px;
+  padding:0;
+  overflow:hidden;
+}
+
+.visitor-detail-tabbar{
+  display:flex;
+  gap:4px;
+  padding:7px;
+  border-bottom:1px solid #ece6ef;
+  background:#faf8fb;
+}
+
+.visitor-detail-tab{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:32px;
+  padding:6px 11px;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:transparent;
+  color:#817487;
+  font:inherit;
+  font-size:8px;
+  font-weight:500;
+  cursor:pointer;
+}
+
+.visitor-detail-tab:hover{
+  background:#f2edf5;
+  color:#5f5167;
+}
+
+.visitor-detail-tab.active{
+  border-color:#dfd4e6;
+  background:#fff;
+  color:#5f4c70;
+  font-weight:700;
+  box-shadow:0 1px 3px rgba(67,48,77,.05);
+}
+
+.visitor-detail-count{
+  min-width:19px;
+  padding:1px 5px;
+  border-radius:999px;
+  background:#eee8f1;
+  color:#796a81;
+  font-size:7px;
+  text-align:center;
+}
+
+.visitor-detail-tab.active .visitor-detail-count{
+  background:#e5dbea;
+  color:#5f4c70;
+}
+
+.visitor-detail-panel{
+  padding:11px 12px 10px;
+}
+
+.visitor-detail-panel[hidden]{
+  display:none !important;
+}
+
+.visitor-detail-head{
+  margin-bottom:7px;
+}
+
+.visitor-list-scroll{
+  max-height:390px;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-gutter:stable;
+  padding-right:3px;
+}
+
+.visitor-list-scroll .admin-visitor-list{
+  margin-top:0;
+}
+
+.visitor-pagination{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:8px;
+  margin-top:9px;
+  padding-top:8px;
+  border-top:1px solid #f0ebf2;
+}
+
+.visitor-pagination[hidden]{
+  display:none !important;
+}
+
+.visitor-pagination span{
+  min-width:45px;
+  color:#817587;
+  font-size:7.5px;
+  text-align:center;
+}
+
+.visitor-pagination .admin-small-button{
+  min-width:46px;
+}
+
+@media(max-width:620px){
+  .visitor-detail-tabbar{
+    padding:6px;
+  }
+
+  .visitor-detail-tab{
+    flex:1;
+    padding:6px 7px;
+  }
+
+  .visitor-list-scroll{
+    max-height:420px;
+  }
+
+  .visitor-pagination{
+    justify-content:center;
+  }
+}

@@ -1007,6 +1007,104 @@ function formatVisitorCompactDate(value) {
   }).format(dt);
 }
 
+
+const VISITOR_DETAIL_PAGE_SIZE = 10;
+let visitorDetailData = { top:[], recent:[] };
+let visitorDetailTab = "top";
+let visitorDetailPages = { top:1, recent:1 };
+
+function setVisitorDetailTab(tabName="top") {
+  visitorDetailTab = tabName === "recent" ? "recent" : "top";
+
+  document.querySelectorAll("[data-visitor-detail-tab]").forEach(btn => {
+    const active = btn.dataset.visitorDetailTab === visitorDetailTab;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", String(active));
+  });
+
+  document.querySelectorAll("[data-visitor-detail-panel]").forEach(panel => {
+    const active = panel.dataset.visitorDetailPanel === visitorDetailTab;
+    panel.classList.toggle("active", active);
+    panel.hidden = !active;
+  });
+
+  renderVisitorDetailPage(visitorDetailTab);
+}
+
+function visitorPageSlice(type) {
+  const rows = Array.isArray(visitorDetailData[type]) ? visitorDetailData[type] : [];
+  const totalPages = Math.max(1, Math.ceil(rows.length / VISITOR_DETAIL_PAGE_SIZE));
+  const current = Math.min(
+    Math.max(1, Number(visitorDetailPages[type] || 1)),
+    totalPages
+  );
+  visitorDetailPages[type] = current;
+
+  const start = (current - 1) * VISITOR_DETAIL_PAGE_SIZE;
+  return {
+    rows:rows.slice(start, start + VISITOR_DETAIL_PAGE_SIZE),
+    current,
+    totalPages,
+    totalRows:rows.length
+  };
+}
+
+function renderVisitorDetailPage(type) {
+  const page = visitorPageSlice(type);
+
+  if (type === "top") {
+    const el = $("#visitorTopList");
+    if (el) {
+      el.innerHTML = page.rows.length ? page.rows.map(row => `<div class="admin-visitor-list-row">
+        <strong>${escapeHTML(row.visitorId || "-")}</strong>
+        <span>${Number(row.visits || 0)}회</span>
+        <small>${escapeHTML(formatVisitorCompactDate(row.lastSeenAt))}</small>
+      </div>`).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
+    }
+
+    if ($("#visitorTopCount")) $("#visitorTopCount").textContent = String(page.totalRows);
+    if ($("#visitorTopPageInfo")) $("#visitorTopPageInfo").textContent =
+      `${page.current} / ${page.totalPages}`;
+    const prev = $('[data-visitor-page-action="top-prev"]');
+    const next = $('[data-visitor-page-action="top-next"]');
+    if (prev) prev.disabled = page.current <= 1;
+    if (next) next.disabled = page.current >= page.totalPages;
+    if ($("#visitorTopPagination")) $("#visitorTopPagination").hidden = page.totalRows <= VISITOR_DETAIL_PAGE_SIZE;
+    return;
+  }
+
+  const el = $("#visitorRecentList");
+  if (el) {
+    el.innerHTML = page.rows.length ? page.rows.map(row => `<div class="admin-visitor-list-row recent">
+      <strong>${escapeHTML(row.visitorId || "-")}</strong>
+      <span>${escapeHTML(formatAdminDateTime(row.visitedAt))}</span>
+      <small>누적 ${Number(row.totalVisits || 0)}회</small>
+    </div>`).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
+  }
+
+  if ($("#visitorRecentCount")) $("#visitorRecentCount").textContent = String(page.totalRows);
+  if ($("#visitorRecentPageInfo")) $("#visitorRecentPageInfo").textContent =
+    `${page.current} / ${page.totalPages}`;
+  const prev = $('[data-visitor-page-action="recent-prev"]');
+  const next = $('[data-visitor-page-action="recent-next"]');
+  if (prev) prev.disabled = page.current <= 1;
+  if (next) next.disabled = page.current >= page.totalPages;
+  if ($("#visitorRecentPagination")) $("#visitorRecentPagination").hidden = page.totalRows <= VISITOR_DETAIL_PAGE_SIZE;
+}
+
+function changeVisitorDetailPage(type, delta) {
+  const rows = Array.isArray(visitorDetailData[type]) ? visitorDetailData[type] : [];
+  const totalPages = Math.max(1, Math.ceil(rows.length / VISITOR_DETAIL_PAGE_SIZE));
+  visitorDetailPages[type] = Math.min(
+    totalPages,
+    Math.max(1, Number(visitorDetailPages[type] || 1) + delta)
+  );
+  renderVisitorDetailPage(type);
+
+  const panel = document.querySelector(`[data-visitor-detail-panel="${type}"]`);
+  panel?.querySelector(".visitor-list-scroll")?.scrollTo({ top:0, behavior:"smooth" });
+}
+
 function renderVisitorStats(data={}) {
   if (!data.configured) {
     ["#dashVisitorLifetimeVisits", "#dashVisitorTodayVisits", "#dashVisitorTodayUnique", "#dashVisitor7dVisits", "#dashVisitor90dUnique", "#visitorLifetimeVisits"].forEach(id => {
@@ -1043,25 +1141,19 @@ function renderVisitorStats(data={}) {
     }).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
   }
 
-  const topEl = $("#visitorTopList");
-  const top = Array.isArray(data.top) ? data.top : [];
-  if (topEl) {
-    topEl.innerHTML = top.length ? top.map(row => `<div class="admin-visitor-list-row">
-      <strong>${escapeHTML(row.visitorId || "-")}</strong>
-      <span>${Number(row.visits || 0)}회</span>
-      <small>${escapeHTML(formatVisitorCompactDate(row.lastSeenAt))}</small>
-    </div>`).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
-  }
+  visitorDetailData = {
+    top:Array.isArray(data.top) ? data.top : [],
+    recent:Array.isArray(data.recent) ? data.recent : []
+  };
 
-  const recentEl = $("#visitorRecentList");
-  const recent = Array.isArray(data.recent) ? data.recent : [];
-  if (recentEl) {
-    recentEl.innerHTML = recent.length ? recent.map(row => `<div class="admin-visitor-list-row recent">
-      <strong>${escapeHTML(row.visitorId || "-")}</strong>
-      <span>${escapeHTML(formatAdminDateTime(row.visitedAt))}</span>
-      <small>누적 ${Number(row.totalVisits || 0)}회</small>
-    </div>`).join("") : `<p class="admin-help">아직 방문 기록이 없습니다.</p>`;
-  }
+  const topPages = Math.max(1, Math.ceil(visitorDetailData.top.length / VISITOR_DETAIL_PAGE_SIZE));
+  const recentPages = Math.max(1, Math.ceil(visitorDetailData.recent.length / VISITOR_DETAIL_PAGE_SIZE));
+  visitorDetailPages.top = Math.min(visitorDetailPages.top, topPages);
+  visitorDetailPages.recent = Math.min(visitorDetailPages.recent, recentPages);
+
+  renderVisitorDetailPage("top");
+  renderVisitorDetailPage("recent");
+  setVisitorDetailTab(visitorDetailTab);
 
   setAdminStatus($("#visitorStatsStatus"), `최근 ${Number(data.retentionDays || 90)}일 기준 · IP 원문 미보관`, "success");
 }
@@ -6213,6 +6305,20 @@ function bindEvents() {
   });
 
   $("#refreshVisitorStats")?.addEventListener("click", () => loadVisitorStats());
+
+  document.querySelectorAll("[data-visitor-detail-tab]").forEach(btn => {
+    btn.addEventListener("click", () => setVisitorDetailTab(btn.dataset.visitorDetailTab || "top"));
+  });
+
+  document.querySelectorAll("[data-visitor-page-action]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const action = btn.dataset.visitorPageAction || "";
+      if (action === "top-prev") changeVisitorDetailPage("top", -1);
+      if (action === "top-next") changeVisitorDetailPage("top", 1);
+      if (action === "recent-prev") changeVisitorDetailPage("recent", -1);
+      if (action === "recent-next") changeVisitorDetailPage("recent", 1);
+    });
+  });
 
   $("#resetFilters").addEventListener("click", resetPublicFilters);
 
