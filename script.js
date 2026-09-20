@@ -1890,7 +1890,7 @@ function currentPublicFilterState() {
     type:$("#typeFilter")?.value || "",
     contentType:$("#contentTypeFilter")?.value || "",
     videoFormat:$("#videoFormatFilter")?.value || "",
-    sortMode:$("#sortFilter")?.value || "source-desc"
+    sortMode:$("#sortFilter")?.value || "upload-desc"
   };
 }
 
@@ -2328,7 +2328,7 @@ function resetPublicFilters() {
   $("#typeFilter").value = "";
   $("#contentTypeFilter").value = "";
   $("#videoFormatFilter").value = "";
-  $("#sortFilter").value = "source-desc";
+  $("#sortFilter").value = "upload-desc";
   hideSearchSuggestions();
   updateSearchClearButton();
   visibleLimit = PAGE_SIZE;
@@ -2475,7 +2475,7 @@ function readUrlState() {
     type: params.get("type") || "",
     content: params.get("content") || "",
     format: params.get("format") || "",
-    sort: params.get("sort") || "source-desc",
+    sort: params.get("sort") || "upload-desc",
     view: params.get("view") || ""
   };
 }
@@ -2507,7 +2507,7 @@ function syncUrlState({ replace=false, viewOverride="" }={}) {
   const type = $("#typeFilter")?.value || "";
   const content = $("#contentTypeFilter")?.value || "";
   const format = $("#videoFormatFilter")?.value || "";
-  const sort = $("#sortFilter")?.value || "source-desc";
+  const sort = $("#sortFilter")?.value || "upload-desc";
   const view = ["grid", "list", "timeline"].includes(viewOverride)
     ? viewOverride
     : currentView();
@@ -2517,7 +2517,7 @@ function syncUrlState({ replace=false, viewOverride="" }={}) {
   if (type) params.set("type", type);
   if (content) params.set("content", content);
   if (format) params.set("format", format);
-  if (sort !== "source-desc") params.set("sort", sort);
+  if (sort !== "upload-desc") params.set("sort", sort);
   if (view !== defaultViewMode()) params.set("view", view);
   if (location.hash === "#admin") params.set("admin", "1");
 
@@ -2534,14 +2534,14 @@ function currentActiveFilters() {
   const type = $("#typeFilter")?.value || "";
   const content = $("#contentTypeFilter")?.value || "";
   const format = $("#videoFormatFilter")?.value || "";
-  const sort = $("#sortFilter")?.value || "source-desc";
+  const sort = $("#sortFilter")?.value || "upload-desc";
 
   if (q) filters.push({ key:"search", label:`검색: ${q}` });
   if (year) filters.push({ key:"year", label:`${year}년` });
   if (type) filters.push({ key:"type", label:typeLabel(type) });
   if (content) filters.push({ key:"content", label:contentTypeLabel(content) });
   if (format) filters.push({ key:"format", label:`동영상 타입: ${videoFormatLabel(format)}` });
-  if (sort !== "source-desc") {
+  if (sort !== "upload-desc") {
     const option = $("#sortFilter")?.selectedOptions?.[0];
     filters.push({ key:"sort", label:option?.textContent || "정렬 변경" });
   }
@@ -2566,7 +2566,7 @@ function clearOneFilter(key) {
   if (key === "type") $("#typeFilter").value = "";
   if (key === "content") $("#contentTypeFilter").value = "";
   if (key === "format") $("#videoFormatFilter").value = "";
-  if (key === "sort") $("#sortFilter").value = "source-desc";
+  if (key === "sort") $("#sortFilter").value = "upload-desc";
   visibleLimit = PAGE_SIZE;
   syncUrlState();
   render();
