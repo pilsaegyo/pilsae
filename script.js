@@ -1056,7 +1056,7 @@ async function loadAutoSyncDiagnostics({ silent=false }={}) {
       : "최근 데이터 반영 기록 없음";
 
     detail.textContent =
-      `Cron ${data.schedule?.localTime || "20:00"} KST · ${lastAuto} · ${lastData} · Workers Logs 저장 ON`;
+      `Cron ${data.schedule?.localTime || "20:00"} KST · 단일 스캔 방식 · ${lastAuto} · ${lastData} · Workers Logs 저장 ON`;
 
     setAutoSyncVisualState("success", "설정 정상");
   } catch (err) {
@@ -1080,7 +1080,7 @@ async function runAutoSyncNow() {
   if (button) button.disabled = true;
   setAdminStatus(
     status,
-    "실제 20:00 자동 동기화와 같은 로직을 지금 실행합니다…",
+    "실제 20:00 자동 동기화와 같은 단일 스캔 로직을 지금 실행합니다…",
     "loading"
   );
 

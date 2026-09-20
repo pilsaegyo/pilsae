@@ -685,12 +685,31 @@ const worker = {
         };
 
         const syncPreview = buildSyncPreview(existingPayload.videos || [], normalized);
+        const syncChanged =
+          Number(syncPreview.added || 0) +
+          Number(syncPreview.titleChanged || 0) +
+          Number(syncPreview.descriptionChanged || 0) +
+          Number(syncPreview.removed || 0);
 
         if (previewOnly) {
           return jsonResponse({
             ok: true,
             preview: true,
             total: normalized.length,
+            changed: syncChanged,
+            ...syncPreview
+          }, 200, env, origin);
+        }
+
+        if (["auto", "manual-auto-test"].includes(syncSource) && syncChanged <= 0) {
+          return jsonResponse({
+            ok: true,
+            preview: false,
+            applied: false,
+            outcome: "no_changes",
+            total: normalized.length,
+            changed: 0,
+            syncSource,
             ...syncPreview
           }, 200, env, origin);
         }
@@ -781,6 +800,9 @@ const worker = {
           bannerImageUrl: mergedConfig.bannerImageUrl,
           profileImageUrl: mergedConfig.profileImageUrl,
           syncSource,
+          applied: true,
+          outcome: "applied",
+          changed: syncChanged,
           ...syncPreview,
         }, 200, env, origin);
       }
@@ -1532,7 +1554,7 @@ async function runAutoYoutubeSync(env, {
 
   const selfUrl = String(
     env.ADMIN_API_SELF_URL || "https://pilsae-admin-api.hyesung.workers.dev"
-  ).replace(/\/$/, "");
+  ).replace(/\\\/$/, "");
 
   const headers = {
     "Content-Type":"application/json",
@@ -1540,45 +1562,7 @@ async function runAutoYoutubeSync(env, {
   };
 
   try {
-    const previewRequest = new Request(`${selfUrl}/sync-videos`, {
-      method:"POST",
-      headers,
-      body:JSON.stringify({
-        previewOnly:true,
-        syncSource:source
-      })
-    });
-    const previewResponse = await worker.fetch(previewRequest, env);
-    const preview = await previewResponse.json().catch(() => ({}));
-
-    if (!previewResponse.ok || !preview?.ok) {
-      throw new Error(preview?.error || `preview failed (${previewResponse.status})`);
-    }
-
-    const changed =
-      Number(preview.added || 0) +
-      Number(preview.titleChanged || 0) +
-      Number(preview.descriptionChanged || 0) +
-      Number(preview.removed || 0);
-
-    if (changed <= 0) {
-      const result = {
-        outcome:"no_changes",
-        scheduledAt,
-        cron,
-        source,
-        total:Number(preview.total || 0),
-        changed:0,
-        added:0,
-        titleChanged:0,
-        descriptionChanged:0,
-        removed:0
-      };
-      console.log("[auto-sync] no changes", result);
-      return result;
-    }
-
-    const applyRequest = new Request(`${selfUrl}/sync-videos`, {
+    const syncRequest = new Request(`${selfUrl}/sync-videos`, {
       method:"POST",
       headers,
       body:JSON.stringify({
@@ -1586,29 +1570,52 @@ async function runAutoYoutubeSync(env, {
         syncSource:source
       })
     });
-    const applyResponse = await worker.fetch(applyRequest, env);
-    const applied = await applyResponse.json().catch(() => ({}));
 
-    if (!applyResponse.ok || !applied?.ok) {
-      throw new Error(applied?.error || `apply failed (${applyResponse.status})`);
+    const syncResponse = await worker.fetch(syncRequest, env);
+    const result = await syncResponse.json().catch(() => ({}));
+
+    if (!syncResponse.ok || !result?.ok) {
+      throw new Error(result?.error || `sync failed (${syncResponse.status})`);
     }
 
-    const result = {
+    if (result.outcome === "no_changes" || result.applied === false) {
+      const noChange = {
+        outcome:"no_changes",
+        scheduledAt,
+        cron,
+        source,
+        total:Number(result.total || 0),
+        changed:0,
+        added:Number(result.added || 0),
+        titleChanged:Number(result.titleChanged || 0),
+        descriptionChanged:Number(result.descriptionChanged || 0),
+        removed:Number(result.removed || 0)
+      };
+      console.log("[auto-sync] no changes", noChange);
+      return noChange;
+    }
+
+    const applied = {
       outcome:"applied",
       scheduledAt,
       cron,
       source,
-      total:Number(applied.total || 0),
-      changed,
-      added:Number(applied.added || 0),
-      titleChanged:Number(applied.titleChanged || 0),
-      descriptionChanged:Number(applied.descriptionChanged || 0),
-      removed:Number(applied.removed || 0),
-      commitUrl:String(applied.commitUrl || "")
+      total:Number(result.total || 0),
+      changed:Number(result.changed || (
+        Number(result.added || 0) +
+        Number(result.titleChanged || 0) +
+        Number(result.descriptionChanged || 0) +
+        Number(result.removed || 0)
+      )),
+      added:Number(result.added || 0),
+      titleChanged:Number(result.titleChanged || 0),
+      descriptionChanged:Number(result.descriptionChanged || 0),
+      removed:Number(result.removed || 0),
+      commitUrl:String(result.commitUrl || "")
     };
 
-    console.log("[auto-sync] applied", result);
-    return result;
+    console.log("[auto-sync] applied", applied);
+    return applied;
   } catch (error) {
     const message = String(error?.message || error || "unknown error");
     console.error("[auto-sync] failed", {
@@ -1617,13 +1624,9 @@ async function runAutoYoutubeSync(env, {
       source,
       error:message
     });
-
-    // Do not swallow scheduled failures. Awaiting this promise in scheduled()
-    // lets Workers Logs record the invocation as a failure instead of "success".
     throw error;
   }
 }
-
 
 async function runWeeklyArchiveBackup(env, controller) {
   const scheduledAt = new Date(controller?.scheduledTime || Date.now()).toISOString();
