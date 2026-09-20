@@ -1,6 +1,14 @@
 {
   "backups": [
     {
+      "id": "1789911198789-3",
+      "slot": 3,
+      "path": "data/backups/videos-3.json",
+      "reason": "before_sync",
+      "createdAt": "2026-09-20T13:33:18.789Z",
+      "total": 642
+    },
+    {
       "id": "1789907577723-2",
       "slot": 2,
       "path": "data/backups/videos-2.json",
@@ -15,16 +23,8 @@
       "reason": "manual",
       "createdAt": "2026-09-19T16:49:58.432Z",
       "total": 641
-    },
-    {
-      "id": "1789835539803-3",
-      "slot": 3,
-      "path": "data/backups/videos-3.json",
-      "reason": "manual",
-      "createdAt": "2026-09-19T16:32:19.803Z",
-      "total": 641
     }
   ],
-  "nextSlot": 3,
-  "updatedAt": "2026-09-20T12:32:57.723Z"
+  "nextSlot": 1,
+  "updatedAt": "2026-09-20T13:33:18.789Z"
 }
