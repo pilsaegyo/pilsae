@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "id": "a299ce47-64db-4a8f-8b67-e0cd5c51624a",
+      "action": "sync_apply",
+      "videoId": "",
+      "title": "YouTube 영상 동기화",
+      "before": {
+        "total": 642
+      },
+      "after": {
+        "total": 642,
+        "added": 0,
+        "titleChanged": 0,
+        "descriptionChanged": 1,
+        "removed": 0
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-20T13:40:22.128Z"
+    },
+    {
       "id": "15dccc60-513e-4aab-86fb-d781c7a24171",
       "action": "auto_sync_test_apply",
       "videoId": "",
@@ -297,5 +315,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-20T13:33:24.419Z"
+  "updatedAt": "2026-09-20T13:40:22.128Z"
 }
