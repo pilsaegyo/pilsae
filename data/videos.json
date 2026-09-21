@@ -12,9 +12,9 @@
       "duration": "PT1M43S",
       "durationSeconds": 103,
       "videoFormat": "shorts",
-      "videoFormatSource": "auto",
-      "videoFormatConfidence": "low",
-      "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요",
+      "videoFormatSource": "confirmed",
+      "videoFormatConfidence": "",
+      "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
       "parseStatus": "needs_review",
       "contentType": "video",
       "playlistScope": "",
@@ -17350,7 +17350,7 @@
     }
   ],
   "total": 643,
-  "generatedAt": "2026-09-21T11:00:10.851Z",
+  "generatedAt": "2026-09-21T13:21:50.888Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
