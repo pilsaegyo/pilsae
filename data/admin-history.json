@@ -1,6 +1,26 @@
 {
   "entries": [
     {
+      "id": "04d1e632-1387-4585-ad33-571d9aff00f7",
+      "action": "video_format_confirm",
+      "videoId": "pYaVqMsDmsU",
+      "title": "노른자 안 먹는 편식 신혜성",
+      "before": {
+        "videoFormat": "shorts",
+        "videoFormatSource": "auto",
+        "videoFormatConfidence": "low",
+        "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+      },
+      "after": {
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-21T13:21:55.028Z"
+    },
+    {
       "id": "e4f8f9d8-7111-488b-a022-5053c5b00881",
       "action": "auto_sync_apply",
       "videoId": "",
@@ -333,5 +353,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-21T11:00:19.463Z"
+  "updatedAt": "2026-09-21T13:21:55.028Z"
 }
