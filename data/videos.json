@@ -3,8 +3,8 @@
     {
       "id": "pYaVqMsDmsU",
       "title": "노른자 안 먹는 편식 신혜성",
-      "description": "061223 만원의행복 & 신화방송 ep37\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-      "source": "061223 만원의행복 & 신화방송 ep37",
+      "description": "061223 만원의행복 & 121125 신화방송 ep37\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "061223 만원의행복 & 121125 신화방송 ep37",
       "sourceDate": null,
       "publishedAt": "2026-09-21T10:30:19Z",
       "thumbnail": "https://i.ytimg.com/vi/pYaVqMsDmsU/maxresdefault.jpg",
@@ -21,7 +21,10 @@
       "playlistCandidate": false,
       "firstSeenAt": "2026-09-21T11:00:10.851Z",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "wWd4us9Xmo8",
@@ -17350,7 +17353,7 @@
     }
   ],
   "total": 643,
-  "generatedAt": "2026-09-21T13:21:50.888Z",
+  "generatedAt": "2026-09-22T11:01:15.570Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
