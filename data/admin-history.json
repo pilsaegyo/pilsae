@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "id": "57ccd66f-d9f5-4c85-81e0-a942c4130e34",
+      "action": "auto_sync_apply",
+      "videoId": "",
+      "title": "YouTube 자동 동기화",
+      "before": {
+        "total": 643
+      },
+      "after": {
+        "total": 644,
+        "added": 1,
+        "titleChanged": 0,
+        "descriptionChanged": 0,
+        "removed": 0
+      },
+      "undoOf": "",
+      "changedAt": "2026-09-23T11:01:03.233Z"
+    },
+    {
       "id": "7386ecef-0055-403e-826b-e2498457565c",
       "action": "auto_sync_apply",
       "videoId": "",
@@ -371,5 +389,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-09-22T11:01:27.138Z"
+  "updatedAt": "2026-09-23T11:01:03.233Z"
 }
