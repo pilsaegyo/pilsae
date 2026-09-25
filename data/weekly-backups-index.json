@@ -1,0 +1,14 @@
+{
+  "backups": [
+    {
+      "id": "weekly-1790359293444-1",
+      "slot": 1,
+      "path": "data/weekly-backups/weekly-1.json",
+      "reason": "weekly",
+      "createdAt": "2026-09-25T18:01:33.444Z",
+      "total": 646
+    }
+  ],
+  "nextSlot": 2,
+  "updatedAt": "2026-09-25T18:01:33.444Z"
+}
