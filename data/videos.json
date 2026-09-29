@@ -65,8 +65,8 @@
       "videoFormatConfidence": "high",
       "videoFormatReason": "자동 기준상 일반동영상",
       "parseStatus": "needs_review",
-      "contentType": "video",
-      "playlistScope": "",
+      "contentType": "playlist",
+      "playlistScope": "undated",
       "playlistCandidate": true,
       "firstSeenAt": "2026-09-26T11:01:14.812Z",
       "dates": [],
@@ -17506,7 +17506,7 @@
     }
   ],
   "total": 649,
-  "generatedAt": "2026-09-29T10:09:54.040Z",
+  "generatedAt": "2026-09-29T12:14:44.229Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
