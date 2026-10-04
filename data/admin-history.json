@@ -1,6 +1,26 @@
 {
   "entries": [
     {
+      "id": "aa2c00f7-2fa6-473a-a749-731fb78b41b0",
+      "action": "video_format_confirm",
+      "videoId": "9D4SkcU0leM",
+      "title": "신혜성 인생연기",
+      "before": {
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+      },
+      "after": {
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+      },
+      "undoOf": "",
+      "changedAt": "2026-10-04T22:11:32.340Z"
+    },
+    {
       "id": "9d1ad60b-817f-4287-946b-b40a119ca751",
       "action": "video_format_confirm",
       "videoId": "pdsOLGWBp9w",
@@ -653,5 +673,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-10-04T22:11:12.581Z"
+  "updatedAt": "2026-10-04T22:11:32.340Z"
 }
