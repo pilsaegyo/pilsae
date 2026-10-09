@@ -1,6 +1,14 @@
 {
   "backups": [
     {
+      "id": "weekly-1791568811831-3",
+      "slot": 3,
+      "path": "data/weekly-backups/weekly-3.json",
+      "reason": "weekly",
+      "createdAt": "2026-10-09T18:00:11.831Z",
+      "total": 652
+    },
+    {
       "id": "weekly-1790964019384-2",
       "slot": 2,
       "path": "data/weekly-backups/weekly-2.json",
@@ -17,6 +25,6 @@
       "total": 646
     }
   ],
-  "nextSlot": 3,
-  "updatedAt": "2026-10-02T18:00:19.384Z"
+  "nextSlot": 4,
+  "updatedAt": "2026-10-09T18:00:11.831Z"
 }
