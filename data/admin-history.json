@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "id": "76d87a54-3faf-4dd2-aba4-142e8c2eec4e",
+      "action": "manual_date",
+      "videoId": "ck9F0_BXhes",
+      "title": "어린왕자 실사판",
+      "before": [],
+      "after": [
+        {
+          "sourceDate": "2012-10-13",
+          "source": "admin",
+          "precision": "day",
+          "inferred": false,
+          "manual": true
+        }
+      ],
+      "undoOf": "",
+      "changedAt": "2026-10-11T16:24:30.246Z"
+    },
+    {
       "id": "11467c4c-460b-42cd-a336-313327dce7f5",
       "action": "auto_sync_test_apply",
       "videoId": "",
@@ -747,5 +765,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-10-11T16:22:27.306Z"
+  "updatedAt": "2026-10-11T16:24:30.246Z"
 }
