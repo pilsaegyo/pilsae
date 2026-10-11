@@ -3,8 +3,8 @@
     {
       "id": "ck9F0_BXhes",
       "title": "어린왕자 실사판",
-      "description": "신화방송 Ep31\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-      "source": "신화방송 Ep31",
+      "description": "121013 신화방송 Ep31\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "121013 신화방송 Ep31",
       "sourceDate": null,
       "publishedAt": "2026-10-10T10:30:29Z",
       "thumbnail": "https://i.ytimg.com/vi/ck9F0_BXhes/maxresdefault.jpg",
@@ -21,7 +21,10 @@
       "playlistCandidate": false,
       "firstSeenAt": "2026-10-10T11:00:23.175Z",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "y1F2TuPalLU",
@@ -17610,7 +17613,7 @@
     }
   ],
   "total": 653,
-  "generatedAt": "2026-10-10T11:00:23.175Z",
+  "generatedAt": "2026-10-11T16:22:21.038Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
