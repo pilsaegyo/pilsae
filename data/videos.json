@@ -12,9 +12,9 @@
       "duration": "PT2M37S",
       "durationSeconds": 157,
       "videoFormat": "shorts",
-      "videoFormatSource": "confirmed",
+      "videoFormatSource": "manual",
       "videoFormatConfidence": "",
-      "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
+      "videoFormatReason": "",
       "parseStatus": "parsed",
       "contentType": "video",
       "playlistScope": "",
@@ -17621,7 +17621,7 @@
     }
   ],
   "total": 653,
-  "generatedAt": "2026-10-11T16:25:46.182Z",
+  "generatedAt": "2026-10-11T16:25:55.122Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
