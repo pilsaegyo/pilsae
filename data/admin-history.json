@@ -1,6 +1,26 @@
 {
   "entries": [
     {
+      "id": "8b7924c4-06b3-4fbe-a092-3be475f2f1eb",
+      "action": "video_format_confirm",
+      "videoId": "y1F2TuPalLU",
+      "title": "온리원의 진짜 모습을 보여준다는 정리왕 신혜성",
+      "before": {
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+      },
+      "after": {
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+      },
+      "undoOf": "",
+      "changedAt": "2026-10-11T16:26:23.218Z"
+    },
+    {
       "id": "8588503b-d4dc-4081-90a0-f380526dc6dc",
       "action": "video_format",
       "videoId": "ck9F0_BXhes",
@@ -845,5 +865,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-10-11T16:25:57.261Z"
+  "updatedAt": "2026-10-11T16:26:23.218Z"
 }
