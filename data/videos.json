@@ -3,8 +3,8 @@
     {
       "id": "1lDJsCpsBKs",
       "title": "알사탕 혜성이",
-      "description": "제목 : \n20011222 스타서바이벌 미팅 - 신화 - 성탄특집\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=mkuzid8dtuk\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-      "source": "제목 :",
+      "description": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=mkuzid8dtuk\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집",
       "sourceDate": null,
       "publishedAt": "2026-10-17T10:30:38Z",
       "thumbnail": "https://i.ytimg.com/vi/1lDJsCpsBKs/maxresdefault.jpg",
@@ -21,13 +21,16 @@
       "playlistCandidate": false,
       "firstSeenAt": "2026-10-17T11:01:01.853Z",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "dhfLrhG40qs",
       "title": "폭탄 되기 싫어서 두손 붙잡고 떠는 에릭과 신혜성",
-      "description": "제목 : \n20011222 스타서바이벌 미팅 - 신화 - 성탄특집\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=mkuzid8dtuk\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-      "source": "제목 :",
+      "description": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=mkuzid8dtuk\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집",
       "sourceDate": null,
       "publishedAt": "2026-10-16T10:30:14Z",
       "thumbnail": "https://i.ytimg.com/vi/dhfLrhG40qs/maxresdefault.jpg",
@@ -17670,7 +17673,7 @@
     }
   ],
   "total": 655,
-  "generatedAt": "2026-10-17T11:01:01.853Z",
+  "generatedAt": "2026-10-17T14:21:27.000Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
