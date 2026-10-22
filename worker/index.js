@@ -2636,7 +2636,13 @@ const DEPLOY_PATCH_ALLOWED_FILES = new Set([
   "README_ADMIN_SYNC.md",
   "admin/index.html",
   "worker/index.js",
-  "worker/wrangler.jsonc"
+  "worker/wrangler.jsonc",
+  "history.html",
+  "history.css",
+  "history.js",
+  "data/history.json",
+  "README_HISTORY.md",
+  "HISTORY.md"
 ]);
 
 function githubHeaders(env) {
