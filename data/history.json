@@ -1,0 +1,735 @@
+{
+  "metadata": {
+    "description": "중국어 팬 연표 기반 편집용 초기 데이터. 개별 항목의 외부 독립 검증 완료를 뜻하지 않음.",
+    "updated": "2026-10-23"
+  },
+  "events": [
+    {
+      "id": "s001",
+      "date": "1998-03-24",
+      "category": "방송",
+      "title": "KMTV 쇼! 뮤직탱크 데뷔 무대",
+      "keywords": [
+        "신화",
+        "데뷔",
+        "뮤직탱크"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s002",
+      "date": "1998-04-05",
+      "category": "방송",
+      "title": "SBS 인기가요 첫 출연",
+      "keywords": [
+        "신화",
+        "인기가요"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s003",
+      "date": "1998-06-01",
+      "category": "촬영",
+      "title": "으쌰으쌰 뮤직비디오 촬영",
+      "keywords": [
+        "으쌰으쌰",
+        "Usha Usha"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s004",
+      "date": "1998-10-25",
+      "category": "팬행사",
+      "title": "신화창조 1기 팬클럽 행사",
+      "keywords": [
+        "신화창조",
+        "팬미팅"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s005",
+      "date": "1999-04-17",
+      "category": "방송",
+      "title": "MBC 음악캠프 2집 컴백",
+      "keywords": [
+        "T.O.P",
+        "음악캠프",
+        "컴백"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s006",
+      "date": "1999-07-04",
+      "category": "시상식",
+      "title": "SBS 인기가요 T.O.P 1위",
+      "keywords": [
+        "T.O.P",
+        "인기가요"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s007",
+      "date": "1999-08-08",
+      "category": "팬행사",
+      "title": "신화창조 2기 팬미팅",
+      "keywords": [
+        "신화창조",
+        "팬미팅"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s008",
+      "date": "1999-09-12",
+      "category": "팬행사",
+      "title": "광주 팬사인회",
+      "keywords": [
+        "팬사인회",
+        "광주"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s009",
+      "date": "1999-10-31",
+      "category": "공연",
+      "title": "SM 밀레니엄 콘서트",
+      "keywords": [
+        "SM",
+        "밀레니엄",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s010",
+      "date": "2000-03-29",
+      "category": "해외",
+      "title": "첫 대만 방문 및 프로모션",
+      "keywords": [
+        "대만",
+        "타이완"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s011",
+      "date": "2000-05-27",
+      "category": "음반",
+      "title": "정규 3집 Only One 발매",
+      "keywords": [
+        "Only One",
+        "3집"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s012",
+      "date": "2000-06-03",
+      "category": "방송",
+      "title": "MBC 음악캠프 컴백",
+      "keywords": [
+        "Only One",
+        "음악캠프"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s013",
+      "date": "2000-08-13",
+      "category": "공연",
+      "title": "대만 MTV 여름 음악 행사",
+      "keywords": [
+        "대만",
+        "MTV"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s014",
+      "date": "2000-11-19",
+      "category": "팬행사",
+      "title": "신화창조 4기 팬미팅",
+      "keywords": [
+        "신화창조",
+        "팬미팅"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s015",
+      "date": "2001-01-13",
+      "category": "공연",
+      "title": "첫 단독 콘서트 신화창조 (첫째 날)",
+      "keywords": [
+        "신화창조",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s016",
+      "date": "2001-01-14",
+      "category": "공연",
+      "title": "첫 단독 콘서트 신화창조 (둘째 날)",
+      "keywords": [
+        "신화창조",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s017",
+      "date": "2001-06-28",
+      "category": "음반",
+      "title": "정규 4집 Hey, Come On! 발매",
+      "keywords": [
+        "Hey Come On",
+        "4집"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s018",
+      "date": "2001-07-05",
+      "category": "방송",
+      "title": "KBS 뮤직뱅크 컴백",
+      "keywords": [
+        "뮤직뱅크",
+        "Hey Come On",
+        "Wild Eyes"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s019",
+      "date": "2001-09-16",
+      "category": "공연",
+      "title": "게릴라 콘서트",
+      "keywords": [
+        "게릴라",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s020",
+      "date": "2001-10-28",
+      "category": "팬행사",
+      "title": "신화창조 5기 팬미팅·앤디 복귀",
+      "keywords": [
+        "신화창조",
+        "앤디",
+        "팬미팅"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s021",
+      "date": "2001-12-15",
+      "category": "공연",
+      "title": "베이징 SM 합동 콘서트",
+      "keywords": [
+        "베이징",
+        "SM",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s022",
+      "date": "2002-03-29",
+      "category": "음반",
+      "title": "정규 5집 Perfect Man 발매",
+      "keywords": [
+        "Perfect Man",
+        "5집"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s023",
+      "date": "2002-03-31",
+      "category": "방송",
+      "title": "SBS 인기가요 컴백 무대",
+      "keywords": [
+        "Perfect Man",
+        "I Pray 4 U",
+        "인기가요"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s024",
+      "date": "2002-05-25",
+      "category": "방송",
+      "title": "일본 도쿄 FM 공개방송",
+      "keywords": [
+        "도쿄",
+        "FM"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s025",
+      "date": "2002-09-21",
+      "category": "공연",
+      "title": "일본 POP Asia 2002 참가 (첫째 날)",
+      "keywords": [
+        "POP Asia",
+        "일본"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s026",
+      "date": "2002-09-22",
+      "category": "공연",
+      "title": "일본 POP Asia 2002 참가 (둘째 날)",
+      "keywords": [
+        "POP Asia",
+        "일본"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s027",
+      "date": "2002-12-26",
+      "category": "음반",
+      "title": "정규 6집 Wedding 발매",
+      "keywords": [
+        "Wedding",
+        "너의 결혼식"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s028",
+      "date": "2003-04-18",
+      "category": "공연",
+      "title": "두 번째 단독 콘서트 (첫째 날)",
+      "keywords": [
+        "Everlasting Mythology",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s029",
+      "date": "2003-04-19",
+      "category": "공연",
+      "title": "두 번째 단독 콘서트 (둘째 날)",
+      "keywords": [
+        "Everlasting Mythology",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s030",
+      "date": "2003-04-20",
+      "category": "공연",
+      "title": "두 번째 단독 콘서트 (셋째 날)",
+      "keywords": [
+        "Everlasting Mythology",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s031",
+      "date": "2003-05-10",
+      "category": "팬행사",
+      "title": "신화창조 6기 팬미팅",
+      "keywords": [
+        "신화창조",
+        "팬미팅"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s032",
+      "date": "2003-09-25",
+      "category": "음반",
+      "title": "프로젝트 그룹 S 정규 1집 발매",
+      "keywords": [
+        "S",
+        "Friends In Classic"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s033",
+      "date": "2003-12-30",
+      "category": "음반",
+      "title": "Winter Story 앨범 발매",
+      "keywords": [
+        "Winter Story"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s034",
+      "date": "2004-03-13",
+      "category": "공연",
+      "title": "일본 첫 단독 콘서트",
+      "keywords": [
+        "Shinhwa First Live in Tokyo",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s035",
+      "date": "2004-04-05",
+      "category": "방송",
+      "title": "에릭 주연 드라마 불새 첫 방송",
+      "keywords": [
+        "에릭",
+        "불새"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s036",
+      "date": "2004-06-05",
+      "category": "공연",
+      "title": "2004 F-Concert 참가",
+      "keywords": [
+        "F-Concert",
+        "How Do I Say"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s037",
+      "date": "2004-08-27",
+      "category": "음반",
+      "title": "정규 7집 Brand New 발매",
+      "keywords": [
+        "Brand New",
+        "7집"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s038",
+      "date": "2004-09-20",
+      "category": "방송",
+      "title": "SBS 컴백 쇼케이스",
+      "keywords": [
+        "쇼케이스",
+        "Brand New"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s039",
+      "date": "2004-12-10",
+      "category": "시상식",
+      "title": "서울가요대상 대상 수상",
+      "keywords": [
+        "서울가요대상",
+        "대상"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s040",
+      "date": "2004-12-29",
+      "category": "시상식",
+      "title": "SBS 가요대전 대상 수상",
+      "keywords": [
+        "SBS 가요대전",
+        "대상"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s041",
+      "date": "2005-01-23",
+      "category": "공연",
+      "title": "일본 도쿄 공연",
+      "keywords": [
+        "Live in Japan",
+        "도쿄"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s042",
+      "date": "2005-05-06",
+      "category": "음반",
+      "title": "신혜성 솔로 1집 오월지련 발매",
+      "keywords": [
+        "신혜성",
+        "오월지련"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s043",
+      "date": "2005-06-05",
+      "category": "공연",
+      "title": "Summer Story Festival 콘서트",
+      "keywords": [
+        "Summer Story",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s044",
+      "date": "2005-06-12",
+      "category": "방송",
+      "title": "앤디 SBS 인기가요 MC 시작",
+      "keywords": [
+        "앤디",
+        "인기가요"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s045",
+      "date": "2005-08-15",
+      "category": "공연",
+      "title": "광복 60주년 중앙경축식 참석",
+      "keywords": [
+        "광복절",
+        "신화"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s046",
+      "date": "2005-09-24",
+      "category": "방송",
+      "title": "드라마 프라하의 연인 첫 방송",
+      "keywords": [
+        "앤디",
+        "프라하의 연인"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s047",
+      "date": "2006-01-16",
+      "category": "방송",
+      "title": "에릭 드라마 늑대 첫 방송",
+      "keywords": [
+        "에릭",
+        "늑대"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s048",
+      "date": "2006-05-11",
+      "category": "음반",
+      "title": "정규 8집 State of the Art 발매",
+      "keywords": [
+        "State of the Art",
+        "8집"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s049",
+      "date": "2006-05-13",
+      "category": "공연",
+      "title": "2006 아시아 투어 서울 공연 (첫째 날)",
+      "keywords": [
+        "State of the Art",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s050",
+      "date": "2006-05-14",
+      "category": "공연",
+      "title": "2006 아시아 투어 서울 공연 (둘째 날)",
+      "keywords": [
+        "State of the Art",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s051",
+      "date": "2006-07-08",
+      "category": "공연",
+      "title": "상하이 State of the Art 콘서트",
+      "keywords": [
+        "상하이",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s052",
+      "date": "2006-08-19",
+      "category": "공연",
+      "title": "방콕 State of the Art 콘서트",
+      "keywords": [
+        "방콕",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s053",
+      "date": "2006-09-24",
+      "category": "공연",
+      "title": "도쿄 부도칸 Japan Tour 공연",
+      "keywords": [
+        "부도칸",
+        "일본",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s054",
+      "date": "2007-02-10",
+      "category": "팬행사",
+      "title": "신화창조 8기 팬미팅",
+      "keywords": [
+        "신화창조",
+        "팬미팅"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s055",
+      "date": "2007-03-17",
+      "category": "방송",
+      "title": "에릭 주연 드라마 케세라세라 첫 방송",
+      "keywords": [
+        "에릭",
+        "케세라세라"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s056",
+      "date": "2007-08-08",
+      "category": "음반",
+      "title": "신혜성 솔로 앨범 발매",
+      "keywords": [
+        "신혜성",
+        "솔로"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s057",
+      "date": "2007-12-15",
+      "category": "공연",
+      "title": "신화 상하이 공연",
+      "keywords": [
+        "상하이",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s058",
+      "date": "2008-03-19",
+      "category": "촬영",
+      "title": "정규 9집 타이틀곡 뮤직비디오 촬영",
+      "keywords": [
+        "9집",
+        "뮤직비디오"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s059",
+      "date": "2008-03-29",
+      "category": "공연",
+      "title": "데뷔 10주년 콘서트 (첫째 날)",
+      "keywords": [
+        "10주년",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    },
+    {
+      "id": "s060",
+      "date": "2008-03-30",
+      "category": "공연",
+      "title": "데뷔 10주년 콘서트 (둘째 날)",
+      "keywords": [
+        "10주년",
+        "콘서트"
+      ],
+      "verification": "원문 기록",
+      "source": "사용자 제공 중국어 팬 연표 (원본 기사와 대조 필요)"
+    }
+  ]
+}
