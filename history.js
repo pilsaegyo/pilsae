@@ -6,8 +6,7 @@ const DAY = /^\d{4}-\d{2}-\d{2}$/;
 const pad2 = x => String(x).padStart(2,'0');
 const validDay = (y,m,d) => { const date=new Date(Date.UTC(y,m-1,d)); return date.getUTCFullYear()===y && date.getUTCMonth()===m-1 && date.getUTCDate()===d; };
 const qs=new URLSearchParams(location.search);
-let events=[],chapters=[],researchSources=new Map(),filtered=[],activeChapter='chapter1',pageSize=70,visibleCount=70,highlightEvent='',explicitDate='';
-const dateVideoIndex=new Map();
+let events=[],chapters=[],researchSources=new Map(),eventAliases={},filtered=[],activeChapter='chapter1',pageSize=70,visibleCount=70,highlightEvent='',explicitDate='';
 const videoById=new Map();
 function selectedDates(video) {
   const dates=new Map();
@@ -35,7 +34,12 @@ function ytUrl(video) {
   const link=String(video.url||'');
   return /^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(link)?link:`https://www.youtube.com/watch?v=${encodeURIComponent(String(video.id||''))}`;
 }
-function isSafeUrl(value){return /^https:\/\//i.test(String(value||''));}
+function isSafeUrl(value){
+ const url=String(value||'');
+ if(!/^https:\/\//i.test(url))return false;
+ // Defunct V LIVE/V App links must never be presented as playable sources.
+ return !/(?:vlive\.tv|v-live\.tv|vlive\.com|vapp\.naver\.com)/i.test(url);
+}
 function buildChapterButtons() {
  const counts=new Map(chapters.map(c=>[c.id,events.filter(e=>e.chapter===c.id).length]));
  $('#chapters').innerHTML=chapters.map(c=>`<button type="button" class="chapter${c.id===activeChapter?' active':''}" data-chapter="${safe(c.id)}" aria-pressed="${c.id===activeChapter}"><span class="number">CHAPTER ${safe(c.number)}</span><strong>${safe(c.title)}</strong><span class="desc">${safe(c.subtitle)}</span><span class="count">${counts.get(c.id)||0}건</span></button>`).join('');
@@ -64,22 +68,23 @@ function normalizeSubject(s){
 }
 function selectRows(){
  const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim().toLocaleLowerCase();
- filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate)&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||normalizeSubject(e.subject)===subject)&&(!verification||e.verification===verification)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
+ filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||normalizeSubject(e.subject)===subject)&&(!verification||e.verification===verification)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
 }
 function monthHeading(e,previous) {
  const month=e.date.slice(0,7);
  return month===previous?'':`<h2 class="month-title">${safe(month.slice(0,4))}년 ${safe(Number(month.slice(5)))}월</h2>`;
 }
-function approvedLinks(e) {
- if(!Array.isArray(e.relatedVideos)) return [];
- return e.relatedVideos.filter(r=>r.reviewStatus==='approved' && videoById.has(String(r.videoId)) && r.kind && r.reason).slice(0,8).map(r=>{
-  const video=videoById.get(String(r.videoId));
-  return `<a class="candidate" href="${safe(ytUrl(video))}" target="_blank" rel="noopener noreferrer" title="관리자 승인 연결 · ${safe(r.reason)}">▶ ${safe(video.title||'추천 영상')} <small>(${safe(r.kind)})</small></a>`;
- });
-}
-function videoCandidates(e){
- if(e.precision!=='day'||!DAY.test(e.date))return [];
- return dateVideoIndex.get(e.date)||[];
+function recommendedLinks(e){
+ if(!Array.isArray(e.relatedVideos))return [];
+ return e.relatedVideos.filter(r=>r.reviewStatus==='candidate' && Number(r.score)>=0.70 &&
+   videoById.has(String(r.videoId)) && r.reason && r.kind)
+   .slice(0,5).map(r=>{
+     const video=videoById.get(String(r.videoId));
+     const url=ytUrl(video);
+     if(!isSafeUrl(url))return '';
+     const percent=Math.round(Number(r.score)*100);
+     return `<a class="candidate" href="${safe(url)}" target="_blank" rel="noopener noreferrer" title="규칙 기반 연관도 ${percent}점 · ${safe(r.reason)} · 동일 영상 검증 완료를 의미하지 않음">▶ ${safe(video.title||'관련 영상')} <small>연관도 ${percent}점</small></a>`;
+   }).filter(Boolean);
 }
 function fmt(e){
  if(e.precision==='month')return `${e.date.slice(5,7)}월`;
@@ -93,14 +98,18 @@ function sourceWidget(e){
    seen.add(url);ordered.push({label,url,kind,note});
  };
  if(e.verificationUrl)add('기사·공식 검증 출처',e.verificationUrl,'검증 자료','검증 상태와 이 링크가 뒷받침하는 사실을 함께 확인하세요.');
+ for(const url of e.verificationUrls||[])add('병합된 기록의 검증 출처',url,'검증 자료','병합된 개별 원문을 뒷받침하는 링크입니다.');
  for(const key of e.sourceRefs||[]){
    const r=researchSources.get(key);if(r)add(r.title,r.url,r.kind,r.note);
  }
- if(e.sourceUrl)add(e.sourceUrl.includes('docs.google.com/spreadsheets')?'원본 시트의 해당 행':(e.source==='첨부 엑셀'?'원본 링크':'기록 원문 링크'),e.sourceUrl,'원자료','원본 자료 자체는 독립 검증이 아닙니다. 일부 구글 시트 링크는 소유자 설정으로 열리지 않을 수 있습니다.');
- if(e.referenceVideoUrl)add('원본 기록에 기재된 영상',e.referenceVideoUrl,'영상','영상의 제목·날짜가 실제 행사와 일치하는지 별도 확인이 필요합니다.');
+ for(const url of [...(e.sourceUrls||[]),e.sourceUrl].filter(Boolean))add(url.includes('docs.google.com/spreadsheets')?'원본 시트의 해당 행':'기록 원문',url,'원자료','원본 자료는 독립 검증이 아니며 접근 제한이 있을 수 있습니다.');
+ for(const url of [...(e.referenceVideoUrls||[]),e.referenceVideoUrl].filter(Boolean)){
+   // Reference videos must be playable on YouTube, not old V LIVE or arbitrary extinct platforms.
+   if(/^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(url))add('원본에 기재된 유튜브 영상',url,'원본 영상','개별 영상의 출처 기록으로, 동일 콘텐츠 검증을 의미하지 않습니다.');
+ }
  const status=String(e.verification||'독립 검증 전');
  const note=String(e.sourceNote||'');
- const provenance=String(e.source||'출처 미기재');
+ const provenance=(e.allSources||[e.source||'출처 미기재']).join(' · ');
  const rows=ordered.map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.label)} ↗</a>${r.note?`<small>${safe(r.note)}</small>`:''}</li>`).join('');
  const entries=rows?`<ul>${rows}</ul>`:'<p class="source-unlinked">이 일정에 연결된 외부 근거 URL이 없습니다.</p>';
  return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 출처 보기" aria-expanded="false" title="출처·검증 근거 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>자료 · 검증 근거</strong><span class="source-status">${safe(status)}</span><p>기록 계열: ${safe(provenance)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p>${note?`<p>${safe(note.slice(0,350))}</p>`:''}${entries}</span></span>`;
@@ -127,13 +136,13 @@ function renderItems(){
  let prev='';
  $('#events').innerHTML=to.map(e=>{
   const header=monthHeading(e,prev);prev=e.date.slice(0,7);
-  const same=videoCandidates(e), approved=approvedLinks(e);
-  const sameIds=new Set((e.relatedVideos||[]).filter(r=>r.reviewStatus==='approved').map(r=>String(r.videoId)));
-  const candidates=same.filter(v=>!sameIds.has(String(v.id))).slice(0,6);
-  const links=[...approved,...candidates.map(v=>`<a class="candidate" href="${safe(v.url)}" target="_blank" rel="noopener noreferrer" title="동일 날짜일 뿐 같은 행사인지 미확인">▷ ${safe(v.title)} <small>(${safe(v.origin)}, 미확인)</small></a>`)];
-  const linkHtml=links.length?`<div class="candidates">${links.join('')}${same.length>candidates.length?`<span class="candidate-more">같은 날짜 후보 외 ${same.length-candidates.length}개</span>`:''}</div>`:'';
+  const links=recommendedLinks(e);
+  const linkHtml=links.length?`<div class="candidates">${links.join('')}</div>`:'';
+  const details=Array.isArray(e.mergedDetails)?e.mergedDetails.slice(0,3):[];
+  const detailHtml=details.length?`<div class="detail-note">세부 기록: ${safe(details.map(t=>String(t).slice(0,170)).join(' · '))}</div>`:'';
+  const conflictHtml=e.conflictingDates?.length?`<div class="detail-note conflict">원문 날짜 충돌: ${safe(e.conflictingDates.join(' / '))} · 공식 날짜 추가 확인 필요</div>`:'';
   const desc=String(e.sourceNote||'').slice(0,380);
-  return `${header}<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="${e.verification==='날짜 충돌'?'conflict':e.verification.includes('검증 전')||e.verification==='원문 기록'?'unconfirmed':''}" title="${safe(desc||e.source||'')}">${e.verification==='날짜 충돌'?'⚠':'◌'} ${safe(e.verification)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.possibleDuplicate?'<span class="inexact">중복 후보</span>':''}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${same.length?`<span class="video" title="같은 날짜의 영상 후보 · 동일 행사 미확인">▷ 같은 날짜 영상 ${same.length}개</span>`:''}${approved.length?`<span class="video">▶ 승인된 관련 영상 ${approved.length}개</span>`:''}${sourceWidget(e)}</div>${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
+  return `${header}<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="${e.verification==='날짜 충돌'?'conflict':e.verification.includes('검증 전')||e.verification==='원문 기록'?'unconfirmed':''}" title="${safe(desc||e.source||'')}">${e.verification==='날짜 충돌'?'⚠':'◌'} ${safe(e.verification)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
  }).join('');
  $('#loadMore').hidden=filtered.length<=last;
  if(highlightEvent){
@@ -146,19 +155,16 @@ async function init(){
  try{
   const [h,v]=await Promise.all([fetch('./data/history.json',{cache:'no-store'}),fetch('./data/videos.json',{cache:'no-store'})]);
   if(!h.ok||!v.ok) throw new Error('원본 자료 요청에 실패했습니다.');
-  const hd=await h.json(),vd=await v.json();events=Array.isArray(hd.events)?hd.events:[];chapters=Array.isArray(hd.chapters)?hd.chapters:[];researchSources=new Map((hd.researchSources||[]).map(s=>[s.id,s]));
+  const hd=await h.json(),vd=await v.json();events=Array.isArray(hd.events)?hd.events:[];chapters=Array.isArray(hd.chapters)?hd.chapters:[];eventAliases=hd.metadata?.legacyEventAliases||{};researchSources=new Map((hd.researchSources||[]).map(s=>[s.id,s]));
   for(const video of vd.videos||[]){
-   const id=String(video.id||'');if(id)videoById.set(id,video);
-   for(const [date,origin] of selectedDates(video)){
-    if(!dateVideoIndex.has(date))dateVideoIndex.set(date,[]);
-    dateVideoIndex.get(date).push({id,title:video.title||'영상',url:ytUrl(video),origin});
-   }
+   const id=String(video.id||'');if(/^[A-Za-z0-9_-]{11}$/.test(id))videoById.set(id,video);
+
   }
   events.sort((a,b)=>a.date.localeCompare(b.date)||String(a.id).localeCompare(String(b.id)));
   explicitDate=DAY.test(qs.get('date')||'')?qs.get('date'):'';
-  highlightEvent=qs.get('event')||'';
+  highlightEvent=eventAliases[qs.get('event')||'']||qs.get('event')||'';
   if(highlightEvent){const selected=events.find(e=>e.id===highlightEvent);if(selected){activeChapter=selected.chapter;}}
-  else if(explicitDate){const record=events.find(e=>e.date===explicitDate);if(record)activeChapter=record.chapter;}
+  else if(explicitDate){const record=events.find(e=>e.date===explicitDate || (e.conflictingDates||[]).includes(explicitDate));if(record)activeChapter=record.chapter;}
   for(const c of [...new Set(events.map(e=>e.category))].sort()) $('#category').add(new Option(c,c));
   for(const c of [...new Set(events.map(e=>e.verification))].sort()) $('#verification').add(new Option(c,c));
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();

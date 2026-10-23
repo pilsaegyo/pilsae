@@ -28,3 +28,7 @@
  .source-widget .source-panel,.source-catalog .source-panel{position:fixed;left:12px;right:12px;top:auto;bottom:12px;width:auto;max-height:58vh;box-shadow:0 6px 38px #0004}
  .source-widget:hover,.source-widget.is-open,.source-widget:focus-within{z-index:110}
 }
+
+/* 중복 통합 세부 정보 */
+.item .detail-note{line-height:1.65;overflow-wrap:anywhere}.item .detail-note.conflict{color:light-dark(#a34c42,#f5aaa0)}
+.candidate small{margin-left:5px;font-weight:600}.candidate{white-space:normal;line-height:1.4}
