@@ -322,22 +322,54 @@ function researchWidget(){
  return `<span class="source-widget source-catalog"><button type="button" class="source-trigger source-catalog-trigger" aria-label="조사에 활용한 공개 자료 목록 보기" aria-expanded="false" title="조사 자료 목록">ⓘ 조사 자료</button><span class="source-panel" role="group" aria-label="조사 자료 목록"><strong>조사·대조한 공개 자료</strong><p>이 목록에 포함된 사이트·링크가 모든 일정의 날짜를 증명하는 것은 아닙니다. 각 이벤트의 ⓘ에서 연결 근거를 구분해 보세요.</p><ul>${rows}</ul></span></span>`;
 }
 function enableSourceWidgets(){
-  // One document-level overlay solves z-index/stacking and clipping from rows.
-  // Links inside the overlay remain interactive on hover, keyboard, and touch.
+  // Mobile: a modal with its own scroller, backdrop and scroll lock.
+  // Desktop: keep the existing floating popover and hover/keyboard behavior.
   const float=document.createElement('div');
   float.id='history-source-float';float.className='source-float';
   float.setAttribute('role','dialog');float.setAttribute('aria-label','자료 및 검증 근거');
-  document.body.appendChild(float);
-  let active=null, pinned=false, closeTimer=null;
+  float.setAttribute('tabindex','-1');
+  const backdrop=document.createElement('div');
+  backdrop.className='source-backdrop';backdrop.setAttribute('aria-hidden','true');
+  document.body.append(backdrop,float);
+  const modalScreen=window.matchMedia('(max-width: 700px)');
+  let active=null,pinned=false,closeTimer=null,lockedScroll=null,ignoreFocus=false;
   const cancel=()=>{if(closeTimer!==null){clearTimeout(closeTimer);closeTimer=null;}};
-  const release=()=>{cancel();if(active){active.setAttribute('aria-expanded','false');active.closest('.source-widget')?.classList.remove('is-open');}active=null;pinned=false;float.classList.remove('is-visible');float.innerHTML='';};
+  function lockBackground(){
+    if(lockedScroll!==null)return;
+    lockedScroll=window.scrollY;
+    document.body.style.setProperty('--source-lock-offset',`-${lockedScroll}px`);
+    document.body.classList.add('source-dialog-open');
+    document.documentElement.classList.add('source-dialog-open');
+  }
+  function unlockBackground(){
+    if(lockedScroll===null)return;
+    const previousY=lockedScroll;
+    lockedScroll=null;
+    document.body.classList.remove('source-dialog-open');
+    document.documentElement.classList.remove('source-dialog-open');
+    document.body.style.removeProperty('--source-lock-offset');
+    window.scrollTo(0,previousY);
+  }
+  function release(restoreFocus=false){
+    cancel();const previous=active;
+    if(previous){previous.setAttribute('aria-expanded','false');previous.closest('.source-widget')?.classList.remove('is-open');}
+    active=null;pinned=false;
+    float.classList.remove('is-visible','is-mobile-dialog');
+    backdrop.classList.remove('is-visible');
+    float.removeAttribute('aria-modal');float.innerHTML='';
+    unlockBackground();
+    if(restoreFocus&&previous?.isConnected){
+      ignoreFocus=true;
+      previous.focus({preventScroll:true});
+      queueMicrotask(()=>{ignoreFocus=false;});
+    }
+  }
   function position(){
     if(!active||!float.classList.contains('is-visible'))return;
-    const r=active.getBoundingClientRect(),w=innerWidth,h=innerHeight;
-    if(w<=550){float.style.removeProperty('left');float.style.removeProperty('top');return;}
+    if(modalScreen.matches){float.style.removeProperty('left');float.style.removeProperty('top');return;}
+    const r=active.getBoundingClientRect(),w=window.innerWidth,h=window.innerHeight;
     float.style.left='0px';float.style.top='0px';
     const width=float.getBoundingClientRect().width||390,height=float.getBoundingClientRect().height||280;
-    // Prefer placing away from the underlying row text on wide screens.
     let left=(w-r.right>width+18)?r.right+10:(r.left-width-10>8?r.left-width-10:Math.min(Math.max(10,r.left),w-width-10));
     let top=r.bottom+8;
     if(top+height>h-10)top=Math.max(10,r.top-height-9);
@@ -345,37 +377,71 @@ function enableSourceWidgets(){
     float.style.left=Math.round(left)+'px';float.style.top=Math.round(top)+'px';
   }
   function show(button,lock=false){
-    cancel();if(active!==button){if(active){active.setAttribute('aria-expanded','false');active.closest('.source-widget')?.classList.remove('is-open');}
-      active=button;float.innerHTML=button.closest('.source-widget')?.querySelector('.source-panel')?.innerHTML||'';}
-    pinned=lock;active.setAttribute('aria-expanded','true');active.setAttribute('aria-controls',float.id);
+    if(!button?.isConnected)return;
+    const modal=modalScreen.matches;
+    if(modal&&!lock)return;
+    cancel();
+    if(active!==button){
+      if(active){active.setAttribute('aria-expanded','false');active.closest('.source-widget')?.classList.remove('is-open');}
+      active=button;
+      const content=button.closest('.source-widget')?.querySelector('.source-panel')?.innerHTML||'';
+      float.innerHTML=`<div class="source-float-toolbar"><span>자료 · 검증 근거</span><button type="button" class="source-close" aria-label="근거 팝업 닫기">×</button></div><div class="source-float-content">${content}</div>`;
+      float.querySelector('.source-float-content').scrollTop=0;
+    }
+    pinned=lock||modal;
+    active.setAttribute('aria-expanded','true');active.setAttribute('aria-controls',float.id);
     active.closest('.source-widget')?.classList.add('is-open');
-    float.classList.add('is-visible');position();
+    float.classList.add('is-visible');
+    if(modal){
+      float.classList.add('is-mobile-dialog');backdrop.classList.add('is-visible');
+      float.setAttribute('aria-modal','true');lockBackground();
+      float.querySelector('.source-close')?.focus({preventScroll:true});
+    }else{
+      float.classList.remove('is-mobile-dialog');backdrop.classList.remove('is-visible');
+      float.removeAttribute('aria-modal');position();
+    }
   }
-  function later(){if(pinned)return;cancel();closeTimer=setTimeout(()=>{if(!float.matches(':hover')&&!(active?.matches(':hover'))&&!float.contains(document.activeElement)){release();}},160);}
+  function later(){
+    if(pinned||modalScreen.matches)return;
+    cancel();closeTimer=setTimeout(()=>{if(!float.matches(':hover')&&!(active?.matches(':hover'))&&!float.contains(document.activeElement))release();},160);
+  }
   document.addEventListener('pointerover',event=>{
+    if(modalScreen.matches||event.pointerType==='touch')return;
     const button=event.target.closest?.('.source-trigger');
-    if(!button||event.pointerType==='touch')return;
+    if(!button)return;
     if(button===active){cancel();return;}
-    if(pinned)return;show(button);
+    if(!pinned)show(button);
   });
   document.addEventListener('pointerout',event=>{
-    if(event.target.closest?.('.source-widget') && !event.relatedTarget?.closest?.('.source-widget'))later();
+    if(!modalScreen.matches&&event.target.closest?.('.source-widget')&&!event.relatedTarget?.closest?.('.source-widget'))later();
   });
   float.addEventListener('pointerenter',cancel);
   float.addEventListener('pointerleave',later);
-  document.addEventListener('focusin',event=>{const button=event.target.closest?.('.source-trigger');if(button&&!pinned)show(button);});
-  document.addEventListener('focusout',event=>{if(event.target.closest?.('.source-widget'))later();});
+  document.addEventListener('focusin',event=>{
+    if(ignoreFocus||modalScreen.matches)return;
+    const button=event.target.closest?.('.source-trigger');
+    if(button&&!pinned)show(button);
+  });
+  document.addEventListener('focusout',event=>{if(!modalScreen.matches&&event.target.closest?.('.source-widget'))later();});
   document.addEventListener('click',event=>{
+    if(event.target.closest?.('.source-close')||event.target===backdrop){release(true);return;}
     const button=event.target.closest?.('.source-trigger');
     if(button){event.preventDefault();if(active===button&&pinned)release();else show(button,true);return;}
     if(!float.contains(event.target))release();
   });
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&active){const last=active;release();last.focus();}});
-  document.addEventListener('history-view-change',release);
-  document.addEventListener('scroll',()=>{if(active)position();},true);
-  window.addEventListener('resize',position);
+  document.addEventListener('keydown',event=>{
+    if(event.key==='Escape'&&active){event.preventDefault();release(true);return;}
+    if(event.key!=='Tab'||!active||!modalScreen.matches)return;
+    const focusable=[...float.querySelectorAll('button:not([disabled]),a[href]')].filter(e=>e.getClientRects().length);
+    if(!focusable.length){event.preventDefault();float.focus();return;}
+    const first=focusable[0],last=focusable[focusable.length-1];
+    if(event.shiftKey&&(document.activeElement===first||!float.contains(document.activeElement))){event.preventDefault();last.focus();}
+    else if(!event.shiftKey&&(document.activeElement===last||!float.contains(document.activeElement))){event.preventDefault();first.focus();}
+  });
+  document.addEventListener('history-view-change',()=>release());
+  document.addEventListener('scroll',()=>{if(active&&!modalScreen.matches)position();},true);
+  window.addEventListener('resize',()=>{if(active){if(float.classList.contains('is-mobile-dialog')!==modalScreen.matches)release();else position();}});
 }
-
 function eventMarkup(e){
   const links=recommendedLinks(e);
   const linkHtml=links.length?`<div class="candidates">${links.join('')}</div>`:'';

@@ -66,7 +66,7 @@
 .source-float a{color:light-dark(#315d99,#bfd4fd);font-size:11px;text-decoration:underline;text-underline-offset:2px}
 .source-float small{display:block;margin-top:3px;color:light-dark(#717b8c,#aeb4c3);font-size:10px}
 .source-float .source-kind{font-weight:700;font-size:10px;color:light-dark(#50678b,#b3c7f0);padding-right:4px}
-@media(max-width:550px){.source-float{left:12px!important;right:12px!important;top:auto!important;bottom:12px!important;width:auto!important;max-height:58vh;box-shadow:0 12px 60px #0007}}
+
 
 /* Access to matching schedules without scrolling through thousands of unmatched records. */
 .video-only-filter{display:inline-flex;align-items:center;gap:7px;margin:14px 0 0;font-size:12px;font-weight:650;color:light-dark(#355884,#b5c8ea);cursor:pointer}
@@ -134,3 +134,37 @@
 .live-list-link:hover,.live-list-link:focus-visible{text-decoration:underline;border-color:light-dark(#bba5d9,#a58cb9)}
 /* Long verification labels must not widen mobile viewports. */
 @media(max-width:550px){.filters label{min-width:0;max-width:100%}.filters label>select,.filters label>input{min-width:0;width:100%;max-width:100%}}
+
+
+/* 2026-10-23: mobile viewport/popup stability. No changes to event content. */
+html,body{max-width:100%;overflow-x:clip}
+.top-inner,.wrap,.filters,.summary,.view-toolbar,.events,.calendar-view{min-width:0;max-width:100%}
+.source-float-content{min-width:0;overflow-wrap:anywhere;word-break:break-word}
+.source-float-content a{overflow-wrap:anywhere;word-break:break-word}
+.source-float-toolbar{display:none}
+.source-backdrop{display:none}
+@media(max-width:700px){
+  /* iOS Safari needs a fixed body to prevent scroll through a modal. */
+  html.source-dialog-open{overflow:hidden}
+  body.source-dialog-open{position:fixed;top:var(--source-lock-offset,0px);left:0;right:0;width:100%;overflow:hidden}
+  .source-backdrop.is-visible{display:block;position:fixed;inset:0;z-index:2147482999;background:#1612258c;touch-action:none}
+  .source-float.is-visible.is-mobile-dialog{
+    left:50%!important;right:auto!important;top:50dvh!important;bottom:auto!important;
+    transform:translate(-50%,-50%);width:min(480px,calc(100vw - 28px))!important;
+    max-width:calc(100vw - 28px);max-height:calc(100dvh - 32px);
+    display:flex;flex-direction:column;overflow:hidden;padding:0;border-radius:17px;
+    box-shadow:0 24px 70px #0007;
+  }
+  .source-float-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-shrink:0;
+    padding:13px 14px 12px 17px;border-bottom:1px solid light-dark(#e8e3f1,#484154);
+    font-size:13px;font-weight:700;line-height:1.5;color:light-dark(#514166,#e1d2ef)}
+  .source-close{display:grid;place-items:center;flex-shrink:0;width:34px;height:34px;padding:0;border:1px solid light-dark(#e7dff0,#665876);
+    border-radius:10px;background:light-dark(#faf7ff,#393044);color:inherit;font-size:23px;font-weight:400;line-height:1;cursor:pointer}
+  .source-close:focus-visible{outline:3px solid light-dark(#bbaaee,#ccb6eb);outline-offset:2px}
+  .source-float-content{min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+    padding:12px 16px max(17px,env(safe-area-inset-bottom,0px));font-size:12px}
+  .source-float-content strong:first-child{display:none}
+  .source-float-content p,.source-float-content a,.source-float-content li{font-size:12px;line-height:1.65}
+  .source-float-content small{font-size:11px;line-height:1.55}
+  .source-float-content li{padding:10px 0}
+}
