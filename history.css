@@ -340,3 +340,74 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
   .events .item::after,.calendar-view .item::after{font-size:13px;opacity:.026}
   .cat-seal{top:70px;right:6px;width:70px;height:70px;opacity:.72}
 }
+
+
+/* 2026-10-23: 목록만 이전 줄 구분형 UI로 복원 (상단/달력/팝업 변경 금지) */
+.events{
+  padding-top:0;
+  background-image:none;
+}
+.events .month-title{
+  font-size:17px;
+  margin:30px 0 9px;
+  color:inherit;
+}
+.events .item{
+  margin:0;
+  padding:15px 3px;
+  border:0;
+  border-top:1px solid light-dark(#e5e6ec,#363946);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.events .item:last-child{margin-bottom:0}
+.events .item .date{color:light-dark(#697186,#b2b6c5)}
+.events .item .name{font-size:14px;color:inherit}
+.events .item .meta{
+  margin-top:7px;
+  gap:7px;
+  color:light-dark(#7d8290,#a4a7b4);
+}
+.events .item .tag{
+  padding:2px 6px;
+  border:0;
+  border-radius:5px;
+  background:light-dark(#ecedf3,#2b2e3a);
+}
+.events .item .video{
+  border-color:light-dark(#ccd9f0,#3c5172);
+  border-radius:7px;
+  background:transparent;
+  color:light-dark(#345b99,#a1bff6);
+}
+.events .item .candidate{
+  border:0;
+  border-radius:7px;
+  padding:5px 8px;
+  background:light-dark(#edf2ff,#252f44);
+  color:light-dark(#274b87,#b8d1fa);
+}
+.events .item .candidate:hover{text-decoration:underline;background:light-dark(#edf2ff,#252f44)}
+.events .item .source-link{color:light-dark(#3c5595,#b6caff)}
+.events .item .detail-note{color:light-dark(#797e8b,#a6aab8)}
+.events .item .source-trigger{
+  background:light-dark(#f8faff,#252c3d);
+  color:light-dark(#637392,#c1cdeb);
+  border-color:light-dark(#d3d9e6,#535e75)!important;
+}
+.events .item .live-list-link{
+  border-radius:7px;
+  background:light-dark(#f9f5ff,#2e2939);
+  color:light-dark(#876db1,#ddc8f6);
+}
+.events .item .live-list-link:hover{text-decoration:underline}
+.events .item::before{right:3%;opacity:.075}
+/* 가운데의 서명은 남기되, 목록의 이전 줄 구분 레이아웃 위에서 아주 연하게만 표시 */
+.events .item::after{font-size:clamp(16px,2.5vw,21px);opacity:.028}
+@media(max-width:550px){
+  .events .item{padding:15px 3px;border-radius:0}
+  .events .item::before{right:2%;font-size:15px;opacity:.06}
+  .events .item::after{font-size:13px;opacity:.022}
+}
