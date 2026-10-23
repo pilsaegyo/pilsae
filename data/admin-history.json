@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "id": "643fe904-ac97-448a-a608-7731e9ecc1f0",
+      "action": "auto_sync_test_apply",
+      "videoId": "",
+      "title": "YouTube 자동 동기화 수동 실행",
+      "before": {
+        "total": 655
+      },
+      "after": {
+        "total": 655,
+        "added": 0,
+        "titleChanged": 0,
+        "descriptionChanged": 1,
+        "removed": 0
+      },
+      "undoOf": "",
+      "changedAt": "2026-10-23T01:44:24.501Z"
+    },
+    {
       "id": "54e7e3bc-32d1-456e-8cc5-82590be73b91",
       "action": "video_format_confirm",
       "videoId": "dhfLrhG40qs",
@@ -959,5 +977,5 @@
       "changedAt": "2026-09-19T12:31:07.152Z"
     }
   ],
-  "updatedAt": "2026-10-17T14:22:09.601Z"
+  "updatedAt": "2026-10-23T01:44:24.501Z"
 }
