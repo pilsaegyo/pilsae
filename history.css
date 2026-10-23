@@ -43,3 +43,8 @@
 .source-float small{display:block;margin-top:3px;color:light-dark(#717b8c,#aeb4c3);font-size:10px}
 .source-float .source-kind{font-weight:700;font-size:10px;color:light-dark(#50678b,#b3c7f0);padding-right:4px}
 @media(max-width:550px){.source-float{left:12px!important;right:12px!important;top:auto!important;bottom:12px!important;width:auto!important;max-height:58vh;box-shadow:0 12px 60px #0007}}
+
+/* Access to matching schedules without scrolling through thousands of unmatched records. */
+.video-only-filter{display:inline-flex;align-items:center;gap:7px;margin:14px 0 0;font-size:12px;font-weight:650;color:light-dark(#355884,#b5c8ea);cursor:pointer}
+.video-only-filter input{margin:0;width:15px;height:15px;accent-color:light-dark(#436fb3,#95afe1);cursor:pointer}
+.video-only-filter:focus-within{outline:2px solid light-dark(#9db9df,#8599c2);outline-offset:3px;border-radius:4px}
