@@ -171,6 +171,10 @@ function rateVideo(e,video,meta){
  const commonMatch=!!p&&p===meta.program;
  const genericMatch=labelCandidates.some(x=>meta.labels.some(y=>x===y||(x.length>=5&&y.length>=5&&(x.includes(y)||y.includes(x)))));
  const showMatch=commonMatch||genericMatch;
+ // Broadcasting station conflicts are evidence against a same-episode match.
+ const station=t=>{const m=String(t||'').match(/\b(KBS|MBC|SBS|JTBC|TVN|MNET|KMTV|NTV)\b/i);return m?m[1].toUpperCase():'';};
+ const eventStation=station(e.title),videoStation=station(video.source+' '+originalTitleLine(video));
+ if(eventStation&&videoStation&&eventStation!==videoStation)return null;
  if(p&&meta.program&&p!==meta.program)return null;
  const epConflict=n!==null&&meta.episode!==null&&n!==meta.episode;
  const fanConflict=f!==null&&meta.fanclub!==null&&f!==meta.fanclub;
@@ -190,12 +194,14 @@ function rateVideo(e,video,meta){
  // Nearby-date matches require a strongly identified programme and an uncertainty marker.
  if(!showMatch&&!(exact&&distinct))return null;
  if(!exact&&!showMatch)return null;
+ // Different named songs in the same programme need manual verification.
+ if(song&&meta.song&&song!==meta.song)return null;
  if(!exact&&epConflict)return null;
  let score=exact?(episodeSame?.97:songSame?.94:showMatch?.85:.78):(episodeSame?.81:.72);
  if(epConflict)score=.74;
  let reason=episodeSame?'프로그램·날짜·회차 일치':songSame?'프로그램·날짜·곡명 일치':showMatch?'영상 출처·방송명 일치':'고유 콘텐츠명 일치';
  if(epConflict)reason+=` · 회차 표기 불일치(연표 ${n} / 영상 ${meta.episode})`;
- if(!exact)reason+=` · 날짜 ${days}일 차이(동일 방송 미확정)`;
+ if(!exact)reason+=` · 날짜 ${days}일 차이(동일 방송 미확정, 확인 필요)`;
  return {videoId:String(video.id),kind:!exact||epConflict?'검토 필요 추천영상':'관련 영상 후보',score,reason:reason+' · '+meta.origin,reviewStatus:'candidate',dateGapDays:days};
 }
 function generateRuntimeRecommendations(videos){
@@ -278,7 +284,8 @@ function recommendedLinks(e){
      const url=ytUrl(video);
      if(!isSafeUrl(url))return '';
      const percent=Math.round(Number(r.score)*100);
-     return `<a class="candidate" href="${safe(url)}" target="_blank" rel="noopener noreferrer" title="규칙 기반 연관도 ${percent}점 · ${safe(r.reason)} · 동일 영상 검증 완료를 의미하지 않음">▶ ${safe(video.title||'관련 영상')} <small>연관도 ${percent}점</small></a>`;
+     const caution=(r.dateGapDays||r.reason.includes('회차 표기 불일치'))?' [날짜·회차 확인 필요]':'';
+     return `<a class="candidate" href="${safe(url)}" target="_blank" rel="noopener noreferrer" title="규칙 기반 연관도 ${percent}점 · ${safe(r.reason)} · 동일 영상 검증 완료를 의미하지 않음">▶ ${safe(video.title||'관련 영상')}${safe(caution)} <small>연관도 ${percent}점</small></a>`;
    }).filter(Boolean);
 }
 function fmt(e){
