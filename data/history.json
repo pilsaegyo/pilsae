@@ -31797,19 +31797,20 @@
       "chapter": "chapter2",
       "transition": "",
       "category": "팬행사",
-      "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "신혜성·전진 상하이 의류 매장 팬사인회",
+      "subject": "신혜성·전진",
+      "title": "신혜성·전진 상하이 매장 방문·팬 인사 — 예정 팬사인회 취소",
       "verification": "원문 기록",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | 2008-03-08 상하이 의류매장 사인회는 안전 우려로 취소되고, 두 사람이 매장 2층에서 팬들에게 인사함(2008-03-10 스포츠동아 사후보도).",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0220",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "work-reviewed-2008-shanghai"
       ],
       "recordCount": 1
     },
@@ -37917,20 +37918,21 @@
       "chapter": "chapter3",
       "transition": "",
       "category": "콘서트",
-      "subject": "신화 전체",
+      "subject": "신화 5인(에릭·이민우·신혜성·김동완·전진)",
       "title": "신화 16주년 HERE 콘서트 — 1일 차",
       "verification": "당시 공연 현장 기사 확인",
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 올림픽공원 체조경기장. 신혜성 포함 5명 공연. 멤버 한 명 불참.",
+      "sourceNote": "공연장: 올림픽공원 체조경기장. 신혜성 포함 5명 공연. 멤버 한 명 불참. | 2014-01-24 신화컴퍼니 발표: 앤디 불참 예정. 실제 공연의 전 구간 출연 구성은 독립 원본 추가 확인 필요.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "shinhwa-2014-press",
         "shinhwa-2014-live",
-        "jtbc-ticket-group"
+        "jtbc-ticket-group",
+        "work-reviewed-2014-announcement"
       ],
       "recordCount": 1
     },
@@ -37941,20 +37943,22 @@
       "chapter": "chapter3",
       "transition": "",
       "category": "콘서트",
-      "subject": "신화 전체",
+      "subject": "신화 5인 본 공연·앤디 앙코르 특별 등장",
       "title": "신화 16주년 HERE 콘서트 — 2일 차",
       "verification": "당시 공연 현장 기사 확인",
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 올림픽공원 체조경기장. 신혜성 포함 5명 공연. 멤버 한 명 불참.",
+      "sourceNote": "공연장: 올림픽공원 체조경기장. 신혜성 포함 5명 공연. 멤버 한 명 불참. | 2014-03-23 본 공연은 에릭·이민우·신혜성·김동완·전진 5인. 앤디는 앙코르 무대에 특별 등장(2014-03-23 현장 기사 및 03-24 사후 기사).",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "shinhwa-2014-press",
         "shinhwa-2014-live",
-        "jtbc-ticket-group"
+        "jtbc-ticket-group",
+        "work-reviewed-2014-day2",
+        "work-reviewed-2014-andy"
       ],
       "recordCount": 1
     },
@@ -47453,6 +47457,38 @@
       "url": "https://www.ktnews.com/news/articleView.html?idxno=31814",
       "kind": "2002년 업계 기사",
       "note": "2002 F/W 시즌 신화와 S.E.S.의 모델 활동 명시. 정확한 계약·촬영일 불명."
+    },
+    {
+      "id": "work-reviewed-2008-shanghai",
+      "publisher": "스포츠동아",
+      "title": "中 사인회 무산 신혜성·전진 팬들에게 미안",
+      "url": "https://sports.donga.com/ent/article/all/20080310/5102004/1",
+      "kind": "당시보도",
+      "note": "2008-03-10 입력. 2009-04-08 수정일은 행사일 아님. 2008-03-08 행사 취소 및 2층 팬 인사 사후 보도."
+    },
+    {
+      "id": "work-reviewed-2014-announcement",
+      "publisher": "연합뉴스",
+      "title": "신화, 3월 데뷔 16주년 공연…앤디 불참",
+      "url": "https://www.yna.co.kr/view/AKR20140124080000005",
+      "kind": "당시보도",
+      "note": "2014-01-24 두 공연에 앤디 불참 예정 공식 발표 인용. 실제 23일 특별등장과 구분."
+    },
+    {
+      "id": "work-reviewed-2014-day2",
+      "publisher": "엑스포츠뉴스",
+      "title": "16주년 신화, 앤디 자리 비워둔 특별했던 콘서트",
+      "url": "https://www.xportsnews.com/article/432031",
+      "kind": "당시보도",
+      "note": "2014-03-23 공연 현장 기사. 본 공연 5인 참여 확인."
+    },
+    {
+      "id": "work-reviewed-2014-andy",
+      "publisher": "동아일보",
+      "title": "앤디 신화 16주년 콘서트 깜짝 등장",
+      "url": "https://www.donga.com/news/List/article/all/20140324/61948858/1",
+      "kind": "당시보도",
+      "note": "2014-03-24 사후 기사. 3월23일 앙코르 특별 등장 확인."
     }
   ]
 }
