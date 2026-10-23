@@ -4383,6 +4383,7 @@ function renderAdminContentList() {
 
 
 const DEPLOY_ALLOWED_FILES = new Set([
+  "archive-date-rules.js",
   "index.html",
   "script.js",
   "style.css",
