@@ -107,3 +107,30 @@
 
 .cal-nav:disabled{opacity:.35;cursor:default}.cal-month-select select{min-width:0;cursor:pointer}.cal-month-select select#calMonth{max-width:87px}
 @media(max-width:550px){.cal-month-select{gap:5px}.cal-month-select select{padding:6px 8px}.cal-month-select select#calMonth{max-width:67px}}
+
+/* 2026-10-23: 은은한 연보라 필새 워터마크 (텍스트와 링크는 선명하게 유지) */
+.history-brand{font-weight:700;color:light-dark(#726689,#d8c9ef);letter-spacing:.045em;text-align:right}
+.history-brand-divider{padding:0 4px;color:light-dark(#bba7d5,#9b87b5)}
+.events .item,.calendar-view .item{position:relative;isolation:isolate}
+.events .item::before,.calendar-view .item::before{
+  content:'pilsae';position:absolute;top:50%;right:3%;transform:translateY(-50%) rotate(-11deg);
+  font:700 clamp(15px,2.7vw,23px)/1 'GMarketSans',sans-serif;letter-spacing:.15em;
+  color:light-dark(#af9acb,#b8a3d9);opacity:.075;pointer-events:none;user-select:none;z-index:0
+}
+.events .item>.date,.events .item>.item-main,.calendar-view .item>.date,.calendar-view .item>.item-main{position:relative;z-index:1}
+/* 말풍선 PIL + 고양이, 별도 에셋/네트워크 요청이 없는 장식 스탬프 */
+.cat-seal{position:fixed;z-index:20;top:69px;right:14px;width:90px;height:90px;pointer-events:none;user-select:none;opacity:.89;filter:drop-shadow(0 5px 10px #a58fc022)}
+.cat-seal svg{display:block;width:100%;height:100%}
+/* 우측 하단 페이지 상단 이동 */
+.back-to-top{position:fixed;z-index:40;right:22px;bottom:calc(22px + env(safe-area-inset-bottom,0px));width:50px;height:50px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;border:1px solid light-dark(#d6c8ea,#66547e);border-radius:16px;background:light-dark(#fbf8ff,#2e2738);color:light-dark(#866ab2,#d5bcef);box-shadow:0 5px 18px #38235018;font:inherit;cursor:pointer;transition:transform .16s,box-shadow .16s}
+.back-to-top:hover{transform:translateY(-3px);box-shadow:0 8px 22px #38235029}
+.back-to-top:focus-visible{outline:3px solid light-dark(#bfa5e2,#cfb7f3);outline-offset:3px}
+.back-to-top>span{font:500 22px/1 'GMarketSans',sans-serif}.back-to-top>small{font:700 9px/1.2 'GMarketSans',sans-serif;letter-spacing:.08em}
+.back-to-top[hidden]{display:none!important}
+@media(max-width:550px){.history-brand{font-size:10px;letter-spacing:0}.history-brand-divider{padding:0 2px}.cat-seal{top:67px;right:5px;width:72px;height:72px;opacity:.77}.back-to-top{right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:14px}.events .item::before,.calendar-view .item::before{right:2%;font-size:15px;opacity:.06}}
+@media(prefers-reduced-motion:reduce){.back-to-top{transition:none}}
+
+.live-list-link{display:inline-block;margin-top:7px;padding:4px 8px;border:1px solid light-dark(#e3d9ef,#615274);border-radius:7px;text-decoration:none;background:light-dark(#f9f5ff,#2e2939);color:light-dark(#876db1,#ddc8f6)}
+.live-list-link:hover,.live-list-link:focus-visible{text-decoration:underline;border-color:light-dark(#bba5d9,#a58cb9)}
+/* Long verification labels must not widen mobile viewports. */
+@media(max-width:550px){.filters label{min-width:0;max-width:100%}.filters label>select,.filters label>input{min-width:0;width:100%;max-width:100%}}
