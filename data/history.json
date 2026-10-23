@@ -4,7 +4,7 @@
     "updated": "2026-10-23",
     "description": "원본 기록 보존형 신화·신혜성 연표. 출처 호버/클릭 공개, 미확인 기록은 미확인으로 표시. 1996.04 확증 없는 합류와 2004.05.21 미확인 발매 주장 공개 연표 제외.",
     "inputRows": 2071,
-    "newIndependentlySourcedEvents": 5,
+    "newIndependentlySourcedEvents": 6,
     "dateRule": "원문 연월일 유지. 월만 아는 항목은 day가 아닌 month로 표시.",
     "subjectRule": "신화 전체 또는 신혜성 참여 활동만; 타 멤버 단독 활동 제외",
     "videoRule": "사전 저장된 videoId 12개만 사용하던 방식에서 현재 업로드된 YouTube 목록을 읽어 실시간 재평가. 날짜 없는 영상, 여러 일자 편집본, 연월 불일치, 확실한 프로그램/회차 불일치, 일반 음반 발매일과 방송 공연 클립 매칭은 제외.",
@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 689,
+      "chapter1": 692,
       "chapter2": 708,
       "chapter3": 525,
       "chapter4": 48
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 1970,
+    "visibleEvents": 1973,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -219,7 +219,7 @@
       "jp-2018-fanclub": 2,
       "jp-chapter2019": 2
     },
-    "sourceAuditAdded": 11,
+    "sourceAuditAdded": 23,
     "revisedReleaseRows": 8,
     "reconciledAdditionalDuplicates": 3,
     "addedAlbumEvents": 2,
@@ -324,6 +324,37 @@
       },
       "sourceCountAfter": 98,
       "note": "모든 기존 일정의 실제 방송일·공연일을 독립 검증한 것은 아님. 예정 보도와 개최 사후 보도 구분."
+    },
+    "schedule2001Audit20261023": {
+      "baseline": "shinhwa-history-concert-media-evidence-20261023.zip",
+      "inputFile": "붙여넣은 텍스트(1).txt",
+      "inputLines": 785,
+      "yearChecked": 2001,
+      "baselineEvents": 1970,
+      "publicEventsAfterPatch": 1973,
+      "newEvents": [
+        "verified2001:sbs-happy-concert",
+        "schedule2001:inkigayo170",
+        "schedule2001:sm-japan-showcase"
+      ],
+      "updatedIds": [
+        "sheet:01!28",
+        "sheet:01!40",
+        "sheet:01!85",
+        "sheet:01!255",
+        "history:s017",
+        "fan2002:047",
+        "sheet:01!132",
+        "sheet:01!343",
+        "sheet:01!254",
+        "sheet:01!360",
+        "history:p0088"
+      ],
+      "separateMembersPersonalActivities": "추가하지 않음",
+      "unverifiedProgrammeDailies": "공식 확인 전 새 일정 자동 추가하지 않음",
+      "filmVsAir": "방송일과 녹화일을 동일 처리하지 않음",
+      "excludedPreviouslyExistingEvents": "없음: 참가자 표기가 충돌하는 4행은 경고만 추가하여 원본과 기존 ID 보존",
+      "notes": "동일 원문 일정표 반복 다수. 8월23~26 일본 공연은 확인된 8월24일 행으로만 한정. 외부 출처마다 증명하는 범위를 ⓘ에 따로 기재."
     }
   },
   "chapters": [
@@ -8093,15 +8124,17 @@
       "category": "음악방송",
       "subject": "신혜성 개인",
       "title": "MBC 음악캠프 E085 <인형>",
-      "verification": "원본 기재·독립 검증 전",
+      "verification": "MBC 공식 방송 회차·출연 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A28:D28",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "MBC 공식 85회 설명에서 신혜성·이지훈 《인형》 합동 무대 및 MV 첫 공개 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!28",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "sch2001-mbc-0203"
+      ],
       "recordCount": 1
     },
     {
@@ -8253,15 +8286,17 @@
       "category": "음악방송",
       "subject": "신혜성 개인",
       "title": "MBC 음악캠프 E086 <인형>",
-      "verification": "원본 기재·독립 검증 전",
+      "verification": "MBC 공식 방송 회차·출연 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A40:D40",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "MBC 공식 86회 본문 출연진에 이지훈과 신혜성 명시. 표제에 남아 있는 010203은 본문 방송일 2001.02.10과 다르므로 혼동 금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!40",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "sch2001-mbc-0210"
+      ],
       "recordCount": 1
     },
     {
@@ -8838,15 +8873,17 @@
       "category": "음악방송",
       "subject": "신혜성 개인",
       "title": "MBC 음악캠프 E090 <인형>",
-      "verification": "원본 기재·독립 검증 전",
+      "verification": "MBC 공식 방송 회차·후보 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A85:D85",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "MBC 공식 90회 3.10, 1위 후보 포지션 vs 이지훈&신혜성으로 소개됨. 실제 1위 수상 여부는 별도 검증 대상.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!85",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "sch2001-mbc-0310"
+      ],
       "recordCount": 1
     },
     {
@@ -9047,6 +9084,28 @@
       "sourceRecord": "01!105",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "verified2001:sbs-happy-concert",
+      "date": "2001-03-18",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "SBSi 《2001 행복 콘서트》 — 신혜성·이지훈 출연",
+      "verification": "SBS 공식 사보에서 실제 개최·출연 확인",
+      "source": "새 제공 팬 스케줄 및 대조 자료",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "용인 에버랜드 그랜드 스테이지, 2001.03.18. SBSi 멤버십 카드 출시 기념 공연. 당시 팬 자료의 3월18일 에버랜드 출연은 이 행사와 동일. SBS 2001년 4월호 사보가 공연 개최와 신혜성·이지훈 출연을 사후 확인. 《인형》 개별 무대곡은 사보가 명시하지 않으므로 제목의 곡명은 원문 활동 맥락이며 실제 곡의 독립 확인은 별도 필요.",
+      "dateKind": "실제 공연일(방송일과 별개)",
+      "sourceRecord": "2026-10-23 업로드 팬 스케줄",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "sch2001-sbs-0318"
+      ],
       "recordCount": 1
     },
     {
@@ -9369,15 +9428,17 @@
       "category": "개인 활동",
       "subject": "신혜성 개인·합동",
       "title": "신혜성·이지훈 스페셜 앨범 활동 종료로 기록",
-      "verification": "2002년 팬 기록·독립 검증 전",
+      "verification": "팬 기록의 종료 주장·외부 확정 불가",
       "source": "국내 팬 연표(2002.08.09)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "방송일·마지막 활동 구분 필요",
+      "sourceNote": "방송일·마지막 활동 구분 필요 팬 원문에서는 3.31 활동 종료로 기록했으나, MBC는 5.12를 이지훈 개인의 음악캠프 마지막 무대로 소개함. 양자가 정확히 같은 종류의 종료 날짜인지는 미확인. 단정적인 종결 처리 보류.",
       "dateKind": "원문 기재일",
       "sourceRecord": "47",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "sch2001-mbc-0512"
+      ],
       "recordCount": 1,
       "categoryOriginal": "신혜성 개인"
     },
@@ -9434,7 +9495,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A132:D132",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "팬 기록에서는 3월31일 음악캠프 93회 《인형》으로 적음. 이번 조사로 93회 출연을 뒷받침하는 MBC 해당 회차 본문은 확보하지 못함. 5월12일 공식 설명은 이지훈의 마지막 무대에 관한 내용일 뿐 이 3월31일 무대의 직접 근거는 아님.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!132",
       "verificationUrl": null,
@@ -9936,18 +9997,19 @@
       "category": "음반·발매",
       "subject": "신화·신혜성 활동(기존 연표)",
       "title": "정규 4집 Hey, Come On! 발매",
-      "verification": "당시 기사 확인",
+      "verification": "당시 SM 발표 기사에서 6월28일 발매일 확인",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전. | 2001-06-26 SM 발표: 정규 4집 6월 28일 발매",
+      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전. | 2001-06-26 SM 발표: 정규 4집 6월 28일 발매 2001.06.26 당대 SM엔터테인먼트 발표 기사는 정규 4집의 6월28일 발매를 명시. 별도 팬 글의 6월23일 발매 기재와 충돌하며 6월23일 부산 공연과 혼동하지 않음.",
       "dateKind": "원문 기재일",
       "sourceRecord": "s017",
       "verificationUrl": "https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01662966563485656",
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "news-fourth"
+        "news-fourth",
+        "sch2001-album-0628"
       ],
       "recordCount": 1,
       "categoryOriginal": "음반"
@@ -10596,6 +10658,29 @@
       "recordCount": 1
     },
     {
+      "id": "schedule2001:inkigayo170",
+      "date": "2001-08-05",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "SBS 인기가요 E170 <Hey, Come On!> — 신화 출연",
+      "verification": "팬 자료·방송 차트 2차 편찬 대조, SBS 개별 출연 원문 미확보",
+      "source": "새 제공 팬 스케줄 및 대조 자료",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "2001.08.05 170회 신화 출연·Hey, Come On! 순위(7위) 2차 편찬 자료 및 같은 날짜의 신화 인기가요 생방송 팬 일정표가 일치. 1위 수상 아님. SBS 공식 170회 원본은 미확보라 검증 완료로 표시하지 않음.",
+      "dateKind": "방송일(회차 자료 + 팬 스케줄 대조)",
+      "sourceRecord": "2026-10-23 업로드 팬 스케줄",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "sch2001-inkigayo-171",
+        "sch2001-inkigayo-tvdb"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:01!247",
       "date": "2001-08-09",
       "precision": "day",
@@ -10688,12 +10773,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A254:D254",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2001.08.12 KBS 《TV는 사랑을 싣고》 기존 내용은 전진의 첫사랑 찾기 코너. 새 팬 자료에도 출연자에 신혜성/신화 전체가 기재되지 않으므로 그룹/신혜성 분류 보류.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!254",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "scopeAuditWarning": "2001.08.12 KBS 《TV는 사랑을 싣고》 기존 내용은 전진의 첫사랑 찾기 코너. 새 팬 자료에도 출연자에 신혜성/신화 전체가 기재되지 않으므로 그룹/신혜성 분류 보류."
     },
     {
       "id": "sheet:01!255",
@@ -10703,17 +10789,27 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "SBS 인기가요 <Hey, Come On!>",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "SBS 인기가요 E171 <Hey, Come On!>",
+      "verification": "회차 목록·팬 기록 교차 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A255:D255",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "기존 팬 시트 8월12일 신화 《Hey, Come On!》. 외부 회차 목록상 제171회·출연 확인. 출처는 위키/TVDB 보조자료로, SBS 공식 개별 회차 원문 미확보.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!255",
       "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
+      "sourceRefs": [
+        "sch2001-inkigayo-171",
+        "sch2001-inkigayo-tvdb"
+      ],
+      "recordCount": 1,
+      "titleCorrections": [
+        {
+          "original": "SBS 인기가요 <Hey, Come On!>",
+          "corrected": "SBS 인기가요 E171 <Hey, Come On!>",
+          "reason": "새 자료에서 정식 프로그램명·회차 교차 대조"
+        }
+      ]
     },
     {
       "id": "sheet:01!257",
@@ -10853,6 +10949,29 @@
       "sourceRecord": "01!268",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "schedule2001:sm-japan-showcase",
+      "date": "2001-08-24",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신화 전체",
+      "title": "SM ENTERTAINMENT SHOWCASE LIVE — 일본 도쿄 Zepp Tokyo (신화)",
+      "verification": "해외 공연 기록·팬 연혁 교차확인, 공식 원문 미확보",
+      "source": "새 제공 팬 스케줄 및 대조 자료",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "8월23~26일 전체 일본 쇼케이스로 적은 팬 스케줄에서 8월24일 공연을 분리. 일본 BoA 공연 연표는 8.24 Zepp Tokyo 행사에서 신화 출연을 명시. 여러 날짜 모두 별도 신화 공연이었다는 입증 근거는 없어 8.23/25/26을 자동 추가하지 않음. 당시 SM 공식 원문·사후 기사는 미확보.",
+      "dateKind": "공연일(해외 공연 기록 기반)",
+      "sourceRecord": "2026-10-23 업로드 팬 스케줄",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "sch2001-japan-0824",
+        "sch2001-japan-cn"
+      ],
       "recordCount": 1
     },
     {
@@ -11828,7 +11947,7 @@
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. MBC 《친구》 팬 스케줄에는 10월1일 방송, 출연진 동완·전진으로 기재. 기존 9월28일 일정과 방송일·출연자 차이 존재; 녹화일인지 방송일인지 미확인. 임의 날짜 정정·합치기 보류.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0088",
       "verificationUrl": null,
@@ -11836,7 +11955,8 @@
         "fan-cn1",
         "fan-cn2"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "scopeAuditWarning": "MBC 《친구》 팬 스케줄에는 10월1일 방송, 출연진 동완·전진으로 기재. 기존 9월28일 일정과 방송일·출연자 차이 존재; 녹화일인지 방송일인지 미확인. 임의 날짜 정정·합치기 보류."
     },
     {
       "id": "sheet:01!335",
@@ -11931,12 +12051,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A343:D343",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "이번 팬 스케줄에는 2001.10.03 KBS 《파워뮤직쇼》 문희준 스페셜 게스트가 이민우·김동완으로만 기재됨. 기존 시트의 「신화 전체」 표기와 충돌. 신화·신혜성 단독 출연 공식 근거 확보 전까지 활동 대상 분류 재검토 필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!343",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "scopeAuditWarning": "이번 팬 스케줄에는 2001.10.03 KBS 《파워뮤직쇼》 문희준 스페셜 게스트가 이민우·김동완으로만 기재됨. 기존 시트의 「신화 전체」 표기와 충돌. 신화·신혜성 단독 출연 공식 근거 확보 전까지 활동 대상 분류 재검토 필요."
     },
     {
       "id": "sheet:01!346",
@@ -12031,12 +12152,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A360:D360",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2001.10.21 《슈퍼TV》 표기에 [J] 및 전진 출발드림팀만 드러나며 신화 전체·신혜성 출연 확인 전. 그룹 활동 분류 근거 부족.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!360",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "scopeAuditWarning": "2001.10.21 《슈퍼TV》 표기에 [J] 및 전진 출발드림팀만 드러나며 신화 전체·신혜성 출연 확인 전. 그룹 활동 분류 근거 부족."
     },
     {
       "id": "sheet:01!361",
@@ -46393,6 +46515,102 @@
       "url": "https://cine21.com/tv/info/?tv_id=6428",
       "kind": "방송 프로그램 DB",
       "note": "2015.07.14~10.13 프로그램·심사위원 신혜성 기재. 개별 모든 회차 출연 보장 아님."
+    },
+    {
+      "id": "sch2001-mbc-0203",
+      "publisher": "MBC 공식 다시보기",
+      "title": "2001년 2월 3일 《음악캠프》 85회, 이지훈·신혜성 《인형》 합동 무대",
+      "url": "https://m.imbc.com/vod/vodview?broadcastID=1000356100018100000&progCode=1000356100000100000&type=prevod",
+      "kind": "방송사 공식 회차",
+      "note": "MBC 본문은 2001.02.03 방영 85회라고 명시. 프로그램 설명 중 듀엣과 MV 첫 공개 확인."
+    },
+    {
+      "id": "sch2001-mbc-0210",
+      "publisher": "MBC 공식 다시보기",
+      "title": "2001년 2월 10일 《음악캠프》 86회 이지훈·신혜성 출연",
+      "url": "https://m.imbc.com/vod/vodview?broadcastID=1000356100019100000&progCode=1000356100000100000&type=prevod",
+      "kind": "방송사 공식 회차",
+      "note": "페이지 썸네일 표제에는 010203이라는 문구가 남지만, 본문과 방송일은 2월 10일 제86회. 상단·본문 날짜 표기 혼동 주의."
+    },
+    {
+      "id": "sch2001-mbc-0310",
+      "publisher": "MBC 공식 다시보기",
+      "title": "2001년 3월 10일 《음악캠프》 90회 이지훈·신혜성 1위 후보",
+      "url": "https://playvod.imbc.com/Templete/VodView?bid=1000356100023100000",
+      "kind": "방송사 공식 회차",
+      "note": "2001.03.10, 제90회 공식 본문에 포지션 vs 이지훈&신혜성 1위 후보 명시. 실제 수상 결과는 단독 근거 아님."
+    },
+    {
+      "id": "sch2001-mbc-0317",
+      "publisher": "MBC 공식 다시보기",
+      "title": "2001년 3월 17일 《음악캠프》 91회 출연자 목록",
+      "url": "https://playvod.imbc.com/Templete/VodView?bid=1000356100024100000",
+      "kind": "방송사 공식 회차·충돌 참고",
+      "note": "3월17일 팬 스케줄에는 신혜성 출연이라 적혀 있으나 MBC 공개 회차 소개 명단에 신혜성이 빠져 있음. 비출연 확정 증거가 아니라 교차 검증 필요."
+    },
+    {
+      "id": "sch2001-mbc-0512",
+      "publisher": "MBC 공식 다시보기",
+      "title": "2001년 5월 12일 《음악캠프》 이지훈 마지막 무대 소개",
+      "url": "https://m.imbc.com/vod/vodview?broadcastID=1000356100032100000&progCode=1000356100000100000&type=prevod",
+      "kind": "방송사 공식 회차·종료일 대조",
+      "note": "5월12일은 이지훈의 음악캠프 마지막 무대라고 방송사가 설명. 신혜성이 이날 무대에 함께 섰거나 인형 합동 활동이 이날 끝났다는 근거는 아님."
+    },
+    {
+      "id": "sch2001-sbs-0318",
+      "publisher": "SBS 공식 사보",
+      "title": "SBS매거진 2001년 4월호 p.44 — 3월18일 2001 행복 콘서트",
+      "url": "https://img.sbs.co.kr/sbspdf/magazine/2001/2001_04.pdf",
+      "kind": "방송사 공식 사보·행사 사후 기록",
+      "note": "PDF 지면 44쪽(파일 0-index p38). 2001.03.18 용인 에버랜드 그랜드스테이지 개최, 이지훈·신혜성 출연. 팬 자료의 SBS 멤버십 카드 출시 기념 공연과 동일 행사."
+    },
+    {
+      "id": "sch2001-japan-0824",
+      "publisher": "일본 팬 공연 기록 아카이브",
+      "title": "2001년 8월24일 Zepp Tokyo SM 엔터테인먼트 SHOWCASE LIVE 출연진",
+      "url": "https://aboa.nomaki.jp/history/history_live.html",
+      "kind": "해외 공연 기록·비공식 보조자료",
+      "note": "일본 BoA 공연 기록에 행사 날짜·공연장·신화 출연이 기재. 공연 자체 교차 단서지만 SM 공식 원문·당일 사후기사는 확보되지 않음."
+    },
+    {
+      "id": "sch2001-japan-cn",
+      "publisher": "중국어 신화 활동 연혁",
+      "title": "2001년 8월24일 도쿄 SM 쇼케이스 관련 신화 기록",
+      "url": "https://myshinhwa.pixnet.net/blog/posts/2015125682",
+      "kind": "중국어 팬 연혁·보조자료",
+      "note": "일본 쇼케이스 날짜가 일본 팬 기록과 일치. 서로 독립적인 1차 공식 근거라고 볼 수 없음."
+    },
+    {
+      "id": "sch2001-inkigayo-171",
+      "publisher": "SBS 인기가요 차트(위키 편찬)",
+      "title": "2001년 8월12일 《인기가요》 171회 신화 Hey Come On! 출연",
+      "url": "https://m.namu.moe/w/SBS%20%EC%9D%B8%EA%B8%B0%EA%B0%80%EC%9A%94/%EC%B0%A8%ED%8A%B8/2001%EB%85%84",
+      "kind": "방송 차트 2차 편찬 자료",
+      "note": "171회·2001.08.12·신화 출연 명시. SBS 원본 개별 회차 자료는 별도 확보 필요. 날짜와 회차 보조 대조에 한정."
+    },
+    {
+      "id": "sch2001-album-0628",
+      "publisher": "이데일리/SM엔터테인먼트 발표",
+      "title": "2001.06.26 당시 SM 발표: 신화 정규 4집은 6월28일 발매",
+      "url": "https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01662966563485656",
+      "kind": "당시 소속사 발표를 인용한 언론 기사",
+      "note": "2001.06.26 당시 보도. 2001.06.28 발매 예정 명시. 팬 연표에서 제시된 6월23일 발매 주장과 구분하며 6월23일 부산 벅스뮤직 페스티벌 일정과 혼동 금지."
+    },
+    {
+      "id": "sch2001-inkigayo-tvdb",
+      "publisher": "TheTVDB 방송 데이터베이스",
+      "title": "2001년 8월12일 SBS 인기가요 171회 날짜 대조",
+      "url": "https://thetvdb.com/series/sbs-inkigayo/allseasons/official",
+      "kind": "방송 회차 DB·보조자료",
+      "note": "제171회 2001.08.12 날짜 일치. 신화 출연 자체의 단독 입증 자료는 아님."
+    },
+    {
+      "id": "sch2001-sm-2012",
+      "publisher": "씨네21 기획 기록",
+      "title": "2001년 8월 신화 WILD 사진집 발간 관련 회고",
+      "url": "https://host.cine21.com/news/view/?idx=0&mag_id=70552",
+      "kind": "언론 회고 기사·월단위 대조",
+      "note": "8월 발간 사실을 보조 확인하지만 8월 30일 정확한 일자와 2001년 녹화·행사 일정은 증명하지 않음."
     }
   ]
 }
