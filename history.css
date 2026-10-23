@@ -48,3 +48,38 @@
 .video-only-filter{display:inline-flex;align-items:center;gap:7px;margin:14px 0 0;font-size:12px;font-weight:650;color:light-dark(#355884,#b5c8ea);cursor:pointer}
 .video-only-filter input{margin:0;width:15px;height:15px;accent-color:light-dark(#436fb3,#95afe1);cursor:pointer}
 .video-only-filter:focus-within{outline:2px solid light-dark(#9db9df,#8599c2);outline-offset:3px;border-radius:4px}
+
+/* 월별 달력은 기존 목록/필터와 같은 데이터 및 출처 팝업을 재사용 */
+.view-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px}
+.view-heading{font-size:12px;font-weight:650;color:light-dark(#687186,#b5bdcc)}
+.view-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid light-dark(#dfe3ec,#494f5e);border-radius:10px;background:light-dark(#f3f5f9,#252a35)}
+.view-option{font:inherit;font-size:12px;font-weight:650;line-height:1.4;color:light-dark(#667188,#aab6cc);padding:7px 12px;border:0;border-radius:7px;background:transparent;cursor:pointer}
+.view-option:hover{color:light-dark(#244f88,#d4e1fc)}.view-option.is-active{background:light-dark(#fff,#3a465e);color:light-dark(#2a528b,#eef4ff);box-shadow:0 1px 5px #0001}
+.view-option:focus-visible,.cal-nav:focus-visible,.cal-day:focus-visible,.calendar-view select:focus-visible{outline:2px solid light-dark(#5c7fc1,#abc5fa);outline-offset:2px}
+.calendar-view[hidden],.events[hidden],.view-toolbar[hidden]{display:none!important}
+.calendar-view{border:1px solid light-dark(#dee3ec,#434957);background:light-dark(#fff,#1b1d25);border-radius:15px;padding:20px;margin-bottom:18px}
+.cal-controls{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:15px}
+.cal-month-select{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:0}
+.cal-month-select select{border:1px solid light-dark(#d9dfe8,#515869);border-radius:8px;background:light-dark(#fff,#222733);color:inherit;font:inherit;font-size:13px;font-weight:700;padding:7px 9px;max-width:126px;min-height:37px}
+.cal-nav{min-width:37px;min-height:37px;background:light-dark(#f5f7fb,#292f3b);border:1px solid light-dark(#dfe3ed,#484f60);border-radius:9px;color:inherit;cursor:pointer;font-size:19px;line-height:1}
+.cal-weekdays,.cal-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal-weekdays{margin-bottom:6px}.cal-weekdays span{text-align:center;font-size:11px;color:light-dark(#7a8292,#a1adbd);font-weight:650;padding:6px 0}
+.cal-day{min-width:0;min-height:70px;text-align:left;position:relative;padding:9px 8px;border:1px solid light-dark(#edf0f5,#303744);border-radius:9px;color:inherit;background:light-dark(#fff,#202430);cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.cal-day:hover{background:light-dark(#f5f8fe,#293247);border-color:light-dark(#b4c6e8,#6882b1)}
+.cal-day.has-events{background:light-dark(#f7f9fe,#242c3e);border-color:light-dark(#d5e0f2,#52627d)}
+.cal-day.is-selected{border-color:light-dark(#4d76bb,#9fbcf2);background:light-dark(#eaf2ff,#303f5e);box-shadow:inset 0 0 0 1px light-dark(#7399d9,#9dbdf5)}
+.cal-day-number{font-variant-numeric:tabular-nums;font-size:12px;font-weight:650}
+.cal-day-count{font-size:10px;line-height:1.2;color:light-dark(#456fa6,#b3cafa);white-space:nowrap}
+.cal-video-dot{width:7px;height:7px;background:light-dark(#466fae,#9dbdf5);border-radius:50%;position:absolute;right:8px;bottom:9px}
+.cal-blank{min-height:70px}
+.cal-hint{font-size:11px;margin:12px 2px 0;color:light-dark(#778092,#a1abbf)}
+.cal-detail{margin-top:20px;padding-top:18px;border-top:1px solid light-dark(#e5e8f0,#464c5a)}
+.cal-detail-title{font-size:15px;margin:0 0 8px;letter-spacing:-.02em}
+.cal-detail .item{margin:0;grid-template-columns:53px minmax(0,1fr)}
+.cal-no-day{padding:16px 2px;font-size:12px;color:light-dark(#737d8d,#aeb7c4)}
+.cal-month-unknown{margin-top:16px;padding:13px;border-radius:10px;background:light-dark(#f7f8fb,#252a35)}
+.cal-month-unknown h3{font-size:12px;margin:0 0 5px}.cal-month-unknown .item{padding:10px 0}.cal-month-unknown .date{font-size:11px}
+@media(max-width:550px){.view-toolbar{margin-bottom:12px}.calendar-view{padding:10px;border-radius:12px}.cal-controls{margin:5px 2px 10px}.cal-days,.cal-weekdays{gap:2px}.cal-day{min-height:52px;padding:7px 3px;align-items:center;gap:5px;border-radius:6px}.cal-day-number{font-size:11px}.cal-day-count{font-size:9px}.cal-video-dot{right:4px;bottom:5px;width:5px;height:5px}.cal-blank{min-height:52px}.cal-month-select select{font-size:12px;max-width:112px;min-height:35px}.cal-nav{min-width:33px;min-height:35px}.cal-detail{margin-top:15px;padding:13px 4px 0}.cal-detail .item{grid-template-columns:42px minmax(0,1fr);gap:7px}.cal-hint{font-size:10px}}
+
+.cal-nav:disabled{opacity:.35;cursor:default}.cal-month-select select{min-width:0;cursor:pointer}.cal-month-select select#calMonth{max-width:87px}
+@media(max-width:550px){.cal-month-select{gap:5px}.cal-month-select select{padding:6px 8px}.cal-month-select select#calMonth{max-width:67px}}

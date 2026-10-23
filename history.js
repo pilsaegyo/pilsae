@@ -7,6 +7,7 @@ const pad2 = x => String(x).padStart(2,'0');
 const validDay = (y,m,d) => { const date=new Date(Date.UTC(y,m-1,d)); return date.getUTCFullYear()===y && date.getUTCMonth()===m-1 && date.getUTCDate()===d; };
 const qs=new URLSearchParams(location.search);
 let events=[],chapters=[],researchSources=new Map(),eventAliases={},filtered=[],activeChapter='chapter1',pageSize=70,visibleCount=70,highlightEvent='',explicitDate='';
+let viewMode='list',calendarMonth='',selectedCalendarDate='';
 const videoById=new Map();
 function selectedDates(video) {
   const dates=new Map();
@@ -182,6 +183,7 @@ function buildChapterButtons() {
  $('#chapters').innerHTML=chapters.map(c=>`<button type="button" class="chapter${c.id===activeChapter?' active':''}" data-chapter="${safe(c.id)}" aria-pressed="${c.id===activeChapter}"><span class="number">CHAPTER ${safe(c.number)}</span><strong>${safe(c.title)}</strong><span class="desc">${safe(c.subtitle)}</span><span class="count">${counts.get(c.id)||0}건</span></button>`).join('');
  for(const btn of document.querySelectorAll('[data-chapter]')) btn.addEventListener('click',()=>{
    activeChapter=btn.dataset.chapter;
+   calendarMonth='';selectedCalendarDate='';
    $('#year').value='';
    applyChapter();
  });
@@ -247,9 +249,10 @@ function sourceWidget(e){
  const status=String(e.verification||'독립 검증 전');
  const note=String(e.sourceNote||'');
  const provenance=(e.allSources||[e.source||'출처 미기재']).join(' · ');
+ const categoryOrigin=e.categoryOriginal?`<p>분류 표기 통일: ${safe(e.categoryOriginal)} → ${safe(e.category)}</p>`:'';
  const rows=ordered.map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.label)} ↗</a>${r.note?`<small>${safe(r.note)}</small>`:''}</li>`).join('');
  const entries=rows?`<ul>${rows}</ul>`:'<p class="source-unlinked">이 일정에 연결된 외부 근거 URL이 없습니다.</p>';
- return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 출처 보기" aria-expanded="false" title="출처·검증 근거 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>자료 · 검증 근거</strong><span class="source-status">${safe(status)}</span><p>기록 계열: ${safe(provenance)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p>${note?`<p>${safe(note.slice(0,350))}</p>`:''}${entries}</span></span>`;
+ return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 출처 보기" aria-expanded="false" title="출처·검증 근거 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>자료 · 검증 근거</strong><span class="source-status">${safe(status)}</span><p>기록 계열: ${safe(provenance)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p>${categoryOrigin}${note?`<p>${safe(note.slice(0,350))}</p>`:''}${entries}</span></span>`;
 }
 function researchWidget(){
  const rows=[...researchSources.values()].map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.title)} ↗</a><small>${safe(r.note)}</small></li>`).join('');
@@ -305,32 +308,110 @@ function enableSourceWidgets(){
     if(!float.contains(event.target))release();
   });
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&active){const last=active;release();last.focus();}});
+  document.addEventListener('history-view-change',release);
   document.addEventListener('scroll',()=>{if(active)position();},true);
   window.addEventListener('resize',position);
 }
 
-function renderItems(){
- const to=filtered.slice(0,visibleCount),last=to.length;
- $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · 현재 ${last.toLocaleString('ko-KR')}건 표시 · 일부 자료는 날짜·내용 검증 전`;
- if(!last){$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
- let prev='';
- $('#events').innerHTML=to.map(e=>{
-  const header=monthHeading(e,prev);prev=e.date.slice(0,7);
+function eventMarkup(e){
   const links=recommendedLinks(e);
   const linkHtml=links.length?`<div class="candidates">${links.join('')}</div>`:'';
   const details=Array.isArray(e.mergedDetails)?e.mergedDetails.slice(0,3):[];
   const detailHtml=details.length?`<div class="detail-note">세부 기록: ${safe(details.map(t=>String(t).slice(0,170)).join(' · '))}</div>`:'';
   const conflictHtml=e.conflictingDates?.length?`<div class="detail-note conflict">원문 날짜 충돌: ${safe(e.conflictingDates.join(' / '))} · 공식 날짜 추가 확인 필요</div>`:'';
   const desc=String(e.sourceNote||'').slice(0,380);
-  return `${header}<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="${e.verification==='날짜 충돌'?'conflict':e.verification.includes('검증 전')||e.verification==='원문 기록'?'unconfirmed':''}" title="${safe(desc||e.source||'')}">${e.verification==='날짜 충돌'?'⚠':'◌'} ${safe(e.verification)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
- }).join('');
- $('#loadMore').hidden=filtered.length<=last;
- if(highlightEvent){
-   const target=document.getElementById('event-'+highlightEvent);
-   if(target) target.classList.add('focused-event');
- }
+  return `<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="${e.verification==='날짜 충돌'?'conflict':e.verification.includes('검증 전')||e.verification==='원문 기록'?'unconfirmed':''}" title="${safe(desc||e.source||'')}">${e.verification==='날짜 충돌'?'⚠':'◌'} ${safe(e.verification)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
 }
-function resetAndRender(){visibleCount=pageSize;selectRows();if(highlightEvent){const at=filtered.findIndex(e=>e.id===highlightEvent);if(at>=visibleCount)visibleCount=Math.ceil((at+1)/pageSize)*pageSize;}renderItems();}
+function renderItems(){
+  $('#events').hidden=false;$('#calendar').hidden=true;
+  const to=filtered.slice(0,visibleCount),last=to.length;
+  $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · 현재 ${last.toLocaleString('ko-KR')}건 표시 · 일부 자료는 날짜·내용 검증 전`;
+  if(!last){$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
+  let prev='';
+  $('#events').innerHTML=to.map(e=>{
+    const header=monthHeading(e,prev);prev=e.date.slice(0,7);
+    return header+eventMarkup(e);
+  }).join('');
+  $('#loadMore').hidden=filtered.length<=last;
+  if(highlightEvent){document.getElementById('event-'+highlightEvent)?.classList.add('focused-event');}
+}
+function calendarRange(){
+  const chapterEvents=events.filter(e=>!activeChapter||e.chapter===activeChapter);
+  const months=chapterEvents.map(e=>e.date.slice(0,7)).sort();
+  return [months[0]||'1998-01',months[months.length-1]||'2020-12'];
+}
+function initialCalendarMonth(){
+  // Date-linked routes should open the exact month; otherwise use the newest relevant month.
+  if(explicitDate)return explicitDate.slice(0,7);
+  if(highlightEvent){const record=events.find(e=>e.id===highlightEvent);if(record)return record.date.slice(0,7);}
+  return filtered.length?filtered[filtered.length-1].date.slice(0,7):calendarRange()[1];
+}
+function shiftCalendarMonth(month,delta){
+  const [y,m]=month.split('-').map(Number),next=new Date(Date.UTC(y,m-1+delta,1));
+  return `${next.getUTCFullYear()}-${pad2(next.getUTCMonth()+1)}`;
+}
+function setCalendarMonth(value){
+  if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(value))return;
+  const [min,max]=calendarRange();if(value<min)value=min;if(value>max)value=max;
+  // Navigation beyond an explicit video deeplink or year filter should not silently show an empty month.
+  if(explicitDate||highlightEvent){explicitDate='';highlightEvent='';$('.date-filter-hint').hidden=true;}
+  const year=$('#year');if(year.value&&year.value!==value.slice(0,4)){
+    year.value=[...year.options].some(o=>o.value===value.slice(0,4))?value.slice(0,4):'';
+  }
+  calendarMonth=value;selectedCalendarDate='';selectRows();renderPage();
+}
+function renderCalendar(){
+  $('#events').hidden=true;$('#calendar').hidden=false;$('#loadMore').hidden=true;
+  if(!calendarMonth)calendarMonth=initialCalendarMonth();
+  const [min,max]=calendarRange();
+  if(calendarMonth<min||calendarMonth>max)calendarMonth=initialCalendarMonth();
+  const [y,m]=calendarMonth.split('-').map(Number);
+  const firstDay=new Date(Date.UTC(y,m-1,1)).getUTCDay();
+  const daysInMonth=new Date(Date.UTC(y,m,0)).getUTCDate();
+  const monthEvents=filtered.filter(e=>e.date.slice(0,7)===calendarMonth);
+  const exactEvents=monthEvents.filter(e=>e.precision==='day');
+  const unknownEvents=monthEvents.filter(e=>e.precision!=='day');
+  const grouped=new Map();
+  for(const e of exactEvents){const day=Number(e.date.slice(8));if(!grouped.has(day))grouped.set(day,[]);grouped.get(day).push(e);}
+  if(!selectedCalendarDate||!selectedCalendarDate.startsWith(calendarMonth)){
+    const d=[...grouped.keys()].sort((a,b)=>a-b).pop();
+    selectedCalendarDate=d?`${calendarMonth}-${pad2(d)}`:'';
+  }
+  const [startMonth,endMonth]=calendarRange();
+  const cells=[];
+  for(let i=0;i<firstDay;i++)cells.push('<div class="cal-blank" aria-hidden="true"></div>');
+  for(let d=1;d<=daysInMonth;d++){
+    const dayDate=`${calendarMonth}-${pad2(d)}`,items=grouped.get(d)||[];
+    const hasVideo=items.some(e=>recommendedLinks(e).length);
+    const isSelected=selectedCalendarDate===dayDate;
+    const note=items.length?`${items.length}건의 일정${hasVideo?', 관련 영상 있음':''}`:'등록 일정 없음';
+    cells.push(`<button type="button" class="cal-day${items.length?' has-events':''}${isSelected?' is-selected':''}" data-date="${dayDate}" aria-label="${y}년 ${m}월 ${d}일, ${note}" aria-pressed="${isSelected}"><span class="cal-day-number">${d}</span>${items.length?`<span class="cal-day-count">${items.length}건</span>`:''}${hasVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
+  }
+  const selected=selectedCalendarDate?grouped.get(Number(selectedCalendarDate.slice(8)))||[]:[];
+  const selectedLabel=selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`;
+  const details=selected.length?selected.map(eventMarkup).join(''):'<p class="cal-no-day">날짜를 선택하면 해당 날짜의 활동 기록이 표시됩니다.</p>';
+  const unknown=unknownEvents.length?`<section class="cal-month-unknown"><h3>이달의 일자 미상 기록 · ${unknownEvents.length}건</h3><p class="cal-hint">실제 날짜가 확인되지 않아 달력의 특정 날짜에 배치하지 않았습니다.</p>${unknownEvents.map(eventMarkup).join('')}</section>`:'';
+  $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · ${y}년 ${m}월 ${monthEvents.length}건 · 일부 날짜·내용 검증 전`;
+  const yearOptions=Array.from({length:Number(endMonth.slice(0,4))-Number(startMonth.slice(0,4))+1},(_,i)=>Number(startMonth.slice(0,4))+i).map(yr=>`<option value="${yr}" ${yr===y?'selected':''}>${yr}년</option>`).join('');
+  const monthOptions=Array.from({length:12},(_,i)=>i+1).map(mo=>`<option value="${pad2(mo)}" ${mo===m?'selected':''}>${mo}월</option>`).join('');
+  $('#calendar').innerHTML=`<div class="cal-controls"><button class="cal-nav" id="calPrev" type="button" aria-label="이전 달" ${calendarMonth<=startMonth?'disabled':''}>‹</button><div class="cal-month-select"><select id="calYear" aria-label="달력 연도 선택">${yearOptions}</select><select id="calMonth" aria-label="달력 월 선택">${monthOptions}</select></div><button class="cal-nav" id="calNext" type="button" aria-label="다음 달" ${calendarMonth>=endMonth?'disabled':''}>›</button></div><div class="cal-weekdays" aria-hidden="true">${['일','월','화','수','목','금','토'].map(t=>`<span>${t}</span>`).join('')}</div><div class="cal-days">${cells.join('')}</div><p class="cal-hint">날짜별 일정 수를 표시합니다. 파란 점은 관련 유튜브 영상이 있는 날짜입니다.</p><section class="cal-detail" aria-live="polite"><h2 class="cal-detail-title">${selectedLabel} · ${selected.length}건</h2>${details}</section>${unknown}`;
+  $('#calPrev').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,-1)));
+  $('#calNext').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,1)));
+  const selectCalendarMonth=()=>setCalendarMonth(`${$('#calYear').value}-${$('#calMonth').value}`);
+  $('#calYear').addEventListener('change',selectCalendarMonth);
+  $('#calMonth').addEventListener('change',selectCalendarMonth);
+  for(const btn of $('#calendar').querySelectorAll('[data-date]'))btn.addEventListener('click',()=>{selectedCalendarDate=btn.dataset.date;renderCalendar();$('#calendar').querySelector(`[data-date=\"${selectedCalendarDate}\"]`)?.focus({preventScroll:true});});
+  if(highlightEvent)document.getElementById('event-'+highlightEvent)?.classList.add('focused-event');
+}
+function renderPage(){document.dispatchEvent(new Event('history-view-change'));if(viewMode==='calendar')renderCalendar();else renderItems();}
+function changeView(next){
+  if(next!=='list'&&next!=='calendar')return;
+  viewMode=next;
+  $('#listView').classList.toggle('is-active',next==='list');$('#calendarView').classList.toggle('is-active',next==='calendar');
+  $('#listView').setAttribute('aria-pressed',String(next==='list'));$('#calendarView').setAttribute('aria-pressed',String(next==='calendar'));
+  renderPage();
+}
+function resetAndRender(){visibleCount=pageSize;selectRows();if(highlightEvent){const at=filtered.findIndex(e=>e.id===highlightEvent);if(at>=visibleCount)visibleCount=Math.ceil((at+1)/pageSize)*pageSize;}renderPage();}
 async function init(){
  try{
   const [h,v]=await Promise.all([fetch('./data/history.json',{cache:'no-store'}),fetch('./data/videos.json',{cache:'no-store'})]);
@@ -351,9 +432,12 @@ async function init(){
   for(const c of [...new Set(events.map(e=>e.verification))].sort()) $('#verification').add(new Option(c,c));
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();
   buildChapterButtons();applyChapter();
-  $('#withVideos').addEventListener('change',resetAndRender);
-  for(const key of ['year','category','subject','verification','search']) $('#'+key).addEventListener(key==='search'?'input':'change',resetAndRender);
-  $('#allChapters').addEventListener('click',()=>{activeChapter='';$('#year').value='';applyChapter();});
+  const filtersChanged=()=>{calendarMonth='';selectedCalendarDate='';resetAndRender();};
+  $('#withVideos').addEventListener('change',filtersChanged);
+  for(const key of ['year','category','subject','verification','search']) $('#'+key).addEventListener(key==='search'?'input':'change',filtersChanged);
+  $('#allChapters').addEventListener('click',()=>{activeChapter='';calendarMonth='';selectedCalendarDate='';$('#year').value='';applyChapter();});
+  $('#listView').addEventListener('click',()=>changeView('list'));
+  $('#calendarView').addEventListener('click',()=>changeView('calendar'));
   $('#loadMore').addEventListener('click',()=>{visibleCount+=pageSize;renderItems();});
   if(explicitDate||highlightEvent){
     $('.date-filter-hint').hidden=false;
