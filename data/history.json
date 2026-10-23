@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 700,
-      "chapter2": 711,
-      "chapter3": 526,
-      "chapter4": 55
+      "chapter1": 701,
+      "chapter2": 727,
+      "chapter3": 536,
+      "chapter4": 57
     },
-    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요.",
+    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2003,
+    "visibleEvents": 2021,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -15857,6 +15857,28 @@
       "categoryOriginal": "음반"
     },
     {
+      "id": "namucheck:2002-12-28-kbs",
+      "date": "2002-12-28",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "시상식",
+      "subject": "신혜성 개인",
+      "title": "2002 KBS 연예대상 — 강타·신혜성 라디오 MC 부문 최우수상",
+      "verification": "당시 시상식 사후 기사 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://www.donga.com/news/article/all/20021229/7896733/9",
+      "referenceVideoUrl": null,
+      "sourceNote": "《강타, 신혜성의 자유선언》 공동 라디오 MC 최우수상. 12월29일 동아일보 기사에서 전날 수상 보도.",
+      "dateKind": "행사일(원문 확인)",
+      "sourceRecord": "wiki-check:2002-12-28-kbs",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-kbsaward"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:02!353",
       "date": "2002-12-29",
       "precision": "day",
@@ -21900,6 +21922,28 @@
       "recordCount": 1
     },
     {
+      "id": "namucheck:2004-11-11-ky",
+      "date": "2004-11-11",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "광고·화보",
+      "subject": "신혜성 개인",
+      "title": "신혜성, 금영 노래방 반주기 CF 단독 모델 계약·촬영 완료 보도",
+      "verification": "당시 기사 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://en.seoul.co.kr/news/entertainment/2004/11/11/20041111600005",
+      "referenceVideoUrl": null,
+      "sourceNote": "2004.11.11 기사 수정일 기준 보도. 계약 체결일과 실제 CF 촬영일은 별도 불명. 보도에는 6개월 계약·11월 초 놀이공원/스튜디오 촬영 완료로 서술. 서울신문의 입력 1970-01-01은 페이지 메타데이터 오류로 사용하지 않음.",
+      "dateKind": "계약·촬영 사실의 보도일",
+      "sourceRecord": "wiki-check:2004-11-11-ky",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-ky-cf"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:04!485",
       "date": "2004-11-11",
       "precision": "day",
@@ -24547,17 +24591,18 @@
       "category": "음반·발매",
       "subject": "신화·신혜성 활동(기존 연표)",
       "title": "신혜성 솔로 1집 오월지련 발매",
-      "verification": "원문 기록",
+      "verification": "당시 사후 기사로 음반 발매일 확인",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.",
+      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.\n2005.05.27 스타뉴스 보도는 첫 솔로 앨범 실제 발매일을 2005.05.06이라고 명시. 나무위키 05.07 표기와 상충하므로 당시 사후 기사와 기존 05.06 유지.",
       "dateKind": "원문 기재일",
       "sourceRecord": "s042",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "ns-solo05"
       ],
       "recordCount": 1,
       "categoryOriginal": "음반"
@@ -25098,17 +25143,18 @@
       "category": "음악방송",
       "subject": "신혜성 개인",
       "title": "Mnet 엠카운트다운 <같은 생각>",
-      "verification": "원문 기록",
+      "verification": "당시 방송 사후 보도 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1451484454&range=A210:D210",
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n2005.05.27 스포츠경향 사후 기사는 전날 05.26 엠카운트다운 〈같은 생각〉 1위 수상 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "05!210",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "ns-mcount05"
       ],
       "mergedRecordIds": [
         "sheet:05!210",
@@ -27842,17 +27888,18 @@
       "category": "시상식",
       "subject": "신화·신혜성 활동(기존 연표)",
       "title": "신혜성·이민우 Mnet 뮤직비디오 페스티벌 수상 기록",
-      "verification": "원문 기록",
+      "verification": "당시 시상식 사후 보도 확인",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n2005.11.27 스타뉴스 수상자 목록에서 신혜성 발라드 부문 최우수 MV 수상 확인(이민우 댄스 부문도 언급).",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0179",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "ns-mkmf05"
       ],
       "recordCount": 1
     },
@@ -30452,6 +30499,27 @@
       "recordCount": 1
     },
     {
+      "id": "press0709:2007-09-15:1",
+      "date": "2007-09-15",
+      "precision": "day",
+      "chapter": "chapter3",
+      "category": "팬사인회",
+      "subject": "신혜성",
+      "title": "신혜성 정규 2집 발매 기념 팬사인회·악수회 예정 (서울)",
+      "verification": "예정 보도·개최 확인 전",
+      "source": "당시 기사",
+      "sourceUrl": "https://yule.sohu.com/20070912/n252110961.shtml",
+      "referenceVideoUrl": null,
+      "sourceNote": "搜狐娱乐 / Mydaily 전재, 2007.09.12 예고 기사. 실제 개최 여부는 추가 확인 필요.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2007-09-15:1",
+      "verificationUrl": "https://yule.sohu.com/20070912/n252110961.shtml",
+      "sourceRefs": [
+        "press0709-source-1"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:07!183",
       "date": "2007-09-16",
       "precision": "day",
@@ -30929,6 +30997,48 @@
       "sourceRecord": "07!216",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "press0709:2007-10-26:2",
+      "date": "2007-10-26",
+      "precision": "day",
+      "chapter": "chapter3",
+      "category": "팬사인회",
+      "subject": "신혜성",
+      "title": "신혜성 2집 특별판 기념 팬사인회 예정 (잠실)",
+      "verification": "예정 보도·개최 확인 전",
+      "source": "당시 기사",
+      "sourceUrl": "https://ent.sina.com.cn/y/2007-10-23/17071760781.shtml",
+      "referenceVideoUrl": null,
+      "sourceNote": "新浪娱乐 / Mydaily 전재 2007.10.23. 잠실 음반매장 행사 예정. 개최 완료 보도는 미확인.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2007-10-26:2",
+      "verificationUrl": "https://ent.sina.com.cn/y/2007-10-23/17071760781.shtml",
+      "sourceRefs": [
+        "press0709-source-2"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "press0709:2007-10-27:3",
+      "date": "2007-10-27",
+      "precision": "day",
+      "chapter": "chapter3",
+      "category": "팬사인회",
+      "subject": "신혜성",
+      "title": "신혜성 2집 특별판 기념 팬사인회 예정 (인천)",
+      "verification": "예정 보도·개최 확인 전",
+      "source": "당시 기사",
+      "sourceUrl": "https://yule.sohu.com/20071024/n252826477.shtml",
+      "referenceVideoUrl": null,
+      "sourceNote": "搜狐娱乐 / Mydaily 전재 2007.10.24. 인천 음반매장 행사 예정. 개최 완료 보도는 미확인.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2007-10-27:3",
+      "verificationUrl": "https://yule.sohu.com/20071024/n252826477.shtml",
+      "sourceRefs": [
+        "press0709-source-3"
+      ],
       "recordCount": 1
     },
     {
@@ -31667,6 +31777,52 @@
       "recordCount": 1
     },
     {
+      "id": "namucheck:2008-01-18-codes",
+      "date": "2008-01-18",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "광고·화보",
+      "subject": "신혜성 포함 합동",
+      "title": "신혜성·전진, Y BY CODES-COMBINE 광고 모델 선정 보도",
+      "verification": "당시 모델 선정 보도 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://inews24.com/view/307872",
+      "referenceVideoUrl": null,
+      "sourceNote": "정확한 모델 계약일은 미확인. 기사에는 2008년 1월 초 선정되었다고 서술. 이 항목의 날짜는 1월18일 보도일, 모델 활동 개시일이 아님. 중국 상하이 멀티숍 관련 캠페인.",
+      "dateKind": "모델 선정 사실의 보도일",
+      "sourceRecord": "wiki-check:2008-01-18-codes",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-model08",
+        "ns-award08"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "namucheck:2008-01-18-model-award",
+      "date": "2008-01-18",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "시상식",
+      "subject": "신혜성 개인",
+      "title": "2008.01.18 아시아 모델 시상식 — 신혜성 아시아 최고 인기상 수상자 선정",
+      "verification": "당시 사전 보도·주최측 행사 날짜 교차 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://www.osen.co.kr/article/G0801180037",
+      "referenceVideoUrl": null,
+      "sourceNote": "시상식 자체는 2008.01.18 JW메리어트호텔. 2008.01.18 오전 기사에서 수상자로 선정되었다고 보도. 현장 수상 장면 자체는 직접 검증하지 못함. 기존 2008.01.27 SBS 방송 기록과 구분.",
+      "dateKind": "시상식 예정일·수상자 발표일",
+      "sourceRecord": "wiki-check:2008-01-18-model-award",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-award08",
+        "ns-award08-2"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:08!3",
       "date": "2008-01-18",
       "precision": "day",
@@ -31719,11 +31875,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=266265800&range=A5:D5",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2008.01.18은 시상식 개최·수상자 선정일. 2008.01.27 기존 기록은 SBS 방송 날짜로 취급. 원래 제목에 있는 BBF 인기 가수상 표기는 독립 확인 전이므로 아시아 최고 인기상과 일치한다고 단정하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "08!5",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "ns-award08",
+        "ns-award08-2"
+      ],
       "recordCount": 1
     },
     {
@@ -32546,6 +32705,27 @@
       "recordCount": 1
     },
     {
+      "id": "press0709:2008-09-28:4",
+      "date": "2008-09-28",
+      "precision": "day",
+      "chapter": "chapter3",
+      "category": "팬미팅",
+      "subject": "신혜성",
+      "title": "신혜성 일본 공식 팬클럽 Always HYESUNG 첫 행사, 도쿄 Zepp Tokyo (2회 예정)",
+      "verification": "예정 보도·개최 확인 전",
+      "source": "당시 기사",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20080910065900005",
+      "referenceVideoUrl": null,
+      "sourceNote": "연합뉴스 2008.09.10 당시 사전 보도. 실제 개최 완료는 별도 검증 필요.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2008-09-28:4",
+      "verificationUrl": "https://www.yna.co.kr/view/AKR20080910065900005",
+      "sourceRefs": [
+        "press0709-source-4"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:08!234",
       "date": "2008-09-28",
       "precision": "day",
@@ -32834,18 +33014,20 @@
       "category": "콘서트",
       "subject": "신혜성 개인",
       "title": "신혜성 LIVE AND LET LIVE — 서울 공연",
-      "verification": "당시 공연 현장 기사 확인",
+      "verification": "당시 공연 사후 기사로 재확인",
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 올림픽공원 펜싱경기장. 나무위키 10월8일 표기는 10월18일과 날짜 충돌; 10월8일 방송 일정과 병합하지 않음.",
+      "sourceNote": "공연장: 올림픽공원 펜싱경기장. 나무위키 10월8일 표기는 10월18일과 날짜 충돌; 10월8일 방송 일정과 병합하지 않음.\n2008.10.19 스포츠월드 사후 기사에서 2008.10.18 공연과 올림픽공원 펜싱경기장 확인. 나무위키 10.08은 오류, 기존 10.18 유지.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-2008-live",
         "hyesung-2008-press",
-        "ticket-hs"
+        "ticket-hs",
+        "ns-live08",
+        "ns-live08-2"
       ],
       "recordCount": 1
     },
@@ -32870,6 +33052,69 @@
       "recordCount": 1
     },
     {
+      "id": "press0709:2008-11-26:5",
+      "date": "2008-11-26",
+      "precision": "day",
+      "chapter": "chapter3",
+      "category": "공연",
+      "subject": "신혜성",
+      "title": "신혜성 2008 LIVE TOUR SIDE 1 일본 오사카 공연 (후생연금회관)",
+      "verification": "당시 사후 보도 확인",
+      "source": "당시 기사",
+      "sourceUrl": "https://v.daum.net/v/M0LcVrosWD",
+      "referenceVideoUrl": null,
+      "sourceNote": "아시아경제 2008.12.01 사후 보도: 11월 26일 오사카 후생연금회관 공연. 실제 개최 확인.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2008-11-26:5",
+      "verificationUrl": "https://v.daum.net/v/M0LcVrosWD",
+      "sourceRefs": [
+        "press0709-source-5"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "press0709:2008-11-28:6",
+      "date": "2008-11-28",
+      "precision": "day",
+      "chapter": "chapter3",
+      "category": "공연",
+      "subject": "신혜성",
+      "title": "신혜성 2008 LIVE TOUR SIDE 1 일본 나고야 공연 (센추리홀)",
+      "verification": "당시 사후 보도 확인",
+      "source": "당시 기사",
+      "sourceUrl": "https://v.daum.net/v/M0LcVrosWD",
+      "referenceVideoUrl": null,
+      "sourceNote": "아시아경제 2008.12.01 사후 보도: 11월 28일 나고야 센추리홀 공연. 실제 개최 확인.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2008-11-28:6",
+      "verificationUrl": "https://v.daum.net/v/M0LcVrosWD",
+      "sourceRefs": [
+        "press0709-source-6"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "press0709:2008-11-30:7",
+      "date": "2008-11-30",
+      "precision": "day",
+      "chapter": "chapter3",
+      "category": "공연",
+      "subject": "신혜성",
+      "title": "신혜성 2008 LIVE TOUR SIDE 1 일본 도쿄 공연 (국제포럼 A홀)",
+      "verification": "당시 사후 보도 확인",
+      "source": "당시 기사",
+      "sourceUrl": "https://v.daum.net/v/M0LcVrosWD",
+      "referenceVideoUrl": null,
+      "sourceNote": "아시아경제 2008.12.01 사후 보도: 도쿄 국제포럼 A홀 공연, 3개 도시 총 4회 공연.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2008-11-30:7",
+      "verificationUrl": "https://v.daum.net/v/M0LcVrosWD",
+      "sourceRefs": [
+        "press0709-source-7"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:08!351",
       "date": "2008-12-10",
       "precision": "day",
@@ -32882,7 +33127,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=266265800&range=A351:D351",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": " | 당시 기사 재게시: 2008 골든디스크 디스크 본상, 신혜성·전진·이민우 현장 참석; 에릭·김동완은 불참. https://blog.udn.com/chennatu/2488132 (공식 보도 원문 재확인 권장)",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "08!351",
       "verificationUrl": null,
@@ -33501,6 +33746,27 @@
       "recordCount": 1
     },
     {
+      "id": "press0709:2009-07-10:8",
+      "date": "2009-07-10",
+      "precision": "day",
+      "chapter": "chapter4",
+      "category": "공연",
+      "subject": "신혜성",
+      "title": "신혜성 KEEP LEAVES 아시아 투어 대만 공연 (국립대만대학교 체육관)",
+      "verification": "당시 사후 기사 재게시 확인",
+      "source": "당시 기사",
+      "sourceUrl": "https://blog.udn.com/angelae43/3123692",
+      "referenceVideoUrl": null,
+      "sourceNote": "2009.07.11 대만 현지 기자 張佳業의 공연 사후 기사 재게시. 7월 10일 공연, 22곡 및 Sorry Sorry 무대 확인. 원매체 URL 미확보.",
+      "dateKind": "실제 활동일 (사전 예정인 경우 개최 미확정)",
+      "sourceRecord": "press0709:2009-07-10:8",
+      "verificationUrl": "https://blog.udn.com/angelae43/3123692",
+      "sourceRefs": [
+        "press0709-source-8"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "press0911:2009-07-22:1",
       "date": "2009-07-22",
       "precision": "day",
@@ -33638,6 +33904,52 @@
       "sourceRecord": "press0911:research:2026-10-23",
       "verificationUrl": "https://news.kbs.co.kr/news/view.do?ncd=2108724",
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "namucheck:2010-07-15-best",
+      "date": "2010-07-15",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 베스트 앨범 《THE CYCLE 2005–2009》 발매",
+      "verification": "당시 발매 예고·음원 DB 일치",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20100709056700005",
+      "referenceVideoUrl": null,
+      "sourceNote": "2010.07.09 연합뉴스의 07.15 발매 예고와 벅스 07.15 발매 정보 일치. 같은 날 일본 정규 1집 국내 라이선스판과는 별개의 음반.",
+      "dateKind": "음원·음반 발매일",
+      "sourceRecord": "wiki-check:2010-07-15-best",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-best10",
+        "ns-best10-bugs"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "namucheck:2010-07-15-jp-license",
+      "date": "2010-07-15",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 정규 1집 《Find Voice In Song》 국내 라이선스판 발매",
+      "verification": "당시 발매 예고·음원 DB 일치",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20100709056700005",
+      "referenceVideoUrl": null,
+      "sourceNote": "2010.07.15는 국내 라이선스판 출시일. 일본 현지 최초 출시일이라고 단정하지 않음. 같은 날 발매된 베스트 앨범과 중복 아님.",
+      "dateKind": "국내 라이선스판 발매일",
+      "sourceRecord": "wiki-check:2010-07-15-jp-license",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-best10",
+        "ns-japan10-bugs"
+      ],
       "recordCount": 1
     },
     {
@@ -36319,13 +36631,14 @@
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 경희대학교 평화의전당.",
+      "sourceNote": "공연장: 경희대학교 평화의전당.\n2013.01.14 파이낸셜뉴스 사후 기사에서 2012.12.30·31 경희대 공연 실제 개최 확인.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-2012-year-live",
-        "ticket-hs"
+        "ticket-hs",
+        "ns-live12"
       ],
       "recordCount": 1
     },
@@ -36362,13 +36675,14 @@
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 경희대학교 평화의전당.",
+      "sourceNote": "공연장: 경희대학교 평화의전당.\n2013.01.14 파이낸셜뉴스 사후 기사에서 2012.12.30·31 경희대 공연 실제 개최 확인.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-2012-year-live",
-        "ticket-hs"
+        "ticket-hs",
+        "ns-live12"
       ],
       "recordCount": 1
     },
@@ -38052,17 +38366,19 @@
       "category": "콘서트",
       "subject": "신혜성 개인",
       "title": "신혜성 THE YEAR’S JOURNEY 2013–2014 — 1일 차",
-      "verification": "공연 DVD 보도·예매 이력 확인",
+      "verification": "사전·사후 자료 교차 확인",
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 경희대학교 평화의전당.",
+      "sourceNote": "공연장: 경희대학교 평화의전당.\nKBS WORLD 사전 보도 및 2015.10.22 DVD 사후 기사로 2013.12.30·31 경희대 공연 확인.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-2013-year-dvd",
-        "ticket-hs"
+        "ticket-hs",
+        "ns-live13",
+        "ns-dvd15"
       ],
       "recordCount": 1
     },
@@ -38075,17 +38391,19 @@
       "category": "콘서트",
       "subject": "신혜성 개인",
       "title": "신혜성 THE YEAR’S JOURNEY 2013–2014 — 2일 차",
-      "verification": "공연 DVD 보도·예매 이력 확인",
+      "verification": "사전·사후 자료 교차 확인",
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 경희대학교 평화의전당.",
+      "sourceNote": "공연장: 경희대학교 평화의전당.\nKBS WORLD 사전 보도 및 2015.10.22 DVD 사후 기사로 2013.12.30·31 경희대 공연 확인.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-2013-year-dvd",
-        "ticket-hs"
+        "ticket-hs",
+        "ns-live13",
+        "ns-dvd15"
       ],
       "recordCount": 1
     },
@@ -39919,17 +40237,18 @@
       "category": "예능",
       "subject": "신혜성 포함 합동",
       "title": "MBC MUSIC 슈퍼아이돌",
-      "verification": "프로그램 DB 방송기간·출연자 확인",
+      "verification": "방송 편성 기간·심사위원 출연 DB 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=935724846&range=A91:D91",
       "referenceVideoUrl": null,
-      "sourceNote": "씨네21 프로그램 DB에 신혜성 심사위원 및 2015.07.14 방송 시작일 확인. 이 방송일의 정확한 개별 출연 장면은 별도 검증 필요.",
+      "sourceNote": "씨네21 프로그램 DB에 신혜성 심사위원 및 2015.07.14 방송 시작일 확인. 이 방송일의 정확한 개별 출연 장면은 별도 검증 필요.\n씨네21 프로그램 정보는 2015.07.14~10.13 시즌1 방송 및 신혜성 심사위원 활동 확인. 기존 첫방송일 유지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "15!91",
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-superidol",
-        "nm-hyesung"
+        "nm-hyesung",
+        "ns-superidol15"
       ],
       "recordCount": 1
     },
@@ -40035,6 +40354,50 @@
       "sourceRecord": "15!148",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "namucheck:2015-10-13-superidol-end",
+      "date": "2015-10-13",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "MBC MUSIC 《슈퍼아이돌》 시즌1 최종 방영일",
+      "verification": "방송 데이터베이스 편성 종료일 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://cine21.com/tv/info/?tv_id=6428",
+      "referenceVideoUrl": null,
+      "sourceNote": "씨네21 프로그램 정보에 2015.07.14~10.13 방송·신혜성 심사위원 명시. 10.13 신혜성 개별 출연 장면까지 확인한 것은 아님. 기존 시즌1 첫회 일정과 구분.",
+      "dateKind": "시즌1 최종 편성일",
+      "sourceRecord": "wiki-check:2015-10-13-superidol-end",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-superidol15"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "namucheck:2015-10-22-dvd",
+      "date": "2015-10-22",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "영상·발매",
+      "subject": "신혜성 개인",
+      "title": "《2013–2014 THE YEAR’S JOURNEY》 신혜성 콘서트 DVD 발매",
+      "verification": "당시 출시 당일 보도 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://www.xportsnews.com/article/649610",
+      "referenceVideoUrl": null,
+      "sourceNote": "2013.12.30~31 경희대학교 평화의전당 콘서트 실황 DVD(2 DISC 및 40여 쪽 포토북 포함) 2015.10.22 발매. 공연 개최일과 DVD 발매일은 별개의 일정.",
+      "dateKind": "DVD 발매일",
+      "sourceRecord": "wiki-check:2015-10-22-dvd",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-dvd15"
+      ],
       "recordCount": 1
     },
     {
@@ -41213,6 +41576,28 @@
       "sourceRecord": "16!107",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "namucheck:2016-05-12-boys24",
+      "date": "2016-05-12",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공식 발표",
+      "subject": "신혜성 포함 합동",
+      "title": "신혜성·이민우 Mnet 《소년24》 단장 참여 공식 발표",
+      "verification": "당시 소속사 공식 입장 인용 기사 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://www.etnews.com/20160512000073",
+      "referenceVideoUrl": null,
+      "sourceNote": "소속사 라이브웍스컴퍼니 발표 인용. 실제 방송 2016.06.18 시작은 기존 등록, 5.12는 참여 발표 기사일.",
+      "dateKind": "소속사 발표 보도일",
+      "sourceRecord": "wiki-check:2016-05-12-boys24",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-boys16"
+      ],
       "recordCount": 1
     },
     {
@@ -43414,17 +43799,18 @@
       "category": "콘서트",
       "subject": "신혜성 개인",
       "title": "2017 신혜성 위클리 콘서트 <Serenity> 8회차 (막공)",
-      "verification": "원본 기재·독립 검증 전",
+      "verification": "당시 행사 진행중 기사 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A218:D218",
       "referenceVideoUrl": null,
-      "sourceNote": "예매 이력 2017.09.09~10.01; 위키 일부 판의 09.30 마감 표기는 보정 필요.",
+      "sourceNote": "예매 이력 2017.09.09~10.01; 위키 일부 판의 09.30 마감 표기는 보정 필요.\n2017 위클리 세레니티는 2017.09.09~10.01 총 8회. 나무위키 표의 09.30 종료 표기는 오류. 10.01 최종 공연 기존 등록 유지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!218",
       "verificationUrl": null,
       "sourceRefs": [
         "ticket-hs",
-        "nm-hyesung"
+        "nm-hyesung",
+        "ns-weekly17"
       ],
       "recordCount": 1
     },
@@ -45753,17 +46139,19 @@
       "category": "라디오",
       "subject": "신혜성 개인",
       "title": "SBS 러브FM 《신혜성의 음악 오디세이》 단독 DJ 첫 방송",
-      "verification": "SBS 방송사 프로그램·첫 방송 후 기사 직접 확인",
+      "verification": "방송사 공식 발표·종영 사후 기사 확인",
       "source": "SBS 사보·공식 기록·동시대 언론 교차 검증 (2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "SBS LoveFM 103.5MHz 매일 20:30~22:00. SBS 공식 프로그램 기간 2019.06.03~2021.02.21(종영일은 2020년 조사 범위 밖이라 별도 2021 일정 생성하지 않음). 위키 일부의 6월23일 첫 방송은 오류: SBS 공식·사후 기사 일치 6월3일.",
+      "sourceNote": "SBS LoveFM 103.5MHz 매일 20:30~22:00. SBS 공식 프로그램 기간 2019.06.03~2021.02.21(종영일은 2020년 조사 범위 밖이라 별도 2021 일정 생성하지 않음). 위키 일부의 6월23일 첫 방송은 오류: SBS 공식·사후 기사 일치 6월3일.\nSBS 2019.05.27 공식 발표에 첫 방송은 2019.06.03. 뉴시스 2021.02.22 기사에서 마지막 방송은 2021.02.21. 나무위키 표의 2019.06.23은 오류.",
       "dateKind": "방송사 공식 첫 방송일",
       "sourceRecord": "sbs-radio-audit-2026-10-23",
       "verificationUrl": null,
       "sourceRefs": [
         "radio-sbs-2019-official",
-        "radio-sbs-2019-first"
+        "radio-sbs-2019-first",
+        "ns-odyssey-start19",
+        "ns-odyssey-end21"
       ],
       "recordCount": 1
     },
@@ -46569,6 +46957,28 @@
       "verificationUrl": null,
       "sourceRefs": [
         "radio-sbs-2020-wedding-tv"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "namucheck:2021-02-21-radio-end",
+      "date": "2021-02-21",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라디오",
+      "subject": "신혜성 개인",
+      "title": "SBS 러브FM 《신혜성의 음악 오디세이》 마지막 방송",
+      "verification": "마지막 방송 다음날 사후 기사 확인",
+      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "sourceUrl": "https://www.newsis.com/view/NISX20210222_0001346899",
+      "referenceVideoUrl": null,
+      "sourceNote": "2021.02.22 뉴시스에서 전날 최종 방송 및 본인·소속사 마무리 소감 보도. 시작 2019.06.03 기존 기록은 유지.",
+      "dateKind": "실제 마지막 방송일",
+      "sourceRecord": "wiki-check:2021-02-21-radio-end",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "ns-odyssey-end21"
       ],
       "recordCount": 1
     }
@@ -47765,6 +48175,238 @@
       "url": "https://www.osen.co.kr/article/G1008300099",
       "kind": "당시보도",
       "note": "OSEN·스포츠경향 2010.08.30 사후 보도에서 실제 8월27~29일 개최 확인. 8월5일 연합뉴스 사전 예정일은 8월28~30일로 다르며 사후 기사 날짜 우선. 2박3일 행사 1건으로 표기."
+    },
+    {
+      "id": "press0709-source-1",
+      "publisher": "yule.sohu.com",
+      "title": "신혜성 정규 2집 발매 기념 팬사인회·악수회 예정 (서울)",
+      "url": "https://yule.sohu.com/20070912/n252110961.shtml",
+      "kind": "당시보도",
+      "note": "搜狐娱乐 / Mydaily 전재, 2007.09.12 예고 기사. 실제 개최 여부는 추가 확인 필요."
+    },
+    {
+      "id": "press0709-source-2",
+      "publisher": "ent.sina.com.cn",
+      "title": "신혜성 2집 특별판 기념 팬사인회 예정 (잠실)",
+      "url": "https://ent.sina.com.cn/y/2007-10-23/17071760781.shtml",
+      "kind": "당시보도",
+      "note": "新浪娱乐 / Mydaily 전재 2007.10.23. 잠실 음반매장 행사 예정. 개최 완료 보도는 미확인."
+    },
+    {
+      "id": "press0709-source-3",
+      "publisher": "yule.sohu.com",
+      "title": "신혜성 2집 특별판 기념 팬사인회 예정 (인천)",
+      "url": "https://yule.sohu.com/20071024/n252826477.shtml",
+      "kind": "당시보도",
+      "note": "搜狐娱乐 / Mydaily 전재 2007.10.24. 인천 음반매장 행사 예정. 개최 완료 보도는 미확인."
+    },
+    {
+      "id": "press0709-source-4",
+      "publisher": "www.yna.co.kr",
+      "title": "신혜성 일본 공식 팬클럽 Always HYESUNG 첫 행사, 도쿄 Zepp Tokyo (2회 예정)",
+      "url": "https://www.yna.co.kr/view/AKR20080910065900005",
+      "kind": "당시보도",
+      "note": "연합뉴스 2008.09.10 당시 사전 보도. 실제 개최 완료는 별도 검증 필요."
+    },
+    {
+      "id": "press0709-source-5",
+      "publisher": "v.daum.net",
+      "title": "신혜성 2008 LIVE TOUR SIDE 1 일본 오사카 공연 (후생연금회관)",
+      "url": "https://v.daum.net/v/M0LcVrosWD",
+      "kind": "당시보도",
+      "note": "아시아경제 2008.12.01 사후 보도: 11월 26일 오사카 후생연금회관 공연. 실제 개최 확인."
+    },
+    {
+      "id": "press0709-source-6",
+      "publisher": "v.daum.net",
+      "title": "신혜성 2008 LIVE TOUR SIDE 1 일본 나고야 공연 (센추리홀)",
+      "url": "https://v.daum.net/v/M0LcVrosWD",
+      "kind": "당시보도",
+      "note": "아시아경제 2008.12.01 사후 보도: 11월 28일 나고야 센추리홀 공연. 실제 개최 확인."
+    },
+    {
+      "id": "press0709-source-7",
+      "publisher": "v.daum.net",
+      "title": "신혜성 2008 LIVE TOUR SIDE 1 일본 도쿄 공연 (국제포럼 A홀)",
+      "url": "https://v.daum.net/v/M0LcVrosWD",
+      "kind": "당시보도",
+      "note": "아시아경제 2008.12.01 사후 보도: 도쿄 국제포럼 A홀 공연, 3개 도시 총 4회 공연."
+    },
+    {
+      "id": "press0709-source-8",
+      "publisher": "blog.udn.com",
+      "title": "신혜성 KEEP LEAVES 아시아 투어 대만 공연 (국립대만대학교 체육관)",
+      "url": "https://blog.udn.com/angelae43/3123692",
+      "kind": "당시보도",
+      "note": "2009.07.11 대만 현지 기자 張佳業의 공연 사후 기사 재게시. 7월 10일 공연, 22곡 및 Sorry Sorry 무대 확인. 원매체 URL 미확보."
+    },
+    {
+      "id": "ns-kbsaward",
+      "publisher": "동아일보",
+      "title": "2002 KBS 연예대상 라디오 MC 최우수상",
+      "url": "https://www.donga.com/news/article/all/20021229/7896733/9",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-ky-cf",
+      "publisher": "서울신문",
+      "title": "2004 금영 CF 계약 및 촬영 완료 보도",
+      "url": "https://en.seoul.co.kr/news/entertainment/2004/11/11/20041111600005",
+      "kind": "당시 기사(게시일 검토)",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-award08",
+      "publisher": "OSEN",
+      "title": "2008 아시아 모델 시상식 수상자 선정 및 시상식 일정",
+      "url": "https://www.osen.co.kr/article/G0801180037",
+      "kind": "당시 사전 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-award08-2",
+      "publisher": "아시아모델페스티벌",
+      "title": "Asia Model Awards 2008 공식 행사 날짜·장소",
+      "url": "https://amfoc.org/en/ama_2008/",
+      "kind": "행사 주최측 기록",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-model08",
+      "publisher": "아이뉴스24",
+      "title": "2008 Y BY CODES-COMBINE 모델 선정 보도",
+      "url": "https://inews24.com/view/307872",
+      "kind": "당시 보도",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-best10",
+      "publisher": "연합뉴스",
+      "title": "2010 신혜성 베스트·일본 정규 국내 라이선스 동시 발매 예고",
+      "url": "https://www.yna.co.kr/view/AKR20100709056700005",
+      "kind": "당시 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-best10-bugs",
+      "publisher": "벅스",
+      "title": "The Cycle: 2005-2009 음원 발매일",
+      "url": "https://music.bugs.co.kr/album/230291",
+      "kind": "음원 서비스 발매 DB",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-japan10-bugs",
+      "publisher": "벅스",
+      "title": "Find Voice In Song 국내 라이선스 발매일",
+      "url": "https://music.bugs.co.kr/album/230292",
+      "kind": "음원 서비스 발매 DB",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-dvd15",
+      "publisher": "엑스포츠뉴스",
+      "title": "2013 연말 콘서트 DVD 정식 출시 사후 기사",
+      "url": "https://www.xportsnews.com/article/649610",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-superidol15",
+      "publisher": "씨네21",
+      "title": "2015 슈퍼아이돌 시즌1 방송 기간과 신혜성 심사위원 출연",
+      "url": "https://cine21.com/tv/info/?tv_id=6428",
+      "kind": "방송 데이터베이스 원본",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-boys16",
+      "publisher": "전자신문",
+      "title": "소년24 신혜성·이민우 단장 참여 소속사 발표",
+      "url": "https://www.etnews.com/20160512000073",
+      "kind": "소속사 발표 인용 당시 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-odyssey-end21",
+      "publisher": "뉴시스",
+      "title": "2021-02-21 음악 오디세이 신혜성 DJ 마지막 방송 사후 보도",
+      "url": "https://www.newsis.com/view/NISX20210222_0001346899",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-odyssey-start19",
+      "publisher": "YTN",
+      "title": "SBS 2019-06-03 신혜성 음악 오디세이 첫방송 공식 발표",
+      "url": "https://www.ytn.co.kr/_ln/0117_201905271056552657",
+      "kind": "방송사 공식 발표 인용",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-solo05",
+      "publisher": "스타뉴스",
+      "title": "신혜성 2005년 5월 6일 솔로 1집 발매 사후 보도",
+      "url": "https://www.starnewskorea.com/music/2005/05/27/2005052709213774650",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-mcount05",
+      "publisher": "스포츠경향",
+      "title": "2005-05-26 엠카운트다운 같은 생각 1위 사후 보도",
+      "url": "https://sports.khan.co.kr/article/200505272029471",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-mkmf05",
+      "publisher": "스타뉴스",
+      "title": "2005 MKMF 신혜성 발라드 부문 수상자 목록",
+      "url": "https://www.starnewskorea.com/sports/2005/11/27/2005112721211309012",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-live08",
+      "publisher": "스포츠월드",
+      "title": "2008-10-18 LIVE AND LET LIVE 서울 콘서트 사후 기사",
+      "url": "https://www.sportsworldi.com/newsView/20081019001513",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-live08-2",
+      "publisher": "연합뉴스",
+      "title": "2008-10-18 신혜성 서울 공연 사전 보도",
+      "url": "https://www.yna.co.kr/view/AKR20080926054100005",
+      "kind": "당시 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-live12",
+      "publisher": "파이낸셜뉴스",
+      "title": "2012-12-30·31 신혜성 연말 콘서트 사후 기사 인용",
+      "url": "https://www.fnnews.com/news/201301140954494693",
+      "kind": "당시 사후 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-live13",
+      "publisher": "KBS WORLD",
+      "title": "2013-12-30·31 THE YEAR’S JOURNEY 사전 보도",
+      "url": "https://world.kbs.co.kr/service/contents_view.htm?board_code=music_news&board_seq=213070&id=&lang=k&menu_cate=enternews&page=1629",
+      "kind": "당시 사전 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "ns-weekly17",
+      "publisher": "스포츠동아",
+      "title": "2017 Weekly Serenity 9월9일~10월1일 공연 도중 기사",
+      "url": "https://sports.donga.com/ent/article/all/20170918/86377392/2",
+      "kind": "당시 진행중 공연 기사",
+      "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
     }
   ]
 }
