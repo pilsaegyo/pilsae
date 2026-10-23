@@ -34,6 +34,12 @@ function selectedDates(video) {
 // Match the CURRENT public video inventory, rather than relying on video IDs captured in an older patch.
 // Scores are transparent deterministic relevance points, NOT probabilities or verified identity.
 const rarePrograms=[
+ ['남희석의색다른밤',/남희석(?:의)?\s*색다른\s*밤|색다른\s*밤/i],
+ ['올스타가요제',/올\s*스타\s*가요제/i],
+ ['빅스타모창가요제',/빅\s*스타\s*모창\s*가요제/i],
+ ['감성채널21',/감성\s*채널\s*@?\s*21/i],
+ ['행복채널',/행복\s*채널/i],
+ ['한중가요제',/한\s*중\s*가요제/i],
  ['섹션TV',/섹션\s*(?:tv|연예\s*통신|연예통신|티비|신화)|section\s*tv/i],
  ['좋은친구들',/좋은\s*친구들/i],
  ['한밤의TV연예',/한밤의\s*(?:tv|티비)?\s*연예/i],
@@ -173,17 +179,27 @@ function rateVideo(e,video,meta){
    score=.73;reason='방송일·프로그램 일치 (무대/MC/다른 코너일 수 있음)';
  } else if(distinct && !['시상식','음반·발매'].includes(e.category)){
    score=.78;reason='고유 행사·콘텐츠 정보 일치';
+ } else if(!exact && programSame && rarePrograms.some(([name])=>name===p) && days<=2){
+   score=.72;reason='동일 고유 프로그램·근접 날짜 (날짜 불일치 검증 필요)';
  } else return null;
  // Date-only or generic artist terms can NEVER generate a candidate.
  if(!programSame&&!fanSame&&!distinct)return null;
  // On a different date, the SAME episode or uniquely numbered fanclub event is mandatory.
- if(!exact && !(episodeSame||fanSame))return null;
+ // Broadcasting schedules and archive clip captions may disagree by 1–2 days.
+ // Allow only a named, uncommon program on those nearby dates; never date-only matches.
+ const rareProgramMatch=programSame && rarePrograms.some(([name])=>name===p) && days<=2;
+ if(!exact && !(episodeSame||fanSame||rareProgramMatch))return null;
  if(!exact && days>3)return null;
+ if(!exact && rareProgramMatch && !episodeSame && !fanSame){
+   score=.72;
+   reason='동일 고유 프로그램·방송일 1~2일 차이 (날짜 불일치 검증 필요)';
+ }
  if(exact)score=Math.min(.99,score+.07);
+ else if(rareProgramMatch&&!episodeSame&&!fanSame)score=.72;
  else score=Math.min(.90,score+.01);
  score=Number(score.toFixed(2));if(score<.70)return null;
  const kind=sameBroadcastContent&&!episodeSame&&!songSame?'동일 방송일 참고영상':'관련 영상 후보';
- return {videoId:String(video.id),kind,score,reason:`${reason} · ${exact?'날짜 일치':`동일 행사 ${days}일 차이`} · ${meta.origin}`,reviewStatus:'candidate',dateGapDays:days};
+ return {videoId:String(video.id),kind,score,reason:`${reason} · ${exact?'날짜 일치':`날짜 ${days}일 차이, 동일 행사 미확정`} · ${meta.origin}`,reviewStatus:'candidate',dateGapDays:days};
 }
 function generateRuntimeRecommendations(videos){
  const byMonth=new Map(),stats={withSingleContentDate:0,matches:0,events:0};
