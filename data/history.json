@@ -18,11 +18,11 @@
       "chapter1": 707,
       "chapter2": 783,
       "chapter3": 544,
-      "chapter4": 58
+      "chapter4": 73
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2092,
+    "visibleEvents": 2107,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -459,6 +459,51 @@
         "2012-04 ROYGEN 계약 체결일 확인 불가"
       ],
       "notes": "신규 2건은 사전 예고 일정이며 실제 개최 사후 확증과 구별. 모든 기존 ID·외부 링크 유지."
+    },
+    "feeltube20261023": {
+      "baselineEvents": 2092,
+      "addedConfirmedEntries": 2,
+      "finalEvents": 2094,
+      "addedEventIds": [
+        "verified-feeltube:2020-05-03:channel-created",
+        "verified-feeltube:2020-05-08:first-broadcast"
+      ],
+      "sourceAuditAdded": 8,
+      "withheld": [
+        "2018-12-31 에릭 aguTV 단독 채널 개설(다른 멤버 솔로 활동 제외 원칙)",
+        "다른 에릭 개인 요리 및 가족 영상"
+      ],
+      "datePolicy": "유튜브 업로드일과 실제 방송·촬영일을 구분; 팬 편집 클립에 추가/설명 주석; 원본 전체 영상 목록 접근 미확보",
+      "chapterAudit": "전체 이벤트 날짜가 chapter start/end 범위 안인지 전수 검증",
+      "followup": "2020-05-10 합동 방송 및 2020-05-22 방송일은 FEEL TUBE 공식 채널 목록과 사용자 제공 자료로 확인해 본 후속 패치에서 등록됨."
+    },
+    "feeltubeLivestreams20261023": {
+      "baseEvents": 2094,
+      "newStreamEpisodes": 13,
+      "resultEvents": 2107,
+      "newIds": [
+        "verified-feeltube:2020-05-09:live-1st",
+        "verified-feeltube:2020-05-09:live-2nd",
+        "verified-feeltube:2020-05-10:live-1st",
+        "verified-feeltube:2020-05-10:live-2nd",
+        "verified-feeltube:2020-05-17:live-single",
+        "verified-feeltube:2020-05-22:live-single",
+        "verified-feeltube:2020-05-23:live-single",
+        "verified-feeltube:2020-08-24:live-single",
+        "verified-feeltube:2020-08-25:live-single",
+        "verified-feeltube:2020-09-04:live-1st",
+        "verified-feeltube:2020-09-04:live-2nd",
+        "verified-feeltube:2020-09-19:live-single",
+        "verified-feeltube:2020-10-02:live-single"
+      ],
+      "distinctBroadcastDays": 10,
+      "additionalAguTVVideosSameDay": 2,
+      "sourcePolicy": "Official FEEL TUBE stream index, plus original titles/times transcribed by user. Individual video watch URLs unavailable; use channel stream index instead.",
+      "doubleCountPolicy": "May 10 AguTV 2 clips link as evidence to FEEL TUBE 2 live events, no extra events until independent content/time verification.",
+      "previouslyDeferredNowVerified": [
+        "2020-05-10 1부/2부 합동 방송",
+        "2020-05-22 필튜브 라이브"
+      ]
     }
   },
   "chapters": [
@@ -575,28 +620,6 @@
   ],
   "events": [
     {
-      "id": "smcontract:1997-04-25:lee-minwoo",
-      "date": "1997-04-25",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "전속계약",
-      "subject": "이민우",
-      "title": "이민우 — SM엔터테인먼트 가수 전속계약 시작",
-      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
-      "source": "누적 조사 35시트 + 직접 검증 자료",
-      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "referenceVideoUrl": null,
-      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 이민우 시작일 1997-04-25, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
-      "dateKind": "공시 기재 개별 전속계약 시작일",
-      "sourceRecord": "1997_SM계약_공식공시",
-      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "sourceRefs": [
-        "cu23-source-168"
-      ],
-      "recordCount": 1
-    },
-    {
       "id": "smcontract:1997-04-25:eric-mun",
       "date": "1997-04-25",
       "precision": "day",
@@ -610,6 +633,28 @@
       "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
       "referenceVideoUrl": null,
       "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 에릭(문정혁) 시작일 1997-04-25, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
+      "dateKind": "공시 기재 개별 전속계약 시작일",
+      "sourceRecord": "1997_SM계약_공식공시",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "cu23-source-168"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "smcontract:1997-04-25:lee-minwoo",
+      "date": "1997-04-25",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "전속계약",
+      "subject": "이민우",
+      "title": "이민우 — SM엔터테인먼트 가수 전속계약 시작",
+      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 이민우 시작일 1997-04-25, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
       "dateKind": "공시 기재 개별 전속계약 시작일",
       "sourceRecord": "1997_SM계약_공식공시",
       "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
@@ -27426,26 +27471,6 @@
       "recordCount": 1
     },
     {
-      "id": "sheet:05!467",
-      "date": "2005-09-03",
-      "precision": "day",
-      "chapter": "chapter2",
-      "transition": "",
-      "category": "음악방송",
-      "subject": "신혜성 개인",
-      "title": "KM 쇼!뮤직탱크 <거울>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1451484454&range=A467:D467",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "05!467",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
       "id": "cu23:2005-09-03-minwoo-showcase",
       "date": "2005-09-03",
       "precision": "day",
@@ -27465,6 +27490,26 @@
       "sourceRefs": [
         "cu23-source-172"
       ],
+      "recordCount": 1
+    },
+    {
+      "id": "sheet:05!467",
+      "date": "2005-09-03",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신혜성 개인",
+      "title": "KM 쇼!뮤직탱크 <거울>",
+      "verification": "원본 기재·독립 검증 전",
+      "source": "첨부 엑셀",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1451484454&range=A467:D467",
+      "referenceVideoUrl": null,
+      "sourceNote": "",
+      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceRecord": "05!467",
+      "verificationUrl": null,
+      "sourceRefs": [],
       "recordCount": 1
     },
     {
@@ -29304,6 +29349,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:2006-08-16-special-edition",
+      "date": "2006-08-16",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신화 전체",
+      "title": "신화 정규 8집 Special Edition 국내판 발매",
+      "verification": "음반 유통사 발매 정보 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yes24.com/product/goods/2135400",
+      "referenceVideoUrl": null,
+      "sourceNote": "같은 날 일본 정규앨범 Inspiration #1 발매와 판본이 다름. 각각 독립 음반.",
+      "dateKind": "국내판 발매일(유통정보)",
+      "sourceRecord": "0507_통합패치_대상 BAI-011",
+      "verificationUrl": "https://www.yes24.com/product/goods/2135400",
+      "sourceRefs": [
+        "cu23-source-175"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "history:p0196",
       "date": "2006-08-16",
       "precision": "day",
@@ -29326,28 +29393,6 @@
       ],
       "recordCount": 1,
       "categoryOriginal": "음반"
-    },
-    {
-      "id": "cu23:2006-08-16-special-edition",
-      "date": "2006-08-16",
-      "precision": "day",
-      "chapter": "chapter2",
-      "transition": "",
-      "category": "음반·발매",
-      "subject": "신화 전체",
-      "title": "신화 정규 8집 Special Edition 국내판 발매",
-      "verification": "음반 유통사 발매 정보 확인",
-      "source": "누적 조사 35시트 + 직접 검증 자료",
-      "sourceUrl": "https://www.yes24.com/product/goods/2135400",
-      "referenceVideoUrl": null,
-      "sourceNote": "같은 날 일본 정규앨범 Inspiration #1 발매와 판본이 다름. 각각 독립 음반.",
-      "dateKind": "국내판 발매일(유통정보)",
-      "sourceRecord": "0507_통합패치_대상 BAI-011",
-      "verificationUrl": "https://www.yes24.com/product/goods/2135400",
-      "sourceRefs": [
-        "cu23-source-175"
-      ],
-      "recordCount": 1
     },
     {
       "id": "history:s052",
@@ -31858,28 +31903,6 @@
       "recordCount": 1
     },
     {
-      "id": "sheet:07!251",
-      "date": "2007-12-09",
-      "precision": "day",
-      "chapter": "chapter2",
-      "transition": "",
-      "category": "콘서트",
-      "subject": "신화 전체",
-      "title": "2007 JAPAN TOUR 'SHINHWA FOREVER' in 사이타마",
-      "verification": "당시 2007.12.09 사후 기사로 확인",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A251:D251",
-      "referenceVideoUrl": null,
-      "sourceNote": "2007.12.09 사이타마 공연. 기존 제목의 2009는 잘못된 연도(오기). 사후 보도 확인.",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "07!251",
-      "verificationUrl": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
-      "sourceRefs": [
-        "cu23-source-180"
-      ],
-      "recordCount": 1
-    },
-    {
       "id": "cu23:2007-12-09-saitama-press",
       "date": "2007-12-09",
       "precision": "day",
@@ -31898,6 +31921,28 @@
       "verificationUrl": "https://news.brokore.com/content_UTF/Read.jsp?num=5657",
       "sourceRefs": [
         "cu23-source-181"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "sheet:07!251",
+      "date": "2007-12-09",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신화 전체",
+      "title": "2007 JAPAN TOUR 'SHINHWA FOREVER' in 사이타마",
+      "verification": "당시 2007.12.09 사후 기사로 확인",
+      "source": "첨부 엑셀",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A251:D251",
+      "referenceVideoUrl": null,
+      "sourceNote": "2007.12.09 사이타마 공연. 기존 제목의 2009는 잘못된 연도(오기). 사후 보도 확인.",
+      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceRecord": "07!251",
+      "verificationUrl": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
+      "sourceRefs": [
+        "cu23-source-180"
       ],
       "recordCount": 1
     },
@@ -33634,26 +33679,6 @@
       "recordCount": 1
     },
     {
-      "id": "sheet:09!59",
-      "date": "2009-02-22",
-      "precision": "day",
-      "chapter": "chapter2",
-      "transition": "",
-      "category": "음악방송",
-      "subject": "신혜성 개인",
-      "title": "SBS 인기가요 E520 <왜 전화했어>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1950244371&range=A59:D59",
-      "referenceVideoUrl": "http://allvod.sbs.co.kr/allvod/vodEndPage.do?mdaId=22000006595&btn=free",
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "09!59",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
       "id": "cu23:audit-031",
       "date": "2009-02-22",
       "precision": "day",
@@ -33673,6 +33698,26 @@
       "sourceRefs": [
         "cu23-source-202"
       ],
+      "recordCount": 1
+    },
+    {
+      "id": "sheet:09!59",
+      "date": "2009-02-22",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신혜성 개인",
+      "title": "SBS 인기가요 E520 <왜 전화했어>",
+      "verification": "원본 기재·독립 검증 전",
+      "source": "첨부 엑셀",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1950244371&range=A59:D59",
+      "referenceVideoUrl": "http://allvod.sbs.co.kr/allvod/vodEndPage.do?mdaId=22000006595&btn=free",
+      "sourceNote": "",
+      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceRecord": "09!59",
+      "verificationUrl": null,
+      "sourceRefs": [],
       "recordCount": 1
     },
     {
@@ -34594,6 +34639,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:2010-02-24-collection2010",
+      "date": "2010-02-24",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 베스트 앨범 《Collection 2010 ~My Everything~》 발매",
+      "verification": "오리콘 유통정보·공식 음반사 안내의 일본 발매일 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.oricon.co.jp/prof/346620/products/853019/1/",
+      "referenceVideoUrl": null,
+      "sourceNote": "일본 정규 앨범 《Find Voice In Song》과 같은 날짜에 출시된 별도 베스트 음반. 일본반 TKCA-73514. 한국 2010.07.15 베스트 앨범과 판본·작품 구분.",
+      "dateKind": "일본 현지 음반 발매일",
+      "sourceRecord": "AUDIT0911-008 일본 2종 분리",
+      "verificationUrl": "https://www.oricon.co.jp/prof/346620/products/853019/1/",
+      "sourceRefs": [
+        "cu23-source-218"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "cu23:audit-008",
       "date": "2010-02-24",
       "precision": "day",
@@ -34613,28 +34680,6 @@
       "sourceRefs": [
         "cu23-source-190",
         "cu23-source-219"
-      ],
-      "recordCount": 1
-    },
-    {
-      "id": "cu23:2010-02-24-collection2010",
-      "date": "2010-02-24",
-      "precision": "day",
-      "chapter": "chapter2",
-      "transition": "",
-      "category": "음반·발매",
-      "subject": "신혜성 개인",
-      "title": "신혜성 일본 베스트 앨범 《Collection 2010 ~My Everything~》 발매",
-      "verification": "오리콘 유통정보·공식 음반사 안내의 일본 발매일 확인",
-      "source": "누적 조사 35시트 + 직접 검증 자료",
-      "sourceUrl": "https://www.oricon.co.jp/prof/346620/products/853019/1/",
-      "referenceVideoUrl": null,
-      "sourceNote": "일본 정규 앨범 《Find Voice In Song》과 같은 날짜에 출시된 별도 베스트 음반. 일본반 TKCA-73514. 한국 2010.07.15 베스트 앨범과 판본·작품 구분.",
-      "dateKind": "일본 현지 음반 발매일",
-      "sourceRecord": "AUDIT0911-008 일본 2종 분리",
-      "verificationUrl": "https://www.oricon.co.jp/prof/346620/products/853019/1/",
-      "sourceRefs": [
-        "cu23-source-218"
       ],
       "recordCount": 1
     },
@@ -48426,6 +48471,148 @@
       "recordCount": 1
     },
     {
+      "id": "verified-feeltube:2020-05-03:channel-created",
+      "date": "2020-05-03",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "개인 활동",
+      "subject": "신혜성",
+      "title": "신혜성 유튜브 채널 FEEL TUBE 개설",
+      "verification": "채널 메타데이터 개설일 확인 (최초 방송일과 구분)",
+      "source": "FEEL TUBE 채널·Social Blade·2020년 당시 팬 채널 목록",
+      "sourceUrl": "https://socialblade.com/youtube/handle/feeltube",
+      "referenceVideoUrl": null,
+      "sourceNote": "채널 생성일 2020.05.03은 Social Blade의 Created On 필드로 확인. 2020.05.11 당시 팬 커뮤니티에 신혜성의 FEEL TUBE 채널로 공유됨. 이 날짜를 첫 라이브 방송일·첫 동영상 업로드일로 기재하지 않음.",
+      "dateKind": "유튜브 채널 생성일",
+      "sourceRecord": "20261023_FEELTUBE_aguTV_교차검증",
+      "verificationUrl": "https://socialblade.com/youtube/handle/feeltube",
+      "sourceRefs": [
+        "ft26-socialblade-20200503",
+        "ft26-theqoo-channel-list",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-08:first-broadcast",
+      "date": "2020-05-08",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 첫 유튜브 스타크래프트 방송",
+      "verification": "2020년 당시 팬 게시물과 첫 방송 하이라이트 영상의 날짜 일치",
+      "source": "FEEL TUBE 당시 팬 게시물·유튜브 첫방송 아카이브",
+      "sourceUrl": "https://www.youtube.com/watch?v=syJ7mSwydxg",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=syJ7mSwydxg",
+      "sourceNote": "2020.05.08을 명시한 첫 방송 하이라이트 유튜브 영상과 당시 팬 기록으로 확인. 링크 영상은 공식 채널 라이브 전체본이 아닌 아카이브 클립. 영상의 업로드 날짜를 방송 날짜로 혼용하지 않음. 공식 첫 라이브 방송 전체 영상은 별도 확보 전.",
+      "dateKind": "유튜브 실시간 방송일(팬 영상·동시대 기록 교차)",
+      "sourceRecord": "20261023_FEELTUBE_aguTV_교차검증",
+      "verificationUrl": "https://www.youtube.com/watch?v=syJ7mSwydxg",
+      "sourceRefs": [
+        "ft26-youtube-20200508",
+        "ft26-twstalker-20200508",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-09:live-1st",
+      "date": "2020-05-09",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송 1부",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE님의 실시간 스트리밍 (2020.05.09/1st)”에 2020-05-09 방송일이 기재되어 있고, 재생 길이는 1:45:39. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-09:live-2nd",
+      "date": "2020-05-09",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송 2부",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE님의 실시간 스트리밍 (2020.05.09/2nd)”에 2020-05-09 방송일이 기재되어 있고, 재생 길이는 1:29:57. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-10:live-1st",
+      "date": "2020-05-10",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성·에릭·앤디",
+      "title": "FEEL TUBE × aguTV × 앤튜브 합동 라이브 1부",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록 / aguTV eric 2020.05.10 방송 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE 와 아구TV와 앤튜브 (2020.05.10/1st)”에 2020-05-10 방송일이 기재되어 있고, 재생 길이는 1:00:53. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음. aguTV eric 채널에도 같은 날 1부·후속 라이브 두 영상이 확인됨. 두 채널 영상의 동일 장면 여부는 직접 재생 검증 전이므로 동일 영상이라고 단정하지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official",
+        "ft26-agu-may10-lives"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-10:live-2nd",
+      "date": "2020-05-10",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성·에릭·앤디",
+      "title": "FEEL TUBE × aguTV × 앤튜브 합동 먹방 라이브 2부",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록 / aguTV eric 2020.05.10 방송 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE 와 아구TV와 앤튜브 2탄 먹방 (2020.05.10/2nd)”에 2020-05-10 방송일이 기재되어 있고, 재생 길이는 27:03. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음. aguTV eric 채널에도 같은 날 1부·후속 라이브 두 영상이 확인됨. 두 채널 영상의 동일 장면 여부는 직접 재생 검증 전이므로 동일 영상이라고 단정하지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official",
+        "ft26-agu-may10-lives"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:20!266",
       "date": "2020-05-15",
       "precision": "day",
@@ -48443,6 +48630,75 @@
       "sourceRecord": "20!266",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-17:live-single",
+      "date": "2020-05-17",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.05.17)”에 2020-05-17 방송일이 기재되어 있고, 재생 길이는 1:09:51. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-22:live-single",
+      "date": "2020-05-22",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.05.22)”에 2020-05-22 방송일이 기재되어 있고, 재생 길이는 4:15. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음. 앞선 조사에서는 방송일 불확실로 보류했으나 공식 FEEL TUBE 라이브 목록에서 날짜를 확인해 보류 해제. 영상 길이 4:15도 원본 기재 그대로 유지.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-05-23:live-single",
+      "date": "2020-05-23",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.05.23)”에 2020-05-23 방송일이 기재되어 있고, 재생 길이는 1:19:17. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
       "recordCount": 1
     },
     {
@@ -48464,6 +48720,144 @@
       "verificationUrl": null,
       "sourceRefs": [
         "radio-sbs-2020-junjin"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-08-24:live-single",
+      "date": "2020-08-24",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.08.24)”에 2020-08-24 방송일이 기재되어 있고, 재생 길이는 47:01. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-08-25:live-single",
+      "date": "2020-08-25",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.08.25)”에 2020-08-25 방송일이 기재되어 있고, 재생 길이는 7:47. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-09-04:live-1st",
+      "date": "2020-09-04",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송 1부",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.09.04/1st)”에 2020-09-04 방송일이 기재되어 있고, 재생 길이는 3:17:57. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-09-04:live-2nd",
+      "date": "2020-09-04",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송 2부",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.09.04/2nd)”에 2020-09-04 방송일이 기재되어 있고, 재생 길이는 37:03. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-09-19:live-single",
+      "date": "2020-09-19",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 라이브 방송",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “FEEL TUBE (2020.09.19)”에 2020-09-19 방송일이 기재되어 있고, 재생 길이는 1:54:33. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "verified-feeltube:2020-10-02:live-single",
+      "date": "2020-10-02",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신혜성",
+      "title": "신혜성 FEEL TUBE 추석맞이 윷놀이 라이브",
+      "verification": "유튜브 공식 채널 라이브 목록의 날짜·제목(사용자 전사 및 공개 검색 인덱스 교차)",
+      "source": "FEEL TUBE 공식 유튜브 라이브 목록",
+      "sourceUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "referenceVideoUrl": null,
+      "sourceNote": "FEEL TUBE 공식 채널 라이브 목록의 제목 “필튜브배 추석맞이 윷놀이한판 다덤벼! (2020.10.02)”에 2020-10-02 방송일이 기재되어 있고, 재생 길이는 1:32:57. 전체 라이브 목록은 공개 검색 인덱스와 사용자가 제공한 채널 목록으로 교차 대조. 영상 등록일/업로드일을 방송일로 치환하지 않음. 개별 영상 watch URL은 확인하지 못해 가짜 링크를 넣지 않음.",
+      "dateKind": "공식 유튜브 채널에 기재된 실시간 방송일",
+      "sourceRecord": "20261023_FEELTUBE_라이브13회_채널원문",
+      "verificationUrl": "https://www.youtube.com/@FEELTUBE/streams",
+      "sourceRefs": [
+        "ft26-original-streams-2020",
+        "ft26-yt-feeltube-official"
       ],
       "recordCount": 1
     },
@@ -50560,6 +50954,86 @@
       "url": "https://enter.etoday.co.kr/news/view/227525",
       "kind": "방송 당일 기사",
       "note": "2022.06.12 비공개 결혼식 촬영본의 2022.07.04 방송. 신혜성 축하 공연 참여로 표시하지 않음."
+    },
+    {
+      "id": "ft26-yt-feeltube-official",
+      "publisher": "FEEL TUBE",
+      "title": "신혜성 FEEL TUBE 유튜브 채널",
+      "url": "https://www.youtube.com/channel/UC7NDdeUnPM_ZevN9H2by0Zw",
+      "kind": "원본 채널",
+      "note": "2020년 5월 운영 채널 동일성 확인. 채널 화면에서 과거 전체 영상의 개별 게시일 직접 수집은 불가."
+    },
+    {
+      "id": "ft26-socialblade-20200503",
+      "publisher": "Social Blade",
+      "title": "FEEL TUBE 채널 개설일 2020-05-03",
+      "url": "https://socialblade.com/youtube/handle/feeltube",
+      "kind": "채널 메타데이터 (2차 집계)",
+      "note": "Created On May 3, 2020 표기. 유튜브 채널 생성일이며 최초 공개 동영상 업로드일/첫 라이브일과 다름."
+    },
+    {
+      "id": "ft26-youtube-20200508",
+      "publisher": "유튜브 아카이브",
+      "title": "FEEL TUBE 신혜성 첫 방송 (2020.05.08) 아카이브 클립",
+      "url": "https://www.youtube.com/watch?v=syJ7mSwydxg",
+      "kind": "방송명·날짜가 명시된 영상 (팬 아카이브)",
+      "note": "영상 제목에 방송 날짜 2020.05.08 명시. 공식 채널 원본 라이브 전체본 직접 열람은 미확보."
+    },
+    {
+      "id": "ft26-twstalker-20200508",
+      "publisher": "당시 팬 게시물 아카이브",
+      "title": "200508 신혜성 유튜브 FEEL TUBE 첫방송 하이라이트",
+      "url": "https://ww1.twstalker.com/sydney_toyou",
+      "kind": "2020년 팬 게시물 아카이브",
+      "note": "원 방송 시점에 게시된 팬 기록에 200508 및 첫 방송 명시. 팬 기록이므로 방송사 공식 확인과 구별."
+    },
+    {
+      "id": "ft26-theqoo-channel-list",
+      "publisher": "더쿠 신화 게시판",
+      "title": "2020.05.11 신화 SNS·유튜브 채널 목록",
+      "url": "https://theqoo.net/shinhwa/1407909745",
+      "kind": "2020년 당시 채널 링크 목록",
+      "note": "FEEL TUBE, aguTV eric의 정확한 채널 ID 제시. 채널의 개별 영상 날짜 확인 근거는 아님."
+    },
+    {
+      "id": "ft26-agu2018-press",
+      "publisher": "비즈한국",
+      "title": "에릭 유튜브 aguTV 2018.12.31 개설",
+      "url": "https://bizhankook.com/articles/17056.html",
+      "kind": "2019.01.25 동시대 기사",
+      "note": "2018.12.31 개설 날짜 확인. 에릭 단독 개인 활동이므로 본 연혁의 다른 멤버 개인활동 제외 원칙상 미등록."
+    },
+    {
+      "id": "ft26-wkorea2019",
+      "publisher": "W Korea",
+      "title": "에릭 aguTV 개설 및 요리 영상 소개",
+      "url": "https://www.wkorea.com/2019/01/26/%EC%9C%A0%ED%8A%9C%EB%B8%8C%EB%A1%9C-%EA%B0%84-%EC%8A%A4%ED%83%80%EB%93%A4/",
+      "kind": "2019.01.26 동시대 기사",
+      "note": "에릭 채널 운영 사실 교차 확인. 단독 요리영상은 사이트 연표 제외."
+    },
+    {
+      "id": "ft26-dated-fan-20200522",
+      "publisher": "신혜성 위키 및 후대 기록",
+      "title": "2020.05.22 FEEL TUBE 스타크래프트 팬 대결 언급",
+      "url": "https://namu.moe/w/%EC%8B%A0%ED%98%9C%EC%84%B1",
+      "kind": "후대 2차 편찬",
+      "note": "5월 22일 방송 대결 서술. 당일 원본 영상·공식 채널 영상의 실제 방송 날짜 독립 확인 못해 사이트 미등록."
+    },
+    {
+      "id": "ft26-original-streams-2020",
+      "publisher": "FEEL TUBE (신혜성 공식 유튜브 채널)",
+      "title": "FEEL TUBE Live streaming 보관함 — 2020.05.09~2020.10.02 13개 영상",
+      "url": "https://www.youtube.com/@FEELTUBE/streams",
+      "kind": "공식 채널 1차 기록 및 사용자 제공 채널 영상목록",
+      "note": "공식 채널 검색 인덱스의 제목·방송일 대조. 사용자 제공 원본 목록에 기재된 각각의 재생 시간 포함. 개별 watch URL/영상 ID는 접근 제한으로 확보하지 못함."
+    },
+    {
+      "id": "ft26-agu-may10-lives",
+      "publisher": "aguTV eric (에릭 유튜브 채널)",
+      "title": "2020.05.10 #GoPro 라이브: 필튜브 방문 1부·신창과의 전쟁 그후",
+      "url": "https://www.youtube.com/@aguTVeric/streams",
+      "kind": "사용자 제공 공식 채널 제목·실시간 스트리밍 시작일",
+      "note": "2020.05.10 2개 영상의 제목·방송 시작 날짜가 사용자 제공 원본 목록에 기재. FEEL TUBE 동일 날짜 합동 방송과 내용이 중복될 가능성이 높아 별개 연표 일정으로 중복 추가하지 않고 교차 보조자료로 관리."
     }
   ]
 }
