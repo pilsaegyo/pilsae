@@ -4,7 +4,7 @@
     "updated": "2026-10-23",
     "description": "원본 기록 보존형 신화·신혜성 연표. 출처 호버/클릭 공개, 미확인 기록은 미확인으로 표시. 1996.04 확증 없는 합류와 2004.05.21 미확인 발매 주장 공개 연표 제외.",
     "inputRows": 2071,
-    "newIndependentlySourcedEvents": 6,
+    "newIndependentlySourcedEvents": 7,
     "dateRule": "원문 연월일 유지. 월만 아는 항목은 day가 아닌 month로 표시.",
     "subjectRule": "신화 전체 또는 신혜성 참여 활동만; 타 멤버 단독 활동 제외",
     "videoRule": "사전 저장된 videoId 12개만 사용하던 방식에서 현재 업로드된 YouTube 목록을 읽어 실시간 재평가. 날짜 없는 영상, 여러 일자 편집본, 연월 불일치, 확실한 프로그램/회차 불일치, 일반 음반 발매일과 방송 공연 클립 매칭은 제외.",
@@ -17,12 +17,12 @@
     "chapterCounts": {
       "chapter1": 698,
       "chapter2": 711,
-      "chapter3": 525,
+      "chapter3": 526,
       "chapter4": 55
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 1989,
+    "visibleEvents": 1990,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -411,6 +411,29 @@
       ],
       "evidenceLevels": "공식 방송사 사후 확인 / 공식 사전 편성 예정 / 당시 기사 사후 확인 / 당시 기사 사전 예고 / 2차 날짜 편찬 자료를 구분",
       "videomatcher": "UI·기존 영상 데이터/추천 코드는 변경하지 않음."
+    },
+    "postSbsFollowupAudit20261023": {
+      "base": "pilsae-main (1).zip / data/history.json (1989 events)",
+      "addedEvents": [
+        "post-sbs-20130420-roygen-fansign"
+      ],
+      "supplementedEventIds": [
+        "history:p0079"
+      ],
+      "addedResearchSourceIds": [
+        "post-sbs-edaily-frj-20020517",
+        "post-sbs-newsen-roygen-20130420"
+      ],
+      "withheldUnverified": [
+        "2002-07-13 청주 FRJ",
+        "2002-08-26 FRJ 캠페인 기사",
+        "2003-12-17 STORM 전속모델 기사",
+        "2007-01-10 울산 FRJ",
+        "2007-01-13 포항 FRJ",
+        "2007-01-24 FRJ 기사 표시날짜",
+        "2001-08-18 마산 FRJ 중복/원문"
+      ],
+      "note": "2006~2007 FRJ 신화 모델 활동을 확인 사실로 신설하지 않음. 재등록 기사 원발행일 미확정."
     }
   },
   "chapters": [
@@ -9951,13 +9974,14 @@
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | 후속 근거: 이데일리 2002-05-17 보도에서 FRJ 광고 재계약을 언급. 2001-06 최초 계약월을 입증하는 자료는 아니며, 2002-05-17 역시 계약 체결일이 아닌 기사 발행일.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0079",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "post-sbs-edaily-frj-20020517"
       ],
       "recordCount": 1
     },
@@ -36421,6 +36445,28 @@
       "recordCount": 1
     },
     {
+      "id": "post-sbs-20130420-roygen-fansign",
+      "date": "2013-04-20",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬사인회",
+      "subject": "신화 일부 멤버(에릭·이민우·신혜성)",
+      "title": "로이젠 팬사인회 (김포공항 아울렛, 에릭·이민우·신혜성)",
+      "verification": "2013-04-20 뉴스엔 현장 기사 확인",
+      "source": "뉴스엔 이지숙 기자 (2013-04-20 15:46)",
+      "sourceUrl": "https://news.nate.com/view/20130420n08485",
+      "referenceVideoUrl": null,
+      "sourceNote": "2013년 4월 20일 오후 3시 서울 강서구 방화동 김포공항 아울렛에서 진행. 현장 기사에 에릭·이민우·신혜성 참석 명시. 그룹 전원 참여 행사는 아님.",
+      "dateKind": "행사일(당일 현장 보도)",
+      "sourceRecord": "post-sbs-frj-roygen-audit-2026-10-23",
+      "verificationUrl": "https://news.nate.com/view/20130420n08485",
+      "sourceRefs": [
+        "post-sbs-newsen-roygen-20130420"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:13!106",
       "date": "2013-04-21",
       "precision": "day",
@@ -47276,6 +47322,22 @@
       "url": "https://www.fnnews.com/news/202010200010001566",
       "kind": "방송 후 보도",
       "note": "2020.10.19 방송 시점(2020.09.27 실제 개인 행사일과 구분). 개인 결혼식 새 일정으로 증식하지 않음."
+    },
+    {
+      "id": "post-sbs-edaily-frj-20020517",
+      "publisher": "이데일리",
+      "title": "(증시재료)수급상황 호전vs수출회복지연 우려 — 신화 FRJ 광고 재계약 언급",
+      "url": "https://www.edaily.co.kr/News/Read?mediaCodeNo=257&newsId=01800726566729904",
+      "kind": "동시대 기사(종목뉴스 단신)",
+      "note": "2002-05-17 발행. FRJ 재계약 보도 사실만 확인되며 실제 계약일은 확인되지 않음."
+    },
+    {
+      "id": "post-sbs-newsen-roygen-20130420",
+      "publisher": "뉴스엔(네이트 전재)",
+      "title": "[포토엔]신화 신혜성-이민우-에릭 팬사인회로 팬들 만나요",
+      "url": "https://news.nate.com/view/20130420n08485",
+      "kind": "당일 행사 현장 보도",
+      "note": "2013-04-20 15:00 김포공항 아울렛. 참석 에릭·이민우·신혜성 명시."
     }
   ]
 }
