@@ -159,8 +159,102 @@ function removeHashtagsFromDescription(text="") {
 }
 
 function extractDatesFromText(text="") {
-  // Use precisely the same extraction rules as the activity history page.
-  return window.ArchiveDateRules.extractDatesFromText(text);
+  const input = String(text || "");
+  const found = [];
+
+  const addDay = (y, m, d) => {
+    y = Number(y); m = Number(m); d = Number(d);
+    if (!isValidDate(y, m, d)) return;
+    pushUniqueDate(found, {
+      sourceDate: `${y}-${pad2(m)}-${pad2(d)}`,
+      source: "",
+      precision: "day",
+      inferred: false
+    });
+  };
+
+  const addMonth = (y, m) => {
+    y = Number(y); m = Number(m);
+    if (y < 1900 || y > 2099 || m < 1 || m > 12) return;
+    pushUniqueDate(found, {
+      sourceDate: `${y}-${pad2(m)}-01`,
+      source: "",
+      precision: "month",
+      inferred: true
+    });
+  };
+
+  const addYear = (y) => {
+    y = Number(y);
+    if (y < 1900 || y > 2099) return;
+    pushUniqueDate(found, {
+      sourceDate: `${y}-01-01`,
+      source: "",
+      precision: "year",
+      inferred: true
+    });
+  };
+
+  // 1) YYYY년 M월 D일
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월\s*(\d{1,2})\s*일/g)) {
+    addDay(m[1], m[2], m[3]);
+  }
+
+  // 2) YYYY.MM.DD / YYYY-MM-DD / YYYY/MM/DD
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})(?!\d)/g)) {
+    addDay(m[1], m[2], m[3]);
+  }
+
+  // 3) YY.MM.DD / YY-MM-DD / YY/MM/DD e.g. 08.11.08 => 2008-11-08
+  for (const m of input.matchAll(/(?<!\d)(\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})(?!\d)/g)) {
+    addDay(normalizeTwoDigitYear(m[1]), m[2], m[3]);
+  }
+
+  // 4) YYYYMMDD
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})(\d{2})(\d{2})(?!\d)/g)) {
+    addDay(m[1], m[2], m[3]);
+  }
+
+  // 5) YYMMDD e.g. 150227, 010826, 981025
+  for (const m of input.matchAll(/(?<!\d)(\d{2})(\d{2})(\d{2})(?!\d)/g)) {
+    const y = normalizeTwoDigitYear(m[1]);
+    addDay(y, m[2], m[3]);
+  }
+
+  // 6) YYYY년 M월
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년\s*(\d{1,2})\s*월(?!\s*\d+\s*일)/g)) {
+    addMonth(m[1], m[2]);
+  }
+
+  // 7) YYYY.MM / YYYY-MM / YYYY/MM
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})[.\-/](\d{1,2})(?![.\-/]\d|\d)/g)) {
+    addMonth(m[1], m[2]);
+  }
+
+  // 8) YYYY년 / YYYY년도
+  for (const m of input.matchAll(/(?<!\d)((?:19|20)\d{2})\s*년(?:도)?(?!\s*\d+\s*월)/g)) {
+    addYear(m[1]);
+  }
+
+
+// Same-line day list: `990815, 0822, 0829 인기가요`.
+// Only borrow the explicit first date's YEAR, never an upload year, and
+// never assign a missing date from another line or video title.
+for (const line of input.split(/\r?\n/)) {
+  const groups=line.matchAll(/(?<!\d)((?:19|20)\d{6}|\d{6})((?:\s*[,，/&+]\s*(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))+)(?!\d)/g);
+  for (const group of groups) {
+    const initial=group[1];
+    const year=initial.length===8?Number(initial.slice(0,4)):normalizeTwoDigitYear(initial.slice(0,2));
+    const firstMonth=Number(initial.slice(-4,-2));
+    const firstDay=Number(initial.slice(-2));
+    if (!isValidDate(year,firstMonth,firstDay)) continue;
+    for(const dayToken of group[2].split(/[,，/&+]/).map(s=>s.trim()).filter(Boolean)) {
+      const month=Number(dayToken.slice(0,2)),day=Number(dayToken.slice(-2));
+      if(isValidDate(year,month,day)) addDay(year,month,day);
+    }
+  }
+}
+  return found;
 }
 
 function extractReviewDateCandidates(title="", description="", ignored=[]) {

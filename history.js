@@ -123,6 +123,24 @@ const HistoryArchiveDates = (() => {
       addYear(m[1]);
     }
   
+
+  // Same-line day list: `990815, 0822, 0829 인기가요`.
+  // Only borrow the explicit first date's YEAR, never an upload year, and
+  // never assign a missing date from another line or video title.
+  for (const line of input.split(/\r?\n/)) {
+    const groups=line.matchAll(/(?<!\d)((?:19|20)\d{6}|\d{6})((?:\s*[,，/&+]\s*(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))+)(?!\d)/g);
+    for (const group of groups) {
+      const initial=group[1];
+      const year=initial.length===8?Number(initial.slice(0,4)):normalizeTwoDigitYear(initial.slice(0,2));
+      const firstMonth=Number(initial.slice(-4,-2));
+      const firstDay=Number(initial.slice(-2));
+      if (!isValidDate(year,firstMonth,firstDay)) continue;
+      for(const dayToken of group[2].split(/[,，/&+]/).map(s=>s.trim()).filter(Boolean)) {
+        const month=Number(dayToken.slice(0,2)),day=Number(dayToken.slice(-2));
+        if(isValidDate(year,month,day)) addDay(year,month,day);
+      }
+    }
+  }
     return found;
   }
   return Object.freeze({extractDatesFromText, removeHashtagsFromDescription});
@@ -190,6 +208,14 @@ const rarePrograms=[
  ['와이드연예뉴스',/와이드\s*(?:연예)?\s*뉴스|wide\s*news/i],
  ['최정원의감성시대',/최정원(?:의)?\s*감성\s*시대/i],
  ['퀴즈육감대결',/퀴즈!?\s*육감\s*대결|퀴즈\s*육감대결/i],
+ ['텐텐클럽',/텐\s*텐\s*클럽/i],
+ ['기쁜우리젊은날',/기쁜\s*우리\s*젊은\s*날/i],
+ ['별이빛나는밤에',/별이\s*빛나는\s*밤에|별밤/i],
+ ['슈퍼스테이션',/서세원의?\s*슈퍼스테이션|슈퍼스테이션/i],
+ ['스타챔피언',/스타\s*!?\s*챔피언/i],
+ ['뮤직플러스',/뮤직\s*플러스|music\s*plus/i],
+ ['쇼킹엠',/쇼킹\s*엠|show\s*king\s*m/i],
+ ['육감대결',/육감\s*대결/i],
  ['가요대전',/가요\s*대전/i]
 ];
 const commonPrograms=[
@@ -327,7 +353,25 @@ function datedSegments(video){
  const segments=sourceHasDates?source:description;
  const dateR=/(?<!\d)(?:((?:19|20)\d{2})\s*년\s*\d{1,2}\s*월\s*\d{1,2}\s*일|(?:19|20)\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|(?:19|20)\d{6}|\d{6})(?!\d)/g;
  const results=new Map();
- for(const line of segments.split(/\r?\n/)){
+ for(const rawLine of segments.split(/\r?\n/)){
+  // Audio montages use playback timestamps before the original broadcast date.
+  const line=rawLine.replace(/^\s*(?:[-*•]\s*)?\d{1,2}:\d{2}(?::\d{2})?\s+/,'').trim();
+  // Comma-separated lists share the trailing programme title:
+  // `990815, 0822, 0829 인기가요` / `990704, 990711 인기가요`.
+  const grouped=line.match(/^\s*(?:[-*•]\s*)?((?:(?:19|20)\d{6}|\d{6})(?:\s*[,，/&+]\s*(?:(?:19|20)\d{6}|\d{6}|\d{4}))+)(?:\s+)(.+)$/);
+  if(grouped){
+   const dated=dateStringsFromText(grouped[1]);
+   const context=grouped[2].trim();
+   const program=detectProgram(context),keys=namedActivityTokens(context);
+   if(dated.length>=2&&(program||keys.size))for(const day of dated){
+    if(!days.includes(day))continue;
+    const meta={date:day,origin:'영상 설명 같은 연도 날짜 목록',multiDate:true,content:context,
+     program,episode:epNum(context),fanclub:fanclubNum(context),song:exactSong(context),
+     compact:compactWords(context),title:video.title,labels:contentLabels(context)};
+    results.set(day,meta);
+   }
+   continue;
+  }
   // In descriptions, exclude incidental dates inside narrative or citations;
   // recognise only source lists with the date first on its own line.
   if(!sourceHasDates&&!/^\s*(?:[-*•]\s*)?(?:(?:19|20)\d{2}\s*년\s*\d{1,2}\s*월\s*\d{1,2}\s*일|(?:19|20)\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|(?:19|20)\d{6}|\d{6})(?!\d)/.test(line))continue;
@@ -441,8 +485,26 @@ function generateRuntimeRecommendations(videos){
   for(const r of a.sort((a,b)=>b.score-a.score||a.dateGapDays-b.dateGapDays)){
    if(ids.has(r.videoId))continue;ids.add(r.videoId);selected.push(r);if(selected.length>=8)break;
   }
-  e.relatedVideos=selected;
-  if(selected.length){stats.events++;stats.matches+=selected.length;}
+  // Preserve links reviewed from source-description dates and show names.
+  // These identifiers originate only in data/history.json and must still
+  // exist in the current archive's video list before a link can be shown.
+  const approved=[];
+  for(const id of e.archiveVideoIds||[]){
+   const video=videoById.get(String(id));
+   if(!video||!isSafeUrl(ytUrl(video)))continue;
+   const existing=selected.find(r=>r.videoId===String(id));
+   if(existing){
+    existing.archiveMapped=true;
+    existing.kind='아카이브 출처 연결';
+    existing.reason='영상 설명에 적힌 날짜·활동명 기준 연결 · 별도 방송 영상 검증 전';
+    approved.push(existing);
+   }else approved.push({videoId:String(id),kind:'아카이브 출처 연결',score:.85,
+    reason:'영상 설명에 적힌 날짜·활동명 기준 연결 · 별도 방송 영상 검증 전',
+    reviewStatus:'candidate',dateGapDays:0,archiveMapped:true});
+  }
+  const ordered=[...approved,...selected.filter(r=>!approved.some(a=>a.videoId===r.videoId))];
+  e.relatedVideos=ordered.slice(0,12);
+  if(e.relatedVideos.length){stats.events++;stats.matches+=e.relatedVideos.length;}
  }
  return stats;
 }
@@ -501,8 +563,9 @@ function recommendedLinks(e){
      const url=ytUrl(video);
      if(!isSafeUrl(url))return '';
      const percent=Math.round(Number(r.score)*100);
+     const archiveTag=r.archiveMapped?' [아카이브 날짜·활동명 연결 · 장면 검증 전]':'';
      const caution=r.reason.includes('편집영상')?' [편집영상 · 장면 확인 필요]':(r.dateGapDays||r.reason.includes('회차 표기 불일치')||r.reason.includes('아카이브 날짜 미확인'))?' [날짜·회차 확인 필요]':'';
-     return `<a class="candidate" href="${safe(url)}" target="_blank" rel="noopener noreferrer" title="규칙 기반 연관도 ${percent}점 · ${safe(r.reason)} · 동일 영상 검증 완료를 의미하지 않음">▶ ${safe(video.title||'관련 영상')}${safe(caution)} <small>연관도 ${percent}점</small></a>`;
+     return `<a class="candidate" href="${safe(url)}" target="_blank" rel="noopener noreferrer" title="${safe(r.reason)} · 영상 설명이 실제 방송일을 독립 증명하는 것은 아님">▶ ${safe(video.title||'관련 영상')}${archiveTag||safe(caution)} <small>${r.archiveMapped?'보유 아카이브':`연관도 ${percent}점`}</small></a>`;
    }).filter(Boolean);
 }
 function fmt(e){
