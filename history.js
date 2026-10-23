@@ -189,6 +189,7 @@ const rarePrograms=[
  ['소년24',/소년\s*24|boys\s*24/i],
  ['와이드연예뉴스',/와이드\s*(?:연예)?\s*뉴스|wide\s*news/i],
  ['최정원의감성시대',/최정원(?:의)?\s*감성\s*시대/i],
+ ['퀴즈육감대결',/퀴즈!?\s*육감\s*대결|퀴즈\s*육감대결/i],
  ['가요대전',/가요\s*대전/i]
 ];
 const commonPrograms=[
@@ -234,7 +235,7 @@ function locationTokens(text){
  for(const [city,re] of [['상하이',/상하이|shanghai/i],['베이징',/베이징|beijing/i],['서울',/서울|seoul/i],['부산',/부산|busan/i],['도쿄',/도쿄|tokyo|東京/i],['나고야',/나고야|nagoya/i],['타이베이',/타이베이|taipei/i]]) if(re.test(t))found.push(city);
  return found;
 }
-function epNum(s){const m=String(s||'').match(/(?:\bep(?:isode)?\.?\s*|\bE\s*|제\s*)(\d{1,4})(?:\s*회|\b)/i);return m?Number(m[1]):null;}
+function epNum(s){const m=String(s||'').match(/(?:\bep(?:isode)?\.?\s*|\bE\s*|제\s*)(\d{1,4})(?:\s*회|\b)|\b(\d{1,4})\s*회(?!\d)/i);return m?Number(m[1]||m[2]):null;}
 function fanclubNum(s){const m=normalizedWords(s).match(/신화\s*창조\s*(\d+)\s*기/);return m?Number(m[1]):null;}
 function exactSong(s){
  const t=normalizedWords(s);
@@ -317,14 +318,19 @@ function datedSegments(video){
  const description=HistoryArchiveDates.removeHashtagsFromDescription(video.description||'').replace(/https?:\/\/\S+/g,' ');
  const days=dateStringsFromText(description);
  if(days.length<2)return [];
- // Attribution, timecode lists and external credits in the full description can
- // contain dates from completely different performances. Match only the saved
- // original SOURCE line(s), not arbitrary dates appearing elsewhere in text.
- const source=String(video.source||originalTitleLine(video)||'');
- if(!dateStringsFromText(source).length)return [];
+ // Prefer a separately curated source with dated programme segments when available.
+ // For compilations whose source is just the uploader/channel name, accept only
+ // description lines that BEGIN with a valid date and name a recognisable show.
+ // These are references to an excerpt in a montage, not independently verified videos.
+ const source=String(video.source||'');
+ const sourceHasDates=dateStringsFromText(source).length>0;
+ const segments=sourceHasDates?source:description;
  const dateR=/(?<!\d)(?:((?:19|20)\d{2})\s*년\s*\d{1,2}\s*월\s*\d{1,2}\s*일|(?:19|20)\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|(?:19|20)\d{6}|\d{6})(?!\d)/g;
  const results=new Map();
- for(const line of source.split(/\r?\n/)){
+ for(const line of segments.split(/\r?\n/)){
+  // In descriptions, exclude incidental dates inside narrative or citations;
+  // recognise only source lists with the date first on its own line.
+  if(!sourceHasDates&&!/^\s*(?:[-*•]\s*)?(?:(?:19|20)\d{2}\s*년\s*\d{1,2}\s*월\s*\d{1,2}\s*일|(?:19|20)\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|\d{2}[.\-/]\d{1,2}[.\-/]\d{1,2}|(?:19|20)\d{6}|\d{6})(?!\d)/.test(line))continue;
   const matches=[...line.matchAll(dateR)];
   for(let i=0;i<matches.length;i++){
    const match=matches[i],day=dateStringsFromText(match[0])[0];
@@ -339,7 +345,7 @@ function datedSegments(video){
    const keys=namedActivityTokens(context);
    const labels=contentLabels(context);
    if(!program&&!keys.size)continue;
-   const meta={date:day,origin:'설명에 명시된 복수 날짜',multiDate:true,content:context,
+   const meta={date:day,origin:sourceHasDates?'원본 출처 날짜별 내용':'설명 내 날짜별 장면 표기',multiDate:true,content:context,
     program,episode:epNum(context),fanclub:fanclubNum(context),song:exactSong(context),
     compact:compactWords(context),title:video.title,labels};
    if(!results.has(day)||context.length>results.get(day).content.length)results.set(day,meta);
@@ -409,7 +415,7 @@ function rateVideo(e,video,meta){
  let reason=episodeSame?'프로그램·날짜·회차 일치':songSame?'프로그램·날짜·곡명 일치':showMatch?'영상 출처·공연명 일치':'고유 콘텐츠명 일치';
  if(epConflict)reason+=` · 회차 표기 불일치(연표 ${n} / 영상 ${meta.episode})`;
  if(!exact)reason+=` · 날짜 ${days}일 차이(동일 방송 미확정, 확인 필요)`;
- if(meta.multiDate)reason+=' · 여러 날짜가 포함된 편집영상, 해당 장면 확인 필요';
+ if(meta.multiDate)reason+=' · 편집영상 설명의 날짜별 장면 표기, 실제 장면 확인 필요';
  return {videoId:String(video.id),kind:!exact||epConflict?'검토 필요 추천영상':'관련 영상 후보',score,reason:reason+' · '+meta.origin,reviewStatus:'candidate',dateGapDays:days};
 }
 function generateRuntimeRecommendations(videos){
