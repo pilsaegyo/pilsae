@@ -4,7 +4,7 @@
     "updated": "2026-10-23",
     "description": "원본 기록 보존형 신화·신혜성 연표. 출처 호버/클릭 공개, 미확인 기록은 미확인으로 표시. 1996.04 확증 없는 합류와 2004.05.21 미확인 발매 주장 공개 연표 제외.",
     "inputRows": 2071,
-    "newIndependentlySourcedEvents": 7,
+    "newIndependentlySourcedEvents": 63,
     "dateRule": "원문 연월일 유지. 월만 아는 항목은 day가 아닌 month로 표시.",
     "subjectRule": "신화 전체 또는 신혜성 참여 활동만; 타 멤버 단독 활동 제외",
     "videoRule": "사전 저장된 videoId 12개만 사용하던 방식에서 현재 업로드된 YouTube 목록을 읽어 실시간 재평가. 날짜 없는 영상, 여러 일자 편집본, 연월 불일치, 확실한 프로그램/회차 불일치, 일반 음반 발매일과 방송 공연 클립 매칭은 제외.",
@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 701,
-      "chapter2": 727,
-      "chapter3": 536,
-      "chapter4": 57
+      "chapter1": 707,
+      "chapter2": 775,
+      "chapter3": 551,
+      "chapter4": 59
     },
-    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음.",
+    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2021,
+    "visibleEvents": 2092,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -496,7 +496,7 @@
       "id": "chapter4",
       "number": 4,
       "title": "2019년 ~ 현재",
-      "subtitle": "2019~현재 · 보유 데이터는 2020년까지",
+      "subtitle": "2019~현재 · 보유 자료는 2022년까지 포함",
       "start": "2019-01-01",
       "end": null,
       "range": "2019.01.01 ~ 현재",
@@ -575,6 +575,116 @@
   ],
   "events": [
     {
+      "id": "smcontract:1997-04-25:lee-minwoo",
+      "date": "1997-04-25",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "전속계약",
+      "subject": "이민우",
+      "title": "이민우 — SM엔터테인먼트 가수 전속계약 시작",
+      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 이민우 시작일 1997-04-25, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
+      "dateKind": "공시 기재 개별 전속계약 시작일",
+      "sourceRecord": "1997_SM계약_공식공시",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "cu23-source-168"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "smcontract:1997-04-25:eric-mun",
+      "date": "1997-04-25",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "전속계약",
+      "subject": "에릭(문정혁)",
+      "title": "에릭(문정혁) — SM엔터테인먼트 가수 전속계약 시작",
+      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 에릭(문정혁) 시작일 1997-04-25, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
+      "dateKind": "공시 기재 개별 전속계약 시작일",
+      "sourceRecord": "1997_SM계약_공식공시",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "cu23-source-168"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "smcontract:1997-04-30:shin-hyesung",
+      "date": "1997-04-30",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "전속계약",
+      "subject": "신혜성(정필교)",
+      "title": "신혜성(정필교) — SM엔터테인먼트 가수 전속계약 시작",
+      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 신혜성(정필교) 시작일 1997-04-30, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
+      "dateKind": "공시 기재 개별 전속계약 시작일",
+      "sourceRecord": "1997_SM계약_공식공시",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "cu23-source-168"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "smcontract:1997-07-05:andy-lee",
+      "date": "1997-07-05",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "전속계약",
+      "subject": "앤디(이선호)",
+      "title": "앤디(이선호) — SM엔터테인먼트 가수 전속계약 시작",
+      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 앤디(이선호) 시작일 1997-07-05, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
+      "dateKind": "공시 기재 개별 전속계약 시작일",
+      "sourceRecord": "1997_SM계약_공식공시",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "cu23-source-168"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "smcontract:1997-07-17:jun-jin",
+      "date": "1997-07-17",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "전속계약",
+      "subject": "전진(박충재)",
+      "title": "전진(박충재) — SM엔터테인먼트 가수 전속계약 시작",
+      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 전진(박충재) 시작일 1997-07-17, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
+      "dateKind": "공시 기재 개별 전속계약 시작일",
+      "sourceRecord": "1997_SM계약_공식공시",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "cu23-source-168"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "history:p0005",
       "date": "1997-08-01",
       "precision": "month",
@@ -621,6 +731,28 @@
       ],
       "recordCount": 1,
       "categoryOriginal": "데뷔준비"
+    },
+    {
+      "id": "smcontract:1997-11-01:kim-dongwan",
+      "date": "1997-11-01",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "전속계약",
+      "subject": "김동완",
+      "title": "김동완 — SM엔터테인먼트 가수 전속계약 시작",
+      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 김동완 시작일 1997-11-01, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
+      "dateKind": "공시 기재 개별 전속계약 시작일",
+      "sourceRecord": "1997_SM계약_공식공시",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "cu23-source-168"
+      ],
+      "recordCount": 1
     },
     {
       "id": "history:p0006",
@@ -17458,6 +17590,30 @@
       "recordCount": 1
     },
     {
+      "id": "history:p0129",
+      "date": "2003-04-30",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "소속사",
+      "subject": "신화·신혜성 활동(기존 연표)",
+      "title": "신화 6명 SM엔터테인먼트 전속계약 공시상 만료일",
+      "verification": "2001년 SM 사업보고서 계약표로 만료일 확인",
+      "source": "기존 활동 연표",
+      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "referenceVideoUrl": null,
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다; 기존 중국어 팬 연표에는 2003.05.08로 기재되었으나 SM 2000사업연도 공식 공시는 전 멤버 종료일 2003.04.30 명시. 최초 기재일을 검증 이력으로 보존.",
+      "dateKind": "공식 공시 기재 계약 만료일",
+      "sourceRecord": "p0129",
+      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "sourceRefs": [
+        "fan-cn1",
+        "fan-cn2",
+        "cu23-source-168"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "boundary-sm-2003",
       "date": "2003-05-01",
       "precision": "day",
@@ -17466,15 +17622,17 @@
       "category": "소속사",
       "subject": "신화 전체",
       "title": "SM엔터테인먼트, 신화와 재계약 협상 결렬 공식 발표",
-      "verification": "당시 기사 확인",
+      "verification": "당시 기사로 발표일 확인",
       "source": "동시대 언론 기사",
       "sourceUrl": "https://www.kihoilbo.co.kr/news/articleView.html?idxno=35096",
       "verificationUrl": "https://www.kihoilbo.co.kr/news/articleView.html?idxno=35096",
       "referenceVideoUrl": null,
-      "sourceNote": "보도 날짜와 실제 계약 체결일을 혼동하지 않도록 별도 사건으로 보존",
+      "sourceNote": "보도 날짜와 실제 계약 체결일을 혼동하지 않도록 별도 사건으로 보존; 2003.04.30 계약 종료일과 별개인 2003.05.01 재계약 협상 결렬 발표일.",
       "dateKind": "언론 보도일(계약 종료일과 다름)",
       "sourceRecord": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "cu23-source-169"
+      ],
       "recordCount": 1
     },
     {
@@ -17495,29 +17653,6 @@
       "sourceRecord": "03!150",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
-      "id": "history:p0129",
-      "date": "2003-05-08",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "소속사",
-      "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "SM엔터테인먼트와 계약 종료 기록",
-      "verification": "원문 기록",
-      "source": "기존 활동 연표",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
-      "dateKind": "원문 기재일",
-      "sourceRecord": "p0129",
-      "verificationUrl": null,
-      "sourceRefs": [
-        "fan-cn1",
-        "fan-cn2"
-      ],
       "recordCount": 1
     },
     {
@@ -27311,6 +27446,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:2005-09-03-minwoo-showcase",
+      "date": "2005-09-03",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "쇼케이스",
+      "subject": "신혜성·에릭·앤디",
+      "title": "이민우 정규 2집 쇼케이스 — 신혜성·에릭·앤디 축하 참석",
+      "verification": "당시 쇼케이스 사후 현장 기사로 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://news.nate.com/view/20050904n00341",
+      "referenceVideoUrl": null,
+      "sourceNote": "서울 올림픽공원 올림픽홀 19시. 실제 참석 3명 외 김동완·전진 불참. 신혜성·에릭·앤디가 축하 인사 및 짧은 축하송.",
+      "dateKind": "실제 행사일",
+      "sourceRecord": "0507_통합패치_대상 BAI-006",
+      "verificationUrl": "https://news.nate.com/view/20050904n00341",
+      "sourceRefs": [
+        "cu23-source-172"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:05!469",
       "date": "2005-09-04",
       "precision": "day",
@@ -28847,6 +29004,50 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:2006-07-06-shanghai-arrival",
+      "date": "2006-07-06",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "해외 행사",
+      "subject": "신화 전체",
+      "title": "신화, 중국 상하이 푸둥공항 입국",
+      "verification": "당시 현지 사후 기사에 방문 일정 기재",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://shanghaibang.com/ne05/chukje/2006/07/09/793450/",
+      "referenceVideoUrl": null,
+      "sourceNote": "2006.07.08 상하이 공연 전 일정. 당시 한국어 현지 매체의 7월 9일 기사에 입국으로 서술.",
+      "dateKind": "현지 방문일(당시 기사 기록)",
+      "sourceRecord": "DISC-027",
+      "verificationUrl": "https://shanghaibang.com/ne05/chukje/2006/07/09/793450/",
+      "sourceRefs": [
+        "cu23-source-176"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2006-07-07-shanghai-press",
+      "date": "2006-07-07",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "기자회견",
+      "subject": "신화 전체",
+      "title": "신화 2006 상하이 콘서트 현지 기자회견",
+      "verification": "당시 현지 행사 기사로 일정 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://shanghaibang.com/ne05/chukje/2006/07/09/793450/",
+      "referenceVideoUrl": null,
+      "sourceNote": "상하이대무대 VIP룸 오후 3시. 7월 8일 콘서트와 별도.",
+      "dateKind": "현지 기자회견일",
+      "sourceRecord": "DISC-028",
+      "verificationUrl": "https://shanghaibang.com/ne05/chukje/2006/07/09/793450/",
+      "sourceRefs": [
+        "cu23-source-176"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "history:s051",
       "date": "2006-07-08",
       "precision": "day",
@@ -28857,15 +29058,16 @@
       "title": "2006 State of the Art 투어 상하이",
       "verification": "원문 기록",
       "source": "기존 활동 연표",
-      "sourceUrl": null,
+      "sourceUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N1000136395",
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.",
+      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전; 2006년 상하이 공연 관련 당시 보도 추가. 입국(07.06)·기자회견(07.07)과 구분.",
       "dateKind": "원문 기재일",
       "sourceRecord": "s051",
-      "verificationUrl": null,
+      "verificationUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N1000136395",
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "cu23-source-177"
       ],
       "recordCount": 2,
       "mergedRecordIds": [
@@ -28963,16 +29165,17 @@
       "title": "2006 State of the Art 투어 부산 — 무한도전 방송과는 별개",
       "verification": "당시 기사 확인",
       "source": "기존 활동 연표",
-      "sourceUrl": null,
+      "sourceUrl": "https://www2.kjclub.com/kr/board/exc_board_25/view/id/64714/page/109%C2%A5%22%C2%A5%22?sod=desc&sst=wr_datetime",
       "referenceVideoUrl": null,
-      "sourceNote": "2006년 7월 15일 스타뉴스 당일 공연 기사 확인. 2006.07.15 부산 공연 날짜는 공연 예매 공지로 대조(예고 자료).",
+      "sourceNote": "2006년 7월 15일 스타뉴스 당일 공연 기사 확인. 2006.07.15 부산 공연 날짜는 공연 예매 공지로 대조(예고 자료); 2006.07.15 부산 BEXCO 신화 콘서트 당시 팬클럽 공지 번역; 사후 직접 확인 여부 미확정.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0195",
-      "verificationUrl": null,
+      "verificationUrl": "https://www2.kjclub.com/kr/board/exc_board_25/view/id/64714/page/109%C2%A5%22%C2%A5%22?sod=desc&sst=wr_datetime",
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "merge-busan-2006"
+        "merge-busan-2006",
+        "cu23-source-186"
       ],
       "recordCount": 2,
       "mergedRecordIds": [
@@ -29123,6 +29326,28 @@
       ],
       "recordCount": 1,
       "categoryOriginal": "음반"
+    },
+    {
+      "id": "cu23:2006-08-16-special-edition",
+      "date": "2006-08-16",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신화 전체",
+      "title": "신화 정규 8집 Special Edition 국내판 발매",
+      "verification": "음반 유통사 발매 정보 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yes24.com/product/goods/2135400",
+      "referenceVideoUrl": null,
+      "sourceNote": "같은 날 일본 정규앨범 Inspiration #1 발매와 판본이 다름. 각각 독립 음반.",
+      "dateKind": "국내판 발매일(유통정보)",
+      "sourceRecord": "0507_통합패치_대상 BAI-011",
+      "verificationUrl": "https://www.yes24.com/product/goods/2135400",
+      "sourceRefs": [
+        "cu23-source-175"
+      ],
+      "recordCount": 1
     },
     {
       "id": "history:s052",
@@ -29809,6 +30034,72 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:2006-11-10-goodemg-statement",
+      "date": "2006-11-10",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "소속사",
+      "subject": "신화 전체",
+      "title": "굿이엠지·김동완, 신화 해체설 관련 공식 입장 발표",
+      "verification": "당시 입장 보도 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.imaeil.com/page/view/2006111023200860731",
+      "referenceVideoUrl": null,
+      "sourceNote": "해체 여부가 확정되었다는 의미가 아니라 소속사의 해명 발표를 기록함.",
+      "dateKind": "입장 발표 보도일",
+      "sourceRecord": "DISC-018",
+      "verificationUrl": "https://www.imaeil.com/page/view/2006111023200860731",
+      "sourceRefs": [
+        "cu23-source-179"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2006-11-12-kangho-dong-wedding",
+      "date": "2006-11-12",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "행사",
+      "subject": "신혜성·에릭",
+      "title": "신혜성·에릭, 강호동 결혼식 하객 참석",
+      "verification": "당일 현장 사진 기사로 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.nocutnews.co.kr/news/212143",
+      "referenceVideoUrl": null,
+      "sourceNote": "서울 신라호텔. 신화 6명 전원 참석으로 표기하지 않음.",
+      "dateKind": "실제 행사일",
+      "sourceRecord": "0507_통합패치_대상 BAI-015",
+      "verificationUrl": "https://www.nocutnews.co.kr/news/212143",
+      "sourceRefs": [
+        "cu23-source-173"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2006-11-23-the-legend-fm",
+      "date": "2006-11-23",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "팬미팅",
+      "subject": "신화 전체",
+      "title": "신화 일본 공식 팬클럽 The Legend 창단 기념 팬미팅 2회",
+      "verification": "다음날 사후 기사로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N1000190310",
+      "referenceVideoUrl": null,
+      "sourceNote": "도쿄 료고쿠 국기관 13:00 및 17:00, 2회 행사. 12.04 Mnet 방송은 별개.",
+      "dateKind": "실제 행사일",
+      "sourceRecord": "0507_통합패치_대상 BAI-016",
+      "verificationUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N1000190310",
+      "sourceRefs": [
+        "cu23-source-174"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "history:p0200",
       "date": "2006-11-25",
       "precision": "day",
@@ -29844,11 +30135,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=757879274&range=A162:D162",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2006.11.23 팬미팅 현장 행사와 2006.12.04 Mnet 소식 방송은 별개.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "06!162",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N1000190310",
+      "sourceRefs": [
+        "cu23-source-174"
+      ],
       "recordCount": 1
     },
     {
@@ -30085,6 +30378,28 @@
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2007-04-02-management-announcement",
+      "date": "2007-04-02",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "소속사",
+      "subject": "신화 전체",
+      "title": "굿이엠지, 신화 그룹·멤버별 솔로 매니지먼트 분리 운영 발표",
+      "verification": "당시 소속사 공식 입장 인용 보도 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.inews24.com/view/255439",
+      "referenceVideoUrl": null,
+      "sourceNote": "그룹 활동은 굿이엠지, 이민우·김동완·앤디 개인활동 별도 관리, 신혜성·에릭·전진 개인활동은 굿이엠지 담당. 그룹 해체 또는 새 계약 효력일을 의미하지 않음.",
+      "dateKind": "소속사 발표일",
+      "sourceRecord": "DISC-020",
+      "verificationUrl": "https://www.inews24.com/view/255439",
+      "sourceRefs": [
+        "cu23-source-178"
       ],
       "recordCount": 1
     },
@@ -30371,11 +30686,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A151:D151",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2007.08.24 MBC 놀러와 신혜성 출연 공식 다시보기 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "07!151",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://m.imbc.com/vod/vodview?broadcastID=1000789100159100000&progCode=1000789100000100000&type=Prevod",
+      "sourceRefs": [
+        "cu23-source-183"
+      ],
       "recordCount": 1
     },
     {
@@ -30792,11 +31109,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A200:D200",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2007.10.08 MBC 지피지기 신혜성·이민우·김동완 출연 당시 보도.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "07!200",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://news.nate.com/view/20071008n02150",
+      "sourceRefs": [
+        "cu23-source-184"
+      ],
       "recordCount": 1
     },
     {
@@ -30892,11 +31211,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A206:D206",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2007.10.12 박경림의 화려한 외출 당시 보도. MBC드라마넷 프로그램.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "07!206",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.inews24.com/view/287574",
+      "sourceRefs": [
+        "cu23-source-185"
+      ],
       "recordCount": 1
     },
     {
@@ -31458,15 +31779,16 @@
       "title": "Winter Story 2007 발매",
       "verification": "원문 기록",
       "source": "기존 활동 연표",
-      "sourceUrl": null,
+      "sourceUrl": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다; 2007년 12월 6일 Winter Story 발매를 언급한 사후 기사. 벅스 12월 5일 디지털 발매 표기는 별도 충돌 자료.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0214",
-      "verificationUrl": null,
+      "verificationUrl": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "cu23-source-180"
       ],
       "recordCount": 1,
       "categoryOriginal": "음반"
@@ -31480,15 +31802,17 @@
       "category": "콘서트",
       "subject": "신화 전체",
       "title": "2007 JAPAN TOUR 'SHINHWA FOREVER' in 나고야",
-      "verification": "원본 기재·독립 검증 전",
+      "verification": "당시 공연 사후 기사 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A248:D248",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2007.12.06 나고야 공연의 실제 개최를 2007.12.09 사후 기사로 보강.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "07!248",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
+      "sourceRefs": [
+        "cu23-source-180"
+      ],
       "recordCount": 1
     },
     {
@@ -31499,16 +31823,18 @@
       "transition": "",
       "category": "콘서트",
       "subject": "신화 전체",
-      "title": "2008 JAPAN TOUR 'SHINHWA FOREVER' in 사이타마",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "2007 JAPAN TOUR 'SHINHWA FOREVER' in 사이타마",
+      "verification": "당시 2007.12.09 사후 기사로 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A249:D249",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2007.12.08 사이타마 공연. 기존 제목의 2008은 잘못된 연도(오기). 사후 보도 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "07!249",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
+      "sourceRefs": [
+        "cu23-source-180"
+      ],
       "recordCount": 1
     },
     {
@@ -31539,16 +31865,40 @@
       "transition": "",
       "category": "콘서트",
       "subject": "신화 전체",
-      "title": "2009 JAPAN TOUR 'SHINHWA FOREVER' in 사이타마",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "2007 JAPAN TOUR 'SHINHWA FOREVER' in 사이타마",
+      "verification": "당시 2007.12.09 사후 기사로 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1438629421&range=A251:D251",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2007.12.09 사이타마 공연. 기존 제목의 2009는 잘못된 연도(오기). 사후 보도 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "07!251",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
+      "sourceRefs": [
+        "cu23-source-180"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2007-12-09-saitama-press",
+      "date": "2007-12-09",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "기자회견",
+      "subject": "신화 전체",
+      "title": "신화 6인 사이타마 일본 공연 전 기자회견",
+      "verification": "당시 현장 취재 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://news.brokore.com/content_UTF/Read.jsp?num=5657",
+      "referenceVideoUrl": null,
+      "sourceNote": "2007 일본 콘서트 직전 6인 기자회견. 같은 날 사이타마 공연과는 별도.",
+      "dateKind": "기자회견 행사일",
+      "sourceRecord": "DISC-033",
+      "verificationUrl": "https://news.brokore.com/content_UTF/Read.jsp?num=5657",
+      "sourceRefs": [
+        "cu23-source-181"
+      ],
       "recordCount": 1
     },
     {
@@ -31602,17 +31952,18 @@
       "title": "신화 2007 아시아 투어 — 중국 상하이 공연",
       "verification": "당시 기사에서 행사 일정 확인",
       "source": "기존 활동 연표",
-      "sourceUrl": null,
+      "sourceUrl": "https://shinwashi.blogspot.com/2007/12/",
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전. 2007년 상하이 공연 보도. 원본 시트의 2010 JAPAN TOUR 표기는 오기.",
+      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전. 2007년 상하이 공연 보도. 원본 시트의 2010 JAPAN TOUR 표기는 오기; 신화 2007.12.15 상하이 홍커우 경기장 공연 관련 당시 소속사 사후 공지의 영어 번역 보존.",
       "dateKind": "원문 기재일",
       "sourceRecord": "s057",
-      "verificationUrl": null,
+      "verificationUrl": "https://shinwashi.blogspot.com/2007/12/",
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
         "merge-shanghai-20071214",
-        "merge-shanghai-20071009"
+        "merge-shanghai-20071009",
+        "cu23-source-182"
       ],
       "recordCount": 2,
       "mergedRecordIds": [
@@ -33155,6 +33506,94 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:audit-001",
+      "date": "2009-01-31",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 제3회 K-POP SUPER LIVE — 도쿄 국제포럼 2회 공연",
+      "verification": "당시 사후 기사로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20090201015900005",
+      "referenceVideoUrl": null,
+      "sourceNote": "신혜성·전진 포함 출연; 한 날짜 2회 공연, 무조건 일정 2건으로 분리할지 정책 결정",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-001",
+      "verificationUrl": "https://www.yna.co.kr/view/AKR20090201015900005",
+      "sourceRefs": [
+        "cu23-source-187"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-030",
+      "date": "2009-02-10",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "해외 행사",
+      "subject": "신혜성 개인",
+      "title": "신혜성 대만 팬미팅 홍보 현지 언론 인터뷰·팬 사인",
+      "verification": "당시 대만 현장 사진 기사",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://ent.sina.com.cn/y/x/p/2009-02-11/09542370767.shtml",
+      "referenceVideoUrl": null,
+      "sourceNote": "2009.02.11 중국 新浪/TUNGSTAR 사진기사에 전날(2/10) 타이베이 홍보와 팬 사인을 명시. 본 공연 3/14와 구분",
+      "dateKind": "현지 활동일",
+      "sourceRecord": "AUDIT0911-030",
+      "verificationUrl": "https://ent.sina.com.cn/y/x/p/2009-02-11/09542370767.shtml",
+      "sourceRefs": [
+        "cu23-source-201"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-002",
+      "date": "2009-02-12",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "뮤직비디오",
+      "subject": "신혜성 개인",
+      "title": "신혜성 《왜 전화했어》 뮤직비디오 공개",
+      "verification": "당시 기사로 영상 공개 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://view.asiae.co.kr/article/2009021216404544670",
+      "referenceVideoUrl": null,
+      "sourceNote": "음원 발매와 뮤직비디오 공개 구분; 기사에 유출로 조기 공개 서술",
+      "dateKind": "영상 공개일",
+      "sourceRecord": "AUDIT0911-002",
+      "verificationUrl": "https://view.asiae.co.kr/article/2009021216404544670",
+      "sourceRefs": [
+        "cu23-source-188"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-063",
+      "date": "2009-02-17",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 정규 3집 SIDE 2 《KEEP LEAVES》 발매",
+      "verification": "당시 발매 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.hankyung.com/article/2009021790517",
+      "referenceVideoUrl": null,
+      "sourceNote": "2009.02.17 한경 발매 보도, 2/19 첫 방송과 별도",
+      "dateKind": "발매일",
+      "sourceRecord": "AUDIT0911-063",
+      "verificationUrl": "https://www.hankyung.com/article/2009021790517",
+      "sourceRefs": [
+        "cu23-source-215"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:09!54",
       "date": "2009-02-19",
       "precision": "day",
@@ -33212,6 +33651,28 @@
       "sourceRecord": "09!59",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-031",
+      "date": "2009-02-22",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "팬미팅",
+      "subject": "신혜성 개인",
+      "title": "신혜성 《인기가요》 직후 팬미팅 개최 계획 발표",
+      "verification": "당시 개최 예정 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.osen.co.kr/article/G0902200105",
+      "referenceVideoUrl": null,
+      "sourceNote": "기존 이날 SBS 인기가요와 별개 행사. 실제 개최 사후 확인 전에는 확정 일정 금지",
+      "dateKind": "개최 예정일·실제 개최 미확정",
+      "sourceRecord": "AUDIT0911-031",
+      "verificationUrl": "https://www.osen.co.kr/article/G0902200105",
+      "sourceRefs": [
+        "cu23-source-202"
+      ],
       "recordCount": 1
     },
     {
@@ -33415,6 +33876,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:audit-003",
+      "date": "2009-03-14",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "팬미팅",
+      "subject": "신혜성 개인",
+      "title": "신혜성 대만 첫 Live Music Show 팬미팅 (TICC)",
+      "verification": "당시 사후 기사로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.osen.co.kr/article/G0903280021",
+      "referenceVideoUrl": null,
+      "sourceNote": "3/28 OSEN 당시 기사에 3/14 개최 후 성황리에 마침 명시",
+      "dateKind": "실제 팬미팅일",
+      "sourceRecord": "AUDIT0911-003",
+      "verificationUrl": "https://www.osen.co.kr/article/G0903280021",
+      "sourceRefs": [
+        "cu23-source-189"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:09!84",
       "date": "2009-03-15",
       "precision": "day",
@@ -33555,6 +34038,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:media-002",
+      "date": "2009-04-01",
+      "precision": "month",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "화보·인터뷰",
+      "subject": "신혜성 개인",
+      "title": "신혜성 《싱글즈》 2009년 4월호 인터뷰·화보 게재",
+      "verification": "월간지 2009년 4월호(발행 정확일 미상)",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.newsprime.co.kr/news/article/?no=80136",
+      "referenceVideoUrl": null,
+      "sourceNote": "3월18~19일 기사에서 4월호 인터뷰와 제공 화보 확인. 4월 1일 발매로 임의 배정 금지.",
+      "dateKind": "발행 월(1일은 정렬용 대표 날짜)",
+      "sourceRecord": "research-media-20261023-002",
+      "verificationUrl": "https://www.newsprime.co.kr/news/article/?no=80136",
+      "sourceRefs": [
+        "cu23-source-220"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:09!100",
       "date": "2009-04-04",
       "precision": "day",
@@ -33615,6 +34120,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:audit-032",
+      "date": "2009-04-11",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 서울 스파클링 콘서트 출연",
+      "verification": "당시 공연 사후 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://news.nate.com/view/20090412n06859?mid=n0000",
+      "referenceVideoUrl": null,
+      "sourceNote": "4/12 뉴스엔 사후 기사에 4/11 공연 출연진으로 신혜성 명시. 4/12 이민우 출연과 별개",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-032",
+      "verificationUrl": "https://news.nate.com/view/20090412n06859?mid=n0000",
+      "sourceRefs": [
+        "cu23-source-203"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:09!107",
       "date": "2009-04-15",
       "precision": "day",
@@ -33632,6 +34159,28 @@
       "sourceRecord": "09!107",
       "verificationUrl": null,
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-034",
+      "date": "2009-04-25",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "이민우·신혜성 등 창원 사랑콘서트 출연 예정",
+      "verification": "공연 예매처 행사 일정 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://nol.yanolja.com/ticket/meta/artist/%EC%8B%A0%ED%98%9C%EC%84%B1-fpReS7n6kOgadqNm",
+      "referenceVideoUrl": null,
+      "sourceNote": "오래된 예매처에서 4/25 공연 출연으로 조회; 실제 출연 확인 사후기사 필요",
+      "dateKind": "예매처 기재 행사 예정일·실제 개최 미확정",
+      "sourceRecord": "AUDIT0911-034",
+      "verificationUrl": "https://nol.yanolja.com/ticket/meta/artist/%EC%8B%A0%ED%98%9C%EC%84%B1-fpReS7n6kOgadqNm",
+      "sourceRefs": [
+        "cu23-source-205"
+      ],
       "recordCount": 1
     },
     {
@@ -33703,6 +34252,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:audit-033",
+      "date": "2009-05-23",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 서원밸리 제7회 자선 그린콘서트 공연",
+      "verification": "행사 주최 측 사후 기록 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.kgba.or.kr/bbs/board.php?bo_table=02sub02&page=224&wr_id=3088",
+      "referenceVideoUrl": null,
+      "sourceNote": "5/29 골프장경영협회 주최측 현장 보도. 가수 출연·두 곡 공연까지 확인",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-033",
+      "verificationUrl": "https://www.kgba.or.kr/bbs/board.php?bo_table=02sub02&page=224&wr_id=3088",
+      "sourceRefs": [
+        "cu23-source-204"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:09!127",
       "date": "2009-05-26",
       "precision": "day",
@@ -33742,6 +34313,28 @@
       "sourceRefs": [
         "hyesung-2009-press",
         "ticket-hs"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:release-004",
+      "date": "2009-06-10",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "OST·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 드라마 《결혼 못하는 남자》 OST 〈그대는 예뻐요〉 발매",
+      "verification": "음원 서비스 기재 발매일 및 누적 동시대 기사 대조",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://music.bugs.co.kr/album/187641",
+      "referenceVideoUrl": null,
+      "sourceNote": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음.",
+      "dateKind": "음원 발매일",
+      "sourceRecord": "RECHECK0911-004",
+      "verificationUrl": "https://music.bugs.co.kr/album/187641",
+      "sourceRefs": [
+        "cu23-source-231"
       ],
       "recordCount": 1
     },
@@ -33827,6 +34420,50 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:media-004",
+      "date": "2009-08-26",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "DVD·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 LIVE AND LET LIVE IN SEOUL 콘서트 DVD 일본판 발매",
+      "verification": "일본 유통사 발매일",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.cdjapan.co.jp/product/MNPS-61",
+      "referenceVideoUrl": null,
+      "sourceNote": "품번 MNPS-61. 2008.10.18 서울 공연 실황. 일본판 포토북 100P 및 포스트카드 특전 표기. 국내판과 발매 날짜 구분.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-004",
+      "verificationUrl": "https://www.cdjapan.co.jp/product/MNPS-61",
+      "sourceRefs": [
+        "cu23-source-221"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-005",
+      "date": "2009-08-27",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "DVD·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 LIVE AND LET LIVE IN SEOUL 콘서트 DVD 국내판 발매",
+      "verification": "국내 유통사 발매일",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yes24.com/product/goods/3503033",
+      "referenceVideoUrl": null,
+      "sourceNote": "일본판과 동일 공연을 담은 국내 유통판. 별도 공연 행사가 아님.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-005",
+      "verificationUrl": "https://www.yes24.com/product/goods/3503033",
+      "sourceRefs": [
+        "cu23-source-222"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "press0911:2009-08-29:1",
       "date": "2009-08-29",
       "precision": "day",
@@ -33847,43 +34484,268 @@
       "recordCount": 1
     },
     {
-      "id": "sheet:10!2",
-      "date": "2010-02-11",
+      "id": "cu23:media-006",
+      "date": "2009-11-26",
       "precision": "day",
       "chapter": "chapter2",
       "transition": "",
-      "category": "예능",
+      "category": "포토북·발매",
       "subject": "신혜성 개인",
-      "title": "Mnet 디렛터스컷 2",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1098227404&range=A2:D2",
+      "title": "신혜성 포토에세이 《눈의 멜로디》 발매",
+      "verification": "국내 서점 발매일·당시 기사",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yes24.com/product/goods/3611142",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "10!2",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceNote": "삿포로 촬영물, 포토에세이 170P, 약 40분 DVD. 2014년 재발매는 별도 연도이므로 혼동 금지.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-006",
+      "verificationUrl": "https://www.yes24.com/product/goods/3611142",
+      "sourceRefs": [
+        "cu23-source-223"
+      ],
       "recordCount": 1
     },
     {
-      "id": "sheet:10!3",
-      "date": "2010-02-18",
+      "id": "cu23:audit-035",
+      "date": "2010-01-09",
       "precision": "day",
       "chapter": "chapter2",
       "transition": "",
-      "category": "예능",
+      "category": "공연",
       "subject": "신혜성 개인",
-      "title": "Mnet 디렛터스컷 2",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1098227404&range=A3:D3",
+      "title": "신혜성 일본 Asian Artist Premier Event Vol.2 참여",
+      "verification": "당시 사후 기사로 양일 행사 참여 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20100111193800005",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "10!3",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceNote": "9~10일 양일간 열린 이벤트에 신혜성 초대 출연. 두 날짜 모두 무대에 올랐는지는 원문으로 확인 불가. 날짜별 두 건 생성 금지",
+      "dateKind": "행사 시작일(2일간 개최)",
+      "sourceRecord": "AUDIT0911-035",
+      "verificationUrl": "https://www.yna.co.kr/view/AKR20100111193800005",
+      "sourceRefs": [
+        "cu23-source-206"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-006",
+      "date": "2010-02-20",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "쇼케이스",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 쇼케이스 Find Voice In Song — 오사카 Zepp",
+      "verification": "당시 일정 공지·투어 사후 기사",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "referenceVideoUrl": null,
+      "sourceNote": "일본 팬클럽 공지로 일정 확인. 사후 개최 근거 미확보",
+      "dateKind": "공연 예정일·투어 개최 확인",
+      "sourceRecord": "AUDIT0911-006",
+      "verificationUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "sourceRefs": [
+        "cu23-source-190"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-007",
+      "date": "2010-02-22",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "쇼케이스",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 쇼케이스 Find Voice In Song — 나고야 Zepp",
+      "verification": "공연기획사 공식 공연 기록",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.kyodotokai.co.jp/events/detail/161",
+      "referenceVideoUrl": null,
+      "sourceNote": "일본 팬클럽 공지 일정; 사후 기사 미확보",
+      "dateKind": "공연 개최 일정 확인",
+      "sourceRecord": "AUDIT0911-007",
+      "verificationUrl": "https://www.kyodotokai.co.jp/events/detail/161",
+      "sourceRefs": [
+        "cu23-source-191"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-060",
+      "date": "2010-02-23",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "팬미팅",
+      "subject": "신혜성 개인",
+      "title": "신혜성 나고야 코리아플라자 토크 행사",
+      "verification": "당시 나고야 현장 사진 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://sakae.keizai.biz/photoflash/332/",
+      "referenceVideoUrl": null,
+      "sourceNote": "2010-02-24 사카에경제신문 사진은 전날 2/23 행사 현장이라고 명시. FM AICHI 2/28 편성 후보와는 별도",
+      "dateKind": "실제 행사일",
+      "sourceRecord": "AUDIT0911-060",
+      "verificationUrl": "https://sakae.keizai.biz/photoflash/332/",
+      "sourceRefs": [
+        "cu23-source-212"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-008",
+      "date": "2010-02-24",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 정규 1집 《Find Voice In Song》 일본 현지 발매",
+      "verification": "일본 음반 유통사에서 2010.02.24 실제 출시 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "referenceVideoUrl": null,
+      "sourceNote": "실제 유통 기록은 추가 점검; CDJapan 일본 발매 원자료: 2010.02.24, TKCA-73513. 2010년 7월 15일 국내 라이선스판과 구분.",
+      "dateKind": "일본 현지 앨범 발매일",
+      "sourceRecord": "AUDIT0911-008",
+      "verificationUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "sourceRefs": [
+        "cu23-source-190",
+        "cu23-source-219"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2010-02-24-collection2010",
+      "date": "2010-02-24",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 베스트 앨범 《Collection 2010 ~My Everything~》 발매",
+      "verification": "오리콘 유통정보·공식 음반사 안내의 일본 발매일 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.oricon.co.jp/prof/346620/products/853019/1/",
+      "referenceVideoUrl": null,
+      "sourceNote": "일본 정규 앨범 《Find Voice In Song》과 같은 날짜에 출시된 별도 베스트 음반. 일본반 TKCA-73514. 한국 2010.07.15 베스트 앨범과 판본·작품 구분.",
+      "dateKind": "일본 현지 음반 발매일",
+      "sourceRecord": "AUDIT0911-008 일본 2종 분리",
+      "verificationUrl": "https://www.oricon.co.jp/prof/346620/products/853019/1/",
+      "sourceRefs": [
+        "cu23-source-218"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-009",
+      "date": "2010-02-25",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "쇼케이스",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 쇼케이스 Find Voice In Song — 도쿄 Zepp 1일 차",
+      "verification": "당시 일정 공지·투어 사후 기사",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "referenceVideoUrl": null,
+      "sourceNote": "당시 공지",
+      "dateKind": "공연 예정일·투어 개최 확인",
+      "sourceRecord": "AUDIT0911-009",
+      "verificationUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "sourceRefs": [
+        "cu23-source-190"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-010",
+      "date": "2010-02-26",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "쇼케이스",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 쇼케이스 Find Voice In Song — 도쿄 Zepp 2일 차",
+      "verification": "당시 일정 공지·투어 사후 기사",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "referenceVideoUrl": null,
+      "sourceNote": "당시 공지",
+      "dateKind": "공연 예정일·투어 개최 확인",
+      "sourceRecord": "AUDIT0911-010",
+      "verificationUrl": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "sourceRefs": [
+        "cu23-source-190"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-061",
+      "date": "2010-03-21",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "BS후지 《신혜성 일본 데뷔까지의 궤적》 방송 제작·편성",
+      "verification": "제작사 방송 실적 공식 페이지 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.mmj-pro.co.jp/works/variety/shinhyesung/",
+      "referenceVideoUrl": null,
+      "sourceNote": "공식 제작사 MMJ 방송일 3/21 14:00-14:55, 80분 분량 소개와 실제 편성시간 55분 사이 불일치 가능성 추가 검증",
+      "dateKind": "방송 편성일",
+      "sourceRecord": "AUDIT0911-061",
+      "verificationUrl": "https://www.mmj-pro.co.jp/works/variety/shinhyesung/",
+      "sourceRefs": [
+        "cu23-source-213"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-007",
+      "date": "2010-03-25",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "DVD·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 2009 KEEP LEAVES TOUR IN SEOUL DVD 일본판 발매",
+      "verification": "일본 유통사 발매일",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://tower.jp/item/2666734",
+      "referenceVideoUrl": null,
+      "sourceNote": "품번 MNPS-63. 2009.05.03 서울 공연 실황. 국내판 7월 발매와 구분.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-007",
+      "verificationUrl": "https://tower.jp/item/2666734",
+      "sourceRefs": [
+        "cu23-source-224"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-011",
+      "date": "2010-06-06",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 도쿄 국제포럼 Find Voice In Song 공연 1일 차",
+      "verification": "공연 사후 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://view.asiae.co.kr/article/2010060810234300748",
+      "referenceVideoUrl": null,
+      "sourceNote": "2010.06.07 기존 기록과 나누어 등록",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-011",
+      "verificationUrl": "https://view.asiae.co.kr/article/2010060810234300748",
+      "sourceRefs": [
+        "cu23-source-192"
+      ],
       "recordCount": 1
     },
     {
@@ -33904,6 +34766,94 @@
       "sourceRecord": "press0911:research:2026-10-23",
       "verificationUrl": "https://news.kbs.co.kr/news/view.do?ncd=2108724",
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-012",
+      "date": "2010-06-09",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "NHK-BS1 《아시아 크로스로드》 신혜성 인터뷰 방송 예정",
+      "verification": "당시 방송 편성 공지 번역 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "referenceVideoUrl": null,
+      "sourceNote": "방송 송출 확인은 별도 필요",
+      "dateKind": "방송 예정일·실제 송출 미검증",
+      "sourceRecord": "AUDIT0911-012",
+      "verificationUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "sourceRefs": [
+        "cu23-source-193"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-013",
+      "date": "2010-06-30",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "NHK-BS1 《아시아 크로스로드》 신혜성 인터뷰 재방송 예정",
+      "verification": "당시 방송 편성 공지 번역 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "referenceVideoUrl": null,
+      "sourceNote": "원방송과 재방송 구분",
+      "dateKind": "재방송 예정일·실제 송출 미검증",
+      "sourceRecord": "AUDIT0911-013",
+      "verificationUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "sourceRefs": [
+        "cu23-source-193"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-008",
+      "date": "2010-06-30",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "DVD·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 데뷔 다큐멘터리 DVD 발매",
+      "verification": "일본 유통사 발매일",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://tower.jp/item/2732896",
+      "referenceVideoUrl": null,
+      "sourceNote": "BS후지 제작 다큐멘터리. DVD 품번 BFBA00048. 일부 후대 연표의 5월26일과 충돌, 판매 자료에는 6월30일.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-008",
+      "verificationUrl": "https://tower.jp/item/2732896",
+      "sourceRefs": [
+        "cu23-source-225"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-014",
+      "date": "2010-07-12",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "DATV 《신혜성의 MUSIC FACTORY》 1회 방송 편성",
+      "verification": "당시 프로그램 편성 공지 번역 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "referenceVideoUrl": null,
+      "sourceNote": "라이브웍스 번역 게시물, 15분 편성. 실송출 여부 미확정",
+      "dateKind": "방송 편성일·실제 송출 미검증",
+      "sourceRecord": "AUDIT0911-014",
+      "verificationUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "sourceRefs": [
+        "cu23-source-193"
+      ],
       "recordCount": 1
     },
     {
@@ -34013,6 +34963,72 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:audit-015",
+      "date": "2010-07-26",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "DATV 《신혜성의 MUSIC FACTORY》 2회 방송 편성",
+      "verification": "당시 프로그램 편성 공지 번역 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "referenceVideoUrl": null,
+      "sourceNote": "편성표 기록",
+      "dateKind": "방송 편성일·실제 송출 미검증",
+      "sourceRecord": "AUDIT0911-015",
+      "verificationUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "sourceRefs": [
+        "cu23-source-193"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-011",
+      "date": "2010-07-26",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "DVD·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 KEEP LEAVES 서울 콘서트 DVD 국내판 발매",
+      "verification": "국내 서점 발매일",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yes24.com/product/goods/3989023",
+      "referenceVideoUrl": null,
+      "sourceNote": "YES24 7/26, 일본 중고 유통DB 수입판 8/1. 유통국가·판본 구분 전제; 국내 원발매일 7/26로 잠정.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-011",
+      "verificationUrl": "https://www.yes24.com/product/goods/3989023",
+      "sourceRefs": [
+        "cu23-source-226"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-012",
+      "date": "2010-07-31",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "후지TV 신혜성 일본 데뷔 다큐멘터리 방송",
+      "verification": "후지TV 공식 편성일",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.fujitv.co.jp/b_hp/100731SHIN_HYESUNG/",
+      "referenceVideoUrl": null,
+      "sourceNote": "프로그램 〈神話から新たな挑戦～日本デビューまでの軌跡～〉. 3월 BS후지 프로그램 제작 기록/6월 DVD 출시와 동일 콘텐츠 계열일 수 있음. 방송 7/31은 별도 기록.",
+      "dateKind": "방송 편성일",
+      "sourceRecord": "research-media-20261023-012",
+      "verificationUrl": "https://www.fujitv.co.jp/b_hp/100731SHIN_HYESUNG/",
+      "sourceRefs": [
+        "cu23-source-227"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "press0911:2010-08-06:1",
       "date": "2010-08-06",
       "precision": "day",
@@ -34053,6 +35069,50 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:audit-016",
+      "date": "2010-08-09",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "DATV 《신혜성의 MUSIC FACTORY》 3회 방송 편성",
+      "verification": "당시 프로그램 편성 공지 번역 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "referenceVideoUrl": null,
+      "sourceNote": "편성표 기록",
+      "dateKind": "방송 편성일·실제 송출 미검증",
+      "sourceRecord": "AUDIT0911-016",
+      "verificationUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "sourceRefs": [
+        "cu23-source-193"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-017",
+      "date": "2010-08-23",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "DATV 《신혜성의 MUSIC FACTORY》 4회 방송 편성",
+      "verification": "당시 프로그램 편성 공지 번역 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "referenceVideoUrl": null,
+      "sourceNote": "편성표 기록",
+      "dateKind": "방송 편성일·실제 송출 미검증",
+      "sourceRecord": "AUDIT0911-017",
+      "verificationUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "sourceRefs": [
+        "cu23-source-193"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "press0911:2010-08-27:1",
       "date": "2010-08-27",
       "precision": "day",
@@ -34070,6 +35130,94 @@
       "sourceRecord": "press0911:research:2026-10-23",
       "verificationUrl": "https://www.osen.co.kr/article/G1008300099",
       "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:release-012",
+      "date": "2010-09-07",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "OST·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 영화 《무적자》 OST 〈Timeless Memory〉 발매",
+      "verification": "음원 서비스 기재 발매일 및 누적 동시대 기사 대조",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://music.bugs.co.kr/album/236771",
+      "referenceVideoUrl": null,
+      "sourceNote": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음.",
+      "dateKind": "음원 발매일",
+      "sourceRecord": "RECHECK0911-012",
+      "verificationUrl": "https://music.bugs.co.kr/album/236771",
+      "sourceRefs": [
+        "cu23-source-232"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-018",
+      "date": "2010-09-23",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "DATV 《신혜성의 MUSIC FACTORY》 도쿄 공연 스페셜 방송 편성",
+      "verification": "당시 프로그램 편성 공지 번역 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "referenceVideoUrl": null,
+      "sourceNote": "6.6~7 도쿄 공연 영상 특별방송; 방송 녹화일과 공연일 혼동 금지",
+      "dateKind": "방송 편성일·실제 송출 미검증",
+      "sourceRecord": "AUDIT0911-018",
+      "verificationUrl": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "sourceRefs": [
+        "cu23-source-193"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-019",
+      "date": "2010-10-02",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "해외 공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 도쿄 롯폰기 한일축제한마당 출연 예정",
+      "verification": "당시 공식 출연 안내 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://world.kbs.co.kr/service/contents_view.htm?board_code=&board_seq=208243&id=&lang=k&menu_cate=enternews&page=1392",
+      "referenceVideoUrl": null,
+      "sourceNote": "5:45 공연 출연 예고; 사후 자료 확보 전까지 개최 확정 금지",
+      "dateKind": "출연 예정일·실제 개최 추가검증",
+      "sourceRecord": "AUDIT0911-019",
+      "verificationUrl": "https://world.kbs.co.kr/service/contents_view.htm?board_code=&board_seq=208243&id=&lang=k&menu_cate=enternews&page=1392",
+      "sourceRefs": [
+        "cu23-source-194"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:release-016",
+      "date": "2010-11-19",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성·에릭",
+      "title": "신혜성·에릭·남규리 〈안녕 그리고 안녕〉 디지털 싱글 발매",
+      "verification": "음원 서비스 기재 발매일 및 누적 동시대 기사 대조",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://music.bugs.co.kr/album/246613",
+      "referenceVideoUrl": null,
+      "sourceNote": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음.",
+      "dateKind": "음원 발매일",
+      "sourceRecord": "RECHECK0911-016",
+      "verificationUrl": "https://music.bugs.co.kr/album/246613",
+      "sourceRefs": [
+        "cu23-source-233"
+      ],
       "recordCount": 1
     },
     {
@@ -34127,15 +35275,17 @@
       "category": "예능",
       "subject": "신혜성 개인",
       "title": "Mnet 디렉터스컷 시즌2 E01",
-      "verification": "원본 기재·독립 검증 전",
+      "verification": "당시 2011.02.10 첫방송 예고 기사 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=808612879&range=A7:D7",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "Mnet 《디렉터스 컷 시즌2》 2011.02.11 첫 방송. 2010년의 잘못된 중복 1건 제거.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "11!7",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.osen.co.kr/article/G1102100240",
+      "sourceRefs": [
+        "cu23-source-170"
+      ],
       "recordCount": 1
     },
     {
@@ -34147,15 +35297,83 @@
       "category": "예능",
       "subject": "신혜성 개인",
       "title": "Mnet 디렉터스컷 시즌2 E02",
-      "verification": "원본 기재·독립 검증 전",
+      "verification": "팬 영상 날짜 기재·독립 송출 검증 대기",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=808612879&range=A9:D9",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2011.02.18 두 번째 방송 팬 일정·영상 표기. 방송국 원본은 추가 확인 필요. 2010년 중복 제거.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "11!9",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://shinhwaald.blogspot.com/2014/04/rs-2005-2006-2007-2009-2010-2011.html",
+      "sourceRefs": [
+        "cu23-source-171"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-013",
+      "date": "2011-05-12",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성·영준 듀엣 디지털 싱글 《조금 더 가까이》 발매",
+      "verification": "당시 발매 보도·음원 정보",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.osen.co.kr/article/G1105120091",
+      "referenceVideoUrl": null,
+      "sourceNote": "신혜성 정규4집 발매(6/16)와 구분.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-013",
+      "verificationUrl": "https://www.osen.co.kr/article/G1105120091",
+      "sourceRefs": [
+        "cu23-source-228"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-021",
+      "date": "2011-05-15",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 제4회 K-POP SUPER LIVE — 치바 마쿠하리 공연 2회",
+      "verification": "당시 일본 사후 보도로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://cdfront.tower.jp/article/news/2011/05/17/78149",
+      "referenceVideoUrl": null,
+      "sourceNote": "일본 현지 TOWER 기사 5/17 사후; SHINee 공식 2회 시간. 제작사 페이지 안내문에 연기 문구 남아 있으니 최종 개최는 사후 자료 우선",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-021",
+      "verificationUrl": "https://cdfront.tower.jp/article/news/2011/05/17/78149",
+      "sourceRefs": [
+        "cu23-source-195"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-064",
+      "date": "2011-06-16",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 정규 4집 《THE ROAD NOT TAKEN》 발매",
+      "verification": "당시 발매 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20110616084400005",
+      "referenceVideoUrl": null,
+      "sourceNote": "4집 수록 10곡, 타이틀 째각째각 MV에 김동완 출연, 수록곡 에릭 랩 참여; 앨범 발매와 MV 공개는 별도",
+      "dateKind": "발매일",
+      "sourceRecord": "AUDIT0911-064",
+      "verificationUrl": "https://www.yna.co.kr/view/AKR20110616084400005",
+      "sourceRefs": [
+        "cu23-source-216"
+      ],
       "recordCount": 1
     },
     {
@@ -34254,6 +35472,50 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:audit-036",
+      "date": "2011-07-03",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬미팅",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 공식 팬클럽 3주년 팬미팅 2회",
+      "verification": "당시 팬미팅 사후 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.starnewskorea.com/music/2011/07/05/2011070509351280210",
+      "referenceVideoUrl": null,
+      "sourceNote": "7/5 스타뉴스 사후 기사에 7/3 오후 4시·7시 2회, 약 4000명 명시",
+      "dateKind": "실제 행사일",
+      "sourceRecord": "AUDIT0911-036",
+      "verificationUrl": "https://www.starnewskorea.com/music/2011/07/05/2011070509351280210",
+      "sourceRefs": [
+        "cu23-source-207"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:release-017",
+      "date": "2011-07-20",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "OST·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 《공주의 남자》 OST 〈여원여모〉 발매",
+      "verification": "음원 서비스 기재 발매일 및 누적 동시대 기사 대조",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://music.bugs.co.kr/album/294111?wl_ref=list_ab_01_likeab",
+      "referenceVideoUrl": null,
+      "sourceNote": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음.",
+      "dateKind": "음원 발매일",
+      "sourceRecord": "RECHECK0911-017",
+      "verificationUrl": "https://music.bugs.co.kr/album/294111?wl_ref=list_ab_01_likeab",
+      "sourceRefs": [
+        "cu23-source-234"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "verifiedconcert:2011-07-23:hyesung",
       "date": "2011-07-23",
       "precision": "day",
@@ -34277,6 +35539,28 @@
       "recordCount": 1
     },
     {
+      "id": "cu23:2011-07-30-spy-myungwol",
+      "date": "2011-07-30",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "행사",
+      "subject": "신혜성·앤디",
+      "title": "신혜성·앤디, 에릭 주연 드라마 《스파이 명월》 촬영장 응원 방문",
+      "verification": "당시 2011.08.01 사후 보도",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.mydaily.co.kr/new_yk/html/read.php?newsid=201108010751161117",
+      "referenceVideoUrl": null,
+      "sourceNote": "에릭 단독 드라마 촬영 일정과 구분. 신혜성·앤디 방문만 해당.",
+      "dateKind": "실제 방문일",
+      "sourceRecord": "제공_2011자료검토 07/30",
+      "verificationUrl": "https://www.mydaily.co.kr/new_yk/html/read.php?newsid=201108010751161117",
+      "sourceRefs": [
+        "cu23-source-235"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "boundary-company-news-2011",
       "date": "2011-08-01",
       "precision": "day",
@@ -34296,6 +35580,116 @@
       "sourceRefs": [
         "mk-shinhwacompany",
         "yna-company"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-014",
+      "date": "2011-08-05",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 THE ROAD NOT TAKEN 대만 라이선스 앨범 발매",
+      "verification": "대만판 발매일·당시 기사",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://sports.donga.com/ent/article/all/20110805/39326627/2",
+      "referenceVideoUrl": null,
+      "sourceNote": "2011.08.05 현재 대만 출시를 언급. 실제 판매 확인은 대만 유통사 자료 추가 필요.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-014",
+      "verificationUrl": "https://sports.donga.com/ent/article/all/20110805/39326627/2",
+      "sourceRefs": [
+        "cu23-source-229"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-022",
+      "date": "2011-08-06",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 상하이 THE ROAD NOT TAKEN 콘서트 — 루완체육관",
+      "verification": "당시 사후 기사로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://view.asiae.co.kr/article/2011080919452001531",
+      "referenceVideoUrl": null,
+      "sourceNote": "기존 연표 2011.08.06 비어 있음. 공연 사후 기사, 약 1600명",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-022",
+      "verificationUrl": "https://view.asiae.co.kr/article/2011080919452001531",
+      "sourceRefs": [
+        "cu23-source-196"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-037",
+      "date": "2011-08-08",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬미팅",
+      "subject": "신혜성 개인",
+      "title": "신혜성 나고야 자선 스페셜 팬미팅 개최 예정",
+      "verification": "당시 일본 기사로 예정 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://japanese.joins.com/JArticle/142593?sectcode=720&servcode=700",
+      "referenceVideoUrl": null,
+      "sourceNote": "8/8 오전 중앙일보 일본어판 당일 예정 보도, 행사 실제 개최 자료 별도 필요",
+      "dateKind": "개최 예정일·실제 개최 미확정",
+      "sourceRecord": "AUDIT0911-037",
+      "verificationUrl": "https://japanese.joins.com/JArticle/142593?sectcode=720&servcode=700",
+      "sourceRefs": [
+        "cu23-source-208"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-024",
+      "date": "2011-08-28",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "해외 공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 대만 TICC 《韓式神話》 공동 공연",
+      "verification": "당시 사후 기사로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.kmib.co.kr/article/20110828500271",
+      "referenceVideoUrl": null,
+      "sourceNote": "국민일보 8/28 실제 공연 했다고 기재, 8/30 기사 교차",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-024",
+      "verificationUrl": "https://www.kmib.co.kr/article/20110828500271",
+      "sourceRefs": [
+        "cu23-source-197"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-065",
+      "date": "2011-08-31",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 《THE ROAD NOT TAKEN》 일본 특별판 발매",
+      "verification": "당시 일본 라이선스 발매 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.donga.com/news/Entertainment/article/all/20110805/39329753/3",
+      "referenceVideoUrl": null,
+      "sourceNote": "8/5 기사에서 8/31 발매 예고. 실제 유통 기록 미검증",
+      "dateKind": "발매일",
+      "sourceRecord": "AUDIT0911-065",
+      "verificationUrl": "https://www.donga.com/news/Entertainment/article/all/20110805/39329753/3",
+      "sourceRefs": [
+        "cu23-source-217"
       ],
       "recordCount": 1
     },
@@ -34342,6 +35736,161 @@
       "sourceRefs": [
         "ticket-hs",
         "nm-hyesung"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-038",
+      "date": "2011-10-05",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬사인회",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 《I Believe》 발매 기념 가와사키 악수회",
+      "verification": "당시 일본 사후 기사로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://news.utamap.com/music/112449/",
+      "referenceVideoUrl": null,
+      "sourceNote": "10/6 일본 뉴스에서 10/5 실제 개최·관객 약 3000명 보도; 누적 조사 후보 AUDIT0911-062의 보강 근거: 일본 음반발매 기사 확인",
+      "dateKind": "실제 행사일",
+      "sourceRecord": "AUDIT0911-038",
+      "verificationUrl": "https://news.utamap.com/music/112449/",
+      "sourceRefs": [
+        "cu23-source-209",
+        "cu23-source-214"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-040",
+      "date": "2011-10-09",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬사인회",
+      "subject": "신혜성 개인",
+      "title": "신혜성 《I Believe》 발매 기념 니시노미야 악수회 예정",
+      "verification": "당시 일본 공식 행사 안내 색인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.tunestracks.com/news.html",
+      "referenceVideoUrl": null,
+      "sourceNote": "2011/10/4 행사 공지 색인에서 10/9 한큐 니시노미야 4층 스카이가든 확인. 원문 502, 실제 개최 미확인",
+      "dateKind": "개최 예정일·사후 미확인",
+      "sourceRecord": "AUDIT0911-040",
+      "verificationUrl": "https://www.tunestracks.com/news.html",
+      "sourceRefs": [
+        "cu23-source-210"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-025",
+      "date": "2011-10-16",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 THE ROAD NOT TAKEN ACT III — 도쿄 공연",
+      "verification": "당시 사후 기사로 개최 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://cb.yna.co.kr/gate/big5/cn.yna.co.kr/view/ACK20111017003200881",
+      "referenceVideoUrl": null,
+      "sourceNote": "공연 개최 사후 연합뉴스; 기존 2011.10.16 기록 없음",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-025",
+      "verificationUrl": "https://cb.yna.co.kr/gate/big5/cn.yna.co.kr/view/ACK20111017003200881",
+      "sourceRefs": [
+        "cu23-source-198"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-042",
+      "date": "2011-10-31",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 후쿠오카 호텔 뉴오타니 디너쇼 예정",
+      "verification": "당시 일본 공연 예정 안내 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://barks.jp/news/665039",
+      "referenceVideoUrl": null,
+      "sourceNote": "2011/10/18~19 일본 현지 매체 예정공연 확인. 실제 개최 사후 확인 전 확정 등록 금지",
+      "dateKind": "개최 예정일·사후 미확인",
+      "sourceRecord": "AUDIT0911-042",
+      "verificationUrl": "https://barks.jp/news/665039",
+      "sourceRefs": [
+        "cu23-source-211"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-028",
+      "date": "2011-12-03",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공연",
+      "subject": "신혜성 개인",
+      "title": "신혜성 요코하마 아레나 K-POP 크리스마스 페스티벌 참가",
+      "verification": "연합뉴스 공연 사후 기사 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20111204012200005",
+      "referenceVideoUrl": null,
+      "sourceNote": "그대라서/째각째각 노래 사후 기사 명시",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "AUDIT0911-028",
+      "verificationUrl": "https://www.yna.co.kr/view/AKR20111204012200005",
+      "sourceRefs": [
+        "cu23-source-199"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:audit-029",
+      "date": "2011-12-10",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "J:COM 신혜성 출연 K-POP 크리스마스 공연 영상 편성 예정",
+      "verification": "당시 방송 편성 안내 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://blog.udn.com/coco0216/5901150",
+      "referenceVideoUrl": null,
+      "sourceNote": "19:00~21:00로 소개. 12/03 공연과 분리, 실제 송출 여부 별도 검증",
+      "dateKind": "방송 편성일·송출 추가검증",
+      "sourceRecord": "AUDIT0911-029",
+      "verificationUrl": "https://blog.udn.com/coco0216/5901150",
+      "sourceRefs": [
+        "cu23-source-200"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:media-016",
+      "date": "2011-12-27",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 스페셜 앨범 《embrace》 발매",
+      "verification": "당일 발매 보도",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://sports.donga.com/ent/article/all/20111227/42898723/1",
+      "referenceVideoUrl": null,
+      "sourceNote": "2011.12.30~31 콘서트 일정과 별도. 7곡 수록.",
+      "dateKind": "발매일",
+      "sourceRecord": "research-media-20261023-016",
+      "verificationUrl": "https://sports.donga.com/ent/article/all/20111227/42898723/1",
+      "sourceRefs": [
+        "cu23-source-230"
       ],
       "recordCount": 1
     },
@@ -46973,12 +48522,56 @@
       "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
       "sourceUrl": "https://www.newsis.com/view/NISX20210222_0001346899",
       "referenceVideoUrl": null,
-      "sourceNote": "2021.02.22 뉴시스에서 전날 최종 방송 및 본인·소속사 마무리 소감 보도. 시작 2019.06.03 기존 기록은 유지.",
+      "sourceNote": "2021.02.22 뉴시스에서 전날 최종 방송 및 본인·소속사 마무리 소감 보도. 시작 2019.06.03 기존 기록은 유지; 2021년 2월 21일 마지막 방송은 이미 기존 데이터에 등록되어 있으며 누적 자료 P009·P012는 출처 보강만 처리.",
       "dateKind": "실제 마지막 방송일",
       "sourceRecord": "wiki-check:2021-02-21-radio-end",
-      "verificationUrl": null,
+      "verificationUrl": "https://www.newsis.com/view/NISX20210222_0001346899",
       "sourceRefs": [
         "ns-odyssey-end21"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2022-06-12-andy-wedding",
+      "date": "2022-06-12",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "행사",
+      "subject": "신화 전체",
+      "title": "신혜성 포함 신화 6명, 앤디·이은주 결혼식 하객 참석",
+      "verification": "당시 사후 보도·당사자 발언·방송 영상 교차 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://www.donga.com/news/Entertainment/article/all/20220613/113906718/1",
+      "referenceVideoUrl": null,
+      "sourceNote": "신혜성 하객 참석 확인. 신혜성은 〈Perfect Man〉 축하 무대에는 참여하지 않음. 앤디 포함 다른 멤버가 무대에 등장.",
+      "dateKind": "실제 결혼식일",
+      "sourceRecord": "post21:P017",
+      "verificationUrl": "https://www.donga.com/news/Entertainment/article/all/20220613/113906718/1",
+      "sourceRefs": [
+        "cu23-source-236"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "cu23:2022-07-04-wedding-tv",
+      "date": "2022-07-04",
+      "precision": "day",
+      "chapter": "chapter4",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체(촬영 영상)",
+      "title": "SBS 《동상이몽2》, 앤디 결혼식 및 신화 멤버 참석 영상 공개",
+      "verification": "당일 SBS 프로그램 방송 내용의 당시 보도 확인",
+      "source": "누적 조사 35시트 + 직접 검증 자료",
+      "sourceUrl": "https://enter.etoday.co.kr/news/view/227525",
+      "referenceVideoUrl": null,
+      "sourceNote": "2022.06.12 비공개 결혼식 촬영본의 2022.07.04 방송. 신혜성 축하 공연 참여로 표시하지 않음.",
+      "dateKind": "결혼식 행사일 아닌 TV 방송일",
+      "sourceRecord": "post21:P018",
+      "verificationUrl": "https://enter.etoday.co.kr/news/view/227525",
+      "sourceRefs": [
+        "cu23-source-237"
       ],
       "recordCount": 1
     }
@@ -48407,6 +50000,566 @@
       "url": "https://sports.donga.com/ent/article/all/20170918/86377392/2",
       "kind": "당시 진행중 공연 기사",
       "note": "외부 독립 근거; 나무위키는 조사 단서로만 사용"
+    },
+    {
+      "id": "cu23-source-168",
+      "publisher": "SM엔터테인먼트/한국거래소",
+      "title": "이민우 — SM엔터테인먼트 가수 전속계약 시작",
+      "url": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
+      "kind": "공식 사업보고서",
+      "note": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 이민우 시작일 1997-04-25, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별."
+    },
+    {
+      "id": "cu23-source-169",
+      "publisher": "당시 보도/공식 자료",
+      "title": "SM엔터테인먼트, 신화와 재계약 협상 결렬 공식 발표",
+      "url": "https://www.kgnews.co.kr/news/article.html?no=19252",
+      "kind": "당시 기사",
+      "note": "2003.04.30 계약 종료일과 별개인 2003.05.01 재계약 협상 결렬 발표일."
+    },
+    {
+      "id": "cu23-source-170",
+      "publisher": "당시 보도/공식 자료",
+      "title": "Mnet 디렉터스컷 시즌2 E01",
+      "url": "https://www.osen.co.kr/article/G1102100240",
+      "kind": "당시 기사",
+      "note": "Mnet 《디렉터스 컷 시즌2》 2011.02.11 첫 방송. 2010년의 잘못된 중복 1건 제거."
+    },
+    {
+      "id": "cu23-source-171",
+      "publisher": "당시 보도/공식 자료",
+      "title": "Mnet 디렉터스컷 시즌2 E02",
+      "url": "https://shinhwaald.blogspot.com/2014/04/rs-2005-2006-2007-2009-2010-2011.html",
+      "kind": "당시 기사",
+      "note": "2011.02.18 두 번째 방송 팬 일정·영상 표기. 방송국 원본은 추가 확인 필요. 2010년 중복 제거."
+    },
+    {
+      "id": "cu23-source-172",
+      "publisher": "당시 보도/공식 자료",
+      "title": "이민우 정규 2집 쇼케이스 — 신혜성·에릭·앤디 축하 참석",
+      "url": "https://news.nate.com/view/20050904n00341",
+      "kind": "당시 기사",
+      "note": "서울 올림픽공원 올림픽홀 19시. 실제 참석 3명 외 김동완·전진 불참. 신혜성·에릭·앤디가 축하 인사 및 짧은 축하송."
+    },
+    {
+      "id": "cu23-source-173",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성·에릭, 강호동 결혼식 하객 참석",
+      "url": "https://www.nocutnews.co.kr/news/212143",
+      "kind": "당시 기사",
+      "note": "서울 신라호텔. 신화 6명 전원 참석으로 표기하지 않음."
+    },
+    {
+      "id": "cu23-source-174",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신화 일본 공식 팬클럽 The Legend 창단 기념 팬미팅 2회",
+      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1000190310",
+      "kind": "당시 기사",
+      "note": "도쿄 료고쿠 국기관 13:00 및 17:00, 2회 행사. 12.04 Mnet 방송은 별개."
+    },
+    {
+      "id": "cu23-source-175",
+      "publisher": "YES24",
+      "title": "신화 정규 8집 Special Edition 국내판 발매",
+      "url": "https://www.yes24.com/product/goods/2135400",
+      "kind": "음반 유통정보",
+      "note": "같은 날 일본 정규앨범 Inspiration #1 발매와 판본이 다름. 각각 독립 음반."
+    },
+    {
+      "id": "cu23-source-176",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신화, 중국 상하이 푸둥공항 입국",
+      "url": "https://shanghaibang.com/ne05/chukje/2006/07/09/793450/",
+      "kind": "당시 기사",
+      "note": "2006.07.08 상하이 공연 전 일정. 당시 한국어 현지 매체의 7월 9일 기사에 입국으로 서술."
+    },
+    {
+      "id": "cu23-source-177",
+      "publisher": "당시 보도/공식 자료",
+      "title": "2006 State of the Art 투어 상하이",
+      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1000136395",
+      "kind": "당시 기사",
+      "note": "2006년 상하이 공연 관련 당시 보도 추가. 입국(07.06)·기자회견(07.07)과 구분."
+    },
+    {
+      "id": "cu23-source-178",
+      "publisher": "당시 보도/공식 자료",
+      "title": "굿이엠지, 신화 그룹·멤버별 솔로 매니지먼트 분리 운영 발표",
+      "url": "https://www.inews24.com/view/255439",
+      "kind": "당시 기사",
+      "note": "그룹 활동은 굿이엠지, 이민우·김동완·앤디 개인활동 별도 관리, 신혜성·에릭·전진 개인활동은 굿이엠지 담당. 그룹 해체 또는 새 계약 효력일을 의미하지 않음."
+    },
+    {
+      "id": "cu23-source-179",
+      "publisher": "당시 보도/공식 자료",
+      "title": "굿이엠지·김동완, 신화 해체설 관련 공식 입장 발표",
+      "url": "https://www.imaeil.com/page/view/2006111023200860731",
+      "kind": "당시 기사",
+      "note": "해체 여부가 확정되었다는 의미가 아니라 소속사의 해명 발표를 기록함."
+    },
+    {
+      "id": "cu23-source-180",
+      "publisher": "당시 보도/공식 자료",
+      "title": "2008 JAPAN TOUR 'SHINHWA FOREVER' in 사이타마",
+      "url": "https://www.starnewskorea.com/music/2007/12/09/2007120918574184305",
+      "kind": "당시 기사",
+      "note": "2007.12.08 사이타마 공연. 기존 제목의 2008은 잘못된 연도(오기). 사후 보도 확인."
+    },
+    {
+      "id": "cu23-source-181",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신화 6인 사이타마 일본 공연 전 기자회견",
+      "url": "https://news.brokore.com/content_UTF/Read.jsp?num=5657",
+      "kind": "당시 기사",
+      "note": "2007 일본 콘서트 직전 6인 기자회견. 같은 날 사이타마 공연과는 별도."
+    },
+    {
+      "id": "cu23-source-182",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신화 2007 아시아 투어 — 중국 상하이 공연",
+      "url": "https://shinwashi.blogspot.com/2007/12/",
+      "kind": "당시 기사",
+      "note": "신화 2007.12.15 상하이 홍커우 경기장 공연 관련 당시 소속사 사후 공지의 영어 번역 보존."
+    },
+    {
+      "id": "cu23-source-183",
+      "publisher": "당시 보도/공식 자료",
+      "title": "MBC 놀러와",
+      "url": "https://m.imbc.com/vod/vodview?broadcastID=1000789100159100000&progCode=1000789100000100000&type=Prevod",
+      "kind": "당시 기사",
+      "note": "2007.08.24 MBC 놀러와 신혜성 출연 공식 다시보기 확인."
+    },
+    {
+      "id": "cu23-source-184",
+      "publisher": "당시 보도/공식 자료",
+      "title": "MBC 지피지기 E18",
+      "url": "https://news.nate.com/view/20071008n02150",
+      "kind": "당시 기사",
+      "note": "2007.10.08 MBC 지피지기 신혜성·이민우·김동완 출연 당시 보도."
+    },
+    {
+      "id": "cu23-source-185",
+      "publisher": "당시 보도/공식 자료",
+      "title": "MBC 박경림의 화려한 외출",
+      "url": "https://www.inews24.com/view/287574",
+      "kind": "당시 기사",
+      "note": "2007.10.12 박경림의 화려한 외출 당시 보도. MBC드라마넷 프로그램."
+    },
+    {
+      "id": "cu23-source-186",
+      "publisher": "당시 보도/공식 자료",
+      "title": "2006 State of the Art 투어 부산 — 무한도전 방송과는 별개",
+      "url": "https://www2.kjclub.com/kr/board/exc_board_25/view/id/64714/page/109%C2%A5%22%C2%A5%22?sod=desc&sst=wr_datetime",
+      "kind": "당시 기사",
+      "note": "2006.07.15 부산 BEXCO 신화 콘서트 당시 팬클럽 공지 번역; 사후 직접 확인 여부 미확정."
+    },
+    {
+      "id": "cu23-source-187",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 제3회 K-POP SUPER LIVE — 도쿄 국제포럼 2회 공연",
+      "url": "https://www.yna.co.kr/view/AKR20090201015900005",
+      "kind": "당시 기사",
+      "note": "신혜성·전진 포함 출연; 한 날짜 2회 공연, 무조건 일정 2건으로 분리할지 정책 결정"
+    },
+    {
+      "id": "cu23-source-188",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 《왜 전화했어》 뮤직비디오 공개",
+      "url": "https://view.asiae.co.kr/article/2009021216404544670",
+      "kind": "당시 기사",
+      "note": "음원 발매와 뮤직비디오 공개 구분; 기사에 유출로 조기 공개 서술"
+    },
+    {
+      "id": "cu23-source-189",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 대만 첫 Live Music Show 팬미팅 (TICC)",
+      "url": "https://www.osen.co.kr/article/G0903280021",
+      "kind": "당시 기사",
+      "note": "3/28 OSEN 당시 기사에 3/14 개최 후 성황리에 마침 명시"
+    },
+    {
+      "id": "cu23-source-190",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 일본 쇼케이스 Find Voice In Song — 오사카 Zepp",
+      "url": "https://jp.yna.co.kr/view/AJP20100105001600882",
+      "kind": "당시 기사",
+      "note": "일본 팬클럽 공지로 일정 확인. 사후 개최 근거 미확보"
+    },
+    {
+      "id": "cu23-source-191",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 일본 쇼케이스 Find Voice In Song — 나고야 Zepp",
+      "url": "https://www.kyodotokai.co.jp/events/detail/161",
+      "kind": "당시 기사",
+      "note": "일본 팬클럽 공지 일정; 사후 기사 미확보"
+    },
+    {
+      "id": "cu23-source-192",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 도쿄 국제포럼 Find Voice In Song 공연 1일 차",
+      "url": "https://view.asiae.co.kr/article/2010060810234300748",
+      "kind": "당시 기사",
+      "note": "2010.06.07 기존 기록과 나누어 등록"
+    },
+    {
+      "id": "cu23-source-193",
+      "publisher": "당시 보도/공식 자료",
+      "title": "NHK-BS1 《아시아 크로스로드》 신혜성 인터뷰 방송 예정",
+      "url": "https://huilin888.pixnet.net/blog/posts/4031584130",
+      "kind": "당시 기사",
+      "note": "방송 송출 확인은 별도 필요"
+    },
+    {
+      "id": "cu23-source-194",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 도쿄 롯폰기 한일축제한마당 출연 예정",
+      "url": "https://world.kbs.co.kr/service/contents_view.htm?board_code=&board_seq=208243&id=&lang=k&menu_cate=enternews&page=1392",
+      "kind": "당시 기사",
+      "note": "5:45 공연 출연 예고; 사후 자료 확보 전까지 개최 확정 금지"
+    },
+    {
+      "id": "cu23-source-195",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 제4회 K-POP SUPER LIVE — 치바 마쿠하리 공연 2회",
+      "url": "https://cdfront.tower.jp/article/news/2011/05/17/78149",
+      "kind": "당시 기사",
+      "note": "일본 현지 TOWER 기사 5/17 사후; SHINee 공식 2회 시간. 제작사 페이지 안내문에 연기 문구 남아 있으니 최종 개최는 사후 자료 우선"
+    },
+    {
+      "id": "cu23-source-196",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 상하이 THE ROAD NOT TAKEN 콘서트 — 루완체육관",
+      "url": "https://view.asiae.co.kr/article/2011080919452001531",
+      "kind": "당시 기사",
+      "note": "기존 연표 2011.08.06 비어 있음. 공연 사후 기사, 약 1600명"
+    },
+    {
+      "id": "cu23-source-197",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 대만 TICC 《韓式神話》 공동 공연",
+      "url": "https://www.kmib.co.kr/article/20110828500271",
+      "kind": "당시 기사",
+      "note": "국민일보 8/28 실제 공연 했다고 기재, 8/30 기사 교차"
+    },
+    {
+      "id": "cu23-source-198",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 THE ROAD NOT TAKEN ACT III — 도쿄 공연",
+      "url": "https://cb.yna.co.kr/gate/big5/cn.yna.co.kr/view/ACK20111017003200881",
+      "kind": "당시 기사",
+      "note": "공연 개최 사후 연합뉴스; 기존 2011.10.16 기록 없음"
+    },
+    {
+      "id": "cu23-source-199",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 요코하마 아레나 K-POP 크리스마스 페스티벌 참가",
+      "url": "https://www.yna.co.kr/view/AKR20111204012200005",
+      "kind": "당시 기사",
+      "note": "그대라서/째각째각 노래 사후 기사 명시"
+    },
+    {
+      "id": "cu23-source-200",
+      "publisher": "당시 보도/공식 자료",
+      "title": "J:COM 신혜성 출연 K-POP 크리스마스 공연 영상 편성 예정",
+      "url": "https://blog.udn.com/coco0216/5901150",
+      "kind": "당시 기사",
+      "note": "19:00~21:00로 소개. 12/03 공연과 분리, 실제 송출 여부 별도 검증"
+    },
+    {
+      "id": "cu23-source-201",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 대만 팬미팅 홍보 현지 언론 인터뷰·팬 사인",
+      "url": "https://ent.sina.com.cn/y/x/p/2009-02-11/09542370767.shtml",
+      "kind": "당시 기사",
+      "note": "2009.02.11 중국 新浪/TUNGSTAR 사진기사에 전날(2/10) 타이베이 홍보와 팬 사인을 명시. 본 공연 3/14와 구분"
+    },
+    {
+      "id": "cu23-source-202",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 《인기가요》 직후 팬미팅 개최 계획 발표",
+      "url": "https://www.osen.co.kr/article/G0902200105",
+      "kind": "당시 기사",
+      "note": "기존 이날 SBS 인기가요와 별개 행사. 실제 개최 사후 확인 전에는 확정 일정 금지"
+    },
+    {
+      "id": "cu23-source-203",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 서울 스파클링 콘서트 출연",
+      "url": "https://news.nate.com/view/20090412n06859?mid=n0000",
+      "kind": "당시 기사",
+      "note": "4/12 뉴스엔 사후 기사에 4/11 공연 출연진으로 신혜성 명시. 4/12 이민우 출연과 별개"
+    },
+    {
+      "id": "cu23-source-204",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 서원밸리 제7회 자선 그린콘서트 공연",
+      "url": "https://www.kgba.or.kr/bbs/board.php?bo_table=02sub02&page=224&wr_id=3088",
+      "kind": "당시 기사",
+      "note": "5/29 골프장경영협회 주최측 현장 보도. 가수 출연·두 곡 공연까지 확인"
+    },
+    {
+      "id": "cu23-source-205",
+      "publisher": "당시 보도/공식 자료",
+      "title": "이민우·신혜성 등 창원 사랑콘서트 출연 예정",
+      "url": "https://nol.yanolja.com/ticket/meta/artist/%EC%8B%A0%ED%98%9C%EC%84%B1-fpReS7n6kOgadqNm",
+      "kind": "당시 기사",
+      "note": "오래된 예매처에서 4/25 공연 출연으로 조회; 실제 출연 확인 사후기사 필요"
+    },
+    {
+      "id": "cu23-source-206",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 일본 Asian Artist Premier Event Vol.2 참여",
+      "url": "https://www.yna.co.kr/view/AKR20100111193800005",
+      "kind": "당시 기사",
+      "note": "9~10일 양일간 열린 이벤트에 신혜성 초대 출연. 두 날짜 모두 무대에 올랐는지는 원문으로 확인 불가. 날짜별 두 건 생성 금지"
+    },
+    {
+      "id": "cu23-source-207",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 일본 공식 팬클럽 3주년 팬미팅 2회",
+      "url": "https://www.starnewskorea.com/music/2011/07/05/2011070509351280210",
+      "kind": "당시 기사",
+      "note": "7/5 스타뉴스 사후 기사에 7/3 오후 4시·7시 2회, 약 4000명 명시"
+    },
+    {
+      "id": "cu23-source-208",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 나고야 자선 스페셜 팬미팅 개최 예정",
+      "url": "https://japanese.joins.com/JArticle/142593?sectcode=720&servcode=700",
+      "kind": "당시 기사",
+      "note": "8/8 오전 중앙일보 일본어판 당일 예정 보도, 행사 실제 개최 자료 별도 필요"
+    },
+    {
+      "id": "cu23-source-209",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 일본 《I Believe》 발매 기념 가와사키 악수회",
+      "url": "https://news.utamap.com/music/112449/",
+      "kind": "당시 기사",
+      "note": "10/6 일본 뉴스에서 10/5 실제 개최·관객 약 3000명 보도"
+    },
+    {
+      "id": "cu23-source-210",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 《I Believe》 발매 기념 니시노미야 악수회 예정",
+      "url": "https://www.tunestracks.com/news.html",
+      "kind": "당시 기사",
+      "note": "2011/10/4 행사 공지 색인에서 10/9 한큐 니시노미야 4층 스카이가든 확인. 원문 502, 실제 개최 미확인"
+    },
+    {
+      "id": "cu23-source-211",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 후쿠오카 호텔 뉴오타니 디너쇼 예정",
+      "url": "https://barks.jp/news/665039",
+      "kind": "당시 기사",
+      "note": "2011/10/18~19 일본 현지 매체 예정공연 확인. 실제 개최 사후 확인 전 확정 등록 금지"
+    },
+    {
+      "id": "cu23-source-212",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 나고야 코리아플라자 토크 행사",
+      "url": "https://sakae.keizai.biz/photoflash/332/",
+      "kind": "당시 기사",
+      "note": "2010-02-24 사카에경제신문 사진은 전날 2/23 행사 현장이라고 명시. FM AICHI 2/28 편성 후보와는 별도"
+    },
+    {
+      "id": "cu23-source-213",
+      "publisher": "당시 보도/공식 자료",
+      "title": "BS후지 《신혜성 일본 데뷔까지의 궤적》 방송 제작·편성",
+      "url": "https://www.mmj-pro.co.jp/works/variety/shinhyesung/",
+      "kind": "당시 기사",
+      "note": "공식 제작사 MMJ 방송일 3/21 14:00-14:55, 80분 분량 소개와 실제 편성시간 55분 사이 불일치 가능성 추가 검증"
+    },
+    {
+      "id": "cu23-source-214",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 일본 《I Believe》 발매 기념 가와사키 악수회",
+      "url": "https://imnews.imbc.com/news/2011/culture/article/2938865_31016.html",
+      "kind": "당시 기사",
+      "note": "누적 조사 후보 AUDIT0911-062의 보강 근거: 일본 음반발매 기사 확인"
+    },
+    {
+      "id": "cu23-source-215",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 정규 3집 SIDE 2 《KEEP LEAVES》 발매",
+      "url": "https://www.hankyung.com/article/2009021790517",
+      "kind": "당시 기사",
+      "note": "2009.02.17 한경 발매 보도, 2/19 첫 방송과 별도"
+    },
+    {
+      "id": "cu23-source-216",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 정규 4집 《THE ROAD NOT TAKEN》 발매",
+      "url": "https://www.yna.co.kr/view/AKR20110616084400005",
+      "kind": "당시 기사",
+      "note": "4집 수록 10곡, 타이틀 째각째각 MV에 김동완 출연, 수록곡 에릭 랩 참여; 앨범 발매와 MV 공개는 별도"
+    },
+    {
+      "id": "cu23-source-217",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성 《THE ROAD NOT TAKEN》 일본 특별판 발매",
+      "url": "https://www.donga.com/news/Entertainment/article/all/20110805/39329753/3",
+      "kind": "당시 기사",
+      "note": "8/5 기사에서 8/31 발매 예고. 실제 유통 기록 미검증"
+    },
+    {
+      "id": "cu23-source-218",
+      "publisher": "오리콘",
+      "title": "신혜성 일본 베스트 앨범 《Collection 2010 ~My Everything~》 발매",
+      "url": "https://www.oricon.co.jp/prof/346620/products/853019/1/",
+      "kind": "일본 음반 유통 원자료",
+      "note": "일본 정규 앨범 《Find Voice In Song》과 같은 날짜에 출시된 별도 베스트 음반. 일본반 TKCA-73514. 한국 2010.07.15 베스트 앨범과 판본·작품 구분."
+    },
+    {
+      "id": "cu23-source-219",
+      "publisher": "CDJapan",
+      "title": "신혜성 일본 정규 1집 《Find Voice In Song》 일본 현지 발매",
+      "url": "https://www.cdjapan.co.jp/product/TKCA-73513",
+      "kind": "일본 음반 유통 원자료",
+      "note": "CDJapan 일본 발매 원자료: 2010.02.24, TKCA-73513. 2010년 7월 15일 국내 라이선스판과 구분."
+    },
+    {
+      "id": "cu23-source-220",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 《싱글즈》 2009년 4월호 인터뷰·화보 게재",
+      "url": "https://www.newsprime.co.kr/news/article/?no=80136",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "3월18~19일 기사에서 4월호 인터뷰와 제공 화보 확인. 4월 1일 발매로 임의 배정 금지."
+    },
+    {
+      "id": "cu23-source-221",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 LIVE AND LET LIVE IN SEOUL 콘서트 DVD 일본판 발매",
+      "url": "https://www.cdjapan.co.jp/product/MNPS-61",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "품번 MNPS-61. 2008.10.18 서울 공연 실황. 일본판 포토북 100P 및 포스트카드 특전 표기. 국내판과 발매 날짜 구분."
+    },
+    {
+      "id": "cu23-source-222",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 LIVE AND LET LIVE IN SEOUL 콘서트 DVD 국내판 발매",
+      "url": "https://www.yes24.com/product/goods/3503033",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "일본판과 동일 공연을 담은 국내 유통판. 별도 공연 행사가 아님."
+    },
+    {
+      "id": "cu23-source-223",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 포토에세이 《눈의 멜로디》 발매",
+      "url": "https://www.yes24.com/product/goods/3611142",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "삿포로 촬영물, 포토에세이 170P, 약 40분 DVD. 2014년 재발매는 별도 연도이므로 혼동 금지."
+    },
+    {
+      "id": "cu23-source-224",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 2009 KEEP LEAVES TOUR IN SEOUL DVD 일본판 발매",
+      "url": "https://tower.jp/item/2666734",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "품번 MNPS-63. 2009.05.03 서울 공연 실황. 국내판 7월 발매와 구분."
+    },
+    {
+      "id": "cu23-source-225",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 일본 데뷔 다큐멘터리 DVD 발매",
+      "url": "https://tower.jp/item/2732896",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "BS후지 제작 다큐멘터리. DVD 품번 BFBA00048. 일부 후대 연표의 5월26일과 충돌, 판매 자료에는 6월30일."
+    },
+    {
+      "id": "cu23-source-226",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 KEEP LEAVES 서울 콘서트 DVD 국내판 발매",
+      "url": "https://www.yes24.com/product/goods/3989023",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "YES24 7/26, 일본 중고 유통DB 수입판 8/1. 유통국가·판본 구분 전제; 국내 원발매일 7/26로 잠정."
+    },
+    {
+      "id": "cu23-source-227",
+      "publisher": "음반유통사/당시 기사",
+      "title": "후지TV 신혜성 일본 데뷔 다큐멘터리 방송",
+      "url": "https://www.fujitv.co.jp/b_hp/100731SHIN_HYESUNG/",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "프로그램 〈神話から新たな挑戦～日本デビューまでの軌跡～〉. 3월 BS후지 프로그램 제작 기록/6월 DVD 출시와 동일 콘텐츠 계열일 수 있음. 방송 7/31은 별도 기록."
+    },
+    {
+      "id": "cu23-source-228",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성·영준 듀엣 디지털 싱글 《조금 더 가까이》 발매",
+      "url": "https://www.osen.co.kr/article/G1105120091",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "신혜성 정규4집 발매(6/16)와 구분."
+    },
+    {
+      "id": "cu23-source-229",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 THE ROAD NOT TAKEN 대만 라이선스 앨범 발매",
+      "url": "https://sports.donga.com/ent/article/all/20110805/39326627/2",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "2011.08.05 현재 대만 출시를 언급. 실제 판매 확인은 대만 유통사 자료 추가 필요."
+    },
+    {
+      "id": "cu23-source-230",
+      "publisher": "음반유통사/당시 기사",
+      "title": "신혜성 스페셜 앨범 《embrace》 발매",
+      "url": "https://sports.donga.com/ent/article/all/20111227/42898723/1",
+      "kind": "음반 발매·공식 편성 근거",
+      "note": "2011.12.30~31 콘서트 일정과 별도. 7곡 수록."
+    },
+    {
+      "id": "cu23-source-231",
+      "publisher": "벅스/당시 기사",
+      "title": "신혜성 드라마 《결혼 못하는 남자》 OST 〈그대는 예뻐요〉 발매",
+      "url": "https://music.bugs.co.kr/album/187641",
+      "kind": "음원 서비스 메타데이터",
+      "note": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음."
+    },
+    {
+      "id": "cu23-source-232",
+      "publisher": "벅스/당시 기사",
+      "title": "신혜성 영화 《무적자》 OST 〈Timeless Memory〉 발매",
+      "url": "https://music.bugs.co.kr/album/236771",
+      "kind": "음원 서비스 메타데이터",
+      "note": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음."
+    },
+    {
+      "id": "cu23-source-233",
+      "publisher": "벅스/당시 기사",
+      "title": "신혜성·에릭·남규리 〈안녕 그리고 안녕〉 디지털 싱글 발매",
+      "url": "https://music.bugs.co.kr/album/246613",
+      "kind": "음원 서비스 메타데이터",
+      "note": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음."
+    },
+    {
+      "id": "cu23-source-234",
+      "publisher": "벅스/당시 기사",
+      "title": "신혜성 《공주의 남자》 OST 〈여원여모〉 발매",
+      "url": "https://music.bugs.co.kr/album/294111?wl_ref=list_ab_01_likeab",
+      "kind": "음원 서비스 메타데이터",
+      "note": "유튜브 음악방송·MV 영상 날짜와 구분. 같은 작품의 단순 업로드 재게시를 신규 발매로 중복 등록하지 않음."
+    },
+    {
+      "id": "cu23-source-235",
+      "publisher": "당시 보도/공식 자료",
+      "title": "신혜성·앤디, 에릭 주연 드라마 《스파이 명월》 촬영장 응원 방문",
+      "url": "https://www.mydaily.co.kr/new_yk/html/read.php?newsid=201108010751161117",
+      "kind": "당시 기사",
+      "note": "에릭 단독 드라마 촬영 일정과 구분. 신혜성·앤디 방문만 해당."
+    },
+    {
+      "id": "cu23-source-236",
+      "publisher": "뉴스1/동아일보",
+      "title": "신혜성 포함 신화 6명, 앤디·이은주 결혼식 하객 참석",
+      "url": "https://www.donga.com/news/Entertainment/article/all/20220613/113906718/1",
+      "kind": "당시 사후 현장 보도",
+      "note": "신혜성 하객 참석 확인. 신혜성은 〈Perfect Man〉 축하 무대에는 참여하지 않음. 앤디 포함 다른 멤버가 무대에 등장."
+    },
+    {
+      "id": "cu23-source-237",
+      "publisher": "비즈엔터",
+      "title": "SBS 《동상이몽2》, 앤디 결혼식 및 신화 멤버 참석 영상 공개",
+      "url": "https://enter.etoday.co.kr/news/view/227525",
+      "kind": "방송 당일 기사",
+      "note": "2022.06.12 비공개 결혼식 촬영본의 2022.07.04 방송. 신혜성 축하 공연 참여로 표시하지 않음."
     }
   ]
 }
