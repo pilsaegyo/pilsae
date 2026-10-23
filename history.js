@@ -75,7 +75,7 @@ const commonPrograms=[
  ['쇼음악중심',/쇼!?\s*음악\s*중심|음중/i],
  ['엠카운트다운',/m\s*!?\s*countdown|엠\s*카운트다운/i]
 ];
-function normalizedWords(s){return String(s||'').normalize('NFKC').toLocaleLowerCase().replace(/shinhwa|sinhwa/gi,'신화').replace(/hye\s*sung|hyesung/gi,'신혜성');}
+function normalizedWords(s){return String(s||'').normalize('NFKC').toLocaleLowerCase().replace(/shinhwa|sinhwa/gi,'신화').replace(/hye\s*sung|hyesung/gi,'신혜성').replace(/\bi\s*am\b/gi,'아이엠').replace(/happy\s*together/gi,'해피투게더').replace(/friend[s]?/gi,'프렌즈');}
 function compactWords(s){return normalizedWords(s).replace(/[^0-9a-z가-힣]/g,'');}
 function detectProgram(s){const text=normalizedWords(s);for(const [k,re] of [...rarePrograms,...commonPrograms])if(re.test(text))return k;return '';}
 function epNum(s){const m=String(s||'').match(/(?:\bep(?:isode)?\.?\s*|\bE\s*|제\s*)(\d{1,4})(?:\s*회|\b)/i);return m?Number(m[1]):null;}
@@ -120,21 +120,38 @@ function singleMonthEvidence(video){
  for(const x of video.dates||[])if(x.precision==='month'&&/^\d{4}-\d{2}$/.test(String(x.sourceDate)))found.add(x.sourceDate);
  return found.size===1?[...found][0]:null;
 }
+// Extract a programme identity from the archive's own source/title/description,
+// without requiring each TV programme to be added to a hard-coded dictionary.
+function showKey(text){
+ let t=normalizedWords(text).replace(/https?:\/\/\S+/g,' ').replace(/#[^\s#]+/g,' ');
+ t=t.replace(/(?<!\d)(?:19|20)\d{2}[.\-/]?\d{2}[.\-/]?\d{2}(?!\d)|(?<!\d)\d{6}(?!\d)/g,' ');
+ t=t.replace(/\b(?:e|ep|episode)\s*\d+\b|제\s*\d+\s*회|\b(?:s1|s2|season\s*\d+)\b/gi,' ');
+ t=t.replace(/^(?:제목|방송명|영상제목|출처)\s*[:：]\s*/i,'');
+ t=t.replace(/(?:kbs|mbc|sbs|mnet|엠넷|kmtv|tvn|jtbc|ocn|방송|추석특집|특집|신혜성|신화 전체|신화)\s*/gi,' ');
+ t=t.replace(/<[^>]+>/g,' ').replace(/[〈《][^〉》]+[〉》]/g,' ');
+ t=t.replace(/\b(?:cut|shorts|ver|zip|mv|촬영현장)\b/gi,' ');
+ return t.replace(/[^a-z0-9가-힣]/g,'');
+}
+function contentLabels(text){
+ const raw=String(text||'').replace(/https?:\/\/\S+/g,' ').split(/\n/)[0];
+ const p=detectProgram(raw);const labels=new Set();if(p)labels.add(p);
+ const cleaned=normalizedWords(raw).replace(/(?<!\d)(?:19|20)\d{6}(?!\d)|(?<!\d)\d{6}(?!\d)/g,' ').replace(/\b(?:e|ep)\s*\d+\b/gi,' ');
+ for(const chunk of cleaned.split(/[|｜:：<>\[\]()·,]/)){
+  const x=showKey(chunk);if(x.length>=3&&x.length<=32&&!/^(?:신혜성|신화|방송|가요|콘서트|공연|무대|영상|같은생각|떠나지마)$/.test(x))labels.add(x);
+ }
+ return [...labels];
+}
 function videoEvidence(video){
  const dateResult=strongDateEvidence(video)||(()=>{const ym=singleMonthEvidence(video);return ym?{date:ym+'-01',origin:'연월만 확인',monthOnly:true}:null;})();if(!dateResult)return null;
- // Reject mixed-date compilations even when their title highlights only one show.
  if(dateStringsFromText(String(video.description||'')).length>1)return null;
  const heading=originalTitleLine(video),source=String(video.source||''),title=String(video.title||'');
- // Real clip/source metadata takes precedence over generic montage hashtags and incidental references.
- const texts=[source,heading,title];
- const declared=texts.map(t=>detectProgram(t)).filter(Boolean);
+ const sourceTexts=[source,heading].filter(Boolean);
+ const declared=sourceTexts.map(t=>detectProgram(t)).filter(Boolean);
  if(new Set(declared).size>1)return null;
  const leading=String(video.description||'').replace(/https?:\/\/\S+/g,'').split('\n\n')[0].slice(0,420);
- const program=declared[0]||detectProgram(leading);
- // No reliable single program when a montage's source paragraph enumerates multiple broadcasts.
- if(!declared.length && dateStringsFromText(leading).length>1)return null;
+ const program=declared[0]||detectProgram(leading)||detectProgram(title);
  const content=[source,heading,title].filter(Boolean).join(' ');
- return {...dateResult,content,program,episode:epNum(content),fanclub:fanclubNum(content),song:exactSong(content),compact:compactWords(content),title};
+ return {...dateResult,content,program,episode:epNum(content),fanclub:fanclubNum(content),song:exactSong(content),compact:compactWords(content),title,labels:sourceTexts.flatMap(contentLabels)};
 }
 function strongContentOverlap(eventText, videoText){
  const x=compactWords(eventText),v=compactWords(videoText);
@@ -147,59 +164,39 @@ function strongContentOverlap(eventText, videoText){
 }
 function rateVideo(e,video,meta){
  if(!meta||e.precision!=='day'||!DAY.test(e.date))return null;
+ const text=[e.title,...(e.mergedDetails||[])].join(' ');
+ const p=detectProgram(text),n=epNum(text),f=fanclubNum(text),song=exactSong(text);
+ if(/음반|발매|릴리즈|발표/.test(e.category||''))return null;
+ const labelCandidates=contentLabels(e.title);
+ const commonMatch=!!p&&p===meta.program;
+ const genericMatch=labelCandidates.some(x=>meta.labels.some(y=>x===y||(x.length>=5&&y.length>=5&&(x.includes(y)||y.includes(x)))));
+ const showMatch=commonMatch||genericMatch;
+ if(p&&meta.program&&p!==meta.program)return null;
+ const epConflict=n!==null&&meta.episode!==null&&n!==meta.episode;
+ const fanConflict=f!==null&&meta.fanclub!==null&&f!==meta.fanclub;
+ if(fanConflict)return null;
  if(meta.monthOnly){
-   if(meta.date.slice(0,7)!==e.date.slice(0,7))return null;
-   const p=detectProgram(e.title),n=epNum(e.title),f=fanclubNum(e.title);
-   const sameEpisode=p&&p===meta.program&&n!==null&&n===meta.episode;
-   const sameFan=f!==null&&f===meta.fanclub;
-   if(!sameEpisode&&!sameFan)return null;
-   return {videoId:String(video.id),kind:'연월 참고영상',score:.73,reason:'연월만 확인 · '+(sameEpisode?'동일 프로그램 회차':'동일 팬클럽 기수')+' 일치 · 날짜 별도 검증 필요',reviewStatus:'candidate',dateGapDays:0};
+  if(meta.date.slice(0,7)!==e.date.slice(0,7))return null;
+  if(!(showMatch&&n!==null&&n===meta.episode)&&!(f!==null&&f===meta.fanclub))return null;
+  return {videoId:String(video.id),kind:'연월 참고영상',score:.73,reason:'연월 확인·회차 또는 팬클럽 기수 일치, 날짜 별도 검증 필요',reviewStatus:'candidate',dateGapDays:0};
  }
  if(meta.date.slice(0,7)!==e.date.slice(0,7))return null;
  const days=Math.round(Math.abs(Date.parse(meta.date+'T00:00:00Z')-Date.parse(e.date+'T00:00:00Z'))/86400000);
- if(days>7)return null;
- const text=[e.title,...(e.mergedDetails||[])].join(' '),p=detectProgram(text),n=epNum(text),f=fanclubNum(text),song=exactSong(text);
- if(/음반|발매|릴리즈|발표/.test(e.category||''))return null;
- if(p&&meta.program&&p!==meta.program)return null;
- if(n!==null&&meta.episode!==null&&p&&meta.program&&n!==meta.episode)return null;
- if(f!==null&&meta.fanclub!==null&&f!==meta.fanclub)return null;
- const exact=days===0,programSame=!!p&&p===meta.program,fanSame=f!==null&&meta.fanclub===f;
- const episodeSame=programSame&&n!==null&&meta.episode===n;
- const songSame=programSame&&!!song&&song===meta.song;
+ if(days>3)return null;
+ const exact=days===0,episodeSame=showMatch&&n!==null&&meta.episode===n;
+ const songSame=showMatch&&!!song&&song===meta.song;
  const distinct=strongContentOverlap(e.title,meta.content);
- const sameBroadcastContent=programSame&&exact;
- let score=0,reason='';
- if(fanSame&&/팬미팅|창단|팬클럽|fan/i.test(text)){
-   score=.84;reason=`신화창조 ${f}기 행사 정보 일치`;
- } else if(episodeSame){score=.90;reason=`프로그램 ${n}회차 일치`;}
- else if(programSame&&songSame){score=.87;reason='같은 방송의 동일 곡';}
- else if(programSame&&distinct){score=.83;reason='같은 프로그램·세부 내용 일치';}
- else if(sameBroadcastContent){
-   // Same show and exact air date is sufficient for RELATED BROADCAST footage, not the same performance.
-   score=.73;reason='방송일·프로그램 일치 (무대/MC/다른 코너일 수 있음)';
- } else if(distinct && !['시상식','음반·발매'].includes(e.category)){
-   score=.78;reason='고유 행사·콘텐츠 정보 일치';
- } else if(!exact && programSame && rarePrograms.some(([name])=>name===p) && days<=2){
-   score=.72;reason='동일 고유 프로그램·근접 날짜 (날짜 불일치 검증 필요)';
- } else return null;
- // Date-only or generic artist terms can NEVER generate a candidate.
- if(!programSame&&!fanSame&&!distinct)return null;
- // On a different date, the SAME episode or uniquely numbered fanclub event is mandatory.
- // Broadcasting schedules and archive clip captions may disagree by 1–2 days.
- // Allow only a named, uncommon program on those nearby dates; never date-only matches.
- const rareProgramMatch=programSame && rarePrograms.some(([name])=>name===p) && days<=2;
- if(!exact && !(episodeSame||fanSame||rareProgramMatch))return null;
- if(!exact && days>3)return null;
- if(!exact && rareProgramMatch && !episodeSame && !fanSame){
-   score=.72;
-   reason='동일 고유 프로그램·방송일 1~2일 차이 (날짜 불일치 검증 필요)';
- }
- if(exact)score=Math.min(.99,score+.07);
- else if(rareProgramMatch&&!episodeSame&&!fanSame)score=.72;
- else score=Math.min(.90,score+.01);
- score=Number(score.toFixed(2));if(score<.70)return null;
- const kind=sameBroadcastContent&&!episodeSame&&!songSame?'동일 방송일 참고영상':'관련 영상 후보';
- return {videoId:String(video.id),kind,score,reason:`${reason} · ${exact?'날짜 일치':`날짜 ${days}일 차이, 동일 행사 미확정`} · ${meta.origin}`,reviewStatus:'candidate',dateGapDays:days};
+ // A real source/show name and exact date beats conflicting archive episode numbering.
+ // Nearby-date matches require a strongly identified programme and an uncertainty marker.
+ if(!showMatch&&!(exact&&distinct))return null;
+ if(!exact&&!showMatch)return null;
+ if(!exact&&epConflict)return null;
+ let score=exact?(episodeSame?.97:songSame?.94:showMatch?.85:.78):(episodeSame?.81:.72);
+ if(epConflict)score=.74;
+ let reason=episodeSame?'프로그램·날짜·회차 일치':songSame?'프로그램·날짜·곡명 일치':showMatch?'영상 출처·방송명 일치':'고유 콘텐츠명 일치';
+ if(epConflict)reason+=` · 회차 표기 불일치(연표 ${n} / 영상 ${meta.episode})`;
+ if(!exact)reason+=` · 날짜 ${days}일 차이(동일 방송 미확정)`;
+ return {videoId:String(video.id),kind:!exact||epConflict?'검토 필요 추천영상':'관련 영상 후보',score,reason:reason+' · '+meta.origin,reviewStatus:'candidate',dateGapDays:days};
 }
 function generateRuntimeRecommendations(videos){
  const byMonth=new Map(),stats={withSingleContentDate:0,matches:0,events:0};
