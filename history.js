@@ -119,16 +119,59 @@ function researchWidget(){
  return `<span class="source-widget source-catalog"><button type="button" class="source-trigger source-catalog-trigger" aria-label="조사에 활용한 공개 자료 목록 보기" aria-expanded="false" title="조사 자료 목록">ⓘ 조사 자료</button><span class="source-panel" role="group" aria-label="조사 자료 목록"><strong>조사·대조한 공개 자료</strong><p>이 목록에 포함된 사이트·링크가 모든 일정의 날짜를 증명하는 것은 아닙니다. 각 이벤트의 ⓘ에서 연결 근거를 구분해 보세요.</p><ul>${rows}</ul></span></span>`;
 }
 function enableSourceWidgets(){
- document.addEventListener('click',event=>{
-   const button=event.target.closest?.('.source-trigger');
-   const isWithin=event.target.closest?.('.source-widget');
-   for(const w of document.querySelectorAll('.source-widget.is-open')){
-     if(w!==isWithin){w.classList.remove('is-open');w.querySelector('.source-trigger')?.setAttribute('aria-expanded','false');}
-   }
-   if(button){const w=button.closest('.source-widget');const opened=w.classList.toggle('is-open');button.setAttribute('aria-expanded',String(opened));}
- });
- document.addEventListener('keydown',e=>{if(e.key==='Escape')for(const w of document.querySelectorAll('.source-widget.is-open')){w.classList.remove('is-open');w.querySelector('.source-trigger')?.setAttribute('aria-expanded','false');}});
+  // One document-level overlay solves z-index/stacking and clipping from rows.
+  // Links inside the overlay remain interactive on hover, keyboard, and touch.
+  const float=document.createElement('div');
+  float.id='history-source-float';float.className='source-float';
+  float.setAttribute('role','dialog');float.setAttribute('aria-label','자료 및 검증 근거');
+  document.body.appendChild(float);
+  let active=null, pinned=false, closeTimer=null;
+  const cancel=()=>{if(closeTimer!==null){clearTimeout(closeTimer);closeTimer=null;}};
+  const release=()=>{cancel();if(active){active.setAttribute('aria-expanded','false');active.closest('.source-widget')?.classList.remove('is-open');}active=null;pinned=false;float.classList.remove('is-visible');float.innerHTML='';};
+  function position(){
+    if(!active||!float.classList.contains('is-visible'))return;
+    const r=active.getBoundingClientRect(),w=innerWidth,h=innerHeight;
+    if(w<=550){float.style.removeProperty('left');float.style.removeProperty('top');return;}
+    float.style.left='0px';float.style.top='0px';
+    const width=float.getBoundingClientRect().width||390,height=float.getBoundingClientRect().height||280;
+    // Prefer placing away from the underlying row text on wide screens.
+    let left=(w-r.right>width+18)?r.right+10:(r.left-width-10>8?r.left-width-10:Math.min(Math.max(10,r.left),w-width-10));
+    let top=r.bottom+8;
+    if(top+height>h-10)top=Math.max(10,r.top-height-9);
+    if(top+height>h-10)top=Math.max(10,h-height-10);
+    float.style.left=Math.round(left)+'px';float.style.top=Math.round(top)+'px';
+  }
+  function show(button,lock=false){
+    cancel();if(active!==button){if(active){active.setAttribute('aria-expanded','false');active.closest('.source-widget')?.classList.remove('is-open');}
+      active=button;float.innerHTML=button.closest('.source-widget')?.querySelector('.source-panel')?.innerHTML||'';}
+    pinned=lock;active.setAttribute('aria-expanded','true');active.setAttribute('aria-controls',float.id);
+    active.closest('.source-widget')?.classList.add('is-open');
+    float.classList.add('is-visible');position();
+  }
+  function later(){if(pinned)return;cancel();closeTimer=setTimeout(()=>{if(!float.matches(':hover')&&!(active?.matches(':hover'))&&!float.contains(document.activeElement)){release();}},160);}
+  document.addEventListener('pointerover',event=>{
+    const button=event.target.closest?.('.source-trigger');
+    if(!button||event.pointerType==='touch')return;
+    if(button===active){cancel();return;}
+    if(pinned)return;show(button);
+  });
+  document.addEventListener('pointerout',event=>{
+    if(event.target.closest?.('.source-widget') && !event.relatedTarget?.closest?.('.source-widget'))later();
+  });
+  float.addEventListener('pointerenter',cancel);
+  float.addEventListener('pointerleave',later);
+  document.addEventListener('focusin',event=>{const button=event.target.closest?.('.source-trigger');if(button&&!pinned)show(button);});
+  document.addEventListener('focusout',event=>{if(event.target.closest?.('.source-widget'))later();});
+  document.addEventListener('click',event=>{
+    const button=event.target.closest?.('.source-trigger');
+    if(button){event.preventDefault();if(active===button&&pinned)release();else show(button,true);return;}
+    if(!float.contains(event.target))release();
+  });
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&active){const last=active;release();last.focus();}});
+  document.addEventListener('scroll',()=>{if(active)position();},true);
+  window.addEventListener('resize',position);
 }
+
 function renderItems(){
  const to=filtered.slice(0,visibleCount),last=to.length;
  $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · 현재 ${last.toLocaleString('ko-KR')}건 표시 · 일부 자료는 날짜·내용 검증 전`;

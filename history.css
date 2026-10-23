@@ -32,3 +32,14 @@
 /* 중복 통합 세부 정보 */
 .item .detail-note{line-height:1.65;overflow-wrap:anywhere}.item .detail-note.conflict{color:light-dark(#a34c42,#f5aaa0)}
 .candidate small{margin-left:5px;font-weight:600}.candidate{white-space:normal;line-height:1.4}
+
+/* 출처 팝업 레이어: 목록의 stacking context 밖에 렌더링, 다른 항목에 가려지지 않음 */
+.source-widget .source-panel{display:none!important}
+.source-float{display:none;position:fixed;z-index:2147483000;box-sizing:border-box;width:min(390px,calc(100vw - 24px));max-height:min(470px,70vh);overflow:auto;overscroll-behavior:contain;padding:13px 15px;border:1px solid light-dark(#bfc9df,#63708c);border-radius:12px;background:light-dark(#ffffff,#222633);color:light-dark(#283344,#e1e5ef);box-shadow:0 18px 55px #0005,0 2px 8px #0002;line-height:1.5;font-size:11px;letter-spacing:normal;text-align:left;white-space:normal;opacity:1;isolation:isolate}
+.source-float.is-visible{display:block}
+.source-float strong{font-size:12px;display:block;margin-bottom:6px}.source-float p{font-size:11px;line-height:1.5;margin:6px 0;color:light-dark(#596579,#abb5ca)}
+.source-float ul{list-style:none;padding:0;margin:8px 0 0}.source-float li{margin:0;padding:7px 0;border-top:1px solid light-dark(#e9edf4,#434858);overflow-wrap:anywhere}.source-float li:first-child{border-top:0}
+.source-float a{color:light-dark(#315d99,#bfd4fd);font-size:11px;text-decoration:underline;text-underline-offset:2px}
+.source-float small{display:block;margin-top:3px;color:light-dark(#717b8c,#aeb4c3);font-size:10px}
+.source-float .source-kind{font-weight:700;font-size:10px;color:light-dark(#50678b,#b3c7f0);padding-right:4px}
+@media(max-width:550px){.source-float{left:12px!important;right:12px!important;top:auto!important;bottom:12px!important;width:auto!important;max-height:58vh;box-shadow:0 12px 60px #0007}}
