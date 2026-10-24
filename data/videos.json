@@ -1,6 +1,29 @@
 {
   "videos": [
     {
+      "id": "G5KW2QTovVg",
+      "title": "바람 맞으며 노래하는 백조 혜성",
+      "description": "990627 강원국제Expo 성공기념 슈퍼콘서트\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "990627 강원국제Expo 성공기념 슈퍼콘서트",
+      "sourceDate": null,
+      "publishedAt": "2026-10-24T10:30:11Z",
+      "thumbnail": "https://i.ytimg.com/vi/G5KW2QTovVg/maxresdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=G5KW2QTovVg",
+      "duration": "PT59S",
+      "durationSeconds": 59,
+      "videoFormat": "shorts",
+      "videoFormatSource": "auto",
+      "videoFormatConfidence": "medium",
+      "videoFormatReason": "재생시간 60초 이하",
+      "parseStatus": "needs_review",
+      "contentType": "video",
+      "playlistScope": "",
+      "playlistCandidate": false,
+      "firstSeenAt": "2026-10-24T11:00:57.265Z",
+      "dates": [],
+      "ignoredDateCandidates": []
+    },
+    {
       "id": "1lDJsCpsBKs",
       "title": "알사탕 혜성이",
       "description": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=mkuzid8dtuk\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
@@ -17672,8 +17695,8 @@
       "descriptionChangedAfterManual": false
     }
   ],
-  "total": 655,
-  "generatedAt": "2026-10-24T04:01:50.979Z",
+  "total": 656,
+  "generatedAt": "2026-10-24T11:00:57.265Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
