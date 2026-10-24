@@ -2685,13 +2685,15 @@ function validateDeployPatchFiles(files) {
     seen.add(path);
 
     const bytes = new TextEncoder().encode(contentText).byteLength;
-    if (bytes > 2 * 1024 * 1024) {
+    // history.json can exceed 2 MiB as original evidence accumulates.
+    // Keep the ordinary-file limit and a 16 MiB total request safeguard.
+    if (path !== "data/history.json" && bytes > 2 * 1024 * 1024) {
       throw new HttpError(413, `${path} 파일이 2MB를 초과합니다.`);
     }
 
     totalBytes += bytes;
-    if (totalBytes > 6 * 1024 * 1024) {
-      throw new HttpError(413, "배포 파일 전체 크기가 6MB를 초과합니다.");
+    if (totalBytes > 16 * 1024 * 1024) {
+      throw new HttpError(413, "배포 파일 전체 크기가 16MB를 초과합니다.");
     }
 
     return { path, contentText };

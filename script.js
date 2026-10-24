@@ -4639,14 +4639,17 @@ async function extractDeployZipTextFiles(arrayBuffer, normalizedEntries) {
   }
 
   const totalUncompressed = allowed.reduce((sum, item) => sum + Number(item.uncompressedSize || 0), 0);
-  if (totalUncompressed > 6 * 1024 * 1024) {
-    throw new Error("배포할 파일의 전체 압축 해제 크기는 6MB를 넘을 수 없습니다.");
+  // The history archive grows as citations and source records accumulate.
+  // Guard the whole ZIP against overly large or malicious payloads without
+  // imposing the former 2 MiB cap on data/history.json.
+  if (totalUncompressed > 16 * 1024 * 1024) {
+    throw new Error("배포할 파일의 전체 압축 해제 크기는 16MB를 넘을 수 없습니다.");
   }
 
   const files = [];
 
   for (const item of allowed) {
-    if (item.uncompressedSize > 2 * 1024 * 1024) {
+    if (item.path !== "data/history.json" && item.uncompressedSize > 2 * 1024 * 1024) {
       throw new Error(`${item.path} 파일이 2MB를 초과합니다.`);
     }
 
@@ -5159,7 +5162,20 @@ async function inspectDeployZip(file) {
     const entries = readZipCentralDirectory(buffer);
     const normalized = normalizeDeployZipEntries(entries);
     const blocked = normalized.filter(x => x.state === "blocked").length;
-    const allowed = normalized.filter(x => x.state === "allowed").length;
+    const allowed = normalized.filter(x => x.state === "allowed");
+
+    // Validate uncompressed size before enabling commit; keep the same
+    // limits as ZIP extraction and the Worker backend.
+    const sizeTotal = allowed.reduce((sum, x) => sum + Number(x.uncompressedSize || 0), 0);
+    if (sizeTotal > 16 * 1024 * 1024) {
+      throw new Error("배포할 파일의 전체 압축 해제 크기는 16MB를 넘을 수 없습니다.");
+    }
+    const oversized = allowed.find(x =>
+      x.path !== "data/history.json" && Number(x.uncompressedSize || 0) > 2 * 1024 * 1024
+    );
+    if (oversized) {
+      throw new Error(`${oversized.path} 파일이 2MB를 초과합니다.`);
+    }
 
     deployPatchState.file = file;
     deployPatchState.entries = entries;
@@ -5176,7 +5192,7 @@ async function inspectDeployZip(file) {
       blocked ? "error" : "success"
     );
 
-    if (!blocked && allowed) {
+    if (!blocked && allowed.length) {
       try {
         await loadDeployContext();
       } catch (contextError) {
