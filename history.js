@@ -570,7 +570,7 @@ function recommendedLinks(e){
 }
 function fmt(e){
  if(e.precision==='month')return `${e.date.slice(5,7)}월`;
- if(e.precision==='year')return '연도만';
+ if(e.precision==='year')return '월·일 미상';
  return e.date.slice(5).replace('-','.');
 }
 function sourceWidget(e){
@@ -737,6 +737,7 @@ function eventMarkup(e){
 function renderItems(){
   $('#events').hidden=false;$('#calendar').hidden=true;
   const to=filtered.slice(0,visibleCount),last=to.length;
+  const yearUnknownHtml=yearUnknownEvents.length?`<section class="cal-month-unknown"><h3>${y}년 월·일 미상 기록 · ${yearUnknownEvents.length}건</h3><p class="cal-hint">이 기록들은 1월 일정이 아니며, 정렬 기준으로만 이 연도의 첫 화면 아래에 표시합니다.</p>${yearUnknownEvents.map(eventMarkup).join('')}</section>`:'';
   $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · 현재 ${last.toLocaleString('ko-KR')}건 표시 · 일부 자료는 날짜·내용 검증 전`;
   if(!last){$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
   let prev='';
@@ -780,7 +781,8 @@ function renderCalendar(){
   const [y,m]=calendarMonth.split('-').map(Number);
   const firstDay=new Date(Date.UTC(y,m-1,1)).getUTCDay();
   const daysInMonth=new Date(Date.UTC(y,m,0)).getUTCDate();
-  const monthEvents=filtered.filter(e=>e.date.slice(0,7)===calendarMonth);
+  const monthEvents=filtered.filter(e=>e.date.slice(0,7)===calendarMonth&&e.precision!=='year');
+  const yearUnknownEvents=m===1?filtered.filter(e=>e.precision==='year'&&e.date.slice(0,4)===String(y)):[];
   const exactEvents=monthEvents.filter(e=>e.precision==='day');
   const unknownEvents=monthEvents.filter(e=>e.precision!=='day');
   const grouped=new Map();
@@ -803,10 +805,10 @@ function renderCalendar(){
   const selectedLabel=selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`;
   const details=selected.length?selected.map(eventMarkup).join(''):'<p class="cal-no-day">날짜를 선택하면 해당 날짜의 활동 기록이 표시됩니다.</p>';
   const unknown=unknownEvents.length?`<section class="cal-month-unknown"><h3>이달의 일자 미상 기록 · ${unknownEvents.length}건</h3><p class="cal-hint">실제 날짜가 확인되지 않아 달력의 특정 날짜에 배치하지 않았습니다.</p>${unknownEvents.map(eventMarkup).join('')}</section>`:'';
-  $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · ${y}년 ${m}월 ${monthEvents.length}건 · 일부 날짜·내용 검증 전`;
+  $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · ${y}년 ${m}월 ${monthEvents.length+yearUnknownEvents.length}건 · 일부 날짜·내용 검증 전`;
   const yearOptions=Array.from({length:Number(endMonth.slice(0,4))-Number(startMonth.slice(0,4))+1},(_,i)=>Number(startMonth.slice(0,4))+i).map(yr=>`<option value="${yr}" ${yr===y?'selected':''}>${yr}년</option>`).join('');
   const monthOptions=Array.from({length:12},(_,i)=>i+1).map(mo=>`<option value="${pad2(mo)}" ${mo===m?'selected':''}>${mo}월</option>`).join('');
-  $('#calendar').innerHTML=`<div class="cal-controls"><button class="cal-nav" id="calPrev" type="button" aria-label="이전 달" ${calendarMonth<=startMonth?'disabled':''}>‹</button><div class="cal-month-select"><select id="calYear" aria-label="달력 연도 선택">${yearOptions}</select><select id="calMonth" aria-label="달력 월 선택">${monthOptions}</select></div><button class="cal-nav" id="calNext" type="button" aria-label="다음 달" ${calendarMonth>=endMonth?'disabled':''}>›</button></div><div class="cal-weekdays" aria-hidden="true">${['일','월','화','수','목','금','토'].map(t=>`<span>${t}</span>`).join('')}</div><div class="cal-days">${cells.join('')}</div><p class="cal-hint">날짜별 일정 수를 표시합니다. 파란 점은 관련 유튜브 영상이 있는 날짜입니다.</p><section class="cal-detail" aria-live="polite"><h2 class="cal-detail-title">${selectedLabel} · ${selected.length}건</h2>${details}</section>${unknown}`;
+  $('#calendar').innerHTML=`<div class="cal-controls"><button class="cal-nav" id="calPrev" type="button" aria-label="이전 달" ${calendarMonth<=startMonth?'disabled':''}>‹</button><div class="cal-month-select"><select id="calYear" aria-label="달력 연도 선택">${yearOptions}</select><select id="calMonth" aria-label="달력 월 선택">${monthOptions}</select></div><button class="cal-nav" id="calNext" type="button" aria-label="다음 달" ${calendarMonth>=endMonth?'disabled':''}>›</button></div><div class="cal-weekdays" aria-hidden="true">${['일','월','화','수','목','금','토'].map(t=>`<span>${t}</span>`).join('')}</div><div class="cal-days">${cells.join('')}</div><p class="cal-hint">날짜별 일정 수를 표시합니다. 파란 점은 관련 유튜브 영상이 있는 날짜입니다.</p><section class="cal-detail" aria-live="polite"><h2 class="cal-detail-title">${selectedLabel} · ${selected.length}건</h2>${details}</section>${unknown}${yearUnknownHtml}`;
   $('#calPrev').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,-1)));
   $('#calNext').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,1)));
   const selectCalendarMonth=()=>setCalendarMonth(`${$('#calYear').value}-${$('#calMonth').value}`);
