@@ -550,9 +550,19 @@ function selectRows(){
  const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim().toLocaleLowerCase();
  filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||normalizeSubject(e.subject)===subject)&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||!!e.relatedVideos?.length)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
 }
+function chronologicalKey(e){
+  const year=e.date.slice(0,4);
+  if(e.precision==='year')return `${year}-13-00`;
+  if(e.precision==='month')return `${e.date.slice(0,7)}-32`;
+  return e.date;
+}
+function headingKey(e){return e.precision==='year'?`${e.date.slice(0,4)}-unknown`:e.date.slice(0,7);}
 function monthHeading(e,previous) {
- const month=e.date.slice(0,7);
- return month===previous?'':`<h2 class="month-title">${safe(month.slice(0,4))}년 ${safe(Number(month.slice(5)))}월</h2>`;
+ const key=headingKey(e);
+ if(key===previous)return '';
+ return e.precision==='year'
+  ? `<h2 class="month-title">${safe(e.date.slice(0,4))}년 · 월·일 미상</h2>`
+  : `<h2 class="month-title">${safe(key.slice(0,4))}년 ${safe(Number(key.slice(5)))}월</h2>`;
 }
 function recommendedLinks(e){
  if(!Array.isArray(e.relatedVideos))return [];
@@ -594,8 +604,12 @@ function sourceWidget(e){
  const provenance=(e.allSources||[e.source||'출처 미기재']).join(' · ');
  const categoryOrigin=e.categoryOriginal?`<p>분류 표기 통일: ${safe(e.categoryOriginal)} → ${safe(e.category)}</p>`:'';
  const rows=ordered.map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.label)} ↗</a>${r.note?`<small>${safe(r.note)}</small>`:''}</li>`).join('');
+ const mediaRecords=Array.isArray(e.mergedSourceRecords)?e.mergedSourceRecords:[];
+ const originalList=mediaRecords.length>1
+  ? `<h4 class="source-merged-title">통합 전 개별 방송·행사 기록 (${mediaRecords.length}건)</h4><ol class="source-merged-list">${mediaRecords.map(r=>`<li><strong>${safe(r.title||'제목 미기재')}</strong><small>${safe(r.date||'날짜 미상')} · ${safe(r.source||'출처 미기재')} · ${safe(r.verification||'검증 상태 미기재')}</small>${r.sourceNote?`<small>${safe(String(r.sourceNote).slice(0,270))}</small>`:''}</li>`).join('')}</ol>`
+  : '';
  const entries=rows?`<ul>${rows}</ul>`:'<p class="source-unlinked">이 일정에 연결된 외부 근거 URL이 없습니다.</p>';
- return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 출처 보기" aria-expanded="false" title="출처·검증 근거 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>자료 · 검증 근거</strong><span class="source-status">${safe(status)}</span><p>기록 계열: ${safe(provenance)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p>${categoryOrigin}${note?`<p>${safe(note.slice(0,350))}</p>`:''}${entries}</span></span>`;
+ return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 출처 보기" aria-expanded="false" title="출처·검증 근거 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>자료 · 검증 근거</strong><span class="source-status">${safe(status)}</span><p>기록 계열: ${safe(provenance)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p>${categoryOrigin}${note?`<p>${safe(note.slice(0,350))}</p>`:''}${originalList}${entries}</span></span>`;
 }
 function researchWidget(){
  const rows=[...researchSources.values()].map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.title)} ↗</a><small>${safe(r.note)}</small></li>`).join('');
@@ -741,7 +755,7 @@ function renderItems(){
   if(!last){$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
   let prev='';
   $('#events').innerHTML=to.map(e=>{
-    const header=monthHeading(e,prev);prev=e.date.slice(0,7);
+    const header=monthHeading(e,prev);prev=headingKey(e);
     return header+eventMarkup(e);
   }).join('');
   $('#loadMore').hidden=filtered.length<=last;
@@ -755,8 +769,9 @@ function calendarRange(){
 function initialCalendarMonth(){
   // Date-linked routes should open the exact month; otherwise use the newest relevant month.
   if(explicitDate)return explicitDate.slice(0,7);
-  if(highlightEvent){const record=events.find(e=>e.id===highlightEvent);if(record)return record.date.slice(0,7);}
-  return filtered.length?filtered[filtered.length-1].date.slice(0,7):calendarRange()[1];
+  if(highlightEvent){const record=events.find(e=>e.id===highlightEvent);if(record)return record.precision==='year'?`${record.date.slice(0,4)}-12`:record.date.slice(0,7);}
+  if(filtered.length){const last=filtered[filtered.length-1];return last.precision==='year'?`${last.date.slice(0,4)}-12`:last.date.slice(0,7);}
+  return calendarRange()[1];
 }
 function shiftCalendarMonth(month,delta){
   const [y,m]=month.split('-').map(Number),next=new Date(Date.UTC(y,m-1+delta,1));
@@ -781,14 +796,16 @@ function renderCalendar(){
   const firstDay=new Date(Date.UTC(y,m-1,1)).getUTCDay();
   const daysInMonth=new Date(Date.UTC(y,m,0)).getUTCDate();
   const monthEvents=filtered.filter(e=>e.date.slice(0,7)===calendarMonth&&e.precision!=='year');
-  const yearUnknownEvents=m===1?filtered.filter(e=>e.precision==='year'&&e.date.slice(0,4)===String(y)):[];
+  const yearUnknownEvents=m===12?filtered.filter(e=>e.precision==='year'&&e.date.slice(0,4)===String(y)):[];
   const exactEvents=monthEvents.filter(e=>e.precision==='day');
   const unknownEvents=monthEvents.filter(e=>e.precision!=='day');
+  const dateUnknownEvents=[...unknownEvents,...yearUnknownEvents];
+  const unknownKey=`${calendarMonth}-unknown`;
   const grouped=new Map();
   for(const e of exactEvents){const day=Number(e.date.slice(8));if(!grouped.has(day))grouped.set(day,[]);grouped.get(day).push(e);}
-  if(!selectedCalendarDate||!selectedCalendarDate.startsWith(calendarMonth)){
+  if(!selectedCalendarDate||!selectedCalendarDate.startsWith(`${calendarMonth}-`)){
     const d=[...grouped.keys()].sort((a,b)=>a-b).pop();
-    selectedCalendarDate=d?`${calendarMonth}-${pad2(d)}`:'';
+    selectedCalendarDate=d?`${calendarMonth}-${pad2(d)}`:(dateUnknownEvents.length?unknownKey:'');
   }
   const [startMonth,endMonth]=calendarRange();
   const cells=[];
@@ -800,15 +817,17 @@ function renderCalendar(){
     const note=items.length?`${items.length}건의 일정${hasVideo?', 관련 영상 있음':''}`:'등록 일정 없음';
     cells.push(`<button type="button" class="cal-day${items.length?' has-events':''}${isSelected?' is-selected':''}" data-date="${dayDate}" aria-label="${y}년 ${m}월 ${d}일, ${note}" aria-pressed="${isSelected}"><span class="cal-day-number">${d}</span>${items.length?`<span class="cal-day-count">${items.length}건</span>`:''}${hasVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
   }
-  const selected=selectedCalendarDate?grouped.get(Number(selectedCalendarDate.slice(8)))||[]:[];
-  const selectedLabel=selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`;
-  const details=selected.length?selected.map(eventMarkup).join(''):'<p class="cal-no-day">날짜를 선택하면 해당 날짜의 활동 기록이 표시됩니다.</p>';
-  const unknown=unknownEvents.length?`<section class="cal-month-unknown"><h3>이달의 일자 미상 기록 · ${unknownEvents.length}건</h3><p class="cal-hint">실제 날짜가 확인되지 않아 달력의 특정 날짜에 배치하지 않았습니다.</p>${unknownEvents.map(eventMarkup).join('')}</section>`:'';
-  const yearUnknownHtml=yearUnknownEvents.length?`<section class="cal-month-unknown"><h3>${y}년 월·일 미상 기록 · ${yearUnknownEvents.length}건</h3><p class="cal-hint">이 기록들은 1월 일정이 아니며, 정렬 기준으로만 이 연도의 첫 화면 아래에 표시합니다.</p>${yearUnknownEvents.map(eventMarkup).join('')}</section>`:'';
+  // The undated tile is always appended immediately after the final numbered day.
+  const unknownSelected=selectedCalendarDate===unknownKey;
+  const hasUnknownVideo=dateUnknownEvents.some(e=>recommendedLinks(e).length);
+  cells.push(`<button type="button" class="cal-day cal-day-unknown${dateUnknownEvents.length?' has-events':''}${unknownSelected?' is-selected':''}" data-date="${unknownKey}" aria-label="${y}년 ${m}월 날짜 미상, ${dateUnknownEvents.length}건" aria-pressed="${unknownSelected}"><span class="cal-day-number">날짜 미상</span><span class="cal-day-count">${dateUnknownEvents.length}건</span>${hasUnknownVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
+  const selected=unknownSelected?dateUnknownEvents:(selectedCalendarDate?grouped.get(Number(selectedCalendarDate.slice(8)))||[]:[]);
+  const selectedLabel=unknownSelected?`${y}년 ${m}월 날짜 미상${m===12&&yearUnknownEvents.length?' (연도만 확인된 기록 포함)':''}`:(selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`);
+  const details=selected.length?selected.map(eventMarkup).join(''):'<p class="cal-no-day">이 칸에 해당하는 활동 기록이 없습니다.</p>';
   $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · ${y}년 ${m}월 ${monthEvents.length+yearUnknownEvents.length}건 · 일부 날짜·내용 검증 전`;
   const yearOptions=Array.from({length:Number(endMonth.slice(0,4))-Number(startMonth.slice(0,4))+1},(_,i)=>Number(startMonth.slice(0,4))+i).map(yr=>`<option value="${yr}" ${yr===y?'selected':''}>${yr}년</option>`).join('');
   const monthOptions=Array.from({length:12},(_,i)=>i+1).map(mo=>`<option value="${pad2(mo)}" ${mo===m?'selected':''}>${mo}월</option>`).join('');
-  $('#calendar').innerHTML=`<div class="cal-controls"><button class="cal-nav" id="calPrev" type="button" aria-label="이전 달" ${calendarMonth<=startMonth?'disabled':''}>‹</button><div class="cal-month-select"><select id="calYear" aria-label="달력 연도 선택">${yearOptions}</select><select id="calMonth" aria-label="달력 월 선택">${monthOptions}</select></div><button class="cal-nav" id="calNext" type="button" aria-label="다음 달" ${calendarMonth>=endMonth?'disabled':''}>›</button></div><div class="cal-weekdays" aria-hidden="true">${['일','월','화','수','목','금','토'].map(t=>`<span>${t}</span>`).join('')}</div><div class="cal-days">${cells.join('')}</div><p class="cal-hint">날짜별 일정 수를 표시합니다. 파란 점은 관련 유튜브 영상이 있는 날짜입니다.</p><section class="cal-detail" aria-live="polite"><h2 class="cal-detail-title">${selectedLabel} · ${selected.length}건</h2>${details}</section>${unknown}${yearUnknownHtml}`;
+  $('#calendar').innerHTML=`<div class="cal-controls"><button class="cal-nav" id="calPrev" type="button" aria-label="이전 달" ${calendarMonth<=startMonth?'disabled':''}>‹</button><div class="cal-month-select"><select id="calYear" aria-label="달력 연도 선택">${yearOptions}</select><select id="calMonth" aria-label="달력 월 선택">${monthOptions}</select></div><button class="cal-nav" id="calNext" type="button" aria-label="다음 달" ${calendarMonth>=endMonth?'disabled':''}>›</button></div><div class="cal-weekdays" aria-hidden="true">${['일','월','화','수','목','금','토'].map(t=>`<span>${t}</span>`).join('')}</div><div class="cal-days">${cells.join('')}</div><p class="cal-hint">날짜별 일정 수를 표시합니다. 파란 점은 관련 유튜브 영상이 있는 날짜입니다. 날짜 미상 칸은 실제 특정 일자에 배정되지 않은 기록을 보여줍니다. 연도만 확인된 항목은 12월의 날짜 미상 칸에서 찾을 수 있습니다.</p><section class="cal-detail" aria-live="polite"><h2 class="cal-detail-title">${selectedLabel} · ${selected.length}건</h2>${details}</section>`;
   $('#calPrev').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,-1)));
   $('#calNext').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,1)));
   const selectCalendarMonth=()=>setCalendarMonth(`${$('#calYear').value}-${$('#calMonth').value}`);
@@ -837,7 +856,7 @@ async function init(){
   }
   const matchingStats=generateRuntimeRecommendations(vd.videos||[]);
   console.info('[활동 연표] 실시간 영상 후보 점검:', matchingStats);
-  events.sort((a,b)=>a.date.localeCompare(b.date)||String(a.id).localeCompare(String(b.id)));
+  events.sort((a,b)=>chronologicalKey(a).localeCompare(chronologicalKey(b))||String(a.id).localeCompare(String(b.id)));
   explicitDate=DAY.test(qs.get('date')||'')?qs.get('date'):'';
   highlightEvent=eventAliases[qs.get('event')||'']||qs.get('event')||'';
   if(highlightEvent){const selected=events.find(e=>e.id===highlightEvent);if(selected){activeChapter=selected.chapter;}}

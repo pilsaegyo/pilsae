@@ -411,3 +411,14 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
   .events .item::before{right:2%;font-size:15px;opacity:.06}
   .events .item::after{font-size:13px;opacity:.022}
 }
+
+/* v22: keep undated items in a genuine selectable calendar cell, even after the 31st. */
+.cal-day-unknown{border-style:dashed;justify-content:center;background:light-dark(#f7f7fa,#282b36);gap:6px}
+.cal-day-unknown .cal-day-number{font-size:11px;white-space:normal;overflow-wrap:anywhere}
+.cal-day-unknown .cal-day-count{font-weight:650}
+.source-merged-title{font-size:12px;margin:12px 0 6px}
+.source-merged-list{padding-left:21px;margin:0 0 10px}
+.source-merged-list li{margin:0 0 9px}
+.source-merged-list li strong{display:block;font-size:12px}
+.source-merged-list li small{display:block;margin-top:3px;line-height:1.45}
+@media(max-width:550px){.cal-day-unknown{padding:5px 2px}.cal-day-unknown .cal-day-number{font-size:10px;text-align:center}}
