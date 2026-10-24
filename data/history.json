@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 805,
+      "chapter1": 821,
       "chapter2": 913,
       "chapter3": 556,
       "chapter4": 74
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2348,
+    "visibleEvents": 2364,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -599,6 +599,16 @@
       "actual_held_post_event_press_article": "이번 조사에서 찾지 못함",
       "post_event_archive_video": "사용자 제공 2002-02-14 KMTV 생Q뉴스 아카이브 영상 표제",
       "site_deployed": false
+    },
+    "v28_1998Legacy": {
+      "baseEventCount": 2348,
+      "addedEvents": 16,
+      "newTotal": 2364,
+      "reverifiedCandidates": 14,
+      "newFoundITV": 2,
+      "noDateFabricated": true,
+      "method": "연도 미상 date=01-01 precision=year. 화면은 v22의 날짜미상 분리 로직을 사용",
+      "sourceData": "v27 1998년 재검증 자료 + v28 iTV/KMTV/Mnet/Arirang/NTV 조사"
     }
   },
   "chapters": [
@@ -57892,6 +57902,432 @@
         "v25-kakao-20020610-daumday"
       ],
       "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-001",
+      "date": "1998-04-12",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "SBS 인기가요 11회 — 신화 출연",
+      "verification": "방송사 회차·영상 및 외부 목록 교차확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000370942",
+      "sourceUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000370942",
+        "https://namu.moe/w/SBS%20%EC%9D%B8%EA%B8%B0%EA%B0%80%EC%9A%94/%EC%B0%A8%ED%8A%B8/1998%EB%85%84"
+      ],
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "SBS 공식 11회/1998-04-12 방송 편성 직접 확인. 비공식 출연자 명단에 신화 명시. 회차 전체 영상 재생 및 해당 무대곡 검증은 안 됨. 추가 확인사항: v26의 공식 링크 22000370933은 1998-02-22 4회이므로 잘못 연결된 근거. 22000370942(11회)로 교체. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "영상·팬 기록에 기재된 날짜 (방송일 재검증 필요)",
+      "sourceRecord": "v27 조사번호 V26-001; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-001-e698fa6"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-002",
+      "date": "1998-05-17",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "SBS 인기가요 16회 — 신화 〈해결사〉",
+      "verification": "방송사 공식 클립·내용 확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000374647",
+      "sourceUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000374647"
+      ],
+      "referenceVideoUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000374647",
+      "referenceVideoUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000374647"
+      ],
+      "sourceNote": "SBS 직접 공개 클립에 16회, 1998-05-17, 신화 「해결사」가 모두 기재. 추가 확인사항: 편성/클립 메타데이터 확인; 영상 전체 장면을 독립 재생해 검수했다고 의미하지 않음. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "원본 방송 날짜 공식 자료",
+      "sourceRecord": "v27 조사번호 V26-002; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-002-b784aa0"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-003",
+      "date": "1998-05-24",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "SBS 인기가요 17회 — 신화 11~20위 소개",
+      "verification": "방송사 공식 클립·내용 확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://m.programs.sbs.co.kr/enter/gayo/clip/54768/22000374651",
+      "sourceUrls": [
+        "https://m.programs.sbs.co.kr/enter/gayo/clip/54768/22000374651",
+        "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000374656"
+      ],
+      "referenceVideoUrl": "https://m.programs.sbs.co.kr/enter/gayo/clip/54768/22000374651",
+      "referenceVideoUrls": [
+        "https://m.programs.sbs.co.kr/enter/gayo/clip/54768/22000374651"
+      ],
+      "sourceNote": "SBS 17회/1998-05-24 공식 클립 목록에 「신화가 소개하는 11-20위」 포함. clip/22000374656 자체는 노아 공연 페이지이고 그 안에 신화 순위 소개 영상 링크가 있다. 추가 확인사항: 신화의 진행 장면이지 공연 무대라는 증거는 아님. 직접 클립 id 22000374651을 우선 사용. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "원본 방송 날짜 공식 자료",
+      "sourceRecord": "v27 조사번호 V26-003; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-003-65e37fe"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-004",
+      "date": "1998-06-28",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "SBS 인기가요 21회 — 신화 〈으쌰으쌰〉",
+      "verification": "방송사 공식 클립·내용 확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000370954",
+      "sourceUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000370954",
+        "https://m.programs.sbs.co.kr/enter/gayo/clip/54768/22000374686"
+      ],
+      "referenceVideoUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000370954",
+      "referenceVideoUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000370954"
+      ],
+      "sourceNote": "SBS 21회 1998-06-28 공식 클립 목록에서 신화 「으쌰 으쌰」 개별 영상 확인. 추가 확인사항: SBS 회차·무대 근거와 사설 팬영상 제목을 혼동하지 않음. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "원본 방송 날짜 공식 자료",
+      "sourceRecord": "v27 조사번호 V26-004; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-004-5681766"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-005",
+      "date": "1998-07-11",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "MBC 음악캠프 12회 — 신화 〈으쌰으쌰〉",
+      "verification": "방송사 회차·영상 및 외부 목록 교차확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=kIy3RE-C4v4",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=kIy3RE-C4v4",
+        "https://sexy-lee-min-woo.tumblr.com/performances3"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=kIy3RE-C4v4",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=kIy3RE-C4v4"
+      ],
+      "sourceNote": "MBC 〈옛송live〉 명의의 음악캠프 12회 여름특집 전체 영상 메타정보가 검색으로 확인됨. 해외 팬목록에는 1998-07-11 신화 으쌰으쌰 무대 명시. 추가 확인사항: 공식 공개 영상 제목의 출연진/곡명과 정확한 재생 구간을 별도 직접 재생 확인하지 못했으므로 곡명은 팬 목록 대조 표시. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "영상·팬 기록에 기재된 날짜 (방송일 재검증 필요)",
+      "sourceRecord": "v27 조사번호 V26-005; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-005-7ff9fe1"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-006",
+      "date": "1998-08-15",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "KM 쇼!뮤직탱크 164회 2부 — 신화 〈으쌰으쌰〉",
+      "verification": "보유·팬 아카이브 영상 근거 / 방송일 직접검증 전",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=_BJqASpWq5Q",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=_BJqASpWq5Q"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=_BJqASpWq5Q",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=_BJqASpWq5Q"
+      ],
+      "sourceNote": "사용자 보유 아카이브 영상 설명에 1998-08-15, KM 쇼뮤직탱크 164회 2부 표기. 추가 확인사항: 독립 확인 가능한 방송사 회차·원본 URL 없음. 재편집 영상의 다수 날짜 중 하나일 가능성을 배제 못함. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음) 1998년 8월 15일 KMTV 쇼뮤직탱크 방영 정황은 당시 가수 1위 기록으로 간접 대조되나 신화 해당 장면은 보유 편집 영상 설명 기준.",
+      "dateKind": "영상·팬 기록에 기재된 날짜 (방송일 재검증 필요)",
+      "sourceRecord": "v27 조사번호 V26-006; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-006-926dc6c"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-007",
+      "date": "1998-08-22",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "MBC 음악캠프 17회 — 신화 〈으쌰으쌰〉",
+      "verification": "방송사 회차·영상 및 외부 목록 교차확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=VtboX7THRzE",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=VtboX7THRzE",
+        "https://sexy-lee-min-woo.tumblr.com/performances3"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=VtboX7THRzE",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=VtboX7THRzE"
+      ],
+      "sourceNote": "MBC 〈옛송live〉가 음악캠프 1998년 17회 특집 전체 영상 제목의 출연자 목록에 신화를 명시. 해외 공연목록도 1998-08-22 으쌰으쌰 기재. 추가 확인사항: 17회에 신화 포함은 직접적인 공개 메타 근거지만, 재생 구간의 곡과 정확한 방송일은 공식 영상 설명 원문/재생 대조가 더 필요. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "영상·팬 기록에 기재된 날짜 (방송일 재검증 필요)",
+      "sourceRecord": "v27 조사번호 V26-007; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-007-8c414c8"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-008",
+      "date": "1998-08-30",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "SBS 인기가요 30회 — 신화 〈천일유혼〉 및 〈Sharing Forever〉 방송 자료",
+      "verification": "방송사 공식 클립·내용 확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000375276",
+      "sourceUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000375276",
+        "https://www.youtube.com/watch?v=OuVq9vRU2NA"
+      ],
+      "referenceVideoUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000375276",
+      "referenceVideoUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000375276"
+      ],
+      "sourceNote": "SBS 공식 30회 클립 1998-08-30 신화 「천일유혼」 무대 명시. SBS OLD ENTERTAINMENT 발행 「Sharing Forever」 영상 메타에도 1998-08-30 SBS 인기가요 E30 명시. 한 회차 내 두 곡 증거로 연결하되 한 방송을 일정 두 건으로 나누지 않음. 추가 확인사항: SBS 모바일 클립 검색 결과에 1998-08-29(토) 표기가 노출되나 SBS 공식 AMP 클립은 1998-08-30(일)임. 일요일 방송일 우선. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "원본 방송 날짜 공식 자료",
+      "sourceRecord": "v27 조사번호 V26-008; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-008-aba68ce"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-009",
+      "date": "1998-10-04",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "SBS 인기가요 35회 — 신화 출연",
+      "verification": "방송사 회차·영상 및 외부 목록 교차확인",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000370967",
+      "sourceUrls": [
+        "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000370967",
+        "https://namu.moe/w/SBS%20%EC%9D%B8%EA%B8%B0%EA%B0%80%EC%9A%94/%EC%B0%A8%ED%8A%B8/1998%EB%85%84"
+      ],
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "SBS 35회는 1998-10-04 방송. 2차 출연자 표에서 신화가 명시되고 차트에 천일유혼 6위 기재. 추가 확인사항: 차트 곡 6위 등재가 곧 그 곡의 실제 무대라는 뜻은 아니므로 제목에서 천일유혼 공연 확정 표현 제거. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "영상·팬 기록에 기재된 날짜 (방송일 재검증 필요)",
+      "sourceRecord": "v27 조사번호 V26-009; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-009-971b230"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-010",
+      "date": "1998-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "KMTV 생방송 뮤직큐 — 신화 새내기 환영회·데뷔 인터뷰",
+      "verification": "보유·팬 아카이브 영상 근거 / 방송일 직접검증 전",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=gAQPHTrZywI",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=gAQPHTrZywI",
+        "https://www.youtube.com/watch?v=2JHxUInPq6g"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=gAQPHTrZywI",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=gAQPHTrZywI"
+      ],
+      "sourceNote": "KMTV 뮤직큐 새내기 환영회 관련 보유 아카이브와 셩공시대 표기 원본 링크 확보. 추가 확인사항: 해당 특정 방송일·원본 재생 독립 확인 불가. 연도만 확정된 형태로 보존. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음) 셩공시대님 채널 공개 영상 제목 및 설명 직접 색인 확인(게시일 2025-04-22, 1998년 방송일과 별개).",
+      "dateKind": "영상 표제 1998년, 월·일 미상",
+      "sourceRecord": "v27 조사번호 V26-010; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-010-5cea5e4"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-011",
+      "date": "1998-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet 핫라인 2727 — 신화 인터뷰",
+      "verification": "보유·팬 아카이브 영상 근거 / 방송일 직접검증 전",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=6sFwgegQ6ZY",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=6sFwgegQ6ZY",
+        "https://www.donga.com/archive/newslibrary/view?ymd=19980609"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=6sFwgegQ6ZY",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=6sFwgegQ6ZY"
+      ],
+      "sourceNote": "보유 영상 표제에 Mnet 핫라인2727 신화 인터뷰 및 1998년 기재. 동아일보 1998년 신문 아카이브는 프로그램 존재 정황 보조 자료. 추가 확인사항: 특정 방송일 불명. 지면 원문에서 신화 해당 회차 출연은 확인하지 못함. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "영상 표제 1998년, 월·일 미상",
+      "sourceRecord": "v27 조사번호 V26-011; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-011-6f4db62"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-012",
+      "date": "1998-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "Mnet 리듬천국 — 신화 〈으쌰으쌰〉",
+      "verification": "보유·팬 아카이브 영상 근거 / 방송일 직접검증 전",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=O4wqGG_m6AQ",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=O4wqGG_m6AQ"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=O4wqGG_m6AQ",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=O4wqGG_m6AQ"
+      ],
+      "sourceNote": "보유 아카이브 설명상 Mnet 리듬천국 신화 으쌰으쌰 무대로 기재됨. 추가 확인사항: 프로그램·방송일·전체 원본 클립 직접 대조 미완료. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음)",
+      "dateKind": "영상 표제 1998년, 월·일 미상",
+      "sourceRecord": "v27 조사번호 V26-012; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-012-3396583"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-013",
+      "date": "1998-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "1998년 iTV/아이넷TV 재방영 표기 영상 — 신화 〈으쌰으쌰〉",
+      "verification": "보유·팬 아카이브 영상 근거 / 방송일 직접검증 전",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=nW_kSyVRi70",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=nW_kSyVRi70",
+        "https://www.kiptv.or.kr/member_company01/31"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=nW_kSyVRi70",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=nW_kSyVRi70"
+      ],
+      "sourceNote": "보유 아카이브 영상이 경인방송/아이넷TV를 혼합 표기함. 추가 확인사항: 실제 방송사와 송출일을 구별할 수 없어 확정급으로 승격 금지. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음) 아이넷TV는 2002년에 설립되었으므로 1998년 방영 방송사로 기록하지 않음. iTV 원본/아이넷 후대 자료 제공 여부 미확정. 확인 출처 https://www.kiptv.or.kr/member_company01/31",
+      "dateKind": "영상 표제 1998년, 월·일 미상",
+      "sourceRecord": "v27 조사번호 V26-013; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-013-4e90ecd"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v26-014",
+      "date": "1998-07-19",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "예능",
+      "subject": "신화 전체",
+      "title": "KBS 쇼! 행운을 잡아라 — 신화 무대 추정",
+      "verification": "보유·팬 아카이브 영상 근거 / 방송일 직접검증 전",
+      "source": "v27 1998년 영상/방송 재검증 자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=_BJqASpWq5Q",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=_BJqASpWq5Q",
+        "https://www.imaeil.com/page/view/1998022114292993702"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=_BJqASpWq5Q",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=_BJqASpWq5Q"
+      ],
+      "sourceNote": "KBS 〈쇼! 행운을 잡아라〉 프로그램 자체의 1998년 존재 확인. 사용자 영상 목록에 1998-07-19 신화 출연 표기 있음. 추가 확인사항: KBS 공식 해당 날짜 출연 명단, 개별 공연 클립 확보 실패. 같은 날짜 SBS 인기가요와 별개 프로그램으로 관리. (v28 보강: 영상 존재를 활동 근거로 인정하되 영상 업로드일을 방송일로 오인하지 않음) 같은 날 SBS 인기가요 방송과는 서로 다른 콘텐츠로 기록하되 KBS 당일 신화 출연 명단 직접 확인 전.",
+      "dateKind": "영상·팬 기록에 기재된 날짜 (방송일 재검증 필요)",
+      "sourceRecord": "v27 조사번호 V26-014; v28 1998년 옛 방송사 조사",
+      "sourceRefs": [
+        "v28-legacy-v26-014-926dc6c"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v28-itv-001",
+      "date": "1998-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "iTV 인천방송 — 신화 〈해결사〉 무대",
+      "verification": "팬 채널·보유 편집영상 자료 확인 / 편성일 미상",
+      "source": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "sourceUrl": "https://www.youtube.com/playlist?list=PLvYGt2IGRi1tGWAJGo8TTNqBOVRq4RHOS",
+      "sourceUrls": [
+        "https://www.youtube.com/playlist?list=PLvYGt2IGRi1tGWAJGo8TTNqBOVRq4RHOS",
+        "https://www.youtube.com/@shinhwachangjo",
+        "https://www.donga.com/news/Society/article/all/20041221/8141376/1"
+      ],
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "셩공시대 채널 공개 검색색인에 [방송] 1998 - iTV - 신화 - 해결사 영상 항목 확인. 당시 채널명 iTV 인천방송은 방송사 개국·사명 변경 근거로 확인. 주의: 검색 결과에 개별 watch URL이 제공되지 않았으며 해당 영상 재생·방송일·회차·영상 안의 방송사 로고는 독립 확인하지 못함. 다른 iTV 출연 건과 중복 가능성 있음.",
+      "dateKind": "영상 표제 1998년, 월·일 미상",
+      "sourceRecord": "V28-ITV-001 / 1998년 방송사 특별 조사",
+      "sourceRefs": [
+        "v28-legacy-v28-itv-001-55ccbae"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "vid98-research:v28-itv-002",
+      "date": "1998-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "예능",
+      "subject": "신화 전체",
+      "title": "iTV 인천방송 〈신인에게 날개를〉 — 신화 출연·아카펠라 장면",
+      "verification": "팬 채널·보유 편집영상 자료 확인 / 편성일 미상",
+      "source": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "sourceUrl": "https://www.youtube.com/watch?v=r9sPW4_nd_0",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=r9sPW4_nd_0",
+        "https://www.youtube.com/playlist?list=PLvYGt2IGRi1tGWAJGo8TTNqBOVRq4RHOS",
+        "https://www.youtube.com/playlist?list=PLQprTYXL4CkwA505-DZ8vsk3xe45O21nW",
+        "https://www.donga.com/news/Society/article/all/20041221/8141376/1"
+      ],
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=r9sPW4_nd_0",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=r9sPW4_nd_0"
+      ],
+      "sourceNote": "보유 영상의 1998 iTV 신인에게 날개를 출처 표시·신화 아카펠라 장면 관련 편집본 존재. 당시 iTV 채널 운영 확인. 주의: 편집본의 여러 연도(1999,2001,2006 등) 혼합 영상. 1998 iTV 부분 자체의 방송일·정식 프로그램명·장면 구간을 별도 원본으로 재검증하지 못함.",
+      "dateKind": "영상 표제 1998년, 월·일 미상",
+      "sourceRecord": "V28-ITV-002 / 1998년 방송사 특별 조사",
+      "sourceRefs": [
+        "v28-legacy-v28-itv-002-505d583"
+      ],
+      "recordCount": 1
     }
   ],
   "researchSources": [
@@ -60310,6 +60746,358 @@
       "url": "https://www.kakaocorp.com/page/detail/5464",
       "kind": "주최사 당대 공개방송 출연 예정 보도자료",
       "note": "서울랜드·평화방송 공동 공개방송과 신화 출연 예정 명시."
+    },
+    {
+      "id": "v28-legacy-v26-001-e698fa6",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 11회 — 신화 출연",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000370942",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-001-bcf766d",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 11회 — 신화 출연",
+      "url": "https://namu.moe/w/SBS%20%EC%9D%B8%EA%B8%B0%EA%B0%80%EC%9A%94/%EC%B0%A8%ED%8A%B8/1998%EB%85%84",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-002-b784aa0",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 16회 — 신화 〈해결사〉",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000374647",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-003-65e37fe",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 17회 — 신화 11~20위 소개",
+      "url": "https://m.programs.sbs.co.kr/enter/gayo/clip/54768/22000374651",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-003-9dcf1c6",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 17회 — 신화 11~20위 소개",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000374656",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-004-5681766",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 21회 — 신화 〈으쌰으쌰〉",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000370954",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-004-1044226",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 21회 — 신화 〈으쌰으쌰〉",
+      "url": "https://m.programs.sbs.co.kr/enter/gayo/clip/54768/22000374686",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-005-7ff9fe1",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "MBC 음악캠프 12회 — 신화 〈으쌰으쌰〉",
+      "url": "https://www.youtube.com/watch?v=kIy3RE-C4v4",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-005-2306271",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "MBC 음악캠프 12회 — 신화 〈으쌰으쌰〉",
+      "url": "https://sexy-lee-min-woo.tumblr.com/performances3",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-006-926dc6c",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "KM 쇼!뮤직탱크 164회 2부 — 신화 〈으쌰으쌰〉",
+      "url": "https://www.youtube.com/watch?v=_BJqASpWq5Q",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-007-8c414c8",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "MBC 음악캠프 17회 — 신화 〈으쌰으쌰〉",
+      "url": "https://www.youtube.com/watch?v=VtboX7THRzE",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-007-2306271",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "MBC 음악캠프 17회 — 신화 〈으쌰으쌰〉",
+      "url": "https://sexy-lee-min-woo.tumblr.com/performances3",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-008-aba68ce",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 30회 — 신화 〈천일유혼〉 및 〈Sharing Forever〉 방송 자료",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000375276",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-008-e96a9b8",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 30회 — 신화 〈천일유혼〉 및 〈Sharing Forever〉 방송 자료",
+      "url": "https://www.youtube.com/watch?v=OuVq9vRU2NA",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-009-971b230",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 35회 — 신화 출연",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000370967",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-009-bcf766d",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "SBS 인기가요 35회 — 신화 출연",
+      "url": "https://namu.moe/w/SBS%20%EC%9D%B8%EA%B8%B0%EA%B0%80%EC%9A%94/%EC%B0%A8%ED%8A%B8/1998%EB%85%84",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-010-5cea5e4",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "KMTV 생방송 뮤직큐 — 신화 새내기 환영회·데뷔 인터뷰",
+      "url": "https://www.youtube.com/watch?v=gAQPHTrZywI",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-010-88c5656",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "KMTV 생방송 뮤직큐 — 신화 새내기 환영회·데뷔 인터뷰",
+      "url": "https://www.youtube.com/watch?v=2JHxUInPq6g",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-011-6f4db62",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "Mnet 핫라인 2727 — 신화 인터뷰",
+      "url": "https://www.youtube.com/watch?v=6sFwgegQ6ZY",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-011-b2369da",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "Mnet 핫라인 2727 — 신화 인터뷰",
+      "url": "https://www.donga.com/archive/newslibrary/view?ymd=19980609",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-012-3396583",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "Mnet 리듬천국 — 신화 〈으쌰으쌰〉",
+      "url": "https://www.youtube.com/watch?v=O4wqGG_m6AQ",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-013-4e90ecd",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "1998년 iTV/아이넷TV 재방영 표기 영상 — 신화 〈으쌰으쌰〉",
+      "url": "https://www.youtube.com/watch?v=nW_kSyVRi70",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-013-cacd06d",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "1998년 iTV/아이넷TV 재방영 표기 영상 — 신화 〈으쌰으쌰〉",
+      "url": "https://www.kiptv.or.kr/member_company01/31",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-014-926dc6c",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "KBS 쇼! 행운을 잡아라 — 신화 무대 추정",
+      "url": "https://www.youtube.com/watch?v=_BJqASpWq5Q",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v26-014-e22c9d7",
+      "publisher": "v27 1998년 영상/방송 재검증 자료",
+      "title": "KBS 쇼! 행운을 잡아라 — 신화 무대 추정",
+      "url": "https://www.imaeil.com/page/view/1998022114292993702",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v28-itv-001-55ccbae",
+      "publisher": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "title": "iTV 인천방송 — 신화 〈해결사〉 무대",
+      "url": "https://www.youtube.com/playlist?list=PLvYGt2IGRi1tGWAJGo8TTNqBOVRq4RHOS",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v28-itv-001-4b8575c",
+      "publisher": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "title": "iTV 인천방송 — 신화 〈해결사〉 무대",
+      "url": "https://www.youtube.com/@shinhwachangjo",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v28-itv-001-fc96db3",
+      "publisher": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "title": "iTV 인천방송 — 신화 〈해결사〉 무대",
+      "url": "https://www.donga.com/news/Society/article/all/20041221/8141376/1",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v28-itv-002-505d583",
+      "publisher": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "title": "iTV 인천방송 〈신인에게 날개를〉 — 신화 출연·아카펠라 장면",
+      "url": "https://www.youtube.com/watch?v=r9sPW4_nd_0",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v28-itv-002-55ccbae",
+      "publisher": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "title": "iTV 인천방송 〈신인에게 날개를〉 — 신화 출연·아카펠라 장면",
+      "url": "https://www.youtube.com/playlist?list=PLvYGt2IGRi1tGWAJGo8TTNqBOVRq4RHOS",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v28-itv-002-d82a29e",
+      "publisher": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "title": "iTV 인천방송 〈신인에게 날개를〉 — 신화 출연·아카펠라 장면",
+      "url": "https://www.youtube.com/playlist?list=PLQprTYXL4CkwA505-DZ8vsk3xe45O21nW",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-v28-itv-002-fc96db3",
+      "publisher": "셩공시대님 유튜브 채널·보유 영상 아카이브 / 당시 iTV 인천방송 연혁",
+      "title": "iTV 인천방송 〈신인에게 날개를〉 — 신화 출연·아카펠라 장면",
+      "url": "https://www.donga.com/news/Society/article/all/20041221/8141376/1",
+      "kind": "원본 영상/방송사 자료/역사적 채널 설명 (개별 sourceNote 참조)",
+      "note": "신규 1998년 기록의 출처. 정확한 방송일은 precision/dateKind 참고."
+    },
+    {
+      "id": "v28-legacy-context-iTV-1998",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "iTV-1998",
+      "url": "https://www.donga.com/news/Society/article/all/20041221/8141376/1",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-iNET-2002",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "iNET-2002",
+      "url": "https://www.kiptv.or.kr/member_company01/31",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-iNET-license",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "iNET-license",
+      "url": "https://www.incruit.com/company/9931030/",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-Arirang-start",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "Arirang-start",
+      "url": "https://www.newswire.co.kr/newsRead.php?no=157642",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-Arirang-3rdparty-conflict",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "Arirang-3rdparty-conflict",
+      "url": "https://thetvdb.com/series/pops-in-seoul/allseasons/official",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-NTV",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "NTV",
+      "url": "https://www.etnews.com/200203290059",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-KM-1996",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "KM-1996",
+      "url": "https://www.etnews.com/199609190001",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-KM-1998",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "KM-1998",
+      "url": "https://www.etnews.com/199810190068",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-Mnet2727",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "Mnet2727",
+      "url": "https://www.donga.com/archive/newslibrary/view?ymd=19980609",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-Mnet1996rhythm",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "Mnet1996rhythm",
+      "url": "https://www.donga.com/archive/newslibrary/view?ymd=19960411",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-MudFestival-1998",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "MudFestival-1998",
+      "url": "https://www.mudfestival.or.kr/festival/contents/view?contentsNo=31&level=2&menuNo=16",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
+    },
+    {
+      "id": "v28-legacy-context-1998-performances-fan",
+      "publisher": "1998년 옛 방송사 교차조사",
+      "title": "1998-performances-fan",
+      "url": "https://namu.moe/w/%ED%95%B4%EA%B2%B0%EC%82%AC%28%EC%8B%A0%ED%99%94%29",
+      "kind": "연혁 배경 근거/채널 개설일·방송원본 여부 구별",
+      "note": "신화 개별 출연 자체를 증명하는 근거로 쓰지 않음."
     }
   ]
 }
