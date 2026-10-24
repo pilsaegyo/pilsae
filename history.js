@@ -737,7 +737,6 @@ function eventMarkup(e){
 function renderItems(){
   $('#events').hidden=false;$('#calendar').hidden=true;
   const to=filtered.slice(0,visibleCount),last=to.length;
-  const yearUnknownHtml=yearUnknownEvents.length?`<section class="cal-month-unknown"><h3>${y}년 월·일 미상 기록 · ${yearUnknownEvents.length}건</h3><p class="cal-hint">이 기록들은 1월 일정이 아니며, 정렬 기준으로만 이 연도의 첫 화면 아래에 표시합니다.</p>${yearUnknownEvents.map(eventMarkup).join('')}</section>`:'';
   $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · 현재 ${last.toLocaleString('ko-KR')}건 표시 · 일부 자료는 날짜·내용 검증 전`;
   if(!last){$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
   let prev='';
@@ -805,6 +804,7 @@ function renderCalendar(){
   const selectedLabel=selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`;
   const details=selected.length?selected.map(eventMarkup).join(''):'<p class="cal-no-day">날짜를 선택하면 해당 날짜의 활동 기록이 표시됩니다.</p>';
   const unknown=unknownEvents.length?`<section class="cal-month-unknown"><h3>이달의 일자 미상 기록 · ${unknownEvents.length}건</h3><p class="cal-hint">실제 날짜가 확인되지 않아 달력의 특정 날짜에 배치하지 않았습니다.</p>${unknownEvents.map(eventMarkup).join('')}</section>`:'';
+  const yearUnknownHtml=yearUnknownEvents.length?`<section class="cal-month-unknown"><h3>${y}년 월·일 미상 기록 · ${yearUnknownEvents.length}건</h3><p class="cal-hint">이 기록들은 1월 일정이 아니며, 정렬 기준으로만 이 연도의 첫 화면 아래에 표시합니다.</p>${yearUnknownEvents.map(eventMarkup).join('')}</section>`:'';
   $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · ${y}년 ${m}월 ${monthEvents.length+yearUnknownEvents.length}건 · 일부 날짜·내용 검증 전`;
   const yearOptions=Array.from({length:Number(endMonth.slice(0,4))-Number(startMonth.slice(0,4))+1},(_,i)=>Number(startMonth.slice(0,4))+i).map(yr=>`<option value="${yr}" ${yr===y?'selected':''}>${yr}년</option>`).join('');
   const monthOptions=Array.from({length:12},(_,i)=>i+1).map(mo=>`<option value="${pad2(mo)}" ${mo===m?'selected':''}>${mo}월</option>`).join('');

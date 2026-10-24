@@ -1,3 +1,12 @@
+## 2026-10-24 — v21.1: 연표 목록·달력 로딩 오류 긴급 수정
+
+- v21에서 잘못 배치된 `yearUnknownHtml` 선언으로 목록 화면이 `ReferenceError: yearUnknownEvents is not defined`를 발생시키던 오류 수정.
+- 목록 화면의 해당 선언을 제거하고, `yearUnknownEvents`가 선언되는 `renderCalendar()` 내부로 달력용 마크업을 이동.
+- 1999년 월·일 미상 기록을 달력의 별도 영역으로 표시하는 기능은 유지.
+- `history.html`의 스크립트 쿼리 버전을 갱신하여 기존 오류 JavaScript가 캐시에서 재사용되지 않도록 처리.
+- `data/history.json`, `data/videos.json`, 기존 연혁 ID·날짜·출처, 관리자 코드 및 기타 페이지는 수정하지 않음.
+- v21 배포 후 덮어쓸 핫픽스로, v19·v20·v21 전체 패치의 대체본이 아님.
+
 ## 2026-10-24 — v21: 연혁 주제별 중복 정리 및 1999 팬 영상 추가 (배포 전)
 
 - 기준본: `pilsae-main (3)(3).zip`의 `data/history.json` 2,245건, v20 로컬 패치 예정 파일 2,360건.
