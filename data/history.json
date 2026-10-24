@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 834,
+      "chapter1": 833,
       "chapter2": 915,
       "chapter3": 556,
       "chapter4": 74
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2379,
+    "visibleEvents": 2378,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -225,7 +225,10 @@
       "sheet:05!38": "sheet:05!37",
       "sheet:05!392": "sheet:05!389",
       "sheet:05!563": "sheet:05!561",
-      "work16:work16-013": "sheet:06!102"
+      "work16:work16-013": "sheet:06!102",
+      "history:s003": "fan2002:001",
+      "fan2002:005": "sheet:99!6",
+      "history:p0024": "fan2002:007"
     },
     "sourceResearchUpdated": "2026-10-23",
     "sourceResearchNote": "JTBC 원본 회차 목록으로 방송일 교차 대조. 해당 회차 날짜/번호에 한정해 검증 상태 조정. 위키/해외 팬페이지는 참고 전용. 2013년 작은신화 6회 JTBC 내부 날짜 충돌 표기.",
@@ -630,7 +633,8 @@
       "addedEvents": 9,
       "enhancedEvents": 10,
       "notes": "예정 기사만으로 실제 출연 신규 생성 금지. 1998 표창 날짜/기타 시상식 충돌은 보류. 현재 운영 원본 독립 확인은 미완료."
-    }
+    },
+    "v35Note": "v34 이후 공개 표제 및 중복 정리. 직접 확인한 개최일은 공식 일자로 통일하고, 판독/추출 작업 메모는 공개 인용에서 제거. 연도만 확인된 출연은 일자 미상으로 등록."
   },
   "chapters": [
     {
@@ -675,35 +679,6 @@
     }
   ],
   "conflictRegister": [
-    {
-      "id": "dream1999",
-      "dates": [
-        "1999-05-18",
-        "1999-05-15"
-      ],
-      "keywords": [
-        "드림콘서트"
-      ],
-      "note": "1999년 드림콘서트 날짜: 국내 팬 연표 5/18, 행사 목록 5/15, 2015년 회고 기사 5/18로 상충. 방송일과 공연일 구분 포함 확인 필요.",
-      "urls": [
-        "https://ko.wikipedia.org/wiki/드림콘서트",
-        "https://sports.donga.com/ent/article/all/20150512/71206595/3"
-      ]
-    },
-    {
-      "id": "mv1998",
-      "dates": [
-        "1998-05-28",
-        "1998-05-29",
-        "1998-06-01"
-      ],
-      "keywords": [
-        "으쌰으쌰",
-        "Usha Usha"
-      ],
-      "note": "MV 촬영 날짜가 5/28~29 및 6/1로 엇갈림. 별도의 촬영/방영일 가능성을 구별해야 함.",
-      "urls": []
-    },
     {
       "id": "bank1999",
       "dates": [
@@ -1684,16 +1659,15 @@
       "transition": "",
       "category": "촬영",
       "subject": "신화 전체",
-      "title": "으쌰으쌰 후속곡 뮤직비디오 촬영 시작 (5월 28~29일)",
-      "verification": "잡지 원문 직접 확인·날짜 충돌 병행",
+      "title": "〈으쌰으쌰〉 뮤직비디오 촬영 (5월 28~29일)",
+      "verification": "당시 잡지 촬영일 확인",
       "source": "국내 팬 연표(2002.08.09)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "5월 28~29일·기존 중국어 연표 6월 1일과 충돌 | MV 촬영 날짜가 5/28~29 및 6/1로 엇갈림. 별도의 촬영/방영일 가능성을 구별해야 함. | TEENSTAR 1998.07호 본문에서 1998.05.28~29일 촬영 확인. 6월1일 기록과의 관계는 미해결. | PASTEL 1998.07호 촬영현장 취재 보조 근거. 정확한 날짜 단독 증명 아님.",
-      "dateKind": "원문 기재일",
+      "sourceNote": "《TEENSTAR》 1998년 7월호에 뮤직비디오 촬영일이 5월 28~29일로 기재되어 있음. 《PASTEL》 1998년 7월호는 촬영 현장을 소개함.",
+      "dateKind": "잡지에 기재된 촬영 시작일(28~29일)",
       "sourceRecord": "1",
       "verificationUrl": null,
-      "conflictId": "mv1998",
       "sourceRefs": [
         "v34-src:mag:TEENSTAR199807",
         "v34-src:mag:PASTEL199807"
@@ -1747,31 +1721,6 @@
       "verificationUrl": null,
       "sourceRefs": [
         "audit241024-donga-19980522-dream"
-      ],
-      "recordCount": 1
-    },
-    {
-      "id": "history:s003",
-      "date": "1998-06-01",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "촬영",
-      "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "으쌰으쌰 뮤직비디오 촬영",
-      "verification": "날짜 충돌",
-      "source": "기존 활동 연표",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전. | MV 촬영 날짜가 5/28~29 및 6/1로 엇갈림. 별도의 촬영/방영일 가능성을 구별해야 함. | TEENSTAR 1998.07호는 5월28~29일 촬영이라고 기재. 기존 6월1일이 별도 촬영일인지 미확인, 임의 삭제하지 않음.",
-      "dateKind": "원문 기재일",
-      "sourceRecord": "s003",
-      "verificationUrl": null,
-      "conflictId": "mv1998",
-      "sourceRefs": [
-        "fan-cn1",
-        "fan-cn2",
-        "v34-src:mag:TEENSTAR199807"
       ],
       "recordCount": 1
     },
@@ -3158,17 +3107,18 @@
       "transition": "",
       "category": "공연",
       "subject": "신화 전체",
-      "title": "SBS 99' 드림 콘서트 (*방송일 99-05-23)",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "제5회 청소년을 위한 드림콘서트 — 신화 출연",
+      "verification": "주최사 공식 일자·출연진 확인",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1735876866&range=A6:D6",
       "referenceVideoUrl": null,
-      "sourceNote": "(*방송일 99-05-23) | 1999.05.17 서울신문 사후 기사에서 5/15 공연 개최 확인. 기사에서 신화 출연 무대는 확인되지 않음.",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceNote": "1999년 5월 15일 오후 7시 30분 서울올림픽주경기장 개최. 주최사 공식 라인업에 신화 포함. 기존 연표의 5월 23일은 방송일로 기재되어 있으나 방송 편성 원본은 별도 검증하지 않음.",
+      "dateKind": "주최사 공식 공연 개최일",
       "sourceRecord": "99!6",
-      "verificationUrl": null,
+      "verificationUrl": "https://www.kepa.net/activity/concert?category=&id=49&keyword=&mode=read&option=&page=3",
       "sourceRefs": [
-        "audit241024-seoul-19990517-dream"
+        "audit241024-seoul-19990517-dream",
+        "v35:kepa:1999dream"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -3213,41 +3163,18 @@
       "transition": "",
       "category": "잡지·취재",
       "subject": "신화 전체",
-      "title": "성년 기념 잡지 인터뷰 및 서프라이즈 행사(원문 탄스타)",
+      "title": "성년 기념 잡지 인터뷰 및 서프라이즈 행사",
       "verification": "2002년 팬 기록·독립 검증 전",
       "source": "국내 팬 연표(2002.08.09)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "잡지명이 틴스타인지 판독 필요",
+      "sourceNote": "성년을 맞아 진행된 잡지 인터뷰·행사에 관한 팬 연표 기록. 잡지명과 행사 세부사항은 독립적으로 확인되지 않음.",
       "dateKind": "원문 기재일",
       "sourceRecord": "4",
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1,
       "categoryOriginal": "잡지/취재"
-    },
-    {
-      "id": "fan2002:005",
-      "date": "1999-05-18",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "공연",
-      "subject": "신화 전체",
-      "title": "99 드림콘서트 참석으로 기록",
-      "verification": "날짜 충돌",
-      "source": "국내 팬 연표(2002.08.09)",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "행사 자체는 5월 15일 개최 기사 확인. 신화 출연 여부 추가 검증 필요 | 1999년 드림콘서트 날짜: 국내 팬 연표 5/18, 행사 목록 5/15, 2015년 회고 기사 5/18로 상충. 방송일과 공연일 구분 포함 확인 필요. | 당시 1999.05.17 서울신문은 행사 5/15 개최를 보도. 후대 5/18 주장과 충돌하며, 신화 출연 자체는 해당 기사만으로 확정할 수 없음.",
-      "dateKind": "원문 기재일",
-      "sourceRecord": "5",
-      "verificationUrl": null,
-      "conflictId": "dream1999",
-      "sourceRefs": [
-        "audit241024-seoul-19990517-dream"
-      ],
-      "recordCount": 1
     },
     {
       "id": "sheet:99!7",
@@ -3738,30 +3665,6 @@
         "r9sPW4_nd_0"
       ],
       "recordCount": 1
-    },
-    {
-      "id": "history:p0019",
-      "date": "1999-07-01",
-      "precision": "month",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "음반·발매",
-      "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "후속곡 Yo! 활동 시작",
-      "verification": "원문 기록",
-      "source": "기존 활동 연표",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
-      "dateKind": "원문 기재일",
-      "sourceRecord": "p0019",
-      "verificationUrl": null,
-      "sourceRefs": [
-        "fan-cn1",
-        "fan-cn2"
-      ],
-      "recordCount": 1,
-      "categoryOriginal": "음반"
     },
     {
       "id": "sheet:99!23",
@@ -4304,38 +4207,19 @@
       "transition": "",
       "category": "팬행사",
       "subject": "신화 전체",
-      "title": "환타 펀 캠프(무주리조트)",
-      "verification": "2002년 팬 기록·독립 검증 전",
+      "title": "99 환타 펀 캠프 — 무주리조트 (신화 참가 기록)",
+      "verification": "행사 개최 보도·신화 참여 별도 확인 필요",
       "source": "국내 팬 연표(2002.08.09)",
-      "sourceUrl": null,
+      "sourceUrl": "https://www.mk.co.kr/news/economy/2091838",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원문 기재일",
+      "sourceNote": "한국코카콜라가 1999년 8월 4~7일 전북 무주리조트에서 주최한 청소년 캠프. 신화의 8월 5일 참여는 두 팬 연표에 기록되어 있으나, 당시 기사는 구체적 출연 가수를 명시하지 않음.",
+      "dateKind": "팬 연표 참여 기록일(행사 기간 8월 4~7일)",
       "sourceRecord": "7",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
-      "id": "history:p0024",
-      "date": "1999-08-05",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "팬행사",
-      "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "팬클럽 단체 캠프",
-      "verification": "원문 기록",
-      "source": "기존 활동 연표",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
-      "dateKind": "원문 기재일",
-      "sourceRecord": "p0024",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v35:mk:1999fanta"
       ],
       "recordCount": 1
     },
@@ -4724,13 +4608,13 @@
       "transition": "",
       "category": "공연",
       "subject": "신화 전체",
-      "title": "SBS 99 환경콘서트 서울 잠실 주경기장 (팬 원문 8/21)",
+      "title": "SBS 99 환경콘서트 — 서울 잠실주경기장",
       "verification": "SBS 개최 이력·예정 일정 교차 확인",
       "source": "국내 팬 연표(2002.08.09)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "SBS 행사 예정표에는 8월 22일 표기 2002년 팬 원문 날짜 8/21은 ⓘ에 보존. SBS 1999.08 예정표: 서울 잠실주경기장 8/22. SBS 사후 사사 p107도 환경콘서트 전국 투어가 8/22 시작했다고 명시. 신화 출연은 전체 투어에 대해 입증되며 첫 회 서울 개별 공연의 무대 내용은 추가 확인 필요.",
-      "dateKind": "공식 사사 시작일·공식 예정 공연일(팬 원문 8/21 충돌)",
+      "sourceNote": "SBS 공식 예정표와 사사에서 환경콘서트 전국 순회 시작일을 8월 22일로 기재. 서울 공연에서 신화의 개별 무대 내용은 별도 확인 필요.",
+      "dateKind": "SBS 공식 행사 시작일·서울 공연 예정일",
       "sourceRecord": "11",
       "verificationUrl": null,
       "sourceRefs": [
@@ -5990,25 +5874,24 @@
     },
     {
       "id": "history:p0038",
-      "date": "1999-12-13",
-      "precision": "day",
+      "date": "1999-12-01",
+      "precision": "month",
       "chapter": "chapter1",
       "transition": "",
       "category": "시상식",
       "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "문화관광부 장관 표창(팬 연표 날짜 대조 필요)",
-      "verification": "날짜 충돌",
+      "title": "청소년사절단 활동 관련 문화관광부 장관 표창",
+      "verification": "수상 기록·정확한 수상일 미확인",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "중국어 연표는 12월 22일과 23일을 각각 기재. 2차 수상 목록의 12월 13일과 충돌하므로 확정일 아님. | 1999 청소년사절단 문화관광부 표창 정확한 날짜가 12/13과 12/22로 충돌. 독립 시상일 확인 전에는 날짜 정정하지 않음.",
-      "dateKind": "원문 기재일",
+      "sourceNote": "수상 내역을 정리한 2차 자료에 청소년사절단 관련 문화관광부 장관 표창이 기재됨. 12월 13일과 22일 기록이 일치하지 않아 정확한 시상일은 확정할 수 없음.",
+      "dateKind": "1999년 12월(정확한 시상일 미확인)",
       "sourceRecord": "p0038",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2",
-        "v34-src:v30-awards-audit"
+        "fan-cn2"
       ],
       "recordCount": 1
     },
@@ -6065,13 +5948,13 @@
       "transition": "",
       "category": "공연",
       "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "어린이를 위한 특별 공연 참가 기록",
-      "verification": "원문 기록 | v31 당시 잡지 보강",
+      "title": "쉐라톤 워커힐호텔 산타 가족콘서트 — 신화 출연 예정",
+      "verification": "당시 잡지 공연 예고",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n[v31 잡지 원문 근거] ILOVESTAR 2000년 1월호는 1999년 12월 25일 쉐라톤 워커힐호텔의 산타 가족콘서트에서 신화 공연을 예고함. 기존 같은 날짜 어린이 공연 기록과 잠정 연결하나 사후 개최 여부는 기사 자체로 입증하지 못함. 스캔 IMG01.",
-      "dateKind": "원문 기재일",
+      "sourceNote": "《ILOVESTAR》 2000년 1월호에 1999년 12월 25일 쉐라톤 워커힐호텔 산타 가족콘서트 신화 출연을 예고함. 행사 이후 공연 여부는 별도 확인되지 않음.",
+      "dateKind": "당시 잡지에 기재된 예정 공연일",
       "sourceRecord": "p0040",
       "verificationUrl": null,
       "sourceRefs": [
@@ -6229,14 +6112,15 @@
       "verification": "원문 기록",
       "source": "기존 활동 연표",
       "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=HlPkuECa-9k",
+      "sourceNote": "2월 19일 대전 Big3 콘서트 관련 팬미팅이라는 기존 팬 연표 기록. 같은 날짜 표제의 신화 〈천일유혼〉 직캠이 남아 있으나 이 공연이 Big3 행사 또는 사랑의 콘서트와 같은 행사인지 확인되지 않음.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0044",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v35:video:000219"
       ],
       "recordCount": 1
     },
@@ -8047,13 +7931,13 @@
       "transition": "",
       "category": "팬행사",
       "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "반포 NCD 팬사인회",
-      "verification": "당시 잡지 현장 취재로 활동 보강",
+      "title": "신나라레코드 반포 센트럴시티점 개점 기념 팬사인회",
+      "verification": "당시 잡지 현장 기사 확인",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | 《짱》 2000.09호 취재: 8월6일 신나라레코드 반포 센트럴시티점 오픈 기념 팬사인회, 오전11시30분 시작·약20분 만에 중단. 기존 반포 NCD 팬사인회와 잠정 같은 행사로 연결, 단독 신규 생성 안 함.",
-      "dateKind": "원문 기재일",
+      "sourceNote": "《짱》 2000년 9월호에 8월 6일 팬사인회가 오전 11시 30분 시작해 혼잡으로 약 20분 뒤 중단됐다고 보도됨. 반포 NCD 팬사인회와 동일 행사로 보는 근거가 있으나 별도의 행사 운영 자료는 미확인.",
+      "dateKind": "당시 잡지에서 확인된 행사일",
       "sourceRecord": "p0056",
       "verificationUrl": null,
       "sourceRefs": [
@@ -8130,28 +8014,6 @@
       "recordCount": 1
     },
     {
-      "id": "v34:mag:zzang:2000-08-10",
-      "date": "2000-08-10",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "화보·인터뷰",
-      "subject": "신화 전체",
-      "title": "잡지 《짱》 2000년 9월호 — 신화 화보·인터뷰 게재",
-      "verification": "잡지 판권의 발행일 및 지면 확인",
-      "source": "당시 방송·기사·영상 및 누적조사",
-      "sourceUrl": "https://postfiles.pstatic.net/MjAyNTAyMjFfMjIx/MDAxNzQwMTM3MDQ4MzI1.vK1rtXahFV1PxRwHD-2mkS6jRMtanW5JPSUOmS1B_L0g.f5MHJrupSE-Pog8aNsBpheDDaib2b8MyuZFhZ2ZSSUEg.JPEG/900%EF%BC%BF1740137047543.jpg?type=w3840",
-      "referenceVideoUrl": null,
-      "sourceNote": "해당 호 판권에 2000.08.10 발행으로 기재. 9월호에 신화 전체 화보·멤버 인터뷰 수록. 촬영일은 확인되지 않으며 잡지 발행일과 촬영·방송일을 혼동하지 않음.",
-      "dateKind": "잡지 발행일",
-      "sourceRecord": "v34:mag:zzang:2000-08-10",
-      "verificationUrl": "https://postfiles.pstatic.net/MjAyNTAyMjFfMjIx/MDAxNzQwMTM3MDQ4MzI1.vK1rtXahFV1PxRwHD-2mkS6jRMtanW5JPSUOmS1B_L0g.f5MHJrupSE-Pog8aNsBpheDDaib2b8MyuZFhZ2ZSSUEg.JPEG/900%EF%BC%BF1740137047543.jpg?type=w3840",
-      "sourceRefs": [
-        "v34-src:WORK-M07"
-      ],
-      "recordCount": 1
-    },
-    {
       "id": "sheet:00!127",
       "date": "2000-08-12",
       "precision": "day",
@@ -8201,13 +8063,13 @@
       "transition": "",
       "category": "공연",
       "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "대만 MTV 여름 음악 행사",
-      "verification": "원문 기록",
+      "title": "대만 MTV Summer Music 행사 참가 예정 (8월 11~13일)",
+      "verification": "당시 잡지 참가 예고·실제 공연일 미확인",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전. | 《짱》 2000.09호에 대만 MTV Summer Music 8월11일부터 3일간 참가 예정이라고 소개. 8월11일은 방문 시작 예정일이며 실제 공연일 확정은 아님.",
-      "dateKind": "원문 기재일",
+      "sourceNote": "《짱》 2000년 9월호에서 8월 11일부터 3일간의 대만 MTV 관련 음악 행사 참가를 예고함. 8월 13일은 기존 팬 연표 기재일로, 정확한 출연일은 확인되지 않음. 9월 30일 〈MTV 2000 Music Summit〉 영상과 동일 행사인지도 미확인.",
+      "dateKind": "기존 팬 연표 기재일(8월 11~13일 참가 예정 기간)",
       "sourceRecord": "s013",
       "verificationUrl": null,
       "sourceRefs": [
@@ -8915,20 +8777,22 @@
       "chapter": "chapter1",
       "category": "방송",
       "subject": "신화 전체",
-      "title": "대만 MTV 2000 Music Summit",
-      "verification": "영상 설명 기재·독립 검증 전",
+      "title": "대만 MTV 2000 Music Summit — 방송·영상 기록",
+      "verification": "영상 설명 날짜·행사일 미확인",
       "source": "영상 아카이브 설명",
       "sourceUrl": "https://www.youtube.com/watch?v=eux2DKKG1zs",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=eux2DKKG1zs",
-      "sourceNote": "아카이브 영상 설명에 기재된 날짜와 활동명 기준. 방송·행사 원문을 통한 독립 검증 전. 000930 대만 MTV 2000 Music Summit\n셩공시대 1차 대조표: 2000년 대만 MTV Music Summit 관련 영상 참고. 개별 원본 영상과 실제 개최일 독립 대조 전.",
-      "dateKind": "영상 설명에 기재된 방송·활동일(독립 검증 전)",
+      "sourceNote": "영상 설명에는 2000년 9월 30일로 기록되어 있으나 해당 날짜가 공연일인지 방송일인지는 확인되지 않음. 8월 MTV Summer Music 참가 예정 행사와의 동일성도 미확정.",
+      "dateKind": "아카이브에 적힌 날짜(방송일·행사일 구분 미확인)",
       "sourceRecord": "archive:description:20261024",
       "archiveVideoIds": [
-        "eux2DKKG1zs"
+        "eux2DKKG1zs",
+        "2hFntY1T4LQ"
       ],
       "recordCount": 1,
       "sourceRefs": [
-        "sc-mtv-archive"
+        "sc-mtv-archive",
+        "v35:video:mtv2000"
       ]
     },
     {
@@ -58729,6 +58593,100 @@
         "cu23-source-237"
       ],
       "recordCount": 1
+    },
+    {
+      "id": "v35:video:2000-08-21:haengjin",
+      "date": "2000-08-21",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "드라마·시트콤",
+      "subject": "신혜성",
+      "title": "SBS 청춘 시트콤 〈행진〉 — 신혜성 출연 장면",
+      "verification": "영상 표제 일자·독립 편성 확인 전",
+      "source": "방송 장면 아카이브·당시 잡지 소개",
+      "sourceUrl": "https://www.youtube.com/watch?v=Te3fhopfPYI",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=Te3fhopfPYI",
+      "sourceNote": "영상 설명에 2000년 8월 21일 〈행진〉 장면이라고 표시됨. 《짱》 2000년 9월호는 8월 중 출연 예정이라고 소개했으나 공식 방송 편성 회차는 아직 확인되지 않음. 해당 쇼츠에는 1999년 〈좋은 친구들〉 장면도 함께 편집됨.",
+      "dateKind": "영상 아카이브 기재 방송일(추가 검증 필요)",
+      "sourceRecord": "v35:video:2000-08-21:haengjin",
+      "sourceRefs": [
+        "v35:video:000821",
+        "v34-src:WORK-M04"
+      ],
+      "archiveVideoIds": [
+        "Te3fhopfPYI"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "v35:video:2000:smtown-winter-mv",
+      "date": "2000-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "촬영",
+      "subject": "신화 전체",
+      "title": "SMTOWN 〈창밖을 봐요〉 뮤직비디오 촬영 현장",
+      "verification": "당시 방송 장면·촬영일 미확인",
+      "source": "한밤 영상 아카이브·음원 유통 정보",
+      "sourceUrl": "https://www.youtube.com/watch?v=yEy5R3hdb9w",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=hLQicuOtc5U",
+      "sourceNote": "한밤 채널에서 2000년 SMTOWN 뮤직비디오 촬영 현장을 소개함. 〈창밖을 봐요〉는 2000년 12월 앨범 수록곡. 실제 촬영한 월·일은 확인되지 않아 2000년 연도만 표시.",
+      "dateKind": "영상에 기재된 촬영 연도(날짜 미상)",
+      "sourceRecord": "v35:video:2000:smtown-winter-mv",
+      "sourceRefs": [
+        "v35:video:2000smtown",
+        "v35:bugs:2000smtown"
+      ],
+      "archiveVideoIds": [
+        "hLQicuOtc5U"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "v35:video:2000:mnet-star-king",
+      "date": "2000-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "방송·인터뷰",
+      "subject": "신혜성",
+      "title": "Mnet 〈Star King〉 — 신혜성 인터뷰 장면",
+      "verification": "영상 설명 연도·회차 미확인",
+      "source": "영상 아카이브 설명",
+      "sourceUrl": "https://www.youtube.com/watch?v=ofgQpuRXWTs",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=ofgQpuRXWTs",
+      "sourceNote": "영상 설명에 2000년 Mnet 〈Star King〉이라고 기재. 방송 회차·정확한 방송 날짜는 확인되지 않음.",
+      "dateKind": "영상 아카이브에 기재된 방송 연도",
+      "sourceRecord": "v35:video:2000:mnet-star-king",
+      "sourceRefs": [
+        "v35:video:2000starking"
+      ],
+      "archiveVideoIds": [
+        "ofgQpuRXWTs"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "v35:video:2000:ntv-tongtongclub",
+      "date": "2000-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "방송·인터뷰",
+      "subject": "신화 전체",
+      "title": "NTV 〈통통클럽〉 — 3집 〈Only One〉 발매 후 인터뷰",
+      "verification": "영상 설명 연도·회차 미확인",
+      "source": "영상 아카이브 설명",
+      "sourceUrl": "https://www.youtube.com/watch?v=T56B-en139E",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=OxRUzRaDAfc",
+      "sourceNote": "영상 설명에 3집 〈Only One〉 발매 후 NTV 〈통통클럽〉 인터뷰라고 기재. 방송 날짜·회차는 독립적으로 확인되지 않아 2000년으로만 등록함.",
+      "dateKind": "영상 아카이브에 기재된 방송 연도",
+      "sourceRecord": "v35:video:2000:ntv-tongtongclub",
+      "sourceRefs": [
+        "v35:video:2000tongtong"
+      ],
+      "archiveVideoIds": [
+        "OxRUzRaDAfc"
+      ],
+      "recordCount": 1
     }
   ],
   "researchSources": [
@@ -61726,59 +61684,59 @@
     },
     {
       "id": "v34-src:WORK-M01",
-      "publisher": "WORK 열람 기록 / 짱 2000년 9월호",
+      "publisher": "《짱》 2000년 9월호",
       "title": "ICBN 개국 콘서트",
       "url": "https://postfiles.pstatic.net/MjAyNTAyMjFfMjky/MDAxNzQwMTM3NjY1MTQ3.A-JrwL05Ot_RFV_BaZA-_yVRoSPXzI_c9UJXqBy-bBIg.f6y0JW8oOW8r6bMW4sTT0m4agMGuG27ZH8A_2RlRVAIg.JPEG/1740137664440.jpg?type=w3840",
-      "kind": "WORK 잡지 이미지 판독 및 추출 보고(직접 재열람은 별도)",
-      "note": "원문 이미지 뷰어 33. WORK 추출표 M01: 잠실 주경기장, 오후 7시 30분으로 기재. 신화 공연 현장 사진과 All Your Dreams 무대 서술.. 한계: 공연 실황 취재 기사 확인. 다른 곡목·정확한 출연 순서 미확인. 한국경제 검색 색인의 개국 예정 보도는 실제 개최의 추가 증명이 아님."
+      "kind": "잡지 기사 발췌",
+      "note": "잠실주경기장 iCBN 개국 콘서트 현장 기사. 신화의 〈All Your Dreams〉 무대 소개."
     },
     {
       "id": "v34-src:WORK-M02",
-      "publisher": "WORK 열람 기록 / 짱 2000년 9월호",
+      "publisher": "《짱》 2000년 9월호",
       "title": "신나라레코드 반포 센트럴시티점 팬사인회",
       "url": "https://postfiles.pstatic.net/MjAyNTAyMjFfMjUg/MDAxNzQwMTM3MDI2Nzgx.tQ8tB-hCrh61KKwmTA6X0EITgH7Rx0jgAgr1XFy1HD4g.7dcY9WBMk1fWCYH9qBDrIEFgsJ_zdtJrP5vNzZQ9yMIg.JPEG/900%EF%BC%BF1740137022692.jpg?type=w3840",
-      "kind": "WORK 잡지 이미지 판독 및 추출 보고(직접 재열람은 별도)",
-      "note": "원문 이미지 뷰어 34. WORK 추출표 M02: 점포 오픈 기념 팬사인회. 오전 11시 30분 시작, 혼잡으로 약 20분 만에 중단했다고 보도.. 한계: 기존 반포 NCD 팬사인회와 동일 행사로 잠정 연결. 음반 형식으로 보이는 인쇄 글자는 판독 유보. 예정 50분과 실제 진행 약 20분 구분."
+      "kind": "잡지 기사 발췌",
+      "note": "8월 6일 반포 센트럴시티점 개점 기념 팬사인회. 오전 11시 30분 시작, 혼잡으로 약 20분 만에 중단됐다는 기사."
     },
     {
       "id": "v34-src:WORK-M03",
-      "publisher": "WORK 열람 기록 / 짱 2000년 9월호",
+      "publisher": "《짱》 2000년 9월호",
       "title": "All Your Dreams 뮤직비디오 촬영",
       "url": "https://postfiles.pstatic.net/MjAyNTAyMjFfMTUg/MDAxNzQwMTM3MDI2Nzkw.KkSgFordIK1kwiwVI-hkLMX3MBrHN3ohLU1zrzRiYcMg.DyrZHVR_E2_2TVM0tChnCjJXmYQC0a8VRLZKpXMClkgg.JPEG/900%EF%BC%BF1740137022927.jpg?type=w3840",
-      "kind": "WORK 잡지 이미지 판독 및 추출 보고(직접 재열람은 별도)",
-      "note": "원문 이미지 뷰어 38. WORK 추출표 M03: 밤 10시경 청담대교 아래 탄천주차장 촬영 현장 취재. 블랙비트 우정 출연 및 새벽 6시까지 촬영 서술.. 한계: 지난달 23일부터 일주일간이라는 상대 날짜는 확정 촬영 시작일로 등록하지 않음. 새벽 6시는 다음 날로 해석 가능하나 7월 29일 명시 없음. 감독명 판독 유보. 극 중 직업·싸움은 실제 활동으로 추출하지 않음."
+      "kind": "잡지 기사 발췌",
+      "note": "청담대교 아래 탄천주차장의 〈All Your Dreams〉 뮤직비디오 촬영 현장 기사. 밤부터 다음 날 새벽까지의 촬영과 블랙비트 출연 언급."
     },
     {
       "id": "v34-src:WORK-M04",
-      "publisher": "WORK 열람 기록 / 짱 2000년 9월호",
+      "publisher": "《짱》 2000년 9월호",
       "title": "SBS 청춘 시트콤 행진 출연 예정",
       "url": "https://postfiles.pstatic.net/MjAyNTAyMjFfMTQz/MDAxNzQwMTM3MDI1NTQw.IIZXdScIjW2P4MA9EI1eVGIpmbBk1l7Fzu4ZewfFAjcg.DBHIc08xi-xkEuzHw0gOG8ByyVSPuV4HlrXZBfzG7Qgg.JPEG/900%EF%BC%BF1740137023336.jpg?type=w3840",
-      "kind": "WORK 잡지 이미지 판독 및 추출 보고(직접 재열람은 별도)",
-      "note": "원문 이미지 뷰어 43. WORK 추출표 M04: 8월 15일부터 주 2회 출연한다는 예정 보도.. 한계: 실제 첫 방송일·녹화일·방송 회차 미확인. 본 기사만으로 8월 15일 실제 방송 확정 불가. 다른 페이지의 KBS 시트콤 언급과 합치지 않음."
+      "kind": "잡지 기사 발췌",
+      "note": "신혜성의 SBS 청춘 시트콤 〈행진〉 출연 계획을 소개한 기사. 실제 방송일은 기사만으로 확인할 수 없음."
     },
     {
       "id": "v34-src:WORK-M05",
-      "publisher": "WORK 열람 기록 / 짱 2000년 9월호",
+      "publisher": "《짱》 2000년 9월호",
       "title": "대만 MTV Summer Music 참가 예정",
       "url": "https://postfiles.pstatic.net/MjAyNTAyMjFfMTQz/MDAxNzQwMTM3MDI1NTQw.IIZXdScIjW2P4MA9EI1eVGIpmbBk1l7Fzu4ZewfFAjcg.DBHIc08xi-xkEuzHw0gOG8ByyVSPuV4HlrXZBfzG7Qgg.JPEG/900%EF%BC%BF1740137023336.jpg?type=w3840",
-      "kind": "WORK 잡지 이미지 판독 및 추출 보고(직접 재열람은 별도)",
-      "note": "원문 이미지 뷰어 43. WORK 추출표 M05: 8월 11일부터 3일간 대만 뮤직축제 참가 예정 보도. MTV Asia 관련 행사로 소개.. 한계: 8월 11일은 방문 시작 예정일. 기존 8월 13일 행사 기록·9월 30일 영상 설명 기록과 날짜 종류 대조 필요. 새 공연으로 중복 생성하거나 기존 날짜를 삭제하지 않음."
+      "kind": "잡지 기사 발췌",
+      "note": "8월 11일부터 3일간 대만에서 열리는 MTV 관련 여름 음악 행사 참가 예정 기사. 실제 개별 공연일은 미확인."
     },
     {
       "id": "v34-src:WORK-M06",
-      "publisher": "WORK 열람 기록 / 짱 2000년 9월호",
+      "publisher": "《짱》 2000년 9월호",
       "title": "Wedding March 뮤직비디오 촬영 언급",
       "url": "https://postfiles.pstatic.net/MjAyNTAyMjFfMTQz/MDAxNzQwMTM3MDI1NTQw.IIZXdScIjW2P4MA9EI1eVGIpmbBk1l7Fzu4ZewfFAjcg.DBHIc08xi-xkEuzHw0gOG8ByyVSPuV4HlrXZBfzG7Qgg.JPEG/900%EF%BC%BF1740137023336.jpg?type=w3840",
-      "kind": "WORK 잡지 이미지 판독 및 추출 보고(직접 재열람은 별도)",
-      "note": "원문 이미지 뷰어 43. WORK 추출표 M06: 대만 팬들을 위해 3집 수록곡 Wedding March를 뮤직비디오로 촬영했다는 서술. 행사에서 선보일 계획 언급.. 한계: 기존 2000-06-22~23 촬영 기록의 날짜는 이 기사로 입증되지 않음. 행사 영상 상영 계획을 라이브 공연으로 해석하지 않음."
+      "kind": "잡지 기사 발췌",
+      "note": "대만 팬들을 위해 〈Wedding March〉 뮤직비디오를 촬영했다는 기사. 정확한 촬영일은 확인되지 않음."
     },
     {
       "id": "v34-src:WORK-M07",
-      "publisher": "WORK 열람 기록 / 짱 2000년 9월호",
+      "publisher": "《짱》 2000년 9월호",
       "title": "짱 2000년 9월호 신화 화보·인터뷰 수록",
       "url": "https://postfiles.pstatic.net/MjAyNTAyMjFfMjIx/MDAxNzQwMTM3MDQ4MzI1.vK1rtXahFV1PxRwHD-2mkS6jRMtanW5JPSUOmS1B_L0g.f5MHJrupSE-Pog8aNsBpheDDaib2b8MyuZFhZ2ZSSUEg.JPEG/900%EF%BC%BF1740137047543.jpg?type=w3840",
-      "kind": "WORK 잡지 이미지 판독 및 추출 보고(직접 재열람은 별도)",
-      "note": "원문 이미지 뷰어 44. WORK 추출표 M07: 표지에 2000년 9월호, 제3권 9호 통권24호, 2000년 8월 10일 발행 표기. 본문에 그룹 화보와 멤버별 인터뷰 수록.. 한계: 화보 촬영일·인터뷰 실시일 미상. 9월호 표기와 발행일, 2025년 블로그 재게시일을 구분."
+      "kind": "잡지 기사 발췌",
+      "note": "《짱》 2000년 9월호에 신화 화보와 인터뷰 수록. 잡지 발행일은 2000년 8월 10일."
     },
     {
       "id": "v34-src:icbn:2000",
@@ -61827,6 +61785,78 @@
       "url": null,
       "kind": "내부 검토색인(행사 사실 근거 아님)",
       "note": "1998 선행연예인 표창(정확한 수상일 미확정), 1999 청소년사절단 표창(12/13·12/22 충돌), 2000 KMTV(12/13·12/18 충돌), 2004 한류행사 등 보류를 수록한 v30 조사 보고서. 독립 출처 아님."
+    },
+    {
+      "id": "v35:kepa:1999dream",
+      "publisher": "한국연예제작자협회",
+      "title": "제5회 청소년을 위한 드림콘서트 1999",
+      "url": "https://www.kepa.net/activity/concert?category=&id=49&keyword=&mode=read&option=&page=3",
+      "kind": "주최사 공식 기록",
+      "note": "1999년 5월 15일 서울올림픽주경기장 개최, 공식 라인업에 신화 포함."
+    },
+    {
+      "id": "v35:mk:1999fanta",
+      "publisher": "매일경제",
+      "title": "한국코카콜라 99 환타 펀 캠프 (1999.06.04)",
+      "url": "https://www.mk.co.kr/news/economy/2091838",
+      "kind": "당시 개최 예고 기사",
+      "note": "8월 4~7일 전북 무주리조트 캠프 개최 예정. 신화 출연·참가 여부는 기사에 별도 표기 없음."
+    },
+    {
+      "id": "v35:bugs:2000smtown",
+      "publisher": "벅스",
+      "title": "SMTOWN 《Winter Vacation In SMTown.com》 — 창밖을 봐요",
+      "url": "https://music.bugs.co.kr/track/80006837",
+      "kind": "음원 유통 정보",
+      "note": "2000년 12월 앨범 및 〈창밖을 봐요〉 뮤직비디오 존재를 확인할 수 있음. 촬영일은 기재되지 않음."
+    },
+    {
+      "id": "v35:video:000821",
+      "publisher": "사용자 영상 아카이브",
+      "title": "2000.08.21 SBS 〈행진〉 신혜성 출연 장면",
+      "url": "https://www.youtube.com/watch?v=Te3fhopfPYI",
+      "kind": "영상 기록",
+      "note": "영상 설명에는 1999.06.20 〈좋은 친구들〉과 2000.08.21 〈행진〉의 편집본이라고 적혀 있음. 해당 방송의 공식 회차 날짜는 확인되지 않음."
+    },
+    {
+      "id": "v35:video:2000starking",
+      "publisher": "사용자 영상 아카이브",
+      "title": "2000년 Mnet 〈Star King〉 인터뷰 장면",
+      "url": "https://www.youtube.com/watch?v=ofgQpuRXWTs",
+      "kind": "영상 기록",
+      "note": "영상 설명 기준 2000년 Mnet 〈Star King〉. 회차·일자는 미확인."
+    },
+    {
+      "id": "v35:video:2000tongtong",
+      "publisher": "사용자 영상 아카이브",
+      "title": "2000년 NTV 〈통통클럽〉 인터뷰",
+      "url": "https://www.youtube.com/watch?v=OxRUzRaDAfc",
+      "kind": "영상 기록",
+      "note": "3집 〈Only One〉 발매 후 NTV 인터뷰라고 영상 설명에 적혀 있음. 방송일 미확인."
+    },
+    {
+      "id": "v35:video:2000smtown",
+      "publisher": "한밤 HANBAM·사용자 영상 아카이브",
+      "title": "2000년 SMTOWN 뮤직비디오 촬영 현장",
+      "url": "https://www.youtube.com/watch?v=yEy5R3hdb9w",
+      "kind": "방송 영상·재공개",
+      "note": "한밤 채널의 2000년 SMTOWN 뮤직비디오 촬영 현장 회고 영상. 구체적 촬영일은 미확인."
+    },
+    {
+      "id": "v35:video:000219",
+      "publisher": "사용자 영상 아카이브",
+      "title": "2000.02.19 신화 〈천일유혼〉 공연 직캠",
+      "url": "https://www.youtube.com/watch?v=HlPkuECa-9k",
+      "kind": "영상 기록",
+      "note": "원본 직캠의 제목은 20000219 신화 - 천일유혼. 공연 행사명과 다른 동일일자 팬미팅 기록의 관계는 미확인."
+    },
+    {
+      "id": "v35:video:mtv2000",
+      "publisher": "사용자 영상 아카이브",
+      "title": "2000 MTV Summer Summit In Taiwan 장면",
+      "url": "https://www.youtube.com/watch?v=2hFntY1T4LQ",
+      "kind": "영상 기록",
+      "note": "영상 설명에는 2000 MTV Summer Summit in Taiwan. 촬영·공연·방송 날짜는 기재되어 있지 않음."
     }
   ]
 }
