@@ -1,6 +1,29 @@
 {
   "videos": [
     {
+      "id": "x0aYN3yheEA",
+      "title": "그시절 예능에선 이런것도 다 했어... 스카이다이빙 하는 신혜성",
+      "description": "000708 신화창조 2000   남자만들기\n\n제목 : [방송] 20000708 - 신화 - 신화창조 2000 - 남자만들기 최종화\n링크 : https://www.youtube.com/watch?v=ZtSbUFB7YuA\n채널 : 셩공시대님\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "000708 신화창조 2000   남자만들기",
+      "sourceDate": null,
+      "publishedAt": "2026-10-25T10:30:03Z",
+      "thumbnail": "https://i.ytimg.com/vi/x0aYN3yheEA/maxresdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=x0aYN3yheEA",
+      "duration": "PT3M",
+      "durationSeconds": 180,
+      "videoFormat": "shorts",
+      "videoFormatSource": "auto",
+      "videoFormatConfidence": "low",
+      "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요",
+      "parseStatus": "needs_review",
+      "contentType": "video",
+      "playlistScope": "",
+      "playlistCandidate": false,
+      "firstSeenAt": "2026-10-25T11:00:56.086Z",
+      "dates": [],
+      "ignoredDateCandidates": []
+    },
+    {
       "id": "G5KW2QTovVg",
       "title": "바람 맞으며 노래하는 백조 혜성",
       "description": "990627 강원국제Expo 성공기념 슈퍼콘서트\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
@@ -21,7 +44,10 @@
       "playlistCandidate": false,
       "firstSeenAt": "2026-10-24T11:00:57.265Z",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "1lDJsCpsBKs",
@@ -17695,8 +17721,8 @@
       "descriptionChangedAfterManual": false
     }
   ],
-  "total": 656,
-  "generatedAt": "2026-10-24T11:00:57.265Z",
+  "total": 657,
+  "generatedAt": "2026-10-25T11:00:56.086Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
