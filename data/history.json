@@ -1,7 +1,7 @@
 {
   "metadata": {
     "schemaVersion": 5,
-    "updated": "2026-10-24",
+    "updated": "2026-10-25",
     "description": "원본 기록 보존형 신화·신혜성 연표. 출처 호버/클릭 공개, 미확인 기록은 미확인으로 표시. 1996.04 확증 없는 합류와 2004.05.21 미확인 발매 주장 공개 연표 제외. Daum 과거 공식 행사 공지에 근거한 추가 기록 포함(2026.10.24 v25).",
     "inputRows": 2071,
     "newIndependentlySourcedEvents": 63,
@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 833,
+      "chapter1": 838,
       "chapter2": 915,
       "chapter3": 556,
       "chapter4": 74
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2378,
+    "visibleEvents": 2383,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -634,7 +634,8 @@
       "enhancedEvents": 10,
       "notes": "예정 기사만으로 실제 출연 신규 생성 금지. 1998 표창 날짜/기타 시상식 충돌은 보류. 현재 운영 원본 독립 확인은 미완료."
     },
-    "v35Note": "v34 이후 공개 표제 및 중복 정리. 직접 확인한 개최일은 공식 일자로 통일하고, 판독/추출 작업 메모는 공개 인용에서 제거. 연도만 확인된 출연은 일자 미상으로 등록."
+    "v35Note": "v34 이후 공개 표제 및 중복 정리. 직접 확인한 개최일은 공식 일자로 통일하고, 판독/추출 작업 메모는 공개 인용에서 제거. 연도만 확인된 출연은 일자 미상으로 등록.",
+    "magazineCheckpoint": "2026-10-25: 1-2차 누적 판독; 원문 연결 식별 가능 지면 24종, 총 748장 중 전체 정밀 판독 완료 아님. 연구 후보는 외부 검증 전 미등재. 베스트드레서 선정 1건 및 기존 6건 근거 보강."
   },
   "chapters": [
     {
@@ -1265,7 +1266,7 @@
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | VIEW 1998.05 및 STARTOUCH 1998.05 당시 원문에 3월25~26일 〈해결사〉 MV 촬영이 기재됨. 중국어 팬 연표 단독 기록에서 잡지 직접 근거 확보. | STARTOUCH 1998.05 취재는 3월26일 현장 근거. 기존 3월25~26일과 양립.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | VIEW 1998.05 및 STARTOUCH 1998.05 당시 원문에 3월25~26일 〈해결사〉 MV 촬영이 기재됨. 중국어 팬 연표 단독 기록에서 잡지 직접 근거 확보. | STARTOUCH 1998.05 취재는 3월26일 현장 근거. 기존 3월25~26일과 양립.\n잡지 기사 발췌: 당시 잡지 취재에 3월25~26일 〈해결사〉 MV 촬영 및 서울 은평구 신사동 J ART 촬영장 언급. 기존 날짜 수정 없음.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0009",
       "verificationUrl": null,
@@ -1273,7 +1274,8 @@
         "fan-cn1",
         "fan-cn2",
         "v34-src:mag:VIEW199805",
-        "v34-src:mag:STARTOUCH199805"
+        "v34-src:mag:STARTOUCH199805",
+        "v36-mag-1998haegyeolsa"
       ],
       "recordCount": 1
     },
@@ -5726,14 +5728,15 @@
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n[v31 잡지 원문 근거] TEENSTAR 2000년 1월호 및 ILOVESTAR 2000년 1월호에 1999년 11월 20일 올림픽체조경기장 SM 페스티벌 신화 출연 취재. 같은 날짜 분당 수험생 미니콘서트와 장소가 다름. 스캔 IMG05·IMG01.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n[v31 잡지 원문 근거] TEENSTAR 2000년 1월호 및 ILOVESTAR 2000년 1월호에 1999년 11월 20일 올림픽체조경기장 SM 페스티벌 신화 출연 취재. 같은 날짜 분당 수험생 미니콘서트와 장소가 다름. 스캔 IMG05·IMG01.\n잡지 기사 발췌: 당시 잡지 기사에서 1999.11.20 SM 합동 공연 현장 취재 보강. 공연장 표기는 출처 간 차이가 있어 자동 정정하지 않음.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0036",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "v31-magazine-M31-05"
+        "v31-magazine-M31-05",
+        "v36-mag-1999smfestival"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -6161,13 +6164,14 @@
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.",
+      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.\n잡지 기사 발췌: 당시 잡지 《FORMOSA PROMOTION TOUR》 기사에는 3/30~4/2 대만 언론·방송·가오슝 관련 체류 활동이 실림. 이는 기존 3/29 최초 방문일을 독립 확정하는 증거가 아니며 방송 송출일도 아님.",
       "dateKind": "원문 기재일",
       "sourceRecord": "s010",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v36-mag-2000taiwan"
       ],
       "recordCount": 1
     },
@@ -13858,13 +13862,14 @@
       "source": "새 제공 팬 스케줄 및 대조 자료",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "8월23~26일 전체 일본 쇼케이스로 적은 팬 스케줄에서 8월24일 공연을 분리. 일본 BoA 공연 연표는 8.24 Zepp Tokyo 행사에서 신화 출연을 명시. 여러 날짜 모두 별도 신화 공연이었다는 입증 근거는 없어 8.23/25/26을 자동 추가하지 않음. 당시 SM 공식 원문·사후 기사는 미확보.",
+      "sourceNote": "8월23~26일 전체 일본 쇼케이스로 적은 팬 스케줄에서 8월24일 공연을 분리. 일본 BoA 공연 연표는 8.24 Zepp Tokyo 행사에서 신화 출연을 명시. 여러 날짜 모두 별도 신화 공연이었다는 입증 근거는 없어 8.23/25/26을 자동 추가하지 않음. 당시 SM 공식 원문·사후 기사는 미확보.\n잡지 기사 발췌: 당시 일본 잡지 지면에 2001.08.24 Zepp Tokyo 쇼케이스로 기재. 기존 해당 일자 일정의 출처만 보강.",
       "dateKind": "공연일(해외 공연 기록 기반)",
       "sourceRecord": "2026-10-23 업로드 팬 스케줄",
       "verificationUrl": null,
       "sourceRefs": [
         "sch2001-japan-0824",
-        "sch2001-japan-cn"
+        "sch2001-japan-cn",
+        "v36-mag-2001japanshowcase"
       ],
       "recordCount": 1
     },
@@ -15565,13 +15570,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A369:D369",
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.",
+      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.\n잡지 기사 발췌: 당시 잡지 현장 기사에서 2001.10.28 오후 5시 행사 표기. 참석 멤버 구성 및 정확한 장소는 이 근거만으로 단정하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!369",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v36-mag-2001fanclub"
       ],
       "mergedRecordIds": [
         "sheet:01!369",
@@ -16083,13 +16089,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A389:D389",
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n잡지 기사 발췌: 당시 잡지의 서울가요대상 본상 현장 기사에 12/7 및 경희대 평화의전당 표기. 같은 날 베스트드레서 수상자 선정 기사는 별도 행사이므로 병합하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!389",
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v36-mag-2001award"
       ],
       "mergedRecordIds": [
         "sheet:01!389",
@@ -16109,6 +16116,31 @@
       "verificationUrls": [],
       "referenceVideoUrls": [],
       "possibleDuplicate": false
+    },
+    {
+      "id": "v36:press-mag:2001-12-07:best-dresser-swan-award",
+      "date": "2001-12-07",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "시상·선정",
+      "subject": "신화 전체",
+      "title": "제18회 코리아 베스트드레서 백조상 — 가수 부문 수상자로 선정",
+      "verification": "2001.12.05 동시대 신문 선정 발표 확인·사후 잡지 기사 기재",
+      "source": "동아일보 2001.12.05 + 당시 잡지 기사",
+      "sourceUrl": "https://www.donga.com/news/Culture/article/all/20011205/7766145/1",
+      "sourceUrls": [
+        "https://www.donga.com/news/Culture/article/all/20011205/7766145/1",
+        "https://m.blog.naver.com/ses_magazine_archive/222616104603"
+      ],
+      "verificationUrl": "https://www.donga.com/news/Culture/article/all/20011205/7766145/1",
+      "sourceNote": "동아일보 2001.12.05 보도: 제18회 코리아 베스트드레서 백조상 가수 부문 수상자로 신화와 베이비복스 선정, 시상식 12/07 오후 6시 서울 하얏트호텔 개최 예정. 당시 잡지 기사는 12/07 오후 7시로 적어 시간 충돌. 잡지는 신화의 수상자 선정을 보도하나 신화 멤버들의 해당 시상식 직접 참석까지 입증하지 않음. 같은 날짜 기존 SBS 서울가요대상과 서로 다른 행사. 행사 진행·참석 여부 추가 대조 필요.",
+      "dateKind": "당시 신문이 사전 보도한 시상식 예정일 (수상자 선정은 기보도)",
+      "sourceRecord": "v36-mag-0738 / donga-20011205",
+      "sourceRefs": [
+        "v36-mag-2001award",
+        "v36-press-2001award"
+      ],
+      "recordCount": 1
     },
     {
       "id": "sheet:01!390",
@@ -16625,19 +16657,23 @@
       "precision": "day",
       "chapter": "chapter1",
       "category": "방송",
-      "subject": "신화 전체",
-      "title": "SBS NET가요제",
-      "verification": "영상 설명 기재·독립 검증 전",
-      "source": "영상 아카이브 설명",
+      "subject": "신혜성 개인",
+      "title": "SBS NET가요제 — 신혜성 축하무대",
+      "verification": "SBS 사보 확인",
+      "source": "SBS 사보",
       "sourceUrl": "https://www.youtube.com/watch?v=s9diOGZJ9Mg",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=s9diOGZJ9Mg",
-      "sourceNote": "아카이브 영상 설명에 기재된 날짜와 활동명 기준. 방송·행사 원문을 통한 독립 검증 전. 020126 SBS NET가요제",
+      "sourceNote": "2002년 1월 26일 SBS 등촌동 공개홀에서 열린 행사에 신혜성이 축하무대로 참여했습니다.",
       "dateKind": "영상 설명에 기재된 방송·활동일(독립 검증 전)",
       "sourceRecord": "archive:description:20261024",
       "archiveVideoIds": [
         "s9diOGZJ9Mg"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "verificationUrl": "https://img.sbs.co.kr/sbspdf/magazine/2002/2002_02.pdf",
+      "sourceRefs": [
+        "v36-2002-s94"
+      ]
     },
     {
       "id": "sheet:02!19",
@@ -16670,16 +16706,18 @@
       "transition": "",
       "category": "공연",
       "subject": "신화 전체",
-      "title": "SBS 2001-2002 야구 올스타전 축하공연 <Wild Eyes>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A21:D21",
+      "title": "2001–2002 프로농구 올스타전 축하공연 〈Wild Eyes〉",
+      "verification": "당시 행사 안내·영상 기록 확인",
+      "source": "당시 신문·영상 기록",
+      "sourceUrl": "https://www.kyeonggi.com/article/200201240060589",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 1월 27일 열린 2001–2002 프로농구 올스타전의 신화 축하공연 기록입니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!21",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.kyeonggi.com/article/200201240060589",
+      "sourceRefs": [
+        "v36-2002-s44"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "qERTSCrbWII"
@@ -17205,17 +17243,18 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "SBS 인기가요 E202 <Perfect Man>",
-      "verification": "원문 기록",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A59:D59",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.",
+      "sourceNote": "2002년 3월 31일 방송된 SBS 〈인기가요〉 202회에 신화가 출연했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!59",
-      "verificationUrl": null,
+      "verificationUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v36-2002-s98"
       ],
       "mergedRecordIds": [
         "sheet:02!59",
@@ -17245,15 +17284,17 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "KBS 뮤직뱅크 <Perfect Man>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A62:D62",
+      "verification": "KBS 공식 방송자료 확인",
+      "source": "KBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=51hgn3FPg_w",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 4월 4일 KBS 〈뮤직뱅크〉 신화 출연 기록입니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!62",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.youtube.com/watch?v=51hgn3FPg_w",
+      "sourceRefs": [
+        "v36-2002-s99"
+      ],
       "recordCount": 1
     },
     {
@@ -17302,15 +17343,17 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "SBS 인기가요 E203 <Perfect Man>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A68:D68",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 4월 7일 SBS 〈인기가요〉 203회에 신화가 출연했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!68",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
+      "sourceRefs": [
+        "v36-2002-s98"
+      ],
       "recordCount": 1
     },
     {
@@ -17677,19 +17720,23 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "KBS 뮤직플러스 — 신화 〈Perfect Man〉",
-      "verification": "방송 영상 메타데이터 확인 / 재생 미검증",
-      "source": "v18 누적조사 A81",
+      "verification": "KBS 공식 방송자료 확인",
+      "source": "KBS 공식 방송자료",
       "sourceUrl": "https://www.youtube.com/watch?v=ApLb-NRSjCo",
       "sourceUrls": [
         "https://www.youtube.com/watch?v=ApLb-NRSjCo"
       ],
-      "sourceNote": "KBS 공식 아카이브 영상에 방송일·곡명 기재; 입증: 방송일·KBS 2TV 방송명·신화 출연·곡명 / 미확인: 기존 695건에 같은 날짜 연혁 없음, 통합시 다른 유사 기록 최종 대조 / 근거: KBS 공식 아카이브 채널 Again 가요톱10 업로드가 2002/04/27 KBS 2TV 〈뮤직플러스〉 신화 Perfect Man 명시.",
+      "sourceNote": "KBS 〈뮤직플러스〉의 2002년 4월 27일 신화 출연 기록입니다.",
       "dateKind": "방송일/방송예정일 (검증 범위는 ⓘ 근거 확인)",
       "sourceRecord": "A81",
       "recordCount": 1,
       "referenceVideoUrl": "https://www.youtube.com/watch?v=ApLb-NRSjCo",
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=ApLb-NRSjCo"
+      ],
+      "verificationUrl": "https://www.youtube.com/watch?v=ApLb-NRSjCo",
+      "sourceRefs": [
+        "v36-2002-s17"
       ]
     },
     {
@@ -17721,17 +17768,19 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "SBS 인기가요 E206 <Perfect Man>",
-      "verification": "원문 기록",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A107:D107",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000368805",
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "2002년 4월 28일 SBS 〈인기가요〉 206회에 신화가 출연했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!107",
-      "verificationUrl": null,
+      "verificationUrl": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000368805",
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v36-2002-s13",
+        "v36-2002-s98"
       ],
       "mergedRecordIds": [
         "sheet:02!107",
@@ -17922,17 +17971,18 @@
       "category": "공연",
       "subject": "신화·신혜성 활동(기존 연표)",
       "title": "중국 선양 월드컵 기념 공연",
-      "verification": "원문 기록",
-      "source": "기존 활동 연표",
+      "verification": "당시 현장 기사 확인",
+      "source": "당시 현장 기사",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "2002년 5월 14일 중국 선양의 우허체육장에서 열린 월드컵 기념 공연에 신화가 출연했습니다.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0109",
-      "verificationUrl": null,
+      "verificationUrl": "https://2002.sina.com.cn/n/2002-05-14/142951.shtml",
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "v36-2002-s63"
       ],
       "recordCount": 1
     },
@@ -18279,15 +18329,17 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "SBS 인기가요 <I Pray 4 U>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A165:D165",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000369169",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 6월 16일 SBS 〈인기가요〉 213회에 신화가 출연했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!165",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000369169",
+      "sourceRefs": [
+        "v36-2002-s14"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-MuNc-FvCI0"
@@ -18388,15 +18440,17 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "SBS 인기가요 <I Pray 4 U>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A176:D176",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=UXm-Pe43qHM",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 6월 23일 SBS 〈인기가요〉 214회에 신화가 출연했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!176",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.youtube.com/watch?v=UXm-Pe43qHM",
+      "sourceRefs": [
+        "v36-2002-s111"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-MuNc-FvCI0"
@@ -18427,20 +18481,24 @@
       "date": "2002-06-27",
       "precision": "day",
       "chapter": "chapter1",
-      "category": "방송",
+      "category": "음악방송",
       "subject": "신화 전체",
-      "title": "KBS 뮤직뱅크",
-      "verification": "영상 설명 기재·독립 검증 전",
-      "source": "영상 아카이브 설명",
+      "title": "KBS 〈뮤직뱅크〉 — 신화 출연",
+      "verification": "KBS 공식 방송자료 확인",
+      "source": "KBS 공식 방송자료",
       "sourceUrl": "https://www.youtube.com/watch?v=-MuNc-FvCI0",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=-MuNc-FvCI0",
-      "sourceNote": "아카이브 영상 설명에 기재된 날짜와 활동명 기준. 방송·행사 원문을 통한 독립 검증 전. 03:12 020627 뮤뱅 ",
+      "sourceNote": "2002년 6월 27일 KBS 〈뮤직뱅크〉 신화 출연 기록입니다.",
       "dateKind": "영상 설명에 기재된 방송·활동일(독립 검증 전)",
       "sourceRecord": "archive:description:20261024",
       "archiveVideoIds": [
         "-MuNc-FvCI0"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "verificationUrl": "https://www.youtube.com/watch?v=51hgn3FPg_w",
+      "sourceRefs": [
+        "v36-2002-s99"
+      ]
     },
     {
       "id": "sheet:02!182",
@@ -18576,15 +18634,17 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "SBS 인기가요 E216 <I Pray 4 U>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A195:D195",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=UXm-Pe43qHM",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 7월 7일 SBS 〈인기가요〉 216회에 신화가 출연했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!195",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.youtube.com/watch?v=UXm-Pe43qHM",
+      "sourceRefs": [
+        "v36-2002-s111"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-MuNc-FvCI0"
@@ -18599,15 +18659,17 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "KBS 뮤직뱅크 <Hero>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A200:D200",
+      "verification": "KBS 공식 방송자료 확인",
+      "source": "KBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=51hgn3FPg_w",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 7월 11일 KBS 〈뮤직뱅크〉 신화 출연 기록입니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!200",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.youtube.com/watch?v=51hgn3FPg_w",
+      "sourceRefs": [
+        "v36-2002-s99"
+      ],
       "recordCount": 1
     },
     {
@@ -18618,16 +18680,18 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "KBS 뮤직플러스 여름노래대결 <I Pray 4 U+Hero>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A203:D203",
+      "title": "KBS 〈뮤직플러스〉 — 신화 출연",
+      "verification": "KBS 공식 방송자료 확인",
+      "source": "KBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=FpsHegx1Tf4",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "KBS 공식 영상 자료에서 2002년 7월 13일 신화 출연이 확인됩니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!203",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://www.youtube.com/watch?v=FpsHegx1Tf4",
+      "sourceRefs": [
+        "v36-2002-s106"
+      ],
       "recordCount": 1
     },
     {
@@ -18639,15 +18703,18 @@
       "category": "음악방송",
       "subject": "신화 전체",
       "title": "MBC 음악캠프 E143 <I Pray 4 U>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A204:D204",
+      "verification": "MBC 공식 방송자료 확인",
+      "source": "MBC 공식 방송자료",
+      "sourceUrl": "https://m.imbc.com/vod/vodview?broadcastID=1000356100076100000&progCode=1000356100000100000&type=prevod",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2002년 7월 13일 MBC 〈음악캠프〉 143회에 신화가 출연했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!204",
-      "verificationUrl": null,
-      "sourceRefs": [],
+      "verificationUrl": "https://m.imbc.com/vod/vodview?broadcastID=1000356100076100000&progCode=1000356100000100000&type=prevod",
+      "sourceRefs": [
+        "v36-2002-s04",
+        "v36-2002-s21"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-MuNc-FvCI0"
@@ -18962,18 +19029,19 @@
       "category": "공연",
       "subject": "신화·신혜성 활동(기존 연표)",
       "title": "일본 POP Asia 2002 참가 (첫째 날)",
-      "verification": "원문 기록",
-      "source": "기존 활동 연표",
+      "verification": "정식 DVD 수록 자료 확인",
+      "source": "정식 DVD 수록 목록",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전. | 같은 LIVE&SURPRISE DVD 수록정보에 2002.09.21 POP ASIA 2002 TOKYO KOKUSAI FORUM 명시. 9/22 신화 출연은 이 DVD로 확인되지 않음.",
+      "sourceNote": "2002년 9월 21일 도쿄 국제포럼에서 열린 POP ASIA 2002 신화 출연 기록입니다.",
       "dateKind": "원문 기재일",
       "sourceRecord": "s025",
-      "verificationUrl": null,
+      "verificationUrl": "https://tower.jp/item/959612",
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "v34-src:JP2002-osaka-dvd"
+        "v34-src:JP2002-osaka-dvd",
+        "v36-2002-s103"
       ],
       "recordCount": 1
     },
@@ -19009,16 +19077,17 @@
       "category": "공연·행사",
       "subject": "신화 전체",
       "title": "FM OSAKA MUSIC IN THE HOUSE — 신화 스페셜 이벤트",
-      "verification": "2003년 공식 발매 DVD 수록 목록에 행사명·일자 명시",
-      "source": "당시 방송·기사·영상 및 누적조사",
+      "verification": "정식 DVD 수록 자료 확인",
+      "source": "정식 DVD 수록 목록",
       "sourceUrl": "https://tower.jp/item/959612",
       "referenceVideoUrl": null,
-      "sourceNote": "행사 장소 표기는 ON AIR OSAKA. 신화가 등장하는 DVD 수록 영상의 날짜·행사명 근거; 당시 실시간 방송 여부 및 전체 공연 세트리스트는 별도 확인.",
+      "sourceNote": "2002년 9월 24일 오사카 ON AIR OSAKA에서 열린 신화 스페셜 이벤트입니다.",
       "dateKind": "DVD 수록 행사 날짜",
       "sourceRecord": "v34:jp:2002-09-24:fmosaka",
       "verificationUrl": "https://tower.jp/item/959612",
       "sourceRefs": [
-        "v34-src:JP2002-osaka-dvd"
+        "v34-src:JP2002-osaka-dvd",
+        "v36-2002-s103"
       ],
       "recordCount": 1
     },
@@ -19160,18 +19229,20 @@
       "category": "공연",
       "subject": "신화·신혜성 활동(기존 연표)",
       "title": "SM Entertainment LIVE IN CHINA — 항저우 콘서트",
-      "verification": "전자신문 당시 출연·일자·장소 예정 보도 확인",
-      "source": "기존 활동 연표",
+      "verification": "당시 현장 기사 확인",
+      "source": "당시 현장 기사",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | 전자신문 2002-10-17 당시 기사에서 행사명을 SM Entertainment LIVE IN CHINA, 예정 장소를 저장성항저우체육센터, 날짜를 11월23일로 밝히며 신화 출연 예정 명시. 개최 완료는 별도 자료 필요.",
+      "sourceNote": "2002년 11월 23일 중국 항저우 체육장에서 열린 SM 합동공연에 신화가 출연했습니다.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0117",
-      "verificationUrl": "https://www.etnews.com/200210160064",
+      "verificationUrl": "https://ent.sina.com.cn/p/i/2002-11-25/1104115013.html",
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "delta-etnews-20021017"
+        "delta-etnews-20021017",
+        "v36-2002-s101",
+        "v36-2002-s102"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -19337,18 +19408,19 @@
       "category": "시상식",
       "subject": "신화 전체",
       "title": "제17회 골든디스크 어워즈 본상 수상 <Perfect Man>",
-      "verification": "당시 기사 확인",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A332:D332",
+      "verification": "당시 보도 확인",
+      "source": "당시 신문 기사",
+      "sourceUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N0311338374",
       "referenceVideoUrl": null,
-      "sourceNote": "2002.12.14 SBS 뉴스가 인용한 연합뉴스 기사: 대상은 쿨, 신화는 본상 수상. | 추가 참고: press-goldendisc-021213-sbs",
+      "sourceNote": "2002년 12월 13일 제17회 골든디스크상에서 신화가 〈Perfect Man〉으로 본상을 수상했습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!332",
-      "verificationUrl": null,
+      "verificationUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N0311338374",
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "press-goldendisc-021213-sbs"
+        "press-goldendisc-021213-sbs",
+        "v36-2002-s107"
       ],
       "mergedRecordIds": [
         "sheet:02!332",
@@ -19553,16 +19625,17 @@
       "category": "시상식",
       "subject": "신혜성 개인",
       "title": "2002 KBS 연예대상 — 강타·신혜성 라디오 MC 부문 최우수상",
-      "verification": "당시 시상식 사후 기사 확인",
-      "source": "나무위키 내용의 당시 자료 교차검증(2026.10.23)",
+      "verification": "당시 보도 확인",
+      "source": "당시 신문 기사",
       "sourceUrl": "https://www.donga.com/news/article/all/20021229/7896733/9",
       "referenceVideoUrl": null,
-      "sourceNote": "《강타, 신혜성의 자유선언》 공동 라디오 MC 최우수상. 12월29일 동아일보 기사에서 전날 수상 보도.",
+      "sourceNote": "2002년 12월 28일 KBS 연예대상에서 강타와 신혜성이 라디오 MC 부문 최우수상을 공동 수상했습니다.",
       "dateKind": "행사일(원문 확인)",
       "sourceRecord": "wiki-check:2002-12-28-kbs",
-      "verificationUrl": null,
+      "verificationUrl": "https://www.donga.com/news/article/all/20021229/7896733/9",
       "sourceRefs": [
-        "ns-kbsaward"
+        "ns-kbsaward",
+        "v36-2002-s95"
       ],
       "recordCount": 1,
       "sourceUrls": [
@@ -19778,7 +19851,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=FDyayEEfKk8"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C072",
       "verificationUrl": null,
@@ -20194,7 +20267,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=AXVlzMP57Nk"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C055",
       "verificationUrl": null,
@@ -20322,7 +20395,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=GzZpxIPqs1o"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C038",
       "verificationUrl": null,
@@ -20456,7 +20529,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=KjtrgNGRlTo"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C071",
       "verificationUrl": null,
@@ -20522,7 +20595,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=7goc6WNnEUk"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C093",
       "verificationUrl": null,
@@ -20696,7 +20769,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=FTdbOfuXKTk"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C039",
       "verificationUrl": null,
@@ -20931,7 +21004,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=Yt_N-Wy6Bu8"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C069",
       "verificationUrl": null,
@@ -20997,7 +21070,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=4WhwSmECeXM"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C068",
       "verificationUrl": null,
@@ -21102,7 +21175,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=d5wMIcdoJ-A"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C086",
       "verificationUrl": null,
@@ -21233,7 +21306,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=6Be-JSpPoMQ"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C085",
       "verificationUrl": null,
@@ -21320,7 +21393,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=l-y7JHR2fRo"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C054",
       "verificationUrl": null,
@@ -21626,7 +21699,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=SFa4e1SBX1Y"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C067",
       "verificationUrl": null,
@@ -21649,7 +21722,7 @@
         "https://www.youtube.com/watch?v=2aa8_auWCKk",
         "https://www.youtube.com/watch?v=5MPWqqBm6BI"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C084",
       "verificationUrl": null,
@@ -21723,7 +21796,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=w8NvWS1rpfA"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C144",
       "verificationUrl": null,
@@ -21833,7 +21906,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1715807038&range=A160:D160",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=qspTB1gYhWc",
-      "sourceNote": "행사·무대와 방송 취재/편집 영상은 각각 별개 기록이며 한 행사 주제에 묶어서 표시함. 실제 행사일과 편성일의 동일성은 미확정. 원본 표제: 신화창조 6기 창단식·팬미팅 / 연예가중계 — 신화창조 6기 팬미팅 현장 소개. 원본 검증 메모: 두 중국어 연표의 편집 기록. 외부 검증 전. | WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "행사·무대와 방송 취재/편집 영상은 각각 별개 기록이며 한 행사 주제에 묶어서 표시함. 실제 행사일과 편성일의 동일성은 미확정. 원본 표제: 신화창조 6기 창단식·팬미팅 / 연예가중계 — 신화창조 6기 팬미팅 현장 소개. 원본 검증 메모: 두 중국어 . 영상 아카이브의 관련 장면 기록입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "03!160",
       "verificationUrl": null,
@@ -21931,7 +22004,7 @@
           "referenceVideoUrls": [
             "https://www.youtube.com/watch?v=c2KHDJgz3dA"
           ],
-          "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+          "sourceNote": "영상 아카이브에 기록된 관련 자료입니다. 정확한 방송일은 추가 확인이 필요합니다.",
           "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
           "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C078",
           "verificationUrl": null,
@@ -21977,7 +22050,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=qoszn1iTwRU"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C008",
       "verificationUrl": null,
@@ -21999,7 +22072,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=hk7XW1arzT8"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C037",
       "verificationUrl": null,
@@ -22044,7 +22117,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=YZL1BC-gtkc"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C010",
       "verificationUrl": null,
@@ -22066,7 +22139,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=aXfrI6c6dJo"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C051",
       "verificationUrl": null,
@@ -22088,7 +22161,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=x6CKekSoTuQ"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C106",
       "verificationUrl": null,
@@ -22288,7 +22361,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=FBzkAtKwUZQ"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C050",
       "verificationUrl": null,
@@ -22310,7 +22383,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=ADrNQWNDMII"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C049",
       "verificationUrl": null,
@@ -22357,7 +22430,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=lIb5d57YkVo"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C041",
       "verificationUrl": null,
@@ -22379,7 +22452,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=HlQnG2zD-oE"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C048",
       "verificationUrl": null,
@@ -22421,7 +22494,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=7nAN2wVecrs"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C044",
       "verificationUrl": null,
@@ -22443,7 +22516,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=jLUqaRhL4_E"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C043",
       "verificationUrl": null,
@@ -22578,7 +22651,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=hFNPyXSrq-M"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C136",
       "verificationUrl": null,
@@ -22600,7 +22673,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=UB2QEAS5ctg"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C135",
       "verificationUrl": null,
@@ -22642,7 +22715,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=WNiYahV_ueM"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C130",
       "verificationUrl": null,
@@ -22748,7 +22821,7 @@
         "https://www.youtube.com/watch?v=jq8B1htAqSk",
         "https://www.youtube.com/watch?v=2ZmuGPDvyoE"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C001",
       "verificationUrl": null,
@@ -22810,7 +22883,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=jGPjhOwrgwg"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C033",
       "verificationUrl": null,
@@ -22856,7 +22929,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=LP2rC6Oqs9s"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C042",
       "verificationUrl": null,
@@ -22945,7 +23018,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=mqpYa5pBnDo"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C128",
       "verificationUrl": null,
@@ -22993,7 +23066,7 @@
         "https://www.youtube.com/watch?v=ilHVXhNxe60",
         "https://www.youtube.com/watch?v=YsD2QaV3iWE"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 행사명/장소미상은그대로유지.장소를추정하지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C011",
       "verificationUrl": null,
@@ -23148,7 +23221,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=-qrcAYYYvdg"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C140",
       "verificationUrl": null,
@@ -23210,7 +23283,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=KfJknTdMwNQ"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C017",
       "verificationUrl": null,
@@ -23276,7 +23349,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=muntCh8mQIg"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C036",
       "verificationUrl": null,
@@ -23379,7 +23452,7 @@
         "https://www.youtube.com/watch?v=TM06zCdktbs",
         "https://www.youtube.com/watch?v=vK8V4tbRJYY"
       ],
-      "sourceNote": "행사·무대와 방송 취재/편집 영상은 각각 별개 기록이며 한 행사 주제에 묶어서 표시함. 실제 행사일과 편성일의 동일성은 미확정. 원본 표제: kmtv livemq S콘서트 - 신혜성(S) + 신화 출연 / Mnet widenews - S콘서트 - 신혜성(s)+ 신화. 원본 검증 메모: WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "행사·무대와 방송 취재/편집 영상은 각각 별개 기록이며 한 행사 주제에 묶어서 표시함. 실제 행사일과 편성일의 동일성은 미확정. 원본 표제: kmtv livemq S콘서트 - 신혜성(S) + 신화 출연 / Mnet widenews - S콘서트 - 신혜. 영상 아카이브의 관련 장면 기록입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C034",
       "verificationUrl": null,
@@ -23401,7 +23474,7 @@
           "referenceVideoUrls": [
             "https://www.youtube.com/watch?v=TM06zCdktbs"
           ],
-          "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+          "sourceNote": "영상 아카이브에 기록된 관련 자료입니다. 정확한 방송일은 추가 확인이 필요합니다.",
           "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
           "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C034",
           "verificationUrl": null,
@@ -23423,7 +23496,7 @@
           "referenceVideoUrls": [
             "https://www.youtube.com/watch?v=vK8V4tbRJYY"
           ],
-          "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+          "sourceNote": "영상 아카이브에 기록된 관련 자료입니다. 정확한 방송일은 추가 확인이 필요합니다.",
           "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
           "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C120",
           "verificationUrl": null,
@@ -23465,7 +23538,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=SUjQJ9MZrKo"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C035",
       "verificationUrl": null,
@@ -23487,7 +23560,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=-w4Kox4nfAQ"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C045",
       "verificationUrl": null,
@@ -23509,7 +23582,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=LqlfYbQ9ckY"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C121",
       "verificationUrl": null,
@@ -23658,7 +23731,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=OGo1lobSxsk"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C066",
       "verificationUrl": null,
@@ -23680,7 +23753,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=9rLgW8Q73Ng"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C065",
       "verificationUrl": null,
@@ -23702,7 +23775,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=_R9m5v4Nukg"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 행사명/장소미상은그대로유지.장소를추정하지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C028",
       "verificationUrl": null,
@@ -23724,7 +23797,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=Ofz9bNLgBH4"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C064",
       "verificationUrl": null,
@@ -23746,7 +23819,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=ufHffMMyyXk"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C063",
       "verificationUrl": null,
@@ -23875,7 +23948,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=qANgVw5gpqI"
       ],
-      "sourceNote": "SBS 공식 회차 15회 2003-11-02 LAST STORY 방송 확인. 영상의 신혜성 편집 장면 자체는 직접 시청하지 못함. WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. 공식검색색인11/2최종회일치,출연진본문은미확보. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "SBS 공식 회차 15회 2003-11-02 LAST STORY 방송 확인. 영상의 신혜성 편집 장면 자체는 직접 시청하지 못함. 영상 아카이브의 관련 장면 기록입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "공식 회차의 방송일",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C006",
       "verificationUrl": "https://programs.sbs.co.kr/enter/boyar/vod/69009/22000024216",
@@ -23917,7 +23990,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=gaAjmBVgS1g"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C118",
       "verificationUrl": null,
@@ -23959,7 +24032,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=8kfZH_FKBBQ"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C116",
       "verificationUrl": null,
@@ -24255,7 +24328,7 @@
         "https://www.youtube.com/watch?v=ANVSYRwMDCQ",
         "https://www.youtube.com/watch?v=UBp6s3UkzVs"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 완셩생일파티여러직캠·생Q뉴스영상은한행사후보로통합.뉴스송출일은별도미확인. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C163",
       "verificationUrl": null,
@@ -24300,7 +24373,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=j_d818FxlkU"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C105",
       "verificationUrl": null,
@@ -24322,7 +24395,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=IiOu5e8N4eM"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C115",
       "verificationUrl": null,
@@ -24344,7 +24417,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=AgmGIhVDnVk"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C013",
       "verificationUrl": null,
@@ -24366,7 +24439,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=0e0WzuRWM3o"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C060",
       "verificationUrl": null,
@@ -24481,7 +24554,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=PEadvRxAHns"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C015",
       "verificationUrl": null,
@@ -24503,7 +24576,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=nWAXhNFEf1s"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C082",
       "verificationUrl": null,
@@ -24525,7 +24598,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=vBwj70JRoj4"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C103",
       "verificationUrl": null,
@@ -24710,7 +24783,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=eUSW1yfCe10"
       ],
-      "sourceNote": "뉴시스 2003-12-11 사후 기사로 12/10 KMTV 시상식 개최와 신화·S 수상 확인. 영상 제목의 개별 현장 참석·곡명은 별도 미확인. WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 12/10실제시상식과신화수상은독립근거확보.민우·신혜성현장수상장면은팬제목범위만확인. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "뉴시스 2003-12-11 사후 기사로 12/10 KMTV 시상식 개최와 신화·S 수상 확인. 영상 제목의 개별 현장 참석·곡명은 별도 미확인. 영상 아카이브의 관련 장면 기록입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "당대 보도로 확인된 실제 개최일",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C100",
       "verificationUrl": "https://v.daum.net/v/M0Ir8kjL4D",
@@ -24828,7 +24901,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=J6C1m9rzSQM"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C098",
       "verificationUrl": null,
@@ -24894,7 +24967,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=0yc2hVYjimg"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C110",
       "verificationUrl": null,
@@ -24982,7 +25055,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=7jq9Chu710M"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C024",
       "verificationUrl": null,
@@ -25004,7 +25077,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=cxdbWoI7iJs"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C005",
       "verificationUrl": null,
@@ -25026,7 +25099,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=towiV6P_iwA"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C019",
       "verificationUrl": null,
@@ -25048,7 +25121,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=9nghr4RF_UE"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C020",
       "verificationUrl": null,
@@ -25070,7 +25143,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=_wtgNoz5AJc"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C109",
       "verificationUrl": null,
@@ -25116,7 +25189,7 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=hwSYtqHiXaA"
       ],
-      "sourceNote": "WORK 2003년 팬아카이브 영상 제목·날짜 기반. 실제 개별 영상 재생, 최초 방송일, 실촬영일은 독립 확인하지 않았습니다. 같은실제행사의현장보도는방송기록으로만추가제안.공연·촬영·기자회견자체를다시만들지않음. 같은날다른기존활동이있으며새프로그램/행사여부는추가원문확인필요. (누적 v18 영상근거; 방송·촬영·공개일 구분은 미확정)",
+      "sourceNote": "영상 아카이브에 기재된 프로그램·활동 정보입니다. 방송일은 별도 확인이 필요합니다.",
       "dateKind": "팬 영상 제목의 콘텐츠 날짜(촬영·본방 일치 불확실)",
       "sourceRecord": "WORK_2003_NEW_20261024/Y2003-C080",
       "verificationUrl": null,
@@ -37213,7 +37286,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=757879274&range=A102:D102",
       "referenceVideoUrl": null,
-      "sourceNote": "원본 방송사·프로그램별 보도/무대 자료를 한 주제의 연표 행으로 묶어 표시함. 서로 다른 방송의 동일 회차·동일 방영일·실제 행사일 일치는 독립 검증하지 않음. 원본 표제: MBC 섹션TV연예통신 롯데리아CF 촬영현장 / SBS 좋은아침 연예플러스 신화 롯데리아CF 촬영현장 보도. 원본 검증 메모: 팬 채널 영상 제목의 날짜에 맞춘 콘텐츠 기록입니다. 실제 방송일·행사일·영상 최초 공개일을 독립 확인한 것은 아닙니다. 2006-09-07 동시대 업계 기사 검색정보에서 신화 롯데리아 CF 촬영 맥락 확인. WORK가 제시한 SBS 좋은아침 09-08 방송 편성은 독립 확인하지 못함. 원문 상세 URL 미확인.",
+      "sourceNote": "원본 방송사·프로그램별 보도/무대 자료를 한 주제의 연표 행으로 묶어 표시함. 서로 다른 방송의 동일 회차·동일 방영일·실제 행사일 일치는 독립 검증하지 않음. 원본 표제: MBC 섹션TV연예통신 롯데리아CF 촬영현장 / SBS 좋은아침 연예플러스 신화 롯데리아CF 촬영현장 보도. 원본 검증 메모: 팬 채널 영상 제목의 날짜에 맞춘 콘텐츠 기록입니다. 실제 방송일·행사일·영상 최초 공개일을 독립 확인한 것은 아닙니다. 2006-09-07 동시대 업계 기사 검색정보에서 신화 롯데리아 CF 촬영 맥락 확인. 기존 자료에 기재된 SBS 좋은아침 09-08 방송 편성은 독립 확인하지 못함. 원문 상세 URL 미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "06!102",
       "verificationUrl": null,
@@ -37259,7 +37332,7 @@
             "https://www.youtube.com/watch?v=fsMvN5GyYK4",
             "https://www.thinkfood.co.kr/news/articleView"
           ],
-          "sourceNote": "팬 채널 영상 제목의 날짜에 맞춘 콘텐츠 기록입니다. 실제 방송일·행사일·영상 최초 공개일을 독립 확인한 것은 아닙니다. 2006-09-07 동시대 업계 기사 검색정보에서 신화 롯데리아 CF 촬영 맥락 확인. WORK가 제시한 SBS 좋은아침 09-08 방송 편성은 독립 확인하지 못함. 원문 상세 URL 미확인.",
+          "sourceNote": "영상 아카이브에 기록된 관련 자료입니다. 정확한 방송일은 추가 확인이 필요합니다.",
           "dateKind": "팬 아카이브 영상 제목상 기준일(방송·촬영·공개일 구분 미확인)",
           "sourceRecord": "WORK16-013",
           "recordCount": 1,
@@ -58687,6 +58760,91 @@
         "OxRUzRaDAfc"
       ],
       "recordCount": 1
+    },
+    {
+      "id": "v36:2002-05-19:sbs-inkigayo209",
+      "date": "2002-05-19",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "SBS 〈인기가요〉 209회 — 신화 출연",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
+      "referenceVideoUrl": null,
+      "sourceNote": "2002년 5월 19일 방송된 SBS 〈인기가요〉 209회에 신화가 출연했습니다.",
+      "dateKind": "방송일",
+      "sourceRecord": "v36:2002-05-19:sbs-inkigayo209",
+      "verificationUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
+      "sourceRefs": [
+        "v36-2002-s98"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "v36:2002-06-09:sbs-inkigayo212",
+      "date": "2002-06-09",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "SBS 〈인기가요〉 212회 — 신화 출연",
+      "verification": "SBS 공식 방송자료 확인",
+      "source": "SBS 공식 방송자료",
+      "sourceUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
+      "referenceVideoUrl": null,
+      "sourceNote": "2002년 6월 9일 방송된 SBS 〈인기가요〉 212회에 신화가 출연했습니다.",
+      "dateKind": "방송일",
+      "sourceRecord": "v36:2002-06-09:sbs-inkigayo212",
+      "verificationUrl": "https://www.youtube.com/watch?v=8KCa1f68yrM",
+      "sourceRefs": [
+        "v36-2002-s98"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "v36:2002-07-27:nongshim-love-concert",
+      "date": "2002-07-27",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "공연",
+      "subject": "신화 전체",
+      "title": "농심 2002 사랑나눔 콘서트 — 신화 출연",
+      "verification": "당시 사후 기사 확인",
+      "source": "당시 신문 기사",
+      "sourceUrl": "https://web.archive.org/web/20220205145617/https%3A//news.naver.com/main/read.naver?aid=0000025958&mid=sec&mode=LSD&oid=014&sid1=111",
+      "referenceVideoUrl": null,
+      "sourceNote": "2002년 7월 27일 서울 올림픽공원 펜싱경기장에서 열린 사랑나눔 콘서트에 신화가 출연했습니다.",
+      "dateKind": "공연 개최일",
+      "sourceRecord": "v36:2002-07-27:nongshim-love-concert",
+      "verificationUrl": "https://web.archive.org/web/20220205145617/https%3A//news.naver.com/main/read.naver?aid=0000025958&mid=sec&mode=LSD&oid=014&sid1=111",
+      "sourceRefs": [
+        "v36-2002-s32",
+        "v36-2002-s33"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "v36:2002-08-24:cctv-beijing-seoul-night",
+      "date": "2002-08-24",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "해외방송",
+      "subject": "신화 전체",
+      "title": "CCTV 〈베이징–서울의 밤〉 — 신화 출연 방송",
+      "verification": "방송사 공식 자료 확인",
+      "source": "CCTV 공식 자료",
+      "sourceUrl": "https://www.cntv.cn/program/cm/20030402/100895.shtml",
+      "referenceVideoUrl": null,
+      "sourceNote": "2002년 8월 24일 CCTV 국제채널에서 신화의 공연이 방송됐습니다.",
+      "dateKind": "방송일",
+      "sourceRecord": "v36:2002-08-24:cctv-beijing-seoul-night",
+      "verificationUrl": "https://www.cntv.cn/program/cm/20030402/100895.shtml",
+      "sourceRefs": [
+        "v36-2002-s62"
+      ],
+      "recordCount": 1
     }
   ],
   "researchSources": [
@@ -61857,6 +62015,222 @@
       "url": "https://www.youtube.com/watch?v=2hFntY1T4LQ",
       "kind": "영상 기록",
       "note": "영상 설명에는 2000 MTV Summer Summit in Taiwan. 촬영·공연·방송 날짜는 기재되어 있지 않음."
+    },
+    {
+      "id": "v36-mag-1998haegyeolsa",
+      "publisher": "동시대 연예잡지",
+      "title": "1998년 3월 25~26일 〈해결사〉 MV 촬영 현장 기사",
+      "url": "https://m.blog.naver.com/ses_magazine_archive/222724605202",
+      "kind": "동시대 잡지 원문",
+      "note": "J ART 촬영장 장소 보강; 기존 촬영일 그대로"
+    },
+    {
+      "id": "v36-mag-1999smfestival",
+      "publisher": "동시대 연예잡지",
+      "title": "1999년 11월 20일 SM FAMILY CONCERT 현장 기사",
+      "url": "https://m.blog.naver.com/ses_magazine_archive/224216630651",
+      "kind": "동시대 잡지 원문",
+      "note": "다른 출처와 공연장 표기 불일치 여지. 장소 자동 변경 금지"
+    },
+    {
+      "id": "v36-mag-2000taiwan",
+      "publisher": "동시대 연예잡지",
+      "title": "FORMOSA PROMOTION TOUR 날짜별 활동 표",
+      "url": "https://m.blog.naver.com/ses_magazine_archive/223152589918",
+      "kind": "동시대 잡지 원문",
+      "note": "3/30~4/2 현지 활동; 3/29 첫 방문일 확증 아님"
+    },
+    {
+      "id": "v36-mag-2001japanshowcase",
+      "publisher": "당시 일본 연예잡지",
+      "title": "SM ENTERTAINMENT SHOWCASE LIVE / Zepp Tokyo, 2001.08.24",
+      "url": "https://m.blog.naver.com/ses_magazine_archive/222575384567",
+      "kind": "동시대 잡지 원문",
+      "note": "날짜·장소 원문 확인. 공연 시간·다른 날짜 미확정"
+    },
+    {
+      "id": "v36-mag-2001fanclub",
+      "publisher": "동시대 연예잡지",
+      "title": "신화창조 5기 팬미팅 현장 취재 기사",
+      "url": "https://m.blog.naver.com/ses_magazine_archive/223116734927",
+      "kind": "동시대 잡지 원문",
+      "note": "10/28 오후5시 기사 기재. 장소는 지면 원문 재검토 필요"
+    },
+    {
+      "id": "v36-mag-2001award",
+      "publisher": "동시대 연예잡지",
+      "title": "2001 연말 시상식 기사: 베스트드레서 백조상 선정·서울가요대상",
+      "url": "https://m.blog.naver.com/ses_magazine_archive/222616104603",
+      "kind": "동시대 잡지 원문",
+      "note": "동아일보 당시 기사와 교차확인; 시상식 18:00/19:00 시각 충돌"
+    },
+    {
+      "id": "v36-press-2001award",
+      "publisher": "동아일보 2001-12-05",
+      "title": "2001 베스트드레서 백조상 수상자 선정 및 12/07 하얏트 시상 예정",
+      "url": "https://www.donga.com/news/Culture/article/all/20011205/7766145/1",
+      "kind": "동시대 신문",
+      "note": "신화·베이비복스 가수 부문 선정. 신화의 현장 참석 여부 직접 증거 아님"
+    },
+    {
+      "id": "v36-2002-s94",
+      "publisher": "SBS 사보",
+      "title": "2002년 1월 SBS NET가요제 현장 기록",
+      "url": "https://img.sbs.co.kr/sbspdf/magazine/2002/2002_02.pdf",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 1월 26일 신혜성 축하무대"
+    },
+    {
+      "id": "v36-2002-s98",
+      "publisher": "SBS 공식 영상 아카이브",
+      "title": "SBS 〈인기가요〉 신화 출연 기록",
+      "url": "https://www.youtube.com/watch?v=8KCa1f68yrM",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 신화의 출연 회차와 방송일"
+    },
+    {
+      "id": "v36-2002-s99",
+      "publisher": "KBS 공식 영상 아카이브",
+      "title": "2002년 KBS 음악방송 신화 출연 모음",
+      "url": "https://www.youtube.com/watch?v=51hgn3FPg_w",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 방송일과 신화 출연"
+    },
+    {
+      "id": "v36-2002-s17",
+      "publisher": "KBS 공식 영상 아카이브",
+      "title": "KBS 〈뮤직플러스〉 신화 출연",
+      "url": "https://www.youtube.com/watch?v=ApLb-NRSjCo",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 4월 27일 방송"
+    },
+    {
+      "id": "v36-2002-s13",
+      "publisher": "SBS",
+      "title": "〈인기가요〉 206회",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/clip/pc/22000368805",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 4월 28일 신화 출연"
+    },
+    {
+      "id": "v36-2002-s63",
+      "publisher": "新浪体育",
+      "title": "선양 월드컵 기념 공연 현장 보도",
+      "url": "https://2002.sina.com.cn/n/2002-05-14/142951.shtml",
+      "kind": "당시 기사",
+      "note": "2002년 5월 14일 공연 및 신화 출연"
+    },
+    {
+      "id": "v36-2002-s14",
+      "publisher": "SBS",
+      "title": "〈인기가요〉 213회 신화 무대",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000369169",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 6월 16일 방송"
+    },
+    {
+      "id": "v36-2002-s111",
+      "publisher": "SBS 공식 영상 아카이브",
+      "title": "SBS 〈인기가요〉 신화 출연 무대",
+      "url": "https://www.youtube.com/watch?v=UXm-Pe43qHM",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 6월 23일 및 7월 7일 방송 기록"
+    },
+    {
+      "id": "v36-2002-s04",
+      "publisher": "MBC",
+      "title": "〈음악캠프〉 143회",
+      "url": "https://m.imbc.com/vod/vodview?broadcastID=1000356100076100000&progCode=1000356100000100000&type=prevod",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 7월 13일 신화 출연"
+    },
+    {
+      "id": "v36-2002-s21",
+      "publisher": "MBCkpop 공식 영상",
+      "title": "〈음악캠프〉 신화 무대",
+      "url": "https://www.youtube.com/watch?v=DfpihACUkoY",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 7월 13일 방송"
+    },
+    {
+      "id": "v36-2002-s103",
+      "publisher": "타워레코드",
+      "title": "신화 LIVE & SURPRISE DVD 수록 목록",
+      "url": "https://tower.jp/item/959612",
+      "kind": "공식 유통자료",
+      "note": "2002년 일본 행사 날짜·명칭"
+    },
+    {
+      "id": "v36-2002-s101",
+      "publisher": "新浪娱乐",
+      "title": "항저우 SM 합동공연 현장 보도",
+      "url": "https://ent.sina.com.cn/p/i/2002-11-25/1104115013.html",
+      "kind": "당시 기사",
+      "note": "2002년 11월 23일 신화 공연 참여"
+    },
+    {
+      "id": "v36-2002-s102",
+      "publisher": "新浪娱乐",
+      "title": "항저우 SM 합동공연 공연 보도",
+      "url": "https://ent.sina.com.cn/p/i/2002-11-24/1107114837.html",
+      "kind": "당시 기사",
+      "note": "2002년 11월 23일 신화 공연 참여"
+    },
+    {
+      "id": "v36-2002-s107",
+      "publisher": "SBS 뉴스",
+      "title": "제17회 골든디스크상 수상 결과",
+      "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N0311338374",
+      "kind": "당시 보도",
+      "note": "신화 본상 수상"
+    },
+    {
+      "id": "v36-2002-s95",
+      "publisher": "동아일보",
+      "title": "2002 KBS 연예대상 수상 결과",
+      "url": "https://www.donga.com/news/article/all/20021229/7896733/9",
+      "kind": "당시 신문",
+      "note": "강타·신혜성 라디오 MC 부문 최우수상"
+    },
+    {
+      "id": "v36-2002-s32",
+      "publisher": "파이낸셜뉴스",
+      "title": "농심 사랑나눔 콘서트 사후 보도",
+      "url": "https://web.archive.org/web/20220205145617/https%3A//news.naver.com/main/read.naver?aid=0000025958&mid=sec&mode=LSD&oid=014&sid1=111",
+      "kind": "당시 신문",
+      "note": "2002년 7월 27일 공연 및 신화 출연"
+    },
+    {
+      "id": "v36-2002-s33",
+      "publisher": "이데일리",
+      "title": "농심 사랑나눔 콘서트 개최 안내",
+      "url": "https://www.edaily.co.kr/news/read?mediaCodeNo=257&newsId=01525206566766312",
+      "kind": "당시 신문",
+      "note": "2002년 7월 27일 행사 개최 안내"
+    },
+    {
+      "id": "v36-2002-s62",
+      "publisher": "CCTV",
+      "title": "〈베이징–서울의 밤〉 방송 기록",
+      "url": "https://www.cntv.cn/program/cm/20030402/100895.shtml",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 8월 24일 신화 출연 방송"
+    },
+    {
+      "id": "v36-2002-s106",
+      "publisher": "KBS 공식 영상 아카이브",
+      "title": "〈뮤직플러스〉 신화 방송",
+      "url": "https://www.youtube.com/watch?v=FpsHegx1Tf4",
+      "kind": "방송사 공식 자료",
+      "note": "2002년 7월 13일 방송"
+    },
+    {
+      "id": "v36-2002-s44",
+      "publisher": "경기일보",
+      "title": "프로농구 올스타전 안내 기사",
+      "url": "https://www.kyeonggi.com/article/200201240060589",
+      "kind": "당시 신문",
+      "note": "2002년 1월 27일 프로농구 올스타전 신화 공연 예정"
     }
   ]
 }
