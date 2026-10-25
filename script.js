@@ -4413,6 +4413,10 @@ const DEPLOY_ALLOWED_FILES = new Set([
   "history.css",
   "history.js",
   "data/history.json",
+  "site-gate.js",
+  "history-coming-soon.html",
+  "wrangler.jsonc",
+  ".assetsignore",
   "README_HISTORY.md",
   "HISTORY.md"
 ]);
@@ -4534,7 +4538,7 @@ function normalizeDeployZipEntries(entries=[]) {
       const blocked = DEPLOY_BLOCKED_FILES.has(path);
       const allowed = DEPLOY_ALLOWED_FILES.has(path);
       const hiddenOrSystem =
-        path.startsWith(".") ||
+        (path.startsWith(".") && path !== ".assetsignore") ||
         path.includes("/.") ||
         path === "__MACOSX" ||
         path.startsWith("__MACOSX/");

@@ -2642,6 +2642,10 @@ const DEPLOY_PATCH_ALLOWED_FILES = new Set([
   "history.css",
   "history.js",
   "data/history.json",
+  "site-gate.js",
+  "history-coming-soon.html",
+  "wrangler.jsonc",
+  ".assetsignore",
   "README_HISTORY.md",
   "HISTORY.md"
 ]);
@@ -2673,7 +2677,7 @@ function validateDeployPatchFiles(files) {
     if (
       !path ||
       path.includes("../") ||
-      path.startsWith(".") ||
+      (path.startsWith(".") && path !== ".assetsignore") ||
       !DEPLOY_PATCH_ALLOWED_FILES.has(path)
     ) {
       throw new HttpError(400, `배포가 허용되지 않은 파일입니다: ${path || "(빈 경로)"}`);
