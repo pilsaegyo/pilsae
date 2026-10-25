@@ -77,6 +77,32 @@ export default {
       if(Date.now()>=OPEN_AT_MS)return new Response(JSON.stringify({ok:true,preview:false}),{headers:{...noCache,'Content-Type':'application/json'}});
       return preparePreview(request,env);
     }
+    // Public archive navigation is intentionally NOT a preview entry point.
+    // Even a browser with a valid admin preview cookie sees the coming-soon page
+    // when using the ordinary archive header link before the scheduled opening.
+    if(url.pathname==='/history-entry' || url.pathname==='/history-entry/'){
+      if(request.method!=='GET' && request.method!=='HEAD')return new Response('Method not allowed',{status:405,headers:noCache});
+      if(Date.now()>=OPEN_AT_MS){
+        const headers=new Headers(noCache);
+        headers.set('Location',new URL('/history.html',url).toString());
+        return new Response(null,{status:302,headers});
+      }
+      if(!env.ASSETS)return new Response('Static asset binding missing',{status:503,headers:noCache});
+      const notice=await env.ASSETS.fetch(new Request(new URL('/history-coming-soon.html',url),request));
+      const headers=new Headers(notice.headers);
+      for(const [key,value] of Object.entries(noCache))headers.set(key,value);
+      return new Response(request.method==='HEAD'?null:notice.body,{status:notice.status,headers});
+    }
+    // Logging out of the admin UI must also revoke the HttpOnly preview cookie.
+    if(url.pathname==='/history-preview-logout'){
+      if(request.method!=='POST')return new Response('Method not allowed',{status:405,headers:noCache});
+      const origin=request.headers.get('Origin');
+      if(origin && origin!==url.origin)return new Response('잘못된 요청 출처입니다.',{status:403,headers:noCache});
+      const headers=new Headers(noCache);
+      headers.set('Set-Cookie',`${COOKIE_NAME}=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/; HttpOnly; Secure; SameSite=Strict`);
+      headers.set('Content-Type','application/json; charset=utf-8');
+      return new Response(JSON.stringify({ok:true,preview:false}),{status:200,headers});
+    }
     if(!env.ASSETS)return new Response('Static asset binding missing',{status:503});
     const target=guardedPath(url.pathname);
     if(target==='bad')return new Response('Bad URL',{status:400,headers:noCache});

@@ -1,13 +1,12 @@
-# v27.7.1 — 관리자 활동 연혁 미리보기 502 내부 인증 연결 수정 (2026-10-26)
+# v27.7.2 — 공개 아카이브 연혁 링크 / 관리자 미리보기 구분 (2026-10-26)
 
-- **발견 원인:** `history-preview-session`이 공개 사이트 Worker에서 관리자 Worker의 `workers.dev` 주소에 일반 `fetch()`를 호출하고 있었음. 사용자가 확인한 HTTP 502는 이 호출 예외 처리 코드에서 발생. Cloudflare 권장 Worker 간 통신 방식은 **Service Binding**임.
-- **변경:** 공개 사이트 `site-gate.js`의 관리자 인증 호출만 `env.PILSAE_ADMIN_API.fetch(...)`로 교체하고, 공개 사이트의 루트 `wrangler.jsonc`에 `PILSAE_ADMIN_API` → `pilsae-admin-api` Service Binding을 추가.
-- 기존 `ADMIN_TOKEN`의 `/admin-auth` 검증과 HttpOnly 서명 쿠키, 한국시간 **2026-11-27 00:00** 오픈 일정, 일반 사용자 `/data/history.json` 차단을 유지. 임의 관리자 우회나 비밀키 공개 없음.
-- **추가 오류 구분:** 바인딩 미설정 503, 관리자 인증 실패 401, 대상 서비스 응답 문제 502로 구분. 브라우저에 토큰·Secret을 노출하지 않음.
-- **적용 기준:** v27.7 활동연혁 패치가 배포된 공개사이트 `pilsae`의 `site-gate.js` 및 루트 `wrangler.jsonc`. `worker/index.js` / `worker/wrangler.jsonc`는 수정하지 않음.
-- **순서:** 관리자 ZIP 배포 → GitHub `main` 변경 확인 → Cloudflare `pilsae` Worker의 새 Deploy 성공 및 Production Bindings에 `PILSAE_ADMIN_API` 확인 → 관리자 로그인 후 미리보기 재시험. 서비스 연결 실패하면 Secret 재생성 대신 바인딩 상태와 Worker 로그 확인.
-- **검증:** 로컬 mock 기반 정상/잘못된 관리자 토큰, 503 바인딩 누락, 502 서비스 연결·응답 실패, 비로그인 JSON 차단, 관리자 HttpOnly 쿠키, 공개일 자동 해제. 실제 운영 Cloudflare 배포는 사용자 계정에서 추가 확인 필요.
-- 패치 ZIP은 변경된 원경로 2개와 안내 문서, 기존 이력 보존 `HISTORY.md`만 포함. `data/history.json`, `data/videos.json`, 일반 UI, 민감 설정, 배포 자동 커밋/이력 재생성 로직은 변경하지 않음.
+- **수정 배경:** v27.7.1에서 관리자 미리보기 버튼을 한 번 누르면 2시간짜리 `pilsae_history_preview` HttpOnly 쿠키가 발급되어, 같은 브라우저에서 일반 영상 아카이브의 기존 `./history.html` 링크를 눌러도 연혁 전체가 열렸습니다. 이는 일반 이용자의 우회가 확인된 것이 아니라 관리자 미리보기 인증이 다른 페이지 이동에도 재사용된 결과입니다.
+- **수정:** 일반 아카이브 상단 활동 연혁 링크를 `./history-entry`로 연결. 공개 사이트 Worker는 2026-11-27 00:00 KST 이전에는 인증 쿠키 유무에 관계없이 항상 연보라 케이크 안내를 제공하며, 공개 이후에는 `/history.html`로 서버측 리다이렉트합니다. 관리자 화면 `활동 연혁 미리보기` 버튼은 기존과 같이 별도의 관리자 인증을 거쳐 `/history.html`에 접근합니다.
+- **로그아웃:** 관리자 로그아웃 시 서버 `POST /history-preview-logout`으로 기존 2시간짜리 미리보기 쿠키를 제거. 네트워크 실패 시 관리자는 로그아웃되지만 미리보기 쿠키가 남았을 수 있음을 명확하게 경고합니다.
+- **보안 경계:** 직접 `/history.html` 및 `/data/history.json` 접근 시 기존 서버측 게이트를 그대로 유지합니다. 이미 유효한 관리자 쿠키로 직접 URL을 열 수 있는 것은 관리자 미리보기 기능 자체의 의도된 인증 범위입니다. 브라우저 종료·탭 종료만으로 미리보기 쿠키를 즉시 파기하지는 않습니다.
+- **불변:** 기존 v27.7.1 Cloudflare Service Binding(PILSAE_ADMIN_API), HISTORY_PREVIEW_SECRET, 2,390건 연혁 데이터, 657개 영상 데이터, 사이트 일반 기능/다크모드/반응형, 2026-11-27 자동 오픈, 관리자 배포/이력 자동생성은 변경하지 않습니다.
+- **변경 경로:** `index.html`, `admin/index.html`, `script.js`, `site-gate.js`, `README.md`, `HISTORY.md`(기존 이력 그대로). `wrangler.jsonc`, `worker/index.js`, `data/history.json`, `data/videos.json`, Secret 등은 포함하지 않습니다.
+- **필수 실배포 검증:** 공개 사이트 Worker가 새 코드를 배포한 뒤 **일반 브라우저(관리자 미리보기 한 브라우저 포함)**에서 아카이브 상단 링크 → 케이크, **관리자 버튼** → 실제 연혁, **관리자 로그아웃 뒤 직접 `/history.html`** → 케이크, **시크릿 창 직접 `/data/history.json`** → HTTP 403 확인. GitHub 공개 저장소 원본 JSON은 별도 저장소 권한 없이 은닉되지 않습니다.
 
 ---
 

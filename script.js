@@ -6628,13 +6628,27 @@ function bindEvents() {
     $("#saveAdminToken")?.click();
   });
 
-  $("#adminLogoutBtn")?.addEventListener("click", () => {
+  $("#adminLogoutBtn")?.addEventListener("click", async () => {
     sessionStorage.removeItem(ADMIN_TOKEN_SESSION_KEY);
     if ($("#adminTokenInput")) $("#adminTokenInput").value = "";
     adminHistoryLoaded = false;
     adminBackupsLoaded = false;
     setAdminAuthenticated(false);
-    setAdminStatus($("#adminApiStatus"), "로그아웃되었습니다.", "success");
+    // Also revoke the two-hour, HttpOnly history preview cookie when the admin logs out.
+    // HttpOnly cookies cannot be cleared from document.cookie: use the same-origin gate endpoint.
+    let previewClosed = false;
+    try {
+      const response = await fetch("./history-preview-logout", {
+        method:"POST", credentials:"same-origin", cache:"no-store", keepalive:true
+      });
+      previewClosed = response.ok;
+    } catch (_) {
+      // Admin token is already cleared. Report failed cookie revocation explicitly.
+    }
+    setAdminStatus($("#adminApiStatus"), previewClosed
+      ? "로그아웃되었습니다. 활동 연혁 미리보기 접근도 종료했습니다."
+      : "관리자는 로그아웃됐지만 연혁 미리보기 쿠키 제거에 실패했습니다. 이 브라우저의 사이트 쿠키를 삭제하거나 2시간이 지나야 미리보기 접근이 종료됩니다.",
+      previewClosed ? "success" : "error");
     window.scrollTo({ top:0, behavior:"smooth" });
   });
 
