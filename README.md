@@ -1,3 +1,16 @@
+# v27.7.1 — 관리자 활동 연혁 미리보기 502 내부 인증 연결 수정 (2026-10-26)
+
+- **발견 원인:** `history-preview-session`이 공개 사이트 Worker에서 관리자 Worker의 `workers.dev` 주소에 일반 `fetch()`를 호출하고 있었음. 사용자가 확인한 HTTP 502는 이 호출 예외 처리 코드에서 발생. Cloudflare 권장 Worker 간 통신 방식은 **Service Binding**임.
+- **변경:** 공개 사이트 `site-gate.js`의 관리자 인증 호출만 `env.PILSAE_ADMIN_API.fetch(...)`로 교체하고, 공개 사이트의 루트 `wrangler.jsonc`에 `PILSAE_ADMIN_API` → `pilsae-admin-api` Service Binding을 추가.
+- 기존 `ADMIN_TOKEN`의 `/admin-auth` 검증과 HttpOnly 서명 쿠키, 한국시간 **2026-11-27 00:00** 오픈 일정, 일반 사용자 `/data/history.json` 차단을 유지. 임의 관리자 우회나 비밀키 공개 없음.
+- **추가 오류 구분:** 바인딩 미설정 503, 관리자 인증 실패 401, 대상 서비스 응답 문제 502로 구분. 브라우저에 토큰·Secret을 노출하지 않음.
+- **적용 기준:** v27.7 활동연혁 패치가 배포된 공개사이트 `pilsae`의 `site-gate.js` 및 루트 `wrangler.jsonc`. `worker/index.js` / `worker/wrangler.jsonc`는 수정하지 않음.
+- **순서:** 관리자 ZIP 배포 → GitHub `main` 변경 확인 → Cloudflare `pilsae` Worker의 새 Deploy 성공 및 Production Bindings에 `PILSAE_ADMIN_API` 확인 → 관리자 로그인 후 미리보기 재시험. 서비스 연결 실패하면 Secret 재생성 대신 바인딩 상태와 Worker 로그 확인.
+- **검증:** 로컬 mock 기반 정상/잘못된 관리자 토큰, 503 바인딩 누락, 502 서비스 연결·응답 실패, 비로그인 JSON 차단, 관리자 HttpOnly 쿠키, 공개일 자동 해제. 실제 운영 Cloudflare 배포는 사용자 계정에서 추가 확인 필요.
+- 패치 ZIP은 변경된 원경로 2개와 안내 문서, 기존 이력 보존 `HISTORY.md`만 포함. `data/history.json`, `data/videos.json`, 일반 UI, 민감 설정, 배포 자동 커밋/이력 재생성 로직은 변경하지 않음.
+
+---
+
 # v27.7 — 활동 연혁 누적조사 병합 + 2026-11-27 공개 게이트 준비 (2026-10-25)
 
 - **적용 기준:** 사용자가 직접 업로드한 `pilsae-main (5).zip`. 기존 활동 연혁 **2,383건** 전부 보존, 현재 영상 **657개** 원본 불변.

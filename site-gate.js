@@ -29,13 +29,30 @@ async function preparePreview(request,env){
   if(!env.HISTORY_PREVIEW_SECRET || !env.ASSETS) return new Response('사이트 공개 제한 설정이 완료되지 않았습니다.',{status:503,headers:noCache});
   const bearer=request.headers.get('Authorization')||'';
   if(!/^Bearer [^\s]+$/.test(bearer) || bearer.length>3000)return new Response('관리자 로그인이 필요합니다.',{status:401,headers:noCache});
-  const adminUrl = env.HISTORY_ADMIN_API_URL || 'https://pilsae-admin-api.hyesung.workers.dev';
-  let ok=false;
+  // Cloudflare Workers in the same account must communicate through a Service Binding.
+  // Do not use global fetch() to a workers.dev URL or bypass ADMIN_TOKEN validation.
+  if(!env.PILSAE_ADMIN_API || typeof env.PILSAE_ADMIN_API.fetch!=='function'){
+    return new Response('관리자 인증 Service Binding(PILSAE_ADMIN_API)이 설정되지 않았습니다.',{status:503,headers:noCache});
+  }
+  let check;
   try{
-    const check=await fetch(adminUrl+'/admin-auth',{headers:{Authorization:bearer},redirect:'error',signal:AbortSignal.timeout(7000)});
-    ok=check.ok && (await check.json()).authenticated===true;
-  }catch{ return new Response('관리자 인증 서버 연결에 실패했습니다.',{status:502,headers:noCache}); }
-  if(!ok)return new Response('관리자 인증에 실패했습니다.',{status:401,headers:noCache});
+    check=await env.PILSAE_ADMIN_API.fetch(new Request('https://pilsae-admin-api.hyesung.workers.dev/admin-auth',{
+      method:'GET',headers:{Authorization:bearer},redirect:'manual',signal:AbortSignal.timeout(7000)
+    }));
+  }catch(error){
+    console.error('[history-preview-session] Internal admin service call failed:',error?.name||'UnknownError');
+    return new Response('관리자 인증 내부 서비스 호출에 실패했습니다.',{status:502,headers:noCache});
+  }
+  if(check.status===401 || check.status===403){
+    return new Response('관리자 인증에 실패했습니다.',{status:401,headers:noCache});
+  }
+  if(!check.ok){
+    return new Response('관리자 인증 서비스 응답 오류 (HTTP '+check.status+')',{status:502,headers:noCache});
+  }
+  let verified=false;
+  try{ verified=(await check.json()).authenticated===true; }
+  catch{ return new Response('관리자 인증 서비스의 응답 형식이 올바르지 않습니다.',{status:502,headers:noCache}); }
+  if(!verified)return new Response('관리자 인증에 실패했습니다.',{status:401,headers:noCache});
   const expires=Math.floor(Date.now()/1000)+TTL_SECONDS;
   const value=expires+'.'+await sign(env.HISTORY_PREVIEW_SECRET,expires);
   const headers=new Headers(noCache);
