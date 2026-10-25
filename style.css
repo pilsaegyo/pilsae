@@ -7598,3 +7598,7 @@ strong,b,
 .history-top-link{display:inline-flex;align-items:center;gap:4px;padding:7px 10px;border:1px solid var(--border,#d6d9df);border-radius:999px;color:inherit;text-decoration:none;font-size:12px;font-weight:650;white-space:nowrap;background:rgba(128,128,128,.07)}
 .history-top-link:hover,.history-top-link:focus-visible{background:rgba(128,128,128,.16)}
 @media(max-width:420px){.history-top-link{padding:6px 8px;font-size:11px}}
+
+/* Private history preview button (the admin shell itself is authenticated). */
+.admin-mode-actions button#openHistoryPreview{font:inherit;cursor:pointer;background:transparent;color:inherit;border:1px solid currentColor;border-radius:8px;padding:7px 10px;opacity:.9}
+.admin-mode-actions button#openHistoryPreview:disabled{opacity:.5;cursor:wait}

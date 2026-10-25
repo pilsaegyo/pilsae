@@ -4990,6 +4990,10 @@ async function commitDeployPatch() {
       "index.html",
       "script.js",
       "style.css",
+      "site-gate.js",
+      "wrangler.jsonc",
+      "history-coming-soon.html",
+      ".assetsignore",
       "admin/index.html"
     ].some(path => filePaths.has(path));
     const workerChanged = [
@@ -6384,6 +6388,27 @@ function bindEvents() {
   $("#gridViewBtn").addEventListener("click", () => setViewMode("grid"));
   $("#listViewBtn").addEventListener("click", () => setViewMode("list"));
   $("#timelineViewBtn").addEventListener("click", () => setViewMode("timeline"));
+
+  // Private preview: exchange the already verified admin session for a short-lived,
+  // HttpOnly same-origin cookie on the public website Worker; never put admin token in URL.
+  $("#openHistoryPreview")?.addEventListener("click", async event => {
+    const button=event.currentTarget;
+    const token=getAdminToken();
+    if(!document.body.classList.contains("admin-authenticated") || !token){
+      alert("관리자 로그인이 필요합니다.");return;
+    }
+    button.disabled=true;
+    try{
+      const response=await fetch("./history-preview-session", {
+        method:"POST", credentials:"same-origin", cache:"no-store",
+        headers:{"Authorization":`Bearer ${token}`}
+      });
+      if(!response.ok)throw new Error((await response.text()) || `접근 설정 오류 (${response.status})`);
+      window.location.href="./history.html";
+    }catch(err){
+      alert("활동 연혁 미리보기를 열 수 없습니다. 공개 사이트 Worker 배포 및 HISTORY_PREVIEW_SECRET 설정을 확인하세요. " + (err.message || ""));
+    }finally{button.disabled=false;}
+  });
 
   document.querySelectorAll("[data-admin-tab]").forEach(btn => {
     btn.addEventListener("click", () => {

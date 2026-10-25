@@ -1,0 +1,13 @@
+# Only static public files are uploaded as public assets.
+*.md
+*.zip
+*.py
+site-gate.js
+wrangler.jsonc
+.assetsignore
+worker/**
+data/backups/**
+data/weekly-backups/**
+data/admin-history.json
+data/admin-backups-index.json
+data/weekly-backups-index.json
