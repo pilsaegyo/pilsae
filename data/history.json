@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 853,
+      "chapter1": 857,
       "chapter2": 916,
       "chapter3": 560,
       "chapter4": 74
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2403,
+    "visibleEvents": 2407,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -703,6 +703,17 @@
       "fullPageRecheck": 134,
       "researchCheckpoint": "20차",
       "note": "2026-10-26 조사 기준; 이중 방송 기록 통합 및 방송일 정정, 운영 적용 전 배포 필요"
+    },
+    "patchV38_20261026": {
+      "basis": "사용자 제공 최신 ZIP / 37차 126시트 누적연구",
+      "baselineEvents": 2403,
+      "addedEvents": 4,
+      "enrichedExisting": 3,
+      "rescheduledExisting": 1,
+      "resultEvents": 2407,
+      "excluded": "단순 재방송·고정 라디오·개인 단독 일정·출연 미검증 예정 행사",
+      "sourceLimit": "동시대 팬 모니터·일정표 기재를 보존, 독립 영상 원문 검증 아님",
+      "deployment": "사용자 배포 전 패치"
     }
   },
   "chapters": [
@@ -18327,6 +18338,26 @@
       "possibleDuplicate": false
     },
     {
+      "id": "fan38:2002-04-29:sbs-goodfriends-recording",
+      "date": "2002-04-29",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송 녹화",
+      "subject": "신화(에릭·이민우·김동완·신혜성·전진)",
+      "title": "SBS 《좋은 친구들》 월드컵 특집 〈신 기막힌 대결〉 녹화",
+      "verification": "동시대 팬의 상세 사후 관람·방송 모니터 기록·독립 원영상 미검증",
+      "source": "사용자 제공 2002년 당시 팬 일정·방송 모니터(2026-10-26)",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "동시대 현장 참여자의 상세 관람 후기에서 4/29 KBS 88체육관 녹화, 앤디는 다른 녹화로 불참이라고 기재. 6/30 방송 419회, 12/7 재방이 아니라 6/30 방송. 원문 중 6/27 추가 오프닝 촬영과 4/29 본 녹화 구분.",
+      "dateKind": "당시 팬 기록상 녹화·현장 활동일",
+      "sourceRecord": "38차 누적조사",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
       "id": "research:a179:2002-04-30",
       "date": "2002-04-30",
       "precision": "day",
@@ -18610,6 +18641,26 @@
       "sourceRefs": [
         "v36-2002-s98"
       ],
+      "recordCount": 1
+    },
+    {
+      "id": "fan38:2002-05-20:mtv-livewow-taping",
+      "date": "2002-05-20",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공개녹화·공연",
+      "subject": "신화 전체",
+      "title": "MTV 《Live WOW》 성균관대 새천년홀 공개녹화 — 〈Free〉·〈Perfect Man〉",
+      "verification": "동시대 팬의 상세 사후 관람·방송 모니터 기록·독립 원영상 미검증",
+      "source": "사용자 제공 2002년 당시 팬 일정·방송 모니터(2026-10-26)",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "팬 현장 후기: 5/20 18:00~19:30 공개녹화에서 신화 엔딩, 공연곡 〈Free〉·〈Perfect Man〉. 5/31 첫 방송은 이 무대의 방송이며 별도 공연으로 계산하지 않음.",
+      "dateKind": "당시 팬 기록상 녹화·현장 활동일",
+      "sourceRecord": "38차 누적조사",
+      "verificationUrl": null,
+      "sourceRefs": [],
       "recordCount": 1
     },
     {
@@ -19022,6 +19073,26 @@
       "recordCount": 1
     },
     {
+      "id": "fan38:2002-06-21:musicrush-prime",
+      "date": "2002-06-21",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공개녹화·공연",
+      "subject": "신화 전체",
+      "title": "동대문운동장 《Music Rush》 / m.net 특집 프라임 콘서트",
+      "verification": "동시대 팬의 상세 사후 관람·방송 모니터 기록·독립 원영상 미검증",
+      "source": "사용자 제공 2002년 당시 팬 일정·방송 모니터(2026-10-26)",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "6/27 특집 프라임 콘서트 방송을 본 당시 팬 모니터에서 6/21(금) 동대문운동장 녹화, 신화 2부 엔딩 〈너 사랑 안에〉·〈I Pray 4 U〉라고 구체적으로 명시. 6/27은 방송일이며 6/30 재방송 별도 활동 아님.",
+      "dateKind": "당시 팬 기록상 녹화·현장 활동일",
+      "sourceRecord": "38차 누적조사",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:02!176",
       "date": "2002-06-23",
       "precision": "day",
@@ -19034,7 +19105,7 @@
       "source": "SBS 공식 방송자료",
       "sourceUrl": "https://www.youtube.com/watch?v=UXm-Pe43qHM",
       "referenceVideoUrl": null,
-      "sourceNote": "2002년 6월 23일 SBS 〈인기가요〉 214회에 신화가 출연했습니다.",
+      "sourceNote": "2002년 6월 23일 SBS 〈인기가요〉 214회에 신화가 출연했습니다. | [38차 사용자 제공 2002년 동시대 팬 일정·방송 모니터] 6월 23일 부산 BEXCO에서 진행한 제214회 특집 생방송으로 기재, 15:10~17:00, 신화 〈I Pray 4 U〉 공연. 기존 6/23 프로그램과 동일 방송, 신규 활동으로 중복 생성하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!176",
       "verificationUrl": "https://www.youtube.com/watch?v=UXm-Pe43qHM",
@@ -19166,7 +19237,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A187:D187",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": " | [38차 사용자 제공 2002년 동시대 팬 일정·방송 모니터] 6월 30일 SBS 등촌동 공개홀 〈다이내믹 코리아〉 특집, 당시 팬 방송 모니터에 〈Hey, Come On!〉+〈I Pray 4 U〉 및 5위 기록. 기존 포항 공연 예정 기재와 충돌하므로 서울 방송장소는 팬 기록에 한정. 7/1 재방송 별도 활동 아님.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!187",
       "verificationUrl": null,
@@ -19746,19 +19817,19 @@
     },
     {
       "id": "history:p0114",
-      "date": "2002-10-05",
+      "date": "2002-10-19",
       "precision": "day",
       "chapter": "chapter1",
       "transition": "",
       "category": "공연",
       "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "SM 생명 사랑 콘서트",
-      "verification": "원문 기록",
+      "title": "SM 생명사랑 콘서트 — 어린이대공원 야외음악당 (10월 5일에서 연기)",
+      "verification": "당시 팬 일정의 변경 공지 확인·실제 개최 별도 검증 전",
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
-      "dateKind": "원문 기재일",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | [38차] 2002년 10월 5일 예정 소아암 어린이 돕기 공연이 주최 기획사 사정으로 10월 19일 19:00 서울 어린이대공원 야외음악당으로 연기되었다는 동시대 팬 일정 후속 공지. 신화 출연 예정 및 창원 사인회(15:30)와 같은 날 일정 충돌; 실제 공연 참석/실행은 확인 필요. 이전 표기일 2002-10-05 보존.",
+      "dateKind": "변경 공지상 예정 공연일(실제 개최 검증 전)",
       "sourceRecord": "p0114",
       "verificationUrl": null,
       "sourceRefs": [
@@ -19829,6 +19900,26 @@
       "sourceNote": "",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!298",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "fan38:2002-11-16:joint-birthday",
+      "date": "2002-11-16",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "팬 행사",
+      "subject": "김동완·신혜성",
+      "title": "김동완·신혜성 합동 생일파티 — KBS 88체육관",
+      "verification": "동시대 팬의 상세 사후 관람·방송 모니터 기록·독립 원영상 미검증",
+      "source": "사용자 제공 2002년 당시 팬 일정·방송 모니터(2026-10-26)",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "당시 팬 일정: 11/16 오후 5시 KBS88체육관 합동 생일파티. 후속 EtN 인사이드 스토리 11/25 방송과 11/23 주간 하이라이트에서 행사 장면을 소개했다는 자료. 직접 원영상 시청은 별도 필요.",
+      "dateKind": "당시 팬 기록상 녹화·현장 활동일",
+      "sourceRecord": "38차 누적조사",
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
@@ -20005,7 +20096,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A324:D324",
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다. | [38차 사용자 제공 2002년 동시대 팬 일정·방송 모니터] 12/7 SBS드라마플러스 방송 시청 후기: 본상 10번째 수상·스포츠서울닷컴 인기상·〈Perfect Man〉 공연·수상소감 기록. 12/6 생중계와 12/7 재방송은 동일 행사. 공식 수상자·영상 원자료 별도 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!324",
       "verificationUrl": null,
