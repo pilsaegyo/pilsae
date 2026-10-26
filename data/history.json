@@ -16,13 +16,13 @@
     ],
     "chapterCounts": {
       "chapter1": 857,
-      "chapter2": 916,
-      "chapter3": 560,
+      "chapter2": 920,
+      "chapter3": 566,
       "chapter4": 74
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2407,
+    "visibleEvents": 2417,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -714,6 +714,16 @@
       "excluded": "단순 재방송·고정 라디오·개인 단독 일정·출연 미검증 예정 행사",
       "sourceLimit": "동시대 팬 모니터·일정표 기재를 보존, 독립 영상 원문 검증 아님",
       "deployment": "사용자 배포 전 패치"
+    },
+    "patchV41_20261026": {
+      "basis": "사용자 38차 적용 확인. 38차 패치 JSON의 2,407건 상태",
+      "baselineEvents": 2407,
+      "addedEvents": 10,
+      "enrichedExisting": 4,
+      "resultEvents": 2417,
+      "sourcePolicy": "현장 사후 기사 우선 + 사용자 제공 영상 제목. 객관적 검증이 불가한 공연 회차·게스트 회차는 불명 처리",
+      "deployment": "사용자 배포 전 패치",
+      "caveat": "실제 적용된 서버 덤프가 별도 업로드되지는 않아, 38차 배포 파일로 재구성"
     }
   },
   "chapters": [
@@ -4880,26 +4890,6 @@
       "possibleDuplicate": false
     },
     {
-      "id": "sheet:99!61",
-      "date": "1999-08-25",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "연예정보",
-      "subject": "신화 전체",
-      "title": "KMTV 생방송 뮤직Q - 생큐미팅 신화 편",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1735876866&range=A61:D61",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "99!61",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
       "id": "mag20:1999-08-25-kmtv-music-tank",
       "date": "1999-08-25",
       "precision": "day",
@@ -4919,6 +4909,26 @@
       "sourceRefs": [
         "p20-archive-60634"
       ],
+      "recordCount": 1
+    },
+    {
+      "id": "sheet:99!61",
+      "date": "1999-08-25",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "KMTV 생방송 뮤직Q - 생큐미팅 신화 편",
+      "verification": "원본 기재·독립 검증 전",
+      "source": "첨부 엑셀",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1735876866&range=A61:D61",
+      "referenceVideoUrl": null,
+      "sourceNote": "",
+      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceRecord": "99!61",
+      "verificationUrl": null,
+      "sourceRefs": [],
       "recordCount": 1
     },
     {
@@ -6024,28 +6034,6 @@
       "recordCount": 1
     },
     {
-      "id": "research:v31:1999-12-carol-mv-shoot",
-      "date": "1999-12-01",
-      "precision": "month",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "제작·촬영",
-      "subject": "신화 전체",
-      "title": "SM 겨울 캐럴 앨범 뮤직비디오 촬영 — 용평리조트",
-      "verification": "당시 잡지 촬영 현장 자료·정확한 일자 미확정",
-      "source": "원자료 기록원문 | TEENSTAR·ILOVESTAR 당시 잡지 스캔",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "ILOVESTAR·HIGHTEENSTAR·TEENSTAR 2000년 1월호는 1999년 12월 초 강원도 용평리조트에서 SM 가수들(신화 포함)이 캐럴 앨범 MV를 촬영했다고 보도. 일부 기사 12월 3일, 다른 기사 지난 4일로 날짜가 불일치해 일자 미확정. 1999.12.15 방송 촬영장 보도와 구분. 스캔 IMG01·IMG02·IMG03.",
-      "dateKind": "1999년 12월·촬영일 3~4일 표기 충돌",
-      "sourceRecord": "M31-08",
-      "verificationUrl": null,
-      "sourceRefs": [
-        "v31-magazine-M31-08"
-      ],
-      "recordCount": 1
-    },
-    {
       "id": "history:p0038",
       "date": "1999-12-01",
       "precision": "month",
@@ -6065,6 +6053,28 @@
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "research:v31:1999-12-carol-mv-shoot",
+      "date": "1999-12-01",
+      "precision": "month",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "제작·촬영",
+      "subject": "신화 전체",
+      "title": "SM 겨울 캐럴 앨범 뮤직비디오 촬영 — 용평리조트",
+      "verification": "당시 잡지 촬영 현장 자료·정확한 일자 미확정",
+      "source": "원자료 기록원문 | TEENSTAR·ILOVESTAR 당시 잡지 스캔",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "ILOVESTAR·HIGHTEENSTAR·TEENSTAR 2000년 1월호는 1999년 12월 초 강원도 용평리조트에서 SM 가수들(신화 포함)이 캐럴 앨범 MV를 촬영했다고 보도. 일부 기사 12월 3일, 다른 기사 지난 4일로 날짜가 불일치해 일자 미확정. 1999.12.15 방송 촬영장 보도와 구분. 스캔 IMG01·IMG02·IMG03.",
+      "dateKind": "1999년 12월·촬영일 3~4일 표기 충돌",
+      "sourceRecord": "M31-08",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "v31-magazine-M31-08"
       ],
       "recordCount": 1
     },
@@ -6269,30 +6279,6 @@
       ]
     },
     {
-      "id": "v35:video:2000:smtown-winter-mv",
-      "date": "2000-01-01",
-      "precision": "year",
-      "chapter": "chapter1",
-      "category": "촬영",
-      "subject": "신화 전체",
-      "title": "SMTOWN 〈창밖을 봐요〉 뮤직비디오 촬영 현장",
-      "verification": "당시 방송 장면·촬영일 미확인",
-      "source": "한밤 영상 아카이브·음원 유통 정보",
-      "sourceUrl": "https://www.youtube.com/watch?v=yEy5R3hdb9w",
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=hLQicuOtc5U",
-      "sourceNote": "한밤 채널에서 2000년 SMTOWN 뮤직비디오 촬영 현장을 소개함. 〈창밖을 봐요〉는 2000년 12월 앨범 수록곡. 실제 촬영한 월·일은 확인되지 않아 2000년 연도만 표시.",
-      "dateKind": "영상에 기재된 촬영 연도(날짜 미상)",
-      "sourceRecord": "v35:video:2000:smtown-winter-mv",
-      "sourceRefs": [
-        "v35:video:2000smtown",
-        "v35:bugs:2000smtown"
-      ],
-      "archiveVideoIds": [
-        "hLQicuOtc5U"
-      ],
-      "recordCount": 1
-    },
-    {
       "id": "v35:video:2000:mnet-star-king",
       "date": "2000-01-01",
       "precision": "year",
@@ -6335,6 +6321,30 @@
       ],
       "archiveVideoIds": [
         "OxRUzRaDAfc"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "v35:video:2000:smtown-winter-mv",
+      "date": "2000-01-01",
+      "precision": "year",
+      "chapter": "chapter1",
+      "category": "촬영",
+      "subject": "신화 전체",
+      "title": "SMTOWN 〈창밖을 봐요〉 뮤직비디오 촬영 현장",
+      "verification": "당시 방송 장면·촬영일 미확인",
+      "source": "한밤 영상 아카이브·음원 유통 정보",
+      "sourceUrl": "https://www.youtube.com/watch?v=yEy5R3hdb9w",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=hLQicuOtc5U",
+      "sourceNote": "한밤 채널에서 2000년 SMTOWN 뮤직비디오 촬영 현장을 소개함. 〈창밖을 봐요〉는 2000년 12월 앨범 수록곡. 실제 촬영한 월·일은 확인되지 않아 2000년 연도만 표시.",
+      "dateKind": "영상에 기재된 촬영 연도(날짜 미상)",
+      "sourceRecord": "v35:video:2000:smtown-winter-mv",
+      "sourceRefs": [
+        "v35:video:2000smtown",
+        "v35:bugs:2000smtown"
+      ],
+      "archiveVideoIds": [
+        "hLQicuOtc5U"
       ],
       "recordCount": 1
     },
@@ -8437,6 +8447,36 @@
       "recordCount": 1
     },
     {
+      "id": "history:s013",
+      "date": "2000-08-12",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공연",
+      "subject": "신화·신혜성 활동(기존 연표)",
+      "title": "MTV MUSIC SUMMER 2000 — 대만 공연 (8월 12일)",
+      "verification": "당시 잡지의 8월 12일 공연 현장 후기 확인",
+      "source": "기존 활동 연표",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "《짱》 2000년 9월호에서 8월 11일부터 3일간의 대만 MTV 관련 음악 행사 참가를 예고함. 8월 13일은 기존 팬 연표 기재일로, 정확한 출연일은 확인되지 않음. 9월 30일 〈MTV 2000 Music Summit〉 영상과 동일 행사인지도 미확인.\n[2026-10-26 12차 누적 검수] 기존 팬 연혁 2000-08-13 참가 예정일은 원본 충돌 기록으로 보존. 당시 잡지 0462·0463의 동행기: 8/11 출국, 8/12 공연 및 〈Only One〉·〈T.O.P.〉 등 무대, 8/13 현지 방송사 취재·귀국. 기존 9/30 MTV Music Summit 별도 기록과 무조건 병합 금지.\n[20차 원문 보강] 당시 해외 프로모션 기사 60631에는 2000.08.11 〈MTV Music Summit 2000〉 무대 및 〈T.O.P.〉·〈YO!〉·〈All Your Dreams〉·〈Only One〉·〈Wedding March〉 5곡을 기록. 잡지 0462·0463의 8.12 공연 서술과 일자·행사명 상충하므로 일자를 8.12로 유지하고 갈등을 명시.",
+      "dateKind": "공연일 2000-08-12(8/11 출국·8/13 현지 방송사 취재·귀국과 구별)",
+      "sourceRecord": "s013",
+      "verificationUrl": "https://m.blog.naver.com/ses_magazine_archive/224385990154",
+      "sourceRefs": [
+        "fan-cn1",
+        "fan-cn2",
+        "v34-src:WORK-M05",
+        "patch12-mag-2000-mtv",
+        "p20-mag-0304"
+      ],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://m.blog.naver.com/ses_magazine_archive/224385990154",
+        "https://m.blog.naver.com/ses_magazine_archive/223931913188"
+      ]
+    },
+    {
       "id": "sheet:00!127",
       "date": "2000-08-12",
       "precision": "day",
@@ -8477,36 +8517,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "history:s013",
-      "date": "2000-08-12",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "공연",
-      "subject": "신화·신혜성 활동(기존 연표)",
-      "title": "MTV MUSIC SUMMER 2000 — 대만 공연 (8월 12일)",
-      "verification": "당시 잡지의 8월 12일 공연 현장 후기 확인",
-      "source": "기존 활동 연표",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "sourceNote": "《짱》 2000년 9월호에서 8월 11일부터 3일간의 대만 MTV 관련 음악 행사 참가를 예고함. 8월 13일은 기존 팬 연표 기재일로, 정확한 출연일은 확인되지 않음. 9월 30일 〈MTV 2000 Music Summit〉 영상과 동일 행사인지도 미확인.\n[2026-10-26 12차 누적 검수] 기존 팬 연혁 2000-08-13 참가 예정일은 원본 충돌 기록으로 보존. 당시 잡지 0462·0463의 동행기: 8/11 출국, 8/12 공연 및 〈Only One〉·〈T.O.P.〉 등 무대, 8/13 현지 방송사 취재·귀국. 기존 9/30 MTV Music Summit 별도 기록과 무조건 병합 금지.\n[20차 원문 보강] 당시 해외 프로모션 기사 60631에는 2000.08.11 〈MTV Music Summit 2000〉 무대 및 〈T.O.P.〉·〈YO!〉·〈All Your Dreams〉·〈Only One〉·〈Wedding March〉 5곡을 기록. 잡지 0462·0463의 8.12 공연 서술과 일자·행사명 상충하므로 일자를 8.12로 유지하고 갈등을 명시.",
-      "dateKind": "공연일 2000-08-12(8/11 출국·8/13 현지 방송사 취재·귀국과 구별)",
-      "sourceRecord": "s013",
-      "verificationUrl": "https://m.blog.naver.com/ses_magazine_archive/224385990154",
-      "sourceRefs": [
-        "fan-cn1",
-        "fan-cn2",
-        "v34-src:WORK-M05",
-        "patch12-mag-2000-mtv",
-        "p20-mag-0304"
-      ],
-      "recordCount": 1,
-      "sourceUrls": [
-        "https://m.blog.naver.com/ses_magazine_archive/224385990154",
-        "https://m.blog.naver.com/ses_magazine_archive/223931913188"
-      ]
     },
     {
       "id": "archive:description:2000-08-17:f674437bea",
@@ -11775,6 +11785,28 @@
       ]
     },
     {
+      "id": "mag20:2001-02-22-paejae-orientation",
+      "date": "2001-02-22",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "학교 행사·공연",
+      "subject": "신화(5인)",
+      "title": "배재대학교 신입생 오리엔테이션 — 신화 축하 공연",
+      "verification": "당시 잡지 0512 현장 기사와 사진, 신화 5인 실제 무대 확인",
+      "source": "당시 잡지 원문 0512",
+      "sourceUrl": "https://m.blog.naver.com/ses_magazine_archive/222492274210",
+      "referenceVideoUrl": null,
+      "sourceNote": "배재대학교 신입생 오리엔테이션 실제 공연 후기. 신화 5인 출연과 〈T.O.P.〉·〈YO!〉 등 무대. 추가 독립 당대 신문 근거는 미확보.",
+      "dateKind": "학교 신입생 오리엔테이션 실제 공연일",
+      "sourceRecord": "0512.jpg",
+      "verificationUrl": "https://m.blog.naver.com/ses_magazine_archive/222492274210",
+      "sourceRefs": [
+        "p20-mag-0512"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:01!53",
       "date": "2001-02-22",
       "precision": "day",
@@ -11816,28 +11848,6 @@
       "archiveVideoIds": [
         "kR2CNFOFlEA"
       ]
-    },
-    {
-      "id": "mag20:2001-02-22-paejae-orientation",
-      "date": "2001-02-22",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "학교 행사·공연",
-      "subject": "신화(5인)",
-      "title": "배재대학교 신입생 오리엔테이션 — 신화 축하 공연",
-      "verification": "당시 잡지 0512 현장 기사와 사진, 신화 5인 실제 무대 확인",
-      "source": "당시 잡지 원문 0512",
-      "sourceUrl": "https://m.blog.naver.com/ses_magazine_archive/222492274210",
-      "referenceVideoUrl": null,
-      "sourceNote": "배재대학교 신입생 오리엔테이션 실제 공연 후기. 신화 5인 출연과 〈T.O.P.〉·〈YO!〉 등 무대. 추가 독립 당대 신문 근거는 미확보.",
-      "dateKind": "학교 신입생 오리엔테이션 실제 공연일",
-      "sourceRecord": "0512.jpg",
-      "verificationUrl": "https://m.blog.naver.com/ses_magazine_archive/222492274210",
-      "sourceRefs": [
-        "p20-mag-0512"
-      ],
-      "recordCount": 1
     },
     {
       "id": "sheet:01!56",
@@ -14258,6 +14268,29 @@
       "recordCount": 1
     },
     {
+      "id": "mag20:2001-08-18-korean-music-trip",
+      "date": "2001-08-18",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신화 전체",
+      "title": "《한국음악여행 특별콘서트 — 동방의 소리》 — 신화 공연",
+      "verification": "2001.08.18 연합뉴스 실제 공연 사후 기사 및 잡지 0525~0526 현장 기록 일치",
+      "source": "연합뉴스 2001.08.18 + 당시 잡지",
+      "sourceUrl": "https://www.yna.co.kr/view/AKR20010818000900005",
+      "referenceVideoUrl": null,
+      "sourceNote": "서울 양재동 교육문화회관 대극장 중국 청소년 팬 초청 행사. 신화 〈Shinhwa Knight〉·〈Hey, Come On!〉 무대 당시 잡지에 기록.",
+      "dateKind": "실제 공연일",
+      "sourceRecord": "0525.jpg·0526.jpg",
+      "verificationUrl": "https://www.yna.co.kr/view/AKR20010818000900005",
+      "sourceRefs": [
+        "p20-mag-0525",
+        "p20-yna-20010818"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:01!262",
       "date": "2001-08-18",
       "precision": "day",
@@ -14295,29 +14328,6 @@
       "sourceRecord": "01!263",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
-      "id": "mag20:2001-08-18-korean-music-trip",
-      "date": "2001-08-18",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "콘서트",
-      "subject": "신화 전체",
-      "title": "《한국음악여행 특별콘서트 — 동방의 소리》 — 신화 공연",
-      "verification": "2001.08.18 연합뉴스 실제 공연 사후 기사 및 잡지 0525~0526 현장 기록 일치",
-      "source": "연합뉴스 2001.08.18 + 당시 잡지",
-      "sourceUrl": "https://www.yna.co.kr/view/AKR20010818000900005",
-      "referenceVideoUrl": null,
-      "sourceNote": "서울 양재동 교육문화회관 대극장 중국 청소년 팬 초청 행사. 신화 〈Shinhwa Knight〉·〈Hey, Come On!〉 무대 당시 잡지에 기록.",
-      "dateKind": "실제 공연일",
-      "sourceRecord": "0525.jpg·0526.jpg",
-      "verificationUrl": "https://www.yna.co.kr/view/AKR20010818000900005",
-      "sourceRefs": [
-        "p20-mag-0525",
-        "p20-yna-20010818"
-      ],
       "recordCount": 1
     },
     {
@@ -16832,6 +16842,28 @@
       "recordCount": 1
     },
     {
+      "id": "research:20261026:2001-12-22-daejeon-charity",
+      "date": "2001-12-22",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공연",
+      "subject": "신화 전체",
+      "title": "대전 결식아동 돕기 《사랑의 콘서트》 — 무역전시관",
+      "verification": "당시 잡지 사후 무대 후기 확인",
+      "source": "당시 잡지 원문 0721",
+      "sourceUrl": "https://m.blog.naver.com/ses_magazine_archive/223150137672",
+      "referenceVideoUrl": null,
+      "sourceNote": "잡지 0721 사후 공연 모음에서 12월 22일 오후 8시 대전 무역전시관 결식아동 돕기 자선 콘서트와 신화 무대를 회고. 기존 같은 날짜 권격도 타이틀 매치 특별공연과 장소·목적이 다른 별도 사건이므로 합치지 않음.",
+      "dateKind": "잡지 사후 기록에 기재된 실제 행사일",
+      "sourceRecord": "IMG8-016",
+      "verificationUrl": "https://m.blog.naver.com/ses_magazine_archive/223150137672",
+      "sourceRefs": [
+        "patch12-mag-2001-daejeon"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:01!397",
       "date": "2001-12-22",
       "precision": "day",
@@ -16873,28 +16905,6 @@
       "sourceRecord": "01!398",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
-      "id": "research:20261026:2001-12-22-daejeon-charity",
-      "date": "2001-12-22",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "공연",
-      "subject": "신화 전체",
-      "title": "대전 결식아동 돕기 《사랑의 콘서트》 — 무역전시관",
-      "verification": "당시 잡지 사후 무대 후기 확인",
-      "source": "당시 잡지 원문 0721",
-      "sourceUrl": "https://m.blog.naver.com/ses_magazine_archive/223150137672",
-      "referenceVideoUrl": null,
-      "sourceNote": "잡지 0721 사후 공연 모음에서 12월 22일 오후 8시 대전 무역전시관 결식아동 돕기 자선 콘서트와 신화 무대를 회고. 기존 같은 날짜 권격도 타이틀 매치 특별공연과 장소·목적이 다른 별도 사건이므로 합치지 않음.",
-      "dateKind": "잡지 사후 기록에 기재된 실제 행사일",
-      "sourceRecord": "IMG8-016",
-      "verificationUrl": "https://m.blog.naver.com/ses_magazine_archive/223150137672",
-      "sourceRefs": [
-        "patch12-mag-2001-daejeon"
-      ],
       "recordCount": 1
     },
     {
@@ -18664,26 +18674,6 @@
       "recordCount": 1
     },
     {
-      "id": "sheet:02!135",
-      "date": "2002-05-22",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "음악방송",
-      "subject": "신화 전체",
-      "title": "Mnet Showking M! <쇼킹일기>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A135:D135",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "02!135",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
       "id": "mag20261025:2002-05-22-japan-velfarre-fanmeeting",
       "date": "2002-05-22",
       "precision": "day",
@@ -18704,6 +18694,26 @@
         "mag20261025-rbb-0524",
         "mag20261025-rbb-0620"
       ],
+      "recordCount": 1
+    },
+    {
+      "id": "sheet:02!135",
+      "date": "2002-05-22",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet Showking M! <쇼킹일기>",
+      "verification": "원본 기재·독립 검증 전",
+      "source": "첨부 엑셀",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A135:D135",
+      "referenceVideoUrl": null,
+      "sourceNote": "",
+      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceRecord": "02!135",
+      "verificationUrl": null,
+      "sourceRefs": [],
       "recordCount": 1
     },
     {
@@ -19053,26 +19063,6 @@
       ]
     },
     {
-      "id": "sheet:02!173",
-      "date": "2002-06-21",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "음악방송",
-      "subject": "신화 전체",
-      "title": "MBC 음악캠프 월드컵 특집 한중 슈퍼 콘서트 <Perfect Man>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A173:D173",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "02!173",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
       "id": "fan38:2002-06-21:musicrush-prime",
       "date": "2002-06-21",
       "precision": "day",
@@ -19088,6 +19078,26 @@
       "sourceNote": "6/27 특집 프라임 콘서트 방송을 본 당시 팬 모니터에서 6/21(금) 동대문운동장 녹화, 신화 2부 엔딩 〈너 사랑 안에〉·〈I Pray 4 U〉라고 구체적으로 명시. 6/27은 방송일이며 6/30 재방송 별도 활동 아님.",
       "dateKind": "당시 팬 기록상 녹화·현장 활동일",
       "sourceRecord": "38차 누적조사",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "sheet:02!173",
+      "date": "2002-06-21",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "MBC 음악캠프 월드컵 특집 한중 슈퍼 콘서트 <Perfect Man>",
+      "verification": "원본 기재·독립 검증 전",
+      "source": "첨부 엑셀",
+      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A173:D173",
+      "referenceVideoUrl": null,
+      "sourceNote": "",
+      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceRecord": "02!173",
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
@@ -42362,6 +42372,69 @@
       "referenceVideoUrls": []
     },
     {
+      "id": "research41:2008-09-20:dongwan-promise",
+      "date": "2008-09-20",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "김동완 개인·신화 멤버 게스트",
+      "title": "김동완 첫 단독 콘서트 《약속》 1일 차 — 신화 5명 게스트",
+      "verification": "당일 사후 보도",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://news.nate.com/view/20080920n07002",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "이화여자대학교 대강당, 서울 | 19:00 공연. 9/20 당일 뉴스엔 기사에서 게스트 에릭·이민우·신혜성·전진·앤디 명시. 9/21 공연과 별도 회차.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://news.nate.com/view/20080920n07002",
+      "sourceRefs": [
+        {
+          "url": "https://news.nate.com/view/20080920n07002",
+          "note": "당일 사후 보도"
+        }
+      ],
+      "sourceUrls": [
+        "https://news.nate.com/view/20080920n07002"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "research41:2008-09-21:dongwan-promise",
+      "date": "2008-09-21",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "김동완 개인",
+      "title": "김동완 첫 단독 콘서트 《약속》 2일 차",
+      "verification": "행사 기간 사후 보도·전일 회차 개별 게스트 미확인",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "이화여자대학교 대강당, 서울 | 20·21일 양일 공연 개최를 9/22 기사에서 사후 확인. 신화 멤버 5명의 21일 회차 실제 게스트 출연까지 단정하지 않음.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
+      "sourceRefs": [
+        {
+          "url": "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
+          "note": "행사 기간 사후 보도·전일 회차 개별 게스트 미확인"
+        },
+        {
+          "url": "https://www.yna.co.kr/amp/view/AKR20080912073200005",
+          "note": "행사 기간 사후 보도·전일 회차 개별 게스트 미확인"
+        }
+      ],
+      "sourceUrls": [
+        "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
+        "https://www.yna.co.kr/amp/view/AKR20080912073200005"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:08!221",
       "date": "2008-09-21",
       "precision": "day",
@@ -42926,6 +42999,35 @@
       ]
     },
     {
+      "id": "research41:2008-10-26:minwoo-hallyu-fanmeeting",
+      "date": "2008-10-26",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "팬미팅·게스트 공연",
+      "subject": "이민우·신혜성·전진",
+      "title": "이민우 《2008 한류페스티벌》 팬미팅 — 신혜성·전진 게스트",
+      "verification": "공연 당일 사후 기사",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://www.starnewskorea.com/music/2008/10/26/2008102616042529374",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "서울 역삼동 임피리얼 팰리스 호텔 | 11:00~13:00. 이민우 팬미팅 현장 보도에서 신혜성 〈Love Actually〉·전진 〈사랑한다는 그 말〉 축하무대 확인.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://www.starnewskorea.com/music/2008/10/26/2008102616042529374",
+      "sourceRefs": [
+        {
+          "url": "https://www.starnewskorea.com/music/2008/10/26/2008102616042529374",
+          "note": "공연 당일 사후 기사"
+        }
+      ],
+      "sourceUrls": [
+        "https://www.starnewskorea.com/music/2008/10/26/2008102616042529374"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "work16:work16-033",
       "date": "2008-10-27",
       "precision": "day",
@@ -43091,6 +43193,42 @@
       "sourceRecord": "archive:description:20261024",
       "archiveVideoIds": [
         "l0ghfnbd9wE"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "research41:2008-12-31:lyn-lovelyn-guest",
+      "date": "2008-12-31",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "게스트 공연",
+      "subject": "신혜성 개인·린",
+      "title": "린 콘서트 《2008 Lovelyn Romantic Party》 신혜성 게스트 — 〈그대죠〉",
+      "verification": "당시 예고+공연일 명시 공연영상 제목(내용 프레임 미확인)",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://youtu.be/1JN9PwVhj5c",
+      "referenceVideoUrl": "https://youtu.be/1JN9PwVhj5c",
+      "referenceVideoUrls": [
+        "https://youtu.be/1JN9PwVhj5c"
+      ],
+      "sourceNote": "서강대학교 메리홀, 서울 | 린과 신혜성 〈그대죠〉 듀엣. 12/26 공연 전 기사에 출연계획 기재, 사용자 제시 유튜브 영상 제목 《[공방] 081231 그대죠 린 콘서트 게스트》 확인. 영상 프레임·회차(19:00/23:00) 직접 확인하지 못함.",
+      "dateKind": "제공영상 제목에 명시된 공연일·시간 회차 미확인",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://youtu.be/1JN9PwVhj5c",
+      "sourceRefs": [
+        {
+          "url": "https://youtu.be/1JN9PwVhj5c",
+          "note": "당시 예고+공연일 명시 공연영상 제목(내용 프레임 미확인)"
+        },
+        {
+          "url": "https://www.sportsworldi.com/newsView/20081226003737",
+          "note": "당시 예고+공연일 명시 공연영상 제목(내용 프레임 미확인)"
+        }
+      ],
+      "sourceUrls": [
+        "https://youtu.be/1JN9PwVhj5c",
+        "https://www.sportsworldi.com/newsView/20081226003737"
       ],
       "recordCount": 1
     },
@@ -44029,19 +44167,26 @@
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 이화여자대학교 대강당.",
+      "sourceNote": "공연장: 이화여자대학교 대강당. | [41차 근거 보강] 2009-05-03 신혜성 KEEP LEAVES 투어 서울 2일 차, 이문세가 직접 게스트로 올라 〈조조할인〉을 합동 공연했다는 당일 OSEN 현장 사진 기사.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-2009-press",
         "hyesung-2009-live",
-        "ticket-hs-2009"
+        "ticket-hs-2009",
+        {
+          "url": "https://www.osen.co.kr/article/G0905030145",
+          "note": "41차 사후보도"
+        }
       ],
       "recordCount": 1,
       "archiveVideoIds": [
         "LBLBFjunAig",
         "cbuzC26-3cU"
+      ],
+      "sourceUrls": [
+        "https://www.osen.co.kr/article/G0905030145"
       ]
     },
     {
@@ -48424,16 +48569,23 @@
       "source": "공연 예매·당시 기사 조사(2026.10.23)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "공연장: 경희대학교 평화의전당.\n2013.01.14 파이낸셜뉴스 사후 기사에서 2012.12.30·31 경희대 공연 실제 개최 확인.",
+      "sourceNote": "공연장: 경희대학교 평화의전당.\n2013.01.14 파이낸셜뉴스 사후 기사에서 2012.12.30·31 경희대 공연 실제 개최 확인. | [41차 근거 보강] 2013-01-14 사후 공연 기사에서 2012년 12월 30~31일 신혜성 연말 콘서트에 이민우가 깜짝 게스트로 등장했다고 기록. 어느 회차인지는 확정 못 하므로 31일 기록에 두 날짜 공연기간 공통 출연 사실로만 주석.",
       "dateKind": "공연일(기사 또는 공연기록)",
       "sourceRecord": null,
       "verificationUrl": null,
       "sourceRefs": [
         "hyesung-2012-year-live",
         "ticket-hs",
-        "ns-live12"
+        "ns-live12",
+        {
+          "url": "https://www.etoday.co.kr/news/view/677033",
+          "note": "41차 사후보도"
+        }
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.etoday.co.kr/news/view/677033"
+      ]
     },
     {
       "id": "sheet:13!4",
@@ -48474,6 +48626,122 @@
       "verificationUrl": null,
       "sourceRefs": [
         "jtbc-episodes-1-43"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "research41:2013-01-09:winter-poetry-osaka1",
+      "date": "2013-01-09",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 투어 《WINTER POETRY》 — 오사카 1일 차",
+      "verification": "4회 공연 사후 보도",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://www.osen.co.kr/article/G1109527287",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "Zepp Namba, 오사카 | 2013.1.14 사후 기사에서 1/9·1/10 오사카, 1/12·1/13 도쿄 총 4회 완료 확인. 이민우 게스트는 투어 중 출연하였으나 특정 회차 미확인.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://www.osen.co.kr/article/G1109527287",
+      "sourceRefs": [
+        {
+          "url": "https://www.osen.co.kr/article/G1109527287",
+          "note": "4회 공연 사후 보도"
+        }
+      ],
+      "sourceUrls": [
+        "https://www.osen.co.kr/article/G1109527287"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "research41:2013-01-10:winter-poetry-osaka2",
+      "date": "2013-01-10",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 투어 《WINTER POETRY》 — 오사카 2일 차",
+      "verification": "4회 공연 사후 보도",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://www.osen.co.kr/article/G1109527287",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "Zepp Namba, 오사카 | 1/14 사후 보도 4회 공연 확인. 이민우의 깜짝 게스트 회차 특정 불가.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://www.osen.co.kr/article/G1109527287",
+      "sourceRefs": [
+        {
+          "url": "https://www.osen.co.kr/article/G1109527287",
+          "note": "4회 공연 사후 보도"
+        }
+      ],
+      "sourceUrls": [
+        "https://www.osen.co.kr/article/G1109527287"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "research41:2013-01-12:winter-poetry-tokyo1",
+      "date": "2013-01-12",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 투어 《WINTER POETRY》 — 도쿄 1일 차",
+      "verification": "4회 공연 사후 보도",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://www.osen.co.kr/article/G1109527287",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "Tokyo Dome City Hall, 도쿄 | 1/14 사후 보도 4회 공연 확인. 이민우 게스트 회차 특정 불가.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://www.osen.co.kr/article/G1109527287",
+      "sourceRefs": [
+        {
+          "url": "https://www.osen.co.kr/article/G1109527287",
+          "note": "4회 공연 사후 보도"
+        }
+      ],
+      "sourceUrls": [
+        "https://www.osen.co.kr/article/G1109527287"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "research41:2013-01-13:winter-poetry-tokyo2",
+      "date": "2013-01-13",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성 개인",
+      "title": "신혜성 일본 투어 《WINTER POETRY》 — 도쿄 2일 차",
+      "verification": "4회 공연 사후 보도",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://www.osen.co.kr/article/G1109527287",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "Tokyo Dome City Hall, 도쿄 | 1/14 사후 보도 4회 공연 확인. 사이트의 같은 날짜 JTBC 신화방송은 본 콘서트와 별개.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://www.osen.co.kr/article/G1109527287",
+      "sourceRefs": [
+        {
+          "url": "https://www.osen.co.kr/article/G1109527287",
+          "note": "4회 공연 사후 보도"
+        }
+      ],
+      "sourceUrls": [
+        "https://www.osen.co.kr/article/G1109527287"
       ],
       "recordCount": 1
     },
@@ -55973,6 +56241,35 @@
       ]
     },
     {
+      "id": "research41:2017-10-09:minwoo-mstyle-taipei",
+      "date": "2017-10-09",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬미팅·게스트 출연",
+      "subject": "이민우·신혜성",
+      "title": "이민우 팬파티 《M STYLE》 타이베이 — 신혜성 깜짝 게스트",
+      "verification": "익일 사후 보도",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://v.daum.net/v/20171010084733024",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "NTU Sports Center, 타이베이 | 현지 15:00 이민우 팬미팅. 10/10 사후 기사에서 신혜성 깜짝 게스트 확인. 현지 19:00 신혜성 《SERENITY》 팬파티와 서로 다른 행사이므로 중복 아님.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://v.daum.net/v/20171010084733024",
+      "sourceRefs": [
+        {
+          "url": "https://v.daum.net/v/20171010084733024",
+          "note": "익일 사후 보도"
+        }
+      ],
+      "sourceUrls": [
+        "https://v.daum.net/v/20171010084733024"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:17!230",
       "date": "2017-10-09",
       "precision": "day",
@@ -55985,12 +56282,20 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A230:D230",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": " | [41차 근거 보강] 2017-10-09 신혜성 대만 SERENITY 팬파티 당시 이민우가 깜짝 게스트로 출연했음을 이튿날 기사 확인. 15:00 이민우 M STYLE은 별도 행사로 신규 기록.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!230",
       "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
+      "sourceRefs": [
+        {
+          "url": "https://www.sportschosun.com/entertainment/2017-10-10/201710100100038740003485",
+          "note": "41차 사후보도"
+        }
+      ],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.sportschosun.com/entertainment/2017-10-10/201710100100038740003485"
+      ]
     },
     {
       "id": "sheet:17!234",
@@ -56093,6 +56398,35 @@
       "recordCount": 1
     },
     {
+      "id": "research41:2017-12-09:minwoo-mstyle-hongkong",
+      "date": "2017-12-09",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬미팅·게스트 출연",
+      "subject": "이민우·신혜성",
+      "title": "이민우 팬파티 《M STYLE》 홍콩 — 신혜성 깜짝 게스트",
+      "verification": "이틀 뒤 사후 보도",
+      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
+      "sourceUrl": "https://sports.donga.com/ent/article/all/20171211/87669476/1",
+      "referenceVideoUrl": null,
+      "referenceVideoUrls": [],
+      "sourceNote": "AsiaWorld-Expo Runway II, 홍콩 | 현지 15:00 이민우 팬미팅. 12/11 사후 보도 신혜성 게스트. 같은 날짜 사이트 등록 신혜성 《SERENITY》 팬파티와 서로 다른 행사.",
+      "dateKind": "실제 공연일(사후 기사)",
+      "sourceRecord": "41차 25차 게스트누락대조 재검증",
+      "verificationUrl": "https://sports.donga.com/ent/article/all/20171211/87669476/1",
+      "sourceRefs": [
+        {
+          "url": "https://sports.donga.com/ent/article/all/20171211/87669476/1",
+          "note": "이틀 뒤 사후 보도"
+        }
+      ],
+      "sourceUrls": [
+        "https://sports.donga.com/ent/article/all/20171211/87669476/1"
+      ],
+      "recordCount": 1
+    },
+    {
       "id": "sheet:17!281",
       "date": "2017-12-09",
       "precision": "day",
@@ -56105,12 +56439,20 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A281:D281",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": " | [41차 근거 보강] 2017-12-09 홍콩 같은 날짜 15:00 이민우 M STYLE 팬파티에 신혜성 등장; 이 별도 행사를 따로 신규 등록함. 기존 신혜성 SERENITY 팬파티는 유지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!281",
       "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
+      "sourceRefs": [
+        {
+          "url": "https://sports.donga.com/ent/article/all/20171211/87669476/1",
+          "note": "41차 사후보도"
+        }
+      ],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://sports.donga.com/ent/article/all/20171211/87669476/1"
+      ]
     },
     {
       "id": "sheet:17!297",
