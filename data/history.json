@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 864,
-      "chapter2": 920,
-      "chapter3": 566,
+      "chapter1": 876,
+      "chapter2": 926,
+      "chapter3": 568,
       "chapter4": 74
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2424,
+    "visibleEvents": 2444,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -756,6 +756,28 @@
       "claim": "영상 제목과 기존 일정의 행사·프로그램명 등을 대조한 참고자료. 팬영상은 일정·송출일을 독립적으로 입증하지 않음.",
       "unchangedVisibleEvents": 2437,
       "excluded": "누락 신규 후보 110묶음, 기존 행사 동등성 미확정, 동일 일자 다른 프로그램·미분리 회차"
+    },
+    "v52CandidateReview": {
+      "reviewedAt": "2026-10-27",
+      "base": "v51 fan-video patch based on pilsae-main (8).zip",
+      "baseEventCount": 2437,
+      "candidateGroupsReviewed": 7,
+      "newClearlyQualifiedVideoRecordEvents": 7,
+      "independentlyVerifiedCompleteEvents": 0,
+      "independentlyVerifiedPerformanceMetadataEvents": 1,
+      "newEventIds": [
+        "audit52:2001-01-07:good-samaritan-visit",
+        "audit52:2001-04-20:ntv-ntop-junjin-mc",
+        "audit52:2001-11-05:mnet-widenews-ahn-concert",
+        "audit52:2002-04-14:kmtv-public-perfectman",
+        "audit52:2002-10-12:seoulland-radio-shinhyesung",
+        "audit52:2016-05-15:bae-bulhyo-hyesung-guest",
+        "audit52:2016-12-10:yeongdeungpo-fansign-shinhwa"
+      ],
+      "finalEventCount": 2444,
+      "heldVideoId": "SXdCr9BCv1w",
+      "heldVideoReason": "2002-04-14 월드컵 성공 기원 공연 영상의 장소·행사명이 KMTV 수원 공개녹화와 동일한지 미확인: 연결 보류",
+      "notAdded": "2016 중국 DELIGHT 공연 2건은 이번 사용자가 지정한 7건 밖에 있어 기존 v51과 동일하게 미반영"
     }
   },
   "chapters": [
@@ -65448,6 +65470,233 @@
       "source": "앤디 팬클럽 「아이비 클럽 싸인회 - 광명지점」 공지 첫머리(사용자 이미지 60723.jpg)",
       "sourceNote": "당시 공지 캡처 하단에 광명지점 행사로 2005년 1월 29일(토) 15:00~16:00 예정 표기가 나옴. 그러나 광명지점 출연 멤버와 실제 개최 근거는 화면 밖에 있으므로 임의로 특정하지 않음. 의정부점과 별도 지점 행사이며 중복 통합하지 않음.",
       "sourceRecord": "49차_팬공지_후기대조 / 60723.jpg"
+    },
+    {
+      "id": "audit52:2001-01-07:good-samaritan-visit",
+      "date": "2001-01-07",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방문·행사",
+      "subject": "신화 전체",
+      "title": "신화 — 선한사마리아원 방문 (영상 기록)",
+      "verification": "영상 표제에 날짜·방문명 기재 / 실제 방문일·촬영일 독립 검증 전",
+      "source": "셩공시대님 채널 3차 누적 영상 조사 (2026-10-27)",
+      "sourceUrl": "https://www.youtube.com/watch?v=5fiN00X-uDI",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=5fiN00X-uDI",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=5fiN00X-uDI"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=5fiN00X-uDI",
+          "title": "[공식] 20010107 신화  - 선한사마리아원  방문",
+          "videoId": "5fiN00X-uDI",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        }
+      ],
+      "sourceNote": "셩공시대님 재생목록에서 「[공식] 20010107 신화 - 선한사마리아원 방문」 영상 표제를 확인했습니다. 영상 제목에 붙은 [공식]은 업로더의 표기이며, 원본 제작기관·실제 방문일을 공식 문서로 확인했다는 뜻이 아닙니다. 당시 방문 기사·기관 행사일지 확보 전입니다.",
+      "dateKind": "팬채널에 재게시된 영상의 제목에 기재된 방문 날짜(2001.01.07), 원본 기록의 날짜 확인 전",
+      "sourceRecord": "셩공시대 3차 조사 영상 5fiN00X-uDI",
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "audit52:2001-04-20:ntv-ntop-junjin-mc",
+      "date": "2001-04-20",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 일부(전진·신혜성·이민우·김동완)",
+      "title": "NTV 《N-TOP 인기가요》 — 전진 MC·신혜성 등 출연 영상",
+      "verification": "팬채널 표제의 방송 날짜 및 출연 명단 기록 / 첫 MC 방송일 독립 검증 전",
+      "source": "셩공시대님 채널 3차 누적 영상 조사 (2026-10-27)",
+      "sourceUrl": "https://www.youtube.com/watch?v=SjuGSMG2LAI",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=SjuGSMG2LAI",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=SjuGSMG2LAI"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=SjuGSMG2LAI",
+          "title": "[방송] 20010420 - ntv Ntop인기가요 - 전진 MC 첫날 + 신혜성 +이민우 +김동완",
+          "videoId": "SjuGSMG2LAI",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        }
+      ],
+      "sourceNote": "팬영상 제목에는 전진 MC 첫날 및 신혜성·이민우·김동완 출연으로 쓰여 있습니다. 당시 NTV 편성표나 방송사 자료의 동일 회차 확인은 미완료입니다. 기존 2~4월 NTV 《N-TOP 인기가요》 〈인형〉 기록과는 날짜가 달라 별도 영상기록으로 두었으며, 프로그램 첫 MC 여부는 확정하지 않습니다.",
+      "dateKind": "영상 제목에 기재된 2001.04.20(정식 편성표·방영일 독립 확인 전)",
+      "sourceRecord": "셩공시대 3차 조사 영상 SjuGSMG2LAI",
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "audit52:2001-11-05:mnet-widenews-ahn-concert",
+      "date": "2001-11-05",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신혜성",
+      "title": "Mnet 《와이드뉴스》 — 안재모 콘서트 관련 신혜성 영상",
+      "verification": "팬영상 표제에 보도 날짜와 신혜성 관련 내용 기재 / 방송 편성·콘서트 실제 날짜 미확인",
+      "source": "셩공시대님 채널 3차 누적 영상 조사 (2026-10-27)",
+      "sourceUrl": "https://www.youtube.com/watch?v=AeyKzw0HjXo",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=AeyKzw0HjXo",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=AeyKzw0HjXo"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=AeyKzw0HjXo",
+          "title": "[방송] 20011105 Mnet widenews - 안재모콘서트 - 신혜성",
+          "videoId": "AeyKzw0HjXo",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        }
+      ],
+      "sourceNote": "영상 표제 「20011105 Mnet widenews - 안재모콘서트 - 신혜성」에서 방송일로 보이는 날짜를 수집한 기록입니다. 안재모 콘서트가 실제 11월 5일 개최된다는 증거는 아니므로 독립 콘서트 일정으로 등록하지 않았습니다. 신혜성의 실제 게스트 무대 여부·해당 보도 회차도 미검증입니다.",
+      "dateKind": "Mnet 《와이드뉴스》 영상 제목의 날짜 주장(2001.11.05); 공연 개최일 아님",
+      "sourceRecord": "셩공시대 3차 조사 영상 AeyKzw0HjXo",
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "audit52:2002-04-14:kmtv-public-perfectman",
+      "date": "2002-04-14",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공개녹화·공연",
+      "subject": "신화 전체",
+      "title": "KMTV 공개무대 — 신화 〈Perfect Man〉 (수원 《뮤직Q》 기록 대조)",
+      "verification": "팬영상 날짜·방송사·곡명 표제 + 당시 팬 일정표 교차기록 / 장소·프로그램·실제 녹화 동일성 독립 확인 전",
+      "source": "셩공시대님 채널 3차 누적 영상 조사 (2026-10-27) + 50차 인수인계 당시 팬 일정표",
+      "sourceUrl": "https://www.youtube.com/watch?v=SKm_Iiu8Eo0",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=SKm_Iiu8Eo0",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=SKm_Iiu8Eo0"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=SKm_Iiu8Eo0",
+          "title": "[직캠] 20020414 - kmtv 공개방송 - Perfect Man",
+          "videoId": "SKm_Iiu8Eo0",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        }
+      ],
+      "sourceNote": "셩공시대님 직캠 제목에 「20020414 kmtv 공개방송 - Perfect Man」이 있습니다. 50차 인수인계 조사표(106시트 47·51행)에는 4월 14일 수원 밀리오레 KMTV 《생방송 뮤직Q》 야외 녹화 및 4월 18일 송출 주장이 따로 기재되어 있지만, 이 직캠과 그 녹화의 동일성을 확정하지 않았습니다. 4월 14일 인천 문학경기장 《김동완의 텐텐클럽》 공개녹음은 다른 행사로 분리합니다. 날짜가 같은 월드컵 성공기원 행사 직캠은 동일 행사 여부 미확인으로 연결하지 않았습니다.",
+      "dateKind": "팬영상에 기재된 2002.04.14 공개무대 날짜(2002.04.18 송출 기록은 별도·미검증)",
+      "sourceRecord": "셩공시대 3차 조사 영상 SKm_Iiu8Eo0; 50차 인수인계 조사표 106시트 47/51행",
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "audit52:2002-10-12:seoulland-radio-shinhyesung",
+      "date": "2002-10-12",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공개방송",
+      "subject": "신혜성",
+      "title": "서울랜드 라디오 공개방송 — 신혜성 현장 영상",
+      "verification": "날짜·장소가 일치하는 팬 직캠 2개 / 라디오 프로그램명·정식 방송일 독립 검증 전",
+      "source": "셩공시대님 채널 3차 누적 영상 조사 (2026-10-27)",
+      "sourceUrl": "https://www.youtube.com/watch?v=hZfMfykICJU",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=hZfMfykICJU",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=hZfMfykICJU",
+        "https://www.youtube.com/watch?v=yR4KeIWc5sk"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=hZfMfykICJU",
+          "title": "[직캠] 20021012 서울랜드 라디오공개방송 - MC보는 신혜성 ver.2",
+          "videoId": "hZfMfykICJU",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=yR4KeIWc5sk",
+          "title": "[직캠] 20021012 서울랜드 라디오공개방송 - 신혜성",
+          "videoId": "yR4KeIWc5sk",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        }
+      ],
+      "sourceNote": "「20021012 서울랜드 라디오공개방송 - MC보는 신혜성」과 「20021012 서울랜드 라디오공개방송 - 신혜성」의 두 영상 표제가 같은 날짜·장소를 가리킵니다. 영상 표제의 MC 표현만으로 특정 프로그램의 고정 MC 또는 정식 진행자였다고 단정하지 않습니다. 당시 현장 공지·방송사 송출 편성표는 미확보입니다.",
+      "dateKind": "현장 직캠 제목에 기재된 촬영·행사일(2002.10.12), 라디오 송출일과 구별",
+      "sourceRecord": "셩공시대 3차 조사 영상 hZfMfykICJU,yR4KeIWc5sk",
+      "sourceRefs": [],
+      "recordCount": 1
+    },
+    {
+      "id": "audit52:2016-05-15:bae-bulhyo-hyesung-guest",
+      "date": "2016-05-15",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성 (배기성 콘서트 게스트 영상)",
+      "title": "배기성의 불효콘서트 — 신혜성 〈같은 생각〉 게스트 무대 영상",
+      "verification": "공연명·일자·공연장 공연 DB 확인 / 신혜성 게스트 참여·곡은 팬 직캠 제목 기준",
+      "source": "셩공시대님 채널 3차 누적 영상 조사 (2026-10-27) + 공연예술통합전산망 제공 공연 정보",
+      "sourceUrl": "https://www.stagepick.co.kr/performances/detail/XvEbWWbAivWYJQF2",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=4i23HzawqLo",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=4i23HzawqLo"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=4i23HzawqLo",
+          "title": "[직캠] 20160515  배기성 콘서트 - 신혜성 - 같은생각",
+          "videoId": "4i23HzawqLo",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        }
+      ],
+      "sourceNote": "스테이지픽 공연 정보(자료 제공: KOPIS)에 「배기성의 불효콘서트」 2016.05.15·마포아트센터 아트홀맥이 명시되어 있습니다. 해당 DB의 출연진란에는 배기성만 표기되어 있으며 신혜성은 없습니다. 셩공시대님 팬 직캠 제목 「20160515 배기성 콘서트 - 신혜성 - 같은생각」을 신혜성 게스트 무대의 별도 증거로 연결했습니다. 영상 실재 출연 장면·곡명은 직접 재생 확인하지 못했으므로 확정 출연 기사로 표현하지 않습니다.",
+      "dateKind": "KOPIS 제공 공연 DB의 공연일(2016.05.15); 게스트 출연은 팬 직캠 표제",
+      "sourceRecord": "셩공시대 3차 조사 영상 4i23HzawqLo",
+      "sourceRefs": [
+        "audit52-stagepick-bae-20160515"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://www.stagepick.co.kr/performances/detail/XvEbWWbAivWYJQF2"
+    },
+    {
+      "id": "audit52:2016-12-10:yeongdeungpo-fansign-shinhwa",
+      "date": "2016-12-10",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "팬사인회",
+      "subject": "신화 전체",
+      "title": "신화 영등포 팬사인회 — 현장 영상 기록",
+      "verification": "팬채널의 현장 직캠 2개 날짜·장소 일치 / 공식 개최 공지·행사 장소 세부정보 확인 전",
+      "source": "셩공시대님 채널 3차 누적 영상 조사 (2026-10-27)",
+      "sourceUrl": "https://www.youtube.com/watch?v=7MsqaNIXFpU",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=7MsqaNIXFpU",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=7MsqaNIXFpU",
+        "https://www.youtube.com/watch?v=pWpdUvjI2ns"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=7MsqaNIXFpU",
+          "title": "[직캠] 20161210 - 신화 - 영등포팬사인회 -  즐거운 팔찌놀이 + 끝인사",
+          "videoId": "7MsqaNIXFpU",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=pWpdUvjI2ns",
+          "title": "[직캠] 20161210 신화 영등포 사인회",
+          "videoId": "pWpdUvjI2ns",
+          "note": "셩공시대님 채널의 재업로드 영상 표제 기반 참고. 해당 영상의 실제 촬영·방송·공연 날짜와 장면, 원본 공식성은 독립 확인 전입니다."
+        }
+      ],
+      "sourceNote": "팬 채널에 「20161210 신화 영등포팬사인회 - 즐거운 팔찌놀이 + 끝인사」와 「20161210 신화 영등포 사인회」 두 개의 서로 다른 영상 URL이 수집되어 있습니다. 영등포의 정확한 장소·주최 매장·팬사인회 전체 참여 멤버·공식 개최 공지는 독립적으로 확인할 수 없습니다. 2012년 영등포 팬사인회 보도와 날짜를 혼동하지 않았습니다.",
+      "dateKind": "팬 직캠 제목의 날짜 주장(2016.12.10), 업로드일과 다름",
+      "sourceRecord": "셩공시대 3차 조사 영상 7MsqaNIXFpU,pWpdUvjI2ns",
+      "sourceRefs": [],
+      "recordCount": 1
     }
   ],
   "researchSources": [
@@ -69570,6 +69819,14 @@
       "url": "https://www.hankyung.com/article/2000080611641",
       "kind": "당시 개점 예고 기사",
       "note": "팬사인회 출연 자체는 잡지 0372 사후 기록."
+    },
+    {
+      "id": "audit52-stagepick-bae-20160515",
+      "publisher": "StagePick (자료 출처: KOPIS 공연예술통합전산망)",
+      "title": "배기성의 불효콘서트 — 2016.05.15 마포아트센터 아트홀맥",
+      "url": "https://www.stagepick.co.kr/performances/detail/XvEbWWbAivWYJQF2",
+      "kind": "공연 DB (공연일·공연명·장소 확인)",
+      "note": "공연 목록이 배기성 공연 날짜와 장소를 뒷받침하나, 출연진에는 배기성만 기재되어 있어 신혜성 게스트 여부는 검증하지 못합니다."
     }
   ]
 }
