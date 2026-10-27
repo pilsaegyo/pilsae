@@ -1,10 +1,10 @@
 {
   "metadata": {
     "schemaVersion": 5,
-    "updated": "2026-10-27",
+    "updated": "2026-10-28",
     "description": "원본 기록 보존형 신화·신혜성 연표. 출처 호버/클릭 공개, 미확인 기록은 미확인으로 표시. 1996.04 확증 없는 합류와 2004.05.21 미확인 발매 주장 공개 연표 제외. Daum 과거 공식 행사 공지에 근거한 추가 기록 포함(2026.10.24 v25).",
     "inputRows": 2071,
-    "newIndependentlySourcedEvents": 63,
+    "newIndependentlySourcedEvents": 72,
     "dateRule": "원문 연월일 유지. 월만 아는 항목은 day가 아닌 month로 표시.",
     "subjectRule": "신화 전체 또는 신혜성 참여 활동만; 타 멤버 단독 활동 제외",
     "videoRule": "현재 영상 아카이브 설명에 기재된 날짜·방송명·회차를 참고 후보로 대조. 기존 일정에 원본 영상 ID를 연결하고, 미등재 일정은 원본 출처를 가진 독립 검증 전 연혁으로 구분하여 추가. 날짜만 일치하는 서로 다른 방송은 별개 행사로 취급. 기사 독립 검증과 구별. v54: 날짜가 영상 표제에 있는 자료는 정식 방송 편성 독립 확인이 없더라도 표제 기반 등급을 명시해 별도 일정으로 등록할 수 있으며, 프로그램 자체·방송일·촬영일·공연일을 혼동하지 않습니다.",
@@ -17,12 +17,12 @@
     "chapterCounts": {
       "chapter1": 917,
       "chapter2": 938,
-      "chapter3": 588,
+      "chapter3": 597,
       "chapter4": 74
     },
-    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음. 2026.10.27 v54: 팬영상 표제 기반 신규 기록은 독립 방송 회차가 확인된 것을 의미하지 않습니다. 사용자 직접시청 확인은 독립 당시 보도와 구분합니다. 2013~2015 신규 조사 17건 중 v53 중복 2건을 제외한 자료와 기존 보류일정을 병합하였으며 방송기간 충돌 후보는 계속 보류합니다.",
+    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음. 2026.10.27 v54: 팬영상 표제 기반 신규 기록은 독립 방송 회차가 확인된 것을 의미하지 않습니다. 사용자 직접시청 확인은 독립 당시 보도와 구분합니다. 2013~2015 신규 조사 17건 중 v53 중복 2건을 제외한 자료와 기존 보류일정을 병합하였으며 방송기간 충돌 후보는 계속 보류합니다. 2026-10-28 2016~2018 보강: 옛 2,444건 기준 조사 자료를 최신 2,517건 연혁과 ID 단위로 대조하여 핵심 사실 확인 신규 9건과 기존 근거·표제·날짜 일부를 통합. 상하이·난징 2건은 기존 등록이므로 중복 추가하지 않음. 보류/날짜충돌 후보는 신규 반영하거나 확정하지 않았고, 해당 조사 자료의 전체 필드 독립 검증 완료는 0건임. 2000-07-22 음악캠프 곡명 정정은 앞선 준비본에서 유지.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2453,
+    "visibleEvents": 2526,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -927,6 +927,36 @@
       ],
       "note": "Mnet Showcumentary The Show 방송기간 색인과 팬영상 2004.10~11 표제가 충돌하므로 정확한 회차 확인 전까지 신규 확정하지 않음. 2002.08.30 기념공연 영상은 2001.09.27 부산아시안게임 D-365 행사와 동일한지 미확정. v54 신규등록에서 제외.",
       "urls": []
+    },
+    {
+      "id": "audit1618:2026-10-28:research-pending",
+      "dates": [
+        "2016-09-30",
+        "2016-10-27",
+        "2017-07-28",
+        "2017-09-01",
+        "2017-09-07",
+        "2018-11-22"
+      ],
+      "keywords": [
+        "2016 WEEKLY DELIGHT DVD 발매일 10/26 vs 10/27",
+        "2018 PRODUCTION DVD 발매일 11/21 vs 11/22",
+        "2017 같이 먹어요 9/7 vs 9/8",
+        "2017 삼시세끼 팬영상 출연 확인 전",
+        "2017 이민우 팬파티 신혜성 출연 미확정"
+      ],
+      "note": "2016~2018 보강 자료의 날짜 충돌/출연 여부 미확정 후보. 기존 일자와 연혁을 유지하고, 연구 ZIP의 결과와 출처를 추가 교차검증하기 전까지 신규·확정 정정하지 않음. 조사 완료 보고서 자체에 전체 필드 독립검증 0건으로 명시됨.",
+      "urls": [
+        "https://m.yes24.com/goods/detail/65300419",
+        "https://www.diodeo.com/news/view/1837714",
+        "https://www.osen.co.kr/article/G1110726963",
+        "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A201610270054",
+        "https://www.xportsnews.com/article/773538",
+        "https://www.yes24.com/product/goods/32948286",
+        "https://www.youtube.com/watch?v=KeqdzR_2sl8",
+        "https://www.youtube.com/watch?v=UaAd4bcR538",
+        "https://www.youtube.com/watch?v=rLvzFYWT_5A"
+      ]
     }
   ],
   "events": [
@@ -8436,17 +8466,22 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "MBC 음악캠프 E059 <Only One> (부산 사직 체육관)",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "MBC 음악캠프 E059 <All Your Dreams> (부산 사직 체육관)",
+      "verification": "공연곡 2차 무대목록·사용자 제공 영상 제보 일치 / 전체 방송 원본 미확보",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=773878464&range=A97:D97",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=Tgl_lGr_72s",
+      "sourceNote": "2026.10.28 곡명 정정: 기존 <Only One>은 사용자 제공 무대 영상(https://www.youtube.com/watch?v=Tgl_lGr_72s)의 <All Your Dreams> 제보 및 신화 3집 활동 무대 목록(나무위키 2000.07.22 음악캠프 곡명)과 불일치하여 정정. 영상의 전체 재생·음원 직접 판독은 수행하지 않았으며, 방송국 원본 전체 회차도 확보하지 못함. 그날 <Only One> 추가 공연 여부는 미확인. E059·부산 사직체육관 표기는 기존 원본 보존(방송사 원본 독립 대조 전).",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "00!97",
       "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
+      "sourceRefs": [
+        "audit-prepatch-20261028-musiccamp-20000722-songlist"
+      ],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=Tgl_lGr_72s"
+      ]
     },
     {
       "id": "v34:icbn:2000-07-22",
@@ -56387,11 +56422,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A6:D6",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:089: 너의 목소리가 보여2 EP12 공식 예고 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 공식영상1월5일게시,제목160107EP12예고.본편실방송·듀엣곡확정은추가확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!6",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-w8DkGVnlWQw"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-8_6uwJe4BM",
@@ -56452,11 +56489,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A12:D12",
       "referenceVideoUrl": "http://tv.naver.com/v/695407",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:073: 로코 드라마 공식 방송 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식제목·설명방송일확인.출연당일녹화시각별도미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!12",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-8zTEpA3_bRs"
+      ],
       "mergedRecordIds": [
         "sheet:16!12",
         "sheet:16!13",
@@ -56496,16 +56535,18 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신혜성 개인",
-      "title": "KBS 뮤직뱅크 E819 <로코드라마>",
+      "title": "KBS 뮤직뱅크 E819 〈끝이야〉 + 〈로코 드라마〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A17:D17",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:006: 뮤직뱅크 끝이야 곡명 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 기존 로코드라마만 기재.공식 KBS 제목에끝이야도 명시. 업로드1월27일과 방송1월15일 구분.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!17",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-_G4pERQU9DY"
+      ],
       "mergedRecordIds": [
         "sheet:16!17",
         "sheet:16!18"
@@ -56555,16 +56596,19 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신혜성 개인",
-      "title": "MBC 쇼!음악중심 E488 <로코드라마>",
+      "title": "MBC 쇼! 음악중심 E488 〈끝이야〉 + 〈로코 드라마〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A22:D22",
       "referenceVideoUrl": "http://tv.naver.com/v/698006",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:009: 음악중심 공식 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음. | 2016~2018 조사 audit1618:077: 음악중심 끝이야 누락곡 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!22",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-dT6LRjN7M-Q",
+        "audit1618-source-Y-wLBg4Qiw3YE"
+      ],
       "mergedRecordIds": [
         "sheet:16!22",
         "sheet:16!23"
@@ -56593,16 +56637,19 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신혜성 개인",
-      "title": "SBS 인기가요 E847 <로코드라마>",
+      "title": "SBS 인기가요 E847 〈끝이야〉 + 〈로코 드라마〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A27:D27",
       "referenceVideoUrl": "http://tv.naver.com/v/698566",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:078: 인기가요 끝이야 누락곡 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!27",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-3ovwavC0uU4",
+        "audit1618-source-Y-LgQnFRq4NGg"
+      ],
       "mergedRecordIds": [
         "sheet:16!27",
         "sheet:16!28"
@@ -56678,11 +56725,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A31:D31",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:074: 로코 드라마 공식 방송 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식제목·설명방송일확인.출연당일녹화시각별도미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!31",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-PLt1kOrOosw"
+      ],
       "recordCount": 1
     },
     {
@@ -56698,11 +56747,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A35:D35",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:007: 뮤직뱅크 공식 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!35",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-97mtbx-Odls"
+      ],
       "recordCount": 1
     },
     {
@@ -56718,11 +56769,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A38:D38",
       "referenceVideoUrl": "http://tv.naver.com/v/708304",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:075: 로코 드라마 공식 방송 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식제목·설명방송일확인.출연당일녹화시각별도미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!38",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-Q2QBuH9kKqw"
+      ],
       "recordCount": 1
     },
     {
@@ -56778,11 +56831,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A42:D42",
       "referenceVideoUrl": "http://tv.naver.com/v/715377",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:079: 쇼챔피언171회 공식 영상 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 공식영상EP171곡명확인.업로드1월28일은방송1월27일의독립증거가아니므로방송일추가확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!42",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-zFszfEzaye8"
+      ],
       "recordCount": 1
     },
     {
@@ -56818,11 +56873,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A45:D45",
       "referenceVideoUrl": "http://tv.naver.com/v/719799",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:008: 뮤직뱅크 공식 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!45",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-rR7UEWdjob8"
+      ],
       "recordCount": 1
     },
     {
@@ -56838,11 +56895,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A47:D47",
       "referenceVideoUrl": "http://tv.naver.com/v/720554",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:010: 음악중심 공식 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!47",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-hUDohhxoQ94"
+      ],
       "recordCount": 1
     },
     {
@@ -56881,11 +56940,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A48:D48",
       "referenceVideoUrl": "http://tv.naver.com/v/721372",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:076: 로코 드라마 공식 방송 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식제목·설명방송일확인.출연당일녹화시각별도미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!48",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-WMnbx4OQP3w"
+      ],
       "recordCount": 1
     },
     {
@@ -56901,11 +56962,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A49:D49",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:115: 안녕하세요 공식 편성·녹화출연자 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). KBS보도자료2월1일23:10편성과녹화내용확인.실제녹화일·정상송출은별도확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!49",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A50"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "vxBb0kqjGfk"
@@ -56984,11 +57047,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A55:D55",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:114: 설특집 아이돌 노래자랑 출연·예심탈락 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 본선출연이나수상으로확장금지.예심곡명은기사로미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!55",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A49"
+      ],
       "recordCount": 1
     },
     {
@@ -57004,11 +57069,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A56:D56",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:090: 주간아이돌237회 신혜성·앤디 출연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 공식클립237회확인,게시2월13일.기존방송일2월10일은별도자료로확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!56",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-uYyT0wlBtWk"
+      ],
       "recordCount": 1
     },
     {
@@ -57024,7 +57091,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A64:D64",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:025: WEEKLY DELIGHT 공연 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 총8회기간실개최 확인.중간회차의당일별곡목·게스트는해당기사로확정하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!64",
       "verificationUrl": null,
@@ -57121,11 +57188,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A65:D65",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:026: WEEKLY DELIGHT 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 총8회기간실개최 확인.중간회차의당일별곡목·게스트는해당기사로확정하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!65",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "hyesung-2016-delight"
+      ],
       "recordCount": 1
     },
     {
@@ -57141,11 +57210,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A72:D72",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:027: WEEKLY DELIGHT 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 총8회기간실개최 확인.중간회차의당일별곡목·게스트는해당기사로확정하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!72",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "hyesung-2016-delight"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -57169,11 +57240,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A73:D73",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:028: WEEKLY DELIGHT 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 총8회기간실개최 확인.중간회차의당일별곡목·게스트는해당기사로확정하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!73",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "hyesung-2016-delight"
+      ],
       "recordCount": 1
     },
     {
@@ -57230,11 +57303,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A79:D79",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:029: WEEKLY DELIGHT 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 총8회기간실개최 확인.중간회차의당일별곡목·게스트는해당기사로확정하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!79",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "hyesung-2016-delight"
+      ],
       "recordCount": 1
     },
     {
@@ -57250,11 +57325,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A80:D80",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:030: WEEKLY DELIGHT 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 총8회기간실개최 확인.중간회차의당일별곡목·게스트는해당기사로확정하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!80",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "hyesung-2016-delight"
+      ],
       "recordCount": 1
     },
     {
@@ -57270,11 +57347,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A81:D81",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:031: WEEKLY DELIGHT 공연 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 3월12일 부친게스트·듀엣 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!81",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "hyesung-2016-delight"
+      ],
       "recordCount": 1
     },
     {
@@ -57290,7 +57369,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A84:D84",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:032: WEEKLY DELIGHT 공연 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 3월13일 전진깜짝게스트·예쁜 아가씨 앙코르 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!84",
       "verificationUrl": null,
@@ -57402,11 +57481,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A94:D94",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:071: WE_SHINHWA DVD 발매일 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 2015년8월22~23일공연의DVD.발매일2016년3월24일과구분.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!94",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A30"
+      ],
       "recordCount": 1,
       "categoryOriginal": "릴리즈"
     },
@@ -57443,12 +57524,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A97:D97",
       "referenceVideoUrl": null,
-      "sourceNote": "나무위키 공연목록 추가 대조; 공식 날짜 독립 확인 상태를 일괄 승격하지 않음.",
+      "sourceNote": "나무위키 공연목록 추가 대조; 공식 날짜 독립 확인 상태를 일괄 승격하지 않음. | 2016~2018 조사 audit1618:052: HERO 실제 개최·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄현장리뷰.으쌰으쌰·T.O.P.는이리뷰에서미공연언급;기존타공연곡목자동이식금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!97",
       "verificationUrl": null,
       "sourceRefs": [
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A15",
+        "audit1618-source-A29"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -57469,12 +57552,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A98:D98",
       "referenceVideoUrl": null,
-      "sourceNote": "나무위키 공연목록 추가 대조; 공식 날짜 독립 확인 상태를 일괄 승격하지 않음.",
+      "sourceNote": "나무위키 공연목록 추가 대조; 공식 날짜 독립 확인 상태를 일괄 승격하지 않음. | 2016~2018 조사 audit1618:053: HERO 실제 개최·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄현장리뷰.으쌰으쌰·T.O.P.는이리뷰에서미공연언급;기존타공연곡목자동이식금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!98",
       "verificationUrl": null,
       "sourceRefs": [
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A15",
+        "audit1618-source-A29"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -57827,11 +57912,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A212:D212",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:022: 2016 HS CAMP 실제개최·김동완전화연결 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 기간9월30일~10월2일.첫날전화연결김동완.하나의캠프이며신규중복생성금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!212",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A09"
+      ],
       "recordCount": 1
     },
     {
@@ -57847,11 +57934,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A213:D213",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:023: 2016 HS CAMP 전진방문·미니콘서트 (곡목은 조사 보고서의 해당 범위까지만 확인) — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 둘째날활동.전진은현장방문;김동완전화연결과구분.전곡순서미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!213",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A09"
+      ],
       "recordCount": 1
     },
     {
@@ -57867,11 +57956,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A214:D214",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:024: 2016 HS CAMP 마지막날 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!214",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A09"
+      ],
       "recordCount": 1
     },
     {
@@ -57931,11 +58022,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A232:D232",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:070: HERO LP 발매일·8000장 한정반 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 2016년3월26~27일공연의LP.발매일12월13일과구분.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!232",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A29"
+      ],
       "recordCount": 1,
       "categoryOriginal": "릴리즈"
     },
@@ -57952,13 +58045,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A234:D234",
       "referenceVideoUrl": null,
-      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님.",
+      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님. | 2016~2018 조사 audit1618:062: UNCHANGING 실제개최·신혜성 솔로곡 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄사후보도.기사중다음앨범예정일은실제발매확정근거로사용안함.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!234",
       "verificationUrl": null,
       "sourceRefs": [
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A23"
       ],
       "recordCount": 1
     },
@@ -57975,13 +58069,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A235:D235",
       "referenceVideoUrl": null,
-      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님.",
+      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님. | 2016~2018 조사 audit1618:063: UNCHANGING 실제개최·신혜성 솔로곡 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄사후보도.기사중다음앨범예정일은실제발매확정근거로사용안함.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!235",
       "verificationUrl": null,
       "sourceRefs": [
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A23"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -58030,11 +58125,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1294075281&range=A238:D238",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:021: 주간아이돌283회 대상·대리수상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 제6회 주간어워즈 대상 신혜성.용준형 대리수상.신혜성현장출연으로확정하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "16!238",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A06"
+      ],
       "recordCount": 1
     },
     {
@@ -58252,11 +58349,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A9:D9",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:108: 해피투게더3 실제방송·6인 출연 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 당시사후보도로12일방송확인.481회번호와실녹화일은별도확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!9",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A46"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "aGB0xHxYrRo",
@@ -58271,16 +58370,19 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "Mnet 엠카운트다운 <HEAVEN>",
+      "title": "Mnet 엠카운트다운 〈HEAVEN〉 + 〈TOUCH〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A10:D10",
       "referenceVideoUrl": "http://tv.naver.com/v/1370761",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:011: 엠카운트다운 TOUCH 누락곡 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 기존 HEAVEN만기재. Mnet EP506 공식2곡 영상 확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!10",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-cTFit042hg4",
+        "audit1618-source-Y-cG2LAKEbOlM"
+      ],
       "mergedRecordIds": [
         "sheet:17!10",
         "sheet:17!11"
@@ -58321,11 +58423,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A12:D12",
       "referenceVideoUrl": "http://tv.naver.com/v/1373810",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:012: 뮤직뱅크 공식 2곡 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!12",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-cN4yUHNsMec"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-JNf9TUANLM",
@@ -58341,16 +58445,18 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "MBC 쇼! 음악중심 E537 <HEAVEN>",
+      "title": "MBC 쇼! 음악중심 E537 〈HEAVEN〉 + 〈TOUCH〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A13:D13",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:015: 음악중심 TOUCH 누락곡 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!13",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-pzCIO0R-xuY"
+      ],
       "mergedRecordIds": [
         "sheet:17!13",
         "sheet:17!14"
@@ -58383,16 +58489,20 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "SBS 인기가요 <HEAVEN>",
+      "title": "SBS 인기가요 〈HEAVEN〉 + 〈TOUCH〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A15:D15",
       "referenceVideoUrl": "http://tv.naver.com/v/1376649",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:016: 인기가요 EP896 TOUCH 누락곡 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음. | 2016~2018 조사 audit1618:103: 인기가요 TOUCH 1위 수상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 당일방송기사에서1위확인.수상은기존방송행에덧붙이고새행사로중복생성금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!15",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-kanbt7YQbcg",
+        "audit1618-source-Y-EG-z51GjC48",
+        "audit1618-source-A39"
+      ],
       "mergedRecordIds": [
         "sheet:17!15",
         "sheet:17!16"
@@ -58457,11 +58567,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A19:D19",
       "referenceVideoUrl": "http://tv.naver.com/v/1388301",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:080: 엠카507회 TOUCH 공식영상 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!19",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-aoVJQ3DUUO8"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-JNf9TUANLM"
@@ -58503,11 +58615,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A22:D22",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:082: 스케치북 곡별 공식영상 연결 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 제목방송1월21일·업로드1월22일구분.기존Yo!는이3개영상으로확인하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!22",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-S00cJFXEqXs",
+        "audit1618-source-Y-gamjS3rwUDM",
+        "audit1618-source-Y-aaKLkkzPbps"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-JNf9TUANLM",
@@ -58550,11 +58666,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A23:D23",
       "referenceVideoUrl": "http://tv.naver.com/v/1394374",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:081: 인기가요897회 TOUCH 공식영상 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식무대영상만으로1위수상부분까지검수한것은아님. | 2016~2018 조사 audit1618:104: 인기가요 TOUCH 2주연속1위 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 당일방송기사에서2주연속1위확인.상세점수는미검증.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!23",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-FHPFiICCNYI",
+        "audit1618-source-A40"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "-JNf9TUANLM"
@@ -58632,16 +58751,19 @@
       "transition": "",
       "category": "예능",
       "subject": "신화 전체",
-      "title": "MBC every1 주간 아이돌 E289",
+      "title": "MBC every1 주간 아이돌 E287 (신화 출연 2부)",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A27:D27",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:013: 주간아이돌 E289→E287 정정 (곡목은 조사 보고서의 해당 범위까지만 확인) — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식 방송사 영상제목 EP287과 게시1월25일이 일치. 기존 E289 정정 제안.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!27",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-askghfiyH3E",
+        "audit1618-source-Y-dXddIyuYabs"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "O0tVuRjhIE8"
@@ -58701,11 +58823,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A32:D32",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:099: 타이베이 UNCHANGING 현장통신 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). CNA현장기사는2월4일20:12송고·20:25수정.예정공연과실제개최구분.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!32",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A36"
+      ],
       "recordCount": 1
     },
     {
@@ -58741,13 +58865,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A34:D34",
       "referenceVideoUrl": null,
-      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님.",
+      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님. | 2016~2018 조사 audit1618:116: UNCHANGING 부산 실제개최·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 당시사후보도로실개최확인.분단위실제시작시각미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!34",
       "verificationUrl": null,
       "sourceRefs": [
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A51"
       ],
       "recordCount": 1,
       "fanVideoSources": [
@@ -58784,13 +58909,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A39:D39",
       "referenceVideoUrl": null,
-      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님.",
+      "sourceNote": "공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님. | 2016~2018 조사 audit1618:057: 대구 UNCHANGING 실제개최·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 당시기사로실개최와일부곡확인;전체세트리스트는아님.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!39",
       "verificationUrl": null,
       "sourceRefs": [
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A20"
       ],
       "recordCount": 1
     },
@@ -59376,14 +59502,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A91:D91",
       "referenceVideoUrl": null,
-      "sourceNote": "당시 언론의 공연 예정 보도. 실제 개최 여부의 독립 증거는 아님. 공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님.",
+      "sourceNote": "당시 언론의 공연 예정 보도. 실제 개최 여부의 독립 증거는 아님. 공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님. | 2016~2018 조사 audit1618:050: MOVE 실제 개최·6인·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄기사. SUPER POWER 첫무대 보도.회차별전곡순서추가확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!91",
       "verificationUrl": null,
       "sourceRefs": [
         "cn-chosun-2017",
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A14"
       ],
       "recordCount": 1
     },
@@ -59400,14 +59527,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A92:D92",
       "referenceVideoUrl": null,
-      "sourceNote": "당시 언론의 공연 예정 보도. 실제 개최 여부의 독립 증거는 아님. 공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님.",
+      "sourceNote": "당시 언론의 공연 예정 보도. 실제 개최 여부의 독립 증거는 아님. 공연 예매 이력과 위키 공연 목록의 날짜·도시가 일치. 각 영상 방송일 증거가 아님. | 2016~2018 조사 audit1618:051: MOVE 실제 개최·6인·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄기사. SUPER POWER 첫무대 보도.회차별전곡순서추가확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!92",
       "verificationUrl": null,
       "sourceRefs": [
         "cn-chosun-2017",
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A14"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -59801,13 +59929,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A191:D191",
       "referenceVideoUrl": null,
-      "sourceNote": "예매 이력 2017.09.09~10.01; 위키 일부 판의 09.30 마감 표기는 보정 필요.",
+      "sourceNote": "예매 이력 2017.09.09~10.01; 위키 일부 판의 09.30 마감 표기는 보정 필요. | 2016~2018 조사 audit1618:033: Serenity 위클리 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!191",
       "verificationUrl": null,
       "sourceRefs": [
         "ticket-hs",
-        "nm-hyesung"
+        "nm-hyesung",
+        "audit1618-source-A08"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -59835,11 +59964,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A192:D192",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:034: Serenity 위클리 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!192",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A08"
+      ],
       "recordCount": 1
     },
     {
@@ -59883,11 +60014,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A201:D201",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:067: Serenity 팬사인회 실제실시 사후 언급 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 9월16일공연중전날15일팬사인회실시언급.정확한장소·당일시간·추가출연자는이기사로확정불가.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!201",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A26"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -59929,11 +60062,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A203:D203",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:035: Serenity 위클리 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요. | 2016~2018 조사 audit1618:066: Serenity 3회차 개별 현장리뷰 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 기자가16일3회차명시.기존투어총괄근거와달리당일확인.기사에서9월15일팬사인회실시도별도확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!203",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A08",
+        "audit1618-source-A26"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "PJXwMtX8Y50"
@@ -59952,11 +60088,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A205:D205",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:036: Serenity 위클리 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!205",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A08"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -60044,11 +60182,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A211:D211",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:037: Serenity 위클리 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!211",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A08"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "PJXwMtX8Y50"
@@ -60117,11 +60257,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A212:D212",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:038: Serenity 위클리 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!212",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A08"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "PJXwMtX8Y50",
@@ -60225,11 +60367,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A217:D217",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:039: Serenity 위클리 공연 보강 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!217",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A08"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "PJXwMtX8Y50",
@@ -60377,14 +60521,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A218:D218",
       "referenceVideoUrl": null,
-      "sourceNote": "예매 이력 2017.09.09~10.01; 위키 일부 판의 09.30 마감 표기는 보정 필요.\n2017 위클리 세레니티는 2017.09.09~10.01 총 8회. 나무위키 표의 09.30 종료 표기는 오류. 10.01 최종 공연 기존 등록 유지.",
+      "sourceNote": "예매 이력 2017.09.09~10.01; 위키 일부 판의 09.30 마감 표기는 보정 필요.\n2017 위클리 세레니티는 2017.09.09~10.01 총 8회. 나무위키 표의 09.30 종료 표기는 오류. 10.01 최종 공연 기존 등록 유지. | 2016~2018 조사 audit1618:040: Serenity 위클리 공연 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 9월9일~10월1일4주8회실개최사후보도.각중간일자와개별세트리스트는회차별확인필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!218",
       "verificationUrl": null,
       "sourceRefs": [
         "ticket-hs",
         "nm-hyesung",
-        "ns-weekly17"
+        "ns-weekly17",
+        "audit1618-source-A08"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -60526,7 +60671,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A230:D230",
       "referenceVideoUrl": null,
-      "sourceNote": " | [41차 근거 보강] 2017-10-09 신혜성 대만 SERENITY 팬파티 당시 이민우가 깜짝 게스트로 출연했음을 이튿날 기사 확인. 15:00 이민우 M STYLE은 별도 행사로 신규 기록.",
+      "sourceNote": " | [41차 근거 보강] 2017-10-09 신혜성 대만 SERENITY 팬파티 당시 이민우가 깜짝 게스트로 출연했음을 이튿날 기사 확인. 15:00 이민우 M STYLE은 별도 행사로 신규 기록. | 2016~2018 조사 audit1618:042: 타이베이 팬파티 장소·예정시각 공식 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 신혜성19시;별도이민우15시.예매페이지상단15~19시를신혜성공연기간으로오해하지말것. | 2016~2018 조사 audit1618:059: 타이베이 팬파티 실제개최·곡목·이민우게스트 (곡목은 조사 보고서의 해당 범위까지만 확인) — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). KSD98831은10월9일대만현장기사이며12월홍콩자료로사용금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!230",
       "verificationUrl": null,
@@ -60534,7 +60679,10 @@
         {
           "url": "https://www.sportschosun.com/entertainment/2017-10-10/201710100100038740003485",
           "note": "41차 사후보도"
-        }
+        },
+        "audit1618-source-W02",
+        "audit1618-source-A21",
+        "audit1618-source-A25"
       ],
       "recordCount": 1,
       "sourceUrls": [
@@ -60623,11 +60771,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A238:D238",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:093: 2017 HS CAMP 실제개최·프로그램 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 첫날전객실방문,둘째날모친특별출연·김장·운동회.곡목을매일반복공연으로해석하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!238",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A32"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -60717,11 +60867,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A239:D239",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:094: 2017 HS CAMP 실제개최·프로그램 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 첫날전객실방문,둘째날모친특별출연·김장·운동회.곡목을매일반복공연으로해석하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!239",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A32"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -60835,11 +60987,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A241:D241",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:095: 2017 HS CAMP 실제개최·프로그램 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 첫날전객실방문,둘째날모친특별출연·김장·운동회.곡목을매일반복공연으로해석하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!241",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A32"
+      ],
       "recordCount": 1
     },
     {
@@ -60875,7 +61029,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A281:D281",
       "referenceVideoUrl": null,
-      "sourceNote": " | [41차 근거 보강] 2017-12-09 홍콩 같은 날짜 15:00 이민우 M STYLE 팬파티에 신혜성 등장; 이 별도 행사를 따로 신규 등록함. 기존 신혜성 SERENITY 팬파티는 유지.",
+      "sourceNote": " | [41차 근거 보강] 2017-12-09 홍콩 같은 날짜 15:00 이민우 M STYLE 팬파티에 신혜성 등장; 이 별도 행사를 따로 신규 등록함. 기존 신혜성 SERENITY 팬파티는 유지. | 2016~2018 조사 audit1618:069: 홍콩 Serenity 팬파티 실제개최·이민우게스트 (곡목은 조사 보고서의 해당 범위까지만 확인) — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 신혜성행사에이민우게스트확인.같은날이민우행사에신혜성게스트였다는반대방향은별도증거필요.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!281",
       "verificationUrl": null,
@@ -60883,7 +61037,8 @@
         {
           "url": "https://sports.donga.com/ent/article/all/20171211/87669476/1",
           "note": "41차 사후보도"
-        }
+        },
+        "audit1618-source-A28"
       ],
       "recordCount": 1,
       "sourceUrls": [
@@ -61094,11 +61249,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A307:D307",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:064: 2017-2018 THE YEARS JOURNEY 실제개최 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄기사.양세형·임헌일·장지원·매니저등은복면가왕패러디영상등장;현장게스트또는정규방송복면가왕출연으로등록금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!307",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A24"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -61146,11 +61303,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=179393000&range=A309:D309",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:065: 2017-2018 THE YEARS JOURNEY 실제개최 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄기사.양세형·임헌일·장지원·매니저등은복면가왕패러디영상등장;현장게스트또는정규방송복면가왕출연으로등록금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "17!309",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A24"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -61387,12 +61546,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A27:D27",
       "referenceVideoUrl": null,
-      "sourceNote": "KBS World에서 개최 예정 안내. 당일 개최 여부를 증명하는 현장 기사는 별도 확인 필요.",
+      "sourceNote": "KBS World에서 개최 예정 안내. 당일 개최 여부를 증명하는 현장 기사는 별도 확인 필요. | 2016~2018 조사 audit1618:112: 20주년 ALL YOUR DREAMS 팬파티 실제개최·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄현장기사.13개앨범각1곡정규무대확인.신청곡3곡명과당일별전곡순서는추가확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!27",
       "verificationUrl": null,
       "sourceRefs": [
-        "kbs-20th"
+        "kbs-20th",
+        "audit1618-source-A48"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -61493,12 +61653,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A30:D30",
       "referenceVideoUrl": null,
-      "sourceNote": "2018.03.25 팬파티 행사 현장 기사 | KBS World에서 개최 예정 안내. 당일 개최 여부를 증명하는 현장 기사는 별도 확인 필요.",
+      "sourceNote": "2018.03.25 팬파티 행사 현장 기사 | KBS World에서 개최 예정 안내. 당일 개최 여부를 증명하는 현장 기사는 별도 확인 필요. | 2016~2018 조사 audit1618:113: 20주년 ALL YOUR DREAMS 팬파티 실제개최·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄현장기사.13개앨범각1곡정규무대확인.신청곡3곡명과당일별전곡순서는추가확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!30",
       "verificationUrl": "https://www.spotvnews.co.kr/news/articleView.html?idxno=202130",
       "sourceRefs": [
-        "kbs-20th"
+        "kbs-20th",
+        "audit1618-source-A48"
       ],
       "recordCount": 1
     },
@@ -61982,12 +62143,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A80:D80",
       "referenceVideoUrl": null,
-      "sourceNote": "일본 공식 팬클럽 공지를 팬 블로그에서 재게시. 개최 예정 날짜 근거로만 사용.",
+      "sourceNote": "일본 공식 팬클럽 공지를 팬 블로그에서 재게시. 개최 예정 날짜 근거로만 사용. | 2016~2018 조사 audit1618:060: 도쿄 ALL YOUR DREAMS 팬파티 실제개최 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일사후보도.전원하이터치회도확인.당일별전곡순서는추가확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!80",
       "verificationUrl": null,
       "sourceRefs": [
-        "jp-2018-fanclub"
+        "jp-2018-fanclub",
+        "audit1618-source-A22"
       ],
       "recordCount": 1
     },
@@ -62004,12 +62166,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A81:D81",
       "referenceVideoUrl": null,
-      "sourceNote": "일본 공식 팬클럽 공지를 팬 블로그에서 재게시. 개최 예정 날짜 근거로만 사용.",
+      "sourceNote": "일본 공식 팬클럽 공지를 팬 블로그에서 재게시. 개최 예정 날짜 근거로만 사용. | 2016~2018 조사 audit1618:061: 도쿄 ALL YOUR DREAMS 팬파티 실제개최 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일사후보도.전원하이터치회도확인.당일별전곡순서는추가확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!81",
       "verificationUrl": null,
       "sourceRefs": [
-        "jp-2018-fanclub"
+        "jp-2018-fanclub",
+        "audit1618-source-A22"
       ],
       "recordCount": 1
     },
@@ -62026,11 +62189,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A84:D84",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:091: 아이돌룸2회 신혜성 출연 공식영상 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식제목JTBC180519방송.재업로드2021년6월3일과구분.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!84",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-Ozmvju7-nuA"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "XakAJPN1TGo",
@@ -62050,11 +62215,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A102:D102",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:018: 뮤직뱅크20주년 All Your Dreams 공식 영상 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 이 영상으로 Intro/This Love까지 확인한 것은 아님.기존곡목은별도유지. | 2016~2018 조사 audit1618:101: 뮤직뱅크20주년 INTRO/THIS LOVE 추가근거 (곡목은 조사 보고서의 해당 범위까지만 확인) — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식두영상으로기존전체기재곡목보강.동일방송중복생성금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!102",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-Ti6ZpoZ4FUc",
+        "audit1618-source-Y-jj1Wb2f6-8g"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "VIOGZ7La39E",
@@ -62138,11 +62306,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A131:D131",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:072: MOVE BluRay 발매일·DVD와분리 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 예약6월28일·발매8월17일.실황공연2017년6월17~18일.7월17일DVD기록과매체차이로별도보존.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!131",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A31"
+      ],
       "recordCount": 1,
       "categoryOriginal": "릴리즈"
     },
@@ -62159,11 +62329,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A133:D133",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:092: 1박2일 신화특집3탄 공식영상 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 공식제목20180819확인.원본S3E550회차번호자체는이영상에미표기.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!133",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-jEsNPzSV1NA"
+      ],
       "recordCount": 1
     },
     {
@@ -62265,11 +62437,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A138:D138",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:109: HEART 기자간담회 실제개최·장소 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!138",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A47"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "Womnup-xiSA"
@@ -62303,16 +62477,18 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "Mnet 엠카운트다운 E585 <Kiss Me Like That>",
+      "title": "Mnet 엠카운트다운 E585 〈Kiss Me Like That〉 + 〈떠나가지 마요〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A143:D143",
       "referenceVideoUrl": "https://tv.naver.com/v/3934297",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:083: 떠나가지 마요 누락 무대 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 같은방송의추가곡이며신규일정으로쪼개지않음.8월30일엠카직캠은8월31일업로드.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!143",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y--UKAR1X6gts"
+      ],
       "mergedRecordIds": [
         "sheet:18!143",
         "sheet:18!144"
@@ -62343,16 +62519,20 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "KBS2 뮤직뱅크 E944 <Kiss Me Like That>",
+      "title": "KBS2 뮤직뱅크 E944 〈Kiss Me Like That〉 + 〈떠나가지 마요〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A146:D146",
       "referenceVideoUrl": "https://t.co/ONuM7qrPQy",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:017: 뮤직뱅크 공식 본무대 영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음. | 2016~2018 조사 audit1618:058: 9월2일자로 등록된 에릭 뮤뱅직캠 날짜 정정 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). KBS공식제목180831·업로드8월31일.9월2일인가와는다른뮤뱅영상.기존8월31일뮤뱅행에개별영상연결하고중복행통합제안;자동삭제하지않음. | 2016~2018 조사 audit1618:084: 떠나가지 마요 누락 무대 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 같은방송의추가곡이며신규일정으로쪼개지않음.8월30일엠카직캠은8월31일업로드.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!146",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-etIG7G97n8A",
+        "audit1618-source-Y-ZQACU8JGUFo",
+        "audit1618-source-Y-dHTsx6y_jbg"
+      ],
       "mergedRecordIds": [
         "sheet:18!146",
         "sheet:18!147"
@@ -62391,11 +62571,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A149:D149",
       "referenceVideoUrl": "https://t.co/PLeDgEJnnn",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:087: 인기가요 공식 곡별영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!149",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-diYQE7r6ADc"
+      ],
       "mergedRecordIds": [
         "sheet:18!149",
         "sheet:18!150"
@@ -62420,22 +62602,24 @@
     },
     {
       "id": "sheet:18!153",
-      "date": "2018-09-02",
+      "date": "2018-08-31",
       "precision": "day",
       "chapter": "chapter3",
       "transition": "",
-      "category": "V LIVE",
+      "category": "영상 클립",
       "subject": "신화 전체",
-      "title": "[뮤직뱅크 직캠 180831] 신화_에릭 / KISS ME LIKE THAT",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "KBS2 뮤직뱅크 E944 신화 에릭 〈Kiss Me Like That〉 공식 직캠 게시",
+      "verification": "공식 영상 표제·게시일 확인 / 전체 영상 재생 미검증",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A153:D153",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=ZQACU8JGUFo",
+      "sourceNote": "2016~2018 조사 audit1618:058: 9월2일자로 등록된 에릭 뮤뱅직캠 날짜 정정 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). KBS공식제목180831·업로드8월31일.9월2일인가와는다른뮤뱅영상.기존8월31일뮤뱅행에개별영상연결하고중복행통합제안;자동삭제하지않음. | 원본 입력일 2018-09-02였으나 공식 영상 표제는 180831이며 게시일도 2018-08-31. 8/31 뮤직뱅크 직캠 자료로, 별도 9/2 방송·공연으로 간주하지 않음.",
+      "dateKind": "KBS 공식 직캠 게시일(2018-08-31); 원본 시트 9/2 날짜 정정",
       "sourceRecord": "18!153",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-ZQACU8JGUFo"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "MxpfZP7f9N0"
@@ -62449,16 +62633,19 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "MBC Music 쇼!챔피언 E283 <Kiss Me Like That>",
+      "title": "MBC Music 쇼!챔피언 E283 〈Kiss Me Like That〉 + 〈떠나가지 마요〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A154:D154",
       "referenceVideoUrl": "https://t.co/w2cWJv0Gxk",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:085: 떠나가지 마요 누락 무대 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 같은방송의추가곡이며신규일정으로쪼개지않음.8월30일엠카직캠은8월31일업로드.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!154",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-he2iiKRHpGw",
+        "audit1618-source-A33"
+      ],
       "mergedRecordIds": [
         "sheet:18!154",
         "sheet:18!155"
@@ -62534,11 +62721,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A163:D163",
       "referenceVideoUrl": null,
-      "sourceNote": "(방송일 18-09-15)",
+      "sourceNote": "(방송일 18-09-15) | 2016~2018 조사 audit1618:019: DMC Korean Music Wave 방송 영상 (곡목은 조사 보고서의 해당 범위까지만 확인) — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 공식 클립게시9월15일.9월8일 실제공연은다른근거추가확인.서로날짜다르다고병합삭제금지. | 2016~2018 조사 audit1618:102: DMC This Love 공식영상 연결 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 공식클립게시9월15일만으로실제공연일9월8일을판정하지않음.공연/방송별원본ID모두보존.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!163",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-bb6-HjBvfpc",
+        "audit1618-source-Y-ZC-gOiXjUEk"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -62557,16 +62747,19 @@
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "MBC 쇼! 음악중심 E602 <Kiss Me Like That>",
+      "title": "MBC 쇼! 음악중심 E602 〈Kiss Me Like That〉 + 〈떠나가지 마요〉",
       "verification": "원본 기재·독립 검증 전",
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A161:D161",
       "referenceVideoUrl": "https://t.co/KXuPMr9WBB",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:014: 음악중심 공식영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음. | 2016~2018 조사 audit1618:086: 떠나가지 마요 누락 무대 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 같은방송의추가곡이며신규일정으로쪼개지않음.8월30일엠카직캠은8월31일업로드.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!161",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-oY4mL-iFpTY",
+        "audit1618-source-Y-XCkrqBJ3P88"
+      ],
       "mergedRecordIds": [
         "sheet:18!161",
         "sheet:18!162"
@@ -62602,11 +62795,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A166:D166",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:106: HEART 팬사인회 실제개최·장소 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!166",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A44"
+      ],
       "recordCount": 1
     },
     {
@@ -62722,11 +62917,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A174:D174",
       "referenceVideoUrl": null,
-      "sourceNote": "(공연일 18-09-08)",
+      "sourceNote": "(공연일 18-09-08) | 2016~2018 조사 audit1618:019: DMC Korean Music Wave 방송 영상 (곡목은 조사 보고서의 해당 범위까지만 확인) — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 공식 클립게시9월15일.9월8일 실제공연은다른근거추가확인.서로날짜다르다고병합삭제금지. | 2016~2018 조사 audit1618:102: DMC This Love 공식영상 연결 — 일부 정황·영상 메타데이터 확인(독립 사실확정 전). 공식클립게시9월15일만으로실제공연일9월8일을판정하지않음.공연/방송별원본ID모두보존.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!174",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-bb6-HjBvfpc",
+        "audit1618-source-Y-ZC-gOiXjUEk"
+      ],
       "recordCount": 1
     },
     {
@@ -62797,11 +62995,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A177:D177",
       "referenceVideoUrl": "https://t.co/BjGGTX4s8D",
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:088: 인기가요 공식 곡별영상 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 전체 출연 크레딧·전곡·정확한 녹화시각은 확인하지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!177",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-Y-rVfr_ArGy2g"
+      ],
       "recordCount": 1
     },
     {
@@ -62817,13 +63017,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A185:D185",
       "referenceVideoUrl": null,
-      "sourceNote": "공연 예매 이력 확인.",
+      "sourceNote": "공연 예매 이력 확인. | 2016~2018 조사 audit1618:117: HEART 서울 양일 실제개최·현장곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 10월7일기사의구체적곡목.6일도같은전곡순서였다고확정하지않음.윤미래는음원피처링이며현장게스트확인아님.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!185",
       "verificationUrl": null,
       "sourceRefs": [
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A52",
+        "audit1618-source-A53"
       ],
       "recordCount": 1
     },
@@ -62840,13 +63042,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A186:D186",
       "referenceVideoUrl": null,
-      "sourceNote": "공연 예매 이력 확인.",
+      "sourceNote": "공연 예매 이력 확인. | 2016~2018 조사 audit1618:118: HEART 서울 양일 실제개최·현장곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 10월7일기사의구체적곡목.6일도같은전곡순서였다고확정하지않음.윤미래는음원피처링이며현장게스트확인아님.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!186",
       "verificationUrl": null,
       "sourceRefs": [
         "jtbc-ticket-group",
-        "nm-concerts"
+        "nm-concerts",
+        "audit1618-source-A52",
+        "audit1618-source-A53"
       ],
       "recordCount": 1
     },
@@ -62863,11 +63067,14 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A189:D189",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:100: HEART 타이베이 실제개최·공식예매 교차확인 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 주최사예정18:30과당일현장보도를교차확인.분단위실제시작시각·전체곡순서는미확인.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!189",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A37",
+        "audit1618-source-A38"
+      ],
       "recordCount": 1
     },
     {
@@ -62883,11 +63090,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A200:D200",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:045: 2018 HS CAMP 실제 개최·프로그램 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 9일하이터치·방방인사,10일동물의상스탬프회 확인.뮤직쇼곡목을각날짜에반복공연했다고해석하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!200",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A12"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -62929,11 +63138,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A201:D201",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:046: 2018 HS CAMP 실제 개최·프로그램 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 9일하이터치·방방인사,10일동물의상스탬프회 확인.뮤직쇼곡목을각날짜에반복공연했다고해석하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!201",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A12"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -63053,11 +63264,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A202:D202",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:047: 2018 HS CAMP 실제 개최·프로그램 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 9일하이터치·방방인사,10일동물의상스탬프회 확인.뮤직쇼곡목을각날짜에반복공연했다고해석하지않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!202",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A12"
+      ],
       "recordCount": 1
     },
     {
@@ -63094,11 +63307,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A225:D225",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:068: HEART 홍콩 현장보도·6인·곡목 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 원본발행2018년11월24일22시,수정2025년2월12일12시12분.재수정일을공연일로사용금지.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!225",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A27"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -63170,11 +63385,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A273:D273",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:048: 2018-2019 THE YEARS JOURNEY 실제 공연 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄사후기사;31일카운트다운개별확인.모든곡이양일동일순서라는증거는아님.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!273",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A13"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "k426CCFzSJg"
@@ -63267,11 +63484,13 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=384628762&range=A275:D275",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2016~2018 조사 audit1618:049: 2018-2019 THE YEARS JOURNEY 실제 공연 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 양일총괄사후기사;31일카운트다운개별확인.모든곡이양일동일순서라는증거는아님.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "18!275",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "audit1618-source-A13"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "k426CCFzSJg"
@@ -66478,12 +66697,14 @@
       "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
       "sourceUrl": "https://www.xportsnews.com/article/756110",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=fHULtFZstPE",
-      "sourceNote": "2016.08.13 오후 7시 30분(중국 현지시각), 상하이 국제체조중심에서 개최. QQTV 중국 전역 생중계 보도 확인. 셩공시대님 채널의 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 영상 각각의 출연곡·재생 장면은 직접 확인 전입니다.",
+      "sourceNote": "2016.08.13 오후 7시 30분(중국 현지시각), 상하이 국제체조중심에서 개최. QQTV 중국 전역 생중계 보도 확인. 셩공시대님 채널의 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 영상 각각의 출연곡·재생 장면은 직접 확인 전입니다. | 2016~2018 조사 audit1618:004: 2016 DELIGHT SHANGHAI — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 이전3차에서 발견·검증한 미반영 후보를 누적한 것. 새 발견 수에 중복 가산하지 않음. 이 행사는 v53에 이미 등재되어 있으므로 신규 일정 아님. | 2016~2018 조사 audit1618:043: 상하이 공연 곡목·전진 음성메시지 보강 — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). audit1618:004와 같은 공연의 추가 근거. 별도 신규행 생성 금지. 전진은 음성메시지, 현장 게스트 아님. 이 행사는 v53에 이미 등재되어 있으므로 신규 일정 아님.",
       "dateKind": "2016.08.13 실제 공연일, 현지 19:30",
       "sourceRecord": "2026-10-27 v53 조사 통합 / fHULtFZstPE,sZB7F4akE50,9ojSTh9wC9E,8iY6-7tV5pE,uNgEgVXXFYo,hV6v8Z3xEMc,CPr9wlXFgdI,y_TGEJEkJuc,mRJd76qZqxk,DjhZRvMD7N0,MEpxnwVGLj8,dTcMc2al218,yLKhdoFuVGs,0KJA0dA85l8,saPUlN0-O4c,-0ozLo_WZd0,q7s1MYR2p80,D8fQ2OSoHrI,jK7cEU5mfv0,n15UPdJK20o",
       "sourceRefs": [
         "audit53-src-2016-08-13-1",
-        "audit53-src-2016-08-13-2"
+        "audit53-src-2016-08-13-2",
+        "audit1618-source-A04",
+        "audit1618-source-A10"
       ],
       "recordCount": 1,
       "verificationUrl": "https://www.xportsnews.com/article/756110",
@@ -66645,11 +66866,12 @@
       "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
       "sourceUrl": "https://www.chosun.com/site/data/html_dir/2016/09/11/2016091100424.html",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=doFpd6Q4r50",
-      "sourceNote": "2016.09.10 오후 7시 30분(중국 현지시각), 중국 난징 태양궁 극장 개최. 셩공시대님 채널에서 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 팬영상 제목과 실제 재생 내용은 별도 독립 확인 전입니다.",
+      "sourceNote": "2016.09.10 오후 7시 30분(중국 현지시각), 중국 난징 태양궁 극장 개최. 셩공시대님 채널에서 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 팬영상 제목과 실제 재생 내용은 별도 독립 확인 전입니다. | 2016~2018 조사 audit1618:005: 2016 DELIGHT NANJING (곡목은 조사 보고서의 해당 범위까지만 확인) — 근거 보강(일부 사실 확인, 전체 무대/세부 필드 미검증). 보도에서 확인한 일부곡,전곡순서 미확인. 이전3차 후보를 누적. 이 행사는 v53에 이미 등재되어 있으므로 신규 일정 아님.",
       "dateKind": "2016.09.10 실제 공연일, 현지 19:30",
       "sourceRecord": "2026-10-27 v53 조사 통합 / doFpd6Q4r50,P9wXeWussrg,P7oMWMfjC2k,jmPNHNUopVQ,9gUswONBqYA,vfWQ6ioGXCU,kWKoGogK58o,eUPmILGvRdA,NcDc918d3mM,RLxRRCnF-sU,H3xi4e5Mpig,LFMlxRu4LeE,2bfRiUZ7_40,cuf5equROL4,qLIDdzotyhM,VfCTEeA3VsI,V7Tbz-ceoas,nXEKWZlNsGc,1J1fHzV5Ny8,O3TLCMUnfjs",
       "sourceRefs": [
-        "audit53-src-2016-09-10-1"
+        "audit53-src-2016-09-10-1",
+        "audit1618-source-A03"
       ],
       "recordCount": 1,
       "verificationUrl": "https://www.chosun.com/site/data/html_dir/2016/09/11/2016091100424.html",
@@ -68684,6 +68906,204 @@
           "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
         }
       ]
+    },
+    {
+      "id": "audit1618:new:001",
+      "date": "2016-01-07",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "방송·촬영",
+      "subject": "신혜성 개인",
+      "title": "신혜성 〈delight〉 발매 사전 인터뷰 (청담동 카페)",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A201601120313",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: delight 발매 사전 인터뷰. 카페 상호·시작시각 미확인. 기사발행1월12일과 구분. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "실제 인터뷰일(보도일 2016-01-12와 구별)",
+      "sourceRecord": "audit1618:001",
+      "verificationUrl": "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A201601120313",
+      "sourceRefs": [
+        "audit1618-source-A02"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:002",
+      "date": "2016-02-26",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신혜성 개인",
+      "title": "KBS WORLD Radio 신혜성 인터뷰 공개",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://world.kbs.co.kr/service/contents_view.htm?board_code=enter_interview&board_seq=232045&id=&lang=e&menu_cate=artist&page=4",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: KBS WORLD Radio 신혜성 인터뷰 게시. 실제 녹음·방송일 미확정. 게시행 후보로만 기록. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "KBS WORLD Radio 공식 인터뷰 게시일; 녹음·방송일 미확정",
+      "sourceRecord": "audit1618:002",
+      "verificationUrl": "https://world.kbs.co.kr/service/contents_view.htm?board_code=enter_interview&board_seq=232045&id=&lang=e&menu_cate=artist&page=4",
+      "sourceRefs": [
+        "audit1618-source-W01"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:003",
+      "date": "2016-08-24",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 〈WEEKLY DELIGHT〉 공연실황 라이브 LP·음원 발매",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://www.tenasia.co.kr/article/2016082465284",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: 2016 WEEKLY DELIGHT 라이브 LP·음원 발매. 공연은2~3월. LP·음원 발매행1건으로 보존. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "공식 음반·디지털 음원 발매일; 공연일과 구별",
+      "sourceRecord": "audit1618:003",
+      "verificationUrl": "https://www.tenasia.co.kr/article/2016082465284",
+      "sourceRefs": [
+        "audit1618-source-A01"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:020",
+      "date": "2017-09-19",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "라디오",
+      "subject": "신혜성 개인",
+      "title": "캐스퍼 라디오 Special DJ #1 신혜성 (V LIVE 생방송)",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://osen.co.kr/article/G1110735302",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: 캐스퍼 라디오 Special DJ #1 신혜성. 23시 실제진행. 선곡은발표곡전체와구분하며전체목록미확인. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "실제 생방송일(당시 사후 기사)",
+      "sourceRecord": "audit1618:020",
+      "verificationUrl": "https://osen.co.kr/article/G1110735302",
+      "sourceRefs": [
+        "audit1618-source-A05"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:056",
+      "date": "2018-12-31",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "DVD·발매",
+      "subject": "신혜성 개인",
+      "title": "2017 신혜성 〈Serenity〉 위클리 콘서트 DVD 발매",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://www.yes24.com/product/goods/67535595",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: 2017 Serenity 콘서트 DVD 발매 누락 후보. 2017년공연실황이지만발매는2018년12월31일.같은날연말공연과다른활동.판매처품목정보·제품소개일치. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "판매처 기재 발매일(2018-12-31); 실제 판매처 공지와 구별",
+      "sourceRecord": "audit1618:056",
+      "verificationUrl": "https://www.yes24.com/product/goods/67535595",
+      "sourceRefs": [
+        "audit1618-source-A19"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:097",
+      "date": "2016-11-28",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "라이브 방송",
+      "subject": "신화 전체",
+      "title": "신화 13집 컴백 카운트다운 〈오렌지라 들었SHOW〉 생방송",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://www.starnewskorea.com/music/2016/11/29/2016112823150346629",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: 오렌지라 들었SHOW 컴백 카운트다운 생방송 누락. 기사11월29일00:28이지만본문28일실제방송.앨범발매11월29일과별도. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "2016-11-28 실제 생방송일(11/29 보도와 구별)",
+      "sourceRecord": "audit1618:097",
+      "verificationUrl": "https://www.starnewskorea.com/music/2016/11/29/2016112823150346629",
+      "sourceRefs": [
+        "audit1618-source-A34"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:098",
+      "date": "2018-12-10",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "소속사",
+      "subject": "신화 전체",
+      "title": "신화·라이브웍스컴퍼니 세 번째 재계약 공식 발표",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://www.tenasia.co.kr/article/2018121094984",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: 라이브웍스컴퍼니 세번째 재계약 공식발표 누락. 당일회사발표기사를확인.실제계약서서명일·계약조건·촬영일은미확인.공연행사로분류하지않음. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "공식 발표 기사일(실제 계약 체결일 미확정)",
+      "sourceRecord": "audit1618:098",
+      "verificationUrl": "https://www.tenasia.co.kr/article/2018121094984",
+      "sourceRefs": [
+        "audit1618-source-A35"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:105",
+      "date": "2016-11-28",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "MBC 뉴스투데이 연예투데이 신화 정규 13집 컴백 보도",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://news.imbc.com/replay/2016/nwtoday/article/4172088_31361.html",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: MBC 뉴스투데이 연예투데이 13집컴백 보도 누락. 06:59입력07:01수정.신화멤버들이당일뉴스스튜디오에출연했다는뜻은아님. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "뉴스 보도 방송일(실제 음반 발매일과 구별)",
+      "sourceRecord": "audit1618:105",
+      "verificationUrl": "https://news.imbc.com/replay/2016/nwtoday/article/4172088_31361.html",
+      "sourceRefs": [
+        "audit1618-source-A41"
+      ],
+      "recordCount": 1
+    },
+    {
+      "id": "audit1618:new:107",
+      "date": "2017-08-03",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신혜성 개인",
+      "title": "신혜성 〈Serenity〉 메인 콘셉트 포토 공개",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2016~2018 자료보강: 당시 기사·공식 원자료",
+      "sourceUrl": "https://www.xportsnews.com/article/879476",
+      "referenceVideoUrl": null,
+      "sourceNote": "확인 범위: Serenity 메인컨셉포토 공개 누락. 기사에서3일공개확인.실제화보촬영일은미확인.8월1일앨범발표예고와다른콘텐츠. 전체 출연·무대·시각 등 모든 필드의 검증 완료를 뜻하지 않음.",
+      "dateKind": "소속사 발표·언론 보도일(실제 촬영일과 구별)",
+      "sourceRecord": "audit1618:107",
+      "verificationUrl": "https://www.xportsnews.com/article/879476",
+      "sourceRefs": [
+        "audit1618-source-A45"
+      ],
+      "recordCount": 1
     }
   ],
   "researchSources": [
@@ -72894,6 +73314,742 @@
       "url": "https://www.chosun.com/site/data/html_dir/2016/09/11/2016091100424.html",
       "kind": "2016.09.11 스포츠조선 사후 기사에서 개최·장소·시간 확인",
       "note": "2016.09.10 실제 공연일, 현지 19:30; 2016.09.10 오후 7시 30분(중국 현지시각), 중국 난징 태양궁 극장 개최. 셩공시대님 채널에서 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 팬영상 제목과 실제 재생 내용은 별도 독립 확인 전입니다."
+    },
+    {
+      "id": "audit-prepatch-20261028-musiccamp-20000722-songlist",
+      "publisher": "나무위키 (2차 편집 자료)",
+      "title": "신화 정규 3집 Only One — 2000년 7월 22일 음악캠프 무대곡 기록",
+      "url": "https://www.namu.moe/w/Only%20One%28%EC%8B%A0%ED%99%94%29",
+      "kind": "2차 무대목록 · 방송 원본 미확인",
+      "note": "2000.07.22 음악캠프 공연곡을 All Your Dreams로 수록. 편집형 2차 자료이므로 방송국 원본 편성표·전체 공연곡 확정 근거는 아님."
+    },
+    {
+      "id": "audit1618-source-A04",
+      "publisher": "당시 언론 보도",
+      "title": "8월13일19시30분 현지 상해 국제체조중심 신혜성 실제공연.",
+      "url": "https://www.maniareport.com/view.php?ud=201608141611490195041nr_19",
+      "kind": "당시 기사 · 본문 일부 직접 확인",
+      "note": "8월13일19시30분 현지 상해 국제체조중심 신혜성 실제공연. / 확인 한계: 본문 중간 끊김;전체세트리스트 미확보 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A03",
+      "publisher": "당시 언론 보도",
+      "title": "9월10일 난징 태양궁극장 실제 공연. 대표곡·앙코르 사후 보도.",
+      "url": "https://www.mk.co.kr/news/musics/7498682",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "9월10일 난징 태양궁극장 실제 공연. 대표곡·앙코르 사후 보도. / 확인 한계: 전곡순서 아님 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-_G4pERQU9DY",
+      "publisher": "공식 방송영상",
+      "title": "Shin HyeSung - End / roco drama | 신혜성 - 끝이야 / 로코 드라마 [Music Bank COMEBACK / 2016.01.15] - YouTube / Shin Hyesung - End / roco drama | 신",
+      "url": "https://www.youtube.com/watch?v=_G4pERQU9DY",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "Shin HyeSung - End / roco drama | 신혜성 - 끝이야 / 로코 드라마 [Music Bank COMEBACK / 2016.01.15] - YouTube / Shin Hyesung - End / roco drama | 신혜성 - 끝이야 / 로코 드라마 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-97mtbx-Odls",
+      "publisher": "공식 방송영상",
+      "title": "SHIN HYE SUNG - Roco drama | 신혜성 - 로코 드라마 [Music Bank K-Chart / 2016.01.22] - YouTube / Subscribe KBS World Official YouTube:    / kbsw",
+      "url": "https://www.youtube.com/watch?v=97mtbx-Odls",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "SHIN HYE SUNG - Roco drama | 신혜성 - 로코 드라마 [Music Bank K-Chart / 2016.01.22] - YouTube / Subscribe KBS World Official YouTube:    / kbsworld / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-rR7UEWdjob8",
+      "publisher": "공식 방송영상",
+      "title": "SHIN HYE SUNG - Roco drama | 신혜성 - 로코 드라마 [Music Bank HOT Stage / 2016.01.29] - YouTube / SHIN HYE SUNG - Roco drama | 신혜성 - 로코 드라마\n",
+      "url": "https://www.youtube.com/watch?v=rR7UEWdjob8",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "SHIN HYE SUNG - Roco drama | 신혜성 - 로코 드라마 [Music Bank HOT Stage / 2016.01.29] - YouTube / SHIN HYE SUNG - Roco drama | 신혜성 - 로코 드라마 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-dT6LRjN7M-Q",
+      "publisher": "공식 방송영상",
+      "title": "[HOT] Shin Hye Sung - Roco Drama, 신혜성 - 로코 드라마, Show Music core 20160116 - YouTube / Music core 20160116\nShin Hye Sung - Roco Drama, 신혜",
+      "url": "https://www.youtube.com/watch?v=dT6LRjN7M-Q",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[HOT] Shin Hye Sung - Roco Drama, 신혜성 - 로코 드라마, Show Music core 20160116 - YouTube / Music core 20160116\nShin Hye Sung - Roco Drama, 신혜성 - 로코 드라마\n\n▶Show Music Core Official Facebook Page -   / mbcmusiccore / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-hUDohhxoQ94",
+      "publisher": "공식 방송영상",
+      "title": "[HOT] Shin Hye Sung - Roco Drama, 신혜성 - 로코 드라마, Show Music core 20160130 - YouTube / Music core 20160130\nShin Hye Sung - Roco Drama, 신혜",
+      "url": "https://www.youtube.com/watch?v=hUDohhxoQ94",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[HOT] Shin Hye Sung - Roco Drama, 신혜성 - 로코 드라마, Show Music core 20160130 - YouTube / Music core 20160130\nShin Hye Sung - Roco Drama, 신혜성 - 로코 드라마\n\n▶Show Music Core Official Facebook Page -   / mbcmusiccore / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-cTFit042hg4",
+      "publisher": "공식 방송영상",
+      "title": "[SHINHWA - Heaven] Comeback Stage | M COUNTDOWN 170112 EP.506 - YouTube / KPOP Chart Show M COUNTDOWN | EP.506\n\nSHINHWA - Heaven\n\n\n▶Wat",
+      "url": "https://www.youtube.com/watch?v=cTFit042hg4",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[SHINHWA - Heaven] Comeback Stage | M COUNTDOWN 170112 EP.506 - YouTube / KPOP Chart Show M COUNTDOWN | EP.506\n\nSHINHWA - Heaven\n\n\n▶Watch more video clips:\nhttp://bit.ly/MCOUNTDOWN-KPOP2017\n\n[Kor Ver.]\n어느덧 데뷔 20년차 아이돌 '#신화' 가만히 듣다보면 마음이 촉촉해지는 그 노래, 'Heaven' 무대! / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-cG2LAKEbOlM",
+      "publisher": "공식 방송영상",
+      "title": "[SHINHWA - Touch] Comeback Stage | M COUNTDOWN 170112 EP.506 - YouTube / KPOP Chart Show M COUNTDOWN | EP.506\n\nSHINHWA - Touch\n\n\n▶Watch",
+      "url": "https://www.youtube.com/watch?v=cG2LAKEbOlM",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[SHINHWA - Touch] Comeback Stage | M COUNTDOWN 170112 EP.506 - YouTube / KPOP Chart Show M COUNTDOWN | EP.506\n\nSHINHWA - Touch\n\n\n▶Watch more video clips:\nhttp://bit.ly/MCOUNTDOWN-KPOP2017\n\n[Kor Ver.]\n존재만으로 멋있는 오빠들 '#신화' 은근..섹시..군무.. (관리자의 온기가 남아있는 게시물입니다) 'Touch' 무대! / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-cN4yUHNsMec",
+      "publisher": "공식 방송영상",
+      "title": "뮤직뱅크 Music Bank - 신화 - 헤븐 + 터치 (SHINWHA - HEAVEN + TOUCH).20170113 - YouTube / 신화 - 헤븐 + 터치 (SHINWHA - HEAVEN + TOUCH)\nKBS2 TV 뮤직뱅크｜매주 ",
+      "url": "https://www.youtube.com/watch?v=cN4yUHNsMec",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "뮤직뱅크 Music Bank - 신화 - 헤븐 + 터치 (SHINWHA - HEAVEN + TOUCH).20170113 - YouTube / 신화 - 헤븐 + 터치 (SHINWHA - HEAVEN + TOUCH)\nKBS2 TV 뮤직뱅크｜매주 금요일 오후 5시에 방송됩니다. / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-askghfiyH3E",
+      "publisher": "공식 방송영상",
+      "title": "[Weekly Idol] 신화 'Wild Eyes' 2배속 댄스 최초공개! l EP.287 - YouTube / 신화의 Wild Eyes 2배속 댄스! 주간아에서 최초공개라구용 ( •̀ ω •́ )✧\n주황공쥬 신화창조 어서어서 여기로 모여야 ",
+      "url": "https://www.youtube.com/watch?v=askghfiyH3E",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[Weekly Idol] 신화 'Wild Eyes' 2배속 댄스 최초공개! l EP.287 - YouTube / 신화의 Wild Eyes 2배속 댄스! 주간아에서 최초공개라구용 ( •̀ ω •́ )✧\n주황공쥬 신화창조 어서어서 여기로 모여야 한다구요 .. 🎉✨\n\n#주간아이돌 #신화 #WildEyes\n\n★All about KPOP! Subscribe now★\nhttps://bit.ly/2XR37jV\n\nGlobal No.1 KPOP IDOL CHANNEL, ALL THE K-POP! \nCopyrightⓒ MBC PLUS, All Rights Reserved. / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-dXddIyuYabs",
+      "publisher": "공식 방송영상",
+      "title": "(Weekly Idol EP.287) Very dangerous game - YouTube / (Weekly Idol EP.287) Very dangerous game\n콘텐츠 생성 방식\n자동 더빙\n일부 언어의 오디오 트랙이 자동으로 생성되었습",
+      "url": "https://www.youtube.com/watch?v=dXddIyuYabs",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "(Weekly Idol EP.287) Very dangerous game - YouTube / (Weekly Idol EP.287) Very dangerous game\n콘텐츠 생성 방식\n자동 더빙\n일부 언어의 오디오 트랙이 자동으로 생성되었습니다. 자세히 알아보기 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-oY4mL-iFpTY",
+      "publisher": "공식 방송영상",
+      "title": "[HOT] SHINHWA - Kiss Me Like That, 신화 - Kiss Me Like That Show Music core 20180908 - YouTube / Music core 20180908   \nSHINHWA - Kiss Me",
+      "url": "https://www.youtube.com/watch?v=oY4mL-iFpTY",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[HOT] SHINHWA - Kiss Me Like That, 신화 - Kiss Me Like That Show Music core 20180908 - YouTube / Music core 20180908   \nSHINHWA - Kiss Me Like That, 신화 - Kiss Me Like That\n\n▶Show Music Core Official Facebook Page -   / mbcmusiccore / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-pzCIO0R-xuY",
+      "publisher": "공식 방송영상",
+      "title": "[Comeback Stage] SHINHWA - TOUCH, 신화 - TOUCH Show Music core 20170114 - YouTube / Music core 20170114\n신화 - TOUCH (SHINHWA - TOUCH)\n\n▶Sh",
+      "url": "https://www.youtube.com/watch?v=pzCIO0R-xuY",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[Comeback Stage] SHINHWA - TOUCH, 신화 - TOUCH Show Music core 20170114 - YouTube / Music core 20170114\n신화 - TOUCH (SHINHWA - TOUCH)\n\n▶Show Music Core Official Facebook Page -   / mbcmusiccore / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-kanbt7YQbcg",
+      "publisher": "공식 방송영상",
+      "title": "《Comeback Special》 SHINHWA (신화) - TOUCH @인기가요 Inkigayo 20170115 - YouTube / SBS Inkigayo 인기가요 EP896 20170115\n\nSHINHWA (신화) - TOUCH\n\nSBS",
+      "url": "https://www.youtube.com/watch?v=kanbt7YQbcg",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《Comeback Special》 SHINHWA (신화) - TOUCH @인기가요 Inkigayo 20170115 - YouTube / SBS Inkigayo 인기가요 EP896 20170115\n\nSHINHWA (신화) - TOUCH\n\nSBS Inkigayo(인기가요) is a Korean music program broadcast by SBS. The show features some of the hottest and popular artists’ performance every Sunday, 3:40pm. \nThe winner is to be announced at the end of a show. Check out this week’s Inkigayo Line up and meet your favorite artist!\n\n☞ Visit 'SBS I / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-EG-z51GjC48",
+      "publisher": "공식 방송영상",
+      "title": "《Comeback Special》 SHINHWA (신화) - HEAVEN @인기가요 Inkigayo 20170115 - YouTube / SBS Inkigayo 인기가요 EP896 20170115\n\nSHINHWA (신화) - HEAVEN\n\nS",
+      "url": "https://www.youtube.com/watch?v=EG-z51GjC48",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《Comeback Special》 SHINHWA (신화) - HEAVEN @인기가요 Inkigayo 20170115 - YouTube / SBS Inkigayo 인기가요 EP896 20170115\n\nSHINHWA (신화) - HEAVEN\n\nSBS Inkigayo(인기가요) is a Korean music program broadcast by SBS. The show features some of the hottest and popular artists’ performance every Sunday, 3:40pm. \nThe winner is to be announced at the end of a show. Check out this week’s Inkigayo Line up and meet your favorite artist!\n\n☞ Visit 'SBS / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-etIG7G97n8A",
+      "publisher": "공식 방송영상",
+      "title": "뮤직뱅크 Music Bank - Kiss Me Like That - 신화(SHINHWA).20180831 - YouTube / 뮤직뱅크 Music Bank - Kiss Me Like That - 신화(SHINHWA).20180831\n",
+      "url": "https://www.youtube.com/watch?v=etIG7G97n8A",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "뮤직뱅크 Music Bank - Kiss Me Like That - 신화(SHINHWA).20180831 - YouTube / 뮤직뱅크 Music Bank - Kiss Me Like That - 신화(SHINHWA).20180831 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-Ti6ZpoZ4FUc",
+      "publisher": "공식 방송영상",
+      "title": "뮤직뱅크 Music Bank - All Your Dreams(2018) - 신화(SHINHWA).20180629 - YouTube / 뮤직뱅크 Music Bank - All Your Dreams(2018) - 신화(SHINHWA).201806",
+      "url": "https://www.youtube.com/watch?v=Ti6ZpoZ4FUc",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "뮤직뱅크 Music Bank - All Your Dreams(2018) - 신화(SHINHWA).20180629 - YouTube / 뮤직뱅크 Music Bank - All Your Dreams(2018) - 신화(SHINHWA).20180629\nKBS2 TV 뮤직뱅크｜매주 금요일 오후 5시에 방송됩니다.\nKBS Kpop\n구독자 1040만명\n동영상\n정보\nStudioK Official Twitter\nINSTAGRAM\n뮤직뱅크 [Music Bank]\n돌박이일 [IDOL 1N2D]\n아이돌인간극장[K-dol Docu Series]\n리무진서비스 [Leemujin Service]\nMusic Bank Full Cam\nMusic Bank Individual cam\n간략히 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-bb6-HjBvfpc",
+      "publisher": "공식 방송영상",
+      "title": "[Korean Music Wave] SHINHWA - Kiss Me Like That, 신화- Kiss Me Like That, DMC Festival 2018 - YouTube / [Korean Music Wave]  SHINHWA -  K",
+      "url": "https://www.youtube.com/watch?v=bb6-HjBvfpc",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[Korean Music Wave] SHINHWA - Kiss Me Like That, 신화- Kiss Me Like That, DMC Festival 2018 - YouTube / [Korean Music Wave]  SHINHWA -  Kiss Me Like That, 신화-  Kiss Me Like That, DMC Festival 2018 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A06",
+      "publisher": "당시 언론 보도",
+      "title": "2016-12-28 주간아이돌283회 주간어워즈 대상 신혜성·용준형 대리수상, 신혜성현장참석증명 아님",
+      "url": "https://enews.imbc.com/News/ViewAmp/196159",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016-12-28 주간아이돌283회 주간어워즈 대상 신혜성·용준형 대리수상, 신혜성현장참석증명 아님 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A09",
+      "publisher": "당시 언론 보도",
+      "title": "2016캠프09-30~10-02 엘리시안리조트실개최·전화연결김동완·미니공연곡",
+      "url": "https://www.xportsnews.com/article/773538",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016캠프09-30~10-02 엘리시안리조트실개최·전화연결김동완·미니공연곡 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A08",
+      "publisher": "당시 언론 보도",
+      "title": "2017-09-09~10-01 Serenity8회 실제개최·대표공연곡 사후보도",
+      "url": "https://www.asiatoday.co.kr/kn/view.php?key=20171002001416369",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017-09-09~10-01 Serenity8회 실제개최·대표공연곡 사후보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-W02",
+      "publisher": "공식 주최사 행사 안내",
+      "title": "10월9일 타이베이 신혜성19시·이민우15시,台大綜合體育館1樓,主辦沒意思娛樂·就是娛樂.",
+      "url": "https://muse-entertainment.kktix.cc/events/sungwoo-b70bbccd",
+      "kind": "해외 주최사 공식 예매공지 · 웹 원문 직접 확인",
+      "note": "10월9일 타이베이 신혜성19시·이민우15시,台大綜合體育館1樓,主辦沒意思娛樂·就是娛樂. / 확인 한계: 개최예정만 입증;게스트실현 증거 아님 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A10",
+      "publisher": "당시 언론 보도",
+      "title": "2016-08-13 상해실개최·공연곡보강",
+      "url": "https://sports.donga.com/ent/article/all/20160814/79752537/1",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016-08-13 상해실개최·공연곡보강 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A12",
+      "publisher": "당시 언론 보도",
+      "title": "2018년11월9~11일 엘리시안 강촌 HS CAMP 실제 개최",
+      "url": "https://sports.donga.com/ent/article/all/20181112/92829874/1",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년11월9~11일 엘리시안 강촌 HS CAMP 실제 개최 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A13",
+      "publisher": "당시 언론 보도",
+      "title": "2018년12월30~31일 신혜성 연말 콘서트 실제개최 사후 보도",
+      "url": "https://www.xportsnews.com/article/1059985",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년12월30~31일 신혜성 연말 콘서트 실제개최 사후 보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A14",
+      "publisher": "당시 언론 보도",
+      "title": "2017년6월17~18일 MOVE 실제 공연 사후보도",
+      "url": "https://www.asiatoday.co.kr/kn/view.php?key=20170619000905534",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년6월17~18일 MOVE 실제 공연 사후보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A15",
+      "publisher": "당시 언론 보도",
+      "title": "2016년3월26~27일 HERO 실제 공연 사후보도",
+      "url": "https://www.ajunews.com/view/20160328062041006",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016년3월26~27일 HERO 실제 공연 사후보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A29",
+      "publisher": "음반·DVD 판매처",
+      "title": "2016년12월13일 HERO LP 발매·3월26~27일공연수록",
+      "url": "https://www.yes24.com/Product/Goods/34141207",
+      "kind": "판매처 상품정보·제작사 제공 소개 · 본문 직접 확인",
+      "note": "2016년12월13일 HERO LP 발매·3월26~27일공연수록 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A20",
+      "publisher": "당시 언론 보도",
+      "title": "2017년2월25일 대구콘서트 실제개최 사후보도",
+      "url": "https://www.chosun.com/site/data/html_dir/2017/02/26/2017022600356.html",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년2월25일 대구콘서트 실제개최 사후보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-ZQACU8JGUFo",
+      "publisher": "공식 방송영상",
+      "title": "신화 (SHINHWA) 에릭 - Kiss Me Like That / 180831 뮤직뱅크 직캠 - YouTube / 신화 (SHINHWA) 에릭 - Kiss Me Like That / 180831 뮤직뱅크 직캠\nKBS Kpop\n구독자 1040",
+      "url": "https://www.youtube.com/watch?v=ZQACU8JGUFo",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "신화 (SHINHWA) 에릭 - Kiss Me Like That / 180831 뮤직뱅크 직캠 - YouTube / 신화 (SHINHWA) 에릭 - Kiss Me Like That / 180831 뮤직뱅크 직캠\nKBS Kpop\n구독자 1040만명\n동영상\n정보\nStudioK Official Twitter\nINSTAGRAM\n뮤직뱅크 [Music Bank]\n돌박이일 [IDOL 1N2D]\n아이돌인간극장[K-dol Docu Series]\n리무진서비스 [Leemujin Service]\nMusic Bank Full Cam\nMusic Bank Individual cam\n간략히 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A21",
+      "publisher": "당시 언론 보도",
+      "title": "2017년10월9일 대만 팬파티 사후기사",
+      "url": "https://www.sportschosun.com/entertainment/2017-10-10/201710100100038740003485",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년10월9일 대만 팬파티 사후기사 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A25",
+      "publisher": "당시 언론 보도",
+      "title": "2017년10월9일 타이베이 팬파티 실제 개최·이민우 게스트 해외 현장보도. 홍콩12월9일 자료가 아님",
+      "url": "https://www.koreastardaily.com/sc/news/98831",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년10월9일 타이베이 팬파티 실제 개최·이민우 게스트 해외 현장보도. 홍콩12월9일 자료가 아님 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A22",
+      "publisher": "당시 언론 보도",
+      "title": "2018년5월14~15일 일본팬파티 실제개최 사후보도",
+      "url": "https://www4.osen.co.kr/article/G1110902781",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년5월14~15일 일본팬파티 실제개최 사후보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A23",
+      "publisher": "당시 언론 보도",
+      "title": "2016년12월17~18일 UNCHANGING 실제 개최",
+      "url": "https://www.asiatoday.co.kr/kn/view.php?key=20161219002155125",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016년12월17~18일 UNCHANGING 실제 개최 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A24",
+      "publisher": "당시 언론 보도",
+      "title": "2017년12월30~31일 THE YEARS JOURNEY 실제개최 사후 보도",
+      "url": "https://www.diodeo.com/news/view/2610207",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년12월30~31일 THE YEARS JOURNEY 실제개최 사후 보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A26",
+      "publisher": "당시 언론 보도",
+      "title": "2017년9월16일 Serenity 3회차 실제공연 현장리뷰",
+      "url": "https://www.tenasia.co.kr/article/2017091875314",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년9월16일 Serenity 3회차 실제공연 현장리뷰 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A27",
+      "publisher": "당시 언론 보도",
+      "title": "2018년11월24일 홍콩AsiaWorldExpo 신화6인 실제공연; 게시2018년11월24일/수정2025년2월12일 구분",
+      "url": "https://www.hk01.com/眾樂迷/263069/神話香港演唱會-相隔五年再度來港開騷-金烔完-好掛住你哋",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년11월24일 홍콩AsiaWorldExpo 신화6인 실제공연; 게시2018년11월24일/수정2025년2월12일 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A28",
+      "publisher": "당시 언론 보도",
+      "title": "2017년12월9일19시 홍콩AsiaWorldExpoRunwayII 신혜성팬파티 실제개최·이민우게스트",
+      "url": "https://www.sportschosun.com/entertainment/2017-12-11/201712120100080800005659",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년12월9일19시 홍콩AsiaWorldExpoRunwayII 신혜성팬파티 실제개최·이민우게스트 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A30",
+      "publisher": "음반·DVD 판매처",
+      "title": "2016년3월24일 WE_SHINHWA DVD발매·2015년8월공연기록",
+      "url": "https://www.yes24.com/product/goods/24930868",
+      "kind": "판매처 상품정보·제작사 제공 소개 · 본문 직접 확인",
+      "note": "2016년3월24일 WE_SHINHWA DVD발매·2015년8월공연기록 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A31",
+      "publisher": "음반·DVD 판매처",
+      "title": "2018년8월17일 MOVE BluRay발매·2017년6월공연기록",
+      "url": "https://www.yes24.com/product/goods/61974434",
+      "kind": "판매처 상품정보·제작사 제공 소개 · 본문 직접 확인",
+      "note": "2018년8월17일 MOVE BluRay발매·2017년6월공연기록 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-8zTEpA3_bRs",
+      "publisher": "공식 방송영상",
+      "title": "[MPD직캠] 신혜성 직캠 로코드라마 Roco Drama SHIN HYE SUNG Fancam @엠카운트다운_160114 - YouTube / [Fancam/MPD직캠] 160114\nch.MPD\nSHIN HYE SUNG - 로코드라마 Roco",
+      "url": "https://www.youtube.com/watch?v=8zTEpA3_bRs",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[MPD직캠] 신혜성 직캠 로코드라마 Roco Drama SHIN HYE SUNG Fancam @엠카운트다운_160114 - YouTube / [Fancam/MPD직캠] 160114\nch.MPD\nSHIN HYE SUNG - 로코드라마 Roco Drama / Full ver.\nMnet MCOUNTDOWN COMEBACK STAGE!!\nYou can watch this VIDEO only on YouTube ch.MPD\n\n\n   / mnetmpd / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-PLt1kOrOosw",
+      "publisher": "공식 방송영상",
+      "title": "[MPD직캠] 신혜성 직캠 로코드라마 Roco Drama SHIN HYE SUNG Fancam @엠카운트다운_160121 - YouTube / [Fancam/MPD직캠] 160121\nch.MPD\nSHIN HYE SUNG - 로코드라마 Roco",
+      "url": "https://www.youtube.com/watch?v=PLt1kOrOosw",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[MPD직캠] 신혜성 직캠 로코드라마 Roco Drama SHIN HYE SUNG Fancam @엠카운트다운_160121 - YouTube / [Fancam/MPD직캠] 160121\nch.MPD\nSHIN HYE SUNG - 로코드라마 Roco Drama / Full ver.\nMnet MCOUNTDOWN COMEBACK STAGE!!\nYou can watch this VIDEO only on YouTube ch.MPD\n\n\n   / mnetmpd / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-Q2QBuH9kKqw",
+      "publisher": "공식 방송영상",
+      "title": "[HOT] Shin Hye Sung - Roco Drama, 신혜성 - 로코 드라마, Show Music core 20160123 - YouTube / Music core 20160123\nShin Hye Sung - Roco Drama, 신혜",
+      "url": "https://www.youtube.com/watch?v=Q2QBuH9kKqw",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[HOT] Shin Hye Sung - Roco Drama, 신혜성 - 로코 드라마, Show Music core 20160123 - YouTube / Music core 20160123\nShin Hye Sung - Roco Drama, 신혜성 - 로코 드라마\n\n▶Show Music Core Official Facebook Page -   / mbcmusiccore / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-WMnbx4OQP3w",
+      "publisher": "공식 방송영상",
+      "title": "《Goodbye Stage》 신혜성(Shin Hye Sung) - 로코 드라마(Roco Drama) @인기가요 Inkigayo 20160131 - YouTube / SBS Inkigayo(인기가요) is a Korean music progra",
+      "url": "https://www.youtube.com/watch?v=WMnbx4OQP3w",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《Goodbye Stage》 신혜성(Shin Hye Sung) - 로코 드라마(Roco Drama) @인기가요 Inkigayo 20160131 - YouTube / SBS Inkigayo(인기가요) is a Korean music program broadcast by SBS. The show features some of the hottest and popular artists’ performance every Sunday, 3:40pm. The winner is to be announced at the end of a show. Check out this week’s Inkigayo Line up and meet your favorite artist!\n\nSBS Inkigayo 인기가요 EP849 20160131\n\n신혜성(Shin Hye Sung) - 로코 드라마(Roco Dram / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-wLBg4Qiw3YE",
+      "publisher": "공식 방송영상",
+      "title": "[HOT] Shin Hye Sung - End, 신혜성 - 끝이야, Show Music core 20160116 - YouTube / Music core 20160116\nShin Hye Sung - End, 신혜성 - 끝이야\n\n▶Show Mu",
+      "url": "https://www.youtube.com/watch?v=wLBg4Qiw3YE",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[HOT] Shin Hye Sung - End, 신혜성 - 끝이야, Show Music core 20160116 - YouTube / Music core 20160116\nShin Hye Sung - End, 신혜성 - 끝이야\n\n▶Show Music Core Official Facebook Page -   / mbcmusiccore / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-3ovwavC0uU4",
+      "publisher": "공식 방송영상",
+      "title": "《Comeback Special》 신혜성(Shin Hye Sung) - 로코 드라마(Roco Drama) @인기가요 Inkigayo 20160117 - YouTube / SBS Inkigayo(인기가요) is a Korean music pro",
+      "url": "https://www.youtube.com/watch?v=3ovwavC0uU4",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《Comeback Special》 신혜성(Shin Hye Sung) - 로코 드라마(Roco Drama) @인기가요 Inkigayo 20160117 - YouTube / SBS Inkigayo(인기가요) is a Korean music program broadcast by SBS. The show features some of the hottest and popular artists’ performance every Sunday, 3:40pm. The winner is to be announced at the end of a show. Check out this week’s Inkigayo Line up and meet your \n\nfavorite artist!\n\nSBS Inkigayo 인기가요 EP847 20160117\n\n신혜성(Shin Hye Sung) - 로코 드라마(Roco Dr / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-LgQnFRq4NGg",
+      "publisher": "공식 방송영상",
+      "title": "《Comeback Special》 신혜성(Shin Hye Sung) - 끝이야(End) @인기가요 Inkigayo 20160117 - YouTube / SBS Inkigayo(인기가요) is a Korean music program broad",
+      "url": "https://www.youtube.com/watch?v=LgQnFRq4NGg",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《Comeback Special》 신혜성(Shin Hye Sung) - 끝이야(End) @인기가요 Inkigayo 20160117 - YouTube / SBS Inkigayo(인기가요) is a Korean music program broadcast by SBS. The show features some of the hottest and popular artists’ performance every Sunday, 3:40pm. The winner is to be announced at the end of a show. Check out this week’s Inkigayo Line up and meet your favorite artist!\n\nSBS Inkigayo 인기가요 EP847 20160117\n\n신혜성(Shin Hye Sung) - 끝이야(End)\n\n▶ (인기가 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-zFszfEzaye8",
+      "publisher": "공식 방송영상",
+      "title": "(Showchampion EP.171) SHIN HYE SUNG - Roco drama - YouTube / (Showchampion EP.171) SHIN HYE SUNG - Roco drama\n",
+      "url": "https://www.youtube.com/watch?v=zFszfEzaye8",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "(Showchampion EP.171) SHIN HYE SUNG - Roco drama - YouTube / (Showchampion EP.171) SHIN HYE SUNG - Roco drama / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-aoVJQ3DUUO8",
+      "publisher": "공식 방송영상",
+      "title": "[SHINHWA - Touch] KPOP TV Show | M COUNTDOWN 170119 EP.507 - YouTube / KPOP Chart Show M COUNTDOWN | EP.507\n\nSHINHWA - Touch\n\n\n▶Watch m",
+      "url": "https://www.youtube.com/watch?v=aoVJQ3DUUO8",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[SHINHWA - Touch] KPOP TV Show | M COUNTDOWN 170119 EP.507 - YouTube / KPOP Chart Show M COUNTDOWN | EP.507\n\nSHINHWA - Touch\n\n\n▶Watch more video clips:\nhttp://bit.ly/MCOUNTDOWN-KPOP2017\n\n[Kor Ver.]\n으른섹시  너무 좋다 이거에요 '#신화' 이래서 신화, 신화 하나봅니다.. 레전드가 보여주는 'Touch' 무대! / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-FHPFiICCNYI",
+      "publisher": "공식 방송영상",
+      "title": "《LEGEND》 SHINHWA (신화) - TOUCH @인기가요 Inkigayo 20170122 - YouTube / SBS Inkigayo 인기가요 EP897 20170122\n\nSHINHWA (신화) - TOUCH\n\nSBS Inkigayo(",
+      "url": "https://www.youtube.com/watch?v=FHPFiICCNYI",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《LEGEND》 SHINHWA (신화) - TOUCH @인기가요 Inkigayo 20170122 - YouTube / SBS Inkigayo 인기가요 EP897 20170122\n\nSHINHWA (신화) - TOUCH\n\nSBS Inkigayo(인기가요) is a Korean music program broadcast by SBS. The show features some of the hottest and popular artists’ performance every Sunday, 3:40pm. \nThe winner is to be announced at the end of a show. Check out this week’s Inkigayo Line up and meet your favorite artist!\n\n☞ Visit 'SBS I / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-S00cJFXEqXs",
+      "publisher": "공식 방송영상",
+      "title": "유희열의 스케치북 - 신화 - Brand New. 20170121 - YouTube / 신화 - Brand New\n",
+      "url": "https://www.youtube.com/watch?v=S00cJFXEqXs",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "유희열의 스케치북 - 신화 - Brand New. 20170121 - YouTube / 신화 - Brand New / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-gamjS3rwUDM",
+      "publisher": "공식 방송영상",
+      "title": "유희열의 스케치북 - 신화 - Jam #1. 20170121 - YouTube / 신화 - Jam #1\nKBS Kpop\n구독자 1040만명\n동영상\n정보\nStudioK Official Twitter\nINSTAGRAM\n뮤직뱅크 [Music Ban",
+      "url": "https://www.youtube.com/watch?v=gamjS3rwUDM",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "유희열의 스케치북 - 신화 - Jam #1. 20170121 - YouTube / 신화 - Jam #1\nKBS Kpop\n구독자 1040만명\n동영상\n정보\nStudioK Official Twitter\nINSTAGRAM\n뮤직뱅크 [Music Bank]\n돌박이일 [IDOL 1N2D]\n아이돌인간극장[K-dol Docu Series]\n리무진서비스 [Leemujin Service]\nMusic Bank Full Cam\nMusic Bank Individual cam\n간략히 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-aaKLkkzPbps",
+      "publisher": "공식 방송영상",
+      "title": "유희열의 스케치북 - 신화 - TOUCH. 20170121 - YouTube / 신화 - TOUCH\n",
+      "url": "https://www.youtube.com/watch?v=aaKLkkzPbps",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "유희열의 스케치북 - 신화 - TOUCH. 20170121 - YouTube / 신화 - TOUCH / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y--UKAR1X6gts",
+      "publisher": "공식 방송영상",
+      "title": "[MPD직캠] 신화 직캠 4K ‘떠나가지 마요(Don't Leave Me)’ (SHINHWA FanCam) | @MCOUNTDOWN_2018.8.30 - YouTube / [MPD직캠] 신화 - 떠나가지 마요 | @엠카운트다운_2018.8.3",
+      "url": "https://www.youtube.com/watch?v=-UKAR1X6gts",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[MPD직캠] 신화 직캠 4K ‘떠나가지 마요(Don't Leave Me)’ (SHINHWA FanCam) | @MCOUNTDOWN_2018.8.30 - YouTube / [MPD직캠] 신화 - 떠나가지 마요 | @엠카운트다운_2018.8.30\n[MPD FanCam] SHINHWA - Don't Leave Me | @MCOUNTDOWN_2018.8.30\n\n#MPD직캠 #MPDFanCam\n\nMore from #M2? :D\n\nFacebook:    / mnetm2  \nTwitter:         / m2mpd  \nInstagram:   / m2mpd  \n콘텐츠 생성 방식\n자동 더빙\n일부 언어의 오디오 트랙이 자동으로 생성되었습니다. 자세히 알아보기 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-dHTsx6y_jbg",
+      "publisher": "공식 방송영상",
+      "title": "뮤직뱅크 Music Bank - 떠나가지 마요 - 신화(SHINHWA).20180831 - YouTube / 뮤직뱅크 Music Bank - 떠나가지 마요 - 신화(SHINHWA).20180831\n",
+      "url": "https://www.youtube.com/watch?v=dHTsx6y_jbg",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "뮤직뱅크 Music Bank - 떠나가지 마요 - 신화(SHINHWA).20180831 - YouTube / 뮤직뱅크 Music Bank - 떠나가지 마요 - 신화(SHINHWA).20180831 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-he2iiKRHpGw",
+      "publisher": "공식 방송영상",
+      "title": "Show Champion EP.283 SHINHWA- Don't Leave Me - YouTube / 신화 - 떠나가지 마요 \nSHINHWA- Don't Leave Me\n\n[Show Champion]\nGlobal No.1 KPOP IDOL C",
+      "url": "https://www.youtube.com/watch?v=he2iiKRHpGw",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "Show Champion EP.283 SHINHWA- Don't Leave Me - YouTube / 신화 - 떠나가지 마요 \nSHINHWA- Don't Leave Me\n\n[Show Champion]\nGlobal No.1 KPOP IDOL CHANNEL, ALL THE K-POP! \nCopyrightⓒ MBC PLUS, All Rights Reserved. / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A33",
+      "publisher": "당시 언론 보도",
+      "title": "2018년9월5일 쇼챔피언 실제방송에서 떠나가지마요·KissMeLikeThat 두곡 공연",
+      "url": "https://www.xportsnews.com/article/1015991",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년9월5일 쇼챔피언 실제방송에서 떠나가지마요·KissMeLikeThat 두곡 공연 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-XCkrqBJ3P88",
+      "publisher": "공식 방송영상",
+      "title": "[HOT] SHINHWA - Don't Leave Me, 신화 - 떠나가지 마요 Show Music core 20180908 - YouTube / Music core 20180908   \nSHINHWA  -  Don't Leave Me, 신화",
+      "url": "https://www.youtube.com/watch?v=XCkrqBJ3P88",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[HOT] SHINHWA - Don't Leave Me, 신화 - 떠나가지 마요 Show Music core 20180908 - YouTube / Music core 20180908   \nSHINHWA  -  Don't Leave Me, 신화 - 떠나가지 마요\n\n▶Show Music Core Official Facebook Page -   / mbcmusiccore / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-diYQE7r6ADc",
+      "publisher": "공식 방송영상",
+      "title": "《Comeback Special》 SHINHWA(신화) - Kiss Me Like That @인기가요 Inkigayo 20180902 - YouTube / SBS Inkigayo 인기가요 EP972 20180902\n\nSHINHWA (신화) -",
+      "url": "https://www.youtube.com/watch?v=diYQE7r6ADc",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《Comeback Special》 SHINHWA(신화) - Kiss Me Like That @인기가요 Inkigayo 20180902 - YouTube / SBS Inkigayo 인기가요 EP972 20180902\n\nSHINHWA (신화) - Kiss Me Like That\n\nSBS Inkigayo(인기가요) is a Korean music program broadcast by SBS. The show features some of the hottest and popular artists’ performance every Sunday, 12:10pm. \nThe winner is to be announced at the end of a show. Check out this week’s Inkigayo Line up and meet your favorite artist!\n\n☞ / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-rVfr_ArGy2g",
+      "publisher": "공식 방송영상",
+      "title": "《POWERFUL》SHINHWA (신화) - Kiss Me Like That @인기가요 Inkigayo 20180916 - YouTube / SHINHWA - Kiss Me Like That \n신화 - Kiss Me Like That  #인기",
+      "url": "https://www.youtube.com/watch?v=rVfr_ArGy2g",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "《POWERFUL》SHINHWA (신화) - Kiss Me Like That @인기가요 Inkigayo 20180916 - YouTube / SHINHWA - Kiss Me Like That \n신화 - Kiss Me Like That  #인기가요_Inkigayo #SHINHWA\n\nThe show features some of K-pop artists’ \nperformance every Sunday, 12:10pm.  \nCheck out this week’s Inkigayo Line up and \nmeet your favorite artist!\n\nSBS Inkigayo(인기가요) is a Korean music program \nbroadcast by SBS.  \n\n☞ 'SBS Inkigayo' official website : http://goo.gl/4FPb / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-w8DkGVnlWQw",
+      "publisher": "공식 방송영상",
+      "title": "I Can See Your Voice 2 신혜성, 너목보의 새로운 신화창조?! 160107 EP.12 - YouTube / 2016년에도 이어지는 너목보의 신화!\n신화의 퍼펙트맨 신혜성이 너목보를 찾았다!\n\n과연 신혜성과 새로운 듀엣신화를 이",
+      "url": "https://www.youtube.com/watch?v=w8DkGVnlWQw",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "I Can See Your Voice 2 신혜성, 너목보의 새로운 신화창조?! 160107 EP.12 - YouTube / 2016년에도 이어지는 너목보의 신화!\n신화의 퍼펙트맨 신혜성이 너목보를 찾았다!\n\n과연 신혜성과 새로운 듀엣신화를 이룰 미스터리 싱어는 누구?!\n\n대반전음악추리쇼 Mnet 너의목소리가보여 시즌2 \n매주 목요일 밤 9시40분 Mnet / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-uYyT0wlBtWk",
+      "publisher": "공식 방송영상",
+      "title": "(Weeklyidol EP.237) Shin Hye-sung and Andy Random Play Dance Battle Part1 - YouTube / (Weeklyidol EP.237) Shin Hye-sung and Andy Random",
+      "url": "https://www.youtube.com/watch?v=uYyT0wlBtWk",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "(Weeklyidol EP.237) Shin Hye-sung and Andy Random Play Dance Battle Part1 - YouTube / (Weeklyidol EP.237) Shin Hye-sung and Andy Random Play Dance Battle Part1 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-Ozmvju7-nuA",
+      "publisher": "공식 방송영상",
+      "title": "초유의 사태♨ 춤 담당 전진 ☞ 메.보 신혜성에게 춤추라고 오더(!) 아이돌룸(idolroom) Ep.2 | JTBC 180519 방송 - YouTube / 초유의 사태♨ 춤 담당 전진 ☞ 메.보 신혜성에게 춤추라고 오더(!)\n#아이돌룸 #i",
+      "url": "https://www.youtube.com/watch?v=Ozmvju7-nuA",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "초유의 사태♨ 춤 담당 전진 ☞ 메.보 신혜성에게 춤추라고 오더(!) 아이돌룸(idolroom) Ep.2 | JTBC 180519 방송 - YouTube / 초유의 사태♨ 춤 담당 전진 ☞ 메.보 신혜성에게 춤추라고 오더(!)\n#아이돌룸 #idolroom #신화 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-jEsNPzSV1NA",
+      "publisher": "공식 방송영상",
+      "title": "1박 2일 - 1박 2일 X 신화 특집 3탄 저녁 복불복 타임! 20180819 - YouTube / 1박 2일 - 1박 2일 X 신화 특집 3탄 저녁 복불복 타임!\n콘텐츠 생성 방식\n자동 더빙\n일부 언어의 오디오 트랙이 자동으로 생성되었습니",
+      "url": "https://www.youtube.com/watch?v=jEsNPzSV1NA",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "1박 2일 - 1박 2일 X 신화 특집 3탄 저녁 복불복 타임! 20180819 - YouTube / 1박 2일 - 1박 2일 X 신화 특집 3탄 저녁 복불복 타임!\n콘텐츠 생성 방식\n자동 더빙\n일부 언어의 오디오 트랙이 자동으로 생성되었습니다. 자세히 알아보기 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A32",
+      "publisher": "당시 언론 보도",
+      "title": "2017년11월3~5일 Serenity Night HS CAMP 실제개최·미니콘서트 보도",
+      "url": "https://www.tenasia.co.kr/article/2017110697144",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년11월3~5일 Serenity Night HS CAMP 실제개최·미니콘서트 보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A36",
+      "publisher": "당시 언론 보도",
+      "title": "2017년2월4일 타이베이남강전람관 실제공연 현장보도",
+      "url": "https://www.cna.com.tw/news/amov/201702040252.aspx",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년2월4일 타이베이남강전람관 실제공연 현장보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A37",
+      "publisher": "당시 언론 보도",
+      "title": "2018년10월13일 타이베이아레나 신화20주년실제공연 현장보도",
+      "url": "https://www.koreastardaily.com/tc/news/110238",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년10월13일 타이베이아레나 신화20주년실제공연 현장보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A38",
+      "publisher": "공식 주최사 행사 안내",
+      "title": "주최사공식예매자료 2018년10월13일18:30 타이베이아레나 공연예정",
+      "url": "https://jslive.kktix.cc/events/shinhwa-grew3qh",
+      "kind": "해외 주최사 공식 예매공지 · 본문 직접 확인",
+      "note": "주최사공식예매자료 2018년10월13일18:30 타이베이아레나 공연예정 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-jj1Wb2f6-8g",
+      "publisher": "공식 방송영상",
+      "title": "뮤직뱅크 Music Bank - INTRO & THIS LOVE - 신화.20180629 - YouTube / 뮤직뱅크 Music Bank - INTRO & THIS LOVE - 신화.20180629\nKBS2 TV 뮤직뱅크｜매주 금요일 오후 ",
+      "url": "https://www.youtube.com/watch?v=jj1Wb2f6-8g",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "뮤직뱅크 Music Bank - INTRO & THIS LOVE - 신화.20180629 - YouTube / 뮤직뱅크 Music Bank - INTRO & THIS LOVE - 신화.20180629\nKBS2 TV 뮤직뱅크｜매주 금요일 오후 5시에 방송됩니다.\nKBS Kpop\n구독자 1040만명\n동영상\n정보\nStudioK Official Twitter\nINSTAGRAM\n뮤직뱅크 [Music Bank]\n돌박이일 [IDOL 1N2D]\n아이돌인간극장[K-dol Docu Series]\n리무진서비스 [Leemujin Service]\nMusic Bank Full Cam\nMusic Bank Individual cam\n간략히 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-Y-ZC-gOiXjUEk",
+      "publisher": "공식 방송영상",
+      "title": "[Korean Music Wave] SHINHWA - This Love, 신화- This Love, DMC Festival 2018 - YouTube / [Korean Music Wave] SHINHWA - This Love, 신화- This",
+      "url": "https://www.youtube.com/watch?v=ZC-gOiXjUEk",
+      "kind": "공식 영상 · 원문 메타데이터 직접 확인·전체 재생검수 아님",
+      "note": "[Korean Music Wave] SHINHWA - This Love, 신화- This Love, DMC Festival 2018 - YouTube / [Korean Music Wave] SHINHWA - This Love, 신화- This Love, DMC Festival 2018 / 확인 한계: 메타데이터 확인. 전체 장면 재생검수 아님;업로드일은 활동일과 구분 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A39",
+      "publisher": "당시 언론 보도",
+      "title": "2017년1월15일 SBS인기가요 TOUCH1위 실제수상",
+      "url": "https://www.starnewskorea.com/music/2017/01/15/2017011512261878437",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년1월15일 SBS인기가요 TOUCH1위 실제수상 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A40",
+      "publisher": "당시 언론 보도",
+      "title": "2017년1월22일 SBS인기가요 TOUCH2주연속1위 실제수상",
+      "url": "https://www.starnewskorea.com/music/2017/01/22/2017012212573377043",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년1월22일 SBS인기가요 TOUCH2주연속1위 실제수상 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A44",
+      "publisher": "당시 언론 보도",
+      "title": "2018년9월9일 현대시티아울렛동대문1층선큰광장 신화팬사인회 실제개최",
+      "url": "https://v.daum.net/v/20180909195934321?f=m",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년9월9일 현대시티아울렛동대문1층선큰광장 신화팬사인회 실제개최 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A46",
+      "publisher": "당시 언론 보도",
+      "title": "2017년1월12일 해피투게더3 신화6인 실제방송 보도",
+      "url": "https://www.newspim.com/news/view/20170113000041",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년1월12일 해피투게더3 신화6인 실제방송 보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A47",
+      "publisher": "당시 언론 보도",
+      "title": "2018년8월28일 HEART기자간담회·음원발표·6곡 앨범정보 확인",
+      "url": "https://www.yna.co.kr/view/AKR20180828154851005",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년8월28일 HEART기자간담회·음원발표·6곡 앨범정보 확인 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A48",
+      "publisher": "당시 언론 보도",
+      "title": "2018년3월24~25일 신화20주년팬파티 실제개최·올림픽공원SK핸드볼경기장",
+      "url": "https://www.xportsnews.com/article/956774",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년3월24~25일 신화20주년팬파티 실제개최·올림픽공원SK핸드볼경기장 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A49",
+      "publisher": "당시 언론 보도",
+      "title": "2016년2월8일 전국아이돌사돈의팔촌노래자랑 신혜성·이진호 실제출연·예심탈락",
+      "url": "https://www.osen.co.kr/article/G1110350015",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016년2월8일 전국아이돌사돈의팔촌노래자랑 신혜성·이진호 실제출연·예심탈락 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A50",
+      "publisher": "당시 언론 보도",
+      "title": "KBS 공식안녕하세요2월1일 신혜성출연 예고자료",
+      "url": "https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000277745&sname=mylovekbs&source=mylovekbs&stype=magazine",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "KBS 공식안녕하세요2월1일 신혜성출연 예고자료 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A51",
+      "publisher": "당시 언론 보도",
+      "title": "2017년2월11일 부산BEXCO 신화공연 실제개최·일부곡목 확인. 실제시작시각미확인.",
+      "url": "https://www.starnewskorea.com/music/2017/02/12/2017021209480764404",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년2월11일 부산BEXCO 신화공연 실제개최·일부곡목 확인. 실제시작시각미확인. / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A52",
+      "publisher": "당시 언론 보도",
+      "title": "2018년10월7일 HEART 서울콘서트 실제개최 현장보도",
+      "url": "https://www.yna.co.kr/view/AKR20181007056000005",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년10월7일 HEART 서울콘서트 실제개최 현장보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A53",
+      "publisher": "당시 언론 보도",
+      "title": "2018년10월6~7일 HEART서울콘서트 양일 실제개최 사후보도",
+      "url": "https://www.xportsnews.com/article/1027154",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년10월6~7일 HEART서울콘서트 양일 실제개최 사후보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A02",
+      "publisher": "당시 언론 보도",
+      "title": "1월7일 오후 청담동 카페에서 신혜성 실제 인터뷰. 기사1월12일.",
+      "url": "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=A201601120313",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "1월7일 오후 청담동 카페에서 신혜성 실제 인터뷰. 기사1월12일. / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-W01",
+      "publisher": "KBS WORLD Radio",
+      "title": "KBS WORLD Radio 신혜성 인터뷰 본문,2016-02-26 게시.",
+      "url": "https://world.kbs.co.kr/service/contents_view.htm?board_code=enter_interview&board_seq=232045&id=&lang=e&menu_cate=artist&page=4",
+      "kind": "방송사 공식 인터뷰 · 웹 원문 직접 확인",
+      "note": "KBS WORLD Radio 신혜성 인터뷰 본문,2016-02-26 게시. / 확인 한계: 녹음일·최초방송일은 게시일과 동일하다고 단정하지 않음 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A01",
+      "publisher": "당시 언론 보도",
+      "title": "2016-08-24 WEEKLY DELIGHT 한정LP 및 라이브 음원19곡 발매. 공연기간2월20일~3월13일.",
+      "url": "https://www.tenasia.co.kr/article/2016082465284",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016-08-24 WEEKLY DELIGHT 한정LP 및 라이브 음원19곡 발매. 공연기간2월20일~3월13일. / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A05",
+      "publisher": "당시 언론 보도",
+      "title": "2017-09-19 23시 캐스퍼 라디오 실제 진행",
+      "url": "https://osen.co.kr/article/G1110735302",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017-09-19 23시 캐스퍼 라디오 실제 진행 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A19",
+      "publisher": "음반·DVD 판매처",
+      "title": "2017 Serenity DVD 2018년12월31일 발매일 판매처 표기 확인",
+      "url": "https://www.yes24.com/product/goods/67535595",
+      "kind": "판매처 상품정보·제작사 제공 소개 · 본문 직접 확인",
+      "note": "2017 Serenity DVD 2018년12월31일 발매일 판매처 표기 확인 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A34",
+      "publisher": "당시 언론 보도",
+      "title": "2016년11월28일 오렌지라들었SHOW 네이버V앱 실제생방송; 기사11월29일00:28",
+      "url": "https://www.starnewskorea.com/music/2016/11/29/2016112823150346629",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016년11월28일 오렌지라들었SHOW 네이버V앱 실제생방송; 기사11월29일00:28 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A35",
+      "publisher": "당시 언론 보도",
+      "title": "2018년12월10일 소속사신혜성재계약발표. 실제서명일미기재",
+      "url": "https://www.tenasia.co.kr/article/2018121094984",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2018년12월10일 소속사신혜성재계약발표. 실제서명일미기재 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A41",
+      "publisher": "당시 언론 보도",
+      "title": "2016년11월28일 MBC뉴스투데이 연예투데이 신화13집티저보도",
+      "url": "https://news.imbc.com/replay/2016/nwtoday/article/4172088_31361.html",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2016년11월28일 MBC뉴스투데이 연예투데이 신화13집티저보도 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "audit1618-source-A45",
+      "publisher": "당시 언론 보도",
+      "title": "2017년8월3일 소속사SNS Serenity 메인컨셉포토공개",
+      "url": "https://www.xportsnews.com/article/879476",
+      "kind": "당시 기사 · 본문 직접 확인",
+      "note": "2017년8월3일 소속사SNS Serenity 메인컨셉포토공개 / 원자료에 기록된 확인일: 2026-10-28"
     }
   ]
 }
