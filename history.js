@@ -548,7 +548,7 @@ function normalizeSubject(s){
 }
 function selectRows(){
  const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim().toLocaleLowerCase();
- filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||normalizeSubject(e.subject)===subject)&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||!!e.relatedVideos?.length)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
+ filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||normalizeSubject(e.subject)===subject)&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||!!e.relatedVideos?.length||!!e.fanVideoSources?.length)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
 }
 function chronologicalKey(e){
   const year=e.date.slice(0,4);
@@ -584,10 +584,22 @@ function fmt(e){
  return e.date.slice(5).replace('-','.');
 }
 function sourceWidget(e){
- const ordered=[];const seen=new Set();
+ const ordered=[];const seen=new Set(),seenYoutubeIds=new Set();
+ const youtubeId=url=>{
+   const m=String(url||'').match(/^https:\/\/(?:www\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*?&)?v=|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[&#?\/]|$)/i);
+   return m?.[1]||'';
+ };
+ const fanVideos=Array.isArray(e.fanVideoSources)?e.fanVideoSources:[];
+ const fanById=new Map(fanVideos.filter(v=>v&&youtubeId(v.url)).map(v=>[youtubeId(v.url),v]));
  const add=(label,url,kind,note)=>{
    if(!isSafeUrl(url)||seen.has(url))return;
-   seen.add(url);ordered.push({label,url,kind,note});
+   const id=youtubeId(url);
+   if(id&&seenYoutubeIds.has(id))return;
+   // Existing video references are kept once, now with their correct channel attribution.
+   const fan=id?fanById.get(id):null;
+   if(fan){label=`셩공시대님 — ${fan.title}`;kind='관련 영상 · 팬채널 참고';note=fan.note;}
+   seen.add(url);if(id)seenYoutubeIds.add(id);
+   ordered.push({label,url,kind,note});
  };
  if(e.verificationUrl){const src=[...researchSources.values()].find(x=>x.url===e.verificationUrl);add(src?`${src.publisher||'출처'} — ${src.title}`:'기사·공식 검증 출처',e.verificationUrl,src?.kind||'검증 자료',src?.note||'검증 상태와 링크가 뒷받침하는 사실을 함께 확인하세요.');}
  for(const url of e.verificationUrls||[])add('병합된 기록의 검증 출처',url,'검증 자료','병합된 개별 원문을 뒷받침하는 링크입니다.');
@@ -598,6 +610,10 @@ function sourceWidget(e){
  for(const url of [...(e.referenceVideoUrls||[]),e.referenceVideoUrl].filter(Boolean)){
    // Reference videos must be playable on YouTube, not old V LIVE or arbitrary extinct platforms.
    if(/^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(url))add('원본에 기재된 유튜브 영상',url,'원본 영상','개별 영상의 출처 기록으로, 동일 콘텐츠 검증을 의미하지 않습니다.');
+ }
+ for(const video of fanVideos){
+   if(!video||typeof video.url!=='string'||typeof video.title!=='string')continue;
+   if(youtubeId(video.url))add(`셩공시대님 — ${video.title}`,video.url,'관련 영상 · 팬채널 참고',video.note||'팬채널의 영상 표제 기반 참고자료이며 실제 방송일은 별도 검증이 필요합니다.');
  }
  const status=String(e.verification||'독립 검증 전');
  const note=String(e.sourceNote||'');
@@ -812,14 +828,14 @@ function renderCalendar(){
   for(let i=0;i<firstDay;i++)cells.push('<div class="cal-blank" aria-hidden="true"></div>');
   for(let d=1;d<=daysInMonth;d++){
     const dayDate=`${calendarMonth}-${pad2(d)}`,items=grouped.get(d)||[];
-    const hasVideo=items.some(e=>recommendedLinks(e).length);
+    const hasVideo=items.some(e=>recommendedLinks(e).length||e.fanVideoSources?.length);
     const isSelected=selectedCalendarDate===dayDate;
     const note=items.length?`${items.length}건의 일정${hasVideo?', 관련 영상 있음':''}`:'등록 일정 없음';
     cells.push(`<button type="button" class="cal-day${items.length?' has-events':''}${isSelected?' is-selected':''}" data-date="${dayDate}" aria-label="${y}년 ${m}월 ${d}일, ${note}" aria-pressed="${isSelected}"><span class="cal-day-number">${d}</span>${items.length?`<span class="cal-day-count">${items.length}건</span>`:''}${hasVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
   }
   // The undated tile is always appended immediately after the final numbered day.
   const unknownSelected=selectedCalendarDate===unknownKey;
-  const hasUnknownVideo=dateUnknownEvents.some(e=>recommendedLinks(e).length);
+  const hasUnknownVideo=dateUnknownEvents.some(e=>recommendedLinks(e).length||e.fanVideoSources?.length);
   cells.push(`<button type="button" class="cal-day cal-day-unknown${dateUnknownEvents.length?' has-events':''}${unknownSelected?' is-selected':''}" data-date="${unknownKey}" aria-label="${y}년 ${m}월 날짜 미상, ${dateUnknownEvents.length}건" aria-pressed="${unknownSelected}"><span class="cal-day-number">날짜 미상</span><span class="cal-day-count">${dateUnknownEvents.length}건</span>${hasUnknownVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
   const selected=unknownSelected?dateUnknownEvents:(selectedCalendarDate?grouped.get(Number(selectedCalendarDate.slice(8)))||[]:[]);
   const selectedLabel=unknownSelected?`${y}년 ${m}월 날짜 미상${m===12&&yearUnknownEvents.length?' (연도만 확인된 기록 포함)':''}`:(selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`);
