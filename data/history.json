@@ -7,7 +7,7 @@
     "newIndependentlySourcedEvents": 63,
     "dateRule": "원문 연월일 유지. 월만 아는 항목은 day가 아닌 month로 표시.",
     "subjectRule": "신화 전체 또는 신혜성 참여 활동만; 타 멤버 단독 활동 제외",
-    "videoRule": "현재 영상 아카이브 설명에 기재된 날짜·방송명·회차를 참고 후보로 대조. 기존 일정에 원본 영상 ID를 연결하고, 미등재 일정은 원본 출처를 가진 독립 검증 전 연혁으로 구분하여 추가. 날짜만 일치하는 서로 다른 방송은 별개 행사로 취급. 기사 독립 검증과 구별.",
+    "videoRule": "현재 영상 아카이브 설명에 기재된 날짜·방송명·회차를 참고 후보로 대조. 기존 일정에 원본 영상 ID를 연결하고, 미등재 일정은 원본 출처를 가진 독립 검증 전 연혁으로 구분하여 추가. 날짜만 일치하는 서로 다른 방송은 별개 행사로 취급. 기사 독립 검증과 구별. v54: 날짜가 영상 표제에 있는 자료는 정식 방송 편성 독립 확인이 없더라도 표제 기반 등급을 명시해 별도 일정으로 등록할 수 있으며, 프로그램 자체·방송일·촬영일·공연일을 혼동하지 않습니다.",
     "sources": [
       "사용자 제공 엑셀: 신화_신혜성_활동연표_통합검토본.xlsx",
       "사용자 제공 중국어 활동 연표 두 건",
@@ -15,12 +15,12 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 878,
-      "chapter2": 929,
-      "chapter3": 572,
+      "chapter1": 917,
+      "chapter2": 938,
+      "chapter3": 588,
       "chapter4": 74
     },
-    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음.",
+    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음. 2026.10.27 v54: 팬영상 표제 기반 신규 기록은 독립 방송 회차가 확인된 것을 의미하지 않습니다. 사용자 직접시청 확인은 독립 당시 보도와 구분합니다. 2013~2015 신규 조사 17건 중 v53 중복 2건을 제외한 자료와 기존 보류일정을 병합하였으며 방송기간 충돌 후보는 계속 보류합니다.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
     "visibleEvents": 2453,
     "excludedFromPublicTimeline": [
@@ -910,6 +910,22 @@
         "인기가요 구미"
       ],
       "note": "2002-07-05 00:16 신화창조 6기 임원 출처의 일정 변경 공지: 7/5 KBS 뮤직플러스, 7/6 FRJ 포항 팬사인회 및 잠실학생체육관 전국휠체어농구대회(15시 예정)의 신화 특별 일정이 모두 취소됐다고 명시. 7/7 구미 인기가요 일정은 유지. 이는 대회 자체 취소를 뜻하지 않으며, 대회에서 신화가 다른 날짜에 출연했다는 사후 자료가 확보된 것은 아님. 출처 이미지 60714.jpg.",
+      "urls": []
+    },
+    {
+      "id": "audit54:2026-10-27:ambiguous-program-broadcasts",
+      "dates": [
+        "2004-10-08",
+        "2004-10-22",
+        "2004-11-12",
+        "2002-08-30"
+      ],
+      "keywords": [
+        "Showcumentary The Show",
+        "부산아시안게임 D-30",
+        "2001 D-365"
+      ],
+      "note": "Mnet Showcumentary The Show 방송기간 색인과 팬영상 2004.10~11 표제가 충돌하므로 정확한 회차 확인 전까지 신규 확정하지 않음. 2002.08.30 기념공연 영상은 2001.09.27 부산아시안게임 D-365 행사와 동일한지 미확정. v54 신규등록에서 제외.",
       "urls": []
     }
   ],
@@ -6247,7 +6263,7 @@
       "source": "기존 활동 연표",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n[v31 잡지 원문 근거] TEENSTAR 2000년 1월호 및 ILOVESTAR 2000년 1월호에 1999년 11월 20일 올림픽체조경기장 SM 페스티벌 신화 출연 취재. 같은 날짜 분당 수험생 미니콘서트와 장소가 다름. 스캔 IMG05·IMG01.\n잡지 기사 발췌: 당시 잡지 기사에서 1999.11.20 SM 합동 공연 현장 취재 보강. 공연장 표기는 출처 간 차이가 있어 자동 정정하지 않음.\n[2026-10-26 12차 누적 검수] 1999.11.09 동아일보는 고유 행사명을 SM 페스티벌로 명시하고, 노래박물관 기금 모금 취지를 설명. 잡지 사후 현장 기록과 결합. 체조경기장/제2체육관의 장소 표기 충돌은 유보.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n[v31 잡지 원문 근거] TEENSTAR 2000년 1월호 및 ILOVESTAR 2000년 1월호에 1999년 11월 20일 올림픽체조경기장 SM 페스티벌 신화 출연 취재. 같은 날짜 분당 수험생 미니콘서트와 장소가 다름. 스캔 IMG05·IMG01.\n잡지 기사 발췌: 당시 잡지 기사에서 1999.11.20 SM 합동 공연 현장 취재 보강. 공연장 표기는 출처 간 차이가 있어 자동 정정하지 않음.\n[2026-10-26 12차 누적 검수] 1999.11.09 동아일보는 고유 행사명을 SM 페스티벌로 명시하고, 노래박물관 기금 모금 취지를 설명. 잡지 사후 현장 기록과 결합. 체조경기장/제2체육관의 장소 표기 충돌은 유보.\n[v54 근거 보강] 사용자가 당시 잡지에서 1999.11.20 SM 페스티벌 공연임을 확인했다고 제보. 세 영상은 그 공연 관련으로 연결하되, 각 원본 장면 독립 검사 전임. 1999.10.31 행사와 병합하지 않음.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0036",
       "verificationUrl": "https://www.donga.com/news/Culture/article/all/19991109/7483528/9",
@@ -6274,6 +6290,24 @@
           "title": "[직캠] 19991120 - 신화 - TOP + YO  (volume up, plz)",
           "videoId": "BWTLmwedxU8",
           "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=EZHh6Cs_eG0",
+          "title": "[직캠/저화질주의] 1999 SM페스티벌 — 신화 YO 다른 각도",
+          "videoId": "EZHh6Cs_eG0",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Lo2eL0OPywA",
+          "title": "[직캠] 1999 신화 — YO",
+          "videoId": "Lo2eL0OPywA",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4S7fjhKqqZ8",
+          "title": "[직캠] 1999 신화 — 소망 Live.ver",
+          "videoId": "4S7fjhKqqZ8",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
         }
       ]
     },
@@ -16434,7 +16468,7 @@
       "source": "영상 아카이브 설명",
       "sourceUrl": "https://www.youtube.com/watch?v=bLH3XYKd-i4",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=bLH3XYKd-i4",
-      "sourceNote": "아카이브 영상 설명에 기재된 날짜와 활동명 기준. 방송·행사 원문을 통한 독립 검증 전. 010927 부산 아시안게임 d-365 기념 음악회",
+      "sourceNote": "아카이브 영상 설명에 기재된 날짜와 활동명 기준. 방송·행사 원문을 통한 독립 검증 전. 010927 부산 아시안게임 d-365 기념 음악회\n[v54 근거 보강] 부산시 역사 기록상 2001.09.27 아시안게임 D-365 선포식/기념음악회 개최가 확인됨. 2002.08.30 공연 표기 영상과 동일 행사라고 단정하지 않음.",
       "dateKind": "영상 설명에 기재된 방송·활동일(독립 검증 전)",
       "sourceRecord": "archive:description:20261024",
       "archiveVideoIds": [
@@ -19143,7 +19177,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=918881741&range=A84:D84",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "[v54 근거 보강] 2002.04.20 프로그램명이 드림콘서트여도 2000년 iTV 특집과 다른 행사이므로 합치지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "02!84",
       "verificationUrl": null,
@@ -19852,7 +19886,7 @@
       "source": "RBB TODAY(2002.05.24·06.20) 및 당시 잡지(스캔 0713)",
       "sourceUrl": "https://www.rbbtoday.com/article/2002/05/24/7369.html",
       "referenceVideoUrl": null,
-      "sourceNote": "2002년 5월 22일 일본 도쿄 롯폰기 velfarre에서 신화 팬미팅과 공연 개최. 당시 일본 RBB TODAY의 사후 기사 2건과 잡지 원문 0713이 교차 확인. 6월 6일 인터넷 상영·6월 20일 재상영은 공연 당일이 아님. 기존 5월 22일 Mnet Showking의 별개 방송기록과 통합하지 않음. 관리자 보류 후보 new2002:japan-fanmeeting-0522 검증 승격 후 첫 사이트 반영.",
+      "sourceNote": "2002년 5월 22일 일본 도쿄 롯폰기 velfarre에서 신화 팬미팅과 공연 개최. 당시 일본 RBB TODAY의 사후 기사 2건과 잡지 원문 0713이 교차 확인. 6월 6일 인터넷 상영·6월 20일 재상영은 공연 당일이 아님. 기존 5월 22일 Mnet Showking의 별개 방송기록과 통합하지 않음. 관리자 보류 후보 new2002:japan-fanmeeting-0522 검증 승격 후 첫 사이트 반영.\n[v54 근거 보강] 2002.05.24 일본 RBB TODAY 사후 기사에서 5월22일 도쿄 팬미팅 개최 확인.",
       "dateKind": "현지 행사 실제 개최일",
       "sourceRecord": "new2002:japan-fanmeeting-0522",
       "verificationUrl": "https://www.rbbtoday.com/article/2002/06/20/7643.html",
@@ -19860,7 +19894,10 @@
         "mag20261025-rbb-0524",
         "mag20261025-rbb-0620"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.rbbtoday.com/article/2002/05/24/7369.html"
+      ]
     },
     {
       "id": "sheet:02!136",
@@ -20839,7 +20876,7 @@
       "source": "당시 신문 기사",
       "sourceUrl": "https://web.archive.org/web/20220205145617/https%3A//news.naver.com/main/read.naver?aid=0000025958&mid=sec&mode=LSD&oid=014&sid1=111",
       "referenceVideoUrl": null,
-      "sourceNote": "2002년 7월 27일 서울 올림픽공원 펜싱경기장에서 열린 사랑나눔 콘서트에 신화가 출연했습니다.",
+      "sourceNote": "2002년 7월 27일 서울 올림픽공원 펜싱경기장에서 열린 사랑나눔 콘서트에 신화가 출연했습니다.\n[v54 근거 보강] 2002.07.27 사랑나눔콘서트 사후·예고 기사와 셩공시대님 채널 〈너의 사랑 안에〉 현장 영상 연결. 공연일과 후속 방송일은 별개.",
       "dateKind": "공연 개최일",
       "sourceRecord": "v36:2002-07-27:nongshim-love-concert",
       "verificationUrl": "https://web.archive.org/web/20220205145617/https%3A//news.naver.com/main/read.naver?aid=0000025958&mid=sec&mode=LSD&oid=014&sid1=111",
@@ -20847,7 +20884,18 @@
         "v36-2002-s32",
         "v36-2002-s33"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.khan.co.kr/culture/popular_music/article/200207251941391"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=1bplxK8zAEo",
+          "title": "[직캠] 2002 사랑나눔콘서트 — 신화 너의 사랑 안에",
+          "videoId": "1bplxK8zAEo",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:02!227",
@@ -21278,7 +21326,7 @@
       "source": "사용자 제공 2002년 당시 팬 일정·방송 모니터(2026-10-26)",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "당시 팬 일정: 11/16 오후 5시 KBS88체육관 합동 생일파티. 후속 EtN 인사이드 스토리 11/25 방송과 11/23 주간 하이라이트에서 행사 장면을 소개했다는 자료. 직접 원영상 시청은 별도 필요.",
+      "sourceNote": "당시 팬 일정: 11/16 오후 5시 KBS88체육관 합동 생일파티. 후속 EtN 인사이드 스토리 11/25 방송과 11/23 주간 하이라이트에서 행사 장면을 소개했다는 자료. 직접 원영상 시청은 별도 필요.\n[v54 근거 보강] 셩공시대님 2002 완셩생파 영상 연결. 합동 생일파티 동일성은 제목 대조 기준이며 공연 원영상 확인 전.",
       "dateKind": "당시 팬 기록상 녹화·현장 활동일",
       "sourceRecord": "38차 누적조사",
       "verificationUrl": null,
@@ -21308,6 +21356,12 @@
           "title": "[공식/판당고] 20021116 신혜성+김동완 생일 파티 비하인드 4",
           "videoId": "VJA-2Xi-hZQ",
           "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=MI3dw278k4w",
+          "title": "[직캠] 2002 완셩생파",
+          "videoId": "MI3dw278k4w",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
         }
       ]
     },
@@ -52109,7 +52163,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1494974739&range=A4:D4",
       "referenceVideoUrl": null,
-      "sourceNote": "2026.10.27 보강: 2013.01.02 당시 기사에서 신혜성의 MBC MUSIC 《리얼 모던 콘서트》 출연 및 1월 2일 밤 12시 편성을 확인. 자정은 1월 3일 0시로 표기될 수 있으므로 기존 연혁의 1월 2일 기록은 무단 이동하지 않고 1월 3일 팬영상은 같은 방송의 추가 참고로 연결함. 취재 기사: https://www.etoday.co.kr/news/view/672240 (2013.01.02 당시 기사).",
+      "sourceNote": "2026.10.27 보강: 2013.01.02 당시 기사에서 신혜성의 MBC MUSIC 《리얼 모던 콘서트》 출연 및 1월 2일 밤 12시 편성을 확인. 자정은 1월 3일 0시로 표기될 수 있으므로 기존 연혁의 1월 2일 기록은 무단 이동하지 않고 1월 3일 팬영상은 같은 방송의 추가 참고로 연결함. 취재 기사: https://www.etoday.co.kr/news/view/672240 (2013.01.02 당시 기사).\n[v54 근거 보강] 2013.01.02 밤12시(1월3일 0시) 심야 방송 편성 표기와 1월3일 팬영상 제목은 같은 리모콘 방송의 날짜 차이 가능성. 별도 신규 일정으로 만들지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "13!4",
       "verificationUrl": null,
@@ -52122,6 +52176,9 @@
           "videoId": "uaVpmh1sXrM",
           "note": "2013.01.03으로 표기된 《Real Modern Concert》 팬채널 영상. 기사 편성 표기와 날짜 경계가 다른 것으로 보고 기존 1월 2일 일정에 보강합니다. 실제 영상 송출일 재검증 전."
         }
+      ],
+      "sourceUrls": [
+        "https://www.etoday.co.kr/news/view/673440"
       ]
     },
     {
@@ -54188,12 +54245,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=124142343&range=A65:D65",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "[v54 근거 보강] 2013~2015 재조사: 대만 한국문화관광대전 추가 곡 보강. 상태 원문 미확보. 미확정 사항: 원문404. 검색색인 확인만, 곡 추가 확정 전.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "14!65",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://tw.news.yahoo.com/神話-申彗星來了-韓國文化觀光綜合展開幕-人潮擠爆-054406402.html"
+      ]
     },
     {
       "id": "sheet:14!68",
@@ -55995,7 +56055,7 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=935724846&range=A101:D101",
       "referenceVideoUrl": "http://tv.naver.com/v/489670",
-      "sourceNote": "",
+      "sourceNote": "[v54 근거 보강] 2013~2015 재조사: Mnet Feelz in LA 방송과 실제공연 연결. 상태 일부 확인·방송예정 보도. 미확정 사항: 8월2일 현지공연→8월13일 방송예정. 서로 날짜가 다르다고 중복삭제하지 않음.\n[v54 근거 보강] 2015.08.02 미국 LA KCON 실제 공연과 2015.08.13 국내 Mnet 방송 편성은 다른 날짜의 별도 활동. 관련 공식 공연·현지 후기를 근거로 연결.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "15!101",
       "verificationUrl": null,
@@ -56004,6 +56064,11 @@
       "archiveVideoIds": [
         "WhVGSGzO1S4",
         "oiUYYImJN4Q"
+      ],
+      "sourceUrls": [
+        "https://kconusa.com/historybk/kcon15la/",
+        "https://www.tenasia.co.kr/article/2015081037134",
+        "https://navicon.jp/news/31940/"
       ]
     },
     {
@@ -56114,12 +56179,15 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=935724846&range=A148:D148",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "[v54 근거 보강] 2013~2015 재조사: 일본 TEN X TEN Party 장소·2회 예정 보강. 상태 일부 확인·공식 제공 예정기사. 미확정 사항: 마쿠하리메세 이벤트홀14시/18시 예정.2개 신규행으로 늘리지 않음.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "15!148",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.koari.net/entertainment/18719/"
+      ]
     },
     {
       "id": "namucheck:2015-10-13-superidol-end",
@@ -66341,7 +66409,7 @@
       "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
       "sourceUrl": "https://zetawiki.com/wiki/%EC%97%B4%EB%A6%B0%EC%9D%8C%EC%95%85%ED%9A%8C%EC%9D%98_%EC%97%90%ED%94%BC%EC%86%8C%EB%93%9C_%EB%AA%A9%EB%A1%9D",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=EdaHSFKTDPg",
-      "sourceNote": "1040회 방송일을 2014.11.23으로 표기한 방송목록과 S(강타·신혜성·이지훈) 출연자 기록, 팬영상 「멘트+I Swear」 제목을 대조했습니다. 녹화일 또는 개별 무대곡의 공식 확인으로 확대하지 않습니다.",
+      "sourceNote": "1040회 방송일을 2014.11.23으로 표기한 방송목록과 S(강타·신혜성·이지훈) 출연자 기록, 팬영상 「멘트+I Swear」 제목을 대조했습니다. 녹화일 또는 개별 무대곡의 공식 확인으로 확대하지 않습니다.\n[v54 근거 보강] 2013~2015 추가 조사에서 audit1315:015와 중복 확인. 공식 회차와 실제 가창자 교차검증 필요. 독립검증 완료 아님.",
       "dateKind": "2014.11.23 방송 회차일(녹화일 아님)",
       "sourceRecord": "2026-10-27 v53 조사 통합 / EdaHSFKTDPg",
       "sourceRefs": [
@@ -66374,7 +66442,7 @@
       "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
       "sourceUrl": "https://www.tenasia.co.kr/article/2015111725214",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=1QTg1vxAGXA",
-      "sourceNote": "텐아시아 2015.11.17 기사에 신혜성이 16일 네이버 V앱으로 첫 번째 셩타임을 생중계하고 전진 댓글에 반응한 내용 확인. 팬채널 영상은 재게시 자료이며 최초 공개일과는 구분합니다.",
+      "sourceNote": "텐아시아 2015.11.17 기사에 신혜성이 16일 네이버 V앱으로 첫 번째 셩타임을 생중계하고 전진 댓글에 반응한 내용 확인. 팬채널 영상은 재게시 자료이며 최초 공개일과는 구분합니다.\n[v54 근거 보강] 2013~2015 추가 조사에서 audit1315:019와 중복 확인. 16일 실제출연은 당시기사 직접확인.첫번째 셩타임 세부제목은 팬아카이브 단서.곡/전체내용 미확인.",
       "dateKind": "2015.11.16 생방송일",
       "sourceRecord": "2026-10-27 v53 조사 통합 / 1QTg1vxAGXA",
       "sourceRefs": [
@@ -66392,6 +66460,9 @@
       ],
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=1QTg1vxAGXA"
+      ],
+      "sourceUrls": [
+        "https://sports.donga.com/ent/article/all/20151116/74816681/2"
       ]
     },
     {
@@ -66725,6 +66796,1893 @@
         "https://www.youtube.com/watch?v=nXEKWZlNsGc",
         "https://www.youtube.com/watch?v=1J1fHzV5Ny8",
         "https://www.youtube.com/watch?v=O3TLCMUnfjs"
+      ]
+    },
+    {
+      "id": "audit54:1999-06-05:sbs-hunger-24h",
+      "date": "1999-06-05",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "SBS 《기아체험 24시간》 신화 인터뷰·〈T.O.P〉 (6월 5~6일 방송)",
+      "verification": "당시 방송 기간 독립 확인·신화 출연 팬영상/사용자 확인",
+      "source": "1999.05.31 서울신문 당시 편성 기사 + 셩공시대님 팬영상 + 사용자 직접 시청 증언",
+      "sourceUrl": "https://www.seoul.co.kr/news/1999/05/31/19990531017001",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=oQX0ivzC9ZA",
+      "sourceNote": "1999.06.05~06 방송 기간과 4부 편성은 당시 기사 확인. 신화의 인터뷰·T.O.P 장면은 셩공시대님 영상 및 사용자 직접 시청 진술에 근거. 4부 중 정확한 출연 시각·현장 촬영일은 확인되지 않음.",
+      "dateKind": "방송 기간 시작일(1999.06.05~06)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.seoul.co.kr/news/1999/05/31/19990531017001",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=oQX0ivzC9ZA",
+        "https://www.youtube.com/watch?v=xrQV3drafOE"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=oQX0ivzC9ZA",
+          "title": "[방송] 1999 기아체험 24시간 — 신화 관련 영상 1",
+          "videoId": "oQX0ivzC9ZA",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=xrQV3drafOE",
+          "title": "[방송] 1999 기아체험 24시간 — 신화 관련 영상 2",
+          "videoId": "xrQV3drafOE",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:1999-06-05:mbc-environment-concert",
+      "date": "1999-06-05",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "MBC 《세계 환경의 날 콘서트》 — 신화 출연",
+      "verification": "2차 편성자료 + 영상/사용자 직접 확인·방송 원본 대조 전",
+      "source": "1999년 MBC 프로그램 편성 자료(2차) + 셩공시대님 영상 + 사용자 직접 시청 증언",
+      "sourceUrl": "https://www.namu.moe/w/MBC%20TV/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/1999%EB%85%84",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=JaeKmx8KMeM",
+      "sourceNote": "1999.06.05 편성 목록과 팬영상 〈T.O.P〉 및 사용자 시청 증언을 대조. 공연 개최일/녹화일과 방송일은 별도 확인되지 않음.",
+      "dateKind": "1999.06.05 편성자료상 방송일(공연일 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.namu.moe/w/MBC%20TV/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/1999%EB%85%84",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=JaeKmx8KMeM"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=JaeKmx8KMeM",
+          "title": "[방송] MBC 세계 환경의 날 콘서트 — 신화 〈T.O.P〉",
+          "videoId": "JaeKmx8KMeM",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:2000-10-27:itv-love-dream-concert",
+      "date": "2000-10-27",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "iTV 《H.O.T와 함께하는 2000 사랑의 드림콘서트》 — 신화 〈All Your Dreams〉",
+      "verification": "2000.10.27 2차 편성 기록·영상 제목 대조 / 방송 원본 미확보",
+      "source": "iTV 특집 편성 2차 자료 + 보아 활동 아카이브 + 셩공시대님 영상 + 사용자 지정 등록",
+      "sourceUrl": "https://www.namu.moe/w/iTV/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/2000%EB%85%84",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=5PoblTKoumo",
+      "sourceNote": "2000.10.27은 iTV 특집 방송일 후보로 등록. 보아 활동 아카이브에 2000.10.27·10.31 같은 iTV 행사명이 기재되나 신화 영상의 정확한 송출 회차 일치까지 입증한 것은 아님. 2000.05.20 일반 드림콘서트와 별도 프로그램. 신화 장면은 팬영상 제목으로 확인; 방송사 공식 편성 원본, 실제 공연 개최일과 장소, 해당 영상의 방송 회차 일치는 미확정.",
+      "dateKind": "2000.10.27 iTV 특집 방송일 후보(공연일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.namu.moe/w/iTV/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/2000%EB%85%84",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://boa-timemachine.com/song/id-peace-b"
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=5PoblTKoumo"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=5PoblTKoumo",
+          "title": "[방송] 2000 iTV Dream Concert — 신화 〈All Your Dreams〉",
+          "videoId": "5PoblTKoumo",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:2001-08-10:mnet-showking-m",
+      "date": "2001-08-10",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet 《여름특집 ShowKing m》 — 신화 〈Hey, Come On〉",
+      "verification": "당시 신문 편성·신화 곡명 확인 / 공연 개최일 미확정",
+      "source": "2001.08.10 매일경제 당시 방송 예고 + 팬영상",
+      "sourceUrl": "https://www.mk.co.kr/news/etc/11619624",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=B7rLlTWsJ7w",
+      "sourceNote": "당시 신문 편성 기사에 8월10일 오후10시 Mnet 야외콘서트 실황 방송과 신화 〈Hey, Come On〉가 기재. 공연 현장의 실제 개최일은 8월10일로 확정되지 않음. 팬제목에 등장하는 Wild Eyes는 해당 방송 송출곡으로 별도 미확인.",
+      "dateKind": "2001.08.10 방송 예정일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.mk.co.kr/news/etc/11619624",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=B7rLlTWsJ7w"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=B7rLlTWsJ7w",
+          "title": "[방송] 20010810 Mnet ShowKing m — 신화",
+          "videoId": "B7rLlTWsJ7w",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:2002-03-27:true-concert",
+      "date": "2002-03-27",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공연",
+      "subject": "신화 전체",
+      "title": "《진짜 친구가 되자》 2002 True 콘서트 — 신화 출연 예정·현장영상",
+      "verification": "당시 행사·출연 사전예고 + 날짜 팬영상 / 사후 독립검증 전",
+      "source": "머니투데이 2002.03.12 공연 사전예고 + 셩공시대님 현장 영상",
+      "sourceUrl": "https://web.archive.org/web/20220203143534/https://news.naver.com/main/read.naver?aid=0000148747&mid=sec&mode=LSD&oid=008&sid1=101",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=QV3MlmN-vng",
+      "sourceNote": "2002.03.27 오후7시30분 서울 잠실 올림픽주경기장에서 두루넷·MBC 고객 사은 공연 개최 예정, 신화 출연 예정. 팬영상 2개에 동일 행사일 표기. 공식 사후 공연 성료 보도나 영상 배경 직접 대조는 미확보.",
+      "dateKind": "2002.03.27 행사 예고일(실제 성료 별도 검증 전)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://web.archive.org/web/20220203143534/https://news.naver.com/main/read.naver?aid=0000148747&mid=sec&mode=LSD&oid=008&sid1=101",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=QV3MlmN-vng",
+        "https://www.youtube.com/watch?v=twlwyhcSQ8o"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=QV3MlmN-vng",
+          "title": "[직캠] 20020327 True 콘서트 관련 영상 1",
+          "videoId": "QV3MlmN-vng",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=twlwyhcSQ8o",
+          "title": "[직캠] 20020327 True 콘서트 관련 영상 2",
+          "videoId": "twlwyhcSQ8o",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:2001-12-06:sm-china-press-seoul",
+      "date": "2001-12-06",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "기자회견",
+      "subject": "신화 관련(SM 공연)",
+      "title": "SM 《Live in China》 개최 서울 기자회견 — 신화 관련 영상",
+      "verification": "당시 행사 개최 보도·신화 참석 독립 확인 전",
+      "source": "2001.12.06 연합뉴스 당시 기자회견 보도 + SM 판당고 공식 영상 제목",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=-mG77ES16kE",
+      "sourceNote": "2001.12.06 서울 조선호텔 SM 중국 공연 개최 기자회견은 당시 기사에 명시. 중국 베이징·상하이에서 열린 12월4~5일 기자회견과 별개. 신화 각 멤버가 서울 기자회견에 실제 참석했는지는 판당고 원본 화면을 직접 확인하지 않아 미확정.",
+      "dateKind": "2001.12.06 서울 기자회견 개최일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=-mG77ES16kE"
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-08-22:27",
+      "date": "2001-08-22",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "kmtv 생Q - 신화 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=T6jJ_l9bQUU",
+      "sourceNote": "원본 영상 제목: [방송] 20010822 kmtv 생Q - 신화. 날짜 2001-08-22는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=T6jJ_l9bQUU"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=T6jJ_l9bQUU",
+          "title": "[방송] 20010822 kmtv 생Q - 신화",
+          "videoId": "T6jJ_l9bQUU",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-03-26:46",
+      "date": "2002-03-26",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "KMTV - 신화 - 5집 Perfect Man 뮤비촬영현장 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=kOx4O2H6qK8",
+      "sourceNote": "원본 영상 제목: [방송] 20020326 - KMTV - 신화 - 5집 Perfect Man 뮤비촬영현장. 날짜 2002-03-26는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "영상 제목 표기 보도·방송일(실제 촬영일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=kOx4O2H6qK8"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=kOx4O2H6qK8",
+          "title": "[방송] 20020326 - KMTV - 신화 - 5집 Perfect Man 뮤비촬영현장",
+          "videoId": "kOx4O2H6qK8",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-04-05:50",
+      "date": "2002-04-05",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "KMTV - 신화 5집 컴백무대 비하인드 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=9XIxIBAITwM",
+      "sourceNote": "원본 영상 제목: [방송] 20020405 KMTV - 신화 5집 컴백무대 비하인드. 날짜 2002-04-05는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=9XIxIBAITwM"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=9XIxIBAITwM",
+          "title": "[방송] 20020405 KMTV - 신화 5집 컴백무대 비하인드",
+          "videoId": "9XIxIBAITwM",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-12-25:66",
+      "date": "2002-12-25",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "kmtv sangq - 크리스마스 인사 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=OWk1WsVlOzY",
+      "sourceNote": "원본 영상 제목: [방송] 20021225 kmtv sangq - 크리스마스 인사. 날짜 2002-12-25는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=OWk1WsVlOzY"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=OWk1WsVlOzY",
+          "title": "[방송] 20021225 kmtv sangq - 크리스마스 인사",
+          "videoId": "OWk1WsVlOzY",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2004-01-05:78",
+      "date": "2004-01-05",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "kmtv livemq 신화 - winterstory 콘서트 현장 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=KqXBMF03gys",
+      "sourceNote": "원본 영상 제목: [방송] 20040105 kmtv livemq 신화 - winterstory 콘서트 현장. 날짜 2004-01-05는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "팬영상 제목 표기 방송일(콘서트 개최일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=KqXBMF03gys"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=KqXBMF03gys",
+          "title": "[방송] 20040105 kmtv livemq 신화 - winterstory 콘서트 현장",
+          "videoId": "KqXBMF03gys",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2004-09-22:82",
+      "date": "2004-09-22",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "kmtv  i love showtang - 브랜뉴 컴백무대 비하인드 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=AxoMzAu4Hy8",
+      "sourceNote": "원본 영상 제목: [방송] 20040922 kmtv  i love showtang - 브랜뉴 컴백무대 비하인드. 날짜 2004-09-22는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=AxoMzAu4Hy8"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=AxoMzAu4Hy8",
+          "title": "[방송] 20040922 kmtv  i love showtang - 브랜뉴 컴백무대 비하인드",
+          "videoId": "AxoMzAu4Hy8",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2004-11-05:87",
+      "date": "2004-11-05",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "kmtv about mv - 신화 - 열병 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=jMa-ZYZP1J4",
+      "sourceNote": "원본 영상 제목: [방송] 20041105 kmtv about mv - 신화 - 열병. 날짜 2004-11-05는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=jMa-ZYZP1J4"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=jMa-ZYZP1J4",
+          "title": "[방송] 20041105 kmtv about mv - 신화 - 열병",
+          "videoId": "jMa-ZYZP1J4",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-07-13:19",
+      "date": "2001-07-13",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet  showking M - 신화 - Hey come on, WILD EYES — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=6ZkcUHwVmbM",
+      "sourceNote": "원본 영상 제목: [방송] 20010713 Mnet  showking M - 신화 - Hey come on, WILD EYES. 날짜 2001-07-13는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=6ZkcUHwVmbM"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=6ZkcUHwVmbM",
+          "title": "[방송] 20010713 Mnet  showking M - 신화 - Hey come on, WILD EYES",
+          "videoId": "6ZkcUHwVmbM",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-07-27:20",
+      "date": "2001-07-27",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet  showking M - 신화 - Hey come on, WILD EYES — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=MifJwXg7-_0",
+      "sourceNote": "원본 영상 제목: [방송] 20010727 Mnet  showking M - 신화 - Hey come on, WILD EYES. 날짜 2001-07-27는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=MifJwXg7-_0"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=MifJwXg7-_0",
+          "title": "[방송] 20010727 Mnet  showking M - 신화 - Hey come on, WILD EYES",
+          "videoId": "MifJwXg7-_0",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-08-17:25",
+      "date": "2001-08-17",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet  showking M - 신화 - shinhwa knight, Hey come on — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=XuS3M7ge1RE",
+      "sourceNote": "원본 영상 제목: [방송] 20010817 Mnet  showking M - 신화 - shinhwa knight, Hey come on. 날짜 2001-08-17는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=XuS3M7ge1RE"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=XuS3M7ge1RE",
+          "title": "[방송] 20010817 Mnet  showking M - 신화 - shinhwa knight, Hey come on",
+          "videoId": "XuS3M7ge1RE",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-08-31:29",
+      "date": "2001-08-31",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet  showking M - 신화 - Hey come on — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=w2w-U6SHsbQ",
+      "sourceNote": "원본 영상 제목: [방송] 20010831 Mnet  showking M - 신화 - Hey come on. 날짜 2001-08-31는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=w2w-U6SHsbQ"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=w2w-U6SHsbQ",
+          "title": "[방송] 20010831 Mnet  showking M - 신화 - Hey come on",
+          "videoId": "w2w-U6SHsbQ",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-09-14:34",
+      "date": "2001-09-14",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet  showking M - 신화 - Hey come on — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=NpZRcEAOY_E",
+      "sourceNote": "원본 영상 제목: [방송] 20010914 Mnet  showking M - 신화 - Hey come on. 날짜 2001-09-14는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=NpZRcEAOY_E"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=NpZRcEAOY_E",
+          "title": "[방송] 20010914 Mnet  showking M - 신화 - Hey come on",
+          "videoId": "NpZRcEAOY_E",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2003-11-21:76",
+      "date": "2003-11-21",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "그룹 S 관련(신혜성 참여)",
+      "title": "Mnet showkingm 신혜성(S) - 사랑니 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=F3elxxT_pGk",
+      "sourceNote": "원본 영상 제목: [방송] 20031121 Mnet showkingm 신혜성(S) - 사랑니. 날짜 2003-11-21는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=F3elxxT_pGk"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=F3elxxT_pGk",
+          "title": "[방송] 20031121 Mnet showkingm 신혜성(S) - 사랑니",
+          "videoId": "F3elxxT_pGk",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-10-29:38",
+      "date": "2001-10-29",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet widenews - 신화 in 김중만사진전 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=016I0uXSswM",
+      "sourceNote": "원본 영상 제목: [방송] 20011029  Mnet widenews - 신화 in 김중만사진전. 날짜 2001-10-29는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=016I0uXSswM"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=016I0uXSswM",
+          "title": "[방송] 20011029  Mnet widenews - 신화 in 김중만사진전",
+          "videoId": "016I0uXSswM",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-05-20:56",
+      "date": "2002-05-20",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet widenews - 신화 - I Pray 4 U M/V 촬영현장 1탄 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=jkMYVuNtW0Y",
+      "sourceNote": "원본 영상 제목: [방송] 20020520 Mnet widenews - 신화 - I Pray 4 U M/V 촬영현장 1탄. 날짜 2002-05-20는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "영상 제목 표기 보도·방송일(실제 촬영일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=jkMYVuNtW0Y"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=jkMYVuNtW0Y",
+          "title": "[방송] 20020520 Mnet widenews - 신화 - I Pray 4 U M/V 촬영현장 1탄",
+          "videoId": "jkMYVuNtW0Y",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-05-21:57",
+      "date": "2002-05-21",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet widenews - 신화 I PRAY 4 U M/V 촬영현장 2탄 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=wGs7X0QzrOU",
+      "sourceNote": "원본 영상 제목: [방송] 20020521 Mnet widenews - 신화 I PRAY 4 U M/V 촬영현장 2탄. 날짜 2002-05-21는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "영상 제목 표기 보도·방송일(실제 촬영일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=wGs7X0QzrOU"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=wGs7X0QzrOU",
+          "title": "[방송] 20020521 Mnet widenews - 신화 I PRAY 4 U M/V 촬영현장 2탄",
+          "videoId": "wGs7X0QzrOU",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-11-21:64",
+      "date": "2002-11-21",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "Mnet - SMTown 캐롤앨범 자켓 촬영현장 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=SvACIl5Tv-s",
+      "sourceNote": "원본 영상 제목: [방송] 20021121 Mnet - SMTown 캐롤앨범 자켓 촬영현장. 날짜 2002-11-21는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=SvACIl5Tv-s"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=SvACIl5Tv-s",
+          "title": "[방송] 20021121 Mnet - SMTown 캐롤앨범 자켓 촬영현장",
+          "videoId": "SvACIl5Tv-s",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2004-01-02:77",
+      "date": "2004-01-02",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet widenews - 신화 - winter story 콘서트 현장 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=C17QTk3yepU",
+      "sourceNote": "원본 영상 제목: [방송] 20040102 Mnet widenews - 신화 - winter story 콘서트 현장. 날짜 2004-01-02는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "팬영상 제목 표기 방송일(콘서트 개최일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=C17QTk3yepU"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=C17QTk3yepU",
+          "title": "[방송] 20040102 Mnet widenews - 신화 - winter story 콘서트 현장",
+          "videoId": "C17QTk3yepU",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2004-11-17:90",
+      "date": "2004-11-17",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet widenews - \" 그 날이 오면\" - 완민셩 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=dTwMENWqYEA",
+      "sourceNote": "원본 영상 제목: [방송] 20041117 Mnet widenews - \" 그 날이 오면\" - 완민셩. 날짜 2004-11-17는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=dTwMENWqYEA"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=dTwMENWqYEA",
+          "title": "[방송] 20041117 Mnet widenews - \" 그 날이 오면\" - 완민셩",
+          "videoId": "dTwMENWqYEA",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-02-17:13",
+      "date": "2001-02-17",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "그룹 S 관련(신혜성 참여)",
+      "title": "Mnet - 우리들의 스타 - 신혜성(S) — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=3eUjyknCQP8",
+      "sourceNote": "원본 영상 제목: [방송] 20010217- Mnet - 우리들의 스타 - 신혜성(S). 날짜 2001-02-17는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=3eUjyknCQP8"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=3eUjyknCQP8",
+          "title": "[방송] 20010217- Mnet - 우리들의 스타 - 신혜성(S)",
+          "videoId": "3eUjyknCQP8",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-06-30:18",
+      "date": "2001-06-30",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "Mnet - 우리들의 스타 - 신화 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=IDY0DPR5Fk4",
+      "sourceNote": "원본 영상 제목: [방송] 20010630 - Mnet - 우리들의 스타 - 신화. 날짜 2001-06-30는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=IDY0DPR5Fk4"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=IDY0DPR5Fk4",
+          "title": "[방송] 20010630 - Mnet - 우리들의 스타 - 신화",
+          "videoId": "IDY0DPR5Fk4",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-08-10:23",
+      "date": "2001-08-10",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet 쇼킹일기 - 신화 - 이민우 생일 파티의 비밀 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=a5lakW-Y0Sg",
+      "sourceNote": "원본 영상 제목: [방송] 20010810 Mnet 쇼킹일기 - 신화 - 이민우 생일 파티의 비밀. 날짜 2001-08-10는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=a5lakW-Y0Sg"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=a5lakW-Y0Sg",
+          "title": "[방송] 20010810 Mnet 쇼킹일기 - 신화 - 이민우 생일 파티의 비밀",
+          "videoId": "a5lakW-Y0Sg",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-08-22:26",
+      "date": "2001-08-22",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신혜성 개인",
+      "title": "Mnet 쇼킹일기 - 일일VJ 신혜성 - 강타인터뷰 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=4HJEZG_dMQo",
+      "sourceNote": "원본 영상 제목: [방송] 20010822 Mnet 쇼킹일기 - 일일VJ 신혜성 - 강타인터뷰. 날짜 2001-08-22는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=4HJEZG_dMQo"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=4HJEZG_dMQo",
+          "title": "[방송] 20010822 Mnet 쇼킹일기 - 일일VJ 신혜성 - 강타인터뷰",
+          "videoId": "4HJEZG_dMQo",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-09-05:30",
+      "date": "2001-09-05",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet 가요발전소 - 신화 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=gmyDAuMN1lE",
+      "sourceNote": "원본 영상 제목: [방송] 20010905 Mnet 가요발전소 - 신화. 날짜 2001-09-05는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=gmyDAuMN1lE"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=gmyDAuMN1lE",
+          "title": "[방송] 20010905 Mnet 가요발전소 - 신화",
+          "videoId": "gmyDAuMN1lE",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-09-26:35",
+      "date": "2001-09-26",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet - 쇼킹일기 - 가요발전소 개편1주년 축하 - — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=Q2-nykbGbK4",
+      "sourceNote": "원본 영상 제목: [방송] 20010926 - Mnet - 쇼킹일기 - 가요발전소 개편1주년 축하 -. 날짜 2001-09-26는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=Q2-nykbGbK4"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=Q2-nykbGbK4",
+          "title": "[방송] 20010926 - Mnet - 쇼킹일기 - 가요발전소 개편1주년 축하 -",
+          "videoId": "Q2-nykbGbK4",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-10-24:37",
+      "date": "2001-10-24",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet- 쇼킹일기 - 신화 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=ad8xypmM92s",
+      "sourceNote": "원본 영상 제목: [방송] 20011024 - Mnet- 쇼킹일기 - 신화. 날짜 2001-10-24는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=ad8xypmM92s"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=ad8xypmM92s",
+          "title": "[방송] 20011024 - Mnet- 쇼킹일기 - 신화",
+          "videoId": "ad8xypmM92s",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-03-08:44",
+      "date": "2002-03-08",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet 가요발전소 신화 5집 자켓촬영현장 1탄 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=qcl9fqgP4ZY",
+      "sourceNote": "원본 영상 제목: [방송] 20020308 - Mnet 가요발전소 신화 5집 자켓촬영현장 1탄. 날짜 2002-03-08는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "영상 제목 표기 보도·방송일(실제 촬영일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=qcl9fqgP4ZY"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=qcl9fqgP4ZY",
+          "title": "[방송] 20020308 - Mnet 가요발전소 신화 5집 자켓촬영현장 1탄",
+          "videoId": "qcl9fqgP4ZY",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-03-11:45",
+      "date": "2002-03-11",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "연예정보",
+      "subject": "신화 전체",
+      "title": "Mnet 가요발전소 - 신화 5집 자켓촬영현장 2탄 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=IErCnjQQeUA",
+      "sourceNote": "원본 영상 제목: [방송] 20020311 Mnet 가요발전소 - 신화 5집 자켓촬영현장 2탄. 날짜 2002-03-11는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "영상 제목 표기 보도·방송일(실제 촬영일 아님)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=IErCnjQQeUA"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=IErCnjQQeUA",
+          "title": "[방송] 20020311 Mnet 가요발전소 - 신화 5집 자켓촬영현장 2탄",
+          "videoId": "IErCnjQQeUA",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2004-11-15:89",
+      "date": "2004-11-15",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "영상 클립",
+      "subject": "신화 전체",
+      "title": "신화- 수능 화이팅 메세지 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=7qCnggiCC-k",
+      "sourceNote": "원본 영상 제목: [공식] 20041115 신화- 수능 화이팅 메세지. 날짜 2004-11-15는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=7qCnggiCC-k"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=7qCnggiCC-k",
+          "title": "[공식] 20041115 신화- 수능 화이팅 메세지",
+          "videoId": "7qCnggiCC-k",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2004-12-10:93",
+      "date": "2004-12-10",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "영상 클립",
+      "subject": "신화 전체",
+      "title": "굿엔터 - 릭셩 - 바나나송 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=Cq7g3Qc_zvQ",
+      "sourceNote": "원본 영상 제목: [공식] 20041210 굿엔터 - 릭셩 - 바나나송. 날짜 2004-12-10는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=Cq7g3Qc_zvQ"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=Cq7g3Qc_zvQ",
+          "title": "[공식] 20041210 굿엔터 - 릭셩 - 바나나송",
+          "videoId": "Cq7g3Qc_zvQ",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2015-11-11:102",
+      "date": "2015-11-11",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "영상 클립",
+      "subject": "신혜성 개인",
+      "title": "신혜성 V 채널 오픈 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=UHrcgpAtDuE",
+      "sourceNote": "원본 영상 제목: [공식/V] 20151111 신혜성 V 채널 오픈. 날짜 2015-11-11는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=UHrcgpAtDuE"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=UHrcgpAtDuE",
+          "title": "[공식/V] 20151111 신혜성 V 채널 오픈",
+          "videoId": "UHrcgpAtDuE",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-10-22:36",
+      "date": "2001-10-22",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "댄탐 셀프카메라 다나편 - 신화 출연 cut — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=LSg6FyHWt2U",
+      "sourceNote": "원본 영상 제목: [방송] 20011022 댄탐 셀프카메라 다나편 - 신화 출연 cut. 날짜 2001-10-22는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=LSg6FyHWt2U"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=LSg6FyHWt2U",
+          "title": "[방송] 20011022 댄탐 셀프카메라 다나편 - 신화 출연 cut",
+          "videoId": "LSg6FyHWt2U",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-01-01:42",
+      "date": "2002-01-01",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "Mtv - 신화 In Control — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=_e19aHUZ8MM",
+      "sourceNote": "원본 영상 제목: [방송] 20020101 - Mtv - 신화 In Control. 날짜 2002-01-01는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=_e19aHUZ8MM"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=_e19aHUZ8MM",
+          "title": "[방송] 20020101 - Mtv - 신화 In Control",
+          "videoId": "_e19aHUZ8MM",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-10-02:60",
+      "date": "2002-10-02",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "신화 - 맛대맛 edit.ver - 갈비찜vs광어회 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=VNj-2csADQo",
+      "sourceNote": "원본 영상 제목: 20021002 - 신화 - 맛대맛 edit.ver - 갈비찜vs광어회. 날짜 2002-10-02는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=VNj-2csADQo"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=VNj-2csADQo",
+          "title": "20021002 - 신화 - 맛대맛 edit.ver - 갈비찜vs광어회",
+          "videoId": "VNj-2csADQo",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2000-12-30:9",
+      "date": "2000-12-30",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "라디오",
+      "subject": "신화 전체",
+      "title": "라디오공개방송 - 기도 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=2A-GjAvvk1A",
+      "sourceNote": "원본 영상 제목: [직캠] 20001230 - 라디오공개방송 - 기도. 날짜 2000-12-30는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=2A-GjAvvk1A"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=2A-GjAvvk1A",
+          "title": "[직캠] 20001230 - 라디오공개방송 - 기도",
+          "videoId": "2A-GjAvvk1A",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2000-12-31:10",
+      "date": "2000-12-31",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "라디오",
+      "subject": "신화 전체",
+      "title": "신화 - 텐텐클럽공방 - 기도 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=Z04EfbbyZ8A",
+      "sourceNote": "원본 영상 제목: [직캠] 20001231 - 신화 - 텐텐클럽공방 - 기도. 날짜 2000-12-31는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=Z04EfbbyZ8A"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=Z04EfbbyZ8A",
+          "title": "[직캠] 20001231 - 신화 - 텐텐클럽공방 - 기도",
+          "videoId": "Z04EfbbyZ8A",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-07-28:21",
+      "date": "2001-07-28",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "라디오",
+      "subject": "신화 전체",
+      "title": "KBS 2FM  라디오공방 - 신화 - wild eyes + Hey, come on! — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=43lTdXKEenc",
+      "sourceNote": "원본 영상 제목: [방송] 20010728 KBS 2FM  라디오공방 - 신화 - wild eyes + Hey, come on!. 날짜 2001-07-28는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=43lTdXKEenc"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=43lTdXKEenc",
+          "title": "[방송] 20010728 KBS 2FM  라디오공방 - 신화 - wild eyes + Hey, come on!",
+          "videoId": "43lTdXKEenc",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2001-08-11:24",
+      "date": "2001-08-11",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "라디오",
+      "subject": "신화 전체",
+      "title": "신화 - 라디오공개방송 - 인터뷰 + Shinhwa Knight — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=r-8_pLgowUg",
+      "sourceNote": "원본 영상 제목: [직캠] 20010811 - 신화 - 라디오공개방송 - 인터뷰 + Shinhwa Knight. 날짜 2001-08-11는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=r-8_pLgowUg"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=r-8_pLgowUg",
+          "title": "[직캠] 20010811 - 신화 - 라디오공개방송 - 인터뷰 + Shinhwa Knight",
+          "videoId": "r-8_pLgowUg",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-11-13:63",
+      "date": "2002-11-13",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "라디오",
+      "subject": "신혜성 개인",
+      "title": "자유선언 라디오 공개방송 - 신혜성 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=-930lf71UnY",
+      "sourceNote": "원본 영상 제목: [직캠] 20021113 - 자유선언 라디오 공개방송 - 신혜성. 날짜 2002-11-13는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=-930lf71UnY"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=-930lf71UnY",
+          "title": "[직캠] 20021113 - 자유선언 라디오 공개방송 - 신혜성",
+          "videoId": "-930lf71UnY",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:1999-08-07:4",
+      "date": "1999-08-07",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "KBS 사랑의 리퀘스트 - 신화 - YO — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=FH1zRX675nY",
+      "sourceNote": "원본 영상 제목: [방송/2집] 19990807 KBS 사랑의 리퀘스트 - 신화 - YO. 날짜 1999-08-07는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=FH1zRX675nY"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=FH1zRX675nY",
+          "title": "[방송/2집] 19990807 KBS 사랑의 리퀘스트 - 신화 - YO",
+          "videoId": "FH1zRX675nY",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2000-08-27:6",
+      "date": "2000-08-27",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "iTV 가요 Best 1위후보 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=bJKFN8q5C4w",
+      "sourceNote": "원본 영상 제목: 20000827 iTV 가요 Best 1위후보. 날짜 2000-08-27는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=bJKFN8q5C4w"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=bJKFN8q5C4w",
+          "title": "20000827 iTV 가요 Best 1위후보",
+          "videoId": "bJKFN8q5C4w",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2003-11-20:75",
+      "date": "2003-11-20",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "방송",
+      "subject": "신혜성 개인",
+      "title": "열린음악회  中 너의 결혼식(신혜성focus) / [직캠] 20031120 열린음악회 - Edit Cut — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=22Zie6cPYz4 | https://www.youtube.com/watch?v=ea_scqdUaLs",
+      "sourceNote": "원본 영상 제목: [직캠] 20031120 열린음악회  中 너의 결혼식(신혜성focus) / [직캠] 20031120 열린음악회 - Edit Cut. 날짜 2003-11-20는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=22Zie6cPYz4 | https://www.youtube.com/watch?v=ea_scqdUaLs"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=22Zie6cPYz4 | https://www.youtube.com/watch?v=ea_scqdUaLs",
+          "title": "[직캠] 20031120 열린음악회  中 너의 결혼식(신혜성focus) / [직캠] 20031120 열린음악회 - Edit Cut",
+          "videoId": "ea_scqdUaLs",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:fan-date:2002-05-28:58",
+      "date": "2002-05-28",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "NHK 20020528 연예뉴스 - 신화 — 팬영상 표기",
+      "verification": "팬영상 제목의 날짜·프로그램 근거 / 독립 방송 회차 미확인",
+      "source": "셩공시대님 채널 원제목/URL (동일 날짜·프로그램의 독립 편성표 미확보)",
+      "sourceUrl": null,
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=88786BRbfVw",
+      "sourceNote": "원본 영상 제목: [방송] NHK 20020528 연예뉴스 - 신화. 날짜 2002-05-28는 팬영상 업로더 표제에 기재된 내용. 방송사 공식 회차·송출일·촬영일을 독립 확인한 사실이 아닙니다. 같은 날 등록된 다른 방송·행사와는 별개로 기록합니다.",
+      "dateKind": "셩공시대님 영상 제목 표기일(방송/현장 일자 독립 미확정)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=88786BRbfVw"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=88786BRbfVw",
+          "title": "[방송] NHK 20020528 연예뉴스 - 신화",
+          "videoId": "88786BRbfVw",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
+      ]
+    },
+    {
+      "id": "audit54:001:2013-03-13",
+      "date": "2013-03-13",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 JAPAN PREMIUM WINTER ALBUM 일본 발매",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.universal-music.co.jp/shinhyesung/products/poce-32021/",
+      "referenceVideoUrl": null,
+      "sourceNote": "국내 기존 원음반과 별도 일본 기획판. 공연 신규행 아님. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "음반 발매일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.universal-music.co.jp/shinhyesung/products/poce-32021/",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.universal-music.co.jp/shinhyesung/products/poce-32021/",
+        "https://tower.jp/article/feature_item/2013/02/01/0104"
+      ]
+    },
+    {
+      "id": "audit54:002:2013-08-30",
+      "date": "2013-08-30",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "신혜성 The Year's Journey 첫 라이브 음반 발매",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://music.bugs.co.kr/album/386125",
+      "referenceVideoUrl": null,
+      "sourceNote": "공연은2012년 말. 발매행만 추가. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "음원/음반 발매일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://music.bugs.co.kr/album/386125",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://music.bugs.co.kr/album/386125"
+      ]
+    },
+    {
+      "id": "audit54:003:2013-10-25",
+      "date": "2013-10-25",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "캠프",
+      "subject": "신혜성 개인",
+      "title": "2013 HS CAMP – Sweet Oct.",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.sportschosun.com/entertainment/2013-10-28/201310290100296080021259",
+      "referenceVideoUrl": null,
+      "sourceNote": "기간: 2013-10-25~2013-10-27. 2박3일 한 행사로 유지. 전곡·개별 세션 시각 미확인. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "활동일 (기간 시작일; 종료 2013-10-27)",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.sportschosun.com/entertainment/2013-10-28/201310290100296080021259",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.sportschosun.com/entertainment/2013-10-28/201310290100296080021259",
+        "https://kstyle.com/article.ksn?articleNo=1980888"
+      ]
+    },
+    {
+      "id": "audit54:004:2013-12-27",
+      "date": "2013-12-27",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "신혜성 개인",
+      "title": "2012–2013 THE YEAR'S JOURNEY DVD 판매 시작",
+      "verification": "원문 미확보 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://news2day.co.kr/article/20131228041056",
+      "referenceVideoUrl": null,
+      "sourceNote": "검색 색인 보도만 확인; 실물 발매사 확인 필요. 조사 상태: 원문 미확보. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "DVD 판매일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://news2day.co.kr/article/20131228041056",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://news2day.co.kr/article/20131228041056"
+      ]
+    },
+    {
+      "id": "audit54:006:2014-01-12",
+      "date": "2014-01-12",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "예능",
+      "subject": "신화 전체",
+      "title": "JTBC 신화방송 S2 E09 복싱 꿈나무1",
+      "verification": "일부 확인·공식 편성만 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://tv.jtbc.co.kr/trailer/pr10010074/pm10012638/vo10047007/view",
+      "referenceVideoUrl": null,
+      "sourceNote": "공식 예고의 날짜·내용 확인. 실제방송 클립 추가확인 필요. 조사 상태: 일부 확인·공식 편성만. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "활동일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://tv.jtbc.co.kr/trailer/pr10010074/pm10012638/vo10047007/view",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://tv.jtbc.co.kr/trailer/pr10010074/pm10012638/vo10047007/view"
+      ]
+    },
+    {
+      "id": "audit54:007:2014-01-19",
+      "date": "2014-01-19",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "예능",
+      "subject": "신화 전체",
+      "title": "JTBC 신화방송 S2 E10 복싱 꿈나무2",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://tv.jtbc.co.kr/trailer/pr10010074/pm10012638/vo10047214/view",
+      "referenceVideoUrl": null,
+      "sourceNote": "클립 등록1월20일과 실제방송1월19일 구분. 전 출연자·곡명 미확인. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "활동일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://tv.jtbc.co.kr/trailer/pr10010074/pm10012638/vo10047214/view",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://tv.jtbc.co.kr/trailer/pr10010074/pm10012638/vo10047214/view",
+        "https://tv.jtbc.co.kr/clip/pr10010074/pm10012839/vo10047501/view"
+      ]
+    },
+    {
+      "id": "audit54:008:2014-10-18",
+      "date": "2014-10-18",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공연",
+      "subject": "그룹 S(강타·신혜성·이지훈)",
+      "title": "S SMTOWN LIVE WORLD TOUR IV in SHANGHAI",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.starnewskorea.com/music/2014/10/19/2014101913532223557",
+      "referenceVideoUrl": null,
+      "sourceNote": "현지17시,상하이체육장. 각 곡별 전원 가창여부 장면확인 전. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "활동일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.starnewskorea.com/music/2014/10/19/2014101913532223557",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.starnewskorea.com/music/2014/10/19/2014101913532223557"
+      ]
+    },
+    {
+      "id": "audit54:009:2014-10-23",
+      "date": "2014-10-23",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "그룹 S(강타·신혜성·이지훈)",
+      "title": "Mnet 엠카운트다운 Ep399 S 컴백",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.youtube.com/watch?v=0UHSnb3LXrA",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=0UHSnb3LXrA",
+      "sourceNote": "공식 영상 제목·설명 확인. 전체방송·녹화일 확인 아님. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "방송일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=0UHSnb3LXrA"
+      ]
+    },
+    {
+      "id": "audit54:010:2014-10-23",
+      "date": "2014-10-23",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공식 영상",
+      "subject": "그룹 S(강타·신혜성·이지훈)",
+      "title": "S 하고 싶은 거 다 공식 MV 게시",
+      "verification": "공식 게시 사실 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.youtube.com/watch?v=prHbV4JvTR8",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=prHbV4JvTR8",
+      "sourceNote": "촬영일·전체 화면출연자 미확인. 업로드일을 공연일로 사용하지 않음. 조사 상태: 공식 게시 사실 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "공식 영상 게시일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=prHbV4JvTR8"
+      ]
+    },
+    {
+      "id": "audit54:011:2014-10-24",
+      "date": "2014-10-24",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "그룹 S(강타·신혜성·이지훈)",
+      "title": "S Autumn Breeze 음원 공개",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://music.bugs.co.kr/album/459117?wl_ref=new_ab",
+      "referenceVideoUrl": null,
+      "sourceNote": "온라인10월24일과 오프라인10월27일 구분. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "음원 발매일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://music.bugs.co.kr/album/459117?wl_ref=new_ab",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://music.bugs.co.kr/album/459117?wl_ref=new_ab",
+        "https://www.hankyung.com/amp/2014102209085"
+      ]
+    },
+    {
+      "id": "audit54:012:2014-10-24",
+      "date": "2014-10-24",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "그룹 S(강타·신혜성·이지훈)",
+      "title": "KBS 뮤직뱅크 S 컴백",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.youtube.com/watch?v=jvHg3Id2ALs",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=jvHg3Id2ALs",
+      "sourceNote": "공식 업로드는11월12일. 방송일은 제목10월24일. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "방송일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=jvHg3Id2ALs"
+      ]
+    },
+    {
+      "id": "audit54:013:2014-10-26",
+      "date": "2014-10-26",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신혜성 개인",
+      "title": "SBS 인기가요 Ep788 S",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.youtube.com/watch?v=Uf3gDZx4Km8",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=Uf3gDZx4Km8",
+      "sourceNote": "전체 회차 출연자·녹화일 미확인. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "방송일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=Uf3gDZx4Km8"
+      ]
+    },
+    {
+      "id": "audit54:014:2014-10-27",
+      "date": "2014-10-27",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음반·발매",
+      "subject": "그룹 S(강타·신혜성·이지훈)",
+      "title": "S 《Autumn Breeze》 오프라인 음반 발매 예정 (실발매일 미확인)",
+      "verification": "원문 미확보·예정만 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.hankyung.com/amp/2014102209085",
+      "referenceVideoUrl": null,
+      "sourceNote": "실발매 판매사 원문 필요.24일 음원과 병합 여부는 날짜종류 보존 후 판단. 조사 상태: 원문 미확보·예정만 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "음반 발매 예정일",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://www.hankyung.com/amp/2014102209085",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.hankyung.com/amp/2014102209085"
+      ]
+    },
+    {
+      "id": "audit54:017:2015-08-02",
+      "date": "2015-08-02",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공연",
+      "subject": "신화 전체",
+      "title": "신화 KCON2015 LA 현지 공연",
+      "verification": "핵심 사실 독립 확인 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://kconusa.com/historybk/kcon15la/",
+      "referenceVideoUrl": null,
+      "sourceNote": "Staples Center.13일 방송과 별도 날짜종류.5곡 보도와4곡후기 총곡수 불일치; 전체목록 보류. 조사 상태: 핵심 사실 독립 확인. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "실제 공연일·미국 현지",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": "https://kconusa.com/historybk/kcon15la/",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://kconusa.com/historybk/kcon15la/",
+        "https://www.tenasia.co.kr/article/2015081037134",
+        "https://kpopconcerts.com/exclusives/recap-super-junior-shinhwa-and-more-ignite-the-feels-at-kcon-la-2015/"
+      ]
+    },
+    {
+      "id": "audit54:018:2015-11-11",
+      "date": "2015-11-11",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "공식 영상",
+      "subject": "신혜성 개인",
+      "title": "신혜성 V 채널 오픈 안내 영상 (게시일 독립 확인 전)",
+      "verification": "검토 보류·이전 팬 메타데이터만 / 조사 범위 한정",
+      "source": "2013~2015 누락 조사 자료 / 출처 유형별 검증 상태 구분",
+      "sourceUrl": "https://www.youtube.com/watch?v=UHrcgpAtDuE",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=UHrcgpAtDuE",
+      "sourceNote": "채널개설일과 영상공개일 구분 필요.실제라이브방송으로 생성금지. 조사 상태: 검토 보류·이전 팬 메타데이터만. 개별 출연·곡목·영상 장면 모든 필드가 독립 검증된 것은 아닙니다.",
+      "dateKind": "공식 영상 게시일 주장",
+      "sourceRecord": "v54 조사 통합 2026-10-27",
+      "verificationUrl": null,
+      "sourceRefs": [],
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=UHrcgpAtDuE"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=UHrcgpAtDuE",
+          "title": "신혜성 V 채널 오픈 영상 (원본 플랫폼 영상)",
+          "videoId": "UHrcgpAtDuE",
+          "note": "셩공시대님 채널 재게시 영상 표제의 날짜·프로그램명을 참고한 링크입니다. 원영상 전체 장면 및 방송 원본과의 일치 여부는 독립 검증 전입니다."
+        }
       ]
     }
   ],
