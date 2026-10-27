@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 876,
-      "chapter2": 926,
-      "chapter3": 568,
+      "chapter1": 878,
+      "chapter2": 929,
+      "chapter3": 572,
       "chapter4": 74
     },
     "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2444,
+    "visibleEvents": 2453,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -778,6 +778,39 @@
       "heldVideoId": "SXdCr9BCv1w",
       "heldVideoReason": "2002-04-14 월드컵 성공 기원 공연 영상의 장소·행사명이 KMTV 수원 공개녹화와 동일한지 미확인: 연결 보류",
       "notAdded": "2016 중국 DELIGHT 공연 2건은 이번 사용자가 지정한 7건 밖에 있어 기존 v51과 동일하게 미반영"
+    },
+    "v53IntegratedVideoAndSchedule20261027": {
+      "base": "v52 as derived from user latest v50 zip",
+      "baselineV50Events": 2437,
+      "previousV52Events": 2444,
+      "newEvents": 9,
+      "finalEvents": 2453,
+      "newEventIds": [
+        "audit53:2000-09-24:sbs-inkigayo-128",
+        "audit53:2001-08-24:mnet-showking-summer",
+        "audit53:2004-10-12:shinhwa-crazy-mv-shoot",
+        "audit53:2004-11-28:joint-birthday-party",
+        "audit53:2005-09-24:hallyu-allstar-summit",
+        "audit53:2014-11-23:kbs-openconcert-1040-s",
+        "audit53:2015-11-16:naver-v-first-syeongtime",
+        "audit53:2016-08-13:delight-shanghai",
+        "audit53:2016-09-10:delight-nanjing"
+      ],
+      "newFanVideoLinksOnExistingEvents": 56,
+      "linkedExistingEventIds": 45,
+      "researchVideosReviewedUnique": 346,
+      "conditionallyRegistered": [
+        "audit53:2004-11-28:joint-birthday-party"
+      ],
+      "heldCategories": [
+        "1998–2002 연도만 적힌 팬영상",
+        "방송사/공연명 불일치 후보",
+        "2002.03.27 트루콘서트(개최일/장소 미검증)",
+        "2002.11.27 KMTV 영상(회차 미검증)",
+        "2000.12.24 스타골든벨(프로그램 시작일과 충돌)",
+        "2002.04.14 월드컵 행사와 수원 KMTV 동일성 미검증"
+      ],
+      "scope": "영상 업로드 표제/편성표/사후기사 교차 검토. 직접 재생 확인·실제 라이브 사이트 테스트 미실시."
     }
   },
   "chapters": [
@@ -3804,6 +3837,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "Te3fhopfPYI"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=nNd7k6Ibgtw",
+          "title": "[방송] 19990620 신화 - 심리학개론 - 흑과 백",
+          "videoId": "nNd7k6Ibgtw",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -4411,7 +4452,15 @@
       "sourceRecord": "99!41",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=f8FtuEXOHsc",
+          "title": "[방송] 19990724 프라임콘서트 - 신화 - yo",
+          "videoId": "f8FtuEXOHsc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "research:a175:1999-07-25",
@@ -4561,6 +4610,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "r9sPW4_nd_0"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=auc66WD072s",
+          "title": "[방송] 19990805 - 신화 / 2집 - 행복채널",
+          "videoId": "auc66WD072s",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -6210,6 +6267,14 @@
         "https://www.donga.com/news/Culture/article/all/19991109/7483528/9",
         "https://www.seoul.co.kr/news/1999/11/10/19991110016001",
         "https://www.songisland.co.kr/34"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=BWTLmwedxU8",
+          "title": "[직캠] 19991120 - 신화 - TOP + YO  (volume up, plz)",
+          "videoId": "BWTLmwedxU8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -7054,7 +7119,15 @@
       "sourceRefs": [
         "audit241024-donga-20000609-shinhwa"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=_3YkOKlrtB0",
+          "title": "[방송] 20000603 - 신화 - 신화창조 2000 - 첫화",
+          "videoId": "_3YkOKlrtB0",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:00!5",
@@ -7173,7 +7246,15 @@
       "sourceRefs": [
         "audit241024-donga-20000609-shinhwa"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=fkElGcmOdBU",
+          "title": "[방송] 20000610 - 신화창조2000 - 2화 구멍편",
+          "videoId": "fkElGcmOdBU",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:00!16",
@@ -7371,6 +7452,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "mGqfCO8NK-8"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=JQ9gHUyfVYs",
+          "title": "[방송] 20000617 - 신화 - 신화창조2000 - 3화 지각대장편",
+          "videoId": "JQ9gHUyfVYs",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -7933,6 +8022,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "x0aYN3yheEA"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=ZtSbUFB7YuA",
+          "title": "[방송] 20000708 - 신화 - 신화창조 2000 - 남자만들기  최종화",
+          "videoId": "ZtSbUFB7YuA",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -8211,7 +8308,15 @@
       "sourceRecord": "00!90",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=AhzmpoaEEF4",
+          "title": "[방송] 20000717  TV는 사랑을 싣고 - 에릭,동완,혜성 편",
+          "videoId": "AhzmpoaEEF4",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "archive:video:2000-07-18:014",
@@ -8554,6 +8659,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "9SLxxsoLPqQ"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=KaE0GKGcurY",
+          "title": "[방송] 20000803 - 신화 / 3집 - 행복채널",
+          "videoId": "KaE0GKGcurY",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -8616,7 +8729,15 @@
       "sourceRefs": [
         "sc2000-playlist"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=OX-pS-wZZIg",
+          "title": "[방송] 20000805 - 신화 - 신화창조2000 6화 - 몸치탈출 1탄",
+          "videoId": "OX-pS-wZZIg",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:00!116",
@@ -8771,7 +8892,15 @@
       "sourceRefs": [
         "sc2000-playlist"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=9m6r9Fpr9qQ",
+          "title": "[방송] 20000812- 신화 - 신화창조2000 7화 - 몸치탈출 2탄",
+          "videoId": "9m6r9Fpr9qQ",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:00!128",
@@ -8863,7 +8992,15 @@
       "sourceRefs": [
         "sc2000-playlist"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=X5_4UZaDqeM",
+          "title": "[방송] 20000819 신화 - 신화창조2000 8화 - 몸치탈출3탄 - 끝",
+          "videoId": "X5_4UZaDqeM",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "v35:video:2000-08-21:haengjin",
@@ -9344,6 +9481,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "BiO8FD9lJ9k"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=50lCjxi_lwA",
+          "title": "[직캠] \"적애\"님의 20000911 모창가요제 리허설 캠",
+          "videoId": "50lCjxi_lwA",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -10703,6 +10848,14 @@
       ],
       "sourceUrls": [
         "https://www.donga.com/news/Entertainment/article/all/20001222/7625777/1"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=sWr7VecW3Z8",
+          "title": "[방송] 20001223 사랑의 리퀘스트 3주년 특집 - 신화 - 기도",
+          "videoId": "sWr7VecW3Z8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -11435,6 +11588,20 @@
         "8RdRMe4Pp_8",
         "SEd5YXikd7Q",
         "y77ssJNlkR4"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=7qu1HqhZ3K8",
+          "title": "[직캠] 20010113 - 신화 - First Mythology Concert - Only One",
+          "videoId": "7qu1HqhZ3K8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=v9hHLi23btY",
+          "title": "[직캠] 20010113 - 신화 - First Mythology Concert - 에릭멘트",
+          "videoId": "v9hHLi23btY",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -11698,7 +11865,15 @@
       "sourceRecord": "01!24",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=rXokVfNr1_o",
+          "title": "[방송] 20010131 섹션TV연예통신 - 신혜성(S) - 인형 - 녹음 + 뮤비촬영현장",
+          "videoId": "rXokVfNr1_o",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!26",
@@ -11738,7 +11913,15 @@
       "sourceRecord": "01!30",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=1G644NllLVw",
+          "title": "[방송] 20010203 - 신화 - 희망의 집짓기 콘서트",
+          "videoId": "1G644NllLVw",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!28",
@@ -11763,6 +11946,14 @@
       "recordCount": 1,
       "sourceUrls": [
         "https://www.youtube.com/watch?v=qGMoWyypX84"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=1HhG0IZY2Oc",
+          "title": "[직캠] 20010203 음캠 첫방 카메라리허설 - 신혜성 - 인형",
+          "videoId": "1HhG0IZY2Oc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -11936,6 +12127,14 @@
       "recordCount": 1,
       "sourceUrls": [
         "https://www.youtube.com/watch?v=w-6zkak44EM"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=ZFX1hDWlfhU",
+          "title": "[직캠] 20010210 음캠 - 신혜성 - 인형",
+          "videoId": "ZFX1hDWlfhU",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -12198,6 +12397,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "kR2CNFOFlEA"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=UYZprYrQHMc",
+          "title": "[방송] 20010222- TV 특종 놀라운 세상 - 스타 전생체험 - 신혜성",
+          "videoId": "UYZprYrQHMc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -12668,7 +12875,15 @@
       "sourceRecord": "01!89",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=dMbSNY7AZNQ",
+          "title": "[방송] 20010311 - 이소라의 사랑할까요 -신혜성(S)",
+          "videoId": "dMbSNY7AZNQ",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!88",
@@ -14201,7 +14416,15 @@
       "sourceRecord": "01!215",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=BBOF8AAUeeQ",
+          "title": "[방송] 신화의 X-File (흉가의 비밀 1)",
+          "videoId": "BBOF8AAUeeQ",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!216",
@@ -14604,7 +14827,15 @@
       "sourceRecord": "01!252",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=maUGGAaG5Co",
+          "title": "[방송] 신화의 X-File (할매돌의 비밀)",
+          "videoId": "maUGGAaG5Co",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!254",
@@ -14648,7 +14879,15 @@
       "sourceRecord": "01!253",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=AkDszytkLEk",
+          "title": "[방송] 20010812 - 신화 - 엄마는 아무나 하나 ( E,D,H 편 )",
+          "videoId": "AkDszytkLEk",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!255",
@@ -14718,7 +14957,15 @@
       "sourceRecord": "01!262",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=-ClvTQ39RRw",
+          "title": "[방송] 신화의 X-File (초능력의 신비 1: 인간자석, 기억력)",
+          "videoId": "-ClvTQ39RRw",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!263",
@@ -14888,7 +15135,15 @@
       "sourceRecord": "01!273",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=1zMDVoNbUlM",
+          "title": "[방송] 신화의 X-File (초능력의 신비 2: 투시)",
+          "videoId": "1zMDVoNbUlM",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!274",
@@ -14928,7 +15183,15 @@
       "archiveVideoIds": [
         "aJopPbP0Odk"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=y3idOhiZ1I8",
+          "title": "[방송] 20010825 Mnet 가요 Best27 1위  - 신화",
+          "videoId": "y3idOhiZ1I8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "archive:video:2001-08-26:018",
@@ -15479,7 +15742,15 @@
       "sourceRecord": "01!292",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=ij-HJizwCQY",
+          "title": "[방송] 20010904  스타만찬 토크카드 - 신혜성 벌칙으로 각기춤.cut",
+          "videoId": "ij-HJizwCQY",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "archive:description:2001-09-05:67dc143466",
@@ -16001,6 +16272,26 @@
       "possibleDuplicate": false,
       "archiveVideoIds": [
         "sI6nSABkb5Y"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=gyz5DX9JwJ8",
+          "title": "[미방송분] 20010923 - 게릴라콘서트 -  HeyComeon + 신혜성 부상",
+          "videoId": "gyz5DX9JwJ8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=OhRXDF1dnYo",
+          "title": "[미방송분] 20010923 - 게릴라콘서트 - 신화 미방송분 FULL Ver.",
+          "videoId": "OhRXDF1dnYo",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=gd8dNOs1Z8Y",
+          "title": "[미방송분] 20010923 - 게릴라콘서트- WILDEYES",
+          "videoId": "gd8dNOs1Z8Y",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -16192,7 +16483,15 @@
       "sourceRecord": "01!336",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=PmQqmQ0b93M",
+          "title": "[방송] 20010929 신화의 고공침투 3탄 - 스카이다이빙",
+          "videoId": "PmQqmQ0b93M",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!337",
@@ -16488,7 +16787,15 @@
       "archiveVideoIds": [
         "r9sPW4_nd_0"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=SA60Uqf3PLE",
+          "title": "[방송/kbs] 20011020 신화의 드리븐(2/2)",
+          "videoId": "SA60Uqf3PLE",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:01!361",
@@ -16919,6 +17226,14 @@
       "referenceVideoUrl": "https://www.youtube.com/watch?v=0eafnEBd05w",
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=0eafnEBd05w"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=amsZ-7ySrso",
+          "title": "[직캠] 20011103 - 신화 - Wild Eyes",
+          "videoId": "amsZ-7ySrso",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -16943,6 +17258,20 @@
       "archiveVideoIds": [
         "L-EwOkczF3k",
         "kxNUxnfnAqw"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=eHESZPaFqAg",
+          "title": "[직캠] 20011103 - 신화 - Hey, Come On!",
+          "videoId": "eHESZPaFqAg",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=9SGJdx8ddzw",
+          "title": "[직캠] 20011103 - 신화 - falling in love (라이브.ver)",
+          "videoId": "9SGJdx8ddzw",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -17252,6 +17581,12 @@
           "title": "[방송/sbs] 20011207 제 12회 서울가요대상 신화 대기실 인터뷰 짤막영상",
           "note": "영상·재생목록의 제목과 기존 일정의 날짜 및 행사/프로그램명을 대조하여 연결했습니다. 실제 재생 장면과 방송/촬영일은 독립 검증되지 않았습니다.",
           "videoId": "JKckGjNuNp8"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=YuBLwmHL78U",
+          "title": "[공식] SM 판당고 뉴스 - 2001 서울가요대상 - Hey, come on~",
+          "videoId": "YuBLwmHL78U",
+          "note": "연도·행사명이 일치하는 팬채널 참고 영상입니다. 영상의 개별 촬영일·방송일은 독립 확인 전이며 기존 일정의 확정 날짜를 입증하는 증거로 사용하지 않습니다."
         }
       ]
     },
@@ -17903,6 +18238,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "8wS-tInHtzY"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=BLvaZ5YzzU8",
+          "title": "[방송] 20020126 - 토요일이 온다 - 신화의 애견지존 1회(뒷부분짤림)",
+          "videoId": "BLvaZ5YzzU8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -17935,6 +18278,12 @@
           "title": "[직캠] 20001-2002 농구올스타전 축하무대 - wild eyes",
           "note": "영상 제목상 해당 행사와 관련된 자료입니다. 영상에는 실제 방송일·촬영일이 명시되지 않아 연혁의 행사일을 영상 방영일로 간주하지 않습니다.",
           "videoId": "f7muzR-Iuao"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Y9oKef7cmJM",
+          "title": "[방송] 2001-2002 농구 올스타전 축하공연 - 신화 - Wild Eyes",
+          "videoId": "Y9oKef7cmJM",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
         }
       ]
     },
@@ -18613,7 +18962,15 @@
       "sourceRecord": "02!69",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=14p1_McSMWw",
+          "title": "[방송] 20020410 섹션TV  - 신화  FRJ 화보 촬영 현장",
+          "videoId": "14p1_McSMWw",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "sheet:02!71",
@@ -19015,7 +19372,15 @@
       "sourceRecord": "02!102",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=PAmdxeMJasg",
+          "title": "[방송] 20020426 신화 - 스타 집현전",
+          "videoId": "PAmdxeMJasg",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "research:a81:2002-04-27",
@@ -19561,6 +19926,14 @@
       "recordCount": 1,
       "archiveVideoIds": [
         "0L-rdKRqDMY"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=CXnTxyw4ZOM",
+          "title": "[방송] 20020526 월드컵 성공 기원 이벤트 벌떼 번지점프 - 신화",
+          "videoId": "CXnTxyw4ZOM",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
       ]
     },
     {
@@ -20693,7 +21066,15 @@
         "v34-src:JP2002-osaka-dvd",
         "v36-2002-s103"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=tnI1FvV8Y-Q",
+          "title": "[방송] 20020921 신화 WILD EYES + T O P + Free  Avex popasia 미방송분",
+          "videoId": "tnI1FvV8Y-Q",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "history:s026",
@@ -20782,7 +21163,33 @@
         "fan-cn1",
         "fan-cn2"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=AIS1I0KJnpY",
+          "title": "[방송] 20021019 SM생명사랑콘서트 - 신화 방송분 From KMTV",
+          "videoId": "AIS1I0KJnpY",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=3Svtt59a-xQ",
+          "title": "[직캠] 20021019 - SM생명사랑콘서트 - HERO",
+          "videoId": "3Svtt59a-xQ",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=q5yySudJFR0",
+          "title": "[직캠] 20021019 - SM생명사랑콘서트 - 인터뷰",
+          "videoId": "q5yySudJFR0",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=floe9blSMwc",
+          "title": "[직캠] 20021019 - SM생명사랑콘서트-  너 사랑안에 Live.ver",
+          "videoId": "floe9blSMwc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "radio2026:KBS 2FM 《강타·신혜성의 자유선언》 정규 더블 DJ 시작 (2003.04.20까지 편찬 기록)",
@@ -20876,7 +21283,33 @@
       "sourceRecord": "38차 누적조사",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=qlUGv3DGTWc",
+          "title": "[공식/판당고] 20021116 신혜성+김동완 생일 파티 비하인드 1",
+          "videoId": "qlUGv3DGTWc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=L_LPE9f9g7Q",
+          "title": "[공식/판당고] 20021116 신혜성+김동완 생일 파티 비하인드 2",
+          "videoId": "L_LPE9f9g7Q",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=YBr_ZJZce54",
+          "title": "[공식/판당고] 20021116 신혜성+김동완 생일 파티 비하인드 3",
+          "videoId": "YBr_ZJZce54",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=VJA-2Xi-hZQ",
+          "title": "[공식/판당고] 20021116 신혜성+김동완 생일 파티 비하인드 4",
+          "videoId": "VJA-2Xi-hZQ",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ]
     },
     {
       "id": "archive:description:2002-11-18:02f0717b3c",
@@ -21474,6 +21907,18 @@
           "title": "[직캠/화질구지] 20021230-kbs 가요대축제 -교재",
           "note": "영상·재생목록의 제목과 기존 일정의 날짜 및 행사/프로그램명을 대조하여 연결했습니다. 실제 재생 장면과 방송/촬영일은 독립 검증되지 않았습니다.",
           "videoId": "_w1EFc81j6I"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=0ptK3J33hn0",
+          "title": "[직캠/화질구지] 20021230 - kbs가요대축제 - 우동릭셩",
+          "videoId": "0ptK3J33hn0",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=5rJvIWUIZ_A",
+          "title": "[직캠] 20021230 kbs가요대축제 - Perfectman(신혜성 focus)",
+          "videoId": "5rJvIWUIZ_A",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
         }
       ]
     },
@@ -51664,12 +52109,20 @@
       "source": "첨부 엑셀",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1494974739&range=A4:D4",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2026.10.27 보강: 2013.01.02 당시 기사에서 신혜성의 MBC MUSIC 《리얼 모던 콘서트》 출연 및 1월 2일 밤 12시 편성을 확인. 자정은 1월 3일 0시로 표기될 수 있으므로 기존 연혁의 1월 2일 기록은 무단 이동하지 않고 1월 3일 팬영상은 같은 방송의 추가 참고로 연결함. 취재 기사: https://www.etoday.co.kr/news/view/672240 (2013.01.02 당시 기사).",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "13!4",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=uaVpmh1sXrM",
+          "title": "[방송] 20130103 MBC - 신혜성 - Real Modern Concert",
+          "videoId": "uaVpmh1sXrM",
+          "note": "2013.01.03으로 표기된 《Real Modern Concert》 팬채널 영상. 기사 편성 표기와 날짜 경계가 다른 것으로 보고 기존 1월 2일 일정에 보강합니다. 실제 영상 송출일 재검증 전."
+        }
+      ]
     },
     {
       "id": "sheet:13!7",
@@ -65697,6 +66150,582 @@
       "sourceRecord": "셩공시대 3차 조사 영상 7MsqaNIXFpU,pWpdUvjI2ns",
       "sourceRefs": [],
       "recordCount": 1
+    },
+    {
+      "id": "audit53:2000-09-24:sbs-inkigayo-128",
+      "date": "2000-09-24",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "SBS 《인기가요》 128회 — 신화 굿바이 스페셜",
+      "verification": "SBS 공식 128회 2000.09.24 방송일 확인 / 신화 굿바이 출연 및 개별 곡은 영상·2차 회차 목록 대조",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000371055",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=LGPn67dibyA",
+      "sourceNote": "SBS 공식 VOD 128회 2000.09.24 방송일 확인. 2차 회차 출연 목록에 신화 <Goodbye Special> 기재. 셩공시대님 영상 3개는 제목 기준 곡목을 가리키며 곡별 본방 재생은 직접 확인하지 못했습니다. 기존 조사표의 126회 링크 오류를 128회 URL로 정정함.",
+      "dateKind": "방송일(SBS 공식 128회 재방송 목록)",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / LGPn67dibyA,g_DI_iruX9A,JmwC7gesZxQ",
+      "sourceRefs": [
+        "audit53-src-2000-09-24-1"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000371055",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=LGPn67dibyA",
+          "title": "[방송] 20000924 SBS 인기가요 막방 - 신화 - All your dreams",
+          "videoId": "LGPn67dibyA",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=g_DI_iruX9A",
+          "title": "[방송] 20000924 SBS 인기가요 막방 - 신화 - Only one",
+          "videoId": "g_DI_iruX9A",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=JmwC7gesZxQ",
+          "title": "[방송] 20000924 SBS 인기가요 막방 - 신화 - fisrt love",
+          "videoId": "JmwC7gesZxQ",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=LGPn67dibyA",
+        "https://www.youtube.com/watch?v=g_DI_iruX9A",
+        "https://www.youtube.com/watch?v=JmwC7gesZxQ"
+      ]
+    },
+    {
+      "id": "audit53:2001-08-24:mnet-showking-summer",
+      "date": "2001-08-24",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet 인터넷 편성 《여름특집 ShowKing m》 — 신화 출연",
+      "verification": "전자신문 당시 편성표에 신화·클릭비·UN 출연 및 22:00~24:00 편성 확인",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://www.etnews.com/200108230040",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=CjeO2NlpIO8",
+      "sourceNote": "2001.08.24 전자신문 인터넷 방송 편성표에 m.net ‘여름특집 ShowKing m’가 22:00~24:00에 편성되고 신화가 출연진으로 명시되어 있습니다. 이날 Zepp Tokyo 쇼케이스가 별도 등록되어 있으나 두 행사를 동일 장소·라이브 현장으로 취급하지 않습니다. 팬 영상의 〈Hey, Come On!〉 실제 방송/스트리밍 여부는 확인 전.",
+      "dateKind": "2001.08.24 전자신문 인터넷 편성표 기재일(방송/스트리밍 출연, 현장 공연일 아님)",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / CjeO2NlpIO8",
+      "sourceRefs": [
+        "audit53-src-2001-08-24-1"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://www.etnews.com/200108230040",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=CjeO2NlpIO8",
+          "title": "[방송] 20010824 Mnet  showking M - 신화 - Hey come on",
+          "videoId": "CjeO2NlpIO8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=CjeO2NlpIO8"
+      ]
+    },
+    {
+      "id": "audit53:2004-10-12:shinhwa-crazy-mv-shoot",
+      "date": "2004-10-12",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "뮤직비디오 촬영",
+      "subject": "신화 전체(김동완·전진 출연)",
+      "title": "신화 〈열병(Crazy)〉 뮤직비디오 촬영 (10월 12~13일)",
+      "verification": "2004.10.15 스타뉴스 당시 기사에서 10.12~13 서울 시내 촬영 직접 확인",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://www.starnewskorea.com/music/2004/10/15/2004101511563835028",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=JOlVcccMZjU",
+      "sourceNote": "2004.10.15 스타뉴스 기사에 〈열병〉 MV를 10월 12일과 13일 서울 곳곳에서 촬영했다고 명시. 김동완·전진 출연, 이철하 감독. Mnet 와이드뉴스 팬영상은 2004.10.21의 ‘촬영현장 보도’로 표기되어 실제 촬영일과 다르므로 후속 취재 영상으로만 연결합니다. 본 영상 실제 방송 회차는 확인하지 못했습니다.",
+      "dateKind": "촬영 기간 시작일(2004.10.12~10.13), 방송일 아님",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / JOlVcccMZjU",
+      "sourceRefs": [
+        "audit53-src-2004-10-12-1"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://www.starnewskorea.com/music/2004/10/15/2004101511563835028",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=JOlVcccMZjU",
+          "title": "[방송] 20041021 Mnet widenews  열병 m/v 촬영현장",
+          "videoId": "JOlVcccMZjU",
+          "note": "2004.10.21 Mnet 와이드뉴스 〈열병〉 MV 촬영 현장이라는 팬영상 표제에 따른 후속 취재 참고자료. 실제 촬영은 당시 기사로 확인된 10월 12~13일이며 뉴스 방송일은 독립 확인 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=JOlVcccMZjU"
+      ]
+    },
+    {
+      "id": "audit53:2004-11-28:joint-birthday-party",
+      "date": "2004-11-28",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "팬미팅·생일행사",
+      "subject": "신혜성·김동완",
+      "title": "신혜성·김동완 공동 생일파티 《놀러가자》 — 현장 스케치 (미확정)",
+      "verification": "팬영상 + 과거 팬 활동 연표 일치 / 주최측 공지 및 당일 언론 확인 전",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://www.youtube.com/watch?v=bxDyp2X0mO0",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=bxDyp2X0mO0",
+      "sourceNote": "셩공시대님 영상 제목 「20041128 신화 완셩 생파 현장 스케치」 및 과거 팬 활동 연표에 11월 28일 공동 생일파티 기록이 있습니다. 역도경기장 장소명은 독립 공식 자료가 없어 공개 제목에서는 제외했습니다. 기존 11월 29일 KM·Mnet 생일파티 보도는 보도일로 별도 유지하며 행사 개최일과 혼동하지 않습니다.",
+      "dateKind": "팬활동 연표·현장영상의 주장 날짜(2004.11.28), 독립 공식 확인 전",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / bxDyp2X0mO0",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=bxDyp2X0mO0",
+          "title": "[공식] 20041128 신화 - 완셩 생파 현장 스케치",
+          "videoId": "bxDyp2X0mO0",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=bxDyp2X0mO0"
+      ]
+    },
+    {
+      "id": "audit53:2005-09-24:hallyu-allstar-summit",
+      "date": "2005-09-24",
+      "precision": "day",
+      "chapter": "chapter2",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성",
+      "title": "한류 올스타 서밋 2005 — 일본 사이타마 슈퍼 아레나 신혜성 출연",
+      "verification": "일본·한국 당시 사후 기사 대조: 행사 개최·신혜성 출연 확인",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://www.oricon.co.jp/news/5177/full/",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=6q7cc36DHqU",
+      "sourceNote": "한일 국교정상화 40주년 기념 행사. 2005.09.25 일본 현지 행사 사후 보도 및 오리콘 일본 기사의 신혜성 참석 기록과 팬 영상을 대조했습니다. 〈떠나지마〉·〈같은 생각〉 곡별 실제 공연은 팬영상 제목 기준이며 개별 곡 목록의 공식 자료는 미확인.",
+      "dateKind": "2005.09.24 행사 개최일",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / 6q7cc36DHqU",
+      "sourceRefs": [
+        "audit53-src-2005-09-24-1",
+        "audit53-src-2005-09-24-2"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://www.oricon.co.jp/news/5177/full/",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=6q7cc36DHqU",
+          "title": "[방송] 20050924 Japan All star summit -신혜성 - 떠나지마+ 같은 생각",
+          "videoId": "6q7cc36DHqU",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=6q7cc36DHqU"
+      ]
+    },
+    {
+      "id": "audit53:2014-11-23:kbs-openconcert-1040-s",
+      "date": "2014-11-23",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "그룹 S(강타·신혜성·이지훈)",
+      "title": "KBS 《열린음악회》 1040회 — 그룹 S 출연",
+      "verification": "1040회 방송일 및 그룹 S 출연 회차 목록·팬영상 대조 / KBS 공식 출연자 명부 직접 확인 전",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://zetawiki.com/wiki/%EC%97%B4%EB%A6%B0%EC%9D%8C%EC%95%85%ED%9A%8C%EC%9D%98_%EC%97%90%ED%94%BC%EC%86%8C%EB%93%9C_%EB%AA%A9%EB%A1%9D",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=EdaHSFKTDPg",
+      "sourceNote": "1040회 방송일을 2014.11.23으로 표기한 방송목록과 S(강타·신혜성·이지훈) 출연자 기록, 팬영상 「멘트+I Swear」 제목을 대조했습니다. 녹화일 또는 개별 무대곡의 공식 확인으로 확대하지 않습니다.",
+      "dateKind": "2014.11.23 방송 회차일(녹화일 아님)",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / EdaHSFKTDPg",
+      "sourceRefs": [
+        "audit53-src-2014-11-23-1"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://zetawiki.com/wiki/%EC%97%B4%EB%A6%B0%EC%9D%8C%EC%95%85%ED%9A%8C%EC%9D%98_%EC%97%90%ED%94%BC%EC%86%8C%EB%93%9C_%EB%AA%A9%EB%A1%9D",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=EdaHSFKTDPg",
+          "title": "[방송] 20141123 열린음악회  신혜성(S) - 멘트 +I Swear",
+          "videoId": "EdaHSFKTDPg",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=EdaHSFKTDPg"
+      ]
+    },
+    {
+      "id": "audit53:2015-11-16:naver-v-first-syeongtime",
+      "date": "2015-11-16",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "온라인 방송",
+      "subject": "신혜성",
+      "title": "네이버 V앱 《첫 번째 셩타임》 — 신혜성 생방송",
+      "verification": "2015.11.17 텐아시아 사후 기사로 전날 생중계·프로그램명 직접 확인",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://www.tenasia.co.kr/article/2015111725214",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=1QTg1vxAGXA",
+      "sourceNote": "텐아시아 2015.11.17 기사에 신혜성이 16일 네이버 V앱으로 첫 번째 셩타임을 생중계하고 전진 댓글에 반응한 내용 확인. 팬채널 영상은 재게시 자료이며 최초 공개일과는 구분합니다.",
+      "dateKind": "2015.11.16 생방송일",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / 1QTg1vxAGXA",
+      "sourceRefs": [
+        "audit53-src-2015-11-16-1"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://www.tenasia.co.kr/article/2015111725214",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=1QTg1vxAGXA",
+          "title": "[공식/V] 20151116 첫번째 셩타임",
+          "videoId": "1QTg1vxAGXA",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=1QTg1vxAGXA"
+      ]
+    },
+    {
+      "id": "audit53:2016-08-13:delight-shanghai",
+      "date": "2016-08-13",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성",
+      "title": "2016 신혜성 콘서트 DELIGHT SHANGHAI — 중국 상하이",
+      "verification": "2016.08.14 공연 후 엑스포츠뉴스·스타뉴스 보도로 개최·장소·시간 확인",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://www.xportsnews.com/article/756110",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=fHULtFZstPE",
+      "sourceNote": "2016.08.13 오후 7시 30분(중국 현지시각), 상하이 국제체조중심에서 개최. QQTV 중국 전역 생중계 보도 확인. 셩공시대님 채널의 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 영상 각각의 출연곡·재생 장면은 직접 확인 전입니다.",
+      "dateKind": "2016.08.13 실제 공연일, 현지 19:30",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / fHULtFZstPE,sZB7F4akE50,9ojSTh9wC9E,8iY6-7tV5pE,uNgEgVXXFYo,hV6v8Z3xEMc,CPr9wlXFgdI,y_TGEJEkJuc,mRJd76qZqxk,DjhZRvMD7N0,MEpxnwVGLj8,dTcMc2al218,yLKhdoFuVGs,0KJA0dA85l8,saPUlN0-O4c,-0ozLo_WZd0,q7s1MYR2p80,D8fQ2OSoHrI,jK7cEU5mfv0,n15UPdJK20o",
+      "sourceRefs": [
+        "audit53-src-2016-08-13-1",
+        "audit53-src-2016-08-13-2"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://www.xportsnews.com/article/756110",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=fHULtFZstPE",
+          "title": "[직캠] 20160813 -  DELIGHT SHANGHAI -  OPENING PART",
+          "videoId": "fHULtFZstPE",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=sZB7F4akE50",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 1부 마지막 발라드 3곡",
+          "videoId": "sZB7F4akE50",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=9ojSTh9wC9E",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - Ex-Mind",
+          "videoId": "9ojSTh9wC9E",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=8iY6-7tV5pE",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 같은 생각",
+          "videoId": "8iY6-7tV5pE",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=uNgEgVXXFYo",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 그대라서",
+          "videoId": "uNgEgVXXFYo",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=hV6v8Z3xEMc",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 끝인사(embrace track no.6)",
+          "videoId": "hV6v8Z3xEMc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=CPr9wlXFgdI",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 단체인사",
+          "videoId": "CPr9wlXFgdI",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=y_TGEJEkJuc",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 마무리 멘트(feat.반짝이)",
+          "videoId": "y_TGEJEkJuc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=mRJd76qZqxk",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 마지막 인사",
+          "videoId": "mRJd76qZqxk",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=DjhZRvMD7N0",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 별을 따다",
+          "videoId": "DjhZRvMD7N0",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=MEpxnwVGLj8",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 사랑해",
+          "videoId": "MEpxnwVGLj8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=dTcMc2al218",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 예쁜 아가씨",
+          "videoId": "dTcMc2al218",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=yLKhdoFuVGs",
+          "title": "[직캠] 20160813 - DELIGHT SHANGHAI - 예쁜 아가씨 + 엔딩",
+          "videoId": "yLKhdoFuVGs",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=0KJA0dA85l8",
+          "title": "[직캠] 20160813 - 신혜성 - DELIGHT in Shanghai - 아기새의 음성메세지",
+          "videoId": "0KJA0dA85l8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=saPUlN0-O4c",
+          "title": "[직캠] 20160813 DELIGHT SHANGHAI - 생각해봐요+돌아와줘",
+          "videoId": "saPUlN0-O4c",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=-0ozLo_WZd0",
+          "title": "[직캠] 20160813 DELIGHTSHANGHAI - 오프닝멘트 +첫사람",
+          "videoId": "-0ozLo_WZd0",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=q7s1MYR2p80",
+          "title": "[직캠] 20160813 신혜성 - 딜라잇상해 - 생각보다 생각나",
+          "videoId": "q7s1MYR2p80",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=D8fQ2OSoHrI",
+          "title": "[직캠] 20160813- DELIGHT SHANGHAI - 끝이야",
+          "videoId": "D8fQ2OSoHrI",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=jK7cEU5mfv0",
+          "title": "[직캠] 20160813- DELIGHT SHANGHAI - 로코드라마",
+          "videoId": "jK7cEU5mfv0",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=n15UPdJK20o",
+          "title": "[직캠] 20160813- DELIGHT SHANGHAI - 생각보다 생각나",
+          "videoId": "n15UPdJK20o",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=fHULtFZstPE",
+        "https://www.youtube.com/watch?v=sZB7F4akE50",
+        "https://www.youtube.com/watch?v=9ojSTh9wC9E",
+        "https://www.youtube.com/watch?v=8iY6-7tV5pE",
+        "https://www.youtube.com/watch?v=uNgEgVXXFYo",
+        "https://www.youtube.com/watch?v=hV6v8Z3xEMc",
+        "https://www.youtube.com/watch?v=CPr9wlXFgdI",
+        "https://www.youtube.com/watch?v=y_TGEJEkJuc",
+        "https://www.youtube.com/watch?v=mRJd76qZqxk",
+        "https://www.youtube.com/watch?v=DjhZRvMD7N0",
+        "https://www.youtube.com/watch?v=MEpxnwVGLj8",
+        "https://www.youtube.com/watch?v=dTcMc2al218",
+        "https://www.youtube.com/watch?v=yLKhdoFuVGs",
+        "https://www.youtube.com/watch?v=0KJA0dA85l8",
+        "https://www.youtube.com/watch?v=saPUlN0-O4c",
+        "https://www.youtube.com/watch?v=-0ozLo_WZd0",
+        "https://www.youtube.com/watch?v=q7s1MYR2p80",
+        "https://www.youtube.com/watch?v=D8fQ2OSoHrI",
+        "https://www.youtube.com/watch?v=jK7cEU5mfv0",
+        "https://www.youtube.com/watch?v=n15UPdJK20o"
+      ]
+    },
+    {
+      "id": "audit53:2016-09-10:delight-nanjing",
+      "date": "2016-09-10",
+      "precision": "day",
+      "chapter": "chapter3",
+      "transition": "",
+      "category": "콘서트",
+      "subject": "신혜성",
+      "title": "2016 신혜성 콘서트 DELIGHT NANJING — 중국 난징",
+      "verification": "2016.09.11 스포츠조선 사후 기사에서 개최·장소·시간 확인",
+      "source": "2026.10.27 통합 재검증: 당시 기사·방송회차·영상 비교 (출처 팝업에서 범위 구분)",
+      "sourceUrl": "https://www.chosun.com/site/data/html_dir/2016/09/11/2016091100424.html",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=doFpd6Q4r50",
+      "sourceNote": "2016.09.10 오후 7시 30분(중국 현지시각), 중국 난징 태양궁 극장 개최. 셩공시대님 채널에서 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 팬영상 제목과 실제 재생 내용은 별도 독립 확인 전입니다.",
+      "dateKind": "2016.09.10 실제 공연일, 현지 19:30",
+      "sourceRecord": "2026-10-27 v53 조사 통합 / doFpd6Q4r50,P9wXeWussrg,P7oMWMfjC2k,jmPNHNUopVQ,9gUswONBqYA,vfWQ6ioGXCU,kWKoGogK58o,eUPmILGvRdA,NcDc918d3mM,RLxRRCnF-sU,H3xi4e5Mpig,LFMlxRu4LeE,2bfRiUZ7_40,cuf5equROL4,qLIDdzotyhM,VfCTEeA3VsI,V7Tbz-ceoas,nXEKWZlNsGc,1J1fHzV5Ny8,O3TLCMUnfjs",
+      "sourceRefs": [
+        "audit53-src-2016-09-10-1"
+      ],
+      "recordCount": 1,
+      "verificationUrl": "https://www.chosun.com/site/data/html_dir/2016/09/11/2016091100424.html",
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=doFpd6Q4r50",
+          "title": "[직캠 ] 20160910 DELIGHT NANJING - 처음 인사",
+          "videoId": "doFpd6Q4r50",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=P9wXeWussrg",
+          "title": "[직캠] 20160910 - DELIGHT NANJING -  첫사람",
+          "videoId": "P9wXeWussrg",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=P7oMWMfjC2k",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 2부 멘트( feat.아기새음성메세지)",
+          "videoId": "P7oMWMfjC2k",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=jmPNHNUopVQ",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - Drinking water.",
+          "videoId": "jmPNHNUopVQ",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=9gUswONBqYA",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - Exmind",
+          "videoId": "9gUswONBqYA",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vfWQ6ioGXCU",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 같은 생각",
+          "videoId": "vfWQ6ioGXCU",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=kWKoGogK58o",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 그대라서",
+          "videoId": "kWKoGogK58o",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=eUPmILGvRdA",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 끝인사",
+          "videoId": "eUPmILGvRdA",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=NcDc918d3mM",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 돌아와줘",
+          "videoId": "NcDc918d3mM",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=RLxRRCnF-sU",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 로코드라마",
+          "videoId": "RLxRRCnF-sU",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=H3xi4e5Mpig",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 별을 따다",
+          "videoId": "H3xi4e5Mpig",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=LFMlxRu4LeE",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 사랑해",
+          "videoId": "LFMlxRu4LeE",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=2bfRiUZ7_40",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 생각해봐요",
+          "videoId": "2bfRiUZ7_40",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=cuf5equROL4",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 예쁜 아가씨 +  마지막 인사",
+          "videoId": "cuf5equROL4",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=qLIDdzotyhM",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 이별을 꿈꾸다",
+          "videoId": "qLIDdzotyhM",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=VfCTEeA3VsI",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 조금 더 가까이",
+          "videoId": "VfCTEeA3VsI",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=V7Tbz-ceoas",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 첫 3곡",
+          "videoId": "V7Tbz-ceoas",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=nXEKWZlNsGc",
+          "title": "[직캠] 20160910 - DELIGHT NANJING - 한 걸음을 더",
+          "videoId": "nXEKWZlNsGc",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=1J1fHzV5Ny8",
+          "title": "[직캠] 20160910- DELIGHT NANJING - Gone Today",
+          "videoId": "1J1fHzV5Ny8",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=O3TLCMUnfjs",
+          "title": "[직캠] 20160910- DELIGHT NANJING - 끝이야",
+          "videoId": "O3TLCMUnfjs",
+          "note": "셩공시대님 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
+        }
+      ],
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=doFpd6Q4r50",
+        "https://www.youtube.com/watch?v=P9wXeWussrg",
+        "https://www.youtube.com/watch?v=P7oMWMfjC2k",
+        "https://www.youtube.com/watch?v=jmPNHNUopVQ",
+        "https://www.youtube.com/watch?v=9gUswONBqYA",
+        "https://www.youtube.com/watch?v=vfWQ6ioGXCU",
+        "https://www.youtube.com/watch?v=kWKoGogK58o",
+        "https://www.youtube.com/watch?v=eUPmILGvRdA",
+        "https://www.youtube.com/watch?v=NcDc918d3mM",
+        "https://www.youtube.com/watch?v=RLxRRCnF-sU",
+        "https://www.youtube.com/watch?v=H3xi4e5Mpig",
+        "https://www.youtube.com/watch?v=LFMlxRu4LeE",
+        "https://www.youtube.com/watch?v=2bfRiUZ7_40",
+        "https://www.youtube.com/watch?v=cuf5equROL4",
+        "https://www.youtube.com/watch?v=qLIDdzotyhM",
+        "https://www.youtube.com/watch?v=VfCTEeA3VsI",
+        "https://www.youtube.com/watch?v=V7Tbz-ceoas",
+        "https://www.youtube.com/watch?v=nXEKWZlNsGc",
+        "https://www.youtube.com/watch?v=1J1fHzV5Ny8",
+        "https://www.youtube.com/watch?v=O3TLCMUnfjs"
+      ]
     }
   ],
   "researchSources": [
@@ -69827,6 +70856,86 @@
       "url": "https://www.stagepick.co.kr/performances/detail/XvEbWWbAivWYJQF2",
       "kind": "공연 DB (공연일·공연명·장소 확인)",
       "note": "공연 목록이 배기성 공연 날짜와 장소를 뒷받침하나, 출연진에는 배기성만 기재되어 있어 신혜성 게스트 여부는 검증하지 못합니다."
+    },
+    {
+      "id": "audit53-src-2000-09-24-1",
+      "publisher": "SBS 공식 다시보기",
+      "title": "SBS 《인기가요》 128회 — 신화 굿바이 스페셜",
+      "url": "https://programs.sbs.co.kr/programTemplate/amp/vod/gayo/22000371055",
+      "kind": "SBS 공식 128회 2000.09.24 방송일 확인 / 신화 굿바이 출연 및 개별 곡은 영상·2차 회차 목록 대조",
+      "note": "방송일(SBS 공식 128회 재방송 목록); SBS 공식 VOD 128회 2000.09.24 방송일 확인. 2차 회차 출연 목록에 신화 <Goodbye Special> 기재. 셩공시대님 영상 3개는 제목 기준 곡목을 가리키며 곡별 본방 재생은 직접 확인하지 못했습니다. 기존 조사표의 126회 링크 오류를 128회 URL로 정정함."
+    },
+    {
+      "id": "audit53-src-2001-08-24-1",
+      "publisher": "전자신문",
+      "title": "Mnet 인터넷 편성 《여름특집 ShowKing m》 — 신화 출연",
+      "url": "https://www.etnews.com/200108230040",
+      "kind": "전자신문 당시 편성표에 신화·클릭비·UN 출연 및 22:00~24:00 편성 확인",
+      "note": "2001.08.24 전자신문 인터넷 편성표 기재일(방송/스트리밍 출연, 현장 공연일 아님); 2001.08.24 전자신문 인터넷 방송 편성표에 m.net ‘여름특집 ShowKing m’가 22:00~24:00에 편성되고 신화가 출연진으로 명시되어 있습니다. 이날 Zepp Tokyo 쇼케이스가 별도 등록되어 있으나 두 행사를 동일 장소·라이브 현장으로 취급하지 않습니다. 팬 영상의 〈Hey, Come On!〉 실제 방송/스트리밍 여부는 확인 전."
+    },
+    {
+      "id": "audit53-src-2004-10-12-1",
+      "publisher": "스타뉴스",
+      "title": "신화 〈열병(Crazy)〉 뮤직비디오 촬영 (10월 12~13일)",
+      "url": "https://www.starnewskorea.com/music/2004/10/15/2004101511563835028",
+      "kind": "2004.10.15 스타뉴스 당시 기사에서 10.12~13 서울 시내 촬영 직접 확인",
+      "note": "촬영 기간 시작일(2004.10.12~10.13), 방송일 아님; 2004.10.15 스타뉴스 기사에 〈열병〉 MV를 10월 12일과 13일 서울 곳곳에서 촬영했다고 명시. 김동완·전진 출연, 이철하 감독. Mnet 와이드뉴스 팬영상은 2004.10.21의 ‘촬영현장 보도’로 표기되어 실제 촬영일과 다르므로 후속 취재 영상으로만 연결합니다. 본 영상 실제 방송 회차는 확인하지 못했습니다."
+    },
+    {
+      "id": "audit53-src-2005-09-24-1",
+      "publisher": "ORICON NEWS",
+      "title": "한류 올스타 서밋 2005 — 일본 사이타마 슈퍼 아레나 신혜성 출연",
+      "url": "https://www.oricon.co.jp/news/5177/full/",
+      "kind": "일본·한국 당시 사후 기사 대조: 행사 개최·신혜성 출연 확인",
+      "note": "2005.09.24 행사 개최일; 한일 국교정상화 40주년 기념 행사. 2005.09.25 일본 현지 행사 사후 보도 및 오리콘 일본 기사의 신혜성 참석 기록과 팬 영상을 대조했습니다. 〈떠나지마〉·〈같은 생각〉 곡별 실제 공연은 팬영상 제목 기준이며 개별 곡 목록의 공식 자료는 미확인."
+    },
+    {
+      "id": "audit53-src-2005-09-24-2",
+      "publisher": "중앙일보 일본어판",
+      "title": "한류 올스타 서밋 2005 — 일본 사이타마 슈퍼 아레나 신혜성 출연",
+      "url": "https://japanese.joins.com/JArticle/67926?sectcode=710&servcode=700",
+      "kind": "일본·한국 당시 사후 기사 대조: 행사 개최·신혜성 출연 확인",
+      "note": "2005.09.24 행사 개최일; 한일 국교정상화 40주년 기념 행사. 2005.09.25 일본 현지 행사 사후 보도 및 오리콘 일본 기사의 신혜성 참석 기록과 팬 영상을 대조했습니다. 〈떠나지마〉·〈같은 생각〉 곡별 실제 공연은 팬영상 제목 기준이며 개별 곡 목록의 공식 자료는 미확인."
+    },
+    {
+      "id": "audit53-src-2014-11-23-1",
+      "publisher": "제타위키(비공식 회차 목록)",
+      "title": "KBS 《열린음악회》 1040회 — 그룹 S 출연",
+      "url": "https://zetawiki.com/wiki/%EC%97%B4%EB%A6%B0%EC%9D%8C%EC%95%85%ED%9A%8C%EC%9D%98_%EC%97%90%ED%94%BC%EC%86%8C%EB%93%9C_%EB%AA%A9%EB%A1%9D",
+      "kind": "1040회 방송일 및 그룹 S 출연 회차 목록·팬영상 대조 / KBS 공식 출연자 명부 직접 확인 전",
+      "note": "2014.11.23 방송 회차일(녹화일 아님); 1040회 방송일을 2014.11.23으로 표기한 방송목록과 S(강타·신혜성·이지훈) 출연자 기록, 팬영상 「멘트+I Swear」 제목을 대조했습니다. 녹화일 또는 개별 무대곡의 공식 확인으로 확대하지 않습니다."
+    },
+    {
+      "id": "audit53-src-2015-11-16-1",
+      "publisher": "텐아시아",
+      "title": "네이버 V앱 《첫 번째 셩타임》 — 신혜성 생방송",
+      "url": "https://www.tenasia.co.kr/article/2015111725214",
+      "kind": "2015.11.17 텐아시아 사후 기사로 전날 생중계·프로그램명 직접 확인",
+      "note": "2015.11.16 생방송일; 텐아시아 2015.11.17 기사에 신혜성이 16일 네이버 V앱으로 첫 번째 셩타임을 생중계하고 전진 댓글에 반응한 내용 확인. 팬채널 영상은 재게시 자료이며 최초 공개일과는 구분합니다."
+    },
+    {
+      "id": "audit53-src-2016-08-13-1",
+      "publisher": "엑스포츠뉴스",
+      "title": "2016 신혜성 콘서트 DELIGHT SHANGHAI — 중국 상하이",
+      "url": "https://www.xportsnews.com/article/756110",
+      "kind": "2016.08.14 공연 후 엑스포츠뉴스·스타뉴스 보도로 개최·장소·시간 확인",
+      "note": "2016.08.13 실제 공연일, 현지 19:30; 2016.08.13 오후 7시 30분(중국 현지시각), 상하이 국제체조중심에서 개최. QQTV 중국 전역 생중계 보도 확인. 셩공시대님 채널의 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 영상 각각의 출연곡·재생 장면은 직접 확인 전입니다."
+    },
+    {
+      "id": "audit53-src-2016-08-13-2",
+      "publisher": "스타뉴스",
+      "title": "2016 신혜성 콘서트 DELIGHT SHANGHAI — 중국 상하이",
+      "url": "https://www.starnewskorea.com/music/2016/08/14/2016081410305186904",
+      "kind": "2016.08.14 공연 후 엑스포츠뉴스·스타뉴스 보도로 개최·장소·시간 확인",
+      "note": "2016.08.13 실제 공연일, 현지 19:30; 2016.08.13 오후 7시 30분(중국 현지시각), 상하이 국제체조중심에서 개최. QQTV 중국 전역 생중계 보도 확인. 셩공시대님 채널의 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 영상 각각의 출연곡·재생 장면은 직접 확인 전입니다."
+    },
+    {
+      "id": "audit53-src-2016-09-10-1",
+      "publisher": "스포츠조선",
+      "title": "2016 신혜성 콘서트 DELIGHT NANJING — 중국 난징",
+      "url": "https://www.chosun.com/site/data/html_dir/2016/09/11/2016091100424.html",
+      "kind": "2016.09.11 스포츠조선 사후 기사에서 개최·장소·시간 확인",
+      "note": "2016.09.10 실제 공연일, 현지 19:30; 2016.09.10 오후 7시 30분(중국 현지시각), 중국 난징 태양궁 극장 개최. 셩공시대님 채널에서 날짜·행사명이 일치하는 영상 20개를 참고자료로 연결했습니다. 팬영상 제목과 실제 재생 내용은 별도 독립 확인 전입니다."
     }
   ]
 }
