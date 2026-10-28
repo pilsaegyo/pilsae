@@ -843,6 +843,31 @@
       "addedVideoReferences": 17,
       "addedFanScreenshotReferences": 14,
       "notes": "날짜·프로그램·현장 참석을 확인하는 증거별 범위를 구분합니다. 팬영상 557건 전체 검증 또는 일괄 연결은 수행하지 않았습니다. 사용자 제공 팬캡처는 공개 사이트의 근거 팝업에서 열립니다."
+    },
+    "starThreeKingdomsAudit20261028": {
+      "baseEventCount": 2542,
+      "eventCountAfter": 2542,
+      "updatedExistingIds": [
+        "sheet:01!83",
+        "sheet:01!103",
+        "sheet:01!115",
+        "sheet:01!131"
+      ],
+      "broadcastDatesUsed": [
+        "2001-03-10",
+        "2001-03-17",
+        "2001-03-24",
+        "2001-03-31"
+      ],
+      "dateCorrection": "사용자 제공 영상 자막의 03.30(금)을 03.31(토)로 표기; 당시 토요일 편성 자료와 기존 03.31 이벤트 대조",
+      "verificationScope": "KBS2 프로그램의 방송기간/방송요일과 유저 제공 영상 자막 일자 교차 검토. KBS 각 회차 원본이나 원본영상 URL은 미확보.",
+      "newEvents": 0,
+      "registeredAtPolicy": "기존 이벤트의 근거·제목 보강이므로 기존 NEW 표시 조건을 바꾸지 않음",
+      "addedResearchSourceIds": [
+        "star3-20261028-donga-20000610",
+        "star3-20261028-program-archive",
+        "star3-20261028-fan-history"
+      ]
     }
   },
   "chapters": [
@@ -12878,16 +12903,20 @@
       "transition": "",
       "category": "예능",
       "subject": "신혜성 개인",
-      "title": "KBS 자유선언 오늘은 토요일",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
+      "title": "KBS2 《자유선언 오늘은 토요일》 〈스타삼국대전〉",
+      "verification": "기존 연혁·제공 영상 자막 대조(개별 KBS 회차 원본 미확보)",
+      "source": "기존 활동연혁 원본 · 사용자 제공 영상 화면 자막",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A83:D83",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceNote": "제공된 편집영상 화면 자막에 2001.03.10 《자유선언 스타삼국대전》 방송이라고 표기됨. 기존 연혁에도 해당 날짜 KBS2 《자유선언 오늘은 토요일》 기록이 있으며 토요일 정규 편성과 부합함. 코너명·일자 출처는 제공 영상 자막이고, KBS 원본 회차 및 개별 출연진 목록은 미확보. 원본 영상 URL은 제공되지 않아 임의 연결하지 않음.",
+      "dateKind": "기존 연혁 방송 기재일(코너별 원본 미확보)",
       "sourceRecord": "01!83",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "star3-20261028-donga-20000610",
+        "star3-20261028-program-archive",
+        "star3-20261028-fan-history"
+      ],
       "recordCount": 1
     },
     {
@@ -13094,16 +13123,20 @@
       "transition": "",
       "category": "예능",
       "subject": "신혜성 개인",
-      "title": "KBS 자유선언 오늘은 토요일",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
+      "title": "KBS2 《자유선언 오늘은 토요일》 〈스타삼국대전〉",
+      "verification": "기존 연혁·제공 영상 자막 대조(개별 KBS 회차 원본 미확보)",
+      "source": "기존 활동연혁 원본 · 사용자 제공 영상 화면 자막",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A103:D103",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceNote": "제공된 편집영상 화면 자막에 2001.03.17 《자유선언 스타삼국대전》 방송이라고 표기됨. 기존 연혁에도 해당 날짜 KBS2 《자유선언 오늘은 토요일》 기록이 있으며 토요일 정규 편성과 부합함. 코너명·일자 출처는 제공 영상 자막이고, KBS 원본 회차 및 개별 출연진 목록은 미확보. 원본 영상 URL은 제공되지 않아 임의 연결하지 않음.",
+      "dateKind": "기존 연혁 방송 기재일(코너별 원본 미확보)",
       "sourceRecord": "01!103",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "star3-20261028-donga-20000610",
+        "star3-20261028-program-archive",
+        "star3-20261028-fan-history"
+      ],
       "recordCount": 1
     },
     {
@@ -13266,16 +13299,20 @@
       "transition": "",
       "category": "예능",
       "subject": "신혜성 개인",
-      "title": "KBS 자유선언 오늘은 토요일",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
+      "title": "KBS2 《자유선언 오늘은 토요일》 〈스타삼국대전〉",
+      "verification": "기존 연혁·제공 영상 자막 대조(개별 KBS 회차 원본 미확보)",
+      "source": "기존 활동연혁 원본 · 사용자 제공 영상 화면 자막",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A115:D115",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceNote": "제공된 편집영상 화면 자막에 2001.03.24 《자유선언 스타삼국대전》 방송이라고 표기됨. 기존 연혁에도 해당 날짜 KBS2 《자유선언 오늘은 토요일》 기록이 있으며 토요일 정규 편성과 부합함. 코너명·일자 출처는 제공 영상 자막이고, KBS 원본 회차 및 개별 출연진 목록은 미확보. 원본 영상 URL은 제공되지 않아 임의 연결하지 않음.",
+      "dateKind": "기존 연혁 방송 기재일(코너별 원본 미확보)",
       "sourceRecord": "01!115",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "star3-20261028-donga-20000610",
+        "star3-20261028-program-archive",
+        "star3-20261028-fan-history"
+      ],
       "recordCount": 1
     },
     {
@@ -13470,16 +13507,20 @@
       "transition": "",
       "category": "예능",
       "subject": "신혜성 개인",
-      "title": "KBS 자유선언 오늘은 토요일",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
+      "title": "KBS2 《자유선언 오늘은 토요일》 〈스타삼국대전〉",
+      "verification": "기존 연혁·제공 영상 자막 대조(개별 KBS 회차 원본 미확보)",
+      "source": "기존 활동연혁 원본 · 사용자 제공 영상 화면 자막",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A131:D131",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceNote": "제공된 영상 캡처는 스타삼국대전 방송일을 2001.03.10·17·24·30으로 표기하지만, 마지막 03.30은 금요일임. 기존 연혁의 KBS2 토요일 방송 2001.03.31 기록과 해당 날짜의 편성 자료를 토대로 사용자 요청에 따라 03.31(토)로 정정 표기함. 프로그램 방송 날짜와 코너의 실제 개별 회차는 서로 구별하며 KBS의 해당 코너 원본/공식 출연진 목록은 미확보. 제공된 화면 자막을 영상 관련 증빙으로 기록하며 원본 영상 URL은 미제공이므로 추정하여 연결하지 않음.",
+      "dateKind": "기존 연혁 방송 기재일(코너별 원본 미확보)",
       "sourceRecord": "01!131",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "star3-20261028-donga-20000610",
+        "star3-20261028-program-archive",
+        "star3-20261028-fan-history"
+      ],
       "recordCount": 1
     },
     {
@@ -74513,6 +74554,30 @@
       "url": "https://www.xportsnews.com/article/879476",
       "kind": "당시 기사 · 본문 직접 확인",
       "note": "2017년8월3일 소속사SNS Serenity 메인컨셉포토공개 / 원자료에 기록된 확인일: 2026-10-28"
+    },
+    {
+      "id": "star3-20261028-donga-20000610",
+      "publisher": "동아일보",
+      "title": "2000.06.09 TV 가이드 — KBS2 《자유선언 오늘은 토요일》과 신화 코너 소개",
+      "url": "https://www.donga.com/news/Entertainment/article/all/20000609/7544887/1",
+      "kind": "동시대 신문 · 프로그램 존재 참고",
+      "note": "2000년의 KBS2 프로그램과 신화 출연 사례를 확인하는 자료. 2001년 3월 각 회차의 스타삼국대전 출연을 직접 입증하지는 않음."
+    },
+    {
+      "id": "star3-20261028-program-archive",
+      "publisher": "제타위키",
+      "title": "《자유선언 오늘은 토요일》 — 방송 기간과 2001년 3월 토요일 편성 정보",
+      "url": "https://zetawiki.com/wiki/%EC%9E%90%EC%9C%A0%EC%84%A0%EC%96%B8_%EC%98%A4%EB%8A%98%EC%9D%80_%ED%86%A0%EC%9A%94%EC%9D%BC",
+      "kind": "2차 편성자료 · 일자 교차검토",
+      "note": "1998.10.17~2001.04.28 토요일 방영, 2001.03.31 편성시각 기록. 개별 스타삼국대전 출연진/회차의 공식 목록은 아님."
+    },
+    {
+      "id": "star3-20261028-fan-history",
+      "publisher": "SHINHWA應援團 (팬 편찬 연혁)",
+      "title": "신화 1995~2003 활동연혁 — 2001.03.19 스타삼국대전 녹화 언급",
+      "url": "https://myshinhwa.pixnet.net/blog/posts/2015125682",
+      "kind": "후대 팬 편찬 · 보조 근거",
+      "note": "2001년 3월 스타삼국대전 코너가 제작됐다는 팬 편찬 서술. 네 방송 날짜별 직접 증빙은 아니며 녹화와 방송은 구분해야 함."
     }
   ]
 }
