@@ -422,3 +422,6 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 .source-merged-list li strong{display:block;font-size:12px}
 .source-merged-list li small{display:block;margin-top:3px;line-height:1.45}
 @media(max-width:550px){.cal-day-unknown{padding:5px 2px}.cal-day-unknown .cal-day-number{font-size:10px;text-align:center}}
+
+/* v54.1 — newly registered timeline event for the first 24 hours only. */
+.history-new-badge{display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;margin-left:8px;padding:2px 6px;border-radius:5px;border:1px solid light-dark(#a3b7e0,#6579a8);background:light-dark(#eaf1ff,#354767);color:light-dark(#31558e,#ecf3ff);font-size:10px;font-weight:800;line-height:1.25;letter-spacing:.04em;white-space:nowrap}

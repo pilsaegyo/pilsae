@@ -515,6 +515,7 @@ function ytUrl(video) {
 }
 function isSafeUrl(value){
  const url=String(value||'');
+ if(/^\/history-evidence\/[a-z0-9][a-z0-9._-]*\.png$/i.test(url))return true;
  if(!/^https:\/\//i.test(url))return false;
  // Defunct V LIVE/V App links must never be presented as playable sources.
  return !/(?:vlive\.tv|v-live\.tv|vlive\.com|vapp\.naver\.com)/i.test(url);
@@ -546,9 +547,16 @@ function normalizeSubject(s){
  if(s==='신혜성 포함 합동'||s==='신혜성 개인·합동')return 'together';
  return 'historical';
 }
+// A newly imported historical event is NEW for 24h after its registeredAt timestamp.
+// Its historical event date never influences this badge.
+const NEW_WINDOW_MS=24*60*60*1000;
+function isNewEvent(e,now=Date.now()){
+ const at=Date.parse(String(e.registeredAt||''));
+ return Number.isFinite(at)&&at<=now&&now-at<NEW_WINDOW_MS;
+}
 function selectRows(){
  const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim().toLocaleLowerCase();
- filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||normalizeSubject(e.subject)===subject)&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||!!e.relatedVideos?.length||!!e.fanVideoSources?.length)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
+ filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||!!e.relatedVideos?.length||!!e.fanVideoSources?.length)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
 }
 function chronologicalKey(e){
   const year=e.date.slice(0,4);
@@ -762,7 +770,8 @@ function eventMarkup(e){
   const detailHtml=details.length?`<div class="detail-note">세부 기록: ${safe(details.map(t=>String(t).slice(0,170)).join(' · '))}</div>`:'';
   const conflictHtml=e.conflictingDates?.length?`<div class="detail-note conflict">원문 날짜 충돌: ${safe(e.conflictingDates.join(' / '))} · 공식 날짜 추가 확인 필요</div>`:'';
   const desc=String(e.sourceNote||'').slice(0,380);
-  return `<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="${e.verification==='날짜 충돌'?'conflict':e.verification.includes('검증 전')||e.verification==='원문 기록'?'unconfirmed':''}" title="${safe(desc||e.source||'')}">${e.verification==='날짜 충돌'?'⚠':'◌'} ${safe(e.verification)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${officialLiveListLink}${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
+  const newBadge=isNewEvent(e)?'<span class="history-new-badge" aria-label="최근 24시간 이내 등록된 연혁">NEW</span>':'';
+  return `<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}${newBadge}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="${e.verification==='날짜 충돌'?'conflict':e.verification.includes('검증 전')||e.verification==='원문 기록'?'unconfirmed':''}" title="${safe(desc||e.source||'')}">${e.verification==='날짜 충돌'?'⚠':'◌'} ${safe(e.verification)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${officialLiveListLink}${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
 }
 function renderItems(){
   $('#events').hidden=false;$('#calendar').hidden=true;
@@ -881,9 +890,18 @@ async function init(){
   for(const c of [...new Set(events.map(e=>e.verification))].sort()) $('#verification').add(new Option(c,c));
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();
   buildChapterButtons();applyChapter();
+  refreshNewBadgeExpiry();
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)resetAndRender();});
   const filtersChanged=()=>{calendarMonth='';selectedCalendarDate='';resetAndRender();};
   $('#withVideos').addEventListener('change',filtersChanged);
-  for(const key of ['year','category','subject','verification','search']) $('#'+key).addEventListener(key==='search'?'input':'change',filtersChanged);
+  $('#subject').addEventListener('change',()=>{
+    if($('#subject').value==='new'){
+      activeChapter='';
+      changeView('list');
+      applyChapter();
+    }else filtersChanged();
+  });
+  for(const key of ['year','category','verification','search']) $('#'+key).addEventListener(key==='search'?'input':'change',filtersChanged);
   $('#allChapters').addEventListener('click',()=>{activeChapter='';calendarMonth='';selectedCalendarDate='';$('#year').value='';applyChapter();});
   $('#listView').addEventListener('click',()=>changeView('list'));
   $('#calendarView').addEventListener('click',()=>changeView('calendar'));
@@ -895,6 +913,14 @@ async function init(){
   }
   if(highlightEvent){document.getElementById('event-'+highlightEvent)?.scrollIntoView({block:'center'});}
  }catch(err){$('#events').innerHTML=`<p class="empty">활동 연표를 불러오지 못했습니다. ${safe(err.message)}</p>`;}
+}
+function refreshNewBadgeExpiry(){
+ const now=Date.now();
+ const expires=events.map(e=>Date.parse(String(e.registeredAt||''))+NEW_WINDOW_MS)
+   .filter(t=>Number.isFinite(t)&&t>now).sort((a,b)=>a-b);
+ if(!expires.length)return;
+ // one-shot scheduled refresh, then re-arm for any later batch
+ window.setTimeout(()=>{resetAndRender();refreshNewBadgeExpiry();},Math.max(1,Math.min(expires[0]-now+30,2147483647)));
 }
 function setupBackToTop(){
   const button=$('#backToTop');
