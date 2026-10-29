@@ -554,9 +554,34 @@ function isNewEvent(e,now=Date.now()){
  const at=Date.parse(String(e.registeredAt||''));
  return Number.isFinite(at)&&at<=now&&now-at<NEW_WINDOW_MS;
 }
+// Display groups only: preserve every original verdict and never infer completed verification.
+const VERIFICATION_GROUPS=[
+ ['독립검증 완료','기존 판정에 검증 완료가 명시된 기록입니다. 확인 범위와 개별 출처를 함께 확인하세요.'],
+ ['일부 확인','일부 사실에 관한 확인 기록이 있습니다. 날짜·출연·곡명 등이 모두 확인됐다는 뜻은 아닙니다.'],
+ ['예정 자료 확인','예고·예정 자료가 포함된 기록입니다. 실제 개최·방송·출연 여부는 상세 판정을 확인하세요.'],
+ ['날짜 미확정','방송일·촬영일·공연일 등 날짜에 미확정 사항이 있습니다.'],
+ ['날짜 충돌','날짜 또는 시각에 서로 다른 주장이 있어 추가 확인이 필요합니다.'],
+ ['원문 미확보','확인에 필요한 원문이나 방송 원본을 확보하지 못한 부분이 있습니다.'],
+ ['원문 기록','기존 원문에 기재된 기록입니다. 독립검증 완료를 뜻하지 않습니다.'],
+ ['독립 검증 전','원본 기록·영상 제목·설명 등의 단서가 있으며 독립적인 확인이 남아 있습니다.'],
+ ['검토 보류','판정을 보류한 기록입니다. 상세 사유를 확인하세요.']
+];
+function verificationGroup(e){
+ const raw=String(e.verification||'').trim();
+ if(/충돌|자료 간 차이/.test(raw))return '날짜 충돌';
+ if(/보류|검증 불가/.test(raw))return '검토 보류';
+ if(/원문 미확보|원본 미확보|원문 직접 미확인|원문 직접 미확보|접근 불가/.test(raw))return '원문 미확보';
+ if(/예정|예고|사전 보도/.test(raw))return '예정 자료 확인';
+ if(/(?:일자|날짜|방송일|촬영일|공연일|편성일|송출일|수상일|시각)[^/·|]{0,16}(?:미확정|미확인|미상|확인 전)|정확한[^/·|]{0,12}미확정/.test(raw))return '날짜 미확정';
+ if(/^(?:독립 ?검증 완료|검증 완료)$/.test(raw))return '독립검증 완료';
+ if(/^원문 기록(?:$|[ |·])/.test(raw))return '원문 기록';
+ if(/검증 전|확인 전|미검증|메타데이터만|설명만|표제 기준|표제 기재|영상 설명.*미확인/.test(raw)||!raw)return '독립 검증 전';
+ return '일부 확인';
+}
+function verificationHelp(group){return VERIFICATION_GROUPS.find(([label])=>label===group)?.[1]||'';}
 function selectRows(){
  const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim().toLocaleLowerCase();
- filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||hasEventVideo(e))&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
+ filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||verificationGroup(e)===verification)&&(!$('#withVideos').checked||hasEventVideo(e))&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
 }
 function chronologicalKey(e){
   const year=e.date.slice(0,4);
@@ -727,31 +752,32 @@ function sourceWidget(e){
    seen.add(url);
    ordered.push({label,url,kind,note});
  };
- if(e.verificationUrl){const src=[...researchSources.values()].find(x=>x.url===e.verificationUrl);add(src?`${src.publisher||'출처'} — ${src.title}`:'기사·공식 검증 출처',e.verificationUrl,src?.kind||'검증 자료',src?.note||'검증 상태와 링크가 뒷받침하는 사실을 함께 확인하세요.');}
- for(const url of e.verificationUrls||[])add('병합된 기록의 검증 출처',url,'검증 자료','병합된 개별 원문을 뒷받침하는 링크입니다.');
+ if(e.verificationUrl){const src=[...researchSources.values()].find(x=>x.url===e.verificationUrl);add(src?`${src.publisher||'출처'} — ${src.title}`:'연결된 확인 자료',e.verificationUrl,src?.kind||'확인 자료',src?.note||'이 자료가 확인하는 범위는 위의 상세 판정을 참고하세요.');}
+ for(const url of e.verificationUrls||[])add('통합된 기록의 확인 자료',url,'확인 자료','통합 전 기록에 연결되어 있던 자료입니다.');
  for(const key of e.sourceRefs||[]){
    const r=researchSources.get(key);if(r)add(`${r.publisher||'출처'} — ${r.title}`,r.url,r.kind,r.note);
  }
- for(const url of [...(e.sourceUrls||[]),e.sourceUrl].filter(Boolean))add(url.includes('docs.google.com/spreadsheets')?'원본 시트의 해당 행':'기록 원문',url,'원자료','원본 자료는 독립 검증이 아니며 접근 제한이 있을 수 있습니다.');
+ for(const url of [...(e.sourceUrls||[]),e.sourceUrl].filter(Boolean))add(url.includes('docs.google.com/spreadsheets')?'원본 시트의 해당 행':'기록 원문',url,'원자료','기존 기록의 출처입니다. 별도 확인 여부는 상세 판정을 참고하세요.');
  for(const url of [...(e.referenceVideoUrls||[]),e.referenceVideoUrl].filter(Boolean)){
    // Reference videos must be playable on YouTube, not old V LIVE or arbitrary extinct platforms.
-   if(/^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(url))add('원본에 기재된 유튜브 영상',url,'원본 영상','개별 영상의 출처 기록으로, 동일 콘텐츠 검증을 의미하지 않습니다.');
+   if(/^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(url))add('원본에 기재된 유튜브 영상',url,'원본 영상','기존 기록에 연결된 영상입니다. 실제 방송·촬영일은 별도 확인이 필요할 수 있습니다.');
  }
  for(const video of fanVideos){
    if(!video||typeof video.url!=='string'||typeof video.title!=='string')continue;
-   if(youtubeId(video.url))add(`셩공시대님 — ${video.title}`,video.url,'관련 영상 · 팬채널 참고',video.note||'팬채널의 영상 표제 기반 참고자료이며 실제 방송일은 별도 검증이 필요합니다.');
+   if(youtubeId(video.url))add(`셩공시대님 — ${video.title}`,video.url,'관련 영상 · 팬채널 참고',video.note||'팬채널 참고 영상입니다. 영상 제목의 날짜와 실제 방송·공연일은 다를 수 있습니다.');
  }
- const status=String(e.verification||'독립 검증 전');
+ const status=verificationGroup(e);
+ const originalStatus=String(e.verification||'판정 미기재');
  const note=String(e.sourceNote||'');
  const provenance=(e.allSources||[e.source||'출처 미기재']).join(' · ');
- const categoryOrigin=e.categoryOriginal?`<p>분류 표기 통일: ${safe(e.categoryOriginal)} → ${safe(e.category)}</p>`:'';
+ const categoryOrigin=e.categoryOriginal?`<p>활동 분류: ${safe(e.categoryOriginal)} → ${safe(e.category)}</p>`:'';
  const rows=ordered.map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.label)} ↗</a>${r.note?`<small>${safe(r.note)}</small>`:''}</li>`).join('');
  const mediaRecords=Array.isArray(e.mergedSourceRecords)?e.mergedSourceRecords:[];
  const originalList=mediaRecords.length>1
-  ? `<h4 class="source-merged-title">통합 전 개별 방송·행사 기록 (${mediaRecords.length}건)</h4><ol class="source-merged-list">${mediaRecords.map(r=>`<li><strong>${safe(r.title||'제목 미기재')}</strong><small>${safe(r.date||'날짜 미상')} · ${safe(r.source||'출처 미기재')} · ${safe(r.verification||'검증 상태 미기재')}</small>${r.sourceNote?`<small>${safe(String(r.sourceNote).slice(0,270))}</small>`:''}</li>`).join('')}</ol>`
+  ? `<h4 class="source-merged-title">통합 전 개별 방송·행사 기록 (${mediaRecords.length}건)</h4><ol class="source-merged-list">${mediaRecords.map(r=>`<li><strong>${safe(r.title||'제목 미기재')}</strong><small>${safe(r.date||'날짜 미상')} · ${safe(r.source||'출처 미기재')} · ${safe(r.verification||'검증 상태 미기재')}</small>${r.sourceNote?`<small>${safe(String(r.sourceNote))}</small>`:''}</li>`).join('')}</ol>`
   : '';
- const entries=rows?`<ul>${rows}</ul>`:'<p class="source-unlinked">이 일정에 연결된 외부 근거 URL이 없습니다.</p>';
- return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 출처 보기" aria-expanded="false" title="출처·검증 근거 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>자료 · 검증 근거</strong><span class="source-status">${safe(status)}</span><p>기록 계열: ${safe(provenance)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p>${categoryOrigin}${note?`<p>${safe(note.slice(0,350))}</p>`:''}${originalList}${entries}</span></span>`;
+ const entries=rows?`<ul>${rows}</ul>`:'<p class="source-unlinked">연결된 근거 링크가 없습니다. 출처 확보가 필요합니다.</p>';
+ return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 근거 보기" aria-expanded="false" title="근거와 확인 범위 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>근거와 확인 범위</strong><span class="source-status">${safe(status)}</span><p class="verification-help">${safe(verificationHelp(status))}</p><h4 class="source-section-title">기존 상세 판정</h4><p>${safe(originalStatus)}</p>${note?`<p>${safe(note)}</p>`:''}<h4 class="source-section-title">날짜와 기록 출처</h4><p>기록일: ${safe(e.date)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p><p>출처: ${safe(provenance)}</p>${categoryOrigin}${originalList}<h4 class="source-section-title">연결 자료</h4>${entries}</span></span>`;
 }
 function researchWidget(){
  const rows=[...researchSources.values()].map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.title)} ↗</a><small>${safe(r.note)}</small></li>`).join('');
@@ -821,7 +847,7 @@ function enableSourceWidgets(){
       if(active){active.setAttribute('aria-expanded','false');active.closest('.source-widget')?.classList.remove('is-open');}
       active=button;
       const content=button.closest('.source-widget')?.querySelector('.source-panel')?.innerHTML||'';
-      float.innerHTML=`<div class="source-float-toolbar"><span>자료 · 검증 근거</span><button type="button" class="source-close" aria-label="근거 팝업 닫기">×</button></div><div class="source-float-content">${content}</div>`;
+      float.innerHTML=`<div class="source-float-toolbar"><span>근거와 확인 범위</span><button type="button" class="source-close" aria-label="근거 팝업 닫기">×</button></div><div class="source-float-content">${content}</div>`;
       float.querySelector('.source-float-content').scrollTop=0;
     }
     pinned=lock||modal;
@@ -888,8 +914,9 @@ function eventMarkup(e){
   const detailHtml=details.length?`<div class="detail-note">세부 기록: ${safe(details.map(t=>String(t).slice(0,170)).join(' · '))}</div>`:'';
   const conflictHtml=e.conflictingDates?.length?`<div class="detail-note conflict">원문 날짜 충돌: ${safe(e.conflictingDates.join(' / '))} · 공식 날짜 추가 확인 필요</div>`:'';
   const desc=String(e.sourceNote||'').slice(0,380);
+  const status=verificationGroup(e);
   const newBadge=isNewEvent(e)?'<span class="history-new-badge" aria-label="최근 24시간 이내 등록된 연혁">NEW</span>':'';
-  return `<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}${newBadge}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="${e.verification==='날짜 충돌'?'conflict':e.verification.includes('검증 전')||e.verification==='원문 기록'?'unconfirmed':''}" title="${safe(desc||e.source||'')}">${e.verification==='날짜 충돌'?'⚠':'◌'} ${safe(e.verification)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${officialLiveListLink}${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
+  return `<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}${newBadge}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="verification-label ${status==='날짜 충돌'?'conflict':status==='독립검증 완료'?'confirmed':'unconfirmed'}" title="${safe(e.verification)}">${status==='날짜 충돌'?'⚠':'◌'} ${safe(status)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${officialLiveListLink}${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
 }
 function renderItems(){
   $('#events').hidden=false;$('#calendar').hidden=true;
@@ -1008,7 +1035,7 @@ async function init(){
   if(highlightEvent){const selected=events.find(e=>e.id===highlightEvent);if(selected){activeChapter=selected.chapter;}}
   else if(explicitDate){const record=events.find(e=>e.date===explicitDate || (e.conflictingDates||[]).includes(explicitDate));if(record)activeChapter=record.chapter;}
   for(const c of [...new Set(events.map(e=>e.category))].sort()) $('#category').add(new Option(c,c));
-  for(const c of [...new Set(events.map(e=>e.verification))].sort()) $('#verification').add(new Option(c,c));
+  for(const [label] of VERIFICATION_GROUPS){const count=events.filter(e=>verificationGroup(e)===label).length;if(count)$('#verification').add(new Option(`${label} (${count.toLocaleString('ko-KR')}건)`,label));}
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();
   buildChapterButtons();applyChapter();setupChapterDisclosure();
   if(!reducedHistoryMotion()){
