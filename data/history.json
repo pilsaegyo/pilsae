@@ -995,6 +995,49 @@
       "enrichedExistingEvents": 23,
       "withheldUndatedOrConflicted": 4,
       "verificationLimit": "원본 방송사 편성 및 영상 전체 시청 재검증 아님; 회차·방송일은 영상 표제 기준이며 댓글 내용은 보조자료"
+    },
+    "videotankFullInventoryReview20261029": {
+      "basis": "VIDEOTANK 비디오탱크 채널 영상 1847개 설명·댓글 1차 조사 (2026-10-29). 이전 제목정정 2625건 통합 패치 기준 병합",
+      "originalEventCount": 2625,
+      "newEvents": 13,
+      "finalEventCount": 2638,
+      "linkedToExistingEvents": 21,
+      "teaserHeld": 1,
+      "newEventVideoReferences": 16,
+      "dateConflictVideoHeld": 4,
+      "undatedVideoHeld": 5,
+      "alreadyLinkedVideoRecords": 43,
+      "claimedDates": "재게시 영상의 제목·설명에 표기된 날짜; 당시 방송사 원방송일 독립 검증 아님",
+      "independentVerificationComplete": false,
+      "updated": "2026-10-29"
+    },
+    "videotankDateResearch20261029": {
+      "basedOnVisibleEvents": 2638,
+      "resultVisibleEvents": 2640,
+      "updatedExistingEventIds": [
+        "sheet:01!303",
+        "sheet:01!319",
+        "sheet:99!52"
+      ],
+      "newEventIds": [
+        "videotank-followup:1999-05-09:rhythm-heaven-everland",
+        "videotank-followup:2000-08:prime-concert"
+      ],
+      "videoLinkedIds": [
+        "sMSDTTGv8DY",
+        "c2ac4vpwWHk",
+        "hJE7Q_lO-iw",
+        "xOSeiGIxgoo",
+        "OLJQ84O4yK8"
+      ],
+      "heldVideoId": "c-fWmzZxNiU",
+      "dateChoiceNotes": {
+        "2001-09": "재게시 영상 표제 회차·일자 + 방송 요일 근거, 원편성표 직접 확인 전",
+        "1999-05-09": "기사에서 공개녹화 예정일과 신화 출연 예정이 명시됨",
+        "1999-08-16": "기존 방송일 유지, 공연일 충돌 표시",
+        "2000-08": "일자 미상 월 단위만 등록"
+      },
+      "siteDeployed": false
     }
   },
   "chapters": [
@@ -1672,7 +1715,8 @@
       ],
       "recordCount": 1,
       "sourceRefs": [
-        "oldkpop-video-dMp1aL73mZU"
+        "oldkpop-video-dMp1aL73mZU",
+        "videotank-full-audit-20261029-vs2BwOC90Zk"
       ]
     },
     {
@@ -2158,7 +2202,9 @@
           "rawSource": "980530 쇼탱"
         }
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        "videotank-full-audit-20261029-us5ckSOjFqc"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "t8twx1eZCDY"
@@ -2606,7 +2652,8 @@
       "sourceRecord": "v27 조사번호 V26-006; v28 1998년 옛 방송사 조사",
       "sourceRefs": [
         "v28-legacy-v26-006-926dc6c",
-        "oldkpop-video-oCHBNqhYTAk"
+        "oldkpop-video-oCHBNqhYTAk",
+        "videotank-full-audit-20261029-AgngNp44RwY"
       ],
       "recordCount": 1
     },
@@ -3811,7 +3858,8 @@
         }
       ],
       "sourceRefs": [
-        "kmresearch-20261029-mk-19990524"
+        "kmresearch-20261029-mk-19990524",
+        "videotank-full-audit-20261029-Z88dXGqdLBM"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -4466,7 +4514,9 @@
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "99!28",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "videotank-full-audit-20261029-1slHO8o6blk"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "2Mci5n49HlE"
@@ -5258,12 +5308,23 @@
       "source": "SHINHWA ARCHIVE 자료",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=1735876866&range=A52:D52",
       "referenceVideoUrl": null,
-      "sourceNote": "(공연일 990801)",
+      "sourceNote": "(공연일 990801)\nVIDEOTANK 비디오탱크 유튜브 채널의 《리듬천국》 해운대 썸머비치페스티벌 2부 영상에 신화 〈Yo!〉 무대가 포함되어 있습니다. 기존 SHINHWA ARCHIVE 자료는 1999.08.16 방송 및 08.01 공연으로 기재하나, 시청자 댓글에는 7월 마지막 주라는 이견이 있어 공연일은 확정할 수 없습니다. 영상 자체에 방송일이 적혀 있지는 않습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "99!52",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=hJE7Q_lO-iw"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=hJE7Q_lO-iw",
+          "title": "Mnet 《리듬천국》 1999 해운대 썸머비치페스티벌 2부 — 신화 〈Yo!〉",
+          "videoId": "hJE7Q_lO-iw",
+          "note": "VIDEOTANK 비디오탱크 유튜브 채널 영상 44:30 부근에 신화 〈Yo!〉 무대가 표시됩니다. 해당 영상은 해운대 썸머비치페스티벌 특집의 관련 영상이며 원방송일은 독립 확인되지 않았습니다."
+        }
+      ]
     },
     {
       "id": "archive:description:1999-08-17:ea6be611fc",
@@ -8724,7 +8785,10 @@
       "archiveVideoIds": [
         "Tcav5L6vPTE"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-mdA9ipdHxy4"
+      ]
     },
     {
       "id": "sheet:00!85",
@@ -8984,7 +9048,9 @@
           "rawSource": "000723 리듬천국 213회"
         }
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        "videotank-full-audit-20261029-IgDqFdtgtzQ"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "Mlj4DRkE4iE"
@@ -11104,7 +11170,8 @@
       "verificationUrl": null,
       "sourceRefs": [
         "fan-cn1",
-        "fan-cn2"
+        "fan-cn2",
+        "videotank-full-audit-20261029-PChK0Vv56cc"
       ],
       "recordCount": 2,
       "mergedRecordIds": [
@@ -13654,7 +13721,9 @@
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!71",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "videotank-full-audit-20261029-kJlwdnHDWRI"
+      ],
       "recordCount": 1
     },
     {
@@ -14021,7 +14090,9 @@
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "01!105",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "videotank-full-audit-20261029-buvbnMzK-dI"
+      ],
       "recordCount": 1
     },
     {
@@ -17543,23 +17614,34 @@
     },
     {
       "id": "sheet:01!303",
-      "date": "2001-09-08",
+      "date": "2001-09-07",
       "precision": "day",
       "chapter": "chapter1",
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "KM 쇼! 뮤직탱크 <Hey, Come On!>",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "KMTV 《쇼! 뮤직탱크》 324회 2부 — 신화 〈Hey, Come On!〉",
+      "verification": "VIDEOTANK 영상의 회차·송출일 표시 및 당시 금요일 편성 대조",
       "source": "SHINHWA ARCHIVE 자료",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A303:D303",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 324회 2부 공개 영상에 2001-09-07 날짜와 신화의 〈Hey, Come On!〉 무대가 표기되어 있습니다. 당시 프로그램은 금요일 본방송·토요일 재방송으로 편성되어 있어, 기존 SHINHWA ARCHIVE 자료에 기재된 2001-09-08은 토요일 재방송 날짜였을 가능성이 있습니다. 방송사 편성표 원본까지 직접 확인된 것은 아닙니다.",
+      "dateKind": "VIDEOTANK 재공개 영상에 기재된 방송일(원편성표 직접 확인 전)",
       "sourceRecord": "01!303",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=sMSDTTGv8DY"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=sMSDTTGv8DY",
+          "title": "《쇼! 뮤직탱크》 324회 2부 — 신화 〈Hey, Come On!〉",
+          "videoId": "sMSDTTGv8DY",
+          "note": "VIDEOTANK 비디오탱크 유튜브 채널 / 방송일 표기: 2001-09-07; 방송사 원편성표 대조 전."
+        }
+      ]
     },
     {
       "id": "sheet:01!305",
@@ -17754,23 +17836,34 @@
     },
     {
       "id": "sheet:01!319",
-      "date": "2001-09-15",
+      "date": "2001-09-14",
       "precision": "day",
       "chapter": "chapter1",
       "transition": "",
       "category": "음악방송",
       "subject": "신화 전체",
-      "title": "KM 쇼! 뮤직탱크 <Hey, Come On!>",
-      "verification": "원본 기재·독립 검증 전",
+      "title": "KMTV 《쇼! 뮤직탱크》 325회 1부 — 신화 〈Hey, Come On!〉",
+      "verification": "VIDEOTANK 영상의 회차·송출일 표시 및 당시 금요일 편성 대조",
       "source": "SHINHWA ARCHIVE 자료",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A319:D319",
       "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 325회 1부 공개 영상에 2001-09-14 날짜와 신화의 〈Hey, Come On!〉 무대가 표기되어 있습니다. 당시 프로그램은 금요일 본방송·토요일 재방송으로 편성되어 있어, 기존 SHINHWA ARCHIVE 자료에 기재된 2001-09-15은 토요일 재방송 날짜였을 가능성이 있습니다. 방송사 편성표 원본까지 직접 확인된 것은 아닙니다.",
+      "dateKind": "VIDEOTANK 재공개 영상에 기재된 방송일(원편성표 직접 확인 전)",
       "sourceRecord": "01!319",
       "verificationUrl": null,
       "sourceRefs": [],
-      "recordCount": 1
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=c2ac4vpwWHk"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=c2ac4vpwWHk",
+          "title": "《쇼! 뮤직탱크》 325회 1부 — 신화 〈Hey, Come On!〉",
+          "videoId": "c2ac4vpwWHk",
+          "note": "VIDEOTANK 비디오탱크 유튜브 채널 / 방송일 표기: 2001-09-14; 방송사 원편성표 대조 전."
+        }
+      ]
     },
     {
       "id": "history:s019",
@@ -18988,7 +19081,9 @@
           "rawSource": "011102 쇼탱"
         }
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        "videotank-full-audit-20261029-nKmeOm9cgOA"
+      ],
       "recordCount": 2,
       "archiveVideoIds": [
         "34dMu81nL9k",
@@ -19363,7 +19458,10 @@
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "press-2001-mnet-day"
+        "press-2001-mnet-day",
+        "videotank-full-audit-20261029-5uIA_L4ZPpY",
+        "videotank-full-audit-20261029-EA-a8QabNeE",
+        "videotank-full-audit-20261029-jJdhyIkzERM"
       ],
       "recordCount": 1,
       "conflictingDates": [
@@ -19791,7 +19889,8 @@
       "sourceRefs": [
         "fan-cn1",
         "fan-cn2",
-        "oldkpop-video-3Rs1GFV8EGM"
+        "oldkpop-video-3Rs1GFV8EGM",
+        "videotank-full-audit-20261029-X_vFQf50gQs"
       ],
       "recordCount": 1,
       "archiveVideoIds": [
@@ -24922,7 +25021,8 @@
         "v23-kmtv-2002-seoul",
         "v23-kmtv-2002-khan",
         "v23-kmtv-2002-award-list",
-        "oldkpop-video-ye-zCmVlLVY"
+        "oldkpop-video-ye-zCmVlLVY",
+        "videotank-full-audit-20261029-VkUlJqFXgsM"
       ],
       "recordCount": 1,
       "fanVideoSources": [
@@ -74546,7 +74646,8 @@
       "sourceRecord": "VIDEOTANK 재게시 영상",
       "verificationUrl": null,
       "sourceRefs": [
-        "oldkpop-video-wBVlvLNmNW0"
+        "oldkpop-video-wBVlvLNmNW0",
+        "videotank-full-audit-20261029-eh6wymwCGJ8"
       ],
       "recordCount": 1,
       "registeredAt": "2026-10-29T16:09:00+09:00"
@@ -74596,7 +74697,9 @@
       "sourceRecord": "VIDEOTANK 재게시 영상",
       "verificationUrl": null,
       "sourceRefs": [
-        "oldkpop-video-fheX_QasEUs"
+        "oldkpop-video-fheX_QasEUs",
+        "videotank-full-audit-20261029-A9IswxiKjzA",
+        "videotank-full-audit-20261029-IUreidEJYjE"
       ],
       "recordCount": 1,
       "registeredAt": "2026-10-29T16:09:00+09:00"
@@ -74921,7 +75024,8 @@
       "sourceRecord": "VIDEOTANK 재게시 영상",
       "verificationUrl": null,
       "sourceRefs": [
-        "oldkpop-video-Tagc1NhsrfM"
+        "oldkpop-video-Tagc1NhsrfM",
+        "videotank-full-audit-20261029-HovHrNgA5AE"
       ],
       "recordCount": 1,
       "registeredAt": "2026-10-29T16:09:00+09:00"
@@ -75021,10 +75125,375 @@
       "sourceRecord": "VIDEOTANK 재게시 영상",
       "verificationUrl": null,
       "sourceRefs": [
-        "oldkpop-video-7xV1cXOrsRs"
+        "oldkpop-video-7xV1cXOrsRs",
+        "videotank-full-audit-20261029-bgY_V5peyTY"
       ],
       "recordCount": 1,
       "registeredAt": "2026-10-29T16:09:00+09:00"
+    },
+    {
+      "id": "videotank20261029:1998-10-10:music-tank",
+      "date": "1998-10-10",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 172회 — 신화 〈천일유혼〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-a9QmQn3hC28"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:1999-06-12:music-tank",
+      "date": "1999-06-12",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 207회 — 신화 〈T.O.P.〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-0R4qprjBjW8"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:1999-06-26:rhythm-heaven",
+      "date": "1999-06-26",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "공연·방송",
+      "subject": "신화 전체",
+      "title": "《리듬천국》 160회 — 마약퇴치의 날 기념 〈Nolja〉 콘서트, 신화 〈T.O.P.〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다. 6월 26일은 재게시 영상의 프로그램 날짜로, 콘서트의 실제 개최일은 확인되지 않았습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-moQFCWx6wYY"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:1999-08-07:music-tank",
+      "date": "1999-08-07",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 215회 — 신화 〈Yo!〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-2zEhwG_JTZM"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:1999-08-14:music-tank",
+      "date": "1999-08-14",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 216회 — 신화 〈Yo!〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-7NUggx9JE_w"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:1999-08-27:music-tank",
+      "date": "1999-08-27",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 218회 — 신화 〈Yo!〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-QsVSDQcXrC0",
+        "videotank-full-audit-20261029-1s1RI3OklBk"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:2000-07-29:music-tank",
+      "date": "2000-07-29",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 266회 — 신화 〈All Your Dreams〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-hVwTIsZexQQ"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:2000-07-30:rhythm-heaven",
+      "date": "2000-07-30",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "《리듬천국》 — 2000 퓨전러브투어 대구 특집, 신화 〈Only One〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다. 공연 개최일과 방송일이 동일하다고 단정할 수 없습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-eTlsL98XcEE"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:2001-02-03:music-tank",
+      "date": "2001-02-03",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신혜성 포함 합동",
+      "title": "KMTV 《쇼! 뮤직탱크》 293회 — 이지훈·신혜성 〈인형〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다. 이지훈과 신혜성의 듀엣 무대이며, 신화 단체 출연으로 해석하지 않습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-kUpR9UKyNfo"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:2001-02-10:music-tank",
+      "date": "2001-02-10",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신혜성 포함 합동",
+      "title": "KMTV 《쇼! 뮤직탱크》 294회 — 이지훈·신혜성 〈인형〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다. 이지훈과 신혜성의 듀엣 무대이며, 신화 단체 출연으로 해석하지 않습니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-Xtz3-IgRHB4"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:2001-07-13:music-tank",
+      "date": "2001-07-13",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 316회 — 신화 〈Wild Eyes〉·〈Hey, Come On!〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다. 같은 날짜의 Mnet 《SHOWKING M》과는 서로 다른 방송입니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-DwrkmJQjH2E",
+        "videotank-full-audit-20261029-7JXKxji5neg",
+        "videotank-full-audit-20261029-6Dj-v-BoWkA"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:2001-08-10:music-tank",
+      "date": "2001-08-10",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 320회 — 신화 〈Hey, Come On!〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다. 같은 날짜의 Mnet 방송과는 별개의 프로그램입니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-44PvNCHppWM"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank20261029:2001-08-17:music-tank",
+      "date": "2001-08-17",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 321회 — 신화 〈Hey, Come On!〉",
+      "verification": "재게시 영상의 회차·출연 표기 / 방송사 원본 대조 전",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": null,
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널의 재게시 영상 제목과 설명·구간 안내에 해당 프로그램 및 신화 출연이 표기되어 있습니다. 영상에 적힌 날짜는 실제 방송 송출일·녹화일과 다를 수 있습니다. 같은 날짜의 Mnet 방송과는 별개의 프로그램입니다.",
+      "dateKind": "재게시 방송 영상 표기일(실제 방송·녹화일 확인 전)",
+      "sourceRecord": "VIDEOTANK 비디오탱크 유튜브 채널 영상 설명",
+      "verificationUrl": null,
+      "sourceRefs": [
+        "videotank-full-audit-20261029-8mfAII3r04c"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank-followup:1999-05-09:rhythm-heaven-everland",
+      "date": "1999-05-09",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송 녹화",
+      "subject": "신화 전체",
+      "title": "Mnet 《리듬천국》 — 에버랜드 가정의 달 특집 공개녹화 (신화 출연 예정)",
+      "verification": "1999년 5월 3일 연합뉴스·5월 6일 스포츠조선 출연 예고 보도(재게시 기사)",
+      "source": "당시 연합뉴스·스포츠조선 보도",
+      "sourceUrl": "https://incrediblerain.blogspot.com/2011/10/rain-kronika-19990503.html?m=0",
+      "referenceVideoUrl": null,
+      "sourceNote": "1999년 5월 3일 연합뉴스와 5월 6일 스포츠조선 기사에는 5월 9일 오후 6시 30분 용인 에버랜드 야외무대에서 《리듬천국》 공개녹화가 예정되었고 신화가 출연진에 포함됐다고 기재되어 있습니다. 방송 예정일은 5월 16일과 23일(1·2부)입니다. 두 기사는 재게시된 원문을 통해 확인되며, 실제 출연 장면의 원회차 대조는 아직 완료되지 않았습니다. 관련 VIDEOTANK 영상은 신화 〈T.O.P.〉와 지누션·코요태·부활 등 출연진이 겹치지만 이 녹화 회차임을 확정할 수는 없습니다.",
+      "dateKind": "당시 기사에 명시된 녹화 예정일(방송 예정일 1999-05-16·23)",
+      "sourceRecord": "1999-05-03 연합뉴스 / 1999-05-06 스포츠조선 행사 예고",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=xOSeiGIxgoo"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=xOSeiGIxgoo",
+          "title": "Mnet 《리듬천국》 1999년 신화 〈T.O.P.〉 무대 — 영상 날짜 미표기",
+          "videoId": "xOSeiGIxgoo",
+          "note": "VIDEOTANK 비디오탱크 유튜브 채널 관련 영상(31:06 신화 〈T.O.P.〉). 같은 출연진이 겹치지만 1999.05.09 에버랜드 녹화분인지 확인되지 않았습니다."
+        }
+      ],
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "videotank-followup:2000-08:prime-concert",
+      "date": "2000-08-01",
+      "precision": "month",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "음악방송",
+      "subject": "신화 전체",
+      "title": "Mnet 《프라임 콘서트》 — 신화 〈All Your Dreams〉 무대",
+      "verification": "VIDEOTANK 재게시 영상의 2000년 8월 표기·공연 장면(방송일 미확인)",
+      "source": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "sourceUrl": "https://www.youtube.com/watch?v=OLJQ84O4yK8",
+      "referenceVideoUrl": null,
+      "sourceNote": "VIDEOTANK 비디오탱크 유튜브 채널 공개 영상에 Mnet 《프라임 콘서트》 2000년 8월과 신화 출연이 표기되어 있으며, 5분 3초 부근에 신화 〈All Your Dreams〉 무대가 안내되어 있습니다. 정확한 원방송일·녹화일을 확인할 수 없어 2000년 8월 월 단위로 기록합니다. 1999년 7월에 기록된 별도 《프라임 콘서트》 출연과는 구별됩니다.",
+      "dateKind": "재게시 영상이 제시한 방송 연월(일자 미확정)",
+      "sourceRecord": "VIDEOTANK OLJQ84O4yK8",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=OLJQ84O4yK8"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=OLJQ84O4yK8",
+          "title": "Mnet 《프라임 콘서트》 2000년 8월 — 신화 〈All Your Dreams〉",
+          "videoId": "OLJQ84O4yK8",
+          "note": "VIDEOTANK 비디오탱크 유튜브 채널(5:03 부근). 실제 방송일·촬영일은 미확인입니다."
+        }
+      ],
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T19:11:00+09:00"
     }
   ],
   "researchSources": [
@@ -80473,6 +80942,302 @@
       "note": "영상 제목·설명에 1999-07-03 해당 회차·신화 관련 장면이 표시되어 있습니다. 신화 관련 영상 구간: 40:52. 방송일은 영상 게시자의 표기이며 방송사 원본 편성 자료로 독립 확인되지 않았습니다.",
       "publishedAt": "2022-12-16",
       "publicationNote": "유튜브 게시/최초공개일. 원방송일과 구분."
+    },
+    {
+      "id": "videotank-full-audit-20261029-IgDqFdtgtzQ",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "리듬천국 213회 2000년 7월 23일 2부",
+      "url": "https://www.youtube.com/watch?v=IgDqFdtgtzQ&t=2365s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 리듬천국 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 39:25, 49:13. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-VkUlJqFXgsM",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "6️⃣만 구독 감사! 2002년 KMTV 코리아 뮤직 어워드(KMA) 2부 #문희준 #성시경 #이정현 #왁스 #이승철 #부활 #강타 12월 28일",
+      "url": "https://www.youtube.com/watch?v=VkUlJqFXgsM&t=1051s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 KMTV시상식 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 17:31. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-nKmeOm9cgOA",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] #뮤직탱크 쇼!뮤직탱크  332회 2부 2001년 11월 2일",
+      "url": "https://www.youtube.com/watch?v=nKmeOm9cgOA",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 00:00, 02:30, 05:33, 06:01. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-5uIA_L4ZPpY",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "5️⃣만 구독 감사! 2001년 엠넷 뮤직비디오 페스티벌 (MMF) 스페셜 3부 (진행: 차태현, 송혜교)",
+      "url": "https://www.youtube.com/watch?v=5uIA_L4ZPpY&t=1921s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 Mnet시상식 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 32:01. 영상에는 정확한 행사일이 표기되어 있지 않아 행사명·연도 기준으로 연결했습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-EA-a8QabNeE",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "5️⃣만 구독 감사! 2001년 엠넷 뮤직비디오 페스티벌 (MMF) 스페셜 1, 2부 (진행: 차태현, 송혜교)",
+      "url": "https://www.youtube.com/watch?v=EA-a8QabNeE&t=3296s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 Mnet시상식 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 54:56, 58:42. 영상에는 정확한 행사일이 표기되어 있지 않아 행사명·연도 기준으로 연결했습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-Z88dXGqdLBM",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 🌝X세대의 찐 아이콘 #이본, 쇼! 뮤직탱크 205회 1999년 5월 29일",
+      "url": "https://www.youtube.com/watch?v=Z88dXGqdLBM&t=119s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 01:59, 06:37, 15:10, 24:26, 44:33. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-buvbnMzK-dI",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] #신지, 오늘도 출격! 🤖 (좀 에반데...👀), #뮤직탱크 299회 2001년 3월 17일 (#코요태 #ses #샤크라 #psy #박효신 )",
+      "url": "https://www.youtube.com/watch?v=buvbnMzK-dI&t=4886s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 01:21:26. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-kJlwdnHDWRI",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] #뮤직탱크 297회 2001년 3월 3일 (#코요태 #엄정화 #psy #보아 )",
+      "url": "https://www.youtube.com/watch?v=kJlwdnHDWRI&t=3175s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 52:55, 52:56. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-mdA9ipdHxy4",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 서커스 같은 신인 등장, 264회, 2000년 7월 15일 (컨츄리꼬꼬, DJ DOC, 최창민, 제이)",
+      "url": "https://www.youtube.com/watch?v=mdA9ipdHxy4",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-X_vFQf50gQs",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 🎉KMTV 가요대전 2001, 2001년 12월 19일",
+      "url": "https://www.youtube.com/watch?v=X_vFQf50gQs&t=2907s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 KMTV시상식 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 48:27. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-PChK0Vv56cc",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 특집🏆 2000년 연말 KMTV 가요대전(1부+2부, 합본)",
+      "url": "https://www.youtube.com/watch?v=PChK0Vv56cc&t=2555s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 KMTV시상식 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 42:35, 51:15. 영상에는 정확한 행사일이 표기되어 있지 않아 행사명·연도 기준으로 연결했습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-1slHO8o6blk",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 헤이헤이헤이, Joy-D! (구피, 백지영, 디바, 엄정화) 211회 1999년 07월 10일",
+      "url": "https://www.youtube.com/watch?v=1slHO8o6blk&t=3645s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 01:00:45. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-us5ckSOjFqc",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 쇼!뮤직탱크 대구 154회 (1998/05/30) (출연🎤 : DIVA, SES, 핑클, OPPA...)",
+      "url": "https://www.youtube.com/watch?v=us5ckSOjFqc&t=1171s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 19:31. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-AgngNp44RwY",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "신화, 으쌰!으쌰!, 쇼!뮤직탱크 164회 2부 1998.08.15 FANTA 우주리조트",
+      "url": "https://www.youtube.com/watch?v=AgngNp44RwY",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-eh6wymwCGJ8",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "으쌰으쌰, 신화, 쇼!뮤직탱크 159회 1998.07.11 대전특집-대전엑스포광장",
+      "url": "https://www.youtube.com/watch?v=eh6wymwCGJ8",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-A9IswxiKjzA",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "으쌰으쌰, 신 화, 쇼!뮤직탱크 157회 1998.06.24 광주특집-염주체육관 현지녹화",
+      "url": "https://www.youtube.com/watch?v=A9IswxiKjzA",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-IUreidEJYjE",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "으쌰으쌰, 신화, 쇼!뮤직탱크 157회 1998.06.24 광주특집-염주체육관 현지녹화",
+      "url": "https://www.youtube.com/watch?v=IUreidEJYjE",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-vs2BwOC90Zk",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "해결사, 신화, 쇼!뮤직탱크 144회 1998.03.28",
+      "url": "https://www.youtube.com/watch?v=vs2BwOC90Zk",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-jJdhyIkzERM",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "Wild eyes, 신화, 2001년 엠넷뮤직비디오페스티벌(MMF) 1, 2부",
+      "url": "https://www.youtube.com/watch?v=jJdhyIkzERM",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 Mnet시상식 관련 신화 출연 장면이 기재되어 있습니다. 영상에는 정확한 행사일이 표기되어 있지 않아 행사명·연도 기준으로 연결했습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-HovHrNgA5AE",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "YO!, #신화, 쇼! 뮤직탱크 213회 1999 07 24",
+      "url": "https://www.youtube.com/watch?v=HovHrNgA5AE",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-bgY_V5peyTY",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "T O P, 신화, 쇼! 뮤직탱크 204회 1999년 5월 22일",
+      "url": "https://www.youtube.com/watch?v=bgY_V5peyTY",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-a9QmQn3hC28",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 쇼!뮤직탱크 172회 (1998/10/10) (출연🎤 : 김현정, 에코, HOT)",
+      "url": "https://www.youtube.com/watch?v=a9QmQn3hC28",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-0R4qprjBjW8",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 207회 (1999/06/12) (출연🎤 : 노바소닉, 정재욱, K2, 김경호, 핑클)",
+      "url": "https://www.youtube.com/watch?v=0R4qprjBjW8",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-moQFCWx6wYY",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🎖️탱크스페셜] ‘세계 마약퇴치의 날 기념특집 Nolja(놀자)’콘서트, 리듬천국 160회, 1999년 6월 26일",
+      "url": "https://www.youtube.com/watch?v=moQFCWx6wYY&t=2501s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 리듬천국 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 41:41. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-2zEhwG_JTZM",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] (박기영, 박미경, 클레오, 베이비복스) 215회 2부 1999년 08월 07일",
+      "url": "https://www.youtube.com/watch?v=2zEhwG_JTZM&t=2773s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 46:13. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-7NUggx9JE_w",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 216회 2부 1999년 08월 14일",
+      "url": "https://www.youtube.com/watch?v=7NUggx9JE_w",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-QsVSDQcXrC0",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크]💃 채정안이 짱이시다!, 218회(1999/8/27)",
+      "url": "https://www.youtube.com/watch?v=QsVSDQcXrC0&t=4328s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 01:12:08. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-1s1RI3OklBk",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "YO!, 신화, 쇼!뮤직탱크 218회 1999.08.27",
+      "url": "https://www.youtube.com/watch?v=1s1RI3OklBk",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-hVwTIsZexQQ",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 오늘도 베이비복스, 266회 2부, 2000년 7월 29일 (박명수, 이정현, 베이비복스, 김민종)",
+      "url": "https://www.youtube.com/watch?v=hVwTIsZexQQ&t=2091s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 34:51. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-eTlsL98XcEE",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🎪리듬천국] 2000 퓨전러브투어 콘서트 2부 (대구) 2000년 7월 30일 #클릭비 #최창민 #홍경민",
+      "url": "https://www.youtube.com/watch?v=eTlsL98XcEE&t=2711s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 리듬천국 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 45:11. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-kUpR9UKyNfo",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] #롤리팝 🎄~Never again 내 모든 것을 지워💄 #뮤직탱크 293회 2001년 2월 3일(#엄정화 #디바 #코요태 #ses)",
+      "url": "https://www.youtube.com/watch?v=kUpR9UKyNfo&t=3553s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 59:13. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-Xtz3-IgRHB4",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] 🌊 #김종민 #신지 (📸합성사진 아님), #뮤직탱크 294회 2001년 2월 10일(#핑클 #psy #god #코요태 #ses)",
+      "url": "https://www.youtube.com/watch?v=Xtz3-IgRHB4&t=750s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 12:30. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-DwrkmJQjH2E",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] ⭐️스타 대혼전! 댄스, 힙합, 발라드, 락. #뮤직탱크 316회 1부 2001년 7월 13일, #양동근 #박진영 #신화 #클릭비 #플라워",
+      "url": "https://www.youtube.com/watch?v=DwrkmJQjH2E&t=1654s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 27:34, 29:51. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-7JXKxji5neg",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "Wild eyes, 신화, 쇼!뮤직탱크 316회 1부 2001.07.13",
+      "url": "https://www.youtube.com/watch?v=7JXKxji5neg",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-6Dj-v-BoWkA",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "Hey come on, 신화, 쇼!뮤직탱크 316회 1부 2001.07.13",
+      "url": "https://www.youtube.com/watch?v=6Dj-v-BoWkA",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-44PvNCHppWM",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크] ☃️웃기네, 웃기는 소리 하네 #뮤직탱크 320회 2부 2001년 8월 10일, #신화 #제이 #김현정 #백지영 #문차일드",
+      "url": "https://www.youtube.com/watch?v=44PvNCHppWM&t=2929s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 48:49. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
+    },
+    {
+      "id": "videotank-full-audit-20261029-8mfAII3r04c",
+      "publisher": "VIDEOTANK 비디오탱크 유튜브 채널",
+      "title": "[🚀쇼!뮤직탱크]🌊바다 전설, 놓치면 후회할 보컬 대난투 #뮤직탱크 321회 2001년 8월 17일, #ses #자두 #박진영 #투야 #임창정 #바다",
+      "url": "https://www.youtube.com/watch?v=8mfAII3r04c&t=4091s",
+      "kind": "방송 영상·재게시 자료",
+      "note": "해당 영상의 제목·설명 또는 구간 안내에 쇼뮤직탱크 관련 신화 출연 장면이 기재되어 있습니다. 관련 장면 표시: 01:08:11. 해당 날짜는 재게시 영상 표기 기준입니다. 실제 방송일·녹화일은 방송사 원자료와 별도로 대조할 필요가 있습니다."
     }
   ]
 }
