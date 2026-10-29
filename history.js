@@ -572,11 +572,117 @@ function monthHeading(e,previous) {
   ? `<h2 class="month-title">${safe(e.date.slice(0,4))}년 · 월·일 미상</h2>`
   : `<h2 class="month-title">${safe(key.slice(0,4))}년 ${safe(Number(key.slice(5)))}월</h2>`;
 }
+// A full broadcast that covers the same performance makes the same uploader's
+// isolated clip unnecessary in the event's link panel. These pairs are curated
+// from same-date, same-episode VIDEOTANK references; do not apply this preference
+// to other channels, different programmes, or different songs within a show.
+// The source records remain intact for research and provenance.
+const FULL_BROADCAST_FOR_CLIP = new Map([
+ ['vs2BwOC90Zk','dMp1aL73mZU'], // 1998-03-28, Music Tank 144
+ ['AgngNp44RwY','oCHBNqhYTAk'], // 1998-08-15, Music Tank 164 pt 2
+ ['eh6wymwCGJ8','wBVlvLNmNW0'], // 1998-07-11, Music Tank 159
+ ['A9IswxiKjzA','fheX_QasEUs'], // 1998-06-24, Music Tank 157
+ ['IUreidEJYjE','fheX_QasEUs'], // 1998-06-24, Music Tank 157
+ ['HovHrNgA5AE','Tagc1NhsrfM'], // 1999-07-24, Music Tank 213
+ ['bgY_V5peyTY','7xV1cXOrsRs'], // 1999-05-22, Music Tank 204
+ ['1s1RI3OklBk','QsVSDQcXrC0'], // 1999-08-27, Music Tank 218
+ ['7JXKxji5neg','DwrkmJQjH2E'], // 2001-07-13, Music Tank 316 pt 1
+ ['6Dj-v-BoWkA','DwrkmJQjH2E'], // 2001-07-13, Music Tank 316 pt 1
+ ['3Rs1GFV8EGM','X_vFQf50gQs'], // 2001-12-19, KMTV music awards
+ ['jJdhyIkzERM','EA-a8QabNeE']  // 2001-11-23, Mnet MMF pt 1-2
+]);
+
+function youtubeVideoId(url){
+ try{
+  const parsed=new URL(String(url||''));
+  if(parsed.protocol!=='https:')return '';
+  const host=parsed.hostname.toLowerCase();
+  let id='';
+  if(host==='youtube.com'||host==='www.youtube.com'||host==='m.youtube.com'){
+   if(parsed.pathname==='/watch')id=parsed.searchParams.get('v')||'';
+   else id=parsed.pathname.match(/^\/(?:shorts|live)\/([\w-]{11})(?:\/|$)/)?.[1]||'';
+  }else if(host==='youtu.be'||host==='www.youtu.be'){
+   id=parsed.pathname.match(/^\/([\w-]{11})(?:\/|$)/)?.[1]||'';
+  }
+  return /^[\w-]{11}$/.test(id)?id:'';
+ }catch{return '';}
+}
+
+function redundantSourceClips(e){
+ const ids=new Set();
+ const urls=[e.verificationUrl,...(e.verificationUrls||[]),e.sourceUrl,...(e.sourceUrls||[]),e.referenceVideoUrl,...(e.referenceVideoUrls||[])];
+ for(const key of e.sourceRefs||[]){const source=researchSources.get(key);if(source)urls.push(source.url);}
+ for(const v of e.fanVideoSources||[])urls.push(v?.url);
+ for(const url of urls){const id=youtubeVideoId(url);if(id)ids.add(id);}
+ const redundant=new Set();
+ for(const [clip,full] of FULL_BROADCAST_FOR_CLIP){
+  if(ids.has(clip)&&ids.has(full))redundant.add(clip);
+ }
+ // Also handle links explicitly marked Shorts, only when that exact clip's
+ // event+uploader pair is documented above. Avoid inferring sameness by date alone.
+ return redundant;
+}
+
+function normalizeArchiveVideoContext(video){
+ // Source string identifies one scene/programme; different source strings must
+ // not be treated as the same broadcast even when the date matches.
+ return String(video?.source||'').normalize('NFKC').trim().replace(/\s+/g,' ').toLowerCase();
+}
+function normalizedVideoTitle(video){
+ return String(video?.title||'').normalize('NFKC').toLowerCase()
+  .replace(/(?:#?shorts|쇼츠|short\s*(?:ver(?:sion)?|clip)?|풀버전|full\s*(?:ver(?:sion)?|video)?|하이라이트|highlight)/gi,'')
+  .replace(/[^a-z0-9가-힣一-龥]+/g,' ').replace(/\s+/g,' ').trim();
+}
+function filteredArchiveCandidates(e){
+ const candidates=Array.isArray(e.relatedVideos)?e.relatedVideos.filter(r=>r.reviewStatus==='candidate' &&
+   Number(r.score)>=0.70 && videoById.has(String(r.videoId)) && r.reason && r.kind):[];
+ const standard=candidates.map(r=>videoById.get(String(r.videoId)))
+   .filter(v=>v?.videoFormat!=='shorts');
+ return candidates.filter(r=>{
+  const v=videoById.get(String(r.videoId));
+  if(v?.videoFormat!=='shorts')return true;
+  const context=normalizeArchiveVideoContext(v),title=normalizedVideoTitle(v);
+  if(!context||!title)return true;
+  return !standard.some(full=>normalizeArchiveVideoContext(full)===context &&
+    normalizedVideoTitle(full)===title);
+ });
+}
+
+// Apply the same mobile YouTube-link navigation as the video archive. Preserve
+// the original timestamp, especially links to a performance within a full show.
+function openHistoryYoutubeVideo(event,anchor){
+ const videoId=youtubeVideoId(anchor.href);
+ if(!videoId)return;
+ const ua=navigator.userAgent||'';
+ const android=/Android/i.test(ua),ios=/iPhone|iPad|iPod/i.test(ua);
+ if(!android&&!ios)return; // desktop: normal target=_blank link
+ event.preventDefault();
+ const webUrl=anchor.href;
+ if(android){
+  const parsed=new URL(webUrl);
+  const isShorts=/^\/shorts\//.test(parsed.pathname);
+  let path=isShorts?`www.youtube.com/shorts/${encodeURIComponent(videoId)}`:
+    `www.youtube.com/watch?v=${encodeURIComponent(videoId)}`;
+  // watch/start-position URLs are deliberately kept as long-form URLs.
+  if(!isShorts){
+   const t=parsed.searchParams.get('t')||parsed.searchParams.get('start');
+   if(t)path+=`&t=${encodeURIComponent(t)}`;
+  }
+  window.location.href=`intent://${path}#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
+  return;
+ }
+ // iOS Universal Links: the OS chooses YouTube app where eligible; otherwise
+ // it opens the HTTPS URL. Do not falsely claim an app launch is guaranteed.
+ window.location.href=webUrl;
+}
+
+document.addEventListener('click',event=>{
+ const anchor=event.target.closest?.('a[href]');
+ if(anchor)openHistoryYoutubeVideo(event,anchor);
+});
+
 function recommendedLinks(e){
- if(!Array.isArray(e.relatedVideos))return [];
- return e.relatedVideos.filter(r=>r.reviewStatus==='candidate' && Number(r.score)>=0.70 &&
-   videoById.has(String(r.videoId)) && r.reason && r.kind)
-   .slice(0,8).map(r=>{
+ return filteredArchiveCandidates(e).slice(0,8).map(r=>{
      const video=videoById.get(String(r.videoId));
      const url=ytUrl(video);
      if(!isSafeUrl(url))return '';
@@ -593,16 +699,14 @@ function fmt(e){
 }
 function sourceWidget(e){
  const ordered=[];const seen=new Set(),seenYoutubeIds=new Set();
- const youtubeId=url=>{
-   const m=String(url||'').match(/^https:\/\/(?:www\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*?&)?v=|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:[&#?\/]|$)/i);
-   return m?.[1]||'';
- };
+ const redundant=redundantSourceClips(e);
+ const youtubeId=youtubeVideoId;
  const fanVideos=Array.isArray(e.fanVideoSources)?e.fanVideoSources:[];
  const fanById=new Map(fanVideos.filter(v=>v&&youtubeId(v.url)).map(v=>[youtubeId(v.url),v]));
  const add=(label,url,kind,note)=>{
    if(!isSafeUrl(url)||seen.has(url))return;
    const id=youtubeId(url);
-   if(id&&seenYoutubeIds.has(id))return;
+   if(id&&(redundant.has(id)||seenYoutubeIds.has(id)))return;
    // Existing video references are kept once, now with their correct channel attribution.
    const fan=id?fanById.get(id):null;
    if(fan){label=`셩공시대님 — ${fan.title}`;kind='관련 영상 · 팬채널 참고';note=fan.note;}
