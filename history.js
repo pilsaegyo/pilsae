@@ -698,7 +698,7 @@ function fmt(e){
  return e.date.slice(5).replace('-','.');
 }
 function sourceWidget(e){
- const ordered=[];const seen=new Set(),seenYoutubeIds=new Set();
+ const ordered=[];const seen=new Set();
  const redundant=redundantSourceClips(e);
  const youtubeId=youtubeVideoId;
  const fanVideos=Array.isArray(e.fanVideoSources)?e.fanVideoSources:[];
@@ -706,11 +706,19 @@ function sourceWidget(e){
  const add=(label,url,kind,note)=>{
    if(!isSafeUrl(url)||seen.has(url))return;
    const id=youtubeId(url);
-   if(id&&(redundant.has(id)||seenYoutubeIds.has(id)))return;
+   if(id&&redundant.has(id))return;
+   if(id){
+     const timestamp=value=>{const u=new URL(value);return u.searchParams.get('t')||u.searchParams.get('start')||u.hash.match(/^#t=(.+)$/)?.[1]||'';};
+     const time=timestamp(url);
+     const existing=ordered.filter(r=>youtubeId(r.url)===id);
+     if(existing.some(r=>timestamp(r.url)===time)||(!time&&existing.length))return;
+     // Prefer a stage timestamp over an un-timed link; retain distinct stage timestamps.
+     if(time)for(let i=ordered.length-1;i>=0;i--)if(youtubeId(ordered[i].url)===id&&!timestamp(ordered[i].url))ordered.splice(i,1);
+   }
    // Existing video references are kept once, now with their correct channel attribution.
    const fan=id?fanById.get(id):null;
    if(fan){label=`셩공시대님 — ${fan.title}`;kind='관련 영상 · 팬채널 참고';note=fan.note;}
-   seen.add(url);if(id)seenYoutubeIds.add(id);
+   seen.add(url);
    ordered.push({label,url,kind,note});
  };
  if(e.verificationUrl){const src=[...researchSources.values()].find(x=>x.url===e.verificationUrl);add(src?`${src.publisher||'출처'} — ${src.title}`:'기사·공식 검증 출처',e.verificationUrl,src?.kind||'검증 자료',src?.note||'검증 상태와 링크가 뒷받침하는 사실을 함께 확인하세요.');}
