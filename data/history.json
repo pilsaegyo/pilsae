@@ -6,7 +6,7 @@
     "inputRows": 2071,
     "newIndependentlySourcedEvents": 72,
     "dateRule": "원문 연월일 유지. 월만 아는 항목은 day가 아닌 month로 표시.",
-    "subjectRule": "신화 전체 또는 신혜성 참여 활동만; 타 멤버 단독 활동 제외 | 2026.10.29 사용자 요청에 따라 날짜·영상 자료가 있는 다른 신화 멤버의 솔로 활동 및 출퇴근도 영상 표제 기반 기록으로 추가.",
+    "subjectRule": "신화 전체·신혜성·에릭·전진의 출연/참여 활동을 수록. 이민우·김동완·앤디 단독 출연/활동은 제외하되 신화 단체 행사·허용 대상과 동반 출연한 기록과 멤버 포커스 직캠은 유지. 영상 메타의 subject만으로 단독 여부를 결정하지 않음.",
     "videoRule": "현재 영상 아카이브 설명에 기재된 날짜·방송명·회차를 참고 후보로 대조. 기존 일정에 원본 영상 ID를 연결하고, 미등재 일정은 원본 출처를 가진 독립 검증 전 연혁으로 구분하여 추가. 날짜만 일치하는 서로 다른 방송은 별개 행사로 취급. 기사 독립 검증과 구별. v54: 날짜가 영상 표제에 있는 자료는 정식 방송 편성 독립 확인이 없더라도 표제 기반 등급을 명시해 별도 일정으로 등록할 수 있으며, 프로그램 자체·방송일·촬영일·공연일을 혼동하지 않습니다.",
     "sources": [
       "사용자 제공 엑셀: 신화_신혜성_활동연표_통합검토본.xlsx",
@@ -15,14 +15,14 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 955,
-      "chapter2": 1003,
-      "chapter3": 608,
-      "chapter4": 98
+      "chapter1": 946,
+      "chapter2": 968,
+      "chapter3": 600,
+      "chapter4": 86
     },
-    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음. 2026.10.27 v54: 팬영상 표제 기반 신규 기록은 독립 방송 회차가 확인된 것을 의미하지 않습니다. 사용자 직접시청 확인은 독립 당시 보도와 구분합니다. 2013~2015 신규 조사 17건 중 v53 중복 2건을 제외한 자료와 기존 보류일정을 병합하였으며 방송기간 충돌 후보는 계속 보류합니다. 2026-10-28 2016~2018 보강: 옛 2,444건 기준 조사 자료를 최신 2,517건 연혁과 ID 단위로 대조하여 핵심 사실 확인 신규 9건과 기존 근거·표제·날짜 일부를 통합. 상하이·난징 2건은 기존 등록이므로 중복 추가하지 않음. 보류/날짜충돌 후보는 신규 반영하거나 확정하지 않았고, 해당 조사 자료의 전체 필드 독립 검증 완료는 0건임. 2000-07-22 음악캠프 곡명 정정은 앞선 준비본에서 유지. 2026.10.28 추가: 동시대 팬의 직접 시청·관람 후기와 당시 편성자료를 분리해 신규 16건 등록. 공식 영상 미확정 사항은 기록의 verification/sourceNote를 참조. 등록 후 24시간 NEW는 사이트 배포 시각이 아닌 patch registeredAt 기준으로 표시. 2026.10.29 영상 매칭 재검토: 영상 표제 날짜를 활동연혁 등록의 출발점으로 사용하되, 실제 방송일·공연일을 독립 검증한 것으로 표시하지 않음. 팬 편집영상과 날짜충돌 후보는 보류.",
+    "verificationStatement": "병합 판정은 원본 기록의 동일성에 관한 것이며, 각 행사 실제 개최일/방송일을 전수 외부 검증한 것이 아닙니다. 행사별 근거 및 원본별 상태는 ⓘ에서 확인하세요. 2007~2009년 기사 보강 중 사전 예고는 개최 확정으로 간주하지 않습니다. 나무위키 2026.10.23 교차검증에서는 독립 자료 없는 주관적 진술·정확한 월일 미확인 항목을 추가하지 않음. 2026.10.23 누적 조사 통합은 공식 공시·기사 사후보도·유통사 발매일·당시 방송 편성 공지를 각각 구분했으며, 본문 미확보 팬 영상과 임의 날짜는 제외했습니다. 전 활동의 사실관계를 모두 독립 검증한 것은 아닙니다. 2026.10.24 추가: 1998 기아체험은 6/5~6 기간 시작일만 확인되며 신화 무대 방송부는 미확정. 1999 난영가요제의 7/18은 2차 편성 자료 방송일이고 공연 개최일이 아님. 2026.10.24 v19: 팬아카이브 표제 기준 신규 영상콘텐츠는 실제 방송·녹화·최초공개 날짜 확정과 구분. 해당 근거는 각 일정 ⓘ에서 확인. 2026.10.24 편집 보완: 취재 주제가 같은 방송사별 취재 항목을 묶되, 각 원본 제목과 출처를 병합 기록에 보존. 영상에서 연도·월만 식별되는 출연은 해당 정밀도로 등록하며 정확한 방송일을 임의 생성하지 않음. 2026.10.24 v22: 연도별 주제 중복 후보 21그룹(44행)을 21개 표제로 표시 통합. 서로 다른 방송·공연과 보도를 동일 송출일로 확정하지 않으며 ⓘ에서 원래 기록·근거를 모두 제공. 연도만 확인된 항목은 해당 연도의 마지막, 달력의 12월 날짜 미상 칸에서 조회. 2026.10.24 v23: 사용자 전달 2002~2003 방송 편성안에 담긴 일정은 발표·예정/실제 출연과 구별하여 등재. 2007 신혜성 첫 일본투어 4곳 중 8/23·8/25 사후보도, 8/27·8/29 사전 기사만 확인. 방송 날짜가 명확한 열린음악회(2003.02.02) 녹화일 원문 오류 가능성은 확정하지 않고 보존. 2026.10.24 v24: 2002.02.09 god·신화 미아찾기 콘서트에 Daum 뮤직 2002.01.18 공식 행사 모집 공지와 2002.02.14 KMTV 생Q뉴스 사용자 제공 사후영상 표제를 연결함. 공연 개최 사후 보도 기사 원문은 미확보. 방송은 독립 일정 1건으로 추가. 2026.10.24 v25: 미배포 v24를 v23 기준 통합하면서 Daum 공식 2002.06.05/06.14 행사 공지와 주최사 보도자료 대조로 2002.06.10 월드컵 페스티벌, 06.15 다음의 날 신화 출연 예정 2건을 신규 추가. 행사 이후 실제 무대 증명과 구분. 06.04는 출연진 표기 상충으로 보류. 2026.10.24 v29: 1998.07.19 KBS 쇼! 행운을 잡아라 신화 출연/으쌰으쌰 추정 기록은 출연 근거 부재 및 영상 ID의 다른 방송 중복 사용을 확인하여 삭제하고 관련 독립근거 2건 폐기. 1998년 개별 팬채널 영상 6개를 추가/기존 연결하며 실제 방송일·동일 회차 미확인은 유지. 2026.10.26 v27.8: 최신 운영 스냅샷 2,390건을 기준으로 잡지·독립검수 8~11차의 신규·중복·보류를 구분하여 적용. 동시대 잡지 사후 현장 기록은 활동 근거로 활용하되, 사전 예정/방송일/공연일/촬영일/팬 캡션은 구별. 정식 행사명이 확인된 건만 정식명 변경; 나머지는 기존 표제 유지. 공식명 전체 2,390건 독립 전수 검증을 의미하지 않음. 2026.10.27 v54: 팬영상 표제 기반 신규 기록은 독립 방송 회차가 확인된 것을 의미하지 않습니다. 사용자 직접시청 확인은 독립 당시 보도와 구분합니다. 2013~2015 신규 조사 17건 중 v53 중복 2건을 제외한 자료와 기존 보류일정을 병합하였으며 방송기간 충돌 후보는 계속 보류합니다. 2026-10-28 2016~2018 보강: 옛 2,444건 기준 조사 자료를 최신 2,517건 연혁과 ID 단위로 대조하여 핵심 사실 확인 신규 9건과 기존 근거·표제·날짜 일부를 통합. 상하이·난징 2건은 기존 등록이므로 중복 추가하지 않음. 보류/날짜충돌 후보는 신규 반영하거나 확정하지 않았고, 해당 조사 자료의 전체 필드 독립 검증 완료는 0건임. 2000-07-22 음악캠프 곡명 정정은 앞선 준비본에서 유지. 2026.10.28 추가: 동시대 팬의 직접 시청·관람 후기와 당시 편성자료를 분리해 신규 16건 등록. 공식 영상 미확정 사항은 기록의 verification/sourceNote를 참조. 등록 후 24시간 NEW는 사이트 배포 시각이 아닌 patch registeredAt 기준으로 표시. 2026.10.29 영상 매칭 재검토: 영상 표제 날짜를 활동연혁 등록의 출발점으로 사용하되, 실제 방송일·공연일을 독립 검증한 것으로 표시하지 않음. 팬 편집영상과 날짜충돌 후보는 보류. 2026.10.29: 2003.10.25 대구MBC 당시 행사 예고와 신화 직캠 제목을 함께 연결했고, 2001.11.03 행사명은 사용자 확인으로 표기하되 독립 공식 개최 기사 미확보 사실을 명시. 다른 멤버 단독활동을 대상 범위 기준으로 삭제했으며 과거 검증 이력의 통계값은 역사적 메모입니다.",
     "possibleDuplicateRows": "이전 패치 검토 건수(28) — 이번 패치 후 전체 재산정 전. 같은 날짜 다른 사건 포함하며 공개 오류로 확정할 수 없음.",
-    "visibleEvents": 2664,
+    "visibleEvents": 2600,
     "excludedFromPublicTimeline": [
       {
         "id": "history:p0002",
@@ -881,6 +881,27 @@
       "scope": "사용자 제공 전체 영상 매칭 엑셀의 날짜 기재 미연결 영상 424개, 이 중 일정/프로그램 식별이 되는 자료는 기본 신규 등록. 동일 행사 영상은 한 건으로 집계하고, 원본에서 날짜와 내용이 충돌하거나 팬 편집영상은 별도 보류. 다른 멤버 개인 활동 및 출퇴근 영상도 사용자 요청에 따라 포함.",
       "sourceLimitation": "사용자 업로드 영상 제목을 기반으로 한 정리. 유튜브 영상 재생·공식 방송사 회차 전수 확인을 한 것이 아님. 신규 사실 확정이 아닌 날짜 명시 아카이브 기록.",
       "new24hNote": "registeredAt은 패치 생성 시각으로 설정되며 사이트 배포 시각과 다름. 배포 시 24시간 전체 NEW 노출을 원하면 이 배치의 registeredAt을 배포시각으로 수정해야 함."
+    },
+    "scopeCleanup20261029": {
+      "baseline": "pilsae-main (10).zip + 2026-10-29 영상 424개 신규 122건 통합 데이터",
+      "before": 2664,
+      "removed": 64,
+      "after": 2600,
+      "correctedEvents": [
+        "video20261029:2001-11-03:3e6098532c",
+        "video20261029:2003-10-25:b9453340ce"
+      ],
+      "userDeleted": [
+        "new261028:2001-04-18:hyesung-knee-surgery",
+        "sheet:01!8"
+      ],
+      "excludedSingleMembers": "이민우·김동완·앤디만 단독으로 참여하는 일정",
+      "keepRule": "신화 단체 또는 신혜성·에릭·전진 등장 시 유지. 포커스 영상만으로 솔로 간주하지 않음.",
+      "reference2003": "https://dgmbc.com/NewsArticle/377952",
+      "scopeNote2001": "서울시민건강주간콘서트는 사용자 행사 식별 + 영상 표제; 독립 공식 근거 원문 미확보",
+      "date": "2026-10-29",
+      "newEventCount": 0,
+      "registeredAt": "기존 등록값 유지; NEW 추가 없음"
     }
   },
   "chapters": [
@@ -1053,28 +1074,6 @@
       "recordCount": 1
     },
     {
-      "id": "smcontract:1997-04-25:lee-minwoo",
-      "date": "1997-04-25",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "전속계약",
-      "subject": "이민우",
-      "title": "이민우 — SM엔터테인먼트 가수 전속계약 시작",
-      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
-      "source": "누적 조사 35시트 + 직접 검증 자료",
-      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "referenceVideoUrl": null,
-      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 이민우 시작일 1997-04-25, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
-      "dateKind": "공시 기재 개별 전속계약 시작일",
-      "sourceRecord": "1997_SM계약_공식공시",
-      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "sourceRefs": [
-        "cu23-source-168"
-      ],
-      "recordCount": 1
-    },
-    {
       "id": "smcontract:1997-04-30:shin-hyesung",
       "date": "1997-04-30",
       "precision": "day",
@@ -1088,28 +1087,6 @@
       "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
       "referenceVideoUrl": null,
       "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 신혜성(정필교) 시작일 1997-04-30, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
-      "dateKind": "공시 기재 개별 전속계약 시작일",
-      "sourceRecord": "1997_SM계약_공식공시",
-      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "sourceRefs": [
-        "cu23-source-168"
-      ],
-      "recordCount": 1
-    },
-    {
-      "id": "smcontract:1997-07-05:andy-lee",
-      "date": "1997-07-05",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "전속계약",
-      "subject": "앤디(이선호)",
-      "title": "앤디(이선호) — SM엔터테인먼트 가수 전속계약 시작",
-      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
-      "source": "누적 조사 35시트 + 직접 검증 자료",
-      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "referenceVideoUrl": null,
-      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 앤디(이선호) 시작일 1997-07-05, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
       "dateKind": "공시 기재 개별 전속계약 시작일",
       "sourceRecord": "1997_SM계약_공식공시",
       "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
@@ -1187,28 +1164,6 @@
       ],
       "recordCount": 1,
       "categoryOriginal": "데뷔준비"
-    },
-    {
-      "id": "smcontract:1997-11-01:kim-dongwan",
-      "date": "1997-11-01",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "전속계약",
-      "subject": "김동완",
-      "title": "김동완 — SM엔터테인먼트 가수 전속계약 시작",
-      "verification": "SM 2000사업연도 사업보고서 가수전속계약 표 확인",
-      "source": "누적 조사 35시트 + 직접 검증 자료",
-      "sourceUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "referenceVideoUrl": null,
-      "sourceNote": "금융감독원/코스닥 2001.03.30 제출 사업보고서(제6기) 계약 표: 김동완 시작일 1997-11-01, 종료 예정일 2003-04-30. 그룹 공식 결성일이나 최초 캐스팅 날짜와는 구별.",
-      "dateKind": "공시 기재 개별 전속계약 시작일",
-      "sourceRecord": "1997_SM계약_공식공시",
-      "verificationUrl": "https://kind.krx.co.kr/external/2001/03/30/K00442/00000000047807/26976_00080.htm",
-      "sourceRefs": [
-        "cu23-source-168"
-      ],
-      "recordCount": 1
     },
     {
       "id": "history:p0006",
@@ -12032,26 +11987,6 @@
       "verificationUrl": "https://programs.sbs.co.kr/enter/musicenter/vod/74765/22000461901"
     },
     {
-      "id": "sheet:01!8",
-      "date": "2001-01-04",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "연예정보",
-      "subject": "신혜성 개인",
-      "title": "MBC 섹션TV 연예통신 (스톰화보촬영현장)",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=783565160&range=A8:D8",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "01!8",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
       "id": "sheet:01!10",
       "date": "2001-01-06",
       "precision": "day",
@@ -14333,33 +14268,6 @@
       "recordCount": 1
     },
     {
-      "id": "new261028:2001-04-18:hyesung-knee-surgery",
-      "date": "2001-04-18",
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "category": "주요 사건",
-      "subject": "신혜성 개인",
-      "title": "신혜성 — 왼쪽 무릎 전방십자인대 수술",
-      "verification": "당시 언론 보도(수술일 언급)",
-      "source": "2026.10.28 누적 조사 — 사용자 제공 당시 팬 게시물·시청일지 및 공개 원자료",
-      "sourceUrl": "https://www.chosun.com/kid/kid_literacy/kid_sisanews/2001/04/19/QQTOJAHBJO52YK72AOCVANYUM4/",
-      "referenceVideoUrl": null,
-      "sourceNote": "2001.04.19 조선일보 〈신혜성 무릎수술 성공적으로 마쳐〉 보도. 앞선 조사에서 기사에 명시된 수술일을 4월 18일로 확인. 기사 게재일 4월 19일과 수술일 4월 18일은 별개. 보도된 의료사건만 간결히 기록.",
-      "dateKind": "보도에서 언급한 수술일",
-      "sourceRecord": "20261028_신규등록_05",
-      "recordCount": 1,
-      "registeredAt": "2026-10-28T15:57:50+09:00",
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=YVllfrLVzNY",
-          "title": "[방송] 20010418 - 신혜성 - 무릎수술 뉴스",
-          "videoId": "YVllfrLVzNY",
-          "note": "2001.04.18 신혜성 무릎수술 뉴스로 표기된 영상. 실제 수술일은 2001.04.19 조선일보의 전날 수술 보도로 확인되나, 영상의 뉴스 방영 날짜가 04.18인지는 별도 확인되지 않음. 이 영상은 팬채널 표제와 당시 일정 근거를 대조하여 연결한 참고자료입니다. 실제 영상의 장면·방송일을 직접 재생 검증한 것은 아닙니다."
-        }
-      ]
-    },
-    {
       "id": "audit52:2001-04-20:ntv-ntop-junjin-mc",
       "date": "2001-04-20",
       "precision": "day",
@@ -15695,39 +15603,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2001-08-01:01b9b0703c",
-      "date": "2001-08-01",
-      "precision": "day",
-      "chapter": "chapter1",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 《가요발전소》 — 이민우 생일파티 현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=ZRDUI-02wbc",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=ZRDUI-02wbc"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=ZRDUI-02wbc",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=ZRDUI-02wbc"
-      ],
-      "sourceNote": "영상 1개의 제목에 2001.08.01 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=ZRDUI-02wbc",
-          "title": "[방송] 20010801 Mnet 가요발전소 - 이민우 생일파티 현장",
-          "videoId": "ZRDUI-02wbc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:01!240",
@@ -18148,26 +18023,6 @@
       "recordCount": 1
     },
     {
-      "precision": "day",
-      "chapter": "chapter1",
-      "transition": "",
-      "sourceUrl": null,
-      "referenceVideoUrl": null,
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1,
-      "id": "audit48:2001-10-07:tenten-oct",
-      "date": "2001-10-07",
-      "title": "SBS 《김동완의 텐텐클럽》 삼천리극장 공개방송",
-      "category": "공개방송",
-      "subject": "김동완",
-      "source": "2001-10-08 보이스멜UN 현장 후기(사용자 제공 이미지)",
-      "sourceNote": "2001-10-08 보이스멜UN 작성자 uⓃ져아^^ 「어제 텐텐 후기」. 현장 장소를 삼천리극장으로 표기, 김동완 1부 말미 등장. 신혜성·전진은 행사 후 차량 주변에서 목격된 것이며 공개방송 무대 출연 근거는 없음.",
-      "verification": "익일 작성 팬 현장 후기 직접 제공·김동완 공개방송 현장 진행 확인",
-      "dateKind": "현장 관람일(방송 송출일 불명)",
-      "sourceRecord": "48차 팬 후기 직접 제공 / 후기 확인 제보 통합"
-    },
-    {
       "id": "sheet:01!348",
       "date": "2001-10-11",
       "precision": "day",
@@ -18936,10 +18791,10 @@
       "date": "2001-11-03",
       "precision": "day",
       "chapter": "chapter1",
-      "category": "현장영상",
-      "subject": "이민우",
-      "title": "신화 무대·인터뷰 직캠 (행사 미상)",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
+      "category": "공연",
+      "subject": "신화 전체",
+      "title": "서울시민건강주간콘서트 — 신화 무대·인터뷰 직캠",
+      "verification": "신화 무대·인터뷰 직캠의 2001.11.03 표제 / 행사명은 사용자 확인(동시대 공식자료 미확보)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
       "sourceUrl": "https://www.youtube.com/watch?v=dZcSSx159RI",
       "sourceUrls": [
@@ -18953,8 +18808,8 @@
         "https://www.youtube.com/watch?v=pFNTm-D0FNo",
         "https://www.youtube.com/watch?v=BUFEBuaNOa0"
       ],
-      "sourceNote": "영상 3개의 제목에 2001.11.03 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
+      "sourceNote": "2001.11.03 신화 〈Hey, Come On!〉·〈Wild Eyes〉 무대와 인터뷰 직캠 3개를 근거로 기록. 직캠 제목의 이민우 포커스는 카메라 초점의 의미로, 신화 단체 공연을 이민우 단독 활동으로 분류하지 않음. 《서울시민건강주간콘서트》는 사용자 제보로 확인한 행사 명칭이며, 정확한 공식 개최자료·행사 장소는 이번 조사에서 확보하지 못함. 같은 날 KBS 뮤직플러스·KM 쇼! 뮤직탱크와는 별도 공연 기록으로 보존.",
+      "dateKind": "팬 직캠 표제의 2001.11.03 (행사명 사용자 제보, 공식 개최 원문 미확보)",
       "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
       "sourceRefs": [],
       "recordCount": 3,
@@ -20548,39 +20403,6 @@
       "dateCorrections": [],
       "titleCorrections": [],
       "possibleDuplicate": false
-    },
-    {
-      "id": "video20261029:2002-02-19:8d93470458",
-      "date": "2002-02-19",
-      "precision": "day",
-      "chapter": "chapter1",
-      "category": "방송",
-      "subject": "김동완",
-      "title": "김동완의텐텐클럽 — 우는 혜성이 달랜 이야기",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=Ut3NMBBtc50",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=Ut3NMBBtc50"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=Ut3NMBBtc50",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=Ut3NMBBtc50"
-      ],
-      "sourceNote": "영상 1개의 제목에 2002.02.19 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=Ut3NMBBtc50",
-          "title": "[라디오/텐텐클럽] 20020219 김동완의텐텐클럽  - 우는 혜성이  달랜  이야기",
-          "videoId": "Ut3NMBBtc50",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "history:p0103",
@@ -25161,39 +24983,6 @@
       "recordCount": 1
     },
     {
-      "id": "video20261029:2003-01-22:ca0a594f96",
-      "date": "2003-01-22",
-      "precision": "day",
-      "chapter": "chapter1",
-      "category": "방송",
-      "subject": "앤디",
-      "title": "Mnet 《쇼킹일기》 — 1일 VJ 앤디 집중 탐구",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=XuTNViS1NOk",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=XuTNViS1NOk"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=XuTNViS1NOk",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=XuTNViS1NOk"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.01.22 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=XuTNViS1NOk",
-          "title": "[방송] 20030122  Mnet 쇼킹일기 1일 VJ 앤디 집중 탐구",
-          "videoId": "XuTNViS1NOk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:03!32",
       "date": "2003-01-23",
       "precision": "day",
@@ -27892,39 +27681,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-08-04:aa14096c91",
-      "date": "2003-08-04",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 《와이드뉴스》 — 이민우 생일파티 겸 팬미팅 현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=fB0Nq6-589k",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=fB0Nq6-589k"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=fB0Nq6-589k",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=fB0Nq6-589k"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.08.04 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=fB0Nq6-589k",
-          "title": "[방송] 20030804 Mnet widenews - 이민우 생일파티 겸 팬미팅 현장",
-          "videoId": "fB0Nq6-589k",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "history:p0134",
       "date": "2003-08-06",
       "precision": "day",
@@ -27977,39 +27733,6 @@
           "videoId": "FBzkAtKwUZQ"
         }
       ]
-    },
-    {
-      "id": "video20261029:2003-08-13:3f5949033d",
-      "date": "2003-08-13",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "영상 기록",
-      "subject": "이민우",
-      "title": "자유선언 라디오공개방송 — 이민우",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=H45RjzFwlok",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=H45RjzFwlok"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=H45RjzFwlok",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=H45RjzFwlok"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.08.13 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=H45RjzFwlok",
-          "title": "[직캠] 20030813 자유선언 라디오공개방송 - 이민우",
-          "videoId": "H45RjzFwlok",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "work2003:y2003-c049",
@@ -28450,39 +28173,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2003-09-18:435e59e245",
-      "date": "2003-09-18",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 《와이드뉴스》 — 이민우 — 의류화보촬영 현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=dLQkhu3Gzx8",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=dLQkhu3Gzx8"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=dLQkhu3Gzx8",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=dLQkhu3Gzx8"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.09.18 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=dLQkhu3Gzx8",
-          "title": "[방송] 20030918 Mnet  widenews  - 이민우 - 의류화보촬영 현장",
-          "videoId": "dLQkhu3Gzx8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "work2003:y2003-c130",
@@ -29288,39 +28978,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-10-14:eb903449d5",
-      "date": "2003-10-14",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "앤디",
-      "title": "Mnet 《와이드뉴스》 — 앤디 의류화보 촬영현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=gOeEVj3Mp2s",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=gOeEVj3Mp2s"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=gOeEVj3Mp2s",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=gOeEVj3Mp2s"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.10.14 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=gOeEVj3Mp2s",
-          "title": "[방송] 20031014 Mnet widenews 앤디 의류화보 촬영현장",
-          "videoId": "gOeEVj3Mp2s",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "work2003:y2003-c036",
       "date": "2003-10-15",
       "precision": "day",
@@ -29658,39 +29315,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-10-22:9a66ba217d",
-      "date": "2003-10-22",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "앤디",
-      "title": "Mnet 《와이드뉴스》 — KBL 명예홍보대사 위촉 — 앤디",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=SU12A36owFk",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=SU12A36owFk"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=SU12A36owFk",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=SU12A36owFk"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.10.22 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=SU12A36owFk",
-          "title": "[방송] 20031022 Mnet widenews - KBL 명예홍보대사 위촉 - 앤디",
-          "videoId": "SU12A36owFk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "work2003:y2003-c121",
       "date": "2003-10-23",
       "precision": "day",
@@ -29792,21 +29416,22 @@
       "date": "2003-10-25",
       "precision": "day",
       "chapter": "chapter2",
-      "category": "현장영상",
-      "subject": "신혜성",
-      "title": "신화 다곡 공연 직캠 (행사 미확인)",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
+      "category": "공연",
+      "subject": "신화 전체",
+      "title": "대구유니버시아드 성공 시민축제 한마당 — 신화 공연",
+      "verification": "2003.10.23 대구MBC 행사·신화 출연 예정 보도 + 2003.10.25 신화 직캠 표제",
+      "source": "대구MBC 2003.10.23 보도 / 셩공시대님 직캠 영상",
       "sourceUrl": "https://www.youtube.com/watch?v=jKI-yNHqz6E",
       "sourceUrls": [
-        "https://www.youtube.com/watch?v=jKI-yNHqz6E"
+        "https://www.youtube.com/watch?v=jKI-yNHqz6E",
+        "https://dgmbc.com/NewsArticle/377952"
       ],
       "referenceVideoUrl": "https://www.youtube.com/watch?v=jKI-yNHqz6E",
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=jKI-yNHqz6E"
       ],
-      "sourceNote": "영상 1개의 제목에 2003.10.25 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
+      "sourceNote": "2003.10.23 대구MBC 최고현 기자 보도: 대구유니버시아드 조직위원회가 10월 25일 오후 6시~8시 금호강 둔치에서 《유니버시아드 성공 시민축제 한마당》 개최 예정, 신화·디바 등 출연 예정이라고 명시. 출연은 당시 사전 기사로 확인되며, 팬 직캠 〈Wild Eyes〉(신혜성 포커스)은 2003.10.25로 표기되어 있음. 영상의 원공연·촬영일을 방송사 원본과 독립 대조하지는 못함. 신혜성 포커스는 카메라 초점일 뿐 신혜성 단독 공연이 아님. 다른 2003.10.25 KBS·KM·MBC 음악방송 기록과 별도 행사.",
+      "dateKind": "2003.10.25 행사 예정일(대구MBC 2003.10.23 보도) + 날짜 일치 팬 직캠 표제",
       "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
       "sourceRefs": [],
       "recordCount": 1,
@@ -29818,7 +29443,8 @@
           "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
         }
       ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
+      "registeredAt": "2026-10-29T07:36:47+09:00",
+      "verificationUrl": "https://dgmbc.com/NewsArticle/377952"
     },
     {
       "id": "sheet:03!260",
@@ -30645,7 +30271,7 @@
       "precision": "day",
       "chapter": "chapter2",
       "category": "방송",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "에릭·전진·앤디",
       "title": "Mnet — 와락!부비부비 — 릭진디",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -30871,72 +30497,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-11-26:95ac61d040",
-      "date": "2003-11-26",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "MBC 《섹션TV》 — 이민우 뮤직비디오 촬영현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=Y6ZCioYbw5s",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=Y6ZCioYbw5s"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=Y6ZCioYbw5s",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=Y6ZCioYbw5s"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.11.26 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=Y6ZCioYbw5s",
-          "title": "[방송] 20031126 mbc 섹션tv  - 이민우 MV 촬영현장",
-          "videoId": "Y6ZCioYbw5s",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2003-11-26:c82e360f56",
-      "date": "2003-11-26",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 《와이드뉴스》 — 이민우 뮤직비디오 촬영현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=eMgQY_fWaL8",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=eMgQY_fWaL8"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=eMgQY_fWaL8",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=eMgQY_fWaL8"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.11.26 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=eMgQY_fWaL8",
-          "title": "[방송] 20031126 Mnet widenews - 이민우 M/V 촬영현장",
-          "videoId": "eMgQY_fWaL8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "work2003:y2003-c013",
       "date": "2003-11-26",
       "precision": "day",
@@ -31116,39 +30676,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-11-27:854eec0d83",
-      "date": "2003-11-27",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "KMTV 《생방송 뮤직Q》 — 이민우(M) m/v 촬영현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=T8f9QS3pDII",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=T8f9QS3pDII"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=T8f9QS3pDII",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=T8f9QS3pDII"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.11.27 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=T8f9QS3pDII",
-          "title": "[방송] 20031127 kmtv livemq - 이민우(M)  m/v 촬영현장",
-          "videoId": "T8f9QS3pDII",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "work2003:y2003-c015",
       "date": "2003-11-28",
       "precision": "day",
@@ -31282,72 +30809,6 @@
       "recordCount": 1
     },
     {
-      "id": "video20261029:2003-11-30:3ea92dea41",
-      "date": "2003-11-30",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
-      "title": "SBS 《인기가요》 — 인기가요 — 이민우 솔로데뷔 + 김동완 MC",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=eZ7V6XJzPks",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=eZ7V6XJzPks"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=eZ7V6XJzPks",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=eZ7V6XJzPks"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.11.30 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=eZ7V6XJzPks",
-          "title": "[방송] 20031130 - 인기가요 - 이민우 솔로데뷔 + 김동완 MC",
-          "videoId": "eZ7V6XJzPks",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2003-12-02:15386be340",
-      "date": "2003-12-02",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "kmtv starmagazine 이민우(M)",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=79kyOxIFKCY",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=79kyOxIFKCY"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=79kyOxIFKCY",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=79kyOxIFKCY"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.02 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=79kyOxIFKCY",
-          "title": "[방송] 20031202 kmtv starmagazine 이민우(M)",
-          "videoId": "79kyOxIFKCY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:03!338",
       "date": "2003-12-03",
       "precision": "day",
@@ -31448,39 +30909,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-12-05:ae63b5bc7f",
-      "date": "2003-12-05",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet showkingm — 이민우 컴백",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=YkdHHn9tDuY",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=YkdHHn9tDuY"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=YkdHHn9tDuY",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=YkdHHn9tDuY"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.05 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=YkdHHn9tDuY",
-          "title": "[방송] 20031205 Mnet showkingm - 이민우 컴백",
-          "videoId": "YkdHHn9tDuY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:03!346",
       "date": "2003-12-06",
       "precision": "day",
@@ -31561,72 +30989,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2003-12-09:a0c55169a4",
-      "date": "2003-12-09",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 《와이드뉴스》 — WideStar — 이민우",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=dPctVYYdGJM",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=dPctVYYdGJM"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=dPctVYYdGJM",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=dPctVYYdGJM"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.09 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=dPctVYYdGJM",
-          "title": "[방송] 20031209 Mnet widenews WideStar -이민우",
-          "videoId": "dPctVYYdGJM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2003-12-10:c13d192fc7",
-      "date": "2003-12-10",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "kmtv kma 이민우(M) Just One Night",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=AiomFy5IBtM",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=AiomFy5IBtM"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=AiomFy5IBtM",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=AiomFy5IBtM"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.10 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=AiomFy5IBtM",
-          "title": "[방송] 20031210 kmtv kma 이민우(M) Just One Night",
-          "videoId": "AiomFy5IBtM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "work2003:y2003-c100",
@@ -31732,39 +31094,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-12-12:3d2b17fbc4",
-      "date": "2003-12-12",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "KMTV 《쇼! 뮤직탱크》 — 이민우 M — 첫방",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=NH7P0hjXokw",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=NH7P0hjXokw"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=NH7P0hjXokw",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=NH7P0hjXokw"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.12 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=NH7P0hjXokw",
-          "title": "[방송] 20031212 kmtv showtank 이민우 M - 첫방",
-          "videoId": "NH7P0hjXokw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:03!364",
       "date": "2003-12-13",
       "precision": "day",
@@ -31794,39 +31123,6 @@
           "videoId": "z3qCedWUS14"
         }
       ]
-    },
-    {
-      "id": "video20261029:2003-12-13:5c19932862",
-      "date": "2003-12-13",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "kmtv selectsong43 이민우 M",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=oy-OanMvSOc",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=oy-OanMvSOc"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=oy-OanMvSOc",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=oy-OanMvSOc"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.13 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=oy-OanMvSOc",
-          "title": "[방송] 20031213 kmtv selectsong43 이민우 M",
-          "videoId": "oy-OanMvSOc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "work2003:y2003-c098",
@@ -32167,39 +31463,6 @@
       ]
     },
     {
-      "id": "video20261029:2003-12-25:3dc80a29b1",
-      "date": "2003-12-25",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "etn 지존콘서트 이민우 M — just one night + sweet girl",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=Nc0qvWf9y88",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=Nc0qvWf9y88"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=Nc0qvWf9y88",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=Nc0qvWf9y88"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.25 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=Nc0qvWf9y88",
-          "title": "[방송] 20031225 etn 지존콘서트 이민우 M -  just one night + sweet girl",
-          "videoId": "Nc0qvWf9y88",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "work2003:y2003-c020",
       "date": "2003-12-25",
       "precision": "day",
@@ -32282,39 +31545,6 @@
         "9SLxxsoLPqQ",
         "E6MwMUtXg5A"
       ]
-    },
-    {
-      "id": "video20261029:2003-12-26:49649e4c60",
-      "date": "2003-12-26",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "KMTV 《쇼! 뮤직탱크》 — 이민우 M — just one night + sweet girl",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=8yCZVTyGDXQ",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=8yCZVTyGDXQ"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=8yCZVTyGDXQ",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=8yCZVTyGDXQ"
-      ],
-      "sourceNote": "영상 1개의 제목에 2003.12.26 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=8yCZVTyGDXQ",
-          "title": "[방송] 20031226 kmtv showtank 이민우 M - just one night + sweet girl",
-          "videoId": "8yCZVTyGDXQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "work2003:y2003-c080",
@@ -32798,39 +32028,6 @@
           "videoId": "_L7Kru3dMBQ"
         }
       ]
-    },
-    {
-      "id": "video20261029:2004-01-08:fdd2a5f826",
-      "date": "2004-01-08",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "KMTV 《생방송 뮤직Q》 — 이민우 — 의류촬영현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=IyX1RnE6joM",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=IyX1RnE6joM"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=IyX1RnE6joM",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=IyX1RnE6joM"
-      ],
-      "sourceNote": "영상 1개의 제목에 2004.01.08 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=IyX1RnE6joM",
-          "title": "[방송] 20040108 kmtv livemq - 이민우 - 의류촬영현장",
-          "videoId": "IyX1RnE6joM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:04!15",
@@ -34745,39 +33942,6 @@
       ]
     },
     {
-      "id": "video20261029:2004-09-24:c39cbf6a27",
-      "date": "2004-09-24",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "앤디",
-      "title": "KMTV 《SangQ》 — 앤디 — 오!감자 CF 촬영현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=Idf9jleQPrQ",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=Idf9jleQPrQ"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=Idf9jleQPrQ",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=Idf9jleQPrQ"
-      ],
-      "sourceNote": "영상 1개의 제목에 2004.09.24 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=Idf9jleQPrQ",
-          "title": "[방송] 20040924 kmtv sangq - 앤디 - 오!감자 CF 촬영현장",
-          "videoId": "Idf9jleQPrQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:04!424",
       "date": "2004-09-25",
       "precision": "day",
@@ -34874,7 +34038,7 @@
       "precision": "day",
       "chapter": "chapter2",
       "category": "방송",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "에릭·전진",
       "title": "kmtv B — side showtang — 브랜뉴 — 에릭+전진",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -35020,39 +34184,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2004-10-05:d139fd70ac",
-      "date": "2004-10-05",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "앤디",
-      "title": "KMTV 《SangQ》 — 앤디 — beega M/V 촬영현장",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=GX3xcYzGYPI",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=GX3xcYzGYPI"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=GX3xcYzGYPI",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=GX3xcYzGYPI"
-      ],
-      "sourceNote": "영상 1개의 제목에 2004.10.05 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=GX3xcYzGYPI",
-          "title": "[방송] 20041005 kmtv sangq  앤디 - beega M/V 촬영현장",
-          "videoId": "GX3xcYzGYPI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:04!436",
@@ -36566,7 +35697,7 @@
       "precision": "day",
       "chapter": "chapter2",
       "category": "방송",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "신화 관련(출연 범위 확인 필요)",
       "title": "생방송 연예특급 — ivyclub CF 촬영현장",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -36650,7 +35781,7 @@
       "precision": "day",
       "chapter": "chapter2",
       "category": "방송",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "신화 관련(출연 범위 확인 필요)",
       "title": "etn insidestory ivyclub cf 촬영현장",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -38335,7 +37466,7 @@
       "precision": "day",
       "chapter": "chapter2",
       "category": "영상 기록",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "신화 관련(출연 범위 확인 필요)",
       "title": "SBS 가요대상 감사인사 + 밴에서의 모습",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -39632,39 +38763,6 @@
           "videoId": "cfn8wg1cGkc"
         }
       ]
-    },
-    {
-      "id": "video20261029:2005-02-06:ca120406ae",
-      "date": "2005-02-06",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
-      "title": "SBS 《인기가요》 — 인기가요 — 특별MC — 이민우, 김동완",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=Q3d1wF1UYp8",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=Q3d1wF1UYp8"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=Q3d1wF1UYp8",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=Q3d1wF1UYp8"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.02.06 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=Q3d1wF1UYp8",
-          "title": "[방송] 20050206 SBS 인기가요 - 특별MC - 이민우, 김동완",
-          "videoId": "Q3d1wF1UYp8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:05!43",
@@ -43589,105 +42687,6 @@
       "recordCount": 1
     },
     {
-      "id": "video20261029:2005-08-22:2a342059cf",
-      "date": "2005-08-22",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 1부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=17cUm-TgePU",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=17cUm-TgePU"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=17cUm-TgePU",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=17cUm-TgePU"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.22 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=17cUm-TgePU",
-          "title": "[방송] 20050822 Mnet 신화 이민우의 M's - 1부",
-          "videoId": "17cUm-TgePU",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2005-08-23:b026850674",
-      "date": "2005-08-23",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 2부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=STLJ89Jby5g",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=STLJ89Jby5g"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=STLJ89Jby5g",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=STLJ89Jby5g"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.23 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=STLJ89Jby5g",
-          "title": "[방송] 20050823 Mnet 신화 이민우의 M's - 2부",
-          "videoId": "STLJ89Jby5g",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2005-08-24:12a67e70e9",
-      "date": "2005-08-24",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 3부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=zkSFAPFmaPo",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=zkSFAPFmaPo"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=zkSFAPFmaPo",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=zkSFAPFmaPo"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.24 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=zkSFAPFmaPo",
-          "title": "[방송] 20050824 Mnet 신화 이민우의 M's - 3부",
-          "videoId": "zkSFAPFmaPo",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "video20261029:2005-08-25:9c7a2d0b4b",
       "date": "2005-08-25",
       "precision": "day",
@@ -43715,39 +42714,6 @@
           "url": "https://www.youtube.com/watch?v=KzPJsN04B5Q",
           "title": "20050825 최강희의 볼륨을 높여라 - 신혜성  보라 full.ver",
           "videoId": "KzPJsN04B5Q",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2005-08-25:af707c559a",
-      "date": "2005-08-25",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 4부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=XIYzmftg20w",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=XIYzmftg20w"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=XIYzmftg20w",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=XIYzmftg20w"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.25 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=XIYzmftg20w",
-          "title": "[방송] 20050825 Mnet 신화 이민우의 M's - 4부",
-          "videoId": "XIYzmftg20w",
           "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
         }
       ],
@@ -43806,39 +42772,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2005-08-26:c43287fa78",
-      "date": "2005-08-26",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 5부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=mb59qNT59xw",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=mb59qNT59xw"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=mb59qNT59xw",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=mb59qNT59xw"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.26 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=mb59qNT59xw",
-          "title": "[방송] 20050826 Mnet 신화 이민우의 M's - 5부",
-          "videoId": "mb59qNT59xw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:05!441",
@@ -43932,105 +42865,6 @@
       ]
     },
     {
-      "id": "video20261029:2005-08-29:c6b1c82b85",
-      "date": "2005-08-29",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 6부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=MfxZwOoKpXs",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=MfxZwOoKpXs"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=MfxZwOoKpXs",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=MfxZwOoKpXs"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.29 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=MfxZwOoKpXs",
-          "title": "[방송] 20050829 Mnet 신화 이민우의 M's - 6부",
-          "videoId": "MfxZwOoKpXs",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2005-08-30:d6613426e7",
-      "date": "2005-08-30",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 7부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=9GtJHSnmkPM",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=9GtJHSnmkPM"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=9GtJHSnmkPM",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=9GtJHSnmkPM"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.30 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=9GtJHSnmkPM",
-          "title": "[방송] 20050830 Mnet 신화 이민우의 M's - 7부",
-          "videoId": "9GtJHSnmkPM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2005-08-31:3fabc0b07c",
-      "date": "2005-08-31",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 8부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=jZvABpH4aY8",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=jZvABpH4aY8"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=jZvABpH4aY8",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=jZvABpH4aY8"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.08.31 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=jZvABpH4aY8",
-          "title": "[방송] 20050831 Mnet 신화 이민우의 M's - 8부",
-          "videoId": "jZvABpH4aY8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:05!459",
       "date": "2005-09-01",
       "precision": "day",
@@ -44051,39 +42885,6 @@
       "recordCount": 1
     },
     {
-      "id": "video20261029:2005-09-01:3059e65210",
-      "date": "2005-09-01",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 9부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=iYxTu9NvpEo",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=iYxTu9NvpEo"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=iYxTu9NvpEo",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=iYxTu9NvpEo"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.09.01 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=iYxTu9NvpEo",
-          "title": "[방송] 20050901 Mnet 신화 이민우의 M's - 9부",
-          "videoId": "iYxTu9NvpEo",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:05!463",
       "date": "2005-09-02",
       "precision": "day",
@@ -44102,39 +42903,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2005-09-02:79bd5f455d",
-      "date": "2005-09-02",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "방송",
-      "subject": "이민우",
-      "title": "Mnet 신화 이민우의 M's — 10부",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=1g1Z_cZKkco",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=1g1Z_cZKkco"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=1g1Z_cZKkco",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=1g1Z_cZKkco"
-      ],
-      "sourceNote": "영상 1개의 제목에 2005.09.02 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=1g1Z_cZKkco",
-          "title": "[방송] 20050902 Mnet 신화 이민우의 M's - 10부",
-          "videoId": "1g1Z_cZKkco",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "archive:description:2005-09-03:b8e0702eab",
@@ -45362,39 +44130,6 @@
       ]
     },
     {
-      "id": "video20261029:2006-03-21:24f200f1d8",
-      "date": "2006-03-21",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "영상 기록",
-      "subject": "이민우",
-      "title": "원탁의 천사 촬영현장 — 이민우",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=B-EYGpwcTqY",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=B-EYGpwcTqY"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=B-EYGpwcTqY",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=B-EYGpwcTqY"
-      ],
-      "sourceNote": "영상 1개의 제목에 2006.03.21 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=B-EYGpwcTqY",
-          "title": "[공식] 20060321 원탁의 천사 촬영현장 - 이민우",
-          "videoId": "B-EYGpwcTqY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "history:p0186",
       "date": "2006-03-25",
       "precision": "day",
@@ -46385,39 +45120,6 @@
       "verificationUrl": null,
       "sourceRefs": [],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2006-07-15:8a8964972f",
-      "date": "2006-07-15",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "영상 기록",
-      "subject": "이민우",
-      "title": "State of the Art in BUSAN — 이민우 SOLO STAGE",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=gFZqZg98piY",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=gFZqZg98piY"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=gFZqZg98piY",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=gFZqZg98piY"
-      ],
-      "sourceNote": "영상 1개의 제목에 2006.07.15 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=gFZqZg98piY",
-          "title": "[직캠] 20060715 - State of the Art in BUSAN - 이민우 SOLO STAGE",
-          "videoId": "gFZqZg98piY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:06!77",
@@ -51454,40 +50156,6 @@
       "recordCount": 1
     },
     {
-      "id": "research41:2008-09-21:dongwan-promise",
-      "date": "2008-09-21",
-      "precision": "day",
-      "chapter": "chapter2",
-      "transition": "",
-      "category": "콘서트",
-      "subject": "김동완 개인",
-      "title": "김동완 첫 단독 콘서트 《약속》 2일 차",
-      "verification": "행사 기간 사후 보도·전일 회차 개별 게스트 미확인",
-      "source": "당시 사후보도 및 사용자가 제공한 공연 영상 정보 (41차 교차검증)",
-      "sourceUrl": "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
-      "referenceVideoUrl": null,
-      "referenceVideoUrls": [],
-      "sourceNote": "이화여자대학교 대강당, 서울 | 20·21일 양일 공연 개최를 9/22 기사에서 사후 확인. 신화 멤버 5명의 21일 회차 실제 게스트 출연까지 단정하지 않음.",
-      "dateKind": "실제 공연일(사후 기사)",
-      "sourceRecord": "41차 25차 게스트누락대조 재검증",
-      "verificationUrl": "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
-      "sourceRefs": [
-        {
-          "url": "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
-          "note": "행사 기간 사후 보도·전일 회차 개별 게스트 미확인"
-        },
-        {
-          "url": "https://www.yna.co.kr/amp/view/AKR20080912073200005",
-          "note": "행사 기간 사후 보도·전일 회차 개별 게스트 미확인"
-        }
-      ],
-      "sourceUrls": [
-        "https://m.go.seoul.co.kr/news/entertainments/2008/09/22/20080922603002?cp=nownews",
-        "https://www.yna.co.kr/amp/view/AKR20080912073200005"
-      ],
-      "recordCount": 1
-    },
-    {
       "id": "sheet:08!221",
       "date": "2008-09-21",
       "precision": "day",
@@ -53652,39 +52320,6 @@
         "cu23-source-223"
       ],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2010-01-01:39f3d297f0",
-      "date": "2010-01-01",
-      "precision": "day",
-      "chapter": "chapter2",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 — 솔로콘서트 — I 'M' YOU",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=PM-M15-tDyc",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=PM-M15-tDyc"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=PM-M15-tDyc",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=PM-M15-tDyc"
-      ],
-      "sourceNote": "영상 1개의 제목에 2010.01.01 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=PM-M15-tDyc",
-          "title": "[직캠] 20100101- 이민우 - 솔로콘서트 - I 'M' YOU",
-          "videoId": "PM-M15-tDyc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "cu23:audit-035",
@@ -57867,39 +56502,6 @@
       "recordCount": 1
     },
     {
-      "id": "video20261029:2012-12-23:c10d14f665",
-      "date": "2012-12-23",
-      "precision": "day",
-      "chapter": "chapter3",
-      "category": "영상 기록",
-      "subject": "이민우",
-      "title": "이민우 — Christmas Live — M style",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=EA9Nr-iKye4",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=EA9Nr-iKye4"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=EA9Nr-iKye4",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=EA9Nr-iKye4"
-      ],
-      "sourceNote": "영상 1개의 제목에 2012.12.23 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음. [주의] 동일 날짜에 다른 일정이 이미 등록되어 있으므로 행사 동일성·중복 여부가 추후 바뀔 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=EA9Nr-iKye4",
-          "title": "[직캠] 20121223 - 이민우 - Christmas Live - M style",
-          "videoId": "EA9Nr-iKye4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:12!171",
       "date": "2012-12-26",
       "precision": "day",
@@ -61941,26 +60543,6 @@
       "recordCount": 1
     },
     {
-      "id": "sheet:15!57",
-      "date": "2015-04-03",
-      "precision": "day",
-      "chapter": "chapter3",
-      "transition": "",
-      "category": "팬미팅",
-      "subject": "신화 전체",
-      "title": "2015 앤디 팬미팅 IN TOKYO <Smile with ANDY~>",
-      "verification": "원본 기재·독립 검증 전",
-      "source": "첨부 엑셀",
-      "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=935724846&range=A57:D57",
-      "referenceVideoUrl": null,
-      "sourceNote": "",
-      "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
-      "sourceRecord": "15!57",
-      "verificationUrl": null,
-      "sourceRefs": [],
-      "recordCount": 1
-    },
-    {
       "id": "sheet:15!60",
       "date": "2015-04-04",
       "precision": "day",
@@ -62525,7 +61107,7 @@
       "precision": "day",
       "chapter": "chapter3",
       "category": "공연",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "전진·에릭",
       "title": "JUNJIN CONCERT — WOWWOWWOW(feat.ERIC)",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -62797,7 +61379,7 @@
       "precision": "day",
       "chapter": "chapter3",
       "category": "팬사인회",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "에릭·전진",
       "title": "에릭·전진 팬사인회 현장 영상",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -62819,63 +61401,6 @@
           "url": "https://www.youtube.com/watch?v=3LDRUyr6Ku0",
           "title": "[직캠] 20151220 - 릭진사인회 - 인터뷰+퇴장",
           "videoId": "3LDRUyr6Ku0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2015-12-24:304e6d1a1d",
-      "date": "2015-12-24",
-      "precision": "day",
-      "chapter": "chapter3",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《ON THE RECORD》 콘서트",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=JKr_W7Huy8o",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=JKr_W7Huy8o",
-        "https://www.youtube.com/watch?v=R8dSoo136kQ",
-        "https://www.youtube.com/watch?v=AvvzfCECPw8",
-        "https://www.youtube.com/watch?v=h_H7yrh_uDw"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=JKr_W7Huy8o",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=JKr_W7Huy8o",
-        "https://www.youtube.com/watch?v=R8dSoo136kQ",
-        "https://www.youtube.com/watch?v=AvvzfCECPw8",
-        "https://www.youtube.com/watch?v=h_H7yrh_uDw"
-      ],
-      "sourceNote": "영상 4개의 제목에 2015.12.24 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 4,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=JKr_W7Huy8o",
-          "title": "[직캠] 20151224  이민우 ON THE RECORD - ending ment",
-          "videoId": "JKr_W7Huy8o",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=R8dSoo136kQ",
-          "title": "[직캠] 20151224 이민우 - ON THE RECORD",
-          "videoId": "R8dSoo136kQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=AvvzfCECPw8",
-          "title": "[직캠] 20151224 이민우 - ON THE RECORD - honey",
-          "videoId": "AvvzfCECPw8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=h_H7yrh_uDw",
-          "title": "[직캠] 20151224 이민우 ON THE RECORD - 남믿마 독무 edit.ver",
-          "videoId": "h_H7yrh_uDw",
           "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
         }
       ],
@@ -63533,7 +62058,7 @@
       "precision": "day",
       "chapter": "chapter3",
       "category": "영상 기록",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
+      "subject": "전진",
       "title": "real — junjin — 60second",
       "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
       "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
@@ -66689,167 +65214,6 @@
       "categoryOriginal": "클립영상"
     },
     {
-      "id": "video20261029:2017-07-28:c915799ffe",
-      "date": "2017-07-28",
-      "precision": "day",
-      "chapter": "chapter3",
-      "category": "팬행사",
-      "subject": "이민우",
-      "title": "이민우 생일 팬파티",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=wqjjU5s77kY",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=wqjjU5s77kY",
-        "https://www.youtube.com/watch?v=iRJ__KmPeMQ",
-        "https://www.youtube.com/watch?v=fP_WqwBEQDQ",
-        "https://www.youtube.com/watch?v=8hCNLCfGoGQ",
-        "https://www.youtube.com/watch?v=Bd1xOqZbO1Q",
-        "https://www.youtube.com/watch?v=TeXKO4S9p4A",
-        "https://www.youtube.com/watch?v=f1EeYqZ60jY",
-        "https://www.youtube.com/watch?v=93jNIfR1mH8",
-        "https://www.youtube.com/watch?v=pNlbEbAP5R0",
-        "https://www.youtube.com/watch?v=R6FOr24zsNg",
-        "https://www.youtube.com/watch?v=DTmhg-p5D9k",
-        "https://www.youtube.com/watch?v=rEIf-JpyJJ0",
-        "https://www.youtube.com/watch?v=H_RjL0E227A",
-        "https://www.youtube.com/watch?v=9q-tecdJYtA",
-        "https://www.youtube.com/watch?v=GjAIBujPHX0",
-        "https://www.youtube.com/watch?v=cFCC7B-vch0",
-        "https://www.youtube.com/watch?v=UaAd4bcR538"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=wqjjU5s77kY",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=wqjjU5s77kY",
-        "https://www.youtube.com/watch?v=iRJ__KmPeMQ",
-        "https://www.youtube.com/watch?v=fP_WqwBEQDQ",
-        "https://www.youtube.com/watch?v=8hCNLCfGoGQ",
-        "https://www.youtube.com/watch?v=Bd1xOqZbO1Q",
-        "https://www.youtube.com/watch?v=TeXKO4S9p4A",
-        "https://www.youtube.com/watch?v=f1EeYqZ60jY",
-        "https://www.youtube.com/watch?v=93jNIfR1mH8",
-        "https://www.youtube.com/watch?v=pNlbEbAP5R0",
-        "https://www.youtube.com/watch?v=R6FOr24zsNg",
-        "https://www.youtube.com/watch?v=DTmhg-p5D9k",
-        "https://www.youtube.com/watch?v=rEIf-JpyJJ0",
-        "https://www.youtube.com/watch?v=H_RjL0E227A",
-        "https://www.youtube.com/watch?v=9q-tecdJYtA",
-        "https://www.youtube.com/watch?v=GjAIBujPHX0",
-        "https://www.youtube.com/watch?v=cFCC7B-vch0",
-        "https://www.youtube.com/watch?v=UaAd4bcR538"
-      ],
-      "sourceNote": "영상 17개의 제목에 2017.07.28 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 17,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=wqjjU5s77kY",
-          "title": "[직캠/4k] 20170728  - 이민우 - FAN PARTY  - 여름안에서",
-          "videoId": "wqjjU5s77kY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=iRJ__KmPeMQ",
-          "title": "[직캠/4k] 20170728  - 이민우 - FAN PARTY - Happy M Day",
-          "videoId": "iRJ__KmPeMQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=fP_WqwBEQDQ",
-          "title": "[직캠/4k] 20170728  - 이민우 - FAN PARTY - 해변의 여인",
-          "videoId": "fP_WqwBEQDQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=8hCNLCfGoGQ",
-          "title": "[직캠/4k] 20170728 -  이민우 - 팬파티 -  엠쌀롱 여름패션 클래스",
-          "videoId": "8hCNLCfGoGQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Bd1xOqZbO1Q",
-          "title": "[직캠/4k] 20170728 - 이민우 - FAN PARTY - SUMMER TIME",
-          "videoId": "Bd1xOqZbO1Q",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=TeXKO4S9p4A",
-          "title": "[직캠/4k] 20170728 - 이민우 - FAN PARTY - 칵테일 메이킹",
-          "videoId": "TeXKO4S9p4A",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=f1EeYqZ60jY",
-          "title": "[직캠/4k] 20170728 - 이민우 - 팬파티 -  첫멘트-선서",
-          "videoId": "f1EeYqZ60jY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=93jNIfR1mH8",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - LOVE SUPREME",
-          "videoId": "93jNIfR1mH8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=pNlbEbAP5R0",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - M 어록 패러디 - 그 땐 내가 연예인!",
-          "videoId": "pNlbEbAP5R0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=R6FOr24zsNg",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - One In A Million",
-          "videoId": "R6FOr24zsNg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=DTmhg-p5D9k",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - 돌발미션 1 - 바보민우",
-          "videoId": "DTmhg-p5D9k",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=rEIf-JpyJJ0",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - 두번째 사연과 신청곡 \"별\"",
-          "videoId": "rEIf-JpyJJ0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=H_RjL0E227A",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - 세번째 사연과 신청곡 \"러브슈프림\"",
-          "videoId": "H_RjL0E227A",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=9q-tecdJYtA",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - 처럼 + I'M'U",
-          "videoId": "9q-tecdJYtA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=GjAIBujPHX0",
-          "title": "[직캠/4k] 20170728 - 이민우 M fanparty - 첫번째 사연과 신청곡 \"신기루\"",
-          "videoId": "GjAIBujPHX0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=cFCC7B-vch0",
-          "title": "[직캠/4k] 20170728 이민우 M fanparty - 5키로만 빼자~! (예고편)",
-          "videoId": "cFCC7B-vch0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=UaAd4bcR538",
-          "title": "[직캠/4k] 20170728 이민우 M fanparty - 혜성이가 하이라이트 불러~ (예고편)",
-          "videoId": "UaAd4bcR538",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:17!130",
       "date": "2017-08-01",
       "precision": "day",
@@ -68734,87 +67098,6 @@
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=UQan2CXirhU"
       ]
-    },
-    {
-      "id": "video20261029:2018-01-20:1d2f10b332",
-      "date": "2018-01-20",
-      "precision": "day",
-      "chapter": "chapter3",
-      "category": "팬미팅",
-      "subject": "앤디",
-      "title": "앤디 팬미팅 《앤미팅》 낮·밤 공연",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=UKttgRdWZbM",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=UKttgRdWZbM",
-        "https://www.youtube.com/watch?v=smav6y5uxDk",
-        "https://www.youtube.com/watch?v=9rNSh1B5pdQ",
-        "https://www.youtube.com/watch?v=Nzo4Khfp4tc",
-        "https://www.youtube.com/watch?v=6ulpupvR5n4",
-        "https://www.youtube.com/watch?v=w_N4IOxEviQ",
-        "https://www.youtube.com/watch?v=sAb1ZvQUK2U"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=UKttgRdWZbM",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=UKttgRdWZbM",
-        "https://www.youtube.com/watch?v=smav6y5uxDk",
-        "https://www.youtube.com/watch?v=9rNSh1B5pdQ",
-        "https://www.youtube.com/watch?v=Nzo4Khfp4tc",
-        "https://www.youtube.com/watch?v=6ulpupvR5n4",
-        "https://www.youtube.com/watch?v=w_N4IOxEviQ",
-        "https://www.youtube.com/watch?v=sAb1ZvQUK2U"
-      ],
-      "sourceNote": "영상 7개의 제목에 2018.01.20 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 7,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=UKttgRdWZbM",
-          "title": "20180120 앤디 - 앤미팅 - 낮앤 - LOVE SONG",
-          "videoId": "UKttgRdWZbM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=smav6y5uxDk",
-          "title": "20180120 앤디- 앤미팅 -밤앤 - LOVE SONG",
-          "videoId": "smav6y5uxDk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=9rNSh1B5pdQ",
-          "title": "[직캠/4k] 20180120 - 신화 - 앤디 - 팬미팅 - 밤앤 - 끝인사 + 생축",
-          "videoId": "9rNSh1B5pdQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Nzo4Khfp4tc",
-          "title": "[직캠/4k] 20180120 - 앤디 - 팬미팅 - 밤앤 - 걸그룹 댄스 마스터 full.ver",
-          "videoId": "Nzo4Khfp4tc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=6ulpupvR5n4",
-          "title": "[직캠/4k] 20180120 앤디 - 낮앤 - 팬미팅 -  걸그룹댄스 랜덤플레이Full.ver",
-          "videoId": "6ulpupvR5n4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=w_N4IOxEviQ",
-          "title": "[직캠/4k] 20180120 앤디 - 팬미팅 - 낮앤 -  너뿐이야",
-          "videoId": "w_N4IOxEviQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=sAb1ZvQUK2U",
-          "title": "[직캠/4k] 20180120 앤디 - 팬미팅 - 낮앤 -  좋아하는 멤버+주량",
-          "videoId": "sAb1ZvQUK2U",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:18!13",
@@ -70948,457 +69231,6 @@
       "registeredAt": "2026-10-28T15:57:50+09:00"
     },
     {
-      "id": "video20261029:2018-12-22:677d09caa6",
-      "date": "2018-12-22",
-      "precision": "day",
-      "chapter": "chapter3",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《MERRY M》 콘서트",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=C7K_9cbaZcM",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=C7K_9cbaZcM",
-        "https://www.youtube.com/watch?v=8SRImhNNRXc",
-        "https://www.youtube.com/watch?v=M2PdlGVbXcs",
-        "https://www.youtube.com/watch?v=RlklK_5g0mk",
-        "https://www.youtube.com/watch?v=g2USpCXDxU4",
-        "https://www.youtube.com/watch?v=GDHMFjQ7mb8",
-        "https://www.youtube.com/watch?v=xg7qbcO1m6s",
-        "https://www.youtube.com/watch?v=LauNsYdNgHY",
-        "https://www.youtube.com/watch?v=xCPCQxl9VT4",
-        "https://www.youtube.com/watch?v=N8ZsgLLcpyg",
-        "https://www.youtube.com/watch?v=aIR-x2Xr7C0",
-        "https://www.youtube.com/watch?v=JjsoOkzr-2A",
-        "https://www.youtube.com/watch?v=UJlmediOUcU",
-        "https://www.youtube.com/watch?v=HFnMicPC1SU",
-        "https://www.youtube.com/watch?v=wNxXWUa7380",
-        "https://www.youtube.com/watch?v=6yp6lFpIqnE",
-        "https://www.youtube.com/watch?v=Srs2nAiPfhw",
-        "https://www.youtube.com/watch?v=yu29mBPd6FA",
-        "https://www.youtube.com/watch?v=phXXUDJroVw",
-        "https://www.youtube.com/watch?v=zJUXzZT4GbQ"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=C7K_9cbaZcM",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=C7K_9cbaZcM",
-        "https://www.youtube.com/watch?v=8SRImhNNRXc",
-        "https://www.youtube.com/watch?v=M2PdlGVbXcs",
-        "https://www.youtube.com/watch?v=RlklK_5g0mk",
-        "https://www.youtube.com/watch?v=g2USpCXDxU4",
-        "https://www.youtube.com/watch?v=GDHMFjQ7mb8",
-        "https://www.youtube.com/watch?v=xg7qbcO1m6s",
-        "https://www.youtube.com/watch?v=LauNsYdNgHY",
-        "https://www.youtube.com/watch?v=xCPCQxl9VT4",
-        "https://www.youtube.com/watch?v=N8ZsgLLcpyg",
-        "https://www.youtube.com/watch?v=aIR-x2Xr7C0",
-        "https://www.youtube.com/watch?v=JjsoOkzr-2A",
-        "https://www.youtube.com/watch?v=UJlmediOUcU",
-        "https://www.youtube.com/watch?v=HFnMicPC1SU",
-        "https://www.youtube.com/watch?v=wNxXWUa7380",
-        "https://www.youtube.com/watch?v=6yp6lFpIqnE",
-        "https://www.youtube.com/watch?v=Srs2nAiPfhw",
-        "https://www.youtube.com/watch?v=yu29mBPd6FA",
-        "https://www.youtube.com/watch?v=phXXUDJroVw",
-        "https://www.youtube.com/watch?v=zJUXzZT4GbQ"
-      ],
-      "sourceNote": "영상 20개의 제목에 2018.12.22 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 20,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=C7K_9cbaZcM",
-          "title": "[직캠/4K] 20181222 - 이민우 - MERRY M콘서트 - 소녀",
-          "videoId": "C7K_9cbaZcM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=8SRImhNNRXc",
-          "title": "[직캠/4K] 20181222- 신화 - 이민우 - MERRY M 콘서트- 비야",
-          "videoId": "8SRImhNNRXc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=M2PdlGVbXcs",
-          "title": "[직캠/4k] 20181222 - 신화 - 이민우 - MERRY M - 남자를 믿지마",
-          "videoId": "M2PdlGVbXcs",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=RlklK_5g0mk",
-          "title": "[직캠/4k] 20181222 - 신화 - 이민우 - MERRY M - 없게 만들어요",
-          "videoId": "RlklK_5g0mk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=g2USpCXDxU4",
-          "title": "[직캠/4k] 20181222 - 이민우 -  MERRY M - Shape of You + 신기루(뒷부분)",
-          "videoId": "g2USpCXDxU4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=GDHMFjQ7mb8",
-          "title": "[직캠/4k] 20181222 - 이민우 - MERRY M - Christmas(baby please come home)",
-          "videoId": "GDHMFjQ7mb8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=xg7qbcO1m6s",
-          "title": "[직캠/4k] 20181222 - 이민우 - MERRY M - If you",
-          "videoId": "xg7qbcO1m6s",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=LauNsYdNgHY",
-          "title": "[직캠/4k] 20181222 - 이민우 - MERRY M - Love Me Ice Cream",
-          "videoId": "LauNsYdNgHY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=xCPCQxl9VT4",
-          "title": "[직캠/4k] 20181222 - 이민우 - MERRY M - SWEET GIRL",
-          "videoId": "xCPCQxl9VT4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=N8ZsgLLcpyg",
-          "title": "[직캠/4k] 20181222 - 이민우 - MERRY M - Taxi",
-          "videoId": "N8ZsgLLcpyg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=aIR-x2Xr7C0",
-          "title": "[직캠/4k] 20181222 - 이민우 - MERRY M - The 'M' Style",
-          "videoId": "aIR-x2Xr7C0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=JjsoOkzr-2A",
-          "title": "[직캠/4k] 20181222 - 이민우 - MERRY M - 단추 하나로 밀당♡",
-          "videoId": "JjsoOkzr-2A",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=UJlmediOUcU",
-          "title": "[직캠/4k] 20181222 신화 - 이민우 - MERRY M - AM 07:05",
-          "videoId": "UJlmediOUcU",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=HFnMicPC1SU",
-          "title": "[직캠/4k] 20181222 이민우 -  MERRY M - Sometimes + Sweet sound",
-          "videoId": "HFnMicPC1SU",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=wNxXWUa7380",
-          "title": "[직캠/4k] 20181222 이민우 - MERRY M - Love Supreme",
-          "videoId": "wNxXWUa7380",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=6yp6lFpIqnE",
-          "title": "[직캠/4k] 20181222 이민우 - MERRY M - 집으로 가는 길",
-          "videoId": "6yp6lFpIqnE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Srs2nAiPfhw",
-          "title": "[직캠/4k] 20181222 이민우 MERRY M -  오빠, 가지마~",
-          "videoId": "Srs2nAiPfhw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=yu29mBPd6FA",
-          "title": "[직캠/4k] 20181222 이민우-  MERRY M - PUNCH",
-          "videoId": "yu29mBPd6FA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=phXXUDJroVw",
-          "title": "[직캠/4k] 20181222-1223 이민우 -MERRY M - BUMP Edit.ver",
-          "videoId": "phXXUDJroVw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=zJUXzZT4GbQ",
-          "title": "[직캠] 20181222 이민우 MerryM  -  멘트- 니들밖에 없다",
-          "videoId": "zJUXzZT4GbQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2018-12-23:e7702e2d9b",
-      "date": "2018-12-23",
-      "precision": "day",
-      "chapter": "chapter3",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《MERRY M》 콘서트",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=VaXfL4370a4",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=VaXfL4370a4",
-        "https://www.youtube.com/watch?v=iDdMRYjQKEE",
-        "https://www.youtube.com/watch?v=Tvyag7Mvu2o",
-        "https://www.youtube.com/watch?v=o3lhh-BgC0I",
-        "https://www.youtube.com/watch?v=wqsyJ44EVms",
-        "https://www.youtube.com/watch?v=ghK6zJhogdI",
-        "https://www.youtube.com/watch?v=WIERt-YQWKo",
-        "https://www.youtube.com/watch?v=mw8EhBRkwkA",
-        "https://www.youtube.com/watch?v=utRTs9oR4BQ",
-        "https://www.youtube.com/watch?v=qZYztVldyTY",
-        "https://www.youtube.com/watch?v=Vm0wV3DGK2U",
-        "https://www.youtube.com/watch?v=dEVWGE6KdUY",
-        "https://www.youtube.com/watch?v=Eh4r_i5UZjg",
-        "https://www.youtube.com/watch?v=vXaoVX8aAfo",
-        "https://www.youtube.com/watch?v=wUBGA2UO9E8",
-        "https://www.youtube.com/watch?v=2CzGu9xuZUg",
-        "https://www.youtube.com/watch?v=PbNYyGavw8o",
-        "https://www.youtube.com/watch?v=pXW8rFhm3xA",
-        "https://www.youtube.com/watch?v=illGa584BWw"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=VaXfL4370a4",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=VaXfL4370a4",
-        "https://www.youtube.com/watch?v=iDdMRYjQKEE",
-        "https://www.youtube.com/watch?v=Tvyag7Mvu2o",
-        "https://www.youtube.com/watch?v=o3lhh-BgC0I",
-        "https://www.youtube.com/watch?v=wqsyJ44EVms",
-        "https://www.youtube.com/watch?v=ghK6zJhogdI",
-        "https://www.youtube.com/watch?v=WIERt-YQWKo",
-        "https://www.youtube.com/watch?v=mw8EhBRkwkA",
-        "https://www.youtube.com/watch?v=utRTs9oR4BQ",
-        "https://www.youtube.com/watch?v=qZYztVldyTY",
-        "https://www.youtube.com/watch?v=Vm0wV3DGK2U",
-        "https://www.youtube.com/watch?v=dEVWGE6KdUY",
-        "https://www.youtube.com/watch?v=Eh4r_i5UZjg",
-        "https://www.youtube.com/watch?v=vXaoVX8aAfo",
-        "https://www.youtube.com/watch?v=wUBGA2UO9E8",
-        "https://www.youtube.com/watch?v=2CzGu9xuZUg",
-        "https://www.youtube.com/watch?v=PbNYyGavw8o",
-        "https://www.youtube.com/watch?v=pXW8rFhm3xA",
-        "https://www.youtube.com/watch?v=illGa584BWw"
-      ],
-      "sourceNote": "영상 19개의 제목에 2018.12.23 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 19,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=VaXfL4370a4",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - All I Want For Christmas Is You",
-          "videoId": "VaXfL4370a4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=iDdMRYjQKEE",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - Christmas (Baby Please Come Home)",
-          "videoId": "iDdMRYjQKEE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Tvyag7Mvu2o",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - I M U + 징글벨",
-          "videoId": "Tvyag7Mvu2o",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=o3lhh-BgC0I",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - IF YOU",
-          "videoId": "o3lhh-BgC0I",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=wqsyJ44EVms",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - Love Me Ice Cream",
-          "videoId": "wqsyJ44EVms",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=ghK6zJhogdI",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - Love Supreme",
-          "videoId": "ghK6zJhogdI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=WIERt-YQWKo",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - White Christmas",
-          "videoId": "WIERt-YQWKo",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=mw8EhBRkwkA",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - 비야",
-          "videoId": "mw8EhBRkwkA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=utRTs9oR4BQ",
-          "title": "[직캠/4k] 20181223 - 신화 - 이민우 - MERRY M - 없게 만들어요",
-          "videoId": "utRTs9oR4BQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=qZYztVldyTY",
-          "title": "[직캠/4k] 20181223 - 이민우 - MERRY M - KISS IT AWAY + PLAY MY SONG",
-          "videoId": "qZYztVldyTY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Vm0wV3DGK2U",
-          "title": "[직캠/4k] 20181223 - 이민우 - MERRY M - SWEET GIRL",
-          "videoId": "Vm0wV3DGK2U",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=dEVWGE6KdUY",
-          "title": "[직캠/4k] 20181223 - 이민우 - MERRY M - TAXI",
-          "videoId": "dEVWGE6KdUY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Eh4r_i5UZjg",
-          "title": "[직캠/4k] 20181223 - 이민우 - MERRY M - 백만송이장미",
-          "videoId": "Eh4r_i5UZjg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=vXaoVX8aAfo",
-          "title": "[직캠/4k] 20181223 이민우  MERRY M  -  첫 멘트",
-          "videoId": "vXaoVX8aAfo",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=wUBGA2UO9E8",
-          "title": "[직캠/4k] 20181223 이민우 MERRY M - 2번째 멘트",
-          "videoId": "wUBGA2UO9E8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=2CzGu9xuZUg",
-          "title": "[직캠/4k] 20181223 이민우 MERRY M - The 'M' Style",
-          "videoId": "2CzGu9xuZUg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=PbNYyGavw8o",
-          "title": "[직캠/4k] 20181223 이민우 MERRY M - Thriller",
-          "videoId": "PbNYyGavw8o",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=pXW8rFhm3xA",
-          "title": "[직캠/4k] 20181223 이민우 MERRY M - sometimes + sweet sound +",
-          "videoId": "pXW8rFhm3xA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=illGa584BWw",
-          "title": "[직캠/4k] 20181223 이민우 MERRY M - 신화창조 20년 짬밥 싱어롱?",
-          "videoId": "illGa584BWw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2018-12-24:5f0316b39b",
-      "date": "2018-12-24",
-      "precision": "day",
-      "chapter": "chapter3",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《MERRY M》 콘서트",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=dYm0bKvq5rk",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=dYm0bKvq5rk",
-        "https://www.youtube.com/watch?v=Sr2EwqVRCHI",
-        "https://www.youtube.com/watch?v=Yzue65oSMuQ",
-        "https://www.youtube.com/watch?v=9vg8X3ljgpg",
-        "https://www.youtube.com/watch?v=rhblShZvwzE",
-        "https://www.youtube.com/watch?v=_9ejjkcxosA",
-        "https://www.youtube.com/watch?v=xSFzMI0rOj8",
-        "https://www.youtube.com/watch?v=eBFQz5ihz7g"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=dYm0bKvq5rk",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=dYm0bKvq5rk",
-        "https://www.youtube.com/watch?v=Sr2EwqVRCHI",
-        "https://www.youtube.com/watch?v=Yzue65oSMuQ",
-        "https://www.youtube.com/watch?v=9vg8X3ljgpg",
-        "https://www.youtube.com/watch?v=rhblShZvwzE",
-        "https://www.youtube.com/watch?v=_9ejjkcxosA",
-        "https://www.youtube.com/watch?v=xSFzMI0rOj8",
-        "https://www.youtube.com/watch?v=eBFQz5ihz7g"
-      ],
-      "sourceNote": "영상 8개의 제목에 2018.12.24 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 8,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=dYm0bKvq5rk",
-          "title": "20181224 - 이민우 MERRY M - 끝인사 + 퇴장",
-          "videoId": "dYm0bKvq5rk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Sr2EwqVRCHI",
-          "title": "20181224 이민우 MERRY M - IF You",
-          "videoId": "Sr2EwqVRCHI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Yzue65oSMuQ",
-          "title": "[직캠/4K] 20181224 - 이민우 MERRY M  콘서트 - kiss it away",
-          "videoId": "Yzue65oSMuQ",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=9vg8X3ljgpg",
-          "title": "[직캠/4k] 20181224 - 신화 - 이민우 - MERRY M - HO~ 만 잘해",
-          "videoId": "9vg8X3ljgpg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=rhblShZvwzE",
-          "title": "[직캠/4k] 20181224 - 신화 - 이민우 - MERRY M - Last First Kiss",
-          "videoId": "rhblShZvwzE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=_9ejjkcxosA",
-          "title": "[직캠/4k] 20181224 - 신화 - 이민우 - MERRY M - 멘트 + 백만송이 장미",
-          "videoId": "_9ejjkcxosA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=xSFzMI0rOj8",
-          "title": "[직캠/4k] 20181224 MERRY M  - 이민우 - SWEET GIRL",
-          "videoId": "xSFzMI0rOj8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=eBFQz5ihz7g",
-          "title": "[직캠] 20181224 - 신화 - 이민우 - MERRY M - BUMP",
-          "videoId": "eBFQz5ihz7g",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:18!273",
       "date": "2018-12-30",
       "precision": "day",
@@ -71690,71 +69522,6 @@
           "videoId": "zv2Ap6RxEZA"
         }
       ]
-    },
-    {
-      "id": "video20261029:2019-01-20:03af0d9631",
-      "date": "2019-01-20",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "팬미팅",
-      "subject": "앤디",
-      "title": "앤디 팬미팅 《앤미팅》 낮·밤 공연",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=RSQCD1UA8L4",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=RSQCD1UA8L4",
-        "https://www.youtube.com/watch?v=CazuezEFnW0",
-        "https://www.youtube.com/watch?v=NP1Qp8vHJDg",
-        "https://www.youtube.com/watch?v=Bd7KoN_au-I",
-        "https://www.youtube.com/watch?v=yNjRU1w8fEg"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=RSQCD1UA8L4",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=RSQCD1UA8L4",
-        "https://www.youtube.com/watch?v=CazuezEFnW0",
-        "https://www.youtube.com/watch?v=NP1Qp8vHJDg",
-        "https://www.youtube.com/watch?v=Bd7KoN_au-I",
-        "https://www.youtube.com/watch?v=yNjRU1w8fEg"
-      ],
-      "sourceNote": "영상 5개의 제목에 2019.01.20 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 5,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=RSQCD1UA8L4",
-          "title": "[직캠/4k] 20190120 - 앤디 - 앤미팅 - Day.ver - 생일축하합니다",
-          "videoId": "RSQCD1UA8L4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=CazuezEFnW0",
-          "title": "[직캠/4k] 20190120 - 앤디- 앤미팅 - Day.ver - PROPOSE",
-          "videoId": "CazuezEFnW0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=NP1Qp8vHJDg",
-          "title": "[직캠/4k] 20190120 - 앤디- 앤미팅 - NIGHT.ver - PROPOSE",
-          "videoId": "NP1Qp8vHJDg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Bd7KoN_au-I",
-          "title": "[직캠/4k] 20190120 - 앤디- 앤미팅 - Night.ver - 생일축하 노래에 맞춰 춤추는 앤디",
-          "videoId": "Bd7KoN_au-I",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=yNjRU1w8fEg",
-          "title": "[직캠] 20190120 앤미팅 낮앤 - 뿜뿜",
-          "videoId": "yNjRU1w8fEg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:19!45",
@@ -72710,305 +70477,6 @@
         "radio-sbs-2019-kangta"
       ],
       "recordCount": 1
-    },
-    {
-      "id": "video20261029:2019-07-20:16696a2333",
-      "date": "2019-07-20",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "팬미팅",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
-      "title": "이민우 팬미팅 《HAPPY M》 낮·밤 공연",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=SU0Jxw9R2zI",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=SU0Jxw9R2zI",
-        "https://www.youtube.com/watch?v=huxUWd1Hmuw",
-        "https://www.youtube.com/watch?v=hl4MeyzTcPc",
-        "https://www.youtube.com/watch?v=PjcnM8IW7iM",
-        "https://www.youtube.com/watch?v=wRI00_QZCPI",
-        "https://www.youtube.com/watch?v=Iy1ns8Ibx-w",
-        "https://www.youtube.com/watch?v=wRlIXOzJk4c",
-        "https://www.youtube.com/watch?v=sozK4g764xY",
-        "https://www.youtube.com/watch?v=p7BfA3WEfgM",
-        "https://www.youtube.com/watch?v=zv83-vPcyMw",
-        "https://www.youtube.com/watch?v=xBOh4-52CmI",
-        "https://www.youtube.com/watch?v=cL6zhe1ZBG8",
-        "https://www.youtube.com/watch?v=9vCb0FRzcBs"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=SU0Jxw9R2zI",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=SU0Jxw9R2zI",
-        "https://www.youtube.com/watch?v=huxUWd1Hmuw",
-        "https://www.youtube.com/watch?v=hl4MeyzTcPc",
-        "https://www.youtube.com/watch?v=PjcnM8IW7iM",
-        "https://www.youtube.com/watch?v=wRI00_QZCPI",
-        "https://www.youtube.com/watch?v=Iy1ns8Ibx-w",
-        "https://www.youtube.com/watch?v=wRlIXOzJk4c",
-        "https://www.youtube.com/watch?v=sozK4g764xY",
-        "https://www.youtube.com/watch?v=p7BfA3WEfgM",
-        "https://www.youtube.com/watch?v=zv83-vPcyMw",
-        "https://www.youtube.com/watch?v=xBOh4-52CmI",
-        "https://www.youtube.com/watch?v=cL6zhe1ZBG8",
-        "https://www.youtube.com/watch?v=9vCb0FRzcBs"
-      ],
-      "sourceNote": "영상 13개의 제목에 2019.07.20 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 13,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=SU0Jxw9R2zI",
-          "title": "20190720 이민우 - 해피엠 - 낮공 - 너결댄스",
-          "videoId": "SU0Jxw9R2zI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=huxUWd1Hmuw",
-          "title": "20190720 이민우 해피엠 -낮공 - 서태지 커버송 3곡",
-          "videoId": "huxUWd1Hmuw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=hl4MeyzTcPc",
-          "title": "20190720 이민우 해피엠 낮공 - 떠나가지 마요",
-          "videoId": "hl4MeyzTcPc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=PjcnM8IW7iM",
-          "title": "20190720 이민우 해피엠 낮공- L.U.V",
-          "videoId": "PjcnM8IW7iM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=wRI00_QZCPI",
-          "title": "[직캠] 20190720 - 이민우 - 해피엠 - 밤공 - Tonight + Taxi  + ending",
-          "videoId": "wRI00_QZCPI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Iy1ns8Ibx-w",
-          "title": "[직캠] 20190720 -이민우 - 해피엠 - 진실게임 - 키라댓앨범 이야기",
-          "videoId": "Iy1ns8Ibx-w",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=wRlIXOzJk4c",
-          "title": "[직캠] 20190720 이민우 - 해피엠 - 너의 결혼식",
-          "videoId": "wRlIXOzJk4c",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=sozK4g764xY",
-          "title": "[직캠] 20190720 이민우 - 해피엠 - 일기공개- 오! 사랑해",
-          "videoId": "sozK4g764xY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=p7BfA3WEfgM",
-          "title": "[직캠] 20190720 이민우 - 해피엠 - 진실게임 몸풀기문제 - 에릭 와일드아이즈 사건",
-          "videoId": "p7BfA3WEfgM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=zv83-vPcyMw",
-          "title": "[직캠] 20190720 이민우 -해피엠 -낮공 -모든 날 모든 순간 커버송",
-          "videoId": "zv83-vPcyMw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=xBOh4-52CmI",
-          "title": "[직캠] 20190720 이민우 해피엠 - I'M'U",
-          "videoId": "xBOh4-52CmI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=cL6zhe1ZBG8",
-          "title": "[직캠] 20190720 이민우 해피엠 - Love Me Ice Cream",
-          "videoId": "cL6zhe1ZBG8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=9vCb0FRzcBs",
-          "title": "[직캠] 20190720 이민우 해피엠 - 낮공 - KISS ME LIKE THAT",
-          "videoId": "9vCb0FRzcBs",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2019-08-10:2dfe3ae16a",
-      "date": "2019-08-10",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "팬미팅",
-      "subject": "신화 멤버 개인 활동(영상 근거)",
-      "title": "앤디 팬미팅 《앤디오》 낮·밤 공연",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=rUMEaMKlQ2g",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=rUMEaMKlQ2g",
-        "https://www.youtube.com/watch?v=yoZXUIG2V6s",
-        "https://www.youtube.com/watch?v=UAHyps_azLU",
-        "https://www.youtube.com/watch?v=p1KmdKZY550",
-        "https://www.youtube.com/watch?v=Et-86ie2g1c",
-        "https://www.youtube.com/watch?v=FWQ7Pjy0sgo",
-        "https://www.youtube.com/watch?v=Jwzug6dI3Nw",
-        "https://www.youtube.com/watch?v=kRUJY1OcbSU",
-        "https://www.youtube.com/watch?v=jQfoCsupgWE"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=rUMEaMKlQ2g",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=rUMEaMKlQ2g",
-        "https://www.youtube.com/watch?v=yoZXUIG2V6s",
-        "https://www.youtube.com/watch?v=UAHyps_azLU",
-        "https://www.youtube.com/watch?v=p1KmdKZY550",
-        "https://www.youtube.com/watch?v=Et-86ie2g1c",
-        "https://www.youtube.com/watch?v=FWQ7Pjy0sgo",
-        "https://www.youtube.com/watch?v=Jwzug6dI3Nw",
-        "https://www.youtube.com/watch?v=kRUJY1OcbSU",
-        "https://www.youtube.com/watch?v=jQfoCsupgWE"
-      ],
-      "sourceNote": "영상 9개의 제목에 2019.08.10 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 9,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=rUMEaMKlQ2g",
-          "title": "[직캠/4k] 20190810 -앤디 -앤디오 - 낮공 - 부산 맛집 추천",
-          "videoId": "rUMEaMKlQ2g",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=yoZXUIG2V6s",
-          "title": "[직캠/4k] 20190810 앤디 앤디오 낮공 - 3번째 사연 - 피캉스 추천",
-          "videoId": "yoZXUIG2V6s",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=UAHyps_azLU",
-          "title": "[직캠/4k] 20190810 앤디 앤디오 낮공 - 4번째 사연 -부산여행 추천",
-          "videoId": "UAHyps_azLU",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=p1KmdKZY550",
-          "title": "[직캠/4k] 20190810 앤디 앤디오 낮공 - 골뱅이 요리 Tip",
-          "videoId": "p1KmdKZY550",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Et-86ie2g1c",
-          "title": "[직캠/4k] 20190810 앤디 앤디오 밤공 - 하이터치 준비",
-          "videoId": "Et-86ie2g1c",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=FWQ7Pjy0sgo",
-          "title": "[직캠] 20190810 - 앤디오 낮공 - 5번째 스태프 사연 + 우리 에릭형이 빨라졌어요😁",
-          "videoId": "FWQ7Pjy0sgo",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=Jwzug6dI3Nw",
-          "title": "[직캠] 20190810 앤디 앤디오 낮공 - 전화연결 (feat. 실친)",
-          "videoId": "Jwzug6dI3Nw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=kRUJY1OcbSU",
-          "title": "[직캠] 20190810 앤디 앤캉스 낮공 - 2번째 영어사연 읽어주는 앤디",
-          "videoId": "kRUJY1OcbSU",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=jQfoCsupgWE",
-          "title": "[직캠] 20190810 앤디오- 앤캉스 낮공 - 1박용 파우치 주섬주섬",
-          "videoId": "jQfoCsupgWE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2019-08-11:4ba661ad7b",
-      "date": "2019-08-11",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "팬미팅",
-      "subject": "앤디",
-      "title": "앤디 팬미팅 《앤캉스》 낮·밤 공연",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=gtMOUFu29KA",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=gtMOUFu29KA",
-        "https://www.youtube.com/watch?v=N-wdQNNLTD0",
-        "https://www.youtube.com/watch?v=AfFS3CP_Gbo",
-        "https://www.youtube.com/watch?v=nBBDoy8PLNM",
-        "https://www.youtube.com/watch?v=idkzC_yVAN0",
-        "https://www.youtube.com/watch?v=vY8-1sb6xl4"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=gtMOUFu29KA",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=gtMOUFu29KA",
-        "https://www.youtube.com/watch?v=N-wdQNNLTD0",
-        "https://www.youtube.com/watch?v=AfFS3CP_Gbo",
-        "https://www.youtube.com/watch?v=nBBDoy8PLNM",
-        "https://www.youtube.com/watch?v=idkzC_yVAN0",
-        "https://www.youtube.com/watch?v=vY8-1sb6xl4"
-      ],
-      "sourceNote": "영상 6개의 제목에 2019.08.11 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 6,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=gtMOUFu29KA",
-          "title": "[직캠/4k] 20190811 - 앤디 - 앤캉스 - 밤공 - 콜링 디~ 📞",
-          "videoId": "gtMOUFu29KA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=N-wdQNNLTD0",
-          "title": "[직캠] 20190811 앤디  앤캉스 밤공  마지막 출석체크",
-          "videoId": "N-wdQNNLTD0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=AfFS3CP_Gbo",
-          "title": "[직캠] 20190811 앤디 - 앤디오 - 낮공 - 면세쇼핑 팁 + 팬들 선물 술",
-          "videoId": "AfFS3CP_Gbo",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=nBBDoy8PLNM",
-          "title": "[직캠] 20190811 앤디 앤캉스 중간 출석체크 - 조각상 + 너의결혼식",
-          "videoId": "nBBDoy8PLNM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=idkzC_yVAN0",
-          "title": "[직캠] 20190811 앤디- 앤디오 - 낮공 - 신한카드 영업왕",
-          "videoId": "idkzC_yVAN0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=vY8-1sb6xl4",
-          "title": "[직캠] 20190811- 앤디 - 앤캉스 - 첫번째 출석체크",
-          "videoId": "vY8-1sb6xl4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
     },
     {
       "id": "sheet:19!304",
@@ -74098,95 +71566,6 @@
       "recordCount": 1
     },
     {
-      "id": "video20261029:2020-01-18:f65269318f",
-      "date": "2020-01-18",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "팬미팅",
-      "subject": "앤디",
-      "title": "앤디 팬미팅 《HAPPY ANDY YEAR》",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=VJGf071ZlmY",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=VJGf071ZlmY",
-        "https://www.youtube.com/watch?v=zr6ocLWl3pk",
-        "https://www.youtube.com/watch?v=nyj60B1i4LY",
-        "https://www.youtube.com/watch?v=WPvGqCLXVZ4",
-        "https://www.youtube.com/watch?v=ZqhdgGOtRCc",
-        "https://www.youtube.com/watch?v=qU5UCtJL46g",
-        "https://www.youtube.com/watch?v=0xLfohz6-Rw",
-        "https://www.youtube.com/watch?v=l-InchKelt8"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=VJGf071ZlmY",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=VJGf071ZlmY",
-        "https://www.youtube.com/watch?v=zr6ocLWl3pk",
-        "https://www.youtube.com/watch?v=nyj60B1i4LY",
-        "https://www.youtube.com/watch?v=WPvGqCLXVZ4",
-        "https://www.youtube.com/watch?v=ZqhdgGOtRCc",
-        "https://www.youtube.com/watch?v=qU5UCtJL46g",
-        "https://www.youtube.com/watch?v=0xLfohz6-Rw",
-        "https://www.youtube.com/watch?v=l-InchKelt8"
-      ],
-      "sourceNote": "영상 8개의 제목에 2020.01.18 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 8,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=VJGf071ZlmY",
-          "title": "20200118 - 앤디 - 해피앤디이어 - 내꼬야송",
-          "videoId": "VJGf071ZlmY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=zr6ocLWl3pk",
-          "title": "20200118 - 앤디 - 해피앤디이어 - 사랑하나",
-          "videoId": "zr6ocLWl3pk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=nyj60B1i4LY",
-          "title": "20200118 앤디 - 해피앤디이어 - 생일축하합니다~",
-          "videoId": "nyj60B1i4LY",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=WPvGqCLXVZ4",
-          "title": "20200118 앤디 - 해피앤디이어 - 전화연결",
-          "videoId": "WPvGqCLXVZ4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=ZqhdgGOtRCc",
-          "title": "20200118 앤디 - 해피앤디이어 - 조만간 앤튜브 개설",
-          "videoId": "ZqhdgGOtRCc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=qU5UCtJL46g",
-          "title": "20200118 앤디 - 해피앤디이어 - 한잔 더 할까",
-          "videoId": "qU5UCtJL46g",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=0xLfohz6-Rw",
-          "title": "20200118 앤디- 해피앤디이어 - 모닝콜",
-          "videoId": "0xLfohz6-Rw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=l-InchKelt8",
-          "title": "20200118 앤디- 해피앤디이어 - 앵두핀 하트춤",
-          "videoId": "l-InchKelt8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "sheet:20!158",
       "date": "2020-03-18",
       "precision": "day",
@@ -75001,352 +72380,6 @@
       "recordCount": 1
     },
     {
-      "id": "video20261029:2022-09-24:a78022f889",
-      "date": "2022-09-24",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《M’s Record Shop》 공연",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=zpcR6tspB7o",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=zpcR6tspB7o",
-        "https://www.youtube.com/watch?v=-o230J1u2Xk",
-        "https://www.youtube.com/watch?v=-OI_ZozqxO8",
-        "https://www.youtube.com/watch?v=teq8IK7Sa5s",
-        "https://www.youtube.com/watch?v=yQlX4nweioE"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=zpcR6tspB7o",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=zpcR6tspB7o",
-        "https://www.youtube.com/watch?v=-o230J1u2Xk",
-        "https://www.youtube.com/watch?v=-OI_ZozqxO8",
-        "https://www.youtube.com/watch?v=teq8IK7Sa5s",
-        "https://www.youtube.com/watch?v=yQlX4nweioE"
-      ],
-      "sourceNote": "영상 5개의 제목에 2022.09.24 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 5,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=zpcR6tspB7o",
-          "title": "[직캠/4k] 20220924 - 이민우 - M's record shop - Love Supreme + Only One",
-          "videoId": "zpcR6tspB7o",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=-o230J1u2Xk",
-          "title": "[직캠/4k] 20220924- 이민우 - M's Record Shop - Last First Kiss",
-          "videoId": "-o230J1u2Xk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=-OI_ZozqxO8",
-          "title": "[직캠/4k] 20220924- 이민우 - M's Record Shop - Orange 두둥실  혜성의견",
-          "videoId": "-OI_ZozqxO8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=teq8IK7Sa5s",
-          "title": "[직캠/4k] 20220924- 이민우 - M's Record Shop - 드림캐처 만들기",
-          "videoId": "teq8IK7Sa5s",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=yQlX4nweioE",
-          "title": "[직캠/4k] 20220924- 이민우 - M's Record Shop - 폐활량 테스트",
-          "videoId": "yQlX4nweioE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2022-09-25:75009ebb16",
-      "date": "2022-09-25",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《M’s Record Shop》 공연",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=NfUbX-7Diqw",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=NfUbX-7Diqw",
-        "https://www.youtube.com/watch?v=ig-c0stNVBo",
-        "https://www.youtube.com/watch?v=g996YZFrKYI",
-        "https://www.youtube.com/watch?v=6o3XDDbNYr4",
-        "https://www.youtube.com/watch?v=9UUI88YBVqM",
-        "https://www.youtube.com/watch?v=-VXGEBJ918o",
-        "https://www.youtube.com/watch?v=lFDZ__VzQOA",
-        "https://www.youtube.com/watch?v=F8NDTUUOPSI",
-        "https://www.youtube.com/watch?v=GQyrgAxzWrI",
-        "https://www.youtube.com/watch?v=_J5QjiC-EOk",
-        "https://www.youtube.com/watch?v=zBfDUKAccAc",
-        "https://www.youtube.com/watch?v=L7Eu7SwP8eM",
-        "https://www.youtube.com/watch?v=1z4XH3KLmBg",
-        "https://www.youtube.com/watch?v=a2yI6K_4HNA",
-        "https://www.youtube.com/watch?v=I9iCMG9RR7k",
-        "https://www.youtube.com/watch?v=iC_7zNCZROE",
-        "https://www.youtube.com/watch?v=HVVkmeD8UqI",
-        "https://www.youtube.com/watch?v=IT5T6oNI0hE",
-        "https://www.youtube.com/watch?v=3imiUf1BuRs",
-        "https://www.youtube.com/watch?v=4zbdJkBYZw4",
-        "https://www.youtube.com/watch?v=zTiQNkj3JH0",
-        "https://www.youtube.com/watch?v=x6bzZ72Uf0U",
-        "https://www.youtube.com/watch?v=OkJeqjDpezc",
-        "https://www.youtube.com/watch?v=qJU0CrXAYwU",
-        "https://www.youtube.com/watch?v=z-X_yXvKo2E",
-        "https://www.youtube.com/watch?v=HAV0zzmKMqg",
-        "https://www.youtube.com/watch?v=c_f4tPVlEDE",
-        "https://www.youtube.com/watch?v=YFLwvECL9P8",
-        "https://www.youtube.com/watch?v=DPOr4z31IpM",
-        "https://www.youtube.com/watch?v=ce3ZzbWeFNI",
-        "https://www.youtube.com/watch?v=33pHHy0lq_E",
-        "https://www.youtube.com/watch?v=BtjboIP3n4Q"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=NfUbX-7Diqw",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=NfUbX-7Diqw",
-        "https://www.youtube.com/watch?v=ig-c0stNVBo",
-        "https://www.youtube.com/watch?v=g996YZFrKYI",
-        "https://www.youtube.com/watch?v=6o3XDDbNYr4",
-        "https://www.youtube.com/watch?v=9UUI88YBVqM",
-        "https://www.youtube.com/watch?v=-VXGEBJ918o",
-        "https://www.youtube.com/watch?v=lFDZ__VzQOA",
-        "https://www.youtube.com/watch?v=F8NDTUUOPSI",
-        "https://www.youtube.com/watch?v=GQyrgAxzWrI",
-        "https://www.youtube.com/watch?v=_J5QjiC-EOk",
-        "https://www.youtube.com/watch?v=zBfDUKAccAc",
-        "https://www.youtube.com/watch?v=L7Eu7SwP8eM",
-        "https://www.youtube.com/watch?v=1z4XH3KLmBg",
-        "https://www.youtube.com/watch?v=a2yI6K_4HNA",
-        "https://www.youtube.com/watch?v=I9iCMG9RR7k",
-        "https://www.youtube.com/watch?v=iC_7zNCZROE",
-        "https://www.youtube.com/watch?v=HVVkmeD8UqI",
-        "https://www.youtube.com/watch?v=IT5T6oNI0hE",
-        "https://www.youtube.com/watch?v=3imiUf1BuRs",
-        "https://www.youtube.com/watch?v=4zbdJkBYZw4",
-        "https://www.youtube.com/watch?v=zTiQNkj3JH0",
-        "https://www.youtube.com/watch?v=x6bzZ72Uf0U",
-        "https://www.youtube.com/watch?v=OkJeqjDpezc",
-        "https://www.youtube.com/watch?v=qJU0CrXAYwU",
-        "https://www.youtube.com/watch?v=z-X_yXvKo2E",
-        "https://www.youtube.com/watch?v=HAV0zzmKMqg",
-        "https://www.youtube.com/watch?v=c_f4tPVlEDE",
-        "https://www.youtube.com/watch?v=YFLwvECL9P8",
-        "https://www.youtube.com/watch?v=DPOr4z31IpM",
-        "https://www.youtube.com/watch?v=ce3ZzbWeFNI",
-        "https://www.youtube.com/watch?v=33pHHy0lq_E",
-        "https://www.youtube.com/watch?v=BtjboIP3n4Q"
-      ],
-      "sourceNote": "영상 32개의 제목에 2022.09.25 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 32,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=NfUbX-7Diqw",
-          "title": "[직캠/4k] 20220925 - 이민우  - M's record shop -  나랑 별보러 가지 않을래",
-          "videoId": "NfUbX-7Diqw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=ig-c0stNVBo",
-          "title": "[직캠/4k] 20220925 - 이민우 -  M's record shop - 너를 만나",
-          "videoId": "ig-c0stNVBo",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=g996YZFrKYI",
-          "title": "[직캠/4k] 20220925 - 이민우 -  M's record shop - 멘트 + If you",
-          "videoId": "g996YZFrKYI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=6o3XDDbNYr4",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - I'll be your light",
-          "videoId": "6o3XDDbNYr4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=9UUI88YBVqM",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - Kiss it away",
-          "videoId": "9UUI88YBVqM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=-VXGEBJ918o",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - LEVEL 댄스 미션",
-          "videoId": "-VXGEBJ918o",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=lFDZ__VzQOA",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - Orange",
-          "videoId": "lFDZ__VzQOA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=F8NDTUUOPSI",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - This Love 댄스 미션",
-          "videoId": "F8NDTUUOPSI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=GQyrgAxzWrI",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - Thriller",
-          "videoId": "GQyrgAxzWrI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=_J5QjiC-EOk",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 남자를 믿지마",
-          "videoId": "_J5QjiC-EOk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=zBfDUKAccAc",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 남자를 믿지마",
-          "videoId": "zBfDUKAccAc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=L7Eu7SwP8eM",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 너의 결혼식",
-          "videoId": "L7Eu7SwP8eM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=1z4XH3KLmBg",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 너의 결혼식",
-          "videoId": "1z4XH3KLmBg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=a2yI6K_4HNA",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 몸풀기게임 2번~ 7번 full.ver",
-          "videoId": "a2yI6K_4HNA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=I9iCMG9RR7k",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 밤공 - 드림캐처 만들기",
-          "videoId": "I9iCMG9RR7k",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=iC_7zNCZROE",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 신기루 + TAXI",
-          "videoId": "iC_7zNCZROE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=HVVkmeD8UqI",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 없게 만들어요",
-          "videoId": "HVVkmeD8UqI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=IT5T6oNI0hE",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 엔딩멘트 + 끝인사",
-          "videoId": "IT5T6oNI0hE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=3imiUf1BuRs",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 올유드 댄스 미션",
-          "videoId": "3imiUf1BuRs",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=4zbdJkBYZw4",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop - 표적 미션",
-          "videoId": "4zbdJkBYZw4",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=zTiQNkj3JH0",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's Record Shop -The 'M' Style",
-          "videoId": "zTiQNkj3JH0",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=x6bzZ72Uf0U",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop -  \"기도 + First Love\"",
-          "videoId": "x6bzZ72Uf0U",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=OkJeqjDpezc",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop -  \"도망가자\"",
-          "videoId": "OkJeqjDpezc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=qJU0CrXAYwU",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop -  \"어른\" + 멘트",
-          "videoId": "qJU0CrXAYwU",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=z-X_yXvKo2E",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop -  3회차를 위로송으로 정한 이유",
-          "videoId": "z-X_yXvKo2E",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=HAV0zzmKMqg",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop -  멘트 + 걱정말아요 그대",
-          "videoId": "HAV0zzmKMqg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=c_f4tPVlEDE",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop -  멘트 + 꺼내 먹어요",
-          "videoId": "c_f4tPVlEDE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=YFLwvECL9P8",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop - Sweet girl + Thriller",
-          "videoId": "YFLwvECL9P8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=DPOr4z31IpM",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop - 고백송 처음부터 매일 그대와 까지",
-          "videoId": "DPOr4z31IpM",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=ce3ZzbWeFNI",
-          "title": "[직캠/4k] 20220925 - 이민우 - M's record shop - 한숨",
-          "videoId": "ce3ZzbWeFNI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=33pHHy0lq_E",
-          "title": "[직캠/4k] 20220925- 이민우 - M's Record Shop - 몸풀기게임 \"STOMP\"",
-          "videoId": "33pHHy0lq_E",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=BtjboIP3n4Q",
-          "title": "[직캠/4k] 20220925- 이민우 - M's Record Shop - 없게 만들어요",
-          "videoId": "BtjboIP3n4Q",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
       "id": "video20261029:2022-12-10:f1397ba619",
       "date": "2022-12-10",
       "precision": "day",
@@ -75632,235 +72665,6 @@
           "url": "https://www.youtube.com/watch?v=15Jf_48F3xU",
           "title": "[직캠] 20221231 신화 WDJ 콘서트 - 밤비눈 ( 앞부분 조금 잘림주의)",
           "videoId": "15Jf_48F3xU",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2023-06-23:ce66caad08",
-      "date": "2023-06-23",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《20th STORY》 콘서트",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=Zh_g9bYj6h8",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=Zh_g9bYj6h8",
-        "https://www.youtube.com/watch?v=PTkR8YaZBVE",
-        "https://www.youtube.com/watch?v=XDn1vt6Tox8"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=Zh_g9bYj6h8",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=Zh_g9bYj6h8",
-        "https://www.youtube.com/watch?v=PTkR8YaZBVE",
-        "https://www.youtube.com/watch?v=XDn1vt6Tox8"
-      ],
-      "sourceNote": "영상 3개의 제목에 2023.06.23 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 3,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=Zh_g9bYj6h8",
-          "title": "[직캠/4k] 20230623 - M 이민우 - Story - Treasure",
-          "videoId": "Zh_g9bYj6h8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=PTkR8YaZBVE",
-          "title": "[직캠/4k] 20230623 - 이민우 - 20th Story 콘서트 - 앵콜",
-          "videoId": "PTkR8YaZBVE",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=XDn1vt6Tox8",
-          "title": "[직캠] 20230623 이민우 20주년 Story - OMG",
-          "videoId": "XDn1vt6Tox8",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2023-07-01:6e850def4c",
-      "date": "2023-07-01",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《20th STORY》 콘서트",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=BNv1o-I6X5Q",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=BNv1o-I6X5Q",
-        "https://www.youtube.com/watch?v=hYZPGPkGook",
-        "https://www.youtube.com/watch?v=6O1aL9xq_Xg",
-        "https://www.youtube.com/watch?v=_6eDWRWW24U",
-        "https://www.youtube.com/watch?v=aeOIqZfhZFI"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=BNv1o-I6X5Q",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=BNv1o-I6X5Q",
-        "https://www.youtube.com/watch?v=hYZPGPkGook",
-        "https://www.youtube.com/watch?v=6O1aL9xq_Xg",
-        "https://www.youtube.com/watch?v=_6eDWRWW24U",
-        "https://www.youtube.com/watch?v=aeOIqZfhZFI"
-      ],
-      "sourceNote": "영상 5개의 제목에 2023.07.01 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 5,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=BNv1o-I6X5Q",
-          "title": "[직캠/4k] 20230701 이민우 - M - story - 밤공 - 착각",
-          "videoId": "BNv1o-I6X5Q",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=hYZPGPkGook",
-          "title": "[직캠/4k] 20230701 이민우 - M story 밤공 - kiss it away",
-          "videoId": "hYZPGPkGook",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=6O1aL9xq_Xg",
-          "title": "[직캠/4k] 20230701 이민우 - M story 밤공 - wonder you",
-          "videoId": "6O1aL9xq_Xg",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=_6eDWRWW24U",
-          "title": "[직캠/4k] 20230701 이민우 - M story 밤공 - 라노체보니따 + AM 07:05",
-          "videoId": "_6eDWRWW24U",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=aeOIqZfhZFI",
-          "title": "[직캠] 20230701 이민우 M Story - Girl Friend",
-          "videoId": "aeOIqZfhZFI",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2023-07-02:05aa617e7b",
-      "date": "2023-07-02",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 《20th STORY》 콘서트",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=Faxj9mXAbsc",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=Faxj9mXAbsc"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=Faxj9mXAbsc",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=Faxj9mXAbsc"
-      ],
-      "sourceNote": "영상 1개의 제목에 2023.07.02 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=Faxj9mXAbsc",
-          "title": "[직캠/4k] 20230702 이민우 -M - Story - Taxi",
-          "videoId": "Faxj9mXAbsc",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2024-07-28:1dfa6fc46d",
-      "date": "2024-07-28",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "공연",
-      "subject": "이민우",
-      "title": "이민우 공연 직캠 (정확한 공연명 미확인)",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=h5V97XT8hEk",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=h5V97XT8hEk",
-        "https://www.youtube.com/watch?v=t6fIHXEZdVA"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=h5V97XT8hEk",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=h5V97XT8hEk",
-        "https://www.youtube.com/watch?v=t6fIHXEZdVA"
-      ],
-      "sourceNote": "영상 2개의 제목에 2024.07.28 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 2,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=h5V97XT8hEk",
-          "title": "[직캠/4k] 20240728 -  이민우 - 밤공 - Mstyle",
-          "videoId": "h5V97XT8hEk",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=t6fIHXEZdVA",
-          "title": "[직캠/4k] 20240728 - 이민우 - 밤공- Taxi",
-          "videoId": "t6fIHXEZdVA",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        }
-      ],
-      "registeredAt": "2026-10-29T07:36:47+09:00"
-    },
-    {
-      "id": "video20261029:2025-02-28:24e5905dfb",
-      "date": "2025-02-28",
-      "precision": "day",
-      "chapter": "chapter4",
-      "category": "팬행사",
-      "subject": "이민우",
-      "title": "이민우 서울스카이 아티스트 토크",
-      "verification": "팬영상 표제·정확한 날짜 주장에 근거한 잠정 등록 (독립 원방송/개최일 확인 전)",
-      "source": "셩공시대님 유튜브 아카이브 / 사용자 제공 2026.10.29 매칭 엑셀",
-      "sourceUrl": "https://www.youtube.com/watch?v=cCSIGHXRbVw",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=cCSIGHXRbVw",
-        "https://www.youtube.com/watch?v=mDAlhfGr4iM"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=cCSIGHXRbVw",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=cCSIGHXRbVw",
-        "https://www.youtube.com/watch?v=mDAlhfGr4iM"
-      ],
-      "sourceNote": "영상 2개의 제목에 2025.02.28 및 관련 활동이 기재되어 있어 사용자 요청 기준으로 연혁에 등록. 공식 방송사 회차, 영상 원장면, 공연·촬영일은 독립 검증되지 않았으며 영상 편집·업로드 시각과 원방송일이 다를 수 있음.",
-      "dateKind": "팬영상 제목에 표기된 콘텐츠 날짜 (원방송일·공연일 독립 검증 전)",
-      "sourceRecord": "셩공시대_전체영상_팝업매칭.xlsx / 신규등록재검토20261029",
-      "sourceRefs": [],
-      "recordCount": 2,
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=cCSIGHXRbVw",
-          "title": "[직캠/4K] 20250228 이민우 - 서울 스카이 - 아티스트 토크 FULL.VER",
-          "videoId": "cCSIGHXRbVw",
-          "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=mDAlhfGr4iM",
-          "title": "[직캠] 20250228 - 이민우 -  서울스카이 - 아티스트 토크 full.ver",
-          "videoId": "mDAlhfGr4iM",
           "note": "원본 아카이브에 기재된 영상 표제; 실제 방송·공연일 독립 미확인"
         }
       ],
