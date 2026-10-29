@@ -479,3 +479,7 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 @keyframes history-cat-blink{0%,43%,47%,100%{scale:1 1}45%{scale:1 .12}}
 @media(max-width:550px){.history-stardust i{font-size:18px}.history-stardust i:nth-child(2){font-size:22px;top:40%}.history-stardust i:nth-child(4){top:57%}}
 @media(prefers-reduced-motion:reduce){.history-stardust i,.cat-seal svg,.cat-seal svg ellipse,.keepsake-paw,.keepsake-star{animation:none}.chapter,.chapter::after{transition:none}.chapter:hover,.chapter:focus-visible{transform:none}}
+
+.chapter-toggle{display:none}
+#chapters[hidden]{display:none}
+@media(max-width:550px){.chapter-toggle{display:block;width:100%;padding:12px;margin:0 0 16px;border:1px solid var(--history-line);border-radius:12px;background:var(--history-surface);color:var(--history-lavender-deep);font:inherit;font-size:12px;text-align:left;cursor:pointer}.chapter-toggle:focus-visible{outline:2px solid var(--history-lavender-deep);outline-offset:3px}}

@@ -556,7 +556,7 @@ function isNewEvent(e,now=Date.now()){
 }
 function selectRows(){
  const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim().toLocaleLowerCase();
- filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||!!e.relatedVideos?.length||!!e.fanVideoSources?.length)&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
+ filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||e.verification===verification)&&(!$('#withVideos').checked||hasEventVideo(e))&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
 }
 function chronologicalKey(e){
   const year=e.date.slice(0,4);
@@ -608,6 +608,12 @@ function youtubeVideoId(url){
  }catch{return '';}
 }
 
+function hasEventVideo(e){
+ const urls=[e.verificationUrl,...(e.verificationUrls||[]),e.sourceUrl,...(e.sourceUrls||[]),e.referenceVideoUrl,...(e.referenceVideoUrls||[])];
+ for(const id of e.sourceRefs||[])urls.push(researchSources.get(id)?.url);
+ for(const video of e.fanVideoSources||[])urls.push(video?.url);
+ return !!e.relatedVideos?.length||urls.some(url=>isSafeUrl(url)&&youtubeVideoId(url));
+}
 function redundantSourceClips(e){
  const ids=new Set();
  const urls=[e.verificationUrl,...(e.verificationUrls||[]),e.sourceUrl,...(e.sourceUrls||[]),e.referenceVideoUrl,...(e.referenceVideoUrls||[])];
@@ -942,22 +948,24 @@ function renderCalendar(){
   const grouped=new Map();
   for(const e of exactEvents){const day=Number(e.date.slice(8));if(!grouped.has(day))grouped.set(day,[]);grouped.get(day).push(e);}
   if(!selectedCalendarDate||!selectedCalendarDate.startsWith(`${calendarMonth}-`)){
+    const linked=filtered.find(e=>e.id===highlightEvent);
+    const linkedDay=explicitDate&&explicitDate.startsWith(calendarMonth+'-')?explicitDate:(linked&&linked.date.startsWith(calendarMonth+'-')?(linked.precision==='day'?linked.date:unknownKey):(linked?.precision==='year'&&calendarMonth===linked.date.slice(0,4)+'-12'?unknownKey:''));
     const d=[...grouped.keys()].sort((a,b)=>a-b).pop();
-    selectedCalendarDate=d?`${calendarMonth}-${pad2(d)}`:(dateUnknownEvents.length?unknownKey:'');
+    selectedCalendarDate=linkedDay|| (d?`${calendarMonth}-${pad2(d)}`:(dateUnknownEvents.length?unknownKey:''));
   }
   const [startMonth,endMonth]=calendarRange();
   const cells=[];
   for(let i=0;i<firstDay;i++)cells.push('<div class="cal-blank" aria-hidden="true"></div>');
   for(let d=1;d<=daysInMonth;d++){
     const dayDate=`${calendarMonth}-${pad2(d)}`,items=grouped.get(d)||[];
-    const hasVideo=items.some(e=>recommendedLinks(e).length||e.fanVideoSources?.length);
+    const hasVideo=items.some(hasEventVideo);
     const isSelected=selectedCalendarDate===dayDate;
     const note=items.length?`${items.length}건의 일정${hasVideo?', 관련 영상 있음':''}`:'등록 일정 없음';
     cells.push(`<button type="button" class="cal-day${items.length?' has-events':''}${isSelected?' is-selected':''}" data-date="${dayDate}" aria-label="${y}년 ${m}월 ${d}일, ${note}" aria-pressed="${isSelected}"><span class="cal-day-number">${d}</span>${items.length?`<span class="cal-day-count">${items.length}건</span>`:''}${hasVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
   }
   // The undated tile is always appended immediately after the final numbered day.
   const unknownSelected=selectedCalendarDate===unknownKey;
-  const hasUnknownVideo=dateUnknownEvents.some(e=>recommendedLinks(e).length||e.fanVideoSources?.length);
+  const hasUnknownVideo=dateUnknownEvents.some(hasEventVideo);
   cells.push(`<button type="button" class="cal-day cal-day-unknown${dateUnknownEvents.length?' has-events':''}${unknownSelected?' is-selected':''}" data-date="${unknownKey}" aria-label="${y}년 ${m}월 날짜 미상, ${dateUnknownEvents.length}건" aria-pressed="${unknownSelected}"><span class="cal-day-number">날짜 미상</span><span class="cal-day-count">${dateUnknownEvents.length}건</span>${hasUnknownVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
   const selected=unknownSelected?dateUnknownEvents:(selectedCalendarDate?grouped.get(Number(selectedCalendarDate.slice(8)))||[]:[]);
   const selectedLabel=unknownSelected?`${y}년 ${m}월 날짜 미상${m===12&&yearUnknownEvents.length?' (연도만 확인된 기록 포함)':''}`:(selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`);
@@ -1002,7 +1010,7 @@ async function init(){
   for(const c of [...new Set(events.map(e=>e.category))].sort()) $('#category').add(new Option(c,c));
   for(const c of [...new Set(events.map(e=>e.verification))].sort()) $('#verification').add(new Option(c,c));
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();
-  buildChapterButtons();applyChapter();
+  buildChapterButtons();applyChapter();setupChapterDisclosure();
   if(!reducedHistoryMotion()){
     $('#events').classList.add('history-enter');
     window.setTimeout(()=>$('#events').classList.remove('history-enter'),750);
@@ -1057,6 +1065,13 @@ function setupBackToTop(){
     window.scrollTo({top:0,behavior:reduced?'auto':'smooth'});
   });
   update();
+}
+function setupChapterDisclosure(){
+ const toggle=$('#chapterToggle'),grid=$('#chapters'),mobile=window.matchMedia('(max-width:550px)');
+ const setOpen=open=>{grid.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'시기 선택 접기 ▴':'시기 선택 펼치기 ▾';};
+ toggle.addEventListener('click',()=>setOpen(grid.hidden));
+ const sync=()=>setOpen(!mobile.matches);
+ mobile.addEventListener('change',sync);sync();
 }
 function reducedHistoryMotion(){return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}
 function updateReadingYear(){
