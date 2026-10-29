@@ -537,9 +537,17 @@ function applyChapter(render=true){
  }
  const years=[...new Set(events.filter(e=>!activeChapter||e.chapter===activeChapter).map(e=>e.date.slice(0,4)))].sort();
  const selected=$('#year').value;
- $('#year').innerHTML='<option value="">전체 연도</option>'+years.map(y=>`<option value="${safe(y)}">${safe(y)}년</option>`).join('');
+ const allYears=years.length?`${years[0]}~${years[years.length-1]}년 모두`:'해당 시기 모든 연도';
+ $('#year').innerHTML=`<option value="">${safe(allYears)}</option>`+years.map(y=>`<option value="${safe(y)}">${safe(y)}년</option>`).join('');
  if(years.includes(selected)) $('#year').value=selected;
  if(render)resetAndRender();
+}
+function updateHistoryScope(){
+ const chapter=chapters.find(c=>c.id===activeChapter),year=$('#year').value;
+ const title=chapter?`CHAPTER ${chapter.number} · ${chapter.title}`:'전체 기간 · CHAPTER 1~4';
+ $('#historyScope').textContent=year?`현재 범위: ${year}년만 · ${chapter?title:'시기 제한 없음'}`:`현재 범위: ${title} / 해당 기간의 모든 연도`;
+ $('#allChapters').textContent=activeChapter?'모든 시기에서 찾기':'시기 제한 없음';
+ $('#allChapters').setAttribute('aria-pressed',String(!activeChapter));
 }
 function normalizeSubject(s){
  if(s==='신화 전체')return 'group';
@@ -1013,7 +1021,7 @@ function renderCalendar(){
   if(highlightEvent)document.getElementById('event-'+highlightEvent)?.classList.add('focused-event');
   persistHistoryView();
 }
-function renderPage(){document.dispatchEvent(new Event('history-view-change'));if(viewMode==='calendar')renderCalendar();else renderItems();updateReadingYear();}
+function renderPage(){updateHistoryScope();document.dispatchEvent(new Event('history-view-change'));if(viewMode==='calendar')renderCalendar();else renderItems();updateReadingYear();}
 function changeView(next){
   if(next!=='list'&&next!=='calendar')return;
   viewMode=next;
