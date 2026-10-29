@@ -458,3 +458,27 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 @keyframes keepsake-card{0%,100%{transform:translateX(var(--shift)) rotate(var(--tilt))}50%{transform:translate(var(--shift),-5px) rotate(var(--tilt))}}
 @keyframes keepsake-reveal{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.history-keepsake *,.history-loader *,.events.history-enter>.item:nth-of-type(n){animation:none}}
+
+/* A visible, playful header; the timeline itself stays still. */
+.intro{position:relative;isolation:isolate;padding:14px 16px 18px;border-radius:22px;background:linear-gradient(115deg,#f1e8fc99,transparent 85%)}
+.intro> :not(.history-stardust){position:relative;z-index:1}
+.history-stardust{position:absolute;inset:0;overflow:hidden;border-radius:inherit;pointer-events:none;z-index:0}
+.history-stardust i{position:absolute;font-style:normal;color:#a184cb;font-size:22px;left:57%;top:22%;animation:history-star-float 5s ease-in-out infinite}
+.history-stardust i:nth-child(2){left:78%;top:60%;font-size:30px;animation-delay:-1.5s;animation-duration:7s}
+.history-stardust i:nth-child(3){left:91%;top:18%;font-size:13px;animation-delay:-3s}
+.history-stardust i:nth-child(4){left:43%;top:74%;font-size:14px;animation-delay:-2s;animation-duration:6s}
+.history-stardust i:nth-child(5){left:68%;top:40%;font-size:12px;animation-delay:-4s;animation-duration:8s}
+.keepsake-paw{animation:keepsake-sway 3s ease-in-out infinite}
+.keepsake-star{animation-iteration-count:infinite}
+.cat-seal svg{animation:history-cat-sway 5s ease-in-out infinite;transform-origin:50% 75%}
+.cat-seal svg ellipse{transform-box:fill-box;transform-origin:center;animation:history-cat-blink 5.5s infinite}
+.chapter{position:relative;transition:transform 200ms ease,box-shadow 200ms ease,border-color 200ms ease}
+.chapter::after{content:'✦';position:absolute;right:12px;top:9px;color:#a184cb;font-size:20px;opacity:0;transform:scale(.4) rotate(-35deg);transition:transform 220ms ease,opacity 220ms ease;pointer-events:none}
+.chapter.active::after{opacity:.75;transform:scale(1) rotate(0)}
+.chapter:hover,.chapter:focus-visible{transform:translateY(-5px);box-shadow:0 10px 24px #8d74b926}
+.chapter:hover::after,.chapter:focus-visible::after{opacity:1;transform:scale(1.2) rotate(15deg)}
+@keyframes history-star-float{0%,100%{transform:translateY(5px) rotate(-10deg);opacity:.35}50%{transform:translateY(-9px) rotate(12deg);opacity:.85}}
+@keyframes history-cat-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(5deg) translateY(-3px)}}
+@keyframes history-cat-blink{0%,43%,47%,100%{scale:1 1}45%{scale:1 .12}}
+@media(max-width:550px){.intro{padding:12px 10px 15px}.history-stardust i{font-size:18px}.history-stardust i:nth-child(2){font-size:22px;top:40%}.history-stardust i:nth-child(4){top:57%}}
+@media(prefers-reduced-motion:reduce){.history-stardust i,.cat-seal svg,.cat-seal svg ellipse,.keepsake-paw,.keepsake-star{animation:none}.chapter,.chapter::after{transition:none}.chapter:hover,.chapter:focus-visible{transform:none}}
