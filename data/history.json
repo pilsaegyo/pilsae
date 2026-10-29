@@ -1038,6 +1038,22 @@
         "2000-08": "일자 미상 월 단위만 등록"
       },
       "siteDeployed": false
+    },
+    "japanTelevisionResearch20261029": {
+      "description": "2006년 일본 TV 출연 자료 조사와 기존 연혁 중복 대조",
+      "baselineEventCount": 2640,
+      "newEventCount": 5,
+      "existingEventsEnriched": 3,
+      "finalEventCount": 2645,
+      "linkedVideoCountAdded": 0,
+      "broadcastScope": "일본 현지 방송 5건 등록, 재편집 및 공연 사후 방송은 기존 일정에 설명으로 병합",
+      "notEntered": [
+        "2006-06-10 めざましどようび — 방송 출연 예상 언급만 확인",
+        "2006-07-15/22 일본 M-net 《100%》 — 재방송인지 신규 영상인지 불분명",
+        "2006-06-11 笑っていいとも！増刊号 — 06.07 본방 재편집에 병합",
+        "2006-08-13/14 K-POP SUPER LIVE IN OSAKA — 06.06 공연의 사후 TV방송 예정",
+        "2006-11-25 일본 후지TV721 일본 부도칸 실황 — 09.24 콘서트에 근거 병합"
+      ]
     }
   },
   "chapters": [
@@ -45972,7 +45988,7 @@
       "source": "기존 활동연혁 원자료",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.",
+      "sourceNote": "기록의 날짜·내용은 중국어 팬 연표 기준이며 공식 자료로 확인되지 않았습니다.\n일본 현지의 2006년 방송 시청 예약 기록에는 이 공연을 다룬 《K-POP SUPER LIVE IN OSAKA》가 8월 13일 심야(8월 14일 0시경) 방영 예정으로 기재되어 있습니다. 공연일 6월 6일과 TV 방영 예정일은 구분하며, 새 공연 일정으로 중복 기재하지 않았습니다. 정확한 방송사와 방영 실적은 추가 확인이 필요합니다.",
       "dateKind": "원문 기재일",
       "sourceRecord": "p0191",
       "verificationUrl": null,
@@ -45980,7 +45996,10 @@
         "fan-cn1",
         "fan-cn2"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://pagpag.seesaa.net/article/20042283.html"
+      ]
     },
     {
       "id": "archive:description:2006-06-11:1b2aae38b2",
@@ -46160,18 +46179,23 @@
       "chapter": "chapter2",
       "category": "방송",
       "subject": "신화 전체",
-      "title": "FujiTv ourMusic",
-      "verification": "영상 설명 기재·독립 검증 전",
-      "source": "영상 아카이브 설명",
+      "title": "후지TV 《僕らの音楽》 113회 — 신화 × 쿠사나기 츠요시",
+      "verification": "후지TV 공식 프로그램 회차 목록에서 2006.06.30 방영·신화 출연 확인",
+      "source": "후지TV 《僕らの音楽》 공식 회차 목록 · 영상 아카이브",
       "sourceUrl": "https://www.youtube.com/watch?v=iNVLzLyGANM",
       "referenceVideoUrl": "https://www.youtube.com/watch?v=iNVLzLyGANM",
-      "sourceNote": "아카이브 영상 설명에 기재된 날짜와 활동명 기준. 방송·행사 원문을 통한 독립 검증 전. 070928 SBS korea sparkling & 060630 FujiTv ourMusic",
-      "dateKind": "영상 설명에 기재된 방송·활동일(독립 검증 전)",
+      "sourceNote": "후지TV 공식 《僕らの音楽》 과거 방송 목록에 2006년 6월 30일 제113회 〈神話 (SHINHWA) × 草彅剛〉가 명시되어 있습니다. 당일 방송을 본 일본 시청 후기에도 신화의 〈僕らの心には太陽がある〉 등 무대와 인터뷰 내용이 기록되어 있습니다. 기존 영상 아카이브 링크는 여러 날짜의 편집본이므로 해당 회차 전체 영상과 동일한 자료는 아닙니다.",
+      "dateKind": "일본 현지 방송일(후지TV 공식 목록 확인)",
       "sourceRecord": "archive:description:20261024",
       "archiveVideoIds": [
         "iNVLzLyGANM"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "sourceUrls": [
+        "https://www.fujitv.co.jp/ourmusic/backnumber.html",
+        "https://pagpag.seesaa.net/article/20082063.html"
+      ],
+      "verificationUrl": "https://www.fujitv.co.jp/ourmusic/backnumber.html"
     },
     {
       "id": "cu23:2006-07-06-shanghai-arrival",
@@ -47060,7 +47084,7 @@
       "source": "기존 활동연혁 원자료",
       "sourceUrl": null,
       "referenceVideoUrl": null,
-      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.",
+      "sourceNote": "두 중국어 연표의 편집 기록. 외부 검증 전.\n오리콘의 2006년 9월 25일 현장 보도에서 9월 24일 일본 부도칸 콘서트 개최가 확인됩니다. 같은 기사에는 공연 실황이 2006년 11월 25일 일본 CS채널 후지TV721을 통해 방송 예정이라고 명시되어 있습니다. 11월 25일은 공연 개최일이 아닌 중계 방송 예정일입니다.",
       "dateKind": "원문 기재일",
       "sourceRecord": "s053",
       "verificationUrl": null,
@@ -47123,7 +47147,8 @@
         "첨부 엑셀"
       ],
       "sourceUrls": [
-        "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=757879274&range=A119:D119"
+        "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=757879274&range=A119:D119",
+        "https://www.oricon.co.jp/news/35737/full/"
       ],
       "verificationUrls": [],
       "referenceVideoUrls": [],
@@ -75494,6 +75519,124 @@
       "sourceRefs": [],
       "recordCount": 1,
       "registeredAt": "2026-10-29T19:11:00+09:00"
+    },
+    {
+      "id": "japan-tv:2006-05-25:han-tame-dx",
+      "date": "2006-05-25",
+      "precision": "day",
+      "chapter": "chapter2",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "후지TV 《韓タメ！DX》 30분판 — 신화 출연",
+      "verification": "오리콘 TV 출연 데이터베이스에 신화 출연·편성 확인",
+      "source": "ORICON NEWS — 신화 TV 출연 정보",
+      "sourceUrl": "https://www.oricon.co.jp/prof/272498/tv/",
+      "referenceVideoUrl": null,
+      "sourceNote": "오리콘의 2006년 5월 25일 편성표에 후지TV 《韓タメ！DX》 30분판의 신화 출연이 기재되어 있습니다. 편성 시각은 27:12~27:42로, 실제 시계상 5월 26일 새벽 3:12~3:42에 해당합니다. 상세 방영 장면은 확인되지 않았습니다.",
+      "dateKind": "일본 현지 TV 방송일",
+      "sourceRecord": "2006_japan_tv_research_20261029",
+      "verificationUrl": "https://www.oricon.co.jp/prof/272498/tv/",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T23:36:11+09:00",
+      "sourceUrls": [
+        "https://www.oricon.co.jp/prof/272498/tv/"
+      ]
+    },
+    {
+      "id": "japan-tv:2006-06-07:waratte-iitomo",
+      "date": "2006-06-07",
+      "precision": "day",
+      "chapter": "chapter2",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "후지TV 《笑っていいとも！》 — 신화 출연",
+      "verification": "오리콘 출연 편성 정보 확인·당시 현장 관람자 증언과 일치",
+      "source": "ORICON NEWS — 신화 TV 출연 정보",
+      "sourceUrl": "https://www.oricon.co.jp/prof/272498/tv/",
+      "referenceVideoUrl": null,
+      "sourceNote": "오리콘에 2006년 6월 7일 12:00~13:00 신화 출연으로 기재되어 있습니다. 6월 11일 《笑っていいとも！増刊号》에도 신화 출연이 기록되어 있으나, 본방의 편집·재방송 성격이어서 별도 활동으로 중복 등록하지 않았습니다. 6월 11일 방송의 구체적인 신화 출연 구간은 별도 확인되지 않았습니다.",
+      "dateKind": "일본 현지 TV 방송일",
+      "sourceRecord": "2006_japan_tv_research_20261029",
+      "verificationUrl": "https://www.oricon.co.jp/prof/272498/tv/",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T23:36:11+09:00",
+      "sourceUrls": [
+        "https://www.oricon.co.jp/prof/272498/tv/"
+      ]
+    },
+    {
+      "id": "japan-tv:2006-06-10:smastation5",
+      "date": "2006-06-10",
+      "precision": "day",
+      "chapter": "chapter2",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "TV아사히 《SmaSTATION-5》 — 신화 출연",
+      "verification": "오리콘 출연 편성 정보 및 당대 현장 관람자 예고 대조",
+      "source": "ORICON NEWS · 2006년 일본 현장 기록",
+      "sourceUrl": "https://www.oricon.co.jp/prof/272498/tv/",
+      "referenceVideoUrl": null,
+      "sourceNote": "오리콘에 2006년 6월 10일 23:30~24:24 TV아사히 《SmaSTATION-5》 신화 출연이 기재되어 있습니다. 같은 날 일본 팬의 《ワンナイR&R》 녹화 관람 후기에도 《SmaSTATION》 생방송 출연이 예고되어 있습니다.",
+      "dateKind": "일본 현지 TV 방송일",
+      "sourceRecord": "2006_japan_tv_research_20261029",
+      "verificationUrl": "https://www.oricon.co.jp/prof/272498/tv/",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T23:36:11+09:00",
+      "sourceUrls": [
+        "https://www.oricon.co.jp/prof/272498/tv/",
+        "https://pagpag.seesaa.net/article/19061877.html"
+      ]
+    },
+    {
+      "id": "japan-tv:2006-06-21:wan-nai-rnr",
+      "date": "2006-06-21",
+      "precision": "day",
+      "chapter": "chapter2",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "후지TV 《水10！ワンナイR&R》 — 신화 출연",
+      "verification": "2006.06.22 방송 직후 시청 후기 및 06.10 녹화 관람 후기 대조",
+      "source": "2006년 일본 현지 시청·녹화 관람 기록",
+      "sourceUrl": "https://plaza.rakuten.co.jp/yongjun0929/diary/200606220000/",
+      "referenceVideoUrl": null,
+      "sourceNote": "2006년 6월 22일에 작성된 일본 시청 후기에서 전날 밤 방송된 《ワンナイR&R》에 신화가 출연했다고 기록합니다. 한국 축구 대표팀 유니폼을 입고 축구공을 차는 코너 장면도 묘사되어 있습니다. 6월 10일 현장 녹화 관람 기록에도 신화 6명의 참여가 확인됩니다. 해당 날짜의 방송사 편성표 원본은 확보되지 않았으나 두 당대 기록의 날짜·내용이 일치합니다. 같은 날 발매된 《ワンナイR&R》 DVD 11권은 별개 상품으로, 방송일의 근거로 사용하지 않았습니다.",
+      "dateKind": "일본 현지 TV 방송일",
+      "sourceRecord": "2006_japan_tv_research_20261029",
+      "verificationUrl": "https://plaza.rakuten.co.jp/yongjun0929/diary/200606220000/",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T23:36:11+09:00",
+      "sourceUrls": [
+        "https://plaza.rakuten.co.jp/yongjun0929/diary/200606220000/",
+        "https://pagpag.seesaa.net/article/19061877.html"
+      ]
+    },
+    {
+      "id": "japan-tv:2006-07-03:popjam-dx",
+      "date": "2006-07-03",
+      "precision": "day",
+      "chapter": "chapter2",
+      "category": "방송",
+      "subject": "신화 전체",
+      "title": "NHK 《POP JAM DX》 제3회 — 신화 출연",
+      "verification": "당시 일본 방송 시청 예정 기록·프로그램 출연진 목록 일치",
+      "source": "2006년 일본 방송 기록 · 《POP JAM DX》 회차 목록",
+      "sourceUrl": "https://pagpag.seesaa.net/article/20073918.html",
+      "referenceVideoUrl": null,
+      "sourceNote": "2006년 7월 2일 일본의 방송 예약 기록에서 다음 날 22:00 NHK 《POP JAM DX》의 신화 출연을 안내하고 있습니다. 해당 프로그램의 제3회 출연진 목록에도 신화가 기재되어 있으며, 7월 8일 재방송 정보가 있습니다. 개별 무대 곡명과 정확한 재생 구간은 별도 확인되지 않았습니다.",
+      "dateKind": "일본 현지 TV 방송일",
+      "sourceRecord": "2006_japan_tv_research_20261029",
+      "verificationUrl": "https://pagpag.seesaa.net/article/20073918.html",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T23:36:11+09:00",
+      "sourceUrls": [
+        "https://pagpag.seesaa.net/article/20073918.html",
+        "https://wikippe.e-do-match.com/index.php?title=%E3%83%9D%E3%83%83%E3%83%97%E3%82%B8%E3%83%A3%E3%83%A0"
+      ]
     }
   ],
   "researchSources": [
