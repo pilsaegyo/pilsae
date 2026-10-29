@@ -495,3 +495,11 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 .reset-filters{display:block;margin:0 0 12px auto;padding:6px 10px;border:1px solid var(--history-line);border-radius:8px;background:var(--history-surface);color:var(--history-muted);font:inherit;font-size:12px;cursor:pointer}
 
 .scope-help{font-size:12px;color:var(--history-muted);line-height:1.6;margin:4px 0 8px}.history-scope{font-size:12px;color:var(--history-lavender-deep);line-height:1.6;margin:0 0 18px;overflow-wrap:anywhere}.all-chapters[aria-pressed="true"]{font-weight:700}
+
+/* Keep filter actions aligned and comfortably tappable on narrow screens. */
+.filter-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;margin-top:12px}
+.filter-actions .video-only-filter{display:flex;flex:1 1 185px;min-width:0;min-height:44px;box-sizing:border-box;margin:0;padding:8px 0;line-height:1.5}
+.filter-actions .video-only-filter input{flex:none;width:18px;height:18px}
+.filter-actions .video-only-filter span{min-width:0;overflow-wrap:anywhere}
+.filter-actions .reset-filters{flex:none;min-height:44px;margin:0 0 0 auto;box-sizing:border-box}
+.filter-actions .reset-filters:focus-visible{outline:2px solid var(--history-lavender-deep);outline-offset:3px}
