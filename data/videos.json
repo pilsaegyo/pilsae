@@ -21,7 +21,10 @@
       "playlistCandidate": false,
       "firstSeenAt": "2026-10-25T11:00:56.086Z",
       "dates": [],
-      "ignoredDateCandidates": []
+      "ignoredDateCandidates": [],
+      "previousManualDates": [],
+      "manualDateReviewPending": false,
+      "descriptionChangedAfterManual": false
     },
     {
       "id": "G5KW2QTovVg",
@@ -1334,8 +1337,8 @@
     {
       "id": "B2K3NZjCEQE",
       "title": "2001년 초겨울, 한강 고수부지에서",
-      "description": "제목 : [직캠] 20011103 - 신화 - Hey, Come On!\n채널 : 셩공시대님\n링크 : https://youtu.be/eHESZPaFqAg?si=ImpGZQgJvU8Ay1UR\n\n제목 : [직캠] 20011103 - interview\n채널 : 셩공시대님 (영상-말랑동완님 제공)\n링크 : https://youtu.be/BUFEBuaNOa0?si=evOTljrqbiQNfap7\n\n제목 : [직캠] 20011103 - 신화 - Wild Eyes\n채널 : 셩공시대님\n링크 : https://youtu.be/amsZ-7ySrso?si=Ytgo5jEgOuPMh5z8\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-      "source": "제목 : [직캠] 20011103 - 신화 - Hey, Come On!",
+      "description": "011103 서울시민건강주간콘서트\n\n제목 : [직캠] 20011103 - 신화 - Hey, Come On!\n채널 : 셩공시대님\n링크 : https://youtu.be/eHESZPaFqAg?si=ImpGZQgJvU8Ay1UR\n\n제목 : [직캠] 20011103 - interview\n채널 : 셩공시대님 (영상-말랑동완님 제공)\n링크 : https://youtu.be/BUFEBuaNOa0?si=evOTljrqbiQNfap7\n\n제목 : [직캠] 20011103 - 신화 - Wild Eyes\n채널 : 셩공시대님\n링크 : https://youtu.be/amsZ-7ySrso?si=Ytgo5jEgOuPMh5z8\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+      "source": "011103 서울시민건강주간콘서트",
       "sourceDate": null,
       "publishedAt": "2026-08-07T10:30:30Z",
       "thumbnail": "https://i.ytimg.com/vi/B2K3NZjCEQE/maxresdefault.jpg",
@@ -17722,7 +17725,7 @@
     }
   ],
   "total": 657,
-  "generatedAt": "2026-10-25T12:24:57.011Z",
+  "generatedAt": "2026-10-29T11:00:58.401Z",
   "channel": {
     "id": "UCkADdcHS6OVBu560xRW1EXA",
     "title": "필새",
