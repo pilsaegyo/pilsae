@@ -487,3 +487,9 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 .source-section-title{margin:13px 0 5px;font-size:11px;color:var(--history-text)}
 .verification-help{padding:8px 9px;border-left:2px solid var(--history-lavender);background:var(--history-lavender-soft);border-radius:0 6px 6px 0}
 .verification-label{white-space:nowrap}.verification-label.confirmed{color:#3b7162}
+
+.data-load-status{margin:14px 0;padding:10px 12px;border:1px solid var(--history-line);border-radius:10px;color:var(--history-muted);font-size:12px;line-height:1.6}
+.data-load-status[hidden]{display:none}
+.data-load-status button,#retryHistory{padding:6px 10px;border:1px solid var(--history-line);border-radius:7px;background:var(--history-surface);color:var(--history-lavender-deep);font:inherit;cursor:pointer}
+
+.reset-filters{display:block;margin:0 0 12px auto;padding:6px 10px;border:1px solid var(--history-line);border-radius:8px;background:var(--history-surface);color:var(--history-muted);font:inherit;font-size:12px;cursor:pointer}

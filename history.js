@@ -5,10 +5,10 @@ const safe = value => String(value ?? "").replace(/[&<>"']/g, char => ({'&':'&am
 const DAY = /^\d{4}-\d{2}-\d{2}$/;
 const pad2 = x => String(x).padStart(2,'0');
 const validDay = (y,m,d) => { const date=new Date(Date.UTC(y,m-1,d)); return date.getUTCFullYear()===y && date.getUTCMonth()===m-1 && date.getUTCDate()===d; };
-const qs=new URLSearchParams(location.search);
 let events=[],chapters=[],researchSources=new Map(),eventAliases={},filtered=[],activeChapter='chapter1',pageSize=70,visibleCount=70,highlightEvent='',explicitDate='';
 let viewMode='list',calendarMonth='',selectedCalendarDate='';
 const videoById=new Map();
+let historyReady=false,restoringHistory=false,expiryTimer=null,searchTimer=null;
 // Archive timeline date extraction mirrors the main archive's description parser.
 // Embedded here to avoid an additional deployable JavaScript asset.
 const HistoryArchiveDates = (() => {
@@ -530,7 +530,7 @@ function buildChapterButtons() {
    applyChapter();
  });
 }
-function applyChapter(){
+function applyChapter(render=true){
  for(const btn of document.querySelectorAll('[data-chapter]')){
    const chosen=btn.dataset.chapter===activeChapter;
    btn.classList.toggle('active',chosen);btn.setAttribute('aria-pressed',String(chosen));
@@ -539,7 +539,7 @@ function applyChapter(){
  const selected=$('#year').value;
  $('#year').innerHTML='<option value="">전체 연도</option>'+years.map(y=>`<option value="${safe(y)}">${safe(y)}년</option>`).join('');
  if(years.includes(selected)) $('#year').value=selected;
- resetAndRender();
+ if(render)resetAndRender();
 }
 function normalizeSubject(s){
  if(s==='신화 전체')return 'group';
@@ -564,24 +564,26 @@ const VERIFICATION_GROUPS=[
  ['원문 미확보','확인에 필요한 원문이나 방송 원본을 확보하지 못한 부분이 있습니다.'],
  ['원문 기록','기존 원문에 기재된 기록입니다. 독립검증 완료를 뜻하지 않습니다.'],
  ['독립 검증 전','원본 기록·영상 제목·설명 등의 단서가 있으며 독립적인 확인이 남아 있습니다.'],
- ['검토 보류','판정을 보류한 기록입니다. 상세 사유를 확인하세요.']
+ ['검토 보류','판정을 보류한 기록입니다. 상세 사유를 확인하세요.'],
+ ['상태 분류 필요','표시 상태 코드가 없거나 유효하지 않습니다. 기존 상세 판정을 확인하세요.']
 ];
-function verificationGroup(e){
- const raw=String(e.verification||'').trim();
- if(/충돌|자료 간 차이/.test(raw))return '날짜 충돌';
- if(/보류|검증 불가/.test(raw))return '검토 보류';
- if(/원문 미확보|원본 미확보|원문 직접 미확인|원문 직접 미확보|접근 불가/.test(raw))return '원문 미확보';
- if(/예정|예고|사전 보도/.test(raw))return '예정 자료 확인';
- if(/(?:일자|날짜|방송일|촬영일|공연일|편성일|송출일|수상일|시각)[^/·|]{0,16}(?:미확정|미확인|미상|확인 전)|정확한[^/·|]{0,12}미확정/.test(raw))return '날짜 미확정';
- if(/^(?:독립 ?검증 완료|검증 완료)$/.test(raw))return '독립검증 완료';
- if(/^원문 기록(?:$|[ |·])/.test(raw))return '원문 기록';
- if(/검증 전|확인 전|미검증|메타데이터만|설명만|표제 기준|표제 기재|영상 설명.*미확인/.test(raw)||!raw)return '독립 검증 전';
- return '일부 확인';
-}
+const VERIFICATION_CODES={verified:'독립검증 완료',partial:'일부 확인',announced:'예정 자료 확인',date_uncertain:'날짜 미확정',date_conflict:'날짜 충돌',source_unavailable:'원문 미확보',original_record:'원문 기록',pending:'독립 검증 전',on_hold:'검토 보류'};
+function verificationGroup(e){return VERIFICATION_CODES[e.verificationDisplayCode]||'상태 분류 필요';}
 function verificationHelp(group){return VERIFICATION_GROUPS.find(([label])=>label===group)?.[1]||'';}
+function normalizeHistorySearch(value){return String(value||'').normalize('NFKC').toLocaleLowerCase().replace(/\s+/g,'');}
+function matchesHistorySearch(e,query){
+ if(!query)return true;
+ const compact=String(query).trim().replace(/[.\/\-\s]/g,'');
+ if(/^\d{6}$|^\d{8}$/.test(compact)){
+   const long=compact.length===6?`${Number(compact.slice(0,2))<=29?'20':'19'}${compact}`:compact;
+   const year=Number(long.slice(0,4)),month=Number(long.slice(4,6)),day=Number(long.slice(6));
+   if(validDay(year,month,day)){const date=`${year}-${pad2(month)}-${pad2(day)}`;return e.precision==='day'&&(e.date===date||(e.conflictingDates||[]).includes(date));}
+ }
+ return normalizeHistorySearch([e.title,e.date,e.category,e.subject,e.sourceNote,e.verification,verificationGroup(e)].join(' ')).includes(normalizeHistorySearch(query));
+}
 function selectRows(){
- const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim().toLocaleLowerCase();
- filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||verificationGroup(e)===verification)&&(!$('#withVideos').checked||hasEventVideo(e))&&(!q||[e.title,e.date,e.category,e.subject,e.sourceNote].join(' ').toLocaleLowerCase().includes(q)));
+ const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim();
+ filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||verificationGroup(e)===verification)&&(!$('#withVideos').checked||hasEventVideo(e))&&matchesHistorySearch(e,q));
 }
 function chronologicalKey(e){
   const year=e.date.slice(0,4);
@@ -922,7 +924,7 @@ function renderItems(){
   $('#events').hidden=false;$('#calendar').hidden=true;
   const to=filtered.slice(0,visibleCount),last=to.length;
   $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · 현재 ${last.toLocaleString('ko-KR')}건 표시 · 일부 자료는 날짜·내용 검증 전`;
-  if(!last){updateReadingYear();$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
+  if(!last){updateReadingYear();$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;persistHistoryView();return;}
   let prev='';
   $('#events').innerHTML=to.map(e=>{
     const header=monthHeading(e,prev);prev=headingKey(e);
@@ -930,6 +932,7 @@ function renderItems(){
   }).join('');
   $('#loadMore').hidden=filtered.length<=last;
   updateReadingYear();
+  persistHistoryView();
   if(highlightEvent){document.getElementById('event-'+highlightEvent)?.classList.add('focused-event');}
 }
 function calendarRange(){
@@ -1008,6 +1011,7 @@ function renderCalendar(){
   $('#calMonth').addEventListener('change',selectCalendarMonth);
   for(const btn of $('#calendar').querySelectorAll('[data-date]'))btn.addEventListener('click',()=>{selectedCalendarDate=btn.dataset.date;renderCalendar();$('#calendar').querySelector(`[data-date=\"${selectedCalendarDate}\"]`)?.focus({preventScroll:true});});
   if(highlightEvent)document.getElementById('event-'+highlightEvent)?.classList.add('focused-event');
+  persistHistoryView();
 }
 function renderPage(){document.dispatchEvent(new Event('history-view-change'));if(viewMode==='calendar')renderCalendar();else renderItems();updateReadingYear();}
 function changeView(next){
@@ -1018,34 +1022,93 @@ function changeView(next){
   renderPage();
 }
 function resetAndRender(){visibleCount=pageSize;selectRows();if(highlightEvent){const at=filtered.findIndex(e=>e.id===highlightEvent);if(at>=visibleCount)visibleCount=Math.ceil((at+1)/pageSize)*pageSize;}renderPage();}
+async function requestHistoryJSON(url,timeout=6000){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeout);
+ try{const response=await fetch(url,{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error(`HTTP ${response.status}`);return await response.json();}finally{clearTimeout(timer);}
+}
+function setVideoLoadMessage(failed){
+ const status=$('#videoLoadStatus');status.hidden=!failed;
+ if(failed)status.innerHTML='영상 추천을 불러오지 못했습니다. 연혁과 기존 근거 링크는 볼 수 있습니다. '+'<button type="button" id="retryVideos">영상 추천 다시 불러오기</button>';
+ $('#retryVideos')?.addEventListener('click',()=>loadOptionalVideos());
+}
+async function loadOptionalVideos(){
+ const button=$('#retryVideos');if(button)button.disabled=true;
+ try{
+  const data=await requestHistoryJSON('./data/videos.json');
+  if(!Array.isArray(data.videos))throw new Error('영상 자료 형식 오류');
+  videoById.clear();for(const video of data.videos){const id=String(video.id||'');if(/^[A-Za-z0-9_-]{11}$/.test(id))videoById.set(id,video);}
+  generateRuntimeRecommendations(data.videos);setVideoLoadMessage(false);
+  if(historyReady)refreshHistoryInPlace();
+ }catch{setVideoLoadMessage(true);}
+}
+function saveHistoryScroll(){
+ if(historyReady)history.replaceState({...history.state,historyView:true,scrollY:window.scrollY},'',location.href);
+}
+function persistHistoryView(replace=false){
+ if(!historyReady||restoringHistory)return;
+ const url=new URL(location.href),values={chapter:activeChapter||'all',year:$('#year').value,category:$('#category').value,subject:$('#subject').value,verification:$('#verification').value,q:$('#search').value,video:$('#withVideos').checked?'1':'',view:viewMode==='calendar'?'calendar':'',month:viewMode==='calendar'?calendarMonth:'',day:viewMode==='calendar'?selectedCalendarDate:'',limit:visibleCount>pageSize?String(visibleCount):'',event:highlightEvent,date:explicitDate};
+ for(const [key,value]of Object.entries(values)){if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);}
+ const state={...history.state,historyView:true,scrollY:window.scrollY};
+ if(url.href===location.href||replace)history.replaceState(state,'',url);else history.pushState(state,'',url);
+}
+function restoreHistoryView(scroll=false){
+ restoringHistory=true;clearTimeout(searchTimer);
+ const query=new URLSearchParams(location.search);
+ explicitDate=DAY.test(query.get('date')||'')?query.get('date'):'';
+ highlightEvent=eventAliases[query.get('event')||'']||query.get('event')||'';
+ const linked=events.find(e=>e.id===highlightEvent)||events.find(e=>e.date===explicitDate);
+ const chapter=query.get('chapter');activeChapter=chapter==='all'?'':chapters.some(c=>c.id===chapter)?chapter:(linked?.chapter||'chapter1');
+ for(const id of ['year','category','subject','verification','search']){
+  const value=query.get(id==='search'?'q':id)||'';
+  if(id==='search')$('#'+id).value=value;else if(id!=='year')$('#'+id).value=[...$('#'+id).options].some(o=>o.value===value)?value:'';
+ }
+ $('#withVideos').checked=query.get('video')==='1';
+ const savedCount=Number(query.get('limit'));visibleCount=Number.isFinite(savedCount)&&savedCount>=pageSize?Math.min(Math.floor(savedCount),events.length):pageSize;
+ applyChapter(false);
+ const year=query.get('year')||'';$('#year').value=[...$('#year').options].some(o=>o.value===year)?year:'';
+ viewMode=query.get('view')==='calendar'?'calendar':'list';calendarMonth=/^\d{4}-(0[1-9]|1[0-2])$/.test(query.get('month')||'')?query.get('month'):'';
+ const day=query.get('day')||'';selectedCalendarDate=/^\d{4}-\d{2}-(?:\d{2}|unknown)$/.test(day)?day:'';
+ selectRows();if(highlightEvent){const index=filtered.findIndex(e=>e.id===highlightEvent);if(index>=visibleCount)visibleCount=Math.ceil((index+1)/pageSize)*pageSize;}
+ changeView(viewMode);
+ $('.date-filter-hint').hidden=!(explicitDate||highlightEvent);
+ $('.date-filter-hint span').textContent=explicitDate?`${explicitDate} 날짜로 필터 중`:'연결된 일정 표시 중';
+ restoringHistory=false;
+ if(scroll){const y=history.state?.historyView?history.state.scrollY:0;requestAnimationFrame(()=>window.scrollTo(0,y||0));}
+}
+function refreshHistoryInPlace(){
+ const y=window.scrollY;restoringHistory=true;
+ selectRows();renderPage();restoringHistory=false;persistHistoryView(true);
+ window.scrollTo(0,y);
+}
+function setupHistoryNavigation(){
+ if('scrollRestoration'in history)history.scrollRestoration='manual';
+ let scrollTimer;window.addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(saveHistoryScroll,100);},{passive:true});
+ window.addEventListener('pagehide',saveHistoryScroll);
+ window.addEventListener('popstate',()=>restoreHistoryView(true));
+}
 async function init(){
  try{
-  const [h,v]=await Promise.all([fetch('./data/history.json',{cache:'no-store'}),fetch('./data/videos.json',{cache:'no-store'})]);
-  if(!h.ok||!v.ok) throw new Error('원본 자료 요청에 실패했습니다.');
-  const hd=await h.json(),vd=await v.json();events=Array.isArray(hd.events)?hd.events:[];chapters=Array.isArray(hd.chapters)?hd.chapters:[];eventAliases=hd.metadata?.legacyEventAliases||{};researchSources=new Map((hd.researchSources||[]).map(s=>[s.id,s]));
-  for(const video of vd.videos||[]){
-   const id=String(video.id||'');if(/^[A-Za-z0-9_-]{11}$/.test(id))videoById.set(id,video);
-
-  }
-  const matchingStats=generateRuntimeRecommendations(vd.videos||[]);
-  console.info('[활동 연표] 실시간 영상 후보 점검:', matchingStats);
+  const hd=await requestHistoryJSON('./data/history.json');
+  if(!Array.isArray(hd.events)||!Array.isArray(hd.chapters))throw new Error('연혁 자료 형식 오류');
+  events=hd.events;chapters=hd.chapters;eventAliases=hd.metadata?.legacyEventAliases||{};researchSources=new Map((hd.researchSources||[]).map(s=>[s.id,s]));
   events.sort((a,b)=>chronologicalKey(a).localeCompare(chronologicalKey(b))||String(a.id).localeCompare(String(b.id)));
-  explicitDate=DAY.test(qs.get('date')||'')?qs.get('date'):'';
-  highlightEvent=eventAliases[qs.get('event')||'']||qs.get('event')||'';
-  if(highlightEvent){const selected=events.find(e=>e.id===highlightEvent);if(selected){activeChapter=selected.chapter;}}
-  else if(explicitDate){const record=events.find(e=>e.date===explicitDate || (e.conflictingDates||[]).includes(explicitDate));if(record)activeChapter=record.chapter;}
   for(const c of [...new Set(events.map(e=>e.category))].sort()) $('#category').add(new Option(c,c));
-  for(const [label] of VERIFICATION_GROUPS){const count=events.filter(e=>verificationGroup(e)===label).length;if(count)$('#verification').add(new Option(`${label} (${count.toLocaleString('ko-KR')}건)`,label));}
+  for(const [label] of VERIFICATION_GROUPS){const count=events.filter(e=>verificationGroup(e)===label).length;if(count)$('#verification').add(new Option(`${label} (전체 ${count.toLocaleString('ko-KR')}건)`,label));}
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();
-  buildChapterButtons();applyChapter();setupChapterDisclosure();
+  buildChapterButtons();restoreHistoryView();setupChapterDisclosure();
   if(!reducedHistoryMotion()){
     $('#events').classList.add('history-enter');
     window.setTimeout(()=>$('#events').classList.remove('history-enter'),750);
   }
   refreshNewBadgeExpiry();
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden)resetAndRender();});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden){refreshHistoryInPlace();refreshNewBadgeExpiry();}});
   const filtersChanged=()=>{calendarMonth='';selectedCalendarDate='';resetAndRender();};
   $('#withVideos').addEventListener('change',filtersChanged);
+  $('#resetFilters').addEventListener('click',()=>{
+    clearTimeout(searchTimer);saveHistoryScroll();explicitDate='';highlightEvent='';activeChapter='';calendarMonth='';selectedCalendarDate='';
+    for(const id of ['year','category','subject','verification','search'])$('#'+id).value='';
+    $('#withVideos').checked=false;$('.date-filter-hint').hidden=true;applyChapter();
+  });
   $('#subject').addEventListener('change',()=>{
     if($('#subject').value==='new'){
       activeChapter='';
@@ -1053,7 +1116,8 @@ async function init(){
       applyChapter();
     }else filtersChanged();
   });
-  for(const key of ['year','category','verification','search']) $('#'+key).addEventListener(key==='search'?'input':'change',filtersChanged);
+  for(const key of ['year','category','verification']) $('#'+key).addEventListener('change',()=>{saveHistoryScroll();filtersChanged();});
+  $('#search').addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>{saveHistoryScroll();filtersChanged();},200);});
   $('#year').addEventListener('change',()=>{
     const target=viewMode==='calendar'?$('#calendar'):$('#events').querySelector('.month-title');
     if(!target)return;
@@ -1066,21 +1130,22 @@ async function init(){
   $('#listView').addEventListener('click',()=>changeView('list'));
   $('#calendarView').addEventListener('click',()=>changeView('calendar'));
   $('#loadMore').addEventListener('click',()=>{visibleCount+=pageSize;renderItems();});
-  if(explicitDate||highlightEvent){
-    $('.date-filter-hint').hidden=false;
-    $('.date-filter-hint span').textContent=explicitDate?`${explicitDate} 날짜로 필터 중`:'기존 영상에서 연결된 일정 표시 중';
-    if(highlightEvent){const chosen=events.find(e=>e.id===highlightEvent);if(chosen){activeChapter=chosen.chapter;applyChapter();}}
-  }
-  if(highlightEvent){document.getElementById('event-'+highlightEvent)?.scrollIntoView({block:'center'});}
- }catch(err){$('#events').innerHTML=`<p class="empty">활동 연표를 불러오지 못했습니다. ${safe(err.message)}</p>`;}finally{$('#events').setAttribute('aria-busy','false');}
+  historyReady=true;setupHistoryNavigation();
+  const restoreScroll=history.state?.historyView?history.state.scrollY:null;
+  persistHistoryView(true);
+  if(restoreScroll!==null&&restoreScroll!==undefined)requestAnimationFrame(()=>window.scrollTo(0,restoreScroll));
+  else if(highlightEvent)document.getElementById('event-'+highlightEvent)?.scrollIntoView({block:'center'});
+  loadOptionalVideos();
+ }catch(err){$('#events').innerHTML=`<p class="empty">활동 연표를 불러오지 못했습니다. ${safe(err.message)}</p><button type="button" id="retryHistory">연혁 다시 불러오기</button>`;$('#retryHistory').addEventListener('click',()=>location.reload());}finally{$('#events').setAttribute('aria-busy','false');}
 }
 function refreshNewBadgeExpiry(){
+ clearTimeout(expiryTimer);
  const now=Date.now();
  const expires=events.map(e=>Date.parse(String(e.registeredAt||''))+NEW_WINDOW_MS)
    .filter(t=>Number.isFinite(t)&&t>now).sort((a,b)=>a-b);
  if(!expires.length)return;
  // one-shot scheduled refresh, then re-arm for any later batch
- window.setTimeout(()=>{resetAndRender();refreshNewBadgeExpiry();},Math.max(1,Math.min(expires[0]-now+30,2147483647)));
+ expiryTimer=window.setTimeout(()=>{refreshHistoryInPlace();refreshNewBadgeExpiry();},Math.max(1,Math.min(expires[0]-now+30,2147483647)));
 }
 function setupBackToTop(){
   const button=$('#backToTop');
