@@ -1003,6 +1003,10 @@ async function init(){
   for(const c of [...new Set(events.map(e=>e.verification))].sort()) $('#verification').add(new Option(c,c));
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();
   buildChapterButtons();applyChapter();
+  if(!reducedHistoryMotion()){
+    $('#events').classList.add('history-enter');
+    window.setTimeout(()=>$('#events').classList.remove('history-enter'),750);
+  }
   refreshNewBadgeExpiry();
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)resetAndRender();});
   const filtersChanged=()=>{calendarMonth='';selectedCalendarDate='';resetAndRender();};
@@ -1033,7 +1037,7 @@ async function init(){
     if(highlightEvent){const chosen=events.find(e=>e.id===highlightEvent);if(chosen){activeChapter=chosen.chapter;applyChapter();}}
   }
   if(highlightEvent){document.getElementById('event-'+highlightEvent)?.scrollIntoView({block:'center'});}
- }catch(err){$('#events').innerHTML=`<p class="empty">활동 연표를 불러오지 못했습니다. ${safe(err.message)}</p>`;}
+ }catch(err){$('#events').innerHTML=`<p class="empty">활동 연표를 불러오지 못했습니다. ${safe(err.message)}</p>`;}finally{$('#events').setAttribute('aria-busy','false');}
 }
 function refreshNewBadgeExpiry(){
  const now=Date.now();
