@@ -3776,7 +3776,7 @@
       "title": "쇼! 뮤직탱크",
       "verification": "영상 메타데이터·독립 검증 전",
       "source": "보유 유튜브 영상 메타데이터",
-      "sourceNote": "영상의 제목·원본 출처·설명에 기록된 날짜와 프로그램명을 근거로 등록. 방송사 공식 회차·방송일 검증 전이며 실제 방송일 또는 편집 영상일 수 있습니다. 표제의 \"영상 아카이브에서 확인된 방송 기록\"은 편집상 주석이며 방송일 독립 검증을 의미하지 않음.",
+      "sourceNote": "영상의 제목·원본 출처·설명에 기록된 날짜와 프로그램명을 근거로 등록. 방송사 공식 회차·방송일 검증 전이며 실제 방송일 또는 편집 영상일 수 있습니다. 표제의 \"영상 아카이브에서 확인된 방송 기록\"은 편집상 주석이며 방송일 독립 검증을 의미하지 않음.\n1999년 5월 24일 매일경제는 5월 29일 서울 경원대학교에서 《쇼! 뮤직탱크》 전국투어 제1탄 공개녹화가 예정됐으며, 신화를 출연진으로 소개했습니다. 6월 5일 오후 10시 방송 예정으로 안내됐습니다. 연결된 팬영상이 해당 공개녹화 장면인지는 확인되지 않았습니다.",
       "dateKind": "영상 메타데이터상의 콘텐츠 날짜",
       "referenceVideoUrls": [
         "https://www.youtube.com/watch?v=bd-dt6v1m1M"
@@ -3788,7 +3788,9 @@
           "rawSource": "990529 쇼탱"
         }
       ],
-      "sourceRefs": [],
+      "sourceRefs": [
+        "kmresearch-20261029-mk-19990524"
+      ],
       "recordCount": 1,
       "archiveVideoIds": [
         "bd-dt6v1m1M"
@@ -7689,6 +7691,27 @@
           "note": "셩공시대님 유투브 채널 재게시 영상의 원제목과 기존 일정의 프로그램·행사 정보를 대조한 참고 링크입니다. 실제 송출·녹화일 및 원영상 장면은 별도 독립 검증 전입니다."
         }
       ]
+    },
+    {
+      "id": "music-tank-research:20261029:2000-06-10-asem-recording",
+      "date": "2000-06-10",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송녹화",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 — 강남 아셈타워 공개녹화 (신화 출연 예정)",
+      "verification": "당시 신문에 신화 출연 예정·녹화 장소와 시각 기재",
+      "source": "경남신문 (2000.06.03)",
+      "sourceUrl": "https://www.knnews.co.kr/news/articleView.php?idxno=251373",
+      "sourceNote": "2000년 6월 3일 경남신문은 KMTV가 6월 10일 오후 7시 강남 아셈타워에서 공개녹화 콘서트를 열며, 신화가 컴백무대 출연진에 포함된다고 보도했습니다. 6월 17일 오후 10시 방송 예정으로 안내됐습니다. 당시 현장 영상 및 실제 방송 장면은 확인되지 않아 출연 예정 기록으로 남깁니다.",
+      "dateKind": "당시 신문에 공지된 공개녹화 예정일 (방송 예정일 2000.06.17)",
+      "sourceRecord": "경남신문 2000.06.03 당시 기사",
+      "sourceRefs": [
+        "kmresearch-20261029-kn-20000603"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T15:05:00+09:00"
     },
     {
       "id": "history:p0047",
@@ -22905,6 +22928,33 @@
       ]
     },
     {
+      "id": "music-tank-research:20261029:2002-06-19-kmtv-recording",
+      "date": "2002-06-19",
+      "precision": "day",
+      "chapter": "chapter1",
+      "transition": "",
+      "category": "방송녹화",
+      "subject": "신화 전체",
+      "title": "KMTV 《쇼! 뮤직탱크》 — 신화 출연 명단·공개녹화",
+      "verification": "당시 팬 일정의 녹화 출연 명단 / 방송 예정일 자료 간 차이",
+      "source": "당시 팬 일정표 및 KMTV 편성 안내",
+      "sourceUrl": "https://incrediblerain.blogspot.com/2011/11/rain-kronika-20020619.html",
+      "sourceUrls": [
+        "https://www.hankyung.com/article/2002062014791",
+        "https://incrediblerain.blogspot.com/2011/12/rain-kronika-20020705.html"
+      ],
+      "sourceNote": "2002년 6월 19일 오후 6시 KMTV 공개홀 《쇼! 뮤직탱크》 녹화 예정 출연진에 신화가 기재돼 있습니다. 팬 일정표의 본방송 예정일은 6월 20일 오후 10시이지만, 당시 편성 소개 기사에는 6월 21일 오후 10시 신화 출연 방송으로 안내돼 있습니다. 정확한 본방송일과 해당 회차의 무대곡은 원본 대조가 필요합니다.",
+      "dateKind": "팬 일정표의 2002.06.19 녹화 예정일 (방송일 06.20/06.21 충돌)",
+      "sourceRecord": "Rain In My Heart 보존 팬 일정표 / 한국경제 편성 소개",
+      "sourceRefs": [
+        "kmresearch-20261029-rain-schedule-20020619",
+        "kmresearch-20261029-hankyung-20020621",
+        "kmresearch-20261029-etnews-20020705"
+      ],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T15:05:00+09:00"
+    },
+    {
       "id": "sheet:02!171",
       "date": "2002-06-20",
       "precision": "day",
@@ -34535,11 +34585,13 @@
       "source": "SHINHWA ARCHIVE 자료",
       "sourceUrl": "https://docs.google.com/spreadsheets/d/1xVBIDkrj-8NdkVF4Krb5F5a0eD8giJJQp6YPBpiCYO4/edit#gid=2057869248&range=A420:D420",
       "referenceVideoUrl": null,
-      "sourceNote": "",
+      "sourceNote": "2004년 9월 17일 경남신문은 9월 18일 오후 7시 창원시청 앞 광장에서 《쇼! 뮤직탱크》 공개녹화가 예정됐으며, 신화가 〈Brand New〉·〈Angel〉·〈Shooting Star〉를 선보일 예정이라고 보도했습니다. 해당 녹화가 이 9월 24일 방송과 동일한 회차인지는 방송 원본을 통해 확인되지 않았습니다.",
       "dateKind": "원본 기재일(방송·녹화·게시 구분 미확인)",
       "sourceRecord": "04!420",
       "verificationUrl": null,
-      "sourceRefs": [],
+      "sourceRefs": [
+        "kmresearch-20261029-kn-20040917"
+      ],
       "recordCount": 1,
       "fanVideoSources": [
         {
@@ -79388,6 +79440,54 @@
       "url": "https://myshinhwa.pixnet.net/blog/posts/2015125682",
       "kind": "후대 팬 편찬 · 보조 근거",
       "note": "2001년 3월 스타삼국대전 코너가 제작됐다는 팬 편찬 서술. 네 방송 날짜별 직접 증빙은 아니며 녹화와 방송은 구분해야 함."
+    },
+    {
+      "id": "kmresearch-20261029-kn-20000603",
+      "publisher": "경남신문",
+      "title": "2000.06.03 《쇼! 뮤직탱크》 강남 아셈타워 공개녹화 예고",
+      "url": "https://www.knnews.co.kr/news/articleView.php?idxno=251373",
+      "kind": "당시 기사 · 출연 예정 명단",
+      "note": "6월10일 19시 강남 아셈타워 신화 출연 예정, 6월17일 22시 방송 예정. 실제 현장 장면·방송원본 확인은 별개."
+    },
+    {
+      "id": "kmresearch-20261029-rain-schedule-20020619",
+      "publisher": "Rain In My Heart 팬 일정 기록(후대 보존)",
+      "title": "2002.06.19 KMTV 《쇼! 뮤직탱크》 녹화 출연진 기록",
+      "url": "https://incrediblerain.blogspot.com/2011/11/rain-kronika-20020619.html",
+      "kind": "팬 일정표 전재 · 출연 예정 명단",
+      "note": "6월19일 18시 KMTV 공개홀 녹화 명단에 신화. 본방 6월20일 22시로 표기했으나 요일/신문 6월21일 편성과 불일치."
+    },
+    {
+      "id": "kmresearch-20261029-hankyung-20020621",
+      "publisher": "한국경제",
+      "title": "《케이블·위성 하이라이트》 21일 《쇼! 뮤직탱크》 신화 출연 안내",
+      "url": "https://www.hankyung.com/article/2002062014791",
+      "kind": "당시 편성기사로 보이는 자료 · 현재 페이지 입력일 메타데이터 불일치 주의",
+      "note": "기사 주소는 2002.06.20 형태이며 21일 KMTV 22시 신화 출연 안내. 재게시 화면 입력일이 2006년으로 표시되어 발행일 검증 필요."
+    },
+    {
+      "id": "kmresearch-20261029-etnews-20020705",
+      "publisher": "전자신문",
+      "title": "2002.07.05 KMTV 편성 안내 — 《쇼! 뮤직탱크》 금요일 밤 10시",
+      "url": "https://incrediblerain.blogspot.com/2011/12/rain-kronika-20020705.html",
+      "kind": "당시 신문 기사 전재 · 정규 편성 참고",
+      "note": "매주 금요일 밤 10시라는 정규 편성 안내. 해당 회차 신화 출연의 직접 증거는 아님."
+    },
+    {
+      "id": "kmresearch-20261029-kn-20040917",
+      "publisher": "경남신문",
+      "title": "2004.09.17 창원 《쇼! 뮤직탱크》 공개녹화 및 신화 컴백무대 예고",
+      "url": "https://www.knnews.co.kr/news/articleView.php?gubun=sports&idxno=471391",
+      "kind": "당시 신문 · 녹화 행사 예고",
+      "note": "2004.09.18 창원시청 앞 광장 녹화 신화 출연 예정, 곡 Brand New·Angel·Shooting Star 언급. 현재 9월24일 방송 자료와 동일 회차 여부는 원본 대조 전."
+    },
+    {
+      "id": "kmresearch-20261029-mk-19990524",
+      "publisher": "매일경제",
+      "title": "1999.05.24 《쇼! 뮤직탱크》 전국투어 제1탄 경원대학교 출연진 예고",
+      "url": "https://www.mk.co.kr/news/economy/2088912",
+      "kind": "당시 신문 · 공개녹화 출연 예정",
+      "note": "1999.05.29 서울 경원대학교 공개녹화 출연진에 신화 기재, 6월5일 22시 방송 예정. 기존 팬영상과 동일 장면인지는 미확인."
     }
   ]
 }
