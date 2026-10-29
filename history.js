@@ -569,8 +569,8 @@ function monthHeading(e,previous) {
  const key=headingKey(e);
  if(key===previous)return '';
  return e.precision==='year'
-  ? `<h2 class="month-title">${safe(e.date.slice(0,4))}년 · 월·일 미상</h2>`
-  : `<h2 class="month-title">${safe(key.slice(0,4))}년 ${safe(Number(key.slice(5)))}월</h2>`;
+  ? `<h2 class="month-title" data-year="${safe(e.date.slice(0,4))}">${safe(e.date.slice(0,4))}년 · 월·일 미상</h2>`
+  : `<h2 class="month-title" data-year="${safe(e.date.slice(0,4))}">${safe(key.slice(0,4))}년 ${safe(Number(key.slice(5)))}월</h2>`;
 }
 // A full broadcast that covers the same performance makes the same uploader's
 // isolated clip unnecessary in the event's link panel. These pairs are curated
@@ -889,13 +889,14 @@ function renderItems(){
   $('#events').hidden=false;$('#calendar').hidden=true;
   const to=filtered.slice(0,visibleCount),last=to.length;
   $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · 현재 ${last.toLocaleString('ko-KR')}건 표시 · 일부 자료는 날짜·내용 검증 전`;
-  if(!last){$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
+  if(!last){updateReadingYear();$('#events').innerHTML='<p class="empty">조건에 맞는 일정이 없습니다.</p>';$('#loadMore').hidden=true;return;}
   let prev='';
   $('#events').innerHTML=to.map(e=>{
     const header=monthHeading(e,prev);prev=headingKey(e);
     return header+eventMarkup(e);
   }).join('');
   $('#loadMore').hidden=filtered.length<=last;
+  updateReadingYear();
   if(highlightEvent){document.getElementById('event-'+highlightEvent)?.classList.add('focused-event');}
 }
 function calendarRange(){
@@ -973,7 +974,7 @@ function renderCalendar(){
   for(const btn of $('#calendar').querySelectorAll('[data-date]'))btn.addEventListener('click',()=>{selectedCalendarDate=btn.dataset.date;renderCalendar();$('#calendar').querySelector(`[data-date=\"${selectedCalendarDate}\"]`)?.focus({preventScroll:true});});
   if(highlightEvent)document.getElementById('event-'+highlightEvent)?.classList.add('focused-event');
 }
-function renderPage(){document.dispatchEvent(new Event('history-view-change'));if(viewMode==='calendar')renderCalendar();else renderItems();}
+function renderPage(){document.dispatchEvent(new Event('history-view-change'));if(viewMode==='calendar')renderCalendar();else renderItems();updateReadingYear();}
 function changeView(next){
   if(next!=='list'&&next!=='calendar')return;
   viewMode=next;
@@ -1014,6 +1015,14 @@ async function init(){
     }else filtersChanged();
   });
   for(const key of ['year','category','verification','search']) $('#'+key).addEventListener(key==='search'?'input':'change',filtersChanged);
+  $('#year').addEventListener('change',()=>{
+    const target=viewMode==='calendar'?$('#calendar'):$('#events').querySelector('.month-title');
+    if(!target)return;
+    target.scrollIntoView({block:'start',behavior:reducedHistoryMotion()?'auto':'smooth'});
+    target.classList.remove('history-arrival');
+    void target.offsetWidth;
+    target.classList.add('history-arrival');
+  });
   $('#allChapters').addEventListener('click',()=>{activeChapter='';calendarMonth='';selectedCalendarDate='';$('#year').value='';applyChapter();});
   $('#listView').addEventListener('click',()=>changeView('list'));
   $('#calendarView').addEventListener('click',()=>changeView('calendar'));
@@ -1045,5 +1054,23 @@ function setupBackToTop(){
   });
   update();
 }
+function reducedHistoryMotion(){return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}
+function updateReadingYear(){
+  const badge=$('#readingYear');
+  if(!badge)return;
+  const headings=viewMode==='list'?[...$('#events').querySelectorAll('.month-title')]:[];
+  const boundary=100;
+  let current=null;
+  for(const heading of headings){if(heading.getBoundingClientRect().top<=boundary)current=heading;else break;}
+  badge.hidden=!current||$('#events').hidden||!filtered.length;
+  if(current)badge.textContent=`${current.dataset.year}년 · 활동 연표`;
+}
+function setupReadingYear(){
+  let scheduled=false;
+  const schedule=()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;updateReadingYear();});};
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+}
 setupBackToTop();
+setupReadingYear();
 init();

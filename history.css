@@ -425,3 +425,14 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 
 /* v54.1 — newly registered timeline event for the first 24 hours only. */
 .history-new-badge{display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;margin-left:8px;padding:2px 6px;border-radius:5px;border:1px solid light-dark(#a3b7e0,#6579a8);background:light-dark(#eaf1ff,#354767);color:light-dark(#31558e,#ecf3ff);font-size:10px;font-weight:800;line-height:1.25;letter-spacing:.04em;white-space:nowrap}
+
+/* Subtle navigation feedback, with no animation on individual schedule rows. */
+.month-title,.calendar-view{scroll-margin-top:90px}
+.reading-year{position:fixed;bottom:20px;left:16px;z-index:40;padding:7px 12px;border:1px solid var(--history-border,#d6cbe6);border-radius:999px;background:var(--history-surface,#fff);color:var(--history-lavender-deep,#665182);box-shadow:0 3px 14px #0001;font-size:12px;pointer-events:none}
+.reading-year[hidden]{display:none}
+.source-float.is-visible{animation:history-popup-in 180ms ease-out}
+.history-arrival{animation:history-arrival 1300ms ease-out}
+@keyframes history-popup-in{from{opacity:0;translate:0 6px}to{opacity:1;translate:0 0}}
+@keyframes history-arrival{from{background-color:#bfa2e84d;box-shadow:0 0 0 6px #bfa2e826}to{background-color:transparent;box-shadow:0 0 0 6px transparent}}
+@media(max-width:600px){.reading-year{bottom:14px;left:12px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.source-float.is-visible,.history-arrival{animation:none}}
