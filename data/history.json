@@ -965,6 +965,24 @@
       "newEvents": 3,
       "reviewedNoMatchVideos": 38,
       "publicationScope": "기념 편집·타 멤버 단독 활동 제외. 방송일 미확정은 영상 표제 기준으로 표시."
+    },
+    "broadcastDateFollowup20261029": {
+      "baseVisibleEvents": 2603,
+      "removedOctoberDuplicate": "video20261029:final:2001-10-01:zUmvSpBwO54",
+      "linkedToFebruary17": "archive:description:2001-02-17:4132267c77",
+      "addedRadioEvent": "radio:2002-02-19:tentenclub-hyesung-story:Ut3NMBBtc50",
+      "finalVisibleEvents": 2603,
+      "pendingUndatedVideo": {
+        "video": "https://www.youtube.com/watch?v=390kstxI27U",
+        "titleAsUploaded": "20020419 KMTV 쇼! 뮤직탱크 신화 I Pray 4 U + Hero",
+        "status": "방송일 미확정. 2002-04-19는 Hero 발매일보다 앞서 불일치",
+        "candidateBroadcast": "2002-06-20 KMTV 쇼! 뮤직탱크 신화 출연이 편성 기록에 있으나 영상과 동일 회차인지 미확인",
+        "researchUrls": [
+          "https://music.bugs.co.kr/album/16485",
+          "https://music.apple.com/us/album/2002-summer-vacation-in-smtown-com/1076847248",
+          "https://incrediblerain.blogspot.com/2011/11/rain-kronika-20020619.html"
+        ]
+      }
     }
   },
   "chapters": [
@@ -13046,7 +13064,18 @@
       "archiveVideoIds": [
         "g-Kaer2XLNY"
       ],
-      "recordCount": 1
+      "recordCount": 1,
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=zUmvSpBwO54"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=zUmvSpBwO54",
+          "videoId": "zUmvSpBwO54",
+          "title": "《스타 꿈의 도전》 — 신혜성 출연 영상",
+          "note": "셩공시대님 유투브 채널 공개 영상. 같은 방송의 관련 장면입니다."
+        }
+      ]
     },
     {
       "id": "audit54:fan-date:2001-02-17:13",
@@ -18151,39 +18180,6 @@
       ]
     },
     {
-      "id": "video20261029:final:2001-10-01:zUmvSpBwO54",
-      "date": "2001-10-01",
-      "precision": "month",
-      "chapter": "chapter1",
-      "category": "예능",
-      "subject": "신혜성",
-      "title": "《스타 꿈의 도전》 — 신혜성 출연 영상 (2001년 10월 초)",
-      "verification": "팬영상에 2001년 10월 1~6일 사이 방송 표기 / 정확한 방송일 미확인",
-      "source": "셩공시대님 유투브 채널",
-      "sourceUrl": "https://www.youtube.com/watch?v=zUmvSpBwO54",
-      "sourceUrls": [
-        "https://www.youtube.com/watch?v=zUmvSpBwO54"
-      ],
-      "referenceVideoUrl": "https://www.youtube.com/watch?v=zUmvSpBwO54",
-      "referenceVideoUrls": [
-        "https://www.youtube.com/watch?v=zUmvSpBwO54"
-      ],
-      "fanVideoSources": [
-        {
-          "url": "https://www.youtube.com/watch?v=zUmvSpBwO54",
-          "videoId": "zUmvSpBwO54",
-          "title": "[방송] 20011001-1006 사이에 방송된 스타 꿈의도전 - 신혜성 출연",
-          "note": "셩공시대님 유투브 채널 공개 영상입니다. 영상 제목을 근거로 보존했습니다."
-        }
-      ],
-      "sourceNote": "셩공시대님 유투브 채널 영상 제목에 신혜성 출연 방송으로 소개되어 있으며, 방송 시기는 2001년 10월 1~6일 사이로 표기되어 있습니다. 특정 날짜나 회차는 확인되지 않았습니다.",
-      "dateKind": "2001년 10월, 정확한 방송일 미확인 (영상 제목상 10월 1~6일 사이)",
-      "sourceRecord": "셩공시대님 유투브 채널",
-      "sourceRefs": [],
-      "recordCount": 1,
-      "registeredAt": "2026-10-29T14:10:15+09:00"
-    },
-    {
       "id": "sheet:01!343",
       "date": "2001-10-03",
       "precision": "day",
@@ -20727,6 +20723,36 @@
       "dateCorrections": [],
       "titleCorrections": [],
       "possibleDuplicate": false
+    },
+    {
+      "id": "radio:2002-02-19:tentenclub-hyesung-story:Ut3NMBBtc50",
+      "date": "2002-02-19",
+      "precision": "day",
+      "chapter": "chapter1",
+      "category": "라디오",
+      "subject": "신혜성 개인",
+      "title": "SBS 파워FM 《김동완의 텐텐클럽》 — 울던 신혜성을 달랜 일화",
+      "verification": "공개 영상의 방송일·내용 표기 기준 (원방송 회차 미확인)",
+      "source": "셩공시대님 유투브 채널",
+      "sourceUrl": "https://www.youtube.com/watch?v=Ut3NMBBtc50",
+      "referenceVideoUrl": "https://www.youtube.com/watch?v=Ut3NMBBtc50",
+      "referenceVideoUrls": [
+        "https://www.youtube.com/watch?v=Ut3NMBBtc50"
+      ],
+      "fanVideoSources": [
+        {
+          "url": "https://www.youtube.com/watch?v=Ut3NMBBtc50",
+          "videoId": "Ut3NMBBtc50",
+          "title": "2002.02.19 《김동완의 텐텐클럽》 — 울던 신혜성을 달랜 이야기",
+          "note": "셩공시대님 유투브 채널에 공개된 방송 녹음 자료입니다."
+        }
+      ],
+      "sourceNote": "2002년 2월 19일 방송분으로 소개된 자료에는 울던 신혜성을 달랬던 일화가 담긴 것으로 표기되어 있습니다. 신혜성이 방송에 직접 출연했는지는 확인되지 않았습니다.",
+      "dateKind": "공개 영상 제목에 기재된 방송일 (방송사 편성 원문 미확인)",
+      "sourceRecord": "셩공시대님 유투브 채널",
+      "sourceRefs": [],
+      "recordCount": 1,
+      "registeredAt": "2026-10-29T14:57:40+09:00"
     },
     {
       "id": "history:p0103",
