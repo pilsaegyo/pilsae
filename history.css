@@ -172,18 +172,18 @@ html,body{max-width:100%;overflow-x:clip}
 
 /* 2026-10-23: 메인 영상 아카이브와 톤 통일 + 중앙 워터마크 확장 */
 :root{
-  --history-bg:#f7f7f5;
-  --history-surface:#ffffff;
-  --history-surface-soft:#fcfbf9;
-  --history-text:#171717;
-  --history-muted:#767676;
-  --history-line:#e7e7e3;
-  --history-soft:#f0f0ed;
+  --history-bg:#f7f3e9;
+  --history-surface:#fffefa;
+  --history-surface-soft:#faf7ef;
+  --history-text:#292722;
+  --history-muted:#716c63;
+  --history-line:#e6dfd3;
+  --history-soft:#f3efe6;
   --history-accent:#1f1f1f;
   --history-lavender:#b9a3e1;
   --history-lavender-deep:#8d74b9;
   --history-lavender-soft:#f7f1ff;
-  --history-shadow:0 14px 40px rgba(35,27,17,.06),0 2px 8px rgba(35,27,17,.035);
+  --history-shadow:0 6px 20px rgba(61,49,27,.035),0 1px 3px rgba(61,49,27,.025);
   --history-watermark:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='220' viewBox='0 0 340 220'%3E%3Ctext x='170' y='110' text-anchor='middle' dominant-baseline='middle' fill='%23bea9dc' fill-opacity='0.13' font-family='Arial,sans-serif' font-size='40' font-weight='700' letter-spacing='5' transform='rotate(-12 170 110)'%3Epilsae%3C/text%3E%3C/svg%3E");
 }
 html{background:var(--history-bg)}
@@ -193,7 +193,7 @@ body{
 }
 .top{
   position:sticky;top:0;z-index:45;
-  background:rgba(247,247,245,.92);
+  background:rgba(247,243,233,.94);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--history-line);
 }
@@ -225,7 +225,7 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 .notice{
   margin:25px 0 26px;padding:16px 18px;border-radius:18px;
   background:
-    linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.92)),
+    linear-gradient(180deg,rgba(255,254,250,.98),rgba(255,254,250,.95)),
     var(--history-watermark);
   background-repeat:no-repeat,no-repeat;
   background-position:0 0,center center;
@@ -240,7 +240,7 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
   padding:16px 15px;border-radius:18px;transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
 }
 .chapter:hover,.chapter:focus-visible{transform:none;border-color:#d8cfeb;background:#fffefd}
-.chapter.active{border-color:#d2c5ea;background:linear-gradient(180deg,#fff,#fbf7ff);box-shadow:0 16px 34px rgba(155,131,195,.14)}
+.chapter.active{border-color:#d2c5ea;background:linear-gradient(180deg,#fff,#fbf7ff);box-shadow:0 6px 20px rgba(137,112,174,.09)}
 .chapter .number{color:var(--history-lavender-deep)}
 .chapter .desc{color:var(--history-muted)}
 .filters{gap:12px}
@@ -269,7 +269,7 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 .month-title{font-size:18px;margin:34px 0 12px;color:var(--history-text)}
 .item{
   margin:0 0 12px;padding:16px 16px;border:1px solid var(--history-line);
-  border-radius:20px;background:rgba(255,255,255,.78);backdrop-filter:blur(4px);
+  border-radius:18px;background:rgba(255,254,250,.94);
 }
 .item:last-child{margin-bottom:0}
 .name{font-size:15px;color:var(--history-text)}
@@ -503,3 +503,15 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 .filter-actions .video-only-filter span{min-width:0;overflow-wrap:anywhere}
 .filter-actions .reset-filters{flex:none;min-height:44px;margin:0 0 0 auto;box-sizing:border-box}
 .filter-actions .reset-filters:focus-visible{outline:2px solid var(--history-lavender-deep);outline-offset:3px}
+
+/* Warm ivory paper with restrained card edges; preserve the lavender identity. */
+.notice{line-height:1.7}
+.month-title{padding-bottom:10px;border-bottom:1px solid var(--history-line);letter-spacing:-.025em}
+.item .name{line-height:1.65;letter-spacing:-.02em}
+.item .date{color:#756a59}
+.chapter .desc{line-height:1.6}
+.filters select,.filters input{border-radius:12px}
+.view-switch{border:1px solid var(--history-line)}
+.calendar-view{background-color:var(--history-surface)}
+.source-float-toolbar{background:linear-gradient(180deg,#fffefa,#faf7f1)}
+@media(max-width:550px){.filters select,.filters input{border-radius:11px}.item .name{line-height:1.6}.month-title{padding-bottom:8px}}
