@@ -525,6 +525,6 @@ h1{margin:8px 0 8px;font-size:clamp(31px,5vw,42px);letter-spacing:-.05em;color:v
 .catalog-count{margin:4px 0 8px;font-size:11px}
 .catalog-more{display:block;margin:11px auto 2px;padding:8px 13px;border:1px solid var(--history-line);border-radius:9px;background:var(--history-surface);color:var(--history-lavender-deep);font:inherit;cursor:pointer}
 .catalog-more[hidden]{display:none}
-.cal-year-unknown{display:block;width:100%;margin:0 0 12px;padding:10px 12px;border:1px dashed var(--history-lavender);border-radius:10px;background:var(--history-lavender-soft);color:var(--history-lavender-deep);font:inherit;font-size:12px;text-align:left;cursor:pointer}
+.cal-year-unknown{display:block;width:100%;margin:12px 0 0;padding:10px 12px;border:1px dashed var(--history-lavender);border-radius:10px;background:var(--history-lavender-soft);color:var(--history-lavender-deep);font:inherit;font-size:12px;text-align:left;cursor:pointer}
 .cal-year-unknown.is-selected{border-style:solid;background:#eee5fb;font-weight:700}
 .cal-year-unknown:focus-visible,.catalog-more:focus-visible,.catalog-search:focus-visible,.source-trigger-labeled:focus-visible{outline:2px solid var(--history-lavender-deep);outline-offset:2px}
