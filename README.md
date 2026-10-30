@@ -1914,3 +1914,43 @@ URL 자체까지 완전히 접근 차단하려면 Cloudflare Access 같은 엣�
 - 1998년 KBS 《쇼! 행운을 잡아라》 2건은 이번 방송사 재게시 설명에서 프로그램·일자·곡명 확인됨; 앞서 철회한 영상 근거를 복구한 것이 아니라 새로운 출처의 잠정 기록임. 정확한 최초 송출 검증 필요.
 - 2006년 일본 NHK BS2 《ミュージック・エクス프レス》는 편성·후대 출연 명단만 확보된 일정으로 실제 무대 직접 확인과 구분. 후지TV 심야 편성일 및 실제 시계 날짜를 구분.
 - 기존 2,645건 ID·날짜·제목·영상 URL·등록 시각 유지. 기존 이벤트의 `sourceRefs`에만 링크 추가; `data/videos.json`, JS/CSS/HTML/Worker/관리자 및 배포 코드는 변경하지 않음. `HISTORY.md`는 GitHub main 커밋 자동 생성 정책상 기존 원문을 그대로 동봉.
+
+
+## 신냥이의 한 시간 v2 (2026-10-30)
+- `shinnyang.html`: 게임의 정식 독립 페이지. 기존 `PIL` 스탬프와 연혁 내 게임 팝업은 동일한 게임 JS/CSS를 사용합니다.
+- `shinnyang-game.js`/`shinnyang-game.css`: 6개 행동, 무대 리듬 타이밍, 선물 이벤트, 5종 의상, 회차 미션, 추억 카드 수집, 연도 탐색, 브라우저 저장. 게임 대사/수치는 창작 요소입니다.
+- `site-gate.js`: `/shinnyang-history.json`에 GET/HEAD 요청을 받으면 **현재 실제 `/data/history.json` 파일 전체를 동일하게 응답**합니다. 파일 복제 없음. `/history.html`, `/history`, `/data/history.json`의 11월 27일 이전 관리자 미리보기 제한은 유지됩니다.
+- **공개 범위 주의:** 위 게임 데이터 엔드포인트는 관리자 로그인이 없어도 전체 활동 기록 2,657건을 반환합니다. 게임 링크를 제한적으로 배포해도 이 데이터 URL은 기술적으로 누구나 열 수 있습니다.
+- 다운로드 테스트 HTML은 본판과 같은 데이터·코드를 인라인으로 묶은 오프라인 점검용이며 배포 ZIP에 포함하지 않습니다.
+- 이전 사전 패치(`shinnyang-game.css`, `shinnyang-game.js`, `shinnyang.html` 3개 허용 목록 추가)가 배포되지 않았다면 사전 패치 먼저 필요합니다.
+- `HISTORY.md` 커밋 목록을 수동 편집하지 않았습니다. 기존의 GitHub main 실커밋 기반 자동 생성 구조 유지.
+
+
+## 신냥이의 한 시간 v2 (2026-10-30)
+- `shinnyang.html`: 게임의 정식 독립 페이지. 기존 `PIL` 스탬프와 연혁 내 게임 팝업은 동일한 게임 JS/CSS를 사용합니다.
+- `shinnyang-game.js`/`shinnyang-game.css`: 6개 행동, 무대 리듬 타이밍, 선물 이벤트, 5종 의상, 회차 미션, 추억 카드 수집, 연도 탐색, 브라우저 저장. 게임 대사/수치는 창작 요소입니다.
+- `site-gate.js`: `/shinnyang-history.json`에 GET/HEAD 요청을 받으면 **현재 실제 `/data/history.json` 파일 전체를 동일하게 응답**합니다. 파일 복제 없음. `/history.html`, `/history`, `/data/history.json`의 11월 27일 이전 관리자 미리보기 제한은 유지됩니다.
+- **공개 범위 주의:** 위 게임 데이터 엔드포인트는 관리자 로그인이 없어도 전체 활동 기록 2,657건을 반환합니다. 게임 링크를 제한적으로 배포해도 이 데이터 URL은 기술적으로 누구나 열 수 있습니다.
+- 다운로드 테스트 HTML은 본판과 같은 데이터·코드를 인라인으로 묶은 오프라인 점검용이며 배포 ZIP에 포함하지 않습니다.
+- 이전 사전 패치(`shinnyang-game.css`, `shinnyang-game.js`, `shinnyang.html` 3개 허용 목록 추가)가 배포되지 않았다면 사전 패치 먼저 필요합니다.
+- `HISTORY.md` 커밋 목록을 수동 편집하지 않았습니다. 기존의 GitHub main 실커밋 기반 자동 생성 구조 유지.
+
+
+## 신냥이의 한 시간 v2 (2026-10-30)
+- `shinnyang.html`: 게임의 정식 독립 페이지. 기존 `PIL` 스탬프와 연혁 내 게임 팝업은 동일한 게임 JS/CSS를 사용합니다.
+- `shinnyang-game.js`/`shinnyang-game.css`: 6개 행동, 무대 리듬 타이밍, 선물 이벤트, 5종 의상, 회차 미션, 추억 카드 수집, 연도 탐색, 브라우저 저장. 게임 대사/수치는 창작 요소입니다.
+- `site-gate.js`: `/shinnyang-history.json`에 GET/HEAD 요청을 받으면 **현재 실제 `/data/history.json` 파일 전체를 동일하게 응답**합니다. 파일 복제 없음. `/history.html`, `/history`, `/data/history.json`의 11월 27일 이전 관리자 미리보기 제한은 유지됩니다.
+- **공개 범위 주의:** 위 게임 데이터 엔드포인트는 관리자 로그인이 없어도 전체 활동 기록 2,657건을 반환합니다. 게임 링크를 제한적으로 배포해도 이 데이터 URL은 기술적으로 누구나 열 수 있습니다.
+- 다운로드 테스트 HTML은 본판과 같은 데이터·코드를 인라인으로 묶은 오프라인 점검용이며 배포 ZIP에 포함하지 않습니다.
+- 이전 사전 패치(`shinnyang-game.css`, `shinnyang-game.js`, `shinnyang.html` 3개 허용 목록 추가)가 배포되지 않았다면 사전 패치 먼저 필요합니다.
+- `HISTORY.md` 커밋 목록을 수동 편집하지 않았습니다. 기존의 GitHub main 실커밋 기반 자동 생성 구조 유지.
+
+
+## 신냥이의 한 시간 v2 (2026-10-30)
+- `shinnyang.html`: 게임의 정식 독립 페이지. 기존 `PIL` 스탬프와 연혁 내 게임 팝업은 동일한 게임 JS/CSS를 사용합니다.
+- `shinnyang-game.js`/`shinnyang-game.css`: 6개 행동, 무대 리듬 타이밍, 선물 이벤트, 5종 의상, 회차 미션, 추억 카드 수집, 연도 탐색, 브라우저 저장. 게임 대사/수치는 창작 요소입니다.
+- `site-gate.js`: `/shinnyang-history.json`에 GET/HEAD 요청을 받으면 **현재 실제 `/data/history.json` 파일 전체를 동일하게 응답**합니다. 파일 복제 없음. `/history.html`, `/history`, `/data/history.json`의 11월 27일 이전 관리자 미리보기 제한은 유지됩니다.
+- **공개 범위 주의:** 위 게임 데이터 엔드포인트는 관리자 로그인이 없어도 전체 활동 기록 2,657건을 반환합니다. 게임 링크를 제한적으로 배포해도 이 데이터 URL은 기술적으로 누구나 열 수 있습니다.
+- 다운로드 테스트 HTML은 본판과 같은 데이터·코드를 인라인으로 묶은 오프라인 점검용이며 배포 ZIP에 포함하지 않습니다.
+- 이전 사전 패치(`shinnyang-game.css`, `shinnyang-game.js`, `shinnyang.html` 3개 허용 목록 추가)가 배포되지 않았다면 사전 패치 먼저 필요합니다.
+- `HISTORY.md` 커밋 목록을 수동 편집하지 않았습니다. 기존의 GitHub main 실커밋 기반 자동 생성 구조 유지.

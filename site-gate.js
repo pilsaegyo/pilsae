@@ -104,6 +104,19 @@ export default {
       return new Response(JSON.stringify({ok:true,preview:false}),{status:200,headers});
     }
     if(!env.ASSETS)return new Response('Static asset binding missing',{status:503});
+    // The game page reads the FULL actual history.json through a public game-only path.
+    // The original /data/history.json and /history.html stay preview-locked until 11/27.
+    // This endpoint intentionally makes all raw 2,657 event records publicly accessible.
+    if(url.pathname==='/shinnyang-history.json'){
+      if(request.method!=='GET' && request.method!=='HEAD')return new Response('Method not allowed',{status:405,headers:noCache});
+      const dataUrl=new URL('/data/history.json',url);
+      const asset=await env.ASSETS.fetch(new Request(dataUrl,{method:request.method==='HEAD'?'HEAD':'GET'}));
+      const headers=new Headers(asset.headers);
+      headers.set('Content-Type','application/json; charset=utf-8');
+      headers.set('Cache-Control','no-store');
+      headers.set('X-Content-Type-Options','nosniff');
+      return new Response(request.method==='HEAD'?null:asset.body,{status:asset.status,headers});
+    }
     const target=guardedPath(url.pathname);
     if(target==='bad')return new Response('Bad URL',{status:400,headers:noCache});
     if(target && Date.now()<OPEN_AT_MS && !(await allowPreview(request,env))){

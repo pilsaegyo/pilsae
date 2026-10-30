@@ -1,48 +1,42 @@
 <!doctype html>
-<html lang="ko">
-<head>
+<html lang="ko"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="활동 연혁 공개 전, 신냥이의 한 시간을 먼저 체험해 보세요. 작은 도트 가수 고양이 성장 게임.">
-<title>신냥이의 한 시간 | 필새 미니게임</title>
+<meta name="description" content="도트 고양이 신냥이의 한 시간. 노래하고, 무대에 오르고, 실제 활동 연혁을 탐험하는 가수냥 키우기 게임.">
+<title>신냥이의 한 시간 ♡ | 필새</title>
 <link rel="icon" href="./assets/favicon-p.png">
-<link rel="stylesheet" href="./shinnyang-game.css?v=20261030-teaser">
+<link rel="stylesheet" href="./shinnyang-game.css?v=20261030-v2">
 <style>
-:root{color-scheme:light;font-family:Pretendard,'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-*{box-sizing:border-box}body{margin:0;min-height:100dvh;color:#63516e;background:#fbf5fc}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 7% 20%,#e3cef7a3,transparent 32%),radial-gradient(circle at 94% 72%,#f4d5e2a8,transparent 32%);z-index:-1}
-.site-head{display:flex;justify-content:space-between;gap:10px;align-items:center;max-width:920px;margin:auto;padding:21px 22px;font-size:12px}
-.site-head a{color:#8667a5;text-decoration:none;font-weight:750}.site-head span{font-size:10px;letter-spacing:.14em;color:#9f82ba;font-weight:800}
-.showcase{max-width:920px;margin:auto;padding:20px 16px 72px;display:grid;grid-template-columns:minmax(0,1fr) minmax(312px,380px);align-items:center;gap:30px}
-.intro{padding:20px 14px}.intro .eyebrow{font-size:11px;letter-spacing:.17em;font-weight:850;color:#a080b9}
-.intro h1{font-size:clamp(30px,5vw,49px);letter-spacing:-.06em;color:#75558d;margin:13px 0 12px;line-height:1.2}
-.intro p{font-size:14px;line-height:1.95;color:#887591;word-break:keep-all;max-width:460px}
-.open-date{display:inline-block;margin:19px 0 9px;padding:11px 14px;border:1px solid #e5d3ec;background:#fff9ff;border-radius:12px;font-size:12px;line-height:1.8}
-.open-date strong{color:#785295}
-.intro small{display:block;margin-top:13px;color:#9d8aa5;font-size:11px;line-height:1.75}
-.play-area{display:flex;flex-direction:column;align-items:center;gap:13px}
-.tap-guide{font-size:11px;color:#9678a5;font-weight:750;text-align:center}
-/* The same existing PIL seal SVG used in the history page. In the teaser it is not fixed. */
-.shinnyang-page .cat-seal{position:relative;display:block;width:94px;height:94px;flex:0 0 auto;pointer-events:auto;opacity:1;animation:none;filter:drop-shadow(0 7px 9px #ae87c445)}
-.shinnyang-page .cat-seal svg{width:100%;height:100%;display:block}
-.shinnyang-page .shinnyang-game{position:relative;top:auto;right:auto;bottom:auto;width:min(360px,calc(100vw - 28px));max-height:none;overflow:visible;z-index:1;margin:0 auto 4px}
-.shinnyang-page .shinnyang-game[hidden]{display:none!important}
-.site-foot{max-width:920px;margin:auto;text-align:center;padding:0 15px 26px;font-size:10px;color:#ad9cb2}
-@media(max-width:730px){.site-head{padding:15px}.showcase{grid-template-columns:1fr;gap:12px;padding-top:0}.intro{text-align:center;padding:14px 11px}.intro p{margin-left:auto;margin-right:auto}.intro h1{font-size:35px}.play-area{padding-bottom:15px}}
-@media(prefers-reduced-motion:reduce){body:before{background:#fbf5fc}}
-</style>
-</head>
-<body class="shinnyang-page">
-<header class="site-head"><a href="./">← 필새 영상 아카이브</a><span>PILSAE · LITTLE PIXEL STAR</span></header>
-<main class="showcase">
-  <div class="intro">
-    <div class="eyebrow">✦ PLAY BEFORE THE HISTORY OPENS ✦</div>
-    <h1>신냥이의<br>한 시간 ♡</h1>
-    <p>연습하고, 낮잠 자고, 무대에 서고!<br>작은 도트 고양이 <b>신냥이</b>를 한 시간 동안 키워봐.<br>6번의 선택으로 귀여운 가수냥이 조금씩 자라나!</p>
-    <div class="open-date"><strong>활동 연혁 정식 공개: 2026.11.27</strong><br>그전에는 신냥이의 작은 방만 먼저 열려 있어요.</div>
-    <small>게임 속 가상의 행동·대사는 창작이며,<br>아래 기록 카드에는 실제 연혁에서 발췌한 날짜·제목을 표시해요.<br>기록의 검증 상태는 항목마다 다릅니다.</small>
-  </div>
-  <div class="play-area">
-    <div class="tap-guide">✧ 고양이 스탬프를 눌러 게임창을 열고 닫아봐! ✧</div>
+:root{font-family:Pretendard,'Apple SD Gothic Neo','Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100dvh;overflow-x:hidden;background:linear-gradient(130deg,#fdf7fc,#f7eefb 60%,#fff6f9);color:#735d85}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 9% 21%,#e3ccf17a,transparent 38%),radial-gradient(circle at 89% 75%,#f4cfe17e,transparent 35%)}
+.sky-dots{position:fixed;z-index:-1;inset:0;pointer-events:none;background-image:radial-gradient(#c9aedb66 1px,transparent 2px);background-size:25px 25px;opacity:.33;animation:sky-travel 75s linear infinite}
+.site-head{max-width:1140px;padding:22px 24px 0;display:flex;justify-content:space-between;align-items:center;gap:9px;margin:0 auto}
+.site-head a{text-decoration:none;color:#9376a8;font-size:12px;font-weight:850}.site-head span{font-size:10px;color:#ac8eb7;letter-spacing:.16em;font-weight:900}
+.showcase{max-width:1080px;margin:0 auto;min-height:calc(100dvh - 106px);padding:25px 24px 60px;display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,422px);align-items:center;gap:clamp(24px,7vw,95px)}
+.intro{position:relative;padding:30px 0}.kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:850;letter-spacing:.16em;color:#aa83bd}
+.intro h1{font-size:clamp(39px,5.5vw,72px);letter-spacing:-.08em;line-height:1.1;margin:20px 0 14px;color:#79528c;text-shadow:0 3px 0 #eacdea}
+.intro h1 i{font-style:normal;color:#dba7c7}.intro p.lead{font-size:15px;line-height:2;word-break:keep-all;max-width:485px;color:#8f7a9e;margin:0 0 20px}
+.float-posters{display:flex;gap:10px;margin:28px 0}.float-posters span{width:70px;height:79px;border:1px solid #e6cde9;border-radius:13px;background:#fffbff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;box-shadow:0 5px 0 #e9d9ef,0 9px 15px #bca2c326;font-size:29px;transform:rotate(-5deg);animation:poster 5s ease-in-out infinite}.float-posters span:nth-child(2){transform:rotate(4deg);animation-delay:-2s}.float-posters span:nth-child(3){transform:rotate(-3deg);animation-delay:-3s}.float-posters span small{font-size:8px;color:#b598b7;letter-spacing:.04em;font-weight:850}
+.info-strip{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}.info-strip span{border:1px solid #ddcae8;border-radius:999px;padding:8px 11px;background:#fff9ff;color:#9273a4;font-size:11px;font-weight:750}
+.intro .disclaimer{font-size:11px;line-height:1.85;color:#a08eab;margin-top:24px;max-width:470px;word-break:keep-all}
+.play-area{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;position:relative}.play-title{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;max-width:390px;font-size:10px;font-weight:850;letter-spacing:.05em;color:#a687b4}.play-title>span{white-space:nowrap}
+.shinnyang-page .cat-seal{position:relative;display:block;width:76px;height:76px;flex:0 0 auto;pointer-events:auto;opacity:1;filter:drop-shadow(0 7px 10px #ae87c445)}.shinnyang-page .cat-seal svg{width:100%;height:100%;display:block}
+.shinnyang-page .shinnyang-game{position:relative;top:auto;right:auto;bottom:auto;width:min(390px,100%);max-height:none;overflow:visible;z-index:1;margin:0 auto}.shinnyang-page .shinnyang-game[hidden]{display:none!important}
+.play-hint{text-align:center;color:#aa90b6;font-size:10px;font-weight:800}
+.site-foot{text-align:center;font-size:10px;color:#ad9bb4;padding:12px 20px 27px}
+@keyframes sky-travel{to{background-position:300px 170px}}@keyframes poster{50%{translate:0 -7px}}
+@media(max-width:790px){.site-head{padding:16px 17px 0}.showcase{grid-template-columns:minmax(0,1fr);gap:14px;padding:6px 13px 45px}.intro{text-align:center;padding:25px 8px 15px}.intro h1{font-size:clamp(40px,10vw,58px);margin:9px 0}.intro p.lead,.intro .disclaimer{margin-left:auto;margin-right:auto}.float-posters,.info-strip{justify-content:center}.float-posters{margin:16px 0}.float-posters span{height:66px;width:62px;font-size:24px}.play-area{width:100%;order:0}.intro{order:1;padding-top:10px}.play-title{max-width:390px}.shinnyang-page .shinnyang-game{max-height:none}}
+@media(prefers-reduced-motion:reduce){.sky-dots,.float-posters span{animation:none}}
+</style></head>
+<body class="shinnyang-page"><div class="sky-dots" aria-hidden="true"></div>
+<header class="site-head"><a href="./?view=grid">← PILSAE VIDEO ARCHIVE</a><span>PIXEL STAR · SHINNYANG</span></header>
+<main class="showcase"><section class="intro"><span class="kicker">✦ LITTLE STAR PROJECT ✦</span><h1>신냥이의<br>한 시간<i> ♡</i></h1>
+<p class="lead">오늘도 작은 발바닥으로 꿈을 향해!<br>노래 연습도 하고, 달콤한 간식도 먹고, 무대에서 반짝이는 <strong>도트 고양이 신냥이</strong>를 키워봐.</p>
+<div class="float-posters" aria-hidden="true"><span>🎹<small>PRACTICE</small></span><span>🎤<small>STAGE</small></span><span>🎀<small>DRESS UP</small></span></div>
+<div class="info-strip"><span>♫ 6가지 행동</span><span>✦ 무대 리듬 게임</span><span>🎀 소품 5종</span><span>📜 실제 연혁 전체 연동</span></div>
+<p class="disclaimer">연습·무대·선물 등 게임 연출은 창작이야. 아래 활동 카드의 날짜·제목은 필새의 원본 활동 연혁에서 불러와. 원자료에는 독립 검증 전인 기록도 포함돼 있어.<br>활동 연혁 페이지는 2026.11.27에 공개될 예정이지만, 신냥이 게임은 이 페이지에서 먼저 즐길 수 있어.</p>
+</section>
+<div class="play-area"><div class="play-title"><span>🐾 가수냥 다마고치</span><span>스탬프를 눌러 접기/펼치기</span></div>
 <button id="shinnyangTrigger" class="cat-seal shinnyang-trigger" type="button" aria-label="신냥이 미니게임 열기" aria-controls="shinnyangGame" aria-expanded="false" title="신냥이 만나기 ♡">
   <svg viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
     <defs><linearGradient id="pilSealTint" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fdfaff"/><stop offset="100%" stop-color="#ebe2fb"/></linearGradient></defs>
@@ -58,49 +52,65 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
     <text x="80" y="24.5" text-anchor="middle" fill="#fff" font-size="12.5" font-family="Arial, sans-serif" font-weight="700" letter-spacing="1">PIL</text>
   </svg>
 </button>
-<!-- 신냥이 시범판: 가벼운 비모달 게임 창. 연혁 조작을 막지 않습니다. -->
+<!-- 신냥이 가수냥 게임: 비모달 게임 창. 연혁 조작을 막지 않습니다. -->
 <section id="shinnyangGame" class="shinnyang-game" role="dialog" aria-modal="false" aria-labelledby="shinnyangTitle" hidden>
   <header class="shinnyang-top">
-    <div class="shinnyang-headline"><div class="shinnyang-eyebrow">PILSAE · LITTLE PIXEL STAR</div><h2 id="shinnyangTitle" class="shinnyang-title">신냥이의 한 시간 <span class="sn-heart">♡</span></h2></div>
-    <button class="shinnyang-close" id="shinnyangClose" type="button" aria-label="신냥이 게임 닫기">×</button>
+    <div class="shinnyang-headline"><div class="shinnyang-eyebrow">PILSAE ♡ PIXEL STAR</div><h2 id="shinnyangTitle" class="shinnyang-title">신냥이의 한 시간 <span class="sn-heart">♥</span></h2></div>
+    <button class="shinnyang-close" id="shinnyangClose" type="button" aria-label="게임 닫기">×</button>
   </header>
   <div class="shinnyang-main">
     <div class="shinnyang-status"><span class="shinnyang-chip" id="shinnyangRank">LEVEL 1 · 꼬마냥</span><span class="shinnyang-clock" id="shinnyangClock">00:00 / 01:00</span></div>
-    <div class="shinnyang-scene" id="shinnyangScene" data-scene="idle">
-      <span class="shinnyang-scene-tag" id="shinnyangSceneTag">1998 · 첫 연습실</span>
-      <span class="shinnyang-spark one" aria-hidden="true">✦</span><span class="shinnyang-spark two" aria-hidden="true">✧</span><span class="shinnyang-spark three" aria-hidden="true">✦</span>
-      <div class="shinnyang-lamp" aria-hidden="true"></div><div class="shinnyang-floor" aria-hidden="true"></div>
-      <canvas id="shinnyangSprite" class="shinnyang-pixel-cat" width="40" height="40" role="img" aria-label="노래하는 도트 고양이 신냥이"></canvas><span class="shinnyang-notes" aria-hidden="true">♫ ♪</span>
+    <div class="sn-mission"><div><span class="sn-mission-label">✦ 오늘의 작은 미션</span><span id="snMissionTitle">노래 연습하기</span></div><div class="sn-mission-count" id="snMissionCount">0/2</div></div>
+    <div id="shinnyangScene" class="shinnyang-scene" data-scene="idle">
+      <div class="sn-sky-stars" aria-hidden="true">✦ <i>✧</i> ⋆ <i>✦</i></div>
+      <div class="sn-stage-light l" aria-hidden="true"></div><div class="sn-stage-light r" aria-hidden="true"></div>
+      <div class="sn-curtain l" aria-hidden="true"></div><div class="sn-curtain r" aria-hidden="true"></div>
+      <span class="shinnyang-scene-tag" id="shinnyangSceneTag">✧ 신냥이의 아늑한 연습실</span>
+      <div class="sn-prop sn-prop-l" id="snPropLeft" aria-hidden="true">🎹</div><div class="sn-prop sn-prop-r" id="snPropRight" aria-hidden="true">🧸</div>
+      <div class="sn-floaties" id="snFloaties" aria-hidden="true"><span>✦</span><span>♡</span><span>♪</span><span>✧</span><span>♫</span></div>
+      <div class="shinnyang-floor" aria-hidden="true"></div>
+      <canvas id="shinnyangSprite" class="shinnyang-pixel-cat" width="48" height="48" role="img" aria-label="도트 고양이 신냥이"></canvas>
+      <div class="sn-reaction" id="snReaction" aria-hidden="true"></div>
+      <div class="sn-scene-bottom" aria-hidden="true"><span>✦</span><span>♡</span><span>✦</span></div>
     </div>
     <div class="shinnyang-dialogue" id="shinnyangDialogue" aria-live="polite">오늘은 어떤 노래를 연습해볼까냥? ♡</div>
-    <div class="shinnyang-toast" id="shinnyangToast" aria-live="polite">행동을 선택하면 게임 속 10분이 흘러요</div>
+    <div class="shinnyang-toast" id="shinnyangToast" role="status">✧ 게임 데이터를 불러오는 중이야...</div>
     <div class="shinnyang-progress" id="shinnyangProgress" aria-label="한 시간 진행률"><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="shinnyang-meters">
       <div class="shinnyang-meter"><label>🍀 체력 <strong id="snEnergy">70</strong></label><div class="shinnyang-track"><div id="snEnergyBar" class="shinnyang-fill energy"></div></div></div>
       <div class="shinnyang-meter"><label>♫ 실력 <strong id="snVoice">20</strong></label><div class="shinnyang-track"><div id="snVoiceBar" class="shinnyang-fill voice"></div></div></div>
       <div class="shinnyang-meter"><label>♥ 인기 <strong id="snFans">0</strong></label><div class="shinnyang-track"><div id="snFansBar" class="shinnyang-fill fans"></div></div></div>
     </div>
+    <div class="sn-choose-head"><strong>무엇을 할까냥?</strong><span>행동마다 게임 속 10분</span></div>
     <div class="shinnyang-actions" id="shinnyangActions">
-      <button type="button" class="shinnyang-action" data-sn-act="sing"><span class="sn-icon" aria-hidden="true">🎼</span><span>노래 연습</span><small>실력 +20</small></button>
-      <button type="button" class="shinnyang-action" data-sn-act="rest"><span class="sn-icon" aria-hidden="true">🛏️</span><span>낮잠 자기</span><small>체력 +25</small></button>
-      <button type="button" class="shinnyang-action" data-sn-act="stage"><span class="sn-icon" aria-hidden="true">🎤</span><span>무대 서기</span><small>인기 +25</small></button>
+      <button class="shinnyang-action" type="button" data-sn-act="sing"><span class="sn-icon">🎼</span><span>노래 연습</span><small>실력 +18</small></button>
+      <button class="shinnyang-action" type="button" data-sn-act="dance"><span class="sn-icon">🪩</span><span>댄스 연습</span><small>실력 +9</small></button>
+      <button class="shinnyang-action" type="button" data-sn-act="stage"><span class="sn-icon">🎤</span><span>무대 도전</span><small>리듬 게임!</small></button>
+      <button class="shinnyang-action" type="button" data-sn-act="snack"><span class="sn-icon">🍰</span><span>간식 먹기</span><small>체력 +19</small></button>
+      <button class="shinnyang-action" type="button" data-sn-act="rest"><span class="sn-icon">🛏️</span><span>꿀잠 자기</span><small>체력 +28</small></button>
+      <button class="shinnyang-action" type="button" data-sn-act="letter"><span class="sn-icon">💌</span><span>팬레터</span><small>인기 +12</small></button>
     </div>
-    <div class="shinnyang-finale" id="shinnyangFinale" aria-hidden="true"><strong id="shinnyangEndTitle">첫 번째 한 시간 완료!</strong><p id="shinnyangEndBody"></p><button id="shinnyangAgain" class="shinnyang-again" type="button">다음 한 시간 놀기 ↗</button></div>
+    <div class="sn-stage-challenge" id="snStageChallenge" hidden>
+      <div class="sn-challenge-title">🎵 공연 리듬 타이밍</div><p>움직이는 별이 가운데 분홍 영역에 왔을 때 눌러봐!</p>
+      <div class="sn-rhythm-track" aria-hidden="true"><span class="sn-rhythm-target"></span><span class="sn-rhythm-pointer" id="snRhythmPointer">★</span></div>
+      <div class="sn-rhythm-buttons"><button id="snRhythmTap" type="button">✦ 지금이다!</button><button id="snRhythmSkip" type="button">그냥 공연하기</button></div>
+    </div>
+    <div class="sn-gift" id="snGift" hidden><span class="sn-gift-emoji" id="snGiftEmoji">🎁</span><div><b id="snGiftTitle">선물 도착!</b><p id="snGiftText"></p></div><button type="button" id="snGiftClose" aria-label="선물 알림 닫기">×</button></div>
+    <div class="shinnyang-finale" id="shinnyangFinale" aria-hidden="true"><div class="sn-finale-icon">🌟</div><strong id="shinnyangEndTitle">한 시간 완주!</strong><p id="shinnyangEndBody"></p><button id="shinnyangAgain" class="shinnyang-again" type="button">다음 한 시간 시작 ♡</button></div>
+    <div class="sn-extras">
+      <details class="sn-extra"><summary>🎀 신냥이 옷장 <span id="snOutfitCount">1/5</span></summary><div class="sn-outfits" id="snOutfits"></div><small>성장 별을 모아 새 소품을 해금해 봐!</small></details>
+      <details class="sn-extra"><summary>🗂️ 추억 수집함 <span id="snCollectionCount">0장</span></summary><p id="snCollectionPreview">다양한 시대의 활동 기록을 모아봐!</p><div class="sn-collection" id="snCollection"></div></details>
+    </div>
+    <section class="shinnyang-moment" aria-label="실제 연혁 기록">
+      <div class="shinnyang-moment-top"><strong>📜 실제 활동 연혁 속 기억</strong><span id="snDataCount">전체 기록 불러오는 중</span></div>
+      <label class="sn-era-label" for="snEra">여행할 시기 <select id="snEra" aria-label="연혁 탐험 연도 선택"><option value="all">전 시기 랜덤 여행</option></select></label>
+      <div id="snRecordBox"><div class="shinnyang-moment-date" id="shinnyangMomentDate">잠시만...</div><div class="shinnyang-moment-title" id="shinnyangMomentTitle">활동 기록을 불러오고 있어.</div><div id="snMomentStatus" class="sn-moment-status"></div><a class="shinnyang-moment-source" id="shinnyangMomentSource" target="_blank" rel="noopener noreferrer" hidden>원자료 보기 ↗</a></div>
+      <p class="shinnyang-moment-note">실제 연혁의 날짜·제목을 그대로 소개하며, 고양이의 활동·대사는 창작 게임이야. 기록별 검증 상태를 확인해 줘.</p>
+    </section>
   </div>
-  <footer class="shinnyang-foot">
-    <div class="shinnyang-stars"><span>✦ 신냥이 성장 스탬프</span><strong id="shinnyangStars">0 별</strong></div>
-    <div class="shinnyang-marquee" aria-label="실제 활동 연혁 중 일부"><span>✧ 연혁 속 기록 · 1998.03.24 KMTV 쇼! 뮤직탱크 데뷔 무대　　✧ 2001.01.13 첫 단독 콘서트 First Mythology 1일 차　　✧ 2002.03.29 정규 5집 Perfect Man 발매　　</span></div>
-    <div class="shinnyang-disclaimer"><span>체험용 창작 게임 · 실제 활동 사실과 구분</span><button type="button" class="shinnyang-reset" id="shinnyangReset">성장 초기화</button></div>
-  </footer>
+  <footer class="shinnyang-foot"><div class="shinnyang-stars"><span>✦ 신냥이의 성장 별</span><strong id="shinnyangStars">0 별 · 0회 완주</strong></div><div class="shinnyang-marquee"><span id="snTicker">✦ 필새 활동 기록을 펼치는 중 ♡</span></div><div class="shinnyang-disclaimer"><span>성장 기록은 현재 브라우저에 저장돼.</span><button type="button" class="shinnyang-reset" id="shinnyangReset">성장 초기화</button></div></footer>
 </section>
-  </div>
-</main>
-<footer class="site-foot">PILSAE ♡ 신냥이 미리보기 · 성장 기록은 이 브라우저에 저장돼요.</footer>
-<script src="./shinnyang-game.js?v=20261030-teaser" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('shinnyangTrigger');
-  if(btn && btn.getAttribute('aria-expanded') === 'false') btn.click();
-});
-</script>
+<div class="play-hint">✧ 반짝이는 신냥이의 하루를 함께 보내줘! ✧</div></div></main>
+<footer class="site-foot">PILSAE ♡ 기록 수집과 성장 정보는 현재 브라우저에 보관돼.</footer>
+<script src="./shinnyang-game.js?v=20261030-v2" defer></script>
 </body></html>
