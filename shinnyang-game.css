@@ -1,3 +1,4 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 /* 신냥이의 한 시간 v2. A self-contained namespace; no global site style changes. */
 .cat-seal.shinnyang-trigger{pointer-events:auto;cursor:pointer;appearance:none;border:0;background:transparent;padding:0;touch-action:manipulation;transition:transform .23s ease,filter .23s ease;outline-offset:0}
 .cat-seal.shinnyang-trigger:hover{transform:translateY(-5px) rotate(-7deg);filter:drop-shadow(0 9px 15px #a58fc077)}
@@ -225,3 +226,89 @@
 .shinnyang-game .sn-note-cancel{font-size:10px;color:#a28ab1;background:none;border:0;text-decoration:underline;padding:7px;cursor:pointer}
 @keyframes sn-note-drop{0%,100%{transform:translateY(-12px) rotate(-9deg)}50%{transform:translateY(9px) rotate(9deg)}}
 @media(prefers-reduced-motion:reduce){.shinnyang-game .sn-note-target{animation:none!important}}
+
+/* v4.3 — 엔딩 전용 6종 도트 카드. 기존 플레이 화면/고양이 스프라이트는 그대로. */
+.shinnyang-game .sn-ending-modal{position:relative;padding:12px 10px;background:#f5effa;border:4px solid #65517f;border-radius:4px;box-shadow:inset 0 0 0 3px #e3d1f0,0 6px 0 #dfd0e8;overflow:hidden}
+.shinnyang-game .sn-ending-modal::before{content:'✦ · ✧ · ✦';display:block;color:#a887cd;letter-spacing:.6em;font-size:10px;margin:1px 0 9px}
+.shinnyang-game .sn-ending-art-frame{position:relative;background:#372950;border:4px solid #f9edcf;outline:3px solid #8e77b1;max-width:100%;width:100%;overflow:hidden;image-rendering:pixelated;margin:5px auto 12px}
+.shinnyang-game .sn-ending-pixel-art{display:block;width:100%;height:auto;aspect-ratio:9/8;object-fit:cover;image-rendering:pixelated;image-rendering:crisp-edges;animation:sn-ending-art-reveal .45s steps(5,end) both}
+.shinnyang-game .sn-ending-modal h3{color:#4e3a68;font-weight:950;font-size:16px;line-height:1.3;margin:8px 0 5px}
+.shinnyang-game .sn-ending-modal>b{color:#8b629d;font-size:11px}
+.shinnyang-game .sn-ending-modal>p{color:#705f78;font-size:11px;line-height:1.7}
+.shinnyang-game .sn-ending-buttons button{border:3px solid #5e4a7e;box-shadow:inset 2px 2px #fff9ff,0 3px #d4c1dc;border-radius:3px;font-weight:900;font-size:10px;min-height:39px}
+.shinnyang-game .sn-ending-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.shinnyang-game .sn-ending-card{display:flex;align-items:center;gap:6px;font-size:10px;border-radius:4px;text-align:left;min-width:0;padding:4px;background:#f5eff7;border:2px solid #d2c2dc}
+.shinnyang-game .sn-ending-card span:last-child{min-width:0;overflow-wrap:anywhere}
+.shinnyang-game .sn-ending-thumb{width:50px;height:48px;flex:none;background:#d7c6e2;color:#776283;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;overflow:hidden;image-rendering:pixelated}
+.shinnyang-game .sn-ending-thumb img{height:100%;width:100%;object-fit:cover;image-rendering:pixelated}
+.shinnyang-game .sn-legacy-note{grid-column:1/-1;font-size:9px;color:#917a99;text-align:left;line-height:1.6;margin:6px 0 0}
+.shinnyang-game .sn-ending-modal[data-ending="waa"]{background:#eee8f5}
+.shinnyang-game .sn-ending-modal[data-ending="may"]{background:#f7f6ff}
+.shinnyang-game .sn-ending-modal[data-ending="ggong"]{background:#fff0f5}
+.shinnyang-game .sn-ending-modal[data-ending="pink"]{background:#ffebf7}
+.shinnyang-game .sn-ending-modal[data-ending="ttung"]{background:#f4eff9}
+.shinnyang-game .sn-ending-modal[data-ending="hong"]{background:#f0f2fc}
+@keyframes sn-ending-art-reveal{0%{opacity:.5;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.shinnyang-game .sn-ending-pixel-art{animation:none}}
+@media(max-width:375px){.shinnyang-game .sn-ending-gallery{grid-template-columns:1fr}}
+
+
+/* v4.5 — six ending cards. The pixel scenes contain no letters: Korean is real browser text. */
+.shinnyang-game #snEndingModal{--sn-e-bright:#b89ce9;--sn-e-dark:#37254f;--sn-e-light:#f2e9ff;--sn-e-soft:#eee2ff;--sn-e-message:#fff8e9;position:relative;padding:7px 7px 9px!important;background:var(--sn-e-dark)!important;border:4px solid #20192f!important;border-radius:3px!important;box-shadow:inset 0 0 0 2px var(--sn-e-bright),0 5px 0 #a995c2!important;text-align:center;overflow:hidden}
+.shinnyang-game #snEndingModal[data-ending="may"]{--sn-e-dark:#22496f;--sn-e-bright:#8ec9f9;--sn-e-light:#e8f4ff;--sn-e-soft:#d9efff}
+.shinnyang-game #snEndingModal[data-ending="ggong"]{--sn-e-dark:#743c56;--sn-e-bright:#f3a4bc;--sn-e-light:#fff0f4;--sn-e-soft:#ffe0ed}
+.shinnyang-game #snEndingModal[data-ending="pink"]{--sn-e-dark:#8e3e70;--sn-e-bright:#ffaacb;--sn-e-light:#fff0fa;--sn-e-soft:#ffe1f2}
+.shinnyang-game #snEndingModal[data-ending="ttung"]{--sn-e-dark:#70543f;--sn-e-bright:#e2bd85;--sn-e-light:#fff1dc;--sn-e-soft:#f6e5c9}
+.shinnyang-game #snEndingModal[data-ending="hong"]{--sn-e-dark:#2e655d;--sn-e-bright:#a9d8b5;--sn-e-light:#e6f9ea;--sn-e-soft:#d6f0e1}
+.shinnyang-game #snEndingModal::before{display:none!important}
+.shinnyang-game #snEndingModal>.sn-ending-art-frame{border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;margin:0 0 6px!important;width:100%;overflow:visible}
+.shinnyang-game #snEndingModal #snEndingArt{display:none!important}
+.shinnyang-game #snEndingModal>small,.shinnyang-game #snEndingModal>h3,.shinnyang-game #snEndingModal>b,.shinnyang-game #snEndingModal>p{display:none!important}
+.shinnyang-game #snEndingModal .sn-ending-illustrated{width:100%;display:block;border:2px solid var(--sn-e-bright);background:var(--sn-e-dark);box-shadow:inset 0 0 0 2px #20192f;color:var(--sn-e-light);font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;animation:sn-ending-art-reveal .35s steps(4,end) both}
+.shinnyang-game #snEndingModal .sn-e-titlebar{min-height:38px;background:linear-gradient(90deg,var(--sn-e-bright),var(--sn-e-light),var(--sn-e-bright));border-bottom:4px solid #1e1830;padding:6px 3px;display:flex;align-items:center;justify-content:space-between;gap:3px;color:#2b2440;font-size:12px;font-weight:950;letter-spacing:-.035em}
+.shinnyang-game #snEndingModal .sn-e-titlebar strong{font-weight:950;white-space:nowrap;font-size:clamp(11px,3.4vw,15px)}
+.shinnyang-game #snEndingModal .sn-e-titlebar span{color:#5b447e;font-size:11px;white-space:nowrap}
+.shinnyang-game #snEndingModal .sn-e-heading{background:#1e182c;color:#fff6df;border-block:2px solid var(--sn-e-bright);min-height:35px;display:flex;align-items:center;justify-content:center;font-family:inherit;font-size:clamp(12px,3.6vw,16px);font-weight:950;letter-spacing:.015em;line-height:1.3;padding:5px 2px;word-break:keep-all}
+.shinnyang-game #snEndingModal .sn-e-subtitle{min-height:27px;background:var(--sn-e-light);color:var(--sn-e-dark);border:2px solid var(--sn-e-bright);font-size:clamp(9px,2.75vw,12px);font-weight:850;line-height:1.35;display:flex;align-items:center;justify-content:center;padding:4px 3px;word-break:keep-all}
+.shinnyang-game #snEndingModal .sn-e-visual{display:grid;grid-template-columns:minmax(0,19fr) minmax(0,63fr) minmax(0,18fr);gap:3px;padding:4px 3px 5px;background:var(--sn-e-dark);min-height:120px;overflow:hidden}
+.shinnyang-game #snEndingModal .sn-e-visual img{display:block;width:100%;height:100%;image-rendering:pixelated;object-fit:cover;min-width:0}
+.shinnyang-game #snEndingModal .sn-e-visual .sn-e-main{border:2px solid var(--sn-e-bright);aspect-ratio:293/232;height:auto;align-self:center}
+.shinnyang-game #snEndingModal .sn-e-visual .sn-e-side{border:2px solid var(--sn-e-bright);align-self:stretch;object-fit:fill;max-height:100%;background:var(--sn-e-soft)}
+.shinnyang-game #snEndingModal .sn-e-quote{margin:0 4px 6px;border:3px solid #251a38;outline:2px solid var(--sn-e-bright);padding:9px 6px 6px;min-height:74px;background:var(--sn-e-message);box-shadow:inset 2px 2px #fff;color:#342a43;overflow-wrap:break-word}
+.shinnyang-game #snEndingModal .sn-e-quote p{padding:0;margin:0 0 3px;font-size:clamp(10px,2.8vw,12px);font-weight:800;line-height:1.6;word-break:keep-all}
+.shinnyang-game #snEndingModal .sn-e-quote span{font-size:10px;color:#756380;font-weight:700}
+.shinnyang-game #snEndingModal .sn-ending-buttons{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0}
+.shinnyang-game #snEndingModal .sn-ending-buttons button{min-width:0;min-height:42px;border:3px solid #20162f;border-radius:3px;font-size:11px;letter-spacing:-.02em;line-height:1.3;padding:7px 2px;background:#f8d993;color:#292038;font-weight:950;box-shadow:inset 2px 2px #fff6d5,inset -2px -2px #bd915a;cursor:pointer;word-break:keep-all}
+.shinnyang-game #snEndingModal .sn-ending-buttons button:last-child{background:var(--sn-e-bright);box-shadow:inset 2px 2px var(--sn-e-light),inset -2px -2px #6f577c}
+.shinnyang-game #snEndingModal .sn-ending-buttons button:focus-visible{outline:3px solid #ffdc76;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.shinnyang-game #snEndingModal .sn-ending-illustrated{animation:none}}
+
+/* v4.9 restoring the user-approved picture layout: titles and controls remain accessible DOM text. */
+.shinnyang-game #snEndingModal .sn-ending-buttons{display:none!important}
+.shinnyang-game #snEndingModal .sn-e-restored{position:relative;width:100%;display:block;--sn-card-title:#f7e8d3;--sn-card-dark:#211a2e;--sn-card-quote:#fff2d8;--sn-card-left:#f6d894;--sn-card-right:#bba4e6}
+.shinnyang-game #snEndingModal .sn-e-restored[data-ending="may"]{--sn-card-title:#e9f8ff;--sn-card-dark:#1b2746;--sn-card-quote:#fff5e7;--sn-card-right:#c8a8eb}
+.shinnyang-game #snEndingModal .sn-e-restored[data-ending="ggong"]{--sn-card-title:#fff0e5;--sn-card-dark:#421e38;--sn-card-quote:#fff3e5;--sn-card-right:#f4b2c3}
+.shinnyang-game #snEndingModal .sn-e-restored[data-ending="pink"]{--sn-card-title:#fff1ee;--sn-card-dark:#47203a;--sn-card-quote:#fff4e8;--sn-card-right:#f4b3cc}
+.shinnyang-game #snEndingModal .sn-e-restored[data-ending="ttung"]{--sn-card-title:#f8e8ce;--sn-card-dark:#35241b;--sn-card-quote:#fff5e1;--sn-card-right:#e2b6a3}
+.shinnyang-game #snEndingModal .sn-e-restored[data-ending="hong"]{--sn-card-title:#e7f4d7;--sn-card-dark:#1b3934;--sn-card-quote:#fff5e4;--sn-card-right:#b4c4e8}
+.shinnyang-game #snEndingModal .sn-e-restored-art{display:block;width:100%;height:auto;image-rendering:pixelated;user-select:none}
+.shinnyang-game #snEndingModal .sn-e-text,.shinnyang-game #snEndingModal .sn-e-action{position:absolute;box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Galmuri11,Galmuri9,"Malgun Gothic",sans-serif!important;font-weight:700;line-height:1.24;letter-spacing:-.04em;word-break:keep-all;overflow:hidden;white-space:pre-line;color:#211a2e;min-height:0;min-width:0;margin:0;border:0;outline:0;box-shadow:none;text-shadow:none}
+/* Source portrait artwork (Waa): 1086×1448. The quote uses the full-width caption panel. */
+.shinnyang-game #snEndingModal .sn-e-overlay-title{left:27.7%;top:4.3%;width:45%;height:6.8%;font-size:clamp(10px,3.7vw,17px);background:var(--sn-card-title)}
+.shinnyang-game #snEndingModal .sn-e-overlay-heading{left:22%;top:15.2%;width:57%;height:5%;font-size:clamp(10px,3.7vw,16px);color:#fff8e9;background:var(--sn-card-dark)}
+.shinnyang-game #snEndingModal .sn-e-overlay-subtitle{left:28%;top:22.3%;width:46%;height:3.7%;font-size:clamp(8px,2.65vw,12px);background:var(--sn-card-title)}
+.shinnyang-game #snEndingModal .sn-e-overlay-quote{left:11.6%;top:72.8%;width:76.8%;height:14.6%;font-size:clamp(8px,2.6vw,11px);background:var(--sn-card-quote);padding:1% 2%;line-height:1.28}
+.shinnyang-game #snEndingModal .sn-e-action{top:89.3%;height:6.1%;font-size:clamp(10px,3.15vw,15px);cursor:pointer;border:0;padding:0 2px;color:#241a2d;background:var(--sn-card-left)}
+.shinnyang-game #snEndingModal .sn-e-action-left{left:4.7%;width:42.1%}
+.shinnyang-game #snEndingModal .sn-e-action-right{left:53.7%;width:41.6% ;background:var(--sn-card-right)}
+/* Other five sourced directly from the selected 3×2 reference grid (512×512 per card). */
+.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-overlay-title{left:24%;top:4%;width:52%;height:9.4%;font-size:clamp(10px,3.5vw,17px)}
+.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-overlay-heading{left:17%;top:15.4%;width:66%;height:6.3%;font-size:clamp(10px,3.6vw,16px)}
+.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-overlay-subtitle{left:16.8%;top:24.2%;width:66%;height:5.1%;font-size:clamp(7px,2.5vw,12px)}
+.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-overlay-quote{left:9.5%;top:74.3%;width:81%;height:16.2%;font-size:clamp(7px,2.25vw,10px);padding:1.2% 3%;line-height:1.3}
+.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-action{top:92.45%;height:6.3%;font-size:clamp(9px,2.95vw,13px)}
+.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-action-left{left:7%;width:40.8%}
+.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-action-right{left:53%;width:40%}
+.shinnyang-game #snEndingModal .sn-e-action:focus-visible{outline:3px solid #ffe998;outline-offset:-1px}
+.shinnyang-game #snEndingModal .sn-e-restored, .shinnyang-game #snEndingGate, .shinnyang-game #snEndingGallery{font-family:Galmuri11,Galmuri9,"Malgun Gothic",sans-serif}
+@media (max-width:390px){.shinnyang-game #snEndingModal .sn-e-overlay-quote{font-size:8px}.shinnyang-game #snEndingModal .sn-e-restored:not([data-ending="waa"]) .sn-e-overlay-quote{font-size:7px}}

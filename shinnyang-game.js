@@ -1,4 +1,4 @@
-/* 신냥이 v4.2 — 자율 생활·실제 기록 에피소드·다중 엔딩, full history.json-backed; no remote services */
+/* 신냥이 v4.3 엔딩 도트 — 자율 생활·실제 기록 에피소드·다중 엔딩, full history.json-backed; no remote services */
 (() => {
   'use strict';
   const trigger = document.getElementById('shinnyangTrigger');
@@ -53,14 +53,30 @@
     {icon:'🎤',title:'음악방송의 반짝이는 별',desc:'더 많은 팬과 다양한 무대에서 만나기',goals:[['fans',45,'인기도 45'],['stage',3,'무대 누적 3회'],['seen',3,'연혁 카드 3장']]},
     {icon:'🌟',title:'나만의 첫 콘서트',desc:'큰 무대를 완성하고 스타냥이 되기',goals:[['voice',85,'가창력 85'],['fans',75,'인기도 75'],['stage',6,'무대 누적 6회']]}
   ];
+  // 사용자가 선택한 6종 원본 엔딩 카드 PNG를 연결한다.
+  // 한글 표시 영역은 웹폰트 HTML 요소로 덮어 그림 속 글자가 잘못 보이지 않게 한다.
+  const ENDING_CARD_IMAGES={"waa": "./ending-card-waa.png?v=20261030-v4-9-3-six-endings-complete", "may": "./ending-card-may.png?v=20261030-v4-9-3-six-endings-complete", "ggong": "./ending-card-ggong.png?v=20261030-v4-9-3-six-endings-complete", "pink": "./ending-card-pink.png?v=20261030-v4-9-3-six-endings-complete", "ttung": "./ending-card-ttung.png?v=20261030-v4-9-3-six-endings-complete", "hong": "./ending-card-hong.png?v=20261030-v4-9-3-six-endings-complete"};
+  const ENDING_NOTES={"waa":"까칠한 듯 다정한 무대냥! 오늘도 반짝이는 무대에서 만나자 ♡","may":"하얀 옷과 검은 머리, 〈같은 생각〉이 떠오르는 설레는 순간 ♡","ggong":"갈색 꽁지머리가 살랑살랑! 오늘도 사랑을 듬뿍 받았다냥 ♡","pink":"연분홍 머리와 통통 튀는 무대! 오늘도 신나는 하루였다냥 ♡","ttung":"안경을 고쳐 쓰고 간식을 냠냠. 포근한 추억이 쌓였어 ♡","hong":"풋풋한 흑발 홍합셩, 〈천일유혼〉을 떠올리는 오늘의 기억 ♡"};
+  const ENDING_CARD_QUOTES={"waa":"수많은 시간 속에서,\n항상 내 곁에 있어줘서 고마워.\n— 신냥이 —","may":"같은 생각, 그 마음이\n지금까지도 나를 노래하게 해.\n— 신냥이 —","ggong":"오늘도 나를 사랑해 줘서\n정말 고맙다냥 ♡\n— 신냥이 —","pink":"오늘도 함께라서\n정말 신나는 하루다냥!\n— 신냥이 —","ttung":"맛있는 것도, 좋은 시간도\n함께해 줘서 고마워.\n— 신냥이 —","hong":"그때도 지금도,\n같은 자리에서 함께하자.\n— 신냥이 —"};
   const ENDINGS=[
-    {id:'vocal',icon:'🎼',title:'목소리를 담은 싱어송냥',subtitle:'작은 연습실에서 시작된 멜로디',desc:'신냥이는 자신만의 목소리로 노래를 만들어 마음을 전하는 가수가 되었어. 무대보다 노래 한 소절을 더 오래 기억해.'},
-    {id:'stage',icon:'🎤',title:'빛나는 라이브 스타냥',subtitle:'수많은 무대를 지나 별이 된 고양이',desc:'수많은 무대에 도전한 신냥이는 환호 속에서 자신의 빛을 발견했어. 매 공연이 새로운 시작이야.'},
-    {id:'fan',icon:'💌',title:'팬들의 사랑을 받는 다정냥',subtitle:'오래 남는 건 함께 나눈 마음',desc:'신냥이가 전한 작은 답장과 인사가 따뜻한 추억이 되었어. 무대 밖에서도 모두를 웃게 하는 가수야.'},
-    {id:'memory',icon:'📚',title:'시간을 여행하는 기록냥',subtitle:'수많은 활동의 순간을 모아',desc:'시간 속의 무대와 이야기를 찾아다니던 신냥이는 기억을 잇는 기록가가 되었어. 발견한 순간마다 새로운 이야기가 피어나.'},
-    {id:'all',icon:'👑',title:'모든 별이 모인 만능 엔터냥',subtitle:'노래와 무대와 팬과 기억의 조화',desc:'노래도 무대도 팬과의 대화도 소중히 여긴 신냥이. 모든 길을 고르게 걸어 자신만의 색을 만들었어.'}
+    {id:'waa',icon:'✦',title:'와아셩',subtitle:'까칠한 카리스마의 무대냥',desc:'금발과 까만 정장, 반짝이는 목걸이. 씩씩한 무대를 오래 준비한 신냥이에게 어울리는 엔딩이야.'},
+    {id:'may',icon:'♫',title:'오월지련셩',subtitle:'하얀 옷을 입은 첫 솔로의 설렘냥',desc:'검은 머리와 새하얀 의상. 멜로디를 오래 연습하며 부드러운 노래를 사랑하게 된 신냥이의 엔딩이야.'},
+    {id:'ggong',icon:'♡',title:'꽁지셩',subtitle:'갈색 꽁지머리의 사랑스러운 냥',desc:'갈색 꽁지머리가 살랑살랑! 팬레터와 다정한 교류를 즐긴 신냥이의 사랑스러운 엔딩이야.'},
+    {id:'pink',icon:'✿',title:'핑크셩',subtitle:'연분홍 머리의 발랄한 무대냥',desc:'연분홍 머리와 핑크 의상으로 무대 위를 통통! 춤과 깜짝 이벤트를 즐긴 신냥이의 엔딩이야.'},
+    {id:'ttung',icon:'☆',title:'뚱토리셩',subtitle:'볼살 빵빵 뿔테안경 냥',desc:'빵빵한 볼살과 까만 뿔테안경! 방도 꾸미고 간식도 함께 먹으며 아늑한 시간을 보낸 신냥이의 엔딩이야.'},
+    {id:'hong',icon:'✧',title:'홍합셩',subtitle:'풋풋한 이미지의 천일유혼 흑발냥',desc:'긴 앞머리가 자연스럽게 갈라지는 흑발과 풋풋한 분위기. 천일유혼의 추억을 담은 홍합셩 엔딩이야.'}
   ];
-  const DREAMS=[['vocal','🎼 멜로디를 만드는 가수'],['stage','🎤 라이브 무대의 별'],['fan','💌 팬과 함께하는 가수'],['memory','📚 추억을 찾는 가수'],['all','👑 다재다능한 가수']];
+  const LEGACY_ENDING_NAMES={vocal:'싱어송냥',stage:'라이브 스타냥',fan:'다정냥',memory:'기록냥',all:'만능 엔터냥'};
+  // 모든 대사는 창작 게임용이다. 실제 인물의 발언을 재현한 것이 아니다.
+  const FAN_LINES={
+    sing:['〈같은 생각〉을 흥얼거리니 마음이 몽글몽글하다냥 ♫','오늘은 셩수니에게 들려줄 멜로디를 연습할래!','노래 부를 때는 눈을 꼭 감아버린다냥~'],
+    dance:['하나 둘, 에릭이랑 민우도 이 스텝을 봐줄까냥?','전진이랑 앤디에게 댄스를 보여주고 싶다냥!','와아셩처럼 멋있게! 그런데 발바닥이 미끄럽다냥...'],
+    stage:['신화 무대를 떠올리면 심장이 두근두근한다냥!','동완이랑 멤버들도 객석에 있을까냥?','핑크셩처럼 통통 뛰는 무대도 해볼래!'],
+    snack:['오늘은 뚱토리셩처럼 볼이 빵빵해졌다냥~','간식 먹고 나면 다시 연습할 거다냥, 진짜야!','맛있는 간식은 같이 먹어야 더 좋다냥 ♡'],
+    rest:['꽁지머리 묶고 낮잠 자면 삐죽할까냥?','잠깐만 쉬었다가 〈같은 생각〉 다시 연습할래.','꿈속에선 신화 멤버들이 다 모였어냥!'],
+    letter:['셩수니가 보낸 응원은 소중한 보물이다냥 ♡','어미새처럼 챙겨주는 팬들 덕에 든든하다냥.','오늘 받은 편지, 다음 무대까지 꼭 기억할래!']
+  };
+  function fanDialogue(kind){const a=FAN_LINES[kind];return a?a[(state.careerCounts[kind]||0)%a.length]:'';}
   const EPISODES={
     stage:{icon:'🎤',name:'공연 스케줄',text:'실제 기록을 참고해 가상의 무대를 준비해 보자냥!',choices:[['무대 집중 연습','stage',4,5],['새로운 편곡 상상하기','vocal',5,4]]},
     radio:{icon:'📻',name:'라디오 스케줄',text:'마이크 앞에서 어떤 이야기로 마음을 전할까?',choices:[['팬들에게 인사하기','fan',5,4],['다른 멜로디 떠올리기','vocal',5,4]]},
@@ -73,7 +89,7 @@
   const DAY_ACTIONS=18; // 하루에 3시간의 게임 시간. 60분마다 플레이는 중단되지 않는다.
   const VERIFICATION={pending:'독립 검증 전',partial:'일부 자료 확인',original_record:'원문 기록',date_uncertain:'날짜 불확실',announced:'사전 예고',source_unavailable:'원출처 확인 어려움',date_conflict:'날짜 자료 상충',on_hold:'확인 보류'};
   const clamp=(n,lo=0,hi=100)=>Math.max(lo,Math.min(hi,n));
-  const initial=()=>({minute:0,day:1,totalActions:0,career:0,careerCounts:{sing:0,dance:0,stage:0,letter:0,snack:0,rest:0},dayActions:[],dayRewarded:false,energy:70,voice:20,fans:0,stars:0,sessions:0,scene:'idle',outfit:'ribbon',year:'all',seen:[],actions:[],finished:false,message:'오늘은 어떤 노래를 연습해볼까냥? ♡',notice:'꿈을 향한 하루는 계속 이어진다냥! ♡',gift:null,coins:0,decor:'none',ownedDecor:[],badges:[],pendingEvent:null,totalStages:0,totalEvents:0,songWins:0,affection:0,interactedAt:-1,placedDecor:[],dream:'all',traits:{vocal:0,stage:0,fan:0,memory:0},episodeWins:0,episodeIds:[],episodeAt:-5,endings:[],endingNow:null,journeys:1});
+  const initial=()=>({minute:0,day:1,totalActions:0,career:0,careerCounts:{sing:0,dance:0,stage:0,letter:0,snack:0,rest:0},dayActions:[],dayRewarded:false,energy:70,voice:20,fans:0,stars:0,sessions:0,scene:'idle',outfit:'ribbon',year:'all',seen:[],actions:[],finished:false,message:'오늘은 어떤 노래를 연습해볼까냥? ♡',notice:'꿈을 향한 하루는 계속 이어진다냥! ♡',gift:null,coins:0,decor:'none',ownedDecor:[],badges:[],pendingEvent:null,totalStages:0,totalEvents:0,songWins:0,affection:0,interactedAt:-1,placedDecor:[],legacyEndings:[],traits:{vocal:0,stage:0,fan:0,memory:0},episodeWins:0,episodeIds:[],episodeAt:-5,endings:[],endingNow:null,journeys:1});
   const safeInt=(x,max)=>Number.isFinite(Number(x))?clamp(Math.trunc(Number(x)),0,max):0;
   function load(){
     const s=initial();
@@ -106,7 +122,7 @@
         totalStages:safeInt(v.totalStages,999999),totalEvents:safeInt(v.totalEvents,999999),songWins:safeInt(v.songWins,999999),
         affection:safeInt(v.affection,100),interactedAt:Number.isInteger(v.interactedAt)?v.interactedAt:-1,
         placedDecor:Array.isArray(v.placedDecor)?[...new Set(v.placedDecor.filter(id=>DECORS.some(d=>d.id===id&&id!=='none')))].slice(0,3):v.decor&&v.decor!=='none'&&DECORS.some(d=>d.id===v.decor)?[v.decor]:[],
-        dream:DREAMS.some(d=>d[0]===v.dream)?v.dream:'all',
+        legacyEndings:[...new Set([...(Array.isArray(v.legacyEndings)?v.legacyEndings:[]),...(Array.isArray(v.endings)?v.endings:[])].filter(id=>Object.hasOwn(LEGACY_ENDING_NAMES,id)))],
         traits:Object.fromEntries(['vocal','stage','fan','memory'].map(k=>[k,safeInt(v.traits?.[k],999999)])),
         episodeWins:safeInt(v.episodeWins,999999),episodeIds:Array.isArray(v.episodeIds)?[...new Set(v.episodeIds.filter(id=>typeof id==='string'&&id.length<180))].slice(-500):[],
         episodeAt:Number.isInteger(v.episodeAt)?v.episodeAt:-5,
@@ -130,30 +146,84 @@
   function careerValue(key){if(key==='voice'||key==='fans')return state[key];if(key==='seen')return state.seen.length;return state.careerCounts[key]||0;}
   function careerReady(){return state.career<CAREERS.length&&CAREERS[state.career].goals.every(([k,target])=>careerValue(k)>=target);}
   function endingAvailable(){return state.career>=CAREERS.length&&state.totalActions>=36&&state.episodeWins>=3;}
+  // 직접 선택 UI 없이, 누적 육성 행동과 에피소드 기록으로 엔딩을 결정한다.
   function endingScores(){
-    return {vocal:state.traits.vocal*8+state.songWins*5+state.careerCounts.sing*2,
-      stage:state.traits.stage*8+state.totalStages*4+state.careerCounts.dance,
-      fan:state.traits.fan*8+state.careerCounts.letter*3+Math.floor(state.fans/7),
-      memory:state.traits.memory*8+state.episodeWins*2+Math.floor(state.seen.length/3)};
+    const c=state.careerCounts,t=state.traits;
+    const scores={
+      waa:t.stage*5+state.totalStages*6+c.stage*2,
+      may:t.vocal*7+state.songWins*6+c.sing*3,
+      ggong:t.fan*7+c.letter*6+Math.floor(state.affection/5),
+      pink:c.dance*8+state.totalEvents*5+Math.floor(state.fans/7),
+      ttung:c.snack*9+c.rest*7+state.ownedDecor.length*6+Math.floor(state.affection/5),
+      hong:t.memory*9+state.episodeWins*4+Math.floor(state.seen.length/2)
+    };
+    return scores;
   }
   function chooseEnding(){
-    const scores=endingScores();if(state.dream!=='all')scores[state.dream]+=30;
-    const all=['vocal','stage','fan','memory'];
-    if(state.dream==='all'&&all.every(k=>state.traits[k]>=2)&&Math.max(...Object.values(scores))-Math.min(...Object.values(scores))<28)return ENDINGS.find(e=>e.id==='all');
-    const winner=all.sort((a,b)=>scores[b]-scores[a])[0];return ENDINGS.find(e=>e.id===winner);
+    const scores=endingScores();
+    const order=['waa','may','ggong','pink','ttung','hong'];
+    // 동점 시 우선순위 고정: 저장/재로드/도감 감상 시 결과가 달라지지 않는다.
+    const winner=order.reduce((best,k)=>scores[k]>scores[best]?k:best,order[0]);
+    return ENDINGS.find(e=>e.id===winner);
+  }
+  // Reuse the user-selected source imagery. Actual labels live in DOM (Galmuri), not baked pixels.
+  function renderEndingIllustration(e){
+    const frame=$('snEndingArt').parentElement;
+    let card=frame.querySelector('.sn-e-restored');
+    if(!card){
+      card=document.createElement('div');
+      card.className='sn-e-restored';
+      card.innerHTML=`<img class="sn-e-restored-art" id="snEArtwork" alt="" draggable="false">
+        <div class="sn-e-text sn-e-overlay-title" id="snECardTitle"></div>
+        <div class="sn-e-text sn-e-overlay-heading" id="snECardHeading"></div>
+        <div class="sn-e-text sn-e-overlay-subtitle" id="snECardSubtitle"></div>
+        <div class="sn-e-text sn-e-overlay-quote" id="snECardQuote"></div>
+        <button type="button" class="sn-e-action sn-e-action-left" id="snECardBack">📖 도감 보기</button>
+        <button type="button" class="sn-e-action sn-e-action-right" id="snECardAgain">↻ 새 이야기</button>`;
+      card.querySelector('#snECardBack').addEventListener('click',()=>$('snEndingClose').click());
+      card.querySelector('#snECardAgain').addEventListener('click',()=>$('snEndingAgain').click());
+      frame.append(card);
+    }
+    card.dataset.ending=e.id;
+    card.querySelector('#snEArtwork').src=ENDING_CARD_IMAGES[e.id];
+    card.querySelector('#snEArtwork').alt=e.title+' 도트 엔딩 카드';
+    card.querySelector('#snECardTitle').textContent='신냥이의 한 시간';
+    card.querySelector('#snECardHeading').textContent='ENDING '+String(ENDINGS.indexOf(e)+1).padStart(2,'0')+' · '+e.title;
+    card.querySelector('#snECardSubtitle').textContent=e.subtitle;
+    card.querySelector('#snECardQuote').textContent=ENDING_CARD_QUOTES[e.id];
   }
   function renderEnding(){
     $('snEndingGate').hidden=activeTab!=='memory';
     $('snEndingProgress').textContent=state.career<CAREERS.length?'커리어 챕터 4개를 먼저 달성해 봐!':
       state.totalActions<36?'함께한 행동 '+state.totalActions+'/36 · DAY 03까지 성장해 보자냥':
-      state.episodeWins<3?'활동 연혁 에피소드 '+state.episodeWins+'/3개 체험하기':'엔딩을 선택해 볼 수 있어. 이후에도 자유롭게 계속 놀 수 있어!';
+      state.episodeWins<3?'활동 연혁 에피소드 '+state.episodeWins+'/3개 체험하기':'신냥이의 육성 기록으로 결정된 엔딩을 확인할 수 있어!';
     $('snEndingView').disabled=!endingAvailable();
-    $('snDream').value=state.dream;
     const gallery=$('snEndingGallery');gallery.replaceChildren();
-    for(const e of ENDINGS){const seen=state.endings.includes(e.id);const b=document.createElement('button');b.type='button';b.className='sn-ending-card'+(seen?' obtained':'');b.textContent=(seen?e.icon:'🔒')+' '+(seen?e.title:'??? · 미발견 엔딩');b.disabled=!seen;b.title=seen?e.subtitle:'육성 결과에 따라 발견할 수 있어';b.addEventListener('click',()=>showEnding(e.id,false));gallery.append(b);}
-    $('snEndingCount').textContent=state.endings.length+'/'+ENDINGS.length;
+    for(const e of ENDINGS){
+      const seen=state.endings.includes(e.id),b=document.createElement('button');
+      b.type='button';b.className='sn-ending-card'+(seen?' obtained':'');b.disabled=!seen;
+      const thumb=document.createElement('span');thumb.className='sn-ending-thumb';
+      if(seen){const img=document.createElement('img');img.src=ENDING_CARD_IMAGES[e.id];img.alt=e.title+' 엔딩 카드';img.loading='lazy';thumb.append(img);}
+      else thumb.textContent='?';
+      const title=document.createElement('span');title.textContent=seen?e.title:'??? · 미발견 엔딩';
+      b.append(thumb,title);b.title=seen?e.subtitle:'육성 결과에 따라 발견할 수 있어';
+      b.addEventListener('click',()=>showEnding(e.id,false));gallery.append(b);
+    }
+    const legacy=state.legacyEndings||[];
+    if(legacy.length){const note=document.createElement('p');note.className='sn-legacy-note';note.textContent='이전 v4.2 엔딩 기록 보존: '+legacy.map(x=>LEGACY_ENDING_NAMES[x]).filter(Boolean).join(' · ')+' (새 엔딩 도감과 별도)';gallery.append(note);}
+    $('snEndingCount').textContent=state.endings.filter(id=>ENDINGS.some(e=>e.id===id)).length+'/'+ENDINGS.length;
     const modal=$('snEndingModal');modal.hidden=!state.endingNow;
-    if(state.endingNow){const e=ENDINGS.find(e=>e.id===state.endingNow);$('snEndingIcon').textContent=e.icon;$('snEndingTitle').textContent=e.title;$('snEndingSubtitle').textContent=e.subtitle;$('snEndingDesc').textContent=e.desc;}
+    if(state.endingNow){
+      const e=ENDINGS.find(e=>e.id===state.endingNow);
+      if(!e){modal.hidden=true;return;}
+      modal.dataset.ending=e.id;
+      const art=$('snEndingArt');art.hidden=true;
+      renderEndingIllustration(e);
+      $('snEndingClose').textContent='도감으로 돌아가기';
+      $('snEndingAgain').textContent='새 이야기 시작 ♡';
+      $('snEndingTitle').textContent='ENDING '+String(ENDINGS.indexOf(e)+1).padStart(2,'0')+' · '+e.title;
+      $('snEndingSubtitle').textContent=e.subtitle;$('snEndingDesc').textContent=e.desc;
+    }
   }
   function showEnding(id,award){
     const e=ENDINGS.find(x=>x.id===id);if(!e)return;
@@ -165,7 +235,7 @@
   }
   function nextJourney(){
     if(!state.endingNow||!window.confirm('엔딩 도감·구입 소품은 보존하고, 새로운 신냥이 육성을 시작할까냥?'))return;
-    const prev=state;state=initial();state.endings=[...prev.endings];state.ownedDecor=[...prev.ownedDecor];state.placedDecor=[...prev.placedDecor];state.decor=prev.decor;state.journeys=prev.journeys+1;state.dream=prev.dream;
+    const prev=state;state=initial();state.endings=[...prev.endings];state.ownedDecor=[...prev.ownedDecor];state.placedDecor=[...prev.placedDecor];state.decor=prev.decor;state.journeys=prev.journeys+1;state.legacyEndings=[...prev.legacyEndings];
     state.notice='🌱 '+state.journeys+'번째 신냥이 이야기 시작! 엔딩 도감과 구매한 가구는 남아 있어.';
     activeTab='activity';$('snGift').hidden=true;save();render();
   }
@@ -356,7 +426,6 @@
     $('snAffection').textContent=state.affection;
     $('shinnyangScene').classList.toggle('sn-cloudy',state.day%3===0);
     $('snWeather').textContent=state.day%3===0?'☁️ · 오늘은 구름 낀 날':state.day%3===2?'🌤️ · 말랑말랑 봄날':'☀️ · 햇살 좋은 날';
-    $('snDreamShort').textContent=DREAMS.find(d=>d[0]===state.dream)?.[1]||'👑 다재다능한 가수';
     [...$('shinnyangProgress').children].forEach((node,i)=>node.classList.toggle('filled',i<ordinal()));
     $('snMissionTitle').textContent=m.label;
     $('snDailyReward').textContent=state.dayRewarded?'✓ 오늘 보상 수령 완료':'완료 시 별 +12 · 🪙 +8';
@@ -416,7 +485,7 @@
     };
     const a=actions[kind];if(!a)return;
     state.energy=clamp(state.energy+a.e);state.voice=clamp(state.voice+a.v);state.fans=clamp(state.fans+a.f);state.stars+=a.s;
-    state.scene=a.scene;state.message=a.speech;state.notice='✦ '+a.label+' · 별 +'+a.s+(newMemory?' · 새로운 연혁 카드 수집!':'');
+    state.scene=a.scene;state.message=fanDialogue(kind)||a.speech;state.notice='✦ '+a.label+' · 별 +'+a.s+(newMemory?' · 새로운 연혁 카드 수집!':'');
     state.coins=clamp(state.coins+(kind==='stage'?5:kind==='sing'?3:2),0,999999);
     if(kind==='stage'){state.totalStages++;state.traits.stage++;}
     if(kind==='sing')state.traits.vocal++;
@@ -611,7 +680,6 @@
   $('snPropRight').addEventListener('click',()=>interactFurniture('right'));
   $('snEpisodeA').addEventListener('click',()=>playEpisode(0));
   $('snEpisodeB').addEventListener('click',()=>playEpisode(1));
-  $('snDream').addEventListener('change',ev=>{state.dream=ev.target.value;state.notice='✦ 꿈의 방향을 정했어! 육성한 능력치에 따라 엔딩이 달라져.';save();render();});
   $('snEndingView').addEventListener('click',()=>{if(endingAvailable())showEnding(chooseEnding().id,true);});
   $('snEndingClose').addEventListener('click',()=>{state.endingNow=null;save();render();});
   $('snEndingAgain').addEventListener('click',nextJourney);
