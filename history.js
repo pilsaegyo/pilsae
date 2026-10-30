@@ -778,6 +778,15 @@ function sourceWidget(e){
  const youtubeId=youtubeVideoId;
  const fanVideos=Array.isArray(e.fanVideoSources)?e.fanVideoSources:[];
  const fanById=new Map(fanVideos.filter(v=>v&&youtubeId(v.url)).map(v=>[youtubeId(v.url),v]));
+ // fanVideoSources were added primarily from the Seonggong Sidae channel in v51.
+ // Their event's source field is the activity's evidence, NOT the video uploader.
+ // Video publisher is independent of an event's historical source/provenance.
+ // The five user-confirmed VIDEOTANK videos explicitly record the same publisher
+ // spelling already used by researchSources; older unstructured notes are fallback.
+ const videotankPublisher='VIDEOTANK 비디오탱크 유튜브 채널 (@oldkpop)';
+ const isVideotank=video=>/VIDEOTANK/i.test(String(video?.publisher||video?.note||''));
+ const fanUploader=video=>String(video?.publisher||'').trim()||(isVideotank(video)?videotankPublisher:'셩공시대님');
+ const fanKind=video=>isVideotank(video)?'방송 재게시 영상·설명/댓글 참고':'관련 영상 · 팬채널 참고';
  const add=(label,url,kind,note)=>{
    if(!isSafeUrl(url)||seen.has(url))return;
    const id=youtubeId(url);
@@ -792,7 +801,7 @@ function sourceWidget(e){
    }
    // Existing video references are kept once, now with their correct channel attribution.
    const fan=id?fanById.get(id):null;
-   if(fan){label=`${/셩공시대/.test(String(e.source||''))?'셩공시대님':'팬채널 (업로더 미확인)'} — ${fan.title}`;kind='관련 영상 · 팬채널 참고';note=fan.note;}
+   if(fan){label=`${fanUploader(fan)} — ${fan.title}`;kind=fanKind(fan);note=fan.note;}
    seen.add(url);
    ordered.push({label,url,kind,note});
  };
@@ -808,7 +817,7 @@ function sourceWidget(e){
  }
  for(const video of fanVideos){
    if(!video||typeof video.url!=='string'||typeof video.title!=='string')continue;
-   if(youtubeId(video.url))add(`${/셩공시대/.test(String(e.source||''))?'셩공시대님':'팬채널 (업로더 미확인)'} — ${video.title}`,video.url,'관련 영상 · 팬채널 참고',video.note||'팬채널 참고 영상입니다. 영상 제목의 날짜와 실제 방송·공연일은 다를 수 있습니다.');
+   if(youtubeId(video.url))add(`${fanUploader(video)} — ${video.title}`,video.url,fanKind(video),video.note||'팬채널 참고 영상입니다. 영상 제목의 날짜와 실제 방송·공연일은 다를 수 있습니다.');
  }
  const status=verificationGroup(e);
  const originalStatus=String(e.verification||'판정 미기재');
