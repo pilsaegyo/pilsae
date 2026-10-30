@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="신화 그룹과 신혜성 활동 기록을 네 시기로 나누어 검증 자료와 함께 찾아보는 연표"><title>활동 연표 | SHINHWA HISTORY | 필새 정리</title><link rel="icon" href="./assets/favicon-p.png"><link rel="stylesheet" href="./history.css?v=20261030-history-ux2"><link rel="stylesheet" href="./shinnyang-game.css?v=20261030-v4-0"></head>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="신화 그룹과 신혜성 활동 기록을 네 시기로 나누어 검증 자료와 함께 찾아보는 연표"><title>활동 연표 | SHINHWA HISTORY | 필새 정리</title><link rel="icon" href="./assets/favicon-p.png"><link rel="stylesheet" href="./history.css?v=20261030-history-ux2"><link rel="stylesheet" href="./shinnyang-game.css?v=20261030-v4-2"></head>
 <body><header class="top"><div class="top-inner"><a class="back" href="./?view=grid">← 영상 아카이브</a><span class="history-brand">SHINHWA HISTORY <span class="history-brand-divider">|</span> 필새 정리</span></div></header>
 <main class="wrap"><section class="intro"><div class="history-stardust" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i></div><div class="eyebrow">CHAPTER 1 — 4 · HISTORY</div><h1>활동 연표</h1><p>신화 전체 활동과 신혜성이 참여한 기록을 시기별로 살펴보세요.</p></section>
 <div class="notice">일정의 원문·날짜·출처는 각 항목의 ⓘ 근거에서 확인할 수 있습니다. 관련 영상은 프로그램·회차 내용을 대조한 참고 자료입니다.<span id="researchGuide" class="research-guide"></span></div>
@@ -43,14 +43,14 @@
       <div class="sn-stage-light l" aria-hidden="true"></div><div class="sn-stage-light r" aria-hidden="true"></div>
       <div class="sn-curtain l" aria-hidden="true"></div><div class="sn-curtain r" aria-hidden="true"></div>
       <span class="shinnyang-scene-tag" id="shinnyangSceneTag">✧ 신냥이의 아늑한 연습실</span>
-      <div class="sn-room-decor" id="snRoomDecor" aria-hidden="true"></div><div class="sn-prop sn-prop-l" id="snPropLeft" aria-hidden="true">🎹</div><div class="sn-prop sn-prop-r" id="snPropRight" aria-hidden="true">🧸</div>
+      <div class="sn-room-decor" id="snRoomDecor" aria-label="방에 배치한 소품"></div><button type="button" class="sn-prop sn-prop-l" id="snPropLeft" aria-label="왼쪽 소품 만지기" title="소품 만져보기">🎹</button><button type="button" class="sn-prop sn-prop-r" id="snPropRight" aria-label="오른쪽 소품 만지기" title="소품 만져보기">🧸</button>
       <div class="sn-floaties" id="snFloaties" aria-hidden="true"><span>✦</span><span>♡</span><span>♪</span><span>✧</span><span>♫</span></div>
       <div class="shinnyang-floor" aria-hidden="true"></div>
-      <canvas id="shinnyangSprite" class="shinnyang-pixel-cat" width="48" height="48" role="img" aria-label="도트 고양이 신냥이"></canvas>
+      <canvas id="shinnyangSprite" class="shinnyang-pixel-cat" width="48" height="48" role="button" tabindex="0" title="신냥이 쓰다듬기 ♡" aria-label="신냥이 쓰다듬기"></canvas><span id="snIdleBubble" class="sn-idle-bubble" aria-hidden="true">♪</span>
       <div class="sn-reaction" id="snReaction" aria-hidden="true"></div>
       <div class="sn-scene-bottom" aria-hidden="true"><span>✦</span><span>♡</span><span>✦</span></div>
     </div>
-    <div class="shinnyang-dialogue" id="shinnyangDialogue" aria-live="polite">오늘은 어떤 노래를 연습해볼까냥? ♡</div>
+    <div class="sn-living-hint">🐾 고양이를 눌러 쓰다듬고, 양쪽 소품을 만져봐! · 호감도 <strong id="snAffection">0</strong></div><div class="shinnyang-dialogue" id="shinnyangDialogue" aria-live="polite">오늘은 어떤 노래를 연습해볼까냥? ♡</div>
     <div class="shinnyang-toast" id="shinnyangToast" role="status">✧ 게임 데이터를 불러오는 중이야...</div>
     <div class="shinnyang-progress" id="shinnyangProgress" aria-label="현재 한 시간의 흐름"><span></span><span></span><span></span><span></span><span></span><span></span></div>
     <div class="shinnyang-meters">
@@ -59,9 +59,11 @@
       <div class="shinnyang-meter"><label>♥ 인기 <strong id="snFans">0</strong></label><div class="shinnyang-track"><div id="snFansBar" class="shinnyang-fill fans"></div></div></div>
     </div>
     <section class="sn-career" aria-label="커리어 성장 목표"><div class="sn-career-top"><span id="snCareerChapter">CHAPTER 1 / 4</span><strong id="snCareerTitle">🎼 작은 연습실에서 시작</strong></div><p id="snCareerDesc">목표를 이루며 신냥이를 성장시켜봐!</p><div class="sn-career-goals" id="snCareerGoals"></div><button id="snCareerClaim" class="sn-career-claim" type="button" disabled>목표 달성 후 다음 이야기</button></section>
+    <section class="sn-dream-panel" aria-label="신냥이의 꿈"><label for="snDream">🌙 꿈의 방향 선택</label><select id="snDream" aria-label="신냥이가 꿈꾸는 미래"><option value="all">👑 다재다능한 가수</option><option value="vocal">🎼 멜로디를 만드는 가수</option><option value="stage">🎤 라이브 무대의 별</option><option value="fan">💌 팬과 함께하는 가수</option><option value="memory">📚 추억을 찾는 가수</option></select><small>꿈과 육성 성향에 따라 엔딩이 달라져. 현재 목표: <b id="snDreamShort">👑 다재다능한 가수</b></small></section>
     <div class="sn-mission sn-daily"><div><span class="sn-mission-label">✦ DAY 스케줄</span><span id="snMissionTitle">노래 연습하기</span><small id="snDailyReward">완료 시 별 +12 · 🪙 +8</small></div><div class="sn-mission-count" id="snMissionCount">0/2</div></div>
     <nav class="sn-tabs" aria-label="신냥이 게임 메뉴"><button type="button" data-sn-tab="activity" aria-pressed="true">🎤 활동</button><button type="button" data-sn-tab="life" aria-pressed="false">🏠 생활</button><button type="button" data-sn-tab="decor" aria-pressed="false">🎀 꾸미기</button><button type="button" data-sn-tab="memory" aria-pressed="false">📚 추억</button></nav>
-    <div class="sn-choose-head" id="snChooseHead"><strong>무엇을 할까냥?</strong><span>행동마다 게임 속 10분</span></div>
+    <section class="sn-episode" id="snEpisode" aria-label="실제 연혁 기반 게임 스케줄"><div class="sn-episode-heading"><strong>📜 연혁 스케줄 도전</strong><span id="snEpisodeType">활동 기록</span></div><b id="snEpisodeTitle">기록을 불러오는 중...</b><p id="snEpisodeIntro">실제 기록을 소재로 창작된 게임 스케줄이야.</p><div class="sn-episode-options"><button id="snEpisodeA" type="button">활동하기 A</button><button id="snEpisodeB" type="button">활동하기 B</button></div><small id="snEpisodeHint">활동 기록을 불러오고 있어.</small></section>
+    <div class="sn-weather" id="snWeather">☀️ · 햇살 좋은 날</div><div class="sn-choose-head" id="snChooseHead"><strong>무엇을 할까냥?</strong><span>행동마다 게임 속 10분</span></div>
     <div class="shinnyang-actions" id="shinnyangActions">
       <button class="shinnyang-action" type="button" data-sn-act="sing"><span class="sn-icon">🎼</span><span>노래 연습</span><small>실력 +18</small></button>
       <button class="shinnyang-action" type="button" data-sn-act="dance"><span class="sn-icon">🪩</span><span>댄스 연습</span><small>실력 +9</small></button>
@@ -70,6 +72,7 @@
       <button class="shinnyang-action" type="button" data-sn-act="rest"><span class="sn-icon">🛏️</span><span>꿀잠 자기</span><small>체력 +28</small></button>
       <button class="shinnyang-action" type="button" data-sn-act="letter"><span class="sn-icon">💌</span><span>팬레터</span><small>인기 +12</small></button>
     </div>
+    <button id="snNoteStart" class="sn-note-start" type="button">✨ 음표 잡기 · 3라운드 미니게임</button><div class="sn-note-challenge" id="snNoteChallenge" hidden><div class="sn-challenge-title">🎶 떨어지는 음표를 잡아라!</div><p>ROUND <strong id="snNoteRound">1 / 3</strong> · 같은 모양의 음표를 눌러줘!</p><div class="sn-note-target" id="snNoteTarget">♪</div><div class="sn-note-options"><button type="button" data-sn-catch="0">♪</button><button type="button" data-sn-catch="1">♫</button><button type="button" data-sn-catch="2">♬</button></div><small id="snNoteFeedback">같은 음표를 잡아봐!</small><button type="button" id="snNoteCancel" class="sn-note-cancel">나중에 하기</button></div>
     <div class="sn-song-challenge" id="snSongChallenge" hidden>
       <div class="sn-challenge-title">🎼 신냥이 음정 기억하기</div>
       <p id="snSongHint">세 음표의 순서를 기억해봐!</p>
@@ -94,10 +97,11 @@
     <div class="sn-gift" id="snGift" hidden><span class="sn-gift-emoji" id="snGiftEmoji">🎁</span><div><b id="snGiftTitle">선물 도착!</b><p id="snGiftText"></p></div><button type="button" id="snGiftClose" aria-label="선물 알림 닫기">×</button></div>
     <div class="sn-extras" id="snExtras" hidden>
       <details class="sn-extra" data-sn-extra="decor"><summary>🎀 신냥이 옷장 <span id="snOutfitCount">1/5</span></summary><div class="sn-outfits" id="snOutfits"></div><small>성장 별을 모아 새 소품을 해금해 봐!</small></details>
-      <details class="sn-extra" data-sn-extra="decor"><summary>🧸 신냥이의 방 꾸미기 <span id="snDecorCount">0/6</span></summary><div class="sn-shop-head">현재 보유 <strong id="snShopCoins">0 🪙</strong> · 소품은 사면 계속 사용할 수 있어!</div><div class="sn-shop" id="snShop"></div></details>
+      <details class="sn-extra" data-sn-extra="decor"><summary>🧸 신냥이의 방 꾸미기 <span id="snDecorCount">0/8</span></summary><div class="sn-shop-head">현재 보유 <strong id="snShopCoins">0 🪙</strong> · 소품은 사면 계속 사용할 수 있어!</div><div class="sn-shop" id="snShop"></div><div id="snPlacement" class="sn-placement">배치한 소품 0/3</div></details>
       <details class="sn-extra" data-sn-extra="memory"><summary>🏅 성취 스티커 <span id="snAchievementCount">0/7</span></summary><div class="sn-achievements" id="snAchievements"></div></details>
       <details class="sn-extra" data-sn-extra="memory"><summary>🗂️ 추억 수집함 <span id="snCollectionCount">0장</span></summary><p id="snCollectionPreview">다양한 시대의 활동 기록을 모아봐!</p><div class="sn-collection" id="snCollection"></div></details>
     </div>
+    <section id="snEndingGate" class="sn-ending-gate" aria-label="신냥이 멀티 엔딩" hidden><div class="sn-ending-head"><strong>🌟 신냥이의 미래</strong><span>PRINCESS MAKER STYLE</span></div><p id="snEndingProgress">커리어를 달성하고 다양한 추억을 쌓아봐!</p><button id="snEndingView" type="button" disabled>✦ 신냥이의 엔딩 보러 가기</button><details class="sn-extra"><summary>📖 엔딩 도감 <span id="snEndingCount">0/5</span></summary><div id="snEndingGallery" class="sn-ending-gallery"></div></details><section id="snEndingModal" class="sn-ending-modal" role="group" aria-label="신냥이의 성장 엔딩" hidden><div id="snEndingIcon" class="sn-ending-illustration">🌟</div><small>✧ 신냥이 육성 엔딩 ✧</small><h3 id="snEndingTitle">신냥이의 결말</h3><b id="snEndingSubtitle"></b><p id="snEndingDesc"></p><div class="sn-ending-buttons"><button type="button" id="snEndingClose">계속 키우기</button><button type="button" id="snEndingAgain">새 이야기 시작 ♡</button></div><p>새 이야기를 시작해도 엔딩 도감과 구매한 가구는 유지돼.</p></section></section>
     <section class="shinnyang-moment" id="shinnyangMoment" aria-label="실제 연혁 기록">
       <div class="shinnyang-moment-top"><strong>📜 실제 활동 연혁 속 기억</strong><span id="snDataCount">전체 기록 불러오는 중</span></div>
       <label class="sn-era-label" for="snEra">여행할 시기 <select id="snEra" aria-label="연혁 탐험 연도 선택"><option value="all">전 시기 랜덤 여행</option></select></label>
@@ -105,8 +109,8 @@
       <p class="shinnyang-moment-note">실제 연혁의 날짜·제목을 그대로 소개하며, 고양이의 활동·대사는 창작 게임이야. 기록별 검증 상태를 확인해 줘.</p>
     </section>
   </div>
-  <footer class="shinnyang-foot"><div class="shinnyang-stars"><span>✦ 신냥이의 성장 별</span><strong id="shinnyangStars">0 별 · 0회 완주</strong></div><div class="shinnyang-marquee"><span id="snTicker">✦ 필새 활동 기록을 펼치는 중 ♡</span></div><div class="shinnyang-disclaimer"><span>성장 기록은 현재 브라우저에 저장돼.</span><button type="button" class="shinnyang-reset" id="shinnyangReset">성장 초기화</button></div></footer>
+  <footer class="shinnyang-foot"><div class="shinnyang-stars"><span>✦ 신냥이의 성장 별</span><strong id="shinnyangStars">0 별 · 함께한 0시간</strong></div><div class="shinnyang-marquee"><span id="snTicker">✦ 필새 활동 기록을 펼치는 중 ♡</span></div><div class="shinnyang-disclaimer"><span>성장 기록은 현재 브라우저에 저장돼.</span><button type="button" class="shinnyang-reset" id="shinnyangReset">성장 초기화</button></div></footer>
 </section>
 <div id="readingYear" class="reading-year" hidden></div>
 <button id="backToTop" class="back-to-top" type="button" aria-label="페이지 맨 위로 이동" title="맨 위로" hidden><span aria-hidden="true">↑</span><small>TOP</small></button>
-<script src="./history.js?v=20261030-history-ux2" defer></script><script src="./shinnyang-game.js?v=20261030-v4-0" defer></script></body></html>
+<script src="./history.js?v=20261030-history-ux2" defer></script><script src="./shinnyang-game.js?v=20261030-v4-2" defer></script></body></html>

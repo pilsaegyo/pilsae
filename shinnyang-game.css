@@ -159,3 +159,69 @@
 .shinnyang-game .shinnyang-progress{margin-top:8px}
 .shinnyang-game .shinnyang-clock{white-space:nowrap}
 @media(max-width:550px){.shinnyang-game .sn-career{padding:10px}.shinnyang-game .sn-tabs button{font-size:9px}}
+
+/* v4.1 + v4.2: 자율 생활 / 연혁 에피소드 / 멀티 엔딩 */
+.shinnyang-game .shinnyang-pixel-cat{left:calc(50% + var(--sn-wander-x,0px));transition:left 1.15s ease-in-out;cursor:pointer;outline-offset:-8px}
+.shinnyang-game .shinnyang-pixel-cat:focus-visible{outline:3px dashed #a57ac5;border-radius:22px}
+.shinnyang-game .sn-prop{appearance:none;background:none;border:0;padding:0;cursor:pointer;pointer-events:auto;touch-action:manipulation}
+.shinnyang-game .sn-prop:hover{filter:drop-shadow(0 0 10px #fff) drop-shadow(0 5px 3px #d2a3d7);scale:1.12}
+.shinnyang-game .sn-prop:focus-visible{outline:2px dashed #a57ac5;outline-offset:3px}
+.shinnyang-game .sn-room-decor{display:flex;align-items:center;gap:3px;right:25px;top:65px;max-width:135px;flex-wrap:wrap;font-size:25px;z-index:2}
+.shinnyang-game .sn-room-decor span:nth-child(2){translate:0 26px;animation-delay:-1.7s}
+.shinnyang-game .sn-room-decor span:nth-child(3){translate:-7px 54px;animation-delay:-2.8s}
+.shinnyang-game .sn-living-hint{background:#f5eaf7;padding:5px 10px;font-size:10px;color:#9173a3;border-radius:8px;margin:6px 1px 0;text-align:center}
+.shinnyang-game .sn-living-hint strong{color:#b571ad}
+.shinnyang-game .sn-idle-bubble{position:absolute;z-index:4;left:60%;top:26%;opacity:0;font-size:21px;color:#ba79b5;pointer-events:none}
+.shinnyang-game .sn-idle-bubble.sn-idle-pop{animation:sn-idle-bubble 1.5s ease-out}
+@keyframes sn-idle-bubble{0%{opacity:0;translate:0 10px}25%{opacity:1}85%{opacity:.8}100%{opacity:0;translate:0 -24px}}
+.shinnyang-game .shinnyang-scene.sn-night{background:linear-gradient(180deg,#c2afd8 0%,#e3cee5 60%,#d9b5d2 61%,#f1d9e3 100%)}
+.shinnyang-game .sn-dream-panel{margin:8px 0 10px;border-radius:11px;border:1px solid #e2cfe9;padding:9px;background:#fffcfe;display:grid;grid-template-columns:1fr 1.5fr;gap:6px;align-items:center}
+.shinnyang-game .sn-dream-panel label{font-size:10px;font-weight:900;color:#86629b}
+.shinnyang-game .sn-dream-panel select{max-width:100%;width:100%;font-size:11px;border:1px solid #ddc3e8;border-radius:8px;padding:6px;color:#7e6095;background:#f8effa}
+.shinnyang-game .sn-dream-panel small{grid-column:1/-1;color:#9c84a9;font-size:9px}
+.shinnyang-game .sn-episode{margin:9px 0;padding:11px;border-radius:13px;border:1px solid #e8d4bd;background:linear-gradient(125deg,#fff6e7,#fff9f2);box-shadow:0 3px 0 #f2e6d6}
+.shinnyang-game .sn-episode-heading{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-bottom:5px}
+.shinnyang-game .sn-episode-heading strong{font-size:12px;color:#9d7388}
+.shinnyang-game .sn-episode-heading span{font-size:9px;color:#af9297;background:#fff8fa;border-radius:100px;padding:3px 7px}
+.shinnyang-game .sn-episode>b{display:block;font-size:11px;color:#805f89;line-height:1.6;word-break:keep-all}
+.shinnyang-game .sn-episode>p{font-size:10px;color:#a18495;margin:5px 0 8px}
+.shinnyang-game .sn-episode-options{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.shinnyang-game .sn-episode-options button{cursor:pointer;border:1px solid #e2c5d3;border-radius:9px;background:#fffaff;color:#8c649b;font-size:10px;font-weight:850;padding:9px 5px}
+.shinnyang-game .sn-episode-options button:disabled{opacity:.45;cursor:not-allowed}
+.shinnyang-game .sn-episode>small{display:block;font-size:9px;color:#ad91a5;line-height:1.45;margin-top:7px}
+.shinnyang-game .sn-placement{font-size:10px;color:#9c7ba8;padding:5px 0}
+.shinnyang-game .sn-ending-gate{padding:12px;margin:9px 0;border:1px solid #d5b4e3;border-radius:14px;background:linear-gradient(155deg,#fffbff,#f5edff)}
+.shinnyang-game .sn-ending-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.shinnyang-game .sn-ending-head strong{font-size:13px;color:#7a549a}
+.shinnyang-game .sn-ending-head span{font-size:8px;color:#b38abc;letter-spacing:.1em}
+.shinnyang-game #snEndingProgress{font-size:10px;color:#8c789d;line-height:1.6}
+.shinnyang-game #snEndingView{width:100%;padding:10px;border:0;border-radius:9px;color:white;background:#9b79c7;font-weight:900;font-size:11px;cursor:pointer}
+.shinnyang-game #snEndingView:disabled{background:#e6d6ee;color:#ae98b7;cursor:not-allowed}
+.shinnyang-game .sn-ending-gallery{display:grid;grid-template-columns:1fr;gap:5px;padding:8px 0}
+.shinnyang-game .sn-ending-card{border:1px solid #e1cbe9;padding:9px;text-align:left;border-radius:8px;background:#f8f2fc;color:#907ca0;font-size:10px}
+.shinnyang-game .sn-ending-card.obtained{background:#fff5e9;border-color:#e9cb9d;color:#9c728e;cursor:pointer}
+.shinnyang-game .sn-ending-modal{background:linear-gradient(#fff5d9,#fffafd);border:2px solid #eacbb5;border-radius:13px;padding:15px 12px;margin-top:10px;text-align:center;box-shadow:0 5px 0 #eddee8}
+.shinnyang-game .sn-ending-illustration{font-size:54px;animation:sn-ending-float 2s ease-in-out infinite}
+.shinnyang-game .sn-ending-modal>small{font-size:9px;color:#b99cac;letter-spacing:.1em}
+.shinnyang-game .sn-ending-modal h3{font-size:17px;color:#8f67a0;margin:6px 0}
+.shinnyang-game .sn-ending-modal>b{font-size:11px;color:#ae8b9a}
+.shinnyang-game .sn-ending-modal>p{color:#9b8598;font-size:10px;line-height:1.8;word-break:keep-all}
+.shinnyang-game .sn-ending-buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.shinnyang-game .sn-ending-buttons button{border:1px solid #dbc2e5;border-radius:9px;padding:9px 4px;color:#89619d;background:#fff;font-size:10px;font-weight:850;cursor:pointer}
+.shinnyang-game .sn-ending-buttons button:last-child{background:#a884c8;color:#fff}
+@keyframes sn-ending-float{50%{transform:translateY(-9px) rotate(6deg)}}
+@media(max-width:550px){.shinnyang-game .sn-episode-options{grid-template-columns:1fr}.shinnyang-game .sn-room-decor{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.shinnyang-game .sn-idle-bubble.sn-idle-pop,.shinnyang-game .sn-ending-illustration{animation:none!important}.shinnyang-game .shinnyang-pixel-cat{transition:none!important}}
+
+/* v4.2: 추가 미니게임과 날씨 연출 */
+.shinnyang-game .shinnyang-scene.sn-cloudy{background:linear-gradient(180deg,#dbd7eb,#efe7f3 61%,#e9d6e5 61%,#f5e3ed)}
+.shinnyang-game .sn-weather{text-align:right;font-size:9px;color:#a189b1;margin:3px 2px 4px}
+.shinnyang-game .sn-note-start{width:100%;border:1px solid #d9bde9;border-radius:9px;background:#f8ebfc;color:#8d68a4;font-size:11px;font-weight:900;padding:10px;cursor:pointer;margin:3px 0 8px}
+.shinnyang-game .sn-note-challenge{padding:12px;border-radius:13px;border:2px solid #dbc5ec;background:#fff8ff;text-align:center;margin:8px 0}
+.shinnyang-game .sn-note-challenge>p{font-size:10px;color:#977eac}.shinnyang-game .sn-note-challenge>small{display:block;color:#9c80ad;font-size:10px;margin-top:9px}
+.shinnyang-game .sn-note-target{font-size:48px;color:#a075be;height:82px;display:grid;place-items:center;animation:sn-note-drop 1.3s ease-in-out infinite}
+.shinnyang-game .sn-note-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.shinnyang-game .sn-note-options button{font-size:26px;border:1px solid #d8bce8;color:#8766aa;background:#fff;border-radius:10px;padding:7px;cursor:pointer}
+.shinnyang-game .sn-note-cancel{font-size:10px;color:#a28ab1;background:none;border:0;text-decoration:underline;padding:7px;cursor:pointer}
+@keyframes sn-note-drop{0%,100%{transform:translateY(-12px) rotate(-9deg)}50%{transform:translateY(9px) rotate(9deg)}}
+@media(prefers-reduced-motion:reduce){.shinnyang-game .sn-note-target{animation:none!important}}
