@@ -130,3 +130,32 @@
 .shinnyang-game .sn-burst{position:absolute;z-index:8;pointer-events:none;color:#d891bb;font-size:18px;text-shadow:0 2px #fff8fd;animation:sn-sparkle-burst 1s ease-out both}
 @keyframes sn-sparkle-burst{0%{opacity:0;transform:translate(0,5px) scale(.4)}18%{opacity:1;transform:translate(0,0) scale(1.3)}85%{opacity:.9}100%{opacity:0;transform:translate(var(--sn-x),-53px) scale(.5)}}
 @media(prefers-reduced-motion:reduce){.shinnyang-game .sn-burst{animation:none!important;display:none!important}}
+
+/* v4.0: 장면을 먼저 보여주고 연속 커리어·일상·추억을 탭으로 나눈다. */
+.shinnyang-game .sn-career{margin:11px 0 8px;padding:12px;border:1px solid #dcc4eb;border-radius:15px;background:linear-gradient(130deg,#fffafd,#f3eafa);box-shadow:0 3px 0 #ebdff2}
+.shinnyang-game .sn-career-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:5px}
+.shinnyang-game #snCareerChapter{font-size:9px;color:#b08aba;font-weight:850;letter-spacing:.09em}
+.shinnyang-game #snCareerTitle{font-size:12px;color:#785692}
+.shinnyang-game #snCareerDesc{font-size:10px;color:#9a83a8;line-height:1.55;margin:5px 0 8px}
+.shinnyang-game .sn-career-goals{display:grid;gap:5px}
+.shinnyang-game .sn-career-goal{display:flex;align-items:center;gap:7px;border-radius:7px;padding:6px 8px;background:#fff9fe;color:#8e749d;font-size:10px}
+.shinnyang-game .sn-career-goal>span:first-child{color:#cbb3d8;font-weight:900;font-size:12px}
+.shinnyang-game .sn-career-goal.complete>span:first-child{color:#72ad86}
+.shinnyang-game .sn-career-goal>strong{margin-left:auto;font-size:9px;white-space:nowrap;color:#a17dad}
+.shinnyang-game .sn-career-claim{width:100%;margin-top:9px;background:#a989ca;color:#fff;border:0;border-radius:9px;font-size:10px;font-weight:900;padding:9px;cursor:pointer;transition:transform .14s,background .14s}
+.shinnyang-game .sn-career-claim:not(:disabled):hover{background:#966cbe;transform:translateY(-1px)}
+.shinnyang-game .sn-career-claim:disabled{background:#eee1f4;color:#a997b2;cursor:not-allowed}
+.shinnyang-game .sn-daily{margin-top:8px;align-items:center;background:#fffaf1;border-color:#e7d8b5}
+.shinnyang-game .sn-daily small{font-size:9px;color:#ad92a4;font-weight:600}
+.shinnyang-game .sn-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;margin:10px 0 7px;border:1px solid #e4d1ed;border-radius:12px;background:#f7ecfb}
+.shinnyang-game .sn-tabs button{font-size:10px;min-width:0;padding:8px 2px;border:0;border-radius:8px;color:#9b81ab;background:transparent;font-weight:850;cursor:pointer}
+.shinnyang-game .sn-tabs button.selected{background:#fffafd;color:#825b9c;box-shadow:0 2px 6px #a68eb238}
+.shinnyang-game .shinnyang-actions{grid-template-columns:repeat(3,minmax(0,1fr))}
+.shinnyang-game .shinnyang-action[hidden]{display:none!important}
+.shinnyang-game .shinnyang-action{min-width:0}
+.shinnyang-game .sn-extras{margin-top:5px}
+.shinnyang-game .sn-extra[hidden]{display:none!important}
+.shinnyang-game .shinnyang-moment{margin-top:9px}
+.shinnyang-game .shinnyang-progress{margin-top:8px}
+.shinnyang-game .shinnyang-clock{white-space:nowrap}
+@media(max-width:550px){.shinnyang-game .sn-career{padding:10px}.shinnyang-game .sn-tabs button{font-size:9px}}

@@ -1,4 +1,4 @@
-/* 신냥이의 한 시간 v3 — full history.json-backed mini game, no remote services */
+/* 신냥이 v4.0 — 연속 성장·커리어 스케줄, full history.json-backed mini game, no remote services */
 (() => {
   'use strict';
   const trigger = document.getElementById('shinnyangTrigger');
@@ -34,49 +34,112 @@
     {title:'📸 포토타임!',story:'연습실로 놀러온 친구가 기념사진을 찍자고 해!',choices:[{label:'귀여운 포즈 취하기 · 인기 +7',f:7,c:2},{label:'다 같이 춤추기 · 실력 +4, 인기 +3',v:4,f:3,c:2}]}
   ];
   const ACHIEVEMENTS=[
-    {id:'first',icon:'🌟',title:'첫 한 시간',desc:'한 시간을 처음 완주',goal:s=>s.sessions>=1},
+    {id:'first',icon:'🌟',title:'첫 한 시간',desc:'함께한 첫 한 시간',goal:s=>s.sessions>=1},
     {id:'memorize',icon:'🎵',title:'음정 천재',desc:'음정 기억 게임 성공 2회',goal:s=>s.songWins>=2},
     {id:'perform',icon:'🎤',title:'반짝이는 무대',desc:'무대 출연 3회',goal:s=>s.totalStages>=3},
     {id:'memories',icon:'📜',title:'추억 수집가',desc:'실제 연혁 카드 10장 수집',goal:s=>s.seen.length>=10},
     {id:'events',icon:'🎲',title:'운명의 선택',desc:'돌발 이벤트 4회 해결',goal:s=>s.totalEvents>=4},
     {id:'interior',icon:'🪴',title:'아늑한 연습실',desc:'방 소품 3개 구입',goal:s=>s.ownedDecor.length>=3},
-    {id:'journey',icon:'🏆',title:'가수냥의 꿈',desc:'한 시간 5회 완주',goal:s=>s.sessions>=5}
+    {id:'journey',icon:'🏆',title:'가수냥의 꿈',desc:'함께한 시간 5시간',goal:s=>s.sessions>=5}
   ];
+  // 커리어는 실제 연예인의 경력을 재현하는 것이 아닌 창작 게임의 성장 목표이다.
+  const CAREERS=[
+    {icon:'🎼',title:'작은 연습실에서 시작',desc:'목소리를 가다듬고 연습 습관 만들기',goals:[['voice',45,'가창력 45'],['sing',2,'노래 연습 2회']]},
+    {icon:'🎀',title:'첫 데뷔 무대를 준비해!',desc:'안무와 라이브를 준비해 첫 무대에 서기',goals:[['voice',60,'가창력 60'],['dance',2,'댄스 연습 2회'],['stage',1,'무대 경험 1회']]},
+    {icon:'🎤',title:'음악방송의 반짝이는 별',desc:'더 많은 팬과 다양한 무대에서 만나기',goals:[['fans',45,'인기도 45'],['stage',3,'무대 누적 3회'],['seen',3,'연혁 카드 3장']]},
+    {icon:'🌟',title:'나만의 첫 콘서트',desc:'큰 무대를 완성하고 스타냥이 되기',goals:[['voice',85,'가창력 85'],['fans',75,'인기도 75'],['stage',6,'무대 누적 6회']]}
+  ];
+  const DAY_ACTIONS=18; // 하루에 3시간의 게임 시간. 60분마다 플레이는 중단되지 않는다.
   const VERIFICATION={pending:'독립 검증 전',partial:'일부 자료 확인',original_record:'원문 기록',date_uncertain:'날짜 불확실',announced:'사전 예고',source_unavailable:'원출처 확인 어려움',date_conflict:'날짜 자료 상충',on_hold:'확인 보류'};
   const clamp=(n,lo=0,hi=100)=>Math.max(lo,Math.min(hi,n));
-  const initial=()=>({minute:0,energy:70,voice:20,fans:0,stars:0,sessions:0,scene:'idle',outfit:'ribbon',year:'all',seen:[],actions:[],finished:false,message:'오늘은 어떤 노래를 연습해볼까냥? ♡',notice:'행동을 고르면 게임 속 10분이 흘러가!',gift:null,coins:0,decor:'none',ownedDecor:[],badges:[],pendingEvent:null,totalStages:0,totalEvents:0,songWins:0});
+  const initial=()=>({minute:0,day:1,totalActions:0,career:0,careerCounts:{sing:0,dance:0,stage:0,letter:0,snack:0,rest:0},dayActions:[],dayRewarded:false,energy:70,voice:20,fans:0,stars:0,sessions:0,scene:'idle',outfit:'ribbon',year:'all',seen:[],actions:[],finished:false,message:'오늘은 어떤 노래를 연습해볼까냥? ♡',notice:'꿈을 향한 하루는 계속 이어진다냥! ♡',gift:null,coins:0,decor:'none',ownedDecor:[],badges:[],pendingEvent:null,totalStages:0,totalEvents:0,songWins:0});
   const safeInt=(x,max)=>Number.isFinite(Number(x))?clamp(Math.trunc(Number(x)),0,max):0;
   function load(){
     const s=initial();
     try{
       const v=JSON.parse(localStorage.getItem(STORE)||'null');
       if (!v||typeof v!=='object'||Array.isArray(v)) return s;
-      const minute=Math.floor(safeInt(v.minute,60)/10)*10;
-      return {...s,minute,energy:safeInt(v.energy,100),voice:safeInt(v.voice,100),fans:safeInt(v.fans,100),stars:safeInt(v.stars,999999),sessions:safeInt(v.sessions,999999),scene:['idle','sing','dance','stage','rest','snack','letter'].includes(v.scene)?v.scene:'idle',outfit:OUTFITS.some(o=>o.id===v.outfit)?v.outfit:'ribbon',year:/^\d{4}$/.test(v.year)?v.year:'all',seen:Array.isArray(v.seen)?[...new Set(v.seen.filter(x=>typeof x==='string'&&x.length<160))].slice(0,3000):[],actions:Array.isArray(v.actions)?v.actions.filter(x=>typeof x==='string').slice(0,6):[],finished:minute===60,message:typeof v.message==='string'?v.message.slice(0,120):s.message,notice:typeof v.notice==='string'?v.notice.slice(0,120):s.notice,gift:null,
+      const oldMinute=safeInt(v.minute,180);
+      const oldSessions=safeInt(v.sessions,999999);
+      // v3: 60분 완주 시 minute=60에서 정지. 그 기록을 새 하루 시간축으로 이관한다.
+      const isV4=Number.isInteger(v.totalActions)&&Number.isInteger(v.day);
+      const elapsed=isV4?safeInt(v.totalActions,9999999):oldSessions*6+(oldMinute>=60?0:Math.floor(oldMinute/10));
+      const day=1+Math.floor(elapsed/DAY_ACTIONS);
+      const minute=(elapsed%DAY_ACTIONS)*10;
+      const actions=Array.isArray(v.actions)?v.actions.filter(x=>typeof x==='string'&&['sing','dance','stage','rest','snack','letter'].includes(x)).slice(-6):[];
+      const daily=Array.isArray(v.dayActions)?v.dayActions.filter(x=>typeof x==='string'&&['sing','dance','stage','rest','snack','letter'].includes(x)).slice(-DAY_ACTIONS):actions;
+      const counts={...s.careerCounts};
+      if(v.careerCounts&&typeof v.careerCounts==='object')for(const kind of Object.keys(counts))counts[kind]=safeInt(v.careerCounts[kind],999999);
+      else {for(const kind of actions)counts[kind]++;counts.stage=Math.max(counts.stage,safeInt(v.totalStages,999999));}
+      return {...s,minute,day,totalActions:elapsed,career:safeInt(v.career,CAREERS.length),careerCounts:counts,dayActions:daily,dayRewarded:isV4&&v.dayRewarded===true,
+        energy:safeInt(v.energy,100),voice:safeInt(v.voice,100),fans:safeInt(v.fans,100),stars:safeInt(v.stars,999999),sessions:oldSessions,
+        scene:['idle','sing','dance','stage','rest','snack','letter'].includes(v.scene)?v.scene:'idle',
+        outfit:OUTFITS.some(o=>o.id===v.outfit)?v.outfit:'ribbon',year:/^\d{4}$/.test(v.year)?v.year:'all',
+        seen:Array.isArray(v.seen)?[...new Set(v.seen.filter(x=>typeof x==='string'&&x.length<160))].slice(0,3000):[],
+        actions,finished:false,message:typeof v.message==='string'?v.message.slice(0,120):s.message,
+        notice:'♡ '+(isV4?'이어서 꿈을 키워보자냥!':'이전 성장 기록을 이어서 가져왔어!'),gift:null,
         coins:safeInt(v.coins,999999),decor:DECORS.some(d=>d.id===v.decor)?v.decor:'none',
         ownedDecor:Array.isArray(v.ownedDecor)?[...new Set(v.ownedDecor.filter(id=>DECORS.some(d=>d.id===id&&id!=='none')))].slice(0,6):[],
         badges:Array.isArray(v.badges)?[...new Set(v.badges.filter(id=>ACHIEVEMENTS.some(a=>a.id===id)))]:[],
-        pendingEvent:Number.isInteger(v.pendingEvent)&&v.pendingEvent>=0&&v.pendingEvent<ENCOUNTERS.length&&minute===30?v.pendingEvent:null,
+        pendingEvent:Number.isInteger(v.pendingEvent)&&v.pendingEvent>=0&&v.pendingEvent<ENCOUNTERS.length?v.pendingEvent:null,
         totalStages:safeInt(v.totalStages,999999),totalEvents:safeInt(v.totalEvents,999999),songWins:safeInt(v.songWins,999999)};
     }catch{return s;}
   }
+
   let state=load();
   let events=[], byYear=new Map(), current=null, ready=false, loadError=false, loading=false;
   let blink=false, blinkInterval=null, rhythmStart=0, rhythmFrame=null, challenge=false, reactionTimer=null, songTimer=null, songSequence=[],songPosition=0,songPhase='idle';
+  let activeTab='activity';
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   function save(){try{localStorage.setItem(STORE,JSON.stringify({...state,gift:null}));}catch{}}
   function level(){for(let i=LEVELS.length-1;i>=0;i--)if(state.stars>=LEVELS[i].min)return i;return 0;}
   function allowOutfit(item){return state.stars>=item.min;}
   function activeOutfit(){const o=OUTFITS.find(x=>x.id===state.outfit);return o&&allowOutfit(o)?o:OUTFITS[0];}
-  const ordinal=()=>state.minute/10;
-  function mission(){return MISSIONS[state.sessions%MISSIONS.length];}
-  function missionCount(){return state.actions.filter(a=>a===mission().act).length;}
+  const ordinal=()=>Math.floor((state.minute%60)/10);
+  function mission(){return MISSIONS[(state.day-1)%MISSIONS.length];}
+  function missionCount(){return state.dayActions.filter(a=>a===mission().act).length;}
+  function careerValue(key){if(key==='voice'||key==='fans')return state[key];if(key==='seen')return state.seen.length;return state.careerCounts[key]||0;}
+  function careerReady(){return state.career<CAREERS.length&&CAREERS[state.career].goals.every(([k,target])=>careerValue(k)>=target);}
+  function renderCareer(){
+    const done=state.career>=CAREERS.length;
+    const c=done?null:CAREERS[state.career];
+    $('snCareerChapter').textContent=done?'✦ 모든 커리어 달성':`CHAPTER ${state.career+1} / ${CAREERS.length}`;
+    $('snCareerTitle').textContent=done?'👑 반짝반짝 스타냥!':c.icon+' '+c.title;
+    $('snCareerDesc').textContent=done?'이제 매일 자유롭게 스케줄을 만들고 무대에 도전할 수 있어.':c.desc;
+    const host=$('snCareerGoals');host.replaceChildren();
+    if(c)for(const [key,target,label] of c.goals){
+      const value=careerValue(key);const complete=value>=target;
+      const item=document.createElement('div');item.className='sn-career-goal'+(complete?' complete':'');
+      const mark=document.createElement('span');mark.textContent=complete?'✓':'○';
+      const title=document.createElement('span');title.textContent=label;
+      const progress=document.createElement('strong');progress.textContent=Math.min(target,value)+' / '+target;
+      item.append(mark,title,progress);host.appendChild(item);
+    }
+    $('snCareerClaim').hidden=done;
+    $('snCareerClaim').disabled=!ready||!careerReady()||challenge||songPhase!=='idle'||state.pendingEvent!==null;
+    $('snCareerClaim').textContent=careerReady()?'✦ 목표 달성! 다음 이야기 열기':'목표 달성 후 다음 이야기';
+  }
+  function claimCareer(){
+    if(!ready||challenge||songPhase!=='idle'||state.pendingEvent!==null||!careerReady())return;
+    const completed=CAREERS[state.career];state.career++;state.stars+=25;state.coins=clamp(state.coins+20,0,999999);
+    state.notice='🎉 '+completed.title+' 성공! 별 +25 · 냥코인 +20';
+    state.message='다음 무대도 기대된다냥! ♡';state.scene='stage';rewardAchievements();save();render();pop();burst();sparkle('✦ LEVEL UP!');
+  }
+  function renderTabs(){
+    panel.querySelectorAll('[data-sn-tab]').forEach(b=>{const on=b.dataset.snTab===activeTab;b.setAttribute('aria-pressed',String(on));b.classList.toggle('selected',on);});
+    panel.querySelectorAll('[data-sn-act]').forEach(b=>{b.hidden=(activeTab==='activity'?!['sing','dance','stage'].includes(b.dataset.snAct):activeTab==='life'?!['snack','rest','letter'].includes(b.dataset.snAct):true);});
+    $('snExtras').hidden=!['decor','memory'].includes(activeTab);
+    $('snExtras').querySelectorAll('[data-sn-extra]').forEach(d=>{d.hidden=d.dataset.snExtra!==activeTab;});
+    $('shinnyangActions').hidden=challenge||songPhase!=='idle'||state.pendingEvent!==null||!['activity','life'].includes(activeTab);
+    $('snChooseHead').hidden=!['activity','life'].includes(activeTab);
+    $('shinnyangMoment').hidden=activeTab!=='memory';
+  }
   function historyDate(e){const d=String(e.date||'');return e.precision==='year'?d.slice(0,4)+'년 (월·일 미상)':e.precision==='month'?d.slice(0,4)+'.'+d.slice(5,7)+' (일 미상)':d.replace(/-/g,'.');}
   function chooseMoment(){
     const pool=state.year==='all'?events:(byYear.get(state.year)||[]);
     if (!pool.length)return null;
     // Deterministic non-repeating step within each session, jump across full archive in all-years mode.
-    const n=state.year==='all'?(state.sessions*157 + ordinal()*419):(state.sessions*17 + ordinal()*7);
+    const n=state.year==='all'?(state.totalActions*419+state.day*157):(state.totalActions*7+state.day*17);
     return pool[n%pool.length];
   }
   function renderMoment(){
@@ -156,7 +219,7 @@
   function render(){
     const m=mission();
     $('shinnyangRank').textContent=LEVELS[level()].label;
-    $('shinnyangClock').textContent=(state.minute===60?'01:00':'00:'+String(state.minute).padStart(2,'0'))+' / 01:00';
+    $('shinnyangClock').textContent='DAY '+String(state.day).padStart(2,'0')+' · '+String(9+Math.floor(state.minute/60)).padStart(2,'0')+':'+String(state.minute%60).padStart(2,'0');
     $('shinnyangScene').dataset.scene=state.scene;
     const stage=state.scene==='stage',rest=state.scene==='rest',snack=state.scene==='snack',dance=state.scene==='dance',letter=state.scene==='letter';
     $('shinnyangSceneTag').textContent=stage?'✦ 반짝이는 무대':rest?'☾ 포근한 침실':snack?'🍰 간식 타임':dance?'🪩 춤 연습실':letter?'💌 팬레터 시간':'♪ 아늑한 연습실';
@@ -166,7 +229,7 @@
     $('shinnyangToast').textContent=state.notice;
     $('snEnergy').textContent=state.energy;$('snVoice').textContent=state.voice;$('snFans').textContent=state.fans;
     for(const [id,n] of [['snEnergyBar',state.energy],['snVoiceBar',state.voice],['snFansBar',state.fans]])$(id).style.width=n+'%';
-    $('shinnyangStars').textContent=state.stars.toLocaleString('ko-KR')+' 별 · '+state.sessions+'회 완주';
+    $('shinnyangStars').textContent=state.stars.toLocaleString('ko-KR')+' 별 · 함께한 '+state.sessions+'시간';
     $('snCoins').textContent=state.coins;
     $('snEventCount').textContent=state.totalEvents;
     const activeDecor=DECORS.find(d=>d.id===state.decor);
@@ -174,23 +237,20 @@
     $('snRoomDecor').setAttribute('aria-label',activeDecor?.name||'기본 방');
     [...$('shinnyangProgress').children].forEach((node,i)=>node.classList.toggle('filled',i<ordinal()));
     $('snMissionTitle').textContent=m.label;
+    $('snDailyReward').textContent=state.dayRewarded?'✓ 오늘 보상 수령 완료':'완료 시 별 +12 · 🪙 +8';
+    renderCareer();
     $('snMissionCount').textContent=Math.min(missionCount(),m.count)+'/'+m.count;
     $('snMissionCount').classList.toggle('complete',missionCount()>=m.count);
     panel.querySelectorAll('[data-sn-act]').forEach(b=>{
       const kind=b.dataset.snAct;
-      b.disabled=!ready||state.finished||challenge||songPhase!=='idle'||state.pendingEvent!==null||((kind==='sing'||kind==='dance')&&state.energy<14)||(kind==='stage'&&(state.energy<22||state.voice<25))||(kind==='letter'&&state.energy<5);
+      b.disabled=!ready||challenge||songPhase!=='idle'||state.pendingEvent!==null||((kind==='sing'||kind==='dance')&&state.energy<14)||(kind==='stage'&&(state.energy<22||state.voice<25))||(kind==='letter'&&state.energy<5);
       if(kind==='stage') b.title=state.voice<25?'노래 실력 25 이상 필요':state.energy<22?'체력 22 이상 필요':'리듬 타이밍 미니게임';
     });
-    $('shinnyangFinale').setAttribute('aria-hidden',String(!state.finished));
-    $('shinnyangActions').hidden=state.finished||challenge||songPhase!=='idle'||state.pendingEvent!==null;
     $('snStageChallenge').hidden=!challenge;
     $('snSongChallenge').hidden=songPhase==='idle';
     $('snSongInput').querySelectorAll('button').forEach(b=>{b.disabled=songPhase!=='input';});
+    renderTabs();
     renderEvent();
-    if(state.finished){
-      $('shinnyangEndTitle').textContent=state.fans>=65?'✦ 앙코르 요청이 쏟아진다냥!':state.fans>=30?'♡ 팬들의 박수를 받았어!':'✧ 오늘도 멋진 하루 완성!';
-      $('shinnyangEndBody').textContent=`노래 실력 ${state.voice} · 인기 ${state.fans} · 추억 ${state.seen.length}장! 다른 시기에도 놀러 가자냥 ♡`;
-    }
     renderOutfits();renderShop();renderAchievements();renderCollection();renderMoment();drawCat();
   }
   function pop(){const t=$('shinnyangToast');t.classList.remove('sn-pop');void t.offsetWidth;t.classList.add('sn-pop');}
@@ -218,7 +278,7 @@
   }
   function collectMoment(){if(current&&!state.seen.includes(String(current.id))){state.seen.push(String(current.id));return true;}return false;}
   function apply(kind,bonus=0){
-    if(!ready||state.finished||state.minute>=60)return;
+    if(!ready||state.pendingEvent!==null)return;
     const oldLevel=level();const oldOutfits=OUTFITS.filter(allowOutfit).length;
     const newMemory=collectMoment();
     const actions={
@@ -234,13 +294,21 @@
     state.scene=a.scene;state.message=a.speech;state.notice='✦ '+a.label+' · 별 +'+a.s+(newMemory?' · 새로운 연혁 카드 수집!':'');
     state.coins=clamp(state.coins+(kind==='stage'?5:kind==='sing'?3:2),0,999999);
     if(kind==='stage')state.totalStages++;
-    state.actions.push(kind);state.minute+=10;
-    if(state.minute===30)state.pendingEvent=(state.sessions*5+Math.floor(state.stars/37))%ENCOUNTERS.length;
-    if(state.minute%20===0)giftAlert(state.sessions*3+state.minute/20);
-    if(state.minute===60){
-      state.finished=true;state.sessions++;state.stars+=12;state.notice='🎉 1시간 완주! 별 +12';
-      const m=MISSIONS[(state.sessions-1)%MISSIONS.length];
-      if(state.actions.filter(x=>x===m.act).length>=m.count){state.stars+=20;state.notice+=' · 미션 성공! 별 +20';}
+    state.actions.push(kind);state.actions=state.actions.slice(-6);
+    state.dayActions.push(kind);state.careerCounts[kind]=(state.careerCounts[kind]||0)+1;
+    state.minute+=10;state.totalActions++;
+    if(!state.dayRewarded&&missionCount()>=mission().count){
+      state.dayRewarded=true;state.stars+=12;state.coins=clamp(state.coins+8,0,999999);
+      state.notice+=' · 📋 오늘의 스케줄 성공! 별 +12 · 🪙 +8';
+    }
+    if(state.minute===90)state.pendingEvent=(state.day*5+Math.floor(state.stars/37))%ENCOUNTERS.length;
+    if(state.minute%20===0)giftAlert(state.day*3+state.minute/20);
+    if(state.minute%60===0){
+      state.sessions++;state.stars+=3;state.notice+=' · ⏰ 한 시간이 흘렀어. 계속 이어가자냥! 별 +3';
+    }
+    if(state.minute>=DAY_ACTIONS*10){
+      state.day++;state.minute=0;state.dayActions=[];state.dayRewarded=false;
+      state.notice+=' · ☀️ DAY '+state.day+' 시작! 새로운 스케줄이 열렸어';
     }
     if(level()>oldLevel)state.notice+=' · '+LEVELS[level()].label+' 성장!';
     if(OUTFITS.filter(allowOutfit).length>oldOutfits)state.notice+=' · 새 의상 해금 🎀';
@@ -259,7 +327,7 @@
   }
   function clearSong(){if(songTimer){clearTimeout(songTimer);songTimer=null;}songPhase='idle';songSequence=[];songPosition=0;}
   function startSong(){
-    if(!ready||state.finished||state.pendingEvent!==null||songPhase!=='idle'||state.energy<14)return;
+    if(!ready||state.pendingEvent!==null||songPhase!=='idle'||state.energy<14)return;
     songSequence=Array.from({length:3},(_,i)=>(state.sessions*7+Math.floor(state.minute/10)*3+i*i+i+1)%3);
     songPosition=0;songPhase='preview';
     $('snSongPattern').textContent=songSequence.map(i=>['♪','♫','♬'][i]).join('  ');
@@ -280,7 +348,7 @@
     }else{clearSong();apply('sing');state.notice+=' · 다음엔 음표를 기억해보자냥';save();render();}
   }
   function startRhythm(){
-    if(!ready||state.finished||state.pendingEvent!==null||songPhase!=='idle'||state.energy<22||state.voice<25)return;
+    if(!ready||state.pendingEvent!==null||songPhase!=='idle'||state.energy<22||state.voice<25)return;
     challenge=true;rhythmStart=performance.now();render();
     const pointer=$('snRhythmPointer');
     const frame=()=>{
@@ -300,11 +368,6 @@
     let bonus=0;
     if(!skip){if(reduced.matches){bonus=15;}else{const t=(performance.now()-rhythmStart)/1300;const f=1-Math.abs((t%2)-1);const distance=Math.abs(f-.5);bonus=distance<=.1?15:distance<=.23?8:2;}}
     apply('stage',bonus);
-  }
-  function newHour(){
-    const keep={stars:state.stars,sessions:state.sessions,seen:state.seen,year:state.year,outfit:state.outfit,coins:state.coins,decor:state.decor,ownedDecor:state.ownedDecor,badges:state.badges,totalStages:state.totalStages,totalEvents:state.totalEvents,songWins:state.songWins};
-    state={...initial(),...keep,message:'새로운 한 시간, 신나게 놀아보자냥! ♪'};
-    clearSong();$('snGift').hidden=true;save();render();panel.querySelector('[data-sn-act="sing"]')?.focus();
   }
   function setOpen(open){
     panel.hidden=!open;trigger.setAttribute('aria-expanded',String(open));trigger.setAttribute('aria-label',open?'신냥이 게임 닫기':'신냥이 게임 열기');
@@ -334,7 +397,11 @@
     else{px(19,21,3,4,'eye');px(29,21,3,4,'eye');px(19,21,1,1,'white');px(29,21,1,1,'white');}
     px(24,25,3,2,'coral');
     if(['sing','dance','stage'].includes(state.scene)){px(24,28,3,3,'eye');px(25,30,1,1,'blush');}
-    else{px(22,29,2,1,'eye');px(28,29,2,1,'eye');}
+    else{
+      // 기본 무표정만 조정: 코 아래에서 자연스럽게 이어지는 작은 ㅅ형 입
+      px(25,27,1,1,'edge');px(24,28,1,1,'edge');px(26,28,1,1,'edge');
+      px(23,29,1,1,'edge');px(27,29,1,1,'edge');
+    }
     px(14,34,4,4,'edge');px(15,35,3,2,'fur');px(33,34,4,4,'edge');px(34,35,3,2,'fur');
     if(outfit==='headphones'){px(12,13,2,13,'lilac');px(37,13,2,13,'lilac');px(14,9,23,3,'lilac');px(11,20,4,8,'grey');px(37,20,4,8,'grey');}
     else if(outfit==='crown'){px(18,6,15,4,'gold');px(19,3,3,4,'gold');px(24,2,3,5,'gold');px(30,3,3,4,'gold');px(24,7,3,2,'coral');}
@@ -385,10 +452,11 @@
   $('snSongSkip').addEventListener('click',()=>{if(songPhase!=='idle'){clearSong();apply('sing');}});
   $('snRhythmTap').addEventListener('click',()=>resolveRhythm(false));
   $('snRhythmSkip').addEventListener('click',()=>resolveRhythm(true));
-  $('shinnyangAgain').addEventListener('click',newHour);
+  $('snCareerClaim').addEventListener('click',claimCareer);
+  panel.querySelectorAll('[data-sn-tab]').forEach(b=>b.addEventListener('click',()=>{activeTab=b.dataset.snTab;renderTabs();}));
   $('snGiftClose').addEventListener('click',()=>$('snGift').hidden=true);
   $('snEra').addEventListener('change',ev=>{state.year=ev.target.value;save();renderMoment();});
-  $('shinnyangReset').addEventListener('click',()=>{if(!window.confirm('신냥이의 별과 추억을 모두 처음부터 다시 시작할까냥?'))return;state=initial();clearSong();challenge=false;if(rhythmFrame)cancelAnimationFrame(rhythmFrame);rhythmFrame=null;$('snGift').hidden=true;if(ready)$('snEra').value='all';save();render();});
+  $('shinnyangReset').addEventListener('click',()=>{if(!window.confirm('신냥이의 별과 추억을 모두 처음부터 다시 시작할까냥?'))return;state=initial();activeTab='activity';clearSong();challenge=false;if(rhythmFrame)cancelAnimationFrame(rhythmFrame);rhythmFrame=null;$('snGift').hidden=true;if(ready)$('snEra').value='all';save();render();});
   document.addEventListener('keydown',ev=>{if(!panel.hidden&&ev.key==='Escape'){if(challenge){challenge=false;if(rhythmFrame)cancelAnimationFrame(rhythmFrame);rhythmFrame=null;render();}else if(songPhase!=='idle'){clearSong();render();}else setOpen(false);}});
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&rhythmFrame){cancelAnimationFrame(rhythmFrame);rhythmFrame=null;if(challenge){challenge=false;render();}if(songPhase!=='idle'){clearSong();render();}}});
   render();
