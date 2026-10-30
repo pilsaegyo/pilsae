@@ -1,8 +1,198 @@
 {
   "backupType": "weekly_full",
-  "createdAt": "2026-10-02T18:00:19.384Z",
+  "createdAt": "2026-10-30T18:00:23.582Z",
   "videos": {
     "videos": [
+      {
+        "id": "x0aYN3yheEA",
+        "title": "그시절 예능에선 이런것도 다 했어... 스카이다이빙 하는 신혜성",
+        "description": "000708 신화창조 2000   남자만들기\n\n제목 : [방송] 20000708 - 신화 - 신화창조 2000 - 남자만들기 최종화\n링크 : https://www.youtube.com/watch?v=ZtSbUFB7YuA\n채널 : 셩공시대님\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "000708 신화창조 2000   남자만들기",
+        "sourceDate": null,
+        "publishedAt": "2026-10-25T10:30:03Z",
+        "thumbnail": "https://i.ytimg.com/vi/x0aYN3yheEA/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=x0aYN3yheEA",
+        "duration": "PT3M",
+        "durationSeconds": 180,
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
+        "parseStatus": "needs_review",
+        "contentType": "video",
+        "playlistScope": "",
+        "playlistCandidate": false,
+        "firstSeenAt": "2026-10-25T11:00:56.086Z",
+        "dates": [],
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
+      },
+      {
+        "id": "G5KW2QTovVg",
+        "title": "바람 맞으며 노래하는 백조 혜성",
+        "description": "990627 강원국제Expo 성공기념 슈퍼콘서트\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "990627 강원국제Expo 성공기념 슈퍼콘서트",
+        "sourceDate": null,
+        "publishedAt": "2026-10-24T10:30:11Z",
+        "thumbnail": "https://i.ytimg.com/vi/G5KW2QTovVg/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=G5KW2QTovVg",
+        "duration": "PT59S",
+        "durationSeconds": 59,
+        "videoFormat": "shorts",
+        "videoFormatSource": "auto",
+        "videoFormatConfidence": "medium",
+        "videoFormatReason": "재생시간 60초 이하",
+        "parseStatus": "needs_review",
+        "contentType": "video",
+        "playlistScope": "",
+        "playlistCandidate": false,
+        "firstSeenAt": "2026-10-24T11:00:57.265Z",
+        "dates": [],
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
+      },
+      {
+        "id": "1lDJsCpsBKs",
+        "title": "알사탕 혜성이",
+        "description": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=mkuzid8dtuk\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집",
+        "sourceDate": null,
+        "publishedAt": "2026-10-17T10:30:38Z",
+        "thumbnail": "https://i.ytimg.com/vi/1lDJsCpsBKs/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=1lDJsCpsBKs",
+        "duration": "PT2M31S",
+        "durationSeconds": 151,
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
+        "parseStatus": "needs_review",
+        "contentType": "video",
+        "playlistScope": "",
+        "playlistCandidate": false,
+        "firstSeenAt": "2026-10-17T11:01:01.853Z",
+        "dates": [],
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
+      },
+      {
+        "id": "dhfLrhG40qs",
+        "title": "폭탄 되기 싫어서 두손 붙잡고 떠는 에릭과 신혜성",
+        "description": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=mkuzid8dtuk\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "제목 : 011222 스타서바이벌 미팅 - 신화 - 성탄특집",
+        "sourceDate": null,
+        "publishedAt": "2026-10-16T10:30:14Z",
+        "thumbnail": "https://i.ytimg.com/vi/dhfLrhG40qs/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=dhfLrhG40qs",
+        "duration": "PT2M28S",
+        "durationSeconds": 148,
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
+        "parseStatus": "needs_review",
+        "contentType": "video",
+        "playlistScope": "",
+        "playlistCandidate": false,
+        "firstSeenAt": "2026-10-16T11:01:23.786Z",
+        "dates": [],
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
+      },
+      {
+        "id": "ck9F0_BXhes",
+        "title": "어린왕자 실사판",
+        "description": "121013 신화방송 Ep31\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "121013 신화방송 Ep31",
+        "sourceDate": null,
+        "publishedAt": "2026-10-10T10:30:29Z",
+        "thumbnail": "https://i.ytimg.com/vi/ck9F0_BXhes/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=ck9F0_BXhes",
+        "duration": "PT2M37S",
+        "durationSeconds": 157,
+        "videoFormat": "shorts",
+        "videoFormatSource": "manual",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "",
+        "parseStatus": "parsed",
+        "contentType": "video",
+        "playlistScope": "",
+        "playlistCandidate": false,
+        "firstSeenAt": "2026-10-10T11:00:23.175Z",
+        "dates": [
+          {
+            "sourceDate": "2012-10-13",
+            "source": "admin",
+            "precision": "day",
+            "inferred": false,
+            "manual": true
+          }
+        ],
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
+      },
+      {
+        "id": "y1F2TuPalLU",
+        "title": "온리원의 진짜 모습을 보여준다는 정리왕 신혜성",
+        "description": "000521 신화창조 3기 팬미팅\n제목 : [공식] 20000521 - 신화창조 3기 팬미팅\n채널 : 셩공시대님\n링크 : https://www.youtube.com/watch?v=fLxoBrBdwMY\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "000521 신화창조 3기 팬미팅",
+        "sourceDate": null,
+        "publishedAt": "2026-10-09T10:30:14Z",
+        "thumbnail": "https://i.ytimg.com/vi/y1F2TuPalLU/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=y1F2TuPalLU",
+        "duration": "PT1M2S",
+        "durationSeconds": 62,
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
+        "parseStatus": "needs_review",
+        "contentType": "video",
+        "playlistScope": "",
+        "playlistCandidate": false,
+        "firstSeenAt": "2026-10-09T11:02:07.206Z",
+        "dates": [],
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
+      },
+      {
+        "id": "9D4SkcU0leM",
+        "title": "신혜성 인생연기",
+        "description": "020719 긴급조치19호\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "020719 긴급조치19호",
+        "sourceDate": null,
+        "publishedAt": "2026-10-03T10:30:24Z",
+        "thumbnail": "https://i.ytimg.com/vi/9D4SkcU0leM/maxresdefault.jpg",
+        "url": "https://www.youtube.com/watch?v=9D4SkcU0leM",
+        "duration": "PT1M36S",
+        "durationSeconds": 96,
+        "videoFormat": "shorts",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
+        "parseStatus": "needs_review",
+        "contentType": "video",
+        "playlistScope": "",
+        "playlistCandidate": false,
+        "firstSeenAt": "2026-10-03T11:00:41.735Z",
+        "dates": [],
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
+      },
       {
         "id": "pdsOLGWBp9w",
         "title": "손수건 부르는 신혜성 미모",
@@ -15,16 +205,19 @@
         "duration": "PT1M1S",
         "durationSeconds": 61,
         "videoFormat": "shorts",
-        "videoFormatSource": "auto",
-        "videoFormatConfidence": "low",
-        "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요",
+        "videoFormatSource": "confirmed",
+        "videoFormatConfidence": "",
+        "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다.",
         "parseStatus": "needs_review",
         "contentType": "video",
         "playlistScope": "",
         "playlistCandidate": false,
         "firstSeenAt": "2026-10-02T11:00:53.488Z",
         "dates": [],
-        "ignoredDateCandidates": []
+        "ignoredDateCandidates": [],
+        "previousManualDates": [],
+        "manualDateReviewPending": false,
+        "descriptionChangedAfterManual": false
       },
       {
         "id": "rPC7c_LpltM",
@@ -1147,8 +1340,8 @@
       {
         "id": "B2K3NZjCEQE",
         "title": "2001년 초겨울, 한강 고수부지에서",
-        "description": "제목 : [직캠] 20011103 - 신화 - Hey, Come On!\n채널 : 셩공시대님\n링크 : https://youtu.be/eHESZPaFqAg?si=ImpGZQgJvU8Ay1UR\n\n제목 : [직캠] 20011103 - interview\n채널 : 셩공시대님 (영상-말랑동완님 제공)\n링크 : https://youtu.be/BUFEBuaNOa0?si=evOTljrqbiQNfap7\n\n제목 : [직캠] 20011103 - 신화 - Wild Eyes\n채널 : 셩공시대님\n링크 : https://youtu.be/amsZ-7ySrso?si=Ytgo5jEgOuPMh5z8\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-        "source": "제목 : [직캠] 20011103 - 신화 - Hey, Come On!",
+        "description": "011103 서울시민건강주간콘서트\n\n제목 : [직캠] 20011103 - 신화 - Hey, Come On!\n채널 : 셩공시대님\n링크 : https://youtu.be/eHESZPaFqAg?si=ImpGZQgJvU8Ay1UR\n\n제목 : [직캠] 20011103 - interview\n채널 : 셩공시대님 (영상-말랑동완님 제공)\n링크 : https://youtu.be/BUFEBuaNOa0?si=evOTljrqbiQNfap7\n\n제목 : [직캠] 20011103 - 신화 - Wild Eyes\n채널 : 셩공시대님\n링크 : https://youtu.be/amsZ-7ySrso?si=Ytgo5jEgOuPMh5z8\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "011103 서울시민건강주간콘서트",
         "sourceDate": null,
         "publishedAt": "2026-08-07T10:30:30Z",
         "thumbnail": "https://i.ytimg.com/vi/B2K3NZjCEQE/maxresdefault.jpg",
@@ -1849,8 +2042,8 @@
       {
         "id": "GGz0nSGhOTA",
         "title": "흑조의 꿈",
-        "description": "990612 드림콘서트\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-        "source": "990612 드림콘서트",
+        "description": "990515 드림콘서트\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "990515 드림콘서트",
         "sourceDate": null,
         "publishedAt": "2026-07-08T10:30:07Z",
         "thumbnail": "https://i.ytimg.com/vi/GGz0nSGhOTA/maxresdefault.jpg",
@@ -2031,8 +2224,8 @@
       {
         "id": "Zp1z2Xg1eik",
         "title": "“겨울이 오면 만날 수 있을 거야.”",
-        "description": "2009년 Sapporo Photo Essay dvd\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-        "source": "2009년 Sapporo Photo Essay dvd",
+        "description": "091126 신혜성 포토에세이 《눈의 멜로디》\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "091126 신혜성 포토에세이 《눈의 멜로디》",
         "sourceDate": null,
         "publishedAt": "2026-07-01T10:30:39Z",
         "thumbnail": "https://i.ytimg.com/vi/Zp1z2Xg1eik/maxresdefault.jpg",
@@ -3833,8 +4026,8 @@
       {
         "id": "-GhsXD4a6io",
         "title": "비행기에서 영화 보면서 울다가 스튜어디스한테 걸린 아이돌",
-        "description": "050619 sbs I AM\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
-        "source": "050619 sbs I AM",
+        "description": "050619 sbs I AM 아이엠 E33\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン",
+        "source": "050619 sbs I AM 아이엠 E33",
         "sourceDate": null,
         "publishedAt": "2026-04-18T10:30:00Z",
         "thumbnail": "https://i.ytimg.com/vi/-GhsXD4a6io/maxresdefault.jpg",
@@ -4760,8 +4953,8 @@
       {
         "id": "OTIA-yDmSwA",
         "title": "이게 바로 세기말 간지다... 99년 야구 올스타전 레전드 신화 축하공연 (댓글모음) #신혜성 #신화 #shorts",
-        "description": "990714 99` 프로야구 스피드011 올스타전 축하공연\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン #kpop #추억소환 #1세대아이돌",
-        "source": "990714 99` 프로야구 스피드011 올스타전 축하공연",
+        "description": "990714 99 프로야구 스피드011 올스타전 축하공연\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ #へそん\nシン・ヘソン  #ヘソン #kpop #추억소환 #1세대아이돌",
+        "source": "990714 99 프로야구 스피드011 올스타전 축하공연",
         "sourceDate": null,
         "publishedAt": "2026-03-27T10:30:13Z",
         "thumbnail": "https://i.ytimg.com/vi/OTIA-yDmSwA/maxresdefault.jpg",
@@ -14892,7 +15085,7 @@
       {
         "id": "_BJqASpWq5Q",
         "title": "아니 다 나가라고 으쌰으쌰 원조 상큼 메인보컬 여기가 바로 맛집 #신혜성 #신화",
-        "description": "으쌰으쌰 (뮤직뱅크 1998.07.07.)\n신화 - 으쌰으쌰 (뮤직뱅크 19980714)\n1998년 8월 2일 인기가요\n쇼 행운을 잡아라 1998.07.19)\n인기가요 24회 1998.07.19\n쇼!뮤직탱크 164회 2부(1998/08/15) \n뮤직뱅크 11회   1998-08-25 \n등등등... \n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン\n\n#으쌰으쌰 #kpop",
+        "description": "으쌰으쌰 (뮤직뱅크 1998.07.07.)\n신화 - 으쌰으쌰 (뮤직뱅크 19980714)\n1998년 8월 2일 인기가요\n인기가요 24회 1998.07.19\n쇼!뮤직탱크 164회 2부(1998/08/15) \n뮤직뱅크 11회   1998-08-25 \n등등등... \n\n\n#신혜성 #신화 #shinhwa #shinhyesung #申惠星 #神话 #シンファ \nシン・ヘソン\n\n#으쌰으쌰 #kpop",
         "source": "으쌰으쌰 (뮤직뱅크 1998.07.07.)",
         "sourceDate": null,
         "publishedAt": "2025-05-19T14:54:08Z",
@@ -17534,8 +17727,8 @@
         "descriptionChangedAfterManual": false
       }
     ],
-    "total": 650,
-    "generatedAt": "2026-10-02T11:00:53.488Z",
+    "total": 657,
+    "generatedAt": "2026-10-29T11:00:58.401Z",
     "channel": {
       "id": "UCkADdcHS6OVBu560xRW1EXA",
       "title": "필새",
@@ -17555,11 +17748,539 @@
     "profileImageUrl": "https://yt3.ggpht.com/mR1PCdtNYCxgiUKf6GDqY14p0IrKMDLS1wKmnSpgSoqqZ0NPbRasyDbV0Qx-5LtAjfh8p2k0mg=s800-c-k-c0x00ffffff-no-rj",
     "bannerImageUrl": "https://yt3.googleusercontent.com/7h1JRQTL61CmesqiZV2lr-jX7YFm6p4b0AydZFlJXqnSAbKcHj46SjJsIbdcVwI3YWMNkFPT6A",
     "adminApiUrl": "https://pilsae-admin-api.hyesung.workers.dev",
-    "updatedAt": "2026-10-02T11:01:03.122Z",
-    "syncedFromYoutubeAt": "2026-10-02T11:01:03.122Z"
+    "updatedAt": "2026-10-29T11:01:05.134Z",
+    "syncedFromYoutubeAt": "2026-10-29T11:01:05.134Z"
   },
   "adminHistory": {
     "entries": [
+      {
+        "id": "b8ca9def-1fc6-4c3e-ac6c-b492ee28f4ff",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 657
+        },
+        "after": {
+          "total": 657,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 1,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-29T11:01:07.030Z"
+      },
+      {
+        "id": "12e21c67-4916-4613-b6bb-4c7628f558c1",
+        "action": "video_format_confirm",
+        "videoId": "x0aYN3yheEA",
+        "title": "그시절 예능에선 이런것도 다 했어... 스카이다이빙 하는 신혜성",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "auto",
+          "videoFormatConfidence": "low",
+          "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-25T12:24:59.190Z"
+      },
+      {
+        "id": "b13dedd7-c7f6-43b9-a561-39530e2a4f87",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 656
+        },
+        "after": {
+          "total": 657,
+          "added": 1,
+          "titleChanged": 0,
+          "descriptionChanged": 0,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-25T11:01:03.484Z"
+      },
+      {
+        "id": "06ca70f0-8b8b-41cc-9771-a974fa5ab165",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 655
+        },
+        "after": {
+          "total": 656,
+          "added": 1,
+          "titleChanged": 0,
+          "descriptionChanged": 0,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-24T11:01:04.319Z"
+      },
+      {
+        "id": "af5bb431-6d11-4539-9e04-f9f1eb738496",
+        "action": "auto_sync_test_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화 수동 실행",
+        "before": {
+          "total": 655
+        },
+        "after": {
+          "total": 655,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 1,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-24T04:01:58.343Z"
+      },
+      {
+        "id": "039557e4-9c35-4d5b-ab13-6b99e6821b29",
+        "action": "auto_sync_test_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화 수동 실행",
+        "before": {
+          "total": 655
+        },
+        "after": {
+          "total": 655,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 1,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-23T15:02:59.096Z"
+      },
+      {
+        "id": "e590a7b4-b48d-485c-83c2-bbf3fa49efed",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 655
+        },
+        "after": {
+          "total": 655,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 1,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-23T11:01:04.027Z"
+      },
+      {
+        "id": "71098244-3197-4f9f-bb2f-11b5aca79ff0",
+        "action": "auto_sync_test_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화 수동 실행",
+        "before": {
+          "total": 655
+        },
+        "after": {
+          "total": 655,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 1,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-23T07:26:14.473Z"
+      },
+      {
+        "id": "643fe904-ac97-448a-a608-7731e9ecc1f0",
+        "action": "auto_sync_test_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화 수동 실행",
+        "before": {
+          "total": 655
+        },
+        "after": {
+          "total": 655,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 1,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-23T01:44:24.501Z"
+      },
+      {
+        "id": "54e7e3bc-32d1-456e-8cc5-82590be73b91",
+        "action": "video_format_confirm",
+        "videoId": "dhfLrhG40qs",
+        "title": "폭탄 되기 싫어서 두손 붙잡고 떠는 에릭과 신혜성",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "auto",
+          "videoFormatConfidence": "low",
+          "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-17T14:22:09.601Z"
+      },
+      {
+        "id": "5557ba51-a439-49d5-b4fe-1df20fce661c",
+        "action": "video_format_confirm",
+        "videoId": "1lDJsCpsBKs",
+        "title": "알사탕 혜성이",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "auto",
+          "videoFormatConfidence": "low",
+          "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-17T14:21:57.570Z"
+      },
+      {
+        "id": "a8f789af-11d6-412a-8b56-364196b6267f",
+        "action": "auto_sync_test_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화 수동 실행",
+        "before": {
+          "total": 655
+        },
+        "after": {
+          "total": 655,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 2,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-17T14:21:33.467Z"
+      },
+      {
+        "id": "1d6ff466-84c8-4b9e-9378-7da49d88d023",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 654
+        },
+        "after": {
+          "total": 655,
+          "added": 1,
+          "titleChanged": 0,
+          "descriptionChanged": 0,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-17T11:01:07.842Z"
+      },
+      {
+        "id": "5bf6ac35-680b-4c05-ad0e-a778a658f2a6",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 653
+        },
+        "after": {
+          "total": 654,
+          "added": 1,
+          "titleChanged": 0,
+          "descriptionChanged": 0,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-16T11:01:37.254Z"
+      },
+      {
+        "id": "8b7924c4-06b3-4fbe-a092-3be475f2f1eb",
+        "action": "video_format_confirm",
+        "videoId": "y1F2TuPalLU",
+        "title": "온리원의 진짜 모습을 보여준다는 정리왕 신혜성",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-11T16:26:23.218Z"
+      },
+      {
+        "id": "8588503b-d4dc-4081-90a0-f380526dc6dc",
+        "action": "video_format",
+        "videoId": "ck9F0_BXhes",
+        "title": "어린왕자 실사판",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "manual",
+          "videoFormatConfidence": "",
+          "videoFormatReason": ""
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-11T16:25:57.261Z"
+      },
+      {
+        "id": "4fac1b30-2876-4164-9c76-1cd1859a7813",
+        "action": "video_format_confirm",
+        "videoId": "ck9F0_BXhes",
+        "title": "어린왕자 실사판",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-11T16:25:48.238Z"
+      },
+      {
+        "id": "780fdbbc-36a5-435b-9e91-341b7a1fcffb",
+        "action": "video_format_confirm",
+        "videoId": "y1F2TuPalLU",
+        "title": "온리원의 진짜 모습을 보여준다는 정리왕 신혜성",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "auto",
+          "videoFormatConfidence": "low",
+          "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-11T16:24:51.089Z"
+      },
+      {
+        "id": "ec768815-8990-4b8f-9a6c-0bb3f14a64ed",
+        "action": "video_format_confirm",
+        "videoId": "ck9F0_BXhes",
+        "title": "어린왕자 실사판",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "auto",
+          "videoFormatConfidence": "low",
+          "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-11T16:24:46.662Z"
+      },
+      {
+        "id": "76d87a54-3faf-4dd2-aba4-142e8c2eec4e",
+        "action": "manual_date",
+        "videoId": "ck9F0_BXhes",
+        "title": "어린왕자 실사판",
+        "before": [],
+        "after": [
+          {
+            "sourceDate": "2012-10-13",
+            "source": "admin",
+            "precision": "day",
+            "inferred": false,
+            "manual": true
+          }
+        ],
+        "undoOf": "",
+        "changedAt": "2026-10-11T16:24:30.246Z"
+      },
+      {
+        "id": "11467c4c-460b-42cd-a336-313327dce7f5",
+        "action": "auto_sync_test_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화 수동 실행",
+        "before": {
+          "total": 653
+        },
+        "after": {
+          "total": 653,
+          "added": 0,
+          "titleChanged": 0,
+          "descriptionChanged": 1,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-11T16:22:27.306Z"
+      },
+      {
+        "id": "eb6ff45d-6042-4bbe-8486-0feb43e122cb",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 652
+        },
+        "after": {
+          "total": 653,
+          "added": 1,
+          "titleChanged": 0,
+          "descriptionChanged": 0,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-10T11:00:33.858Z"
+      },
+      {
+        "id": "bb7d7334-20f0-4485-9c19-5eedcabdadc0",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 651
+        },
+        "after": {
+          "total": 652,
+          "added": 1,
+          "titleChanged": 0,
+          "descriptionChanged": 0,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-09T11:02:16.198Z"
+      },
+      {
+        "id": "501149b3-3241-4875-afd5-222af13a1b01",
+        "action": "video_format_confirm",
+        "videoId": "pdsOLGWBp9w",
+        "title": "손수건 부르는 신혜성 미모",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-04T22:11:49.713Z"
+      },
+      {
+        "id": "aa2c00f7-2fa6-473a-a749-731fb78b41b0",
+        "action": "video_format_confirm",
+        "videoId": "9D4SkcU0leM",
+        "title": "신혜성 인생연기",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-04T22:11:32.340Z"
+      },
+      {
+        "id": "9d1ad60b-817f-4287-946b-b40a119ca751",
+        "action": "video_format_confirm",
+        "videoId": "pdsOLGWBp9w",
+        "title": "손수건 부르는 신혜성 미모",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "auto",
+          "videoFormatConfidence": "low",
+          "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-04T22:11:12.581Z"
+      },
+      {
+        "id": "68cdbb95-1bf1-4d2b-ac7e-8cadb882bea2",
+        "action": "video_format_confirm",
+        "videoId": "9D4SkcU0leM",
+        "title": "신혜성 인생연기",
+        "before": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "auto",
+          "videoFormatConfidence": "low",
+          "videoFormatReason": "2024-10-15 이후 · 3분 이하 · 화면비율 확인 필요"
+        },
+        "after": {
+          "videoFormat": "shorts",
+          "videoFormatSource": "confirmed",
+          "videoFormatConfidence": "",
+          "videoFormatReason": "관리자가 자동 판별 결과를 확인했습니다."
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-04T22:10:46.260Z"
+      },
+      {
+        "id": "7dd9f2af-1fbd-4cb6-9d30-f0f4e80f0e3d",
+        "action": "auto_sync_apply",
+        "videoId": "",
+        "title": "YouTube 자동 동기화",
+        "before": {
+          "total": 650
+        },
+        "after": {
+          "total": 651,
+          "added": 1,
+          "titleChanged": 0,
+          "descriptionChanged": 0,
+          "removed": 0
+        },
+        "undoOf": "",
+        "changedAt": "2026-10-03T11:00:54.861Z"
+      },
       {
         "id": "e8e7af20-637e-43ae-bd31-5d58823b8e42",
         "action": "auto_sync_apply",
@@ -18155,6 +18876,6 @@
         "changedAt": "2026-09-19T12:31:07.152Z"
       }
     ],
-    "updatedAt": "2026-10-02T11:01:05.260Z"
+    "updatedAt": "2026-10-29T11:01:07.030Z"
   }
 }
