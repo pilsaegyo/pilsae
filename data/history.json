@@ -15,8 +15,8 @@
       "표기된 동시대 보도"
     ],
     "chapterCounts": {
-      "chapter1": 1001,
-      "chapter2": 976,
+      "chapter1": 1000,
+      "chapter2": 977,
       "chapter3": 597,
       "chapter4": 83
     },
@@ -29789,7 +29789,7 @@
       "id": "new261028:2003-08-28:migliore-5th-concert",
       "date": "2003-08-28",
       "precision": "day",
-      "chapter": "chapter1",
+      "chapter": "chapter2",
       "transition": "",
       "category": "공연",
       "subject": "신화 전체",

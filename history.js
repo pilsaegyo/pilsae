@@ -549,16 +549,50 @@ function updateHistoryScope(){
  $('#allChapters').textContent=activeChapter?'모든 시기에서 찾기':'시기 제한 없음';
  $('#allChapters').setAttribute('aria-pressed',String(!activeChapter));
 }
-function normalizeSubject(s){
- if(s==='신화 전체')return 'group';
- if(s==='신혜성 개인')return 'solo';
- if(s==='신혜성 포함 합동'||s==='신혜성 개인·합동')return 'together';
+// Search classification only. The original subject text is never rewritten.
+function normalizeSubject(value){
+ const s=String(value||'').normalize('NFKC').trim();
+ if(/^신화 전체(?:$|[·(])/.test(s)||/^신화(?:\s*5인|\(5인\))/.test(s))return 'group';
+ if(s==='신혜성'||s==='신혜성 개인'||/^신혜성\s*\(정필교\)$/.test(s))return 'solo';
+ // A historical composite label alone does not prove joint participation.
+ if(s==='신화·신혜성 활동(기존 연표)')return 'historical';
+ if(/신혜성/.test(s))return 'together';
  return 'historical';
+}
+// Display-only groups: preserve the 88 original category labels for details and precise filtering.
+const CATEGORY_GROUPS=[
+ ['broadcast','방송·영상'],['stage','공연·행사'],['release','음반·발매'],
+ ['fan','팬 활동'],['visual','촬영·광고'],['other','기타 기록']
+];
+function categoryGroup(value){
+ const s=String(value||'');
+ if(/음반|음원|앨범|발매|싱글|OST|DVD|포토북|녹음|뮤직비디오(?! 촬영)/i.test(s))return 'release';
+ if(/팬미팅|팬행사|팬 행사|사인회|캠프|생일행사/.test(s))return 'fan';
+ if(/공연|콘서트|쇼케이스|행사|시상|축가|패션쇼|공개녹화/.test(s))return 'stage';
+ if(/광고|화보|촬영|제작|잡지|취재|뮤직비디오 촬영/.test(s)&&!/방송/.test(s))return 'visual';
+ if(/방송|라디오|예능|연예정보|드라마|시트콤|영상|V LIVE|해외방송|온라인 방송|영화|연기/.test(s))return 'broadcast';
+ return 'other';
+}
+function buildCategoryFilters(){
+ const grouped=new Map(CATEGORY_GROUPS.map(([key])=>[key,[]]));
+ for(const c of [...new Set(events.map(e=>e.category))].sort())grouped.get(categoryGroup(c)).push(c);
+ $('#category').innerHTML='<option value="">전체 유형</option>' + CATEGORY_GROUPS
+  .map(([key,label])=>`<option value="${key}">${label} (${events.filter(e=>categoryGroup(e.category)===key).length.toLocaleString('ko-KR')}건)</option>`).join('');
+ updateCategoryDetails();
+}
+function updateCategoryDetails(selected=''){
+ const group=$('#category').value,field=$('#categoryDetail'),types=[...new Set(events.filter(e=>!group||categoryGroup(e.category)===group).map(e=>e.category))].sort();
+ field.innerHTML='<option value="">세부 유형 전체</option>'+types.map(c=>`<option value="${safe(c)}">${safe(c)}</option>`).join('');
+ field.value=types.includes(selected)?selected:'';
+ field.closest('label').hidden=!group;
 }
 // A newly imported historical event is NEW for 24h after its registeredAt timestamp.
 // Its historical event date never influences this badge.
 const NEW_WINDOW_MS=24*60*60*1000;
+// This is an editor convenience before opening, not a public activity label.
+const NEW_ADMIN_END=Date.parse('2026-11-27T00:00:00+09:00');
 function isNewEvent(e,now=Date.now()){
+ if(now>=NEW_ADMIN_END)return false;
  const at=Date.parse(String(e.registeredAt||''));
  return Number.isFinite(at)&&at<=now&&now-at<NEW_WINDOW_MS;
 }
@@ -590,8 +624,8 @@ function matchesHistorySearch(e,query){
  return normalizeHistorySearch([e.title,e.date,e.category,e.subject,e.sourceNote,e.verification,verificationGroup(e)].join(' ')).includes(normalizeHistorySearch(query));
 }
 function selectRows(){
- const year=$('#year').value,category=$('#category').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim();
- filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||e.category===category)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||verificationGroup(e)===verification)&&(!$('#withVideos').checked||hasEventVideo(e))&&matchesHistorySearch(e,q));
+ const year=$('#year').value,category=$('#category').value,categoryDetail=$('#categoryDetail').value,subject=$('#subject').value,verification=$('#verification').value,q=$('#search').value.trim();
+ filtered=events.filter(e=>(!activeChapter||e.chapter===activeChapter)&&(!explicitDate||e.date===explicitDate||(e.conflictingDates||[]).includes(explicitDate))&&(!year||e.date.startsWith(year))&&(!category||categoryGroup(e.category)===category)&&(!categoryDetail||e.category===categoryDetail)&&(!subject||(subject==='new'?isNewEvent(e):normalizeSubject(e.subject)===subject))&&(!verification||verificationGroup(e)===verification)&&(!$('#withVideos').checked||hasEventVideo(e))&&matchesHistorySearch(e,q));
 }
 function chronologicalKey(e){
   const year=e.date.slice(0,4);
@@ -758,7 +792,7 @@ function sourceWidget(e){
    }
    // Existing video references are kept once, now with their correct channel attribution.
    const fan=id?fanById.get(id):null;
-   if(fan){label=`셩공시대님 — ${fan.title}`;kind='관련 영상 · 팬채널 참고';note=fan.note;}
+   if(fan){label=`${/셩공시대/.test(String(e.source||''))?'셩공시대님':'팬채널 (업로더 미확인)'} — ${fan.title}`;kind='관련 영상 · 팬채널 참고';note=fan.note;}
    seen.add(url);
    ordered.push({label,url,kind,note});
  };
@@ -774,7 +808,7 @@ function sourceWidget(e){
  }
  for(const video of fanVideos){
    if(!video||typeof video.url!=='string'||typeof video.title!=='string')continue;
-   if(youtubeId(video.url))add(`셩공시대님 — ${video.title}`,video.url,'관련 영상 · 팬채널 참고',video.note||'팬채널 참고 영상입니다. 영상 제목의 날짜와 실제 방송·공연일은 다를 수 있습니다.');
+   if(youtubeId(video.url))add(`${/셩공시대/.test(String(e.source||''))?'셩공시대님':'팬채널 (업로더 미확인)'} — ${video.title}`,video.url,'관련 영상 · 팬채널 참고',video.note||'팬채널 참고 영상입니다. 영상 제목의 날짜와 실제 방송·공연일은 다를 수 있습니다.');
  }
  const status=verificationGroup(e);
  const originalStatus=String(e.verification||'판정 미기재');
@@ -787,11 +821,26 @@ function sourceWidget(e){
   ? `<h4 class="source-merged-title">통합 전 개별 방송·행사 기록 (${mediaRecords.length}건)</h4><ol class="source-merged-list">${mediaRecords.map(r=>`<li><strong>${safe(r.title||'제목 미기재')}</strong><small>${safe(r.date||'날짜 미상')} · ${safe(r.source||'출처 미기재')} · ${safe(r.verification||'검증 상태 미기재')}</small>${r.sourceNote?`<small>${safe(String(r.sourceNote))}</small>`:''}</li>`).join('')}</ol>`
   : '';
  const entries=rows?`<ul>${rows}</ul>`:'<p class="source-unlinked">연결된 근거 링크가 없습니다. 출처 확보가 필요합니다.</p>';
- return `<span class="source-widget"><button type="button" class="source-trigger" aria-label="${safe(e.date)} ${safe(e.title)} 근거 보기" aria-expanded="false" title="근거와 확인 범위 보기">ⓘ</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>근거와 확인 범위</strong><span class="source-status">${safe(status)}</span><p class="verification-help">${safe(verificationHelp(status))}</p><h4 class="source-section-title">기존 상세 판정</h4><p>${safe(originalStatus)}</p>${note?`<p>${safe(note)}</p>`:''}<h4 class="source-section-title">날짜와 기록 출처</h4><p>기록일: ${safe(e.date)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p><p>출처: ${safe(provenance)}</p>${categoryOrigin}${originalList}<h4 class="source-section-title">연결 자료</h4>${entries}</span></span>`;
+ return `<span class="source-widget"><button type="button" class="source-trigger source-trigger-labeled" aria-label="${safe(e.date)} ${safe(e.title)} 근거 보기" aria-expanded="false" title="근거와 확인 범위 보기">ⓘ 근거</button><span class="source-panel" role="group" aria-label="출처 정보"><strong>근거와 확인 범위</strong><span class="source-status">${safe(status)}</span><p class="verification-help">${safe(verificationHelp(status))}</p><h4 class="source-section-title">기존 상세 판정</h4><p>${safe(originalStatus)}</p>${note?`<p>${safe(note)}</p>`:''}<h4 class="source-section-title">날짜와 기록 출처</h4><p>기록일: ${safe(e.date)} · ${safe(e.dateKind||'날짜 종류 미확인')}</p><p>출처: ${safe(provenance)}</p>${categoryOrigin}${originalList}<h4 class="source-section-title">연결 자료</h4>${entries}</span></span>`;
 }
 function researchWidget(){
- const rows=[...researchSources.values()].map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.title)} ↗</a><small>${safe(r.note)}</small></li>`).join('');
- return `<span class="source-widget source-catalog"><button type="button" class="source-trigger source-catalog-trigger" aria-label="조사에 활용한 공개 자료 목록 보기" aria-expanded="false" title="조사 자료 목록">ⓘ 조사 자료</button><span class="source-panel" role="group" aria-label="조사 자료 목록"><strong>조사·대조한 공개 자료</strong><p>이 목록에 포함된 사이트·링크가 모든 일정의 날짜를 증명하는 것은 아닙니다. 각 이벤트의 ⓘ에서 연결 근거를 구분해 보세요.</p><ul>${rows}</ul></span></span>`;
+ // Keep the catalog light until opened: a full 974-row popover is too large.
+ return `<span class="source-widget source-catalog"><button type="button" class="source-trigger source-catalog-trigger" aria-label="조사에 활용한 공개 자료 검색" aria-expanded="false" title="조사 자료 검색">ⓘ 조사 자료</button><span class="source-panel" role="group" aria-label="조사 자료 검색"><strong>조사·대조한 공개 자료</strong><p>자료 목록은 모든 일정의 날짜를 독립적으로 증명하는 목록이 아닙니다. 개별 기록의 근거를 확인하세요.</p><label class="catalog-search-label">자료 검색<input class="catalog-search" type="search" placeholder="자료명 · 발행처 · 키워드" autocomplete="off"></label><p class="catalog-count" role="status"></p><ul class="catalog-results"></ul><button type="button" class="catalog-more" hidden>자료 더 보기</button></span></span>`;
+}
+function setupCatalogSearch(float){
+ const sourceRows=[...researchSources.values()];
+ const input=float.querySelector('.catalog-search');
+ if(!input)return;
+ let limit=50;
+ const draw=()=>{
+  const query=normalizeHistorySearch(input.value),rows=query?sourceRows.filter(r=>normalizeHistorySearch([r.title,r.publisher,r.kind,r.note].join(' ')).includes(query)):sourceRows;
+  float.querySelector('.catalog-count').textContent=`전체 ${sourceRows.length.toLocaleString('ko-KR')}건 · 검색 결과 ${rows.length.toLocaleString('ko-KR')}건`;
+  float.querySelector('.catalog-results').innerHTML=rows.slice(0,limit).map(r=>`<li><span class="source-kind">${safe(r.kind)}</span> <a href="${safe(r.url)}" target="_blank" rel="noopener noreferrer">${safe(r.title)} ↗</a><small>${safe(r.publisher||'')}${r.note?' · '+safe(r.note):''}</small></li>`).join('')||'<li>일치하는 자료가 없습니다.</li>';
+  float.querySelector('.catalog-more').hidden=rows.length<=limit;
+ };
+ input.addEventListener('input',()=>{limit=50;draw();});
+ float.querySelector('.catalog-more').addEventListener('click',()=>{limit+=50;draw();});
+ draw();
 }
 function enableSourceWidgets(){
   // Mobile: a modal with its own scroller, backdrop and scroll lock.
@@ -859,6 +908,7 @@ function enableSourceWidgets(){
       const content=button.closest('.source-widget')?.querySelector('.source-panel')?.innerHTML||'';
       float.innerHTML=`<div class="source-float-toolbar"><span>근거와 확인 범위</span><button type="button" class="source-close" aria-label="근거 팝업 닫기">×</button></div><div class="source-float-content">${content}</div>`;
       float.querySelector('.source-float-content').scrollTop=0;
+      if(button.classList.contains('source-catalog-trigger'))setupCatalogSearch(float);
     }
     pinned=lock||modal;
     active.setAttribute('aria-expanded','true');active.setAttribute('aria-controls',float.id);
@@ -904,7 +954,7 @@ function enableSourceWidgets(){
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'&&active){event.preventDefault();release(true);return;}
     if(event.key!=='Tab'||!active||!modalScreen.matches)return;
-    const focusable=[...float.querySelectorAll('button:not([disabled]),a[href]')].filter(e=>e.getClientRects().length);
+    const focusable=[...float.querySelectorAll('button:not([disabled]),a[href],input:not([disabled])')].filter(e=>e.getClientRects().length);
     if(!focusable.length){event.preventDefault();float.focus();return;}
     const first=focusable[0],last=focusable[focusable.length-1];
     if(event.shiftKey&&(document.activeElement===first||!float.contains(document.activeElement))){event.preventDefault();last.focus();}
@@ -925,7 +975,7 @@ function eventMarkup(e){
   const conflictHtml=e.conflictingDates?.length?`<div class="detail-note conflict">원문 날짜 충돌: ${safe(e.conflictingDates.join(' / '))} · 공식 날짜 추가 확인 필요</div>`:'';
   const desc=String(e.sourceNote||'').slice(0,380);
   const status=verificationGroup(e);
-  const newBadge=isNewEvent(e)?'<span class="history-new-badge" aria-label="최근 24시간 이내 등록된 연혁">NEW</span>':'';
+  const newBadge=isNewEvent(e)?'<span class="history-new-badge" aria-label="관리자 확인용 최근 24시간 등록 기록">NEW</span>':'';
   return `<article class="item" id="event-${safe(e.id)}"><div class="date" title="${safe(e.date)} · ${safe(e.dateKind||'')}">${safe(fmt(e))}</div><div class="item-main"><div class="name">${safe(e.title)}${newBadge}</div><div class="meta"><span class="tag">${safe(e.category)}</span><span class="tag">${safe(e.subject==='신화 전체'?'신화 전체':e.subject==='신혜성 개인'?'신혜성':e.subject==='신혜성 포함 합동'?'신혜성 참여':e.subject)}</span><span class="verification-label ${status==='날짜 충돌'?'conflict':status==='독립검증 완료'?'confirmed':'unconfirmed'}" title="${safe(e.verification)}">${status==='날짜 충돌'?'⚠':'◌'} ${safe(status)}</span>${e.precision!=='day'?'<span class="inexact">일자 미상</span>':''}${e.recordCount>1?`<span class="tag" title="${safe(e.recordCount)}개 원본 기록 통합">원본 ${e.recordCount}건 통합</span>`:(e.possibleDuplicate?'<span class="inexact">중복 검토 필요</span>':'')}${e.transition?`<span class="tag">${safe(e.transition)}</span>`:''}${links.length?`<span class="video" title="규칙 기반 70점 이상 · 동일 행사 확정 아님">▶ 추천 ${links.length}개</span>`:''}${sourceWidget(e)}</div>${officialLiveListLink}${conflictHtml}${detailHtml}${e.verification==='날짜 충돌'?`<div class="detail-note">${safe(desc)}</div>`:''}${linkHtml}</div></article>`;
 }
 function renderItems(){
@@ -951,8 +1001,8 @@ function calendarRange(){
 function initialCalendarMonth(){
   // Date-linked routes should open the exact month; otherwise use the newest relevant month.
   if(explicitDate)return explicitDate.slice(0,7);
-  if(highlightEvent){const record=events.find(e=>e.id===highlightEvent);if(record)return record.precision==='year'?`${record.date.slice(0,4)}-12`:record.date.slice(0,7);}
-  if(filtered.length){const last=filtered[filtered.length-1];return last.precision==='year'?`${last.date.slice(0,4)}-12`:last.date.slice(0,7);}
+  if(highlightEvent){const record=events.find(e=>e.id===highlightEvent);if(record)return record.precision==='year'?`${record.date.slice(0,4)}-01`:record.date.slice(0,7);}
+  if(filtered.length){const last=filtered[filtered.length-1];return last.precision==='year'?`${last.date.slice(0,4)}-01`:last.date.slice(0,7);}
   return calendarRange()[1];
 }
 function shiftCalendarMonth(month,delta){
@@ -978,18 +1028,19 @@ function renderCalendar(){
   const firstDay=new Date(Date.UTC(y,m-1,1)).getUTCDay();
   const daysInMonth=new Date(Date.UTC(y,m,0)).getUTCDate();
   const monthEvents=filtered.filter(e=>e.date.slice(0,7)===calendarMonth&&e.precision!=='year');
-  const yearUnknownEvents=m===12?filtered.filter(e=>e.precision==='year'&&e.date.slice(0,4)===String(y)):[];
+  const yearUnknownEvents=filtered.filter(e=>e.precision==='year'&&e.date.slice(0,4)===String(y));
   const exactEvents=monthEvents.filter(e=>e.precision==='day');
   const unknownEvents=monthEvents.filter(e=>e.precision!=='day');
-  const dateUnknownEvents=[...unknownEvents,...yearUnknownEvents];
+  const dateUnknownEvents=unknownEvents;
+  const yearUnknownKey=`${y}-unknown`;
   const unknownKey=`${calendarMonth}-unknown`;
   const grouped=new Map();
   for(const e of exactEvents){const day=Number(e.date.slice(8));if(!grouped.has(day))grouped.set(day,[]);grouped.get(day).push(e);}
-  if(!selectedCalendarDate||!selectedCalendarDate.startsWith(`${calendarMonth}-`)){
+  if(!selectedCalendarDate||(!selectedCalendarDate.startsWith(`${calendarMonth}-`)&&selectedCalendarDate!==yearUnknownKey)){
     const linked=filtered.find(e=>e.id===highlightEvent);
-    const linkedDay=explicitDate&&explicitDate.startsWith(calendarMonth+'-')?explicitDate:(linked&&linked.date.startsWith(calendarMonth+'-')?(linked.precision==='day'?linked.date:unknownKey):(linked?.precision==='year'&&calendarMonth===linked.date.slice(0,4)+'-12'?unknownKey:''));
+    const linkedDay=explicitDate&&explicitDate.startsWith(calendarMonth+'-')?explicitDate:(linked&&linked.precision==='year'&&linked.date.slice(0,4)===String(y)?yearUnknownKey:(linked&&linked.date.startsWith(calendarMonth+'-')?(linked.precision==='day'?linked.date:unknownKey):''));
     const d=[...grouped.keys()].sort((a,b)=>a-b).pop();
-    selectedCalendarDate=linkedDay|| (d?`${calendarMonth}-${pad2(d)}`:(dateUnknownEvents.length?unknownKey:''));
+    selectedCalendarDate=linkedDay|| (d?`${calendarMonth}-${pad2(d)}`:(dateUnknownEvents.length?unknownKey:(yearUnknownEvents.length?yearUnknownKey:'')));
   }
   const [startMonth,endMonth]=calendarRange();
   const cells=[];
@@ -1005,13 +1056,14 @@ function renderCalendar(){
   const unknownSelected=selectedCalendarDate===unknownKey;
   const hasUnknownVideo=dateUnknownEvents.some(hasEventVideo);
   cells.push(`<button type="button" class="cal-day cal-day-unknown${dateUnknownEvents.length?' has-events':''}${unknownSelected?' is-selected':''}" data-date="${unknownKey}" aria-label="${y}년 ${m}월 날짜 미상, ${dateUnknownEvents.length}건" aria-pressed="${unknownSelected}"><span class="cal-day-number">날짜 미상</span><span class="cal-day-count">${dateUnknownEvents.length}건</span>${hasUnknownVideo?'<span class="cal-video-dot" title="관련 영상 있음" aria-hidden="true"></span>':''}</button>`);
-  const selected=unknownSelected?dateUnknownEvents:(selectedCalendarDate?grouped.get(Number(selectedCalendarDate.slice(8)))||[]:[]);
-  const selectedLabel=unknownSelected?`${y}년 ${m}월 날짜 미상${m===12&&yearUnknownEvents.length?' (연도만 확인된 기록 포함)':''}`:(selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`);
+  const yearUnknownSelected=selectedCalendarDate===yearUnknownKey;
+  const selected=yearUnknownSelected?yearUnknownEvents:(unknownSelected?dateUnknownEvents:(selectedCalendarDate?grouped.get(Number(selectedCalendarDate.slice(8)))||[]:[]));
+  const selectedLabel=yearUnknownSelected?`${y}년 · 월·일 미상`:(unknownSelected?`${y}년 ${m}월 · 일자 미상`:(selectedCalendarDate?`${y}년 ${m}월 ${Number(selectedCalendarDate.slice(8))}일`:`${y}년 ${m}월`));
   const details=selected.length?selected.map(eventMarkup).join(''):'<p class="cal-no-day">이 칸에 해당하는 활동 기록이 없습니다.</p>';
-  $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · ${y}년 ${m}월 ${monthEvents.length+yearUnknownEvents.length}건 · 일부 날짜·내용 검증 전`;
+  $('#summary').textContent=`전체 ${events.length.toLocaleString('ko-KR')}건 · 조건에 맞는 ${filtered.length.toLocaleString('ko-KR')}건 · ${y}년 ${m}월 ${monthEvents.length}건 · 연도만 확인 ${yearUnknownEvents.length}건 · 일부 날짜·내용 검증 전`;
   const yearOptions=Array.from({length:Number(endMonth.slice(0,4))-Number(startMonth.slice(0,4))+1},(_,i)=>Number(startMonth.slice(0,4))+i).map(yr=>`<option value="${yr}" ${yr===y?'selected':''}>${yr}년</option>`).join('');
   const monthOptions=Array.from({length:12},(_,i)=>i+1).map(mo=>`<option value="${pad2(mo)}" ${mo===m?'selected':''}>${mo}월</option>`).join('');
-  $('#calendar').innerHTML=`<div class="cal-controls"><button class="cal-nav" id="calPrev" type="button" aria-label="이전 달" ${calendarMonth<=startMonth?'disabled':''}>‹</button><div class="cal-month-select"><select id="calYear" aria-label="달력 연도 선택">${yearOptions}</select><select id="calMonth" aria-label="달력 월 선택">${monthOptions}</select></div><button class="cal-nav" id="calNext" type="button" aria-label="다음 달" ${calendarMonth>=endMonth?'disabled':''}>›</button></div><div class="cal-weekdays" aria-hidden="true">${['일','월','화','수','목','금','토'].map(t=>`<span>${t}</span>`).join('')}</div><div class="cal-days">${cells.join('')}</div><p class="cal-hint">날짜별 일정 수를 표시합니다. 파란 점은 관련 유튜브 영상이 있는 날짜입니다. 날짜 미상 칸은 실제 특정 일자에 배정되지 않은 기록을 보여줍니다. 연도만 확인된 항목은 12월의 날짜 미상 칸에서 찾을 수 있습니다.</p><section class="cal-detail" aria-live="polite"><h2 class="cal-detail-title">${selectedLabel} · ${selected.length}건</h2>${details}</section>`;
+  $('#calendar').innerHTML=`<div class="cal-controls"><button class="cal-nav" id="calPrev" type="button" aria-label="이전 달" ${calendarMonth<=startMonth?'disabled':''}>‹</button><div class="cal-month-select"><select id="calYear" aria-label="달력 연도 선택">${yearOptions}</select><select id="calMonth" aria-label="달력 월 선택">${monthOptions}</select></div><button class="cal-nav" id="calNext" type="button" aria-label="다음 달" ${calendarMonth>=endMonth?'disabled':''}>›</button></div>${yearUnknownEvents.length?`<button type="button" class="cal-year-unknown${yearUnknownSelected?' is-selected':''}" data-date="${yearUnknownKey}" aria-pressed="${yearUnknownSelected}">${y}년 · 월·일 미상 기록 ${yearUnknownEvents.length}건 보기</button>`:''}<div class="cal-weekdays" aria-hidden="true">${['일','월','화','수','목','금','토'].map(t=>`<span>${t}</span>`).join('')}</div><div class="cal-days">${cells.join('')}</div><p class="cal-hint">날짜별 일정 수를 표시합니다. 파란 점은 관련 유튜브 영상이 있는 날짜입니다. 날짜 미상 칸은 실제 특정 일자에 배정되지 않은 기록을 보여줍니다. 연도만 확인된 기록은 달력 위의 '연도별 월·일 미상' 버튼에서 따로 확인할 수 있습니다.</p><section class="cal-detail" aria-live="polite"><h2 class="cal-detail-title">${selectedLabel} · ${selected.length}건</h2>${details}</section>`;
   $('#calPrev').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,-1)));
   $('#calNext').addEventListener('click',()=>setCalendarMonth(shiftCalendarMonth(calendarMonth,1)));
   const selectCalendarMonth=()=>setCalendarMonth(`${$('#calYear').value}-${$('#calMonth').value}`);
@@ -1054,7 +1106,7 @@ function saveHistoryScroll(){
 }
 function persistHistoryView(replace=false){
  if(!historyReady||restoringHistory)return;
- const url=new URL(location.href),values={chapter:activeChapter||'all',year:$('#year').value,category:$('#category').value,subject:$('#subject').value,verification:$('#verification').value,q:$('#search').value,video:$('#withVideos').checked?'1':'',view:viewMode==='calendar'?'calendar':'',month:viewMode==='calendar'?calendarMonth:'',day:viewMode==='calendar'?selectedCalendarDate:'',limit:visibleCount>pageSize?String(visibleCount):'',event:highlightEvent,date:explicitDate};
+ const url=new URL(location.href),values={chapter:activeChapter||'all',year:$('#year').value,category:$('#category').value,categoryDetail:$('#categoryDetail').value,subject:$('#subject').value,verification:$('#verification').value,q:$('#search').value,video:$('#withVideos').checked?'1':'',view:viewMode==='calendar'?'calendar':'',month:viewMode==='calendar'?calendarMonth:'',day:viewMode==='calendar'?selectedCalendarDate:'',limit:visibleCount>pageSize?String(visibleCount):'',event:highlightEvent,date:explicitDate};
  for(const [key,value]of Object.entries(values)){if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);}
  const state={...history.state,historyView:true,scrollY:window.scrollY};
  if(url.href===location.href||replace)history.replaceState(state,'',url);else history.pushState(state,'',url);
@@ -1066,16 +1118,23 @@ function restoreHistoryView(scroll=false){
  highlightEvent=eventAliases[query.get('event')||'']||query.get('event')||'';
  const linked=events.find(e=>e.id===highlightEvent)||events.find(e=>e.date===explicitDate);
  const chapter=query.get('chapter');activeChapter=chapter==='all'?'':chapters.some(c=>c.id===chapter)?chapter:(linked?.chapter||'chapter1');
- for(const id of ['year','category','subject','verification','search']){
+ // Backward compatible with previously shared ?category=exact-name links.
+ const requestedCategory=query.get('category')||'';
+ const exactLegacy=events.some(e=>e.category===requestedCategory)?requestedCategory:'';
+ const group=exactLegacy?categoryGroup(exactLegacy):requestedCategory;
+ $('#category').value=CATEGORY_GROUPS.some(([key])=>key===group)?group:'';
+ updateCategoryDetails(query.get('categoryDetail')||exactLegacy);
+ for(const id of ['subject','verification','search']){
   const value=query.get(id==='search'?'q':id)||'';
-  if(id==='search')$('#'+id).value=value;else if(id!=='year')$('#'+id).value=[...$('#'+id).options].some(o=>o.value===value)?value:'';
+  if(id==='search')$('#'+id).value=value;
+  else $('#'+id).value=[...$('#'+id).options].some(o=>o.value===value)?value:'';
  }
  $('#withVideos').checked=query.get('video')==='1';
  const savedCount=Number(query.get('limit'));visibleCount=Number.isFinite(savedCount)&&savedCount>=pageSize?Math.min(Math.floor(savedCount),events.length):pageSize;
  applyChapter(false);
  const year=query.get('year')||'';$('#year').value=[...$('#year').options].some(o=>o.value===year)?year:'';
  viewMode=query.get('view')==='calendar'?'calendar':'list';calendarMonth=/^\d{4}-(0[1-9]|1[0-2])$/.test(query.get('month')||'')?query.get('month'):'';
- const day=query.get('day')||'';selectedCalendarDate=/^\d{4}-\d{2}-(?:\d{2}|unknown)$/.test(day)?day:'';
+ const day=query.get('day')||'';selectedCalendarDate=/^\d{4}-(?:\d{2}-(?:\d{2}|unknown)|unknown)$/.test(day)?day:'';
  selectRows();if(highlightEvent){const index=filtered.findIndex(e=>e.id===highlightEvent);if(index>=visibleCount)visibleCount=Math.ceil((index+1)/pageSize)*pageSize;}
  changeView(viewMode);
  $('.date-filter-hint').hidden=!(explicitDate||highlightEvent);
@@ -1100,7 +1159,8 @@ async function init(){
   if(!Array.isArray(hd.events)||!Array.isArray(hd.chapters))throw new Error('연혁 자료 형식 오류');
   events=hd.events;chapters=hd.chapters;eventAliases=hd.metadata?.legacyEventAliases||{};researchSources=new Map((hd.researchSources||[]).map(s=>[s.id,s]));
   events.sort((a,b)=>chronologicalKey(a).localeCompare(chronologicalKey(b))||String(a.id).localeCompare(String(b.id)));
-  for(const c of [...new Set(events.map(e=>e.category))].sort()) $('#category').add(new Option(c,c));
+  buildCategoryFilters();
+  if(Date.now()>=NEW_ADMIN_END)$('#subject').querySelector('option[value="new"]')?.remove();
   for(const [label] of VERIFICATION_GROUPS){const count=events.filter(e=>verificationGroup(e)===label).length;if(count)$('#verification').add(new Option(`${label} (전체 ${count.toLocaleString('ko-KR')}건)`,label));}
   const guide=$('#researchGuide');if(guide)guide.innerHTML=researchWidget();enableSourceWidgets();
   buildChapterButtons();restoreHistoryView();setupChapterDisclosure();
@@ -1114,7 +1174,8 @@ async function init(){
   $('#withVideos').addEventListener('change',filtersChanged);
   $('#resetFilters').addEventListener('click',()=>{
     clearTimeout(searchTimer);saveHistoryScroll();explicitDate='';highlightEvent='';activeChapter='';calendarMonth='';selectedCalendarDate='';
-    for(const id of ['year','category','subject','verification','search'])$('#'+id).value='';
+    for(const id of ['year','category','categoryDetail','subject','verification','search'])$('#'+id).value='';
+    updateCategoryDetails();
     $('#withVideos').checked=false;$('.date-filter-hint').hidden=true;applyChapter();
   });
   $('#subject').addEventListener('change',()=>{
@@ -1124,7 +1185,8 @@ async function init(){
       applyChapter();
     }else filtersChanged();
   });
-  for(const key of ['year','category','verification']) $('#'+key).addEventListener('change',()=>{saveHistoryScroll();filtersChanged();});
+  $('#category').addEventListener('change',()=>{saveHistoryScroll();updateCategoryDetails();filtersChanged();});
+  for(const key of ['year','categoryDetail','verification']) $('#'+key).addEventListener('change',()=>{saveHistoryScroll();filtersChanged();});
   $('#search').addEventListener('input',()=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>{saveHistoryScroll();filtersChanged();},200);});
   $('#year').addEventListener('change',()=>{
     const target=viewMode==='calendar'?$('#calendar'):$('#events').querySelector('.month-title');
@@ -1149,8 +1211,9 @@ async function init(){
 function refreshNewBadgeExpiry(){
  clearTimeout(expiryTimer);
  const now=Date.now();
+ if(now>=NEW_ADMIN_END)return;
  const expires=events.map(e=>Date.parse(String(e.registeredAt||''))+NEW_WINDOW_MS)
-   .filter(t=>Number.isFinite(t)&&t>now).sort((a,b)=>a-b);
+   .filter(t=>Number.isFinite(t)&&t>now&&t<NEW_ADMIN_END).concat(NEW_ADMIN_END).sort((a,b)=>a-b);
  if(!expires.length)return;
  // one-shot scheduled refresh, then re-arm for any later batch
  expiryTimer=window.setTimeout(()=>{refreshHistoryInPlace();refreshNewBadgeExpiry();},Math.max(1,Math.min(expires[0]-now+30,2147483647)));
@@ -1168,10 +1231,12 @@ function setupBackToTop(){
 }
 function setupChapterDisclosure(){
  const toggle=$('#chapterToggle'),grid=$('#chapters'),mobile=window.matchMedia('(max-width:550px)');
- const setOpen=open=>{grid.hidden=!open;toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'시기 선택 접기 ▴':'시기 선택 펼치기 ▾';};
+ const setOpen=open=>{grid.hidden=!open;toggle.setAttribute('aria-expanded',String(open));
+  const chosen=chapters.find(c=>c.id===activeChapter);
+  toggle.textContent=open?'시기 선택 접기 ▴':`현재 선택: ${chosen?`CHAPTER ${chosen.number} · ${chosen.title}`:'전체 시기'} ▾`;};
  toggle.addEventListener('click',()=>setOpen(grid.hidden));
  const sync=()=>setOpen(!mobile.matches);
- mobile.addEventListener('change',sync);sync();
+ mobile.addEventListener('change',sync);document.addEventListener('history-view-change',()=>{if(grid.hidden)setOpen(false);});sync();
 }
 function reducedHistoryMotion(){return window.matchMedia('(prefers-reduced-motion: reduce)').matches;}
 function updateReadingYear(){
