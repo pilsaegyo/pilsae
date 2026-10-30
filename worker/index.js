@@ -2629,6 +2629,9 @@ async function appendAdminHistory({ env, owner, repo, branch, entry }) {
 
 
 const DEPLOY_PATCH_ALLOWED_FILES = new Set([
+  "shinnyang-game.css",
+  "shinnyang-game.js",
+  "shinnyang.html",
   "archive-date-rules.js",
   "index.html",
   "script.js",

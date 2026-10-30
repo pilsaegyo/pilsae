@@ -4401,6 +4401,9 @@ function renderAdminContentList() {
 
 
 const DEPLOY_ALLOWED_FILES = new Set([
+  "shinnyang-game.css",
+  "shinnyang-game.js",
+  "shinnyang.html",
   "index.html",
   "script.js",
   "style.css",
