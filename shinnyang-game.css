@@ -88,3 +88,45 @@
 @media(max-width:550px){.shinnyang-game{right:8px;top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:min(390px,calc(100vw - 16px));max-height:calc(100dvh - 93px);border-radius:20px}.shinnyang-scene{height:206px}.shinnyang-pixel-cat{width:174px;height:174px;bottom:13px}.sn-prop{font-size:35px;bottom:16px}.shinnyang-main{padding:9px 10px 10px}.shinnyang-action{min-height:68px}}
 @media(max-height:600px){.shinnyang-game{top:65px;max-height:calc(100dvh - 80px)}}
 @media(prefers-reduced-motion:reduce){.cat-seal.shinnyang-trigger,.shinnyang-game,.shinnyang-game *,.shinnyang-game *:before,.shinnyang-game *:after{animation:none!important;transition:none!important}}
+
+/* v3: miniature game loop expansion. Scoped to shinnyang-game only. */
+.shinnyang-game .sn-economy{display:flex;gap:5px;flex-wrap:wrap;margin:-1px 0 8px}
+.shinnyang-game .sn-economy>span{background:#fff9ed;border:1px solid #f0dfc9;color:#977594;border-radius:7px;padding:3px 7px;font-size:9px;font-weight:800}
+.shinnyang-game .sn-economy strong{color:#a56ca3;font-variant-numeric:tabular-nums}
+.shinnyang-game .sn-room-decor{position:absolute;right:44px;top:75px;z-index:2;font-size:36px;filter:drop-shadow(0 4px 2px #9c81ab44);animation:sn-room-bob 4s ease-in-out infinite;pointer-events:none}
+.shinnyang-game .sn-song-challenge{padding:11px;margin:7px 0;border:1px solid #d5bde8;border-radius:12px;background:linear-gradient(135deg,#f7eafb,#fff5fc);text-align:center}
+.shinnyang-game .sn-song-challenge p{margin:4px 0 7px;font-size:11px;color:#906c9c}
+.shinnyang-game .sn-song-pattern{font-size:24px;letter-spacing:.26em;color:#b47fa9;background:#fffafc;border:1px dashed #e1c9e9;border-radius:9px;padding:6px;margin-bottom:8px;min-height:49px}
+.shinnyang-game .sn-song-input{display:flex;justify-content:center;gap:8px}
+.shinnyang-game .sn-song-input button{height:46px;width:65px;border:1px solid #c7a5dc;background:#fff;border-radius:11px;box-shadow:0 4px 0 #e3cfed;color:#835ba0;font-size:22px;cursor:pointer}
+.shinnyang-game .sn-song-input button:active{transform:translateY(3px);box-shadow:0 1px 0 #e3cfed}
+.shinnyang-game .sn-song-skip{border:0;background:none;color:#9785a0;font-size:10px;margin-top:8px;padding:5px;cursor:pointer;text-decoration:underline}
+.shinnyang-game .sn-event{margin:9px 0;padding:13px 12px;background:linear-gradient(135deg,#fff3df,#ffeaf3);border:2px solid #efc6cb;border-radius:14px;box-shadow:0 5px 0 #f4d9d6;animation:sn-event-in .4s ease-out}
+.shinnyang-game .sn-event-kicker{display:block;color:#c0879d;font-size:9px;letter-spacing:.11em;font-weight:900}
+.shinnyang-game .sn-event strong{display:block;font-size:15px;color:#8d6687;margin-top:4px}
+.shinnyang-game .sn-event p{margin:5px 0 9px;font-size:11px;color:#8d778b;line-height:1.7}
+.shinnyang-game .sn-event-options{display:grid;grid-template-columns:1fr;gap:6px}
+.shinnyang-game .sn-event-options button{border:1px solid #deb7ce;border-radius:9px;padding:10px 8px;background:#fffafd;color:#946282;font-size:11px;font-weight:800;cursor:pointer;text-align:left}
+.shinnyang-game .sn-event-options button:hover{background:#f8e6f4}
+.shinnyang-game .sn-event>small{display:block;color:#a08a9c;font-size:9px;margin-top:7px}
+.shinnyang-game .sn-shop-head{padding:7px 0;font-size:10px;color:#9a7eaa}
+.shinnyang-game .sn-shop-head strong{color:#9861aa}
+.shinnyang-game .sn-shop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:4px 0 8px}
+.shinnyang-game .sn-shop-item{display:grid;justify-items:center;gap:2px;border:1px solid #e0cbe5;border-radius:10px;background:#fffafa;padding:9px 3px;cursor:pointer;color:#856a96}
+.shinnyang-game .sn-shop-item.selected{border-color:#bc9cd0;background:#f5eafa}
+.shinnyang-game .sn-shop-item:disabled{opacity:.6;cursor:default}
+.shinnyang-game .sn-shop-emoji{font-size:24px}.shinnyang-game .sn-shop-item b{font-size:10px}.shinnyang-game .sn-shop-item small{font-size:9px;color:#a48bab}
+.shinnyang-game .sn-achievements{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:9px 0}
+.shinnyang-game .sn-badge{display:flex;gap:6px;align-items:center;min-width:0;background:#f5eff7;border:1px dashed #e2d5e8;border-radius:9px;padding:8px 5px;opacity:.62}
+.shinnyang-game .sn-badge.won{opacity:1;background:#fff2e2;border-color:#e8cda5}
+.shinnyang-game .sn-badge>span{font-size:20px}.shinnyang-game .sn-badge>div{min-width:0;display:flex;flex-direction:column;gap:2px}
+.shinnyang-game .sn-badge strong{font-size:10px}.shinnyang-game .sn-badge small{font-size:9px;line-height:1.35;color:#aa91ab}
+@keyframes sn-room-bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-7px) rotate(4deg)}}
+@keyframes sn-event-in{from{opacity:0;transform:translateY(11px) scale(.96)}to{opacity:1;transform:none}}
+@media(max-width:380px){.shinnyang-game .sn-achievements{grid-template-columns:1fr}.shinnyang-game .sn-economy>span{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.shinnyang-game .sn-room-decor,.shinnyang-game .sn-event{animation:none!important}}
+
+.shinnyang-game .sn-song-input button:disabled{opacity:.47;cursor:wait}
+.shinnyang-game .sn-burst{position:absolute;z-index:8;pointer-events:none;color:#d891bb;font-size:18px;text-shadow:0 2px #fff8fd;animation:sn-sparkle-burst 1s ease-out both}
+@keyframes sn-sparkle-burst{0%{opacity:0;transform:translate(0,5px) scale(.4)}18%{opacity:1;transform:translate(0,0) scale(1.3)}85%{opacity:.9}100%{opacity:0;transform:translate(var(--sn-x),-53px) scale(.5)}}
+@media(prefers-reduced-motion:reduce){.shinnyang-game .sn-burst{animation:none!important;display:none!important}}
