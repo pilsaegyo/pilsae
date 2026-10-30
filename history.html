@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="신화 그룹과 신혜성 활동 기록을 네 시기로 나누어 검증 자료와 함께 찾아보는 연표"><title>활동 연표 | SHINHWA HISTORY | 필새 정리</title><link rel="icon" href="./assets/favicon-p.png"><link rel="stylesheet" href="./history.css?v=20261030-history-ux2"></head>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="신화 그룹과 신혜성 활동 기록을 네 시기로 나누어 검증 자료와 함께 찾아보는 연표"><title>활동 연표 | SHINHWA HISTORY | 필새 정리</title><link rel="icon" href="./assets/favicon-p.png"><link rel="stylesheet" href="./history.css?v=20261030-history-ux2"><link rel="stylesheet" href="./shinnyang-game.css?v=20261030-test1"></head>
 <body><header class="top"><div class="top-inner"><a class="back" href="./?view=grid">← 영상 아카이브</a><span class="history-brand">SHINHWA HISTORY <span class="history-brand-divider">|</span> 필새 정리</span></div></header>
 <main class="wrap"><section class="intro"><div class="history-stardust" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i><i>✧</i><i>✦</i></div><div class="eyebrow">CHAPTER 1 — 4 · HISTORY</div><h1>활동 연표</h1><p>신화 전체 활동과 신혜성이 참여한 기록을 시기별로 살펴보세요.</p></section>
 <div class="notice">일정의 원문·날짜·출처는 각 항목의 ⓘ 근거에서 확인할 수 있습니다. 관련 영상은 프로그램·회차 내용을 대조한 참고 자료입니다.<span id="researchGuide" class="research-guide"></span></div>
@@ -13,8 +13,8 @@
 <div class="view-toolbar"><span class="view-heading">일정 보기</span><div class="view-switch" role="group" aria-label="활동 연표 보기 방식"><button type="button" id="listView" class="view-option is-active" aria-pressed="true">☷ 목록</button><button type="button" id="calendarView" class="view-option" aria-pressed="false">▦ 달력</button></div></div>
 <section id="calendar" class="calendar-view" aria-label="월별 활동 달력" hidden></section><section id="events" class="events" aria-live="polite" aria-busy="true"><div class="history-loader" role="status"><span class="loader-cards" aria-hidden="true"><i></i><i></i><i></i><b>✦</b></span><span>소중한 활동 기록을 펼치고 있어요<span class="loader-dots" aria-hidden="true"><i>·</i><i>·</i><i>·</i></span></span></div></section><button id="loadMore" class="load-more" type="button" hidden>일정 더 보기</button>
 </main>
-<!-- 오른쪽 상단: 장식용 고양이 스탬프 (상호작용 없음) -->
-<div class="cat-seal" aria-hidden="true">
+<!-- 오른쪽 상단: 기존 PIL 고양이 스탬프를 신냥이 게임 버튼으로 사용 -->
+<button id="shinnyangTrigger" class="cat-seal shinnyang-trigger" type="button" aria-label="신냥이 미니게임 열기" aria-controls="shinnyangGame" aria-expanded="false" title="신냥이 만나기 ♡">
   <svg viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false">
     <defs><linearGradient id="pilSealTint" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fdfaff"/><stop offset="100%" stop-color="#ebe2fb"/></linearGradient></defs>
     <circle cx="48" cy="56" r="42" fill="url(#pilSealTint)" stroke="#b9a3e1" stroke-width="1.9"/>
@@ -28,7 +28,42 @@
     <path d="M59 10 Q59 4 66 4 H94 Q101 4 101 12V29Q101 36 94 36H82L76 43V36H66Q59 36 59 29Z" fill="#ad93da" stroke="#f8f2ff" stroke-width="2.4" stroke-linejoin="round"/>
     <text x="80" y="24.5" text-anchor="middle" fill="#fff" font-size="12.5" font-family="Arial, sans-serif" font-weight="700" letter-spacing="1">PIL</text>
   </svg>
-</div>
+</button>
+<!-- 신냥이 시범판: 가벼운 비모달 게임 창. 연혁 조작을 막지 않습니다. -->
+<section id="shinnyangGame" class="shinnyang-game" role="dialog" aria-modal="false" aria-labelledby="shinnyangTitle" hidden>
+  <header class="shinnyang-top">
+    <div class="shinnyang-headline"><div class="shinnyang-eyebrow">PILSAE · LITTLE PIXEL STAR</div><h2 id="shinnyangTitle" class="shinnyang-title">신냥이의 한 시간 <span class="sn-heart">♡</span></h2></div>
+    <button class="shinnyang-close" id="shinnyangClose" type="button" aria-label="신냥이 게임 닫기">×</button>
+  </header>
+  <div class="shinnyang-main">
+    <div class="shinnyang-status"><span class="shinnyang-chip" id="shinnyangRank">LEVEL 1 · 꼬마냥</span><span class="shinnyang-clock" id="shinnyangClock">00:00 / 01:00</span></div>
+    <div class="shinnyang-scene" id="shinnyangScene" data-scene="idle">
+      <span class="shinnyang-scene-tag" id="shinnyangSceneTag">1998 · 첫 연습실</span>
+      <span class="shinnyang-spark one" aria-hidden="true">✦</span><span class="shinnyang-spark two" aria-hidden="true">✧</span><span class="shinnyang-spark three" aria-hidden="true">✦</span>
+      <div class="shinnyang-lamp" aria-hidden="true"></div><div class="shinnyang-floor" aria-hidden="true"></div>
+      <canvas id="shinnyangSprite" class="shinnyang-pixel-cat" width="40" height="40" role="img" aria-label="노래하는 도트 고양이 신냥이"></canvas><span class="shinnyang-notes" aria-hidden="true">♫ ♪</span>
+    </div>
+    <div class="shinnyang-dialogue" id="shinnyangDialogue" aria-live="polite">오늘은 어떤 노래를 연습해볼까냥? ♡</div>
+    <div class="shinnyang-toast" id="shinnyangToast" aria-live="polite">행동을 선택하면 게임 속 10분이 흘러요</div>
+    <div class="shinnyang-progress" id="shinnyangProgress" aria-label="한 시간 진행률"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="shinnyang-meters">
+      <div class="shinnyang-meter"><label>🍀 체력 <strong id="snEnergy">70</strong></label><div class="shinnyang-track"><div id="snEnergyBar" class="shinnyang-fill energy"></div></div></div>
+      <div class="shinnyang-meter"><label>♫ 실력 <strong id="snVoice">20</strong></label><div class="shinnyang-track"><div id="snVoiceBar" class="shinnyang-fill voice"></div></div></div>
+      <div class="shinnyang-meter"><label>♥ 인기 <strong id="snFans">0</strong></label><div class="shinnyang-track"><div id="snFansBar" class="shinnyang-fill fans"></div></div></div>
+    </div>
+    <div class="shinnyang-actions" id="shinnyangActions">
+      <button type="button" class="shinnyang-action" data-sn-act="sing"><span class="sn-icon" aria-hidden="true">🎼</span><span>노래 연습</span><small>실력 +20</small></button>
+      <button type="button" class="shinnyang-action" data-sn-act="rest"><span class="sn-icon" aria-hidden="true">🛏️</span><span>낮잠 자기</span><small>체력 +25</small></button>
+      <button type="button" class="shinnyang-action" data-sn-act="stage"><span class="sn-icon" aria-hidden="true">🎤</span><span>무대 서기</span><small>인기 +25</small></button>
+    </div>
+    <div class="shinnyang-finale" id="shinnyangFinale" aria-hidden="true"><strong id="shinnyangEndTitle">첫 번째 한 시간 완료!</strong><p id="shinnyangEndBody"></p><button id="shinnyangAgain" class="shinnyang-again" type="button">다음 한 시간 놀기 ↗</button></div>
+  </div>
+  <footer class="shinnyang-foot">
+    <div class="shinnyang-stars"><span>✦ 신냥이 성장 스탬프</span><strong id="shinnyangStars">0 별</strong></div>
+    <div class="shinnyang-marquee" aria-label="실제 활동 연혁 중 일부"><span>✧ 연혁 속 기록 · 1998.03.24 KMTV 쇼! 뮤직탱크 데뷔 무대　　✧ 2001.01.13 첫 단독 콘서트 First Mythology 1일 차　　✧ 2002.03.29 정규 5집 Perfect Man 발매　　</span></div>
+    <div class="shinnyang-disclaimer"><span>체험용 창작 게임 · 실제 활동 사실과 구분</span><button type="button" class="shinnyang-reset" id="shinnyangReset">성장 초기화</button></div>
+  </footer>
+</section>
 <div id="readingYear" class="reading-year" hidden></div>
 <button id="backToTop" class="back-to-top" type="button" aria-label="페이지 맨 위로 이동" title="맨 위로" hidden><span aria-hidden="true">↑</span><small>TOP</small></button>
-<script src="./history.js?v=20261030-history-ux2" defer></script></body></html>
+<script src="./history.js?v=20261030-history-ux2" defer></script><script src="./shinnyang-game.js?v=20261030-test1" defer></script></body></html>
