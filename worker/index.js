@@ -2629,6 +2629,12 @@ async function appendAdminHistory({ env, owner, repo, branch, entry }) {
 
 
 const DEPLOY_PATCH_ALLOWED_FILES = new Set([
+  "ending-card-waa.png",
+  "ending-card-may.png",
+  "ending-card-ggong.png",
+  "ending-card-pink.png",
+  "ending-card-ttung.png",
+  "ending-card-hong.png",
   "shinnyang-game.css",
   "shinnyang-game.js",
   "shinnyang.html",
@@ -2653,6 +2659,15 @@ const DEPLOY_PATCH_ALLOWED_FILES = new Set([
   "HISTORY.md"
 ]);
 
+const DEPLOY_PATCH_PNG_FILES = new Set([
+  "ending-card-waa.png",
+  "ending-card-may.png",
+  "ending-card-ggong.png",
+  "ending-card-pink.png",
+  "ending-card-ttung.png",
+  "ending-card-hong.png",
+]);
+
 function githubHeaders(env) {
   return {
     "Accept":"application/vnd.github+json",
@@ -2675,7 +2690,9 @@ function validateDeployPatchFiles(files) {
 
   return files.map(item => {
     const path = String(item?.path || "").replace(/\\/g, "/").replace(/^\/+/, "");
-    const contentText = String(item?.contentText ?? "");
+    const binaryPng = DEPLOY_PATCH_PNG_FILES.has(path);
+    const contentText = binaryPng ? null : String(item?.contentText ?? "");
+    const contentBase64 = binaryPng ? String(item?.contentBase64 ?? "") : null;
 
     if (
       !path ||
@@ -2691,9 +2708,32 @@ function validateDeployPatchFiles(files) {
     }
     seen.add(path);
 
-    const bytes = new TextEncoder().encode(contentText).byteLength;
-    // history.json can exceed 2 MiB as original evidence accumulates.
-    // Keep the ordinary-file limit and a 16 MiB total request safeguard.
+    let bytes;
+    if (binaryPng) {
+      if (typeof item?.contentBase64 !== "string" || item?.contentText !== undefined
+          || !contentBase64 || !/^[A-Za-z0-9+/]+={0,2}$/.test(contentBase64)
+          || contentBase64.length % 4 !== 0) {
+        throw new HttpError(400, `${path} PNG 파일 인코딩이 올바르지 않습니다.`);
+      }
+      let raw;
+      try { raw = atob(contentBase64); }
+      catch { throw new HttpError(400, `${path} PNG Base64 디코딩에 실패했습니다.`); }
+      const pngSignature = [137, 80, 78, 71, 13, 10, 26, 10];
+      const expectedHeader = "IHDR";
+      const expectedEnd = [0, 0, 0, 0, 73, 69, 78, 68, 174, 66, 96, 130];
+      if (raw.length < 45 || !pngSignature.every((value,i) => raw.charCodeAt(i) === value)
+          || raw.slice(12,16) !== expectedHeader
+          || !expectedEnd.every((value,i) => raw.charCodeAt(raw.length - 12 + i) === value)) {
+        throw new HttpError(400, `${path} 파일이 유효한 PNG가 아닙니다.`);
+      }
+      bytes = raw.length;
+    } else {
+      if (item?.contentBase64 !== undefined) {
+        throw new HttpError(400, `${path}는 바이너리 업로드가 허용되지 않습니다.`);
+      }
+      bytes = new TextEncoder().encode(contentText).byteLength;
+    }
+    // Maintain existing 2 MiB per-file and 16 MiB total limits.
     if (path !== "data/history.json" && bytes > 2 * 1024 * 1024) {
       throw new HttpError(413, `${path} 파일이 2MB를 초과합니다.`);
     }
@@ -2703,7 +2743,7 @@ function validateDeployPatchFiles(files) {
       throw new HttpError(413, "배포 파일 전체 크기가 16MB를 초과합니다.");
     }
 
-    return { path, contentText };
+    return binaryPng ? { path, contentBase64 } : { path, contentText };
   });
 }
 
@@ -2784,7 +2824,7 @@ async function createGithubPatchCommit({
         env,
         method:"POST",
         body:{
-          content:toBase64Utf8(file.contentText),
+          content:DEPLOY_PATCH_PNG_FILES.has(file.path) ? file.contentBase64 : toBase64Utf8(file.contentText),
           encoding:"base64"
         }
       }

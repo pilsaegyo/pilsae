@@ -4401,6 +4401,12 @@ function renderAdminContentList() {
 
 
 const DEPLOY_ALLOWED_FILES = new Set([
+  "ending-card-waa.png",
+  "ending-card-may.png",
+  "ending-card-ggong.png",
+  "ending-card-pink.png",
+  "ending-card-ttung.png",
+  "ending-card-hong.png",
   "shinnyang-game.css",
   "shinnyang-game.js",
   "shinnyang.html",
@@ -4422,6 +4428,15 @@ const DEPLOY_ALLOWED_FILES = new Set([
   ".assetsignore",
   "README_HISTORY.md",
   "HISTORY.md"
+]);
+
+const DEPLOY_BINARY_PNG_FILES = new Set([
+  "ending-card-waa.png",
+  "ending-card-may.png",
+  "ending-card-ggong.png",
+  "ending-card-pink.png",
+  "ending-card-ttung.png",
+  "ending-card-hong.png",
 ]);
 
 const DEPLOY_BLOCKED_FILES = new Set([
@@ -4634,6 +4649,26 @@ async function inflateZipBytes(bytes) {
   return new Uint8Array(await response.arrayBuffer());
 }
 
+// Preserve binary PNG bytes: UTF-8 decoding would irreversibly corrupt image data.
+function deployBytesToBase64(bytes) {
+  const chunkSize = 0x8000;
+  let binary = "";
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
+}
+
+function deployValidatePngSignature(bytes, path) {
+  const signature = [137, 80, 78, 71, 13, 10, 26, 10];
+  const iend = [0, 0, 0, 0, 73, 69, 78, 68, 174, 66, 96, 130];
+  if (bytes.length < 45 || !signature.every((value, i) => bytes[i] === value)
+      || String.fromCharCode(...bytes.subarray(12, 16)) !== "IHDR"
+      || !iend.every((value, i) => bytes[bytes.length - 12 + i] === value)) {
+    throw new Error(`${path} 파일의 PNG 형식이 올바르지 않습니다.`);
+  }
+}
+
 async function extractDeployZipTextFiles(arrayBuffer, normalizedEntries) {
   const view = new DataView(arrayBuffer);
   const allBytes = new Uint8Array(arrayBuffer);
@@ -4696,10 +4731,12 @@ async function extractDeployZipTextFiles(arrayBuffer, normalizedEntries) {
       throw new Error(`${item.path} 압축 해제 크기가 예상값과 다릅니다.`);
     }
 
-    files.push({
-      path:item.path,
-      contentText:decoder.decode(decodedBytes)
-    });
+    if (DEPLOY_BINARY_PNG_FILES.has(item.path)) {
+      deployValidatePngSignature(decodedBytes, item.path);
+      files.push({ path:item.path, contentBase64:deployBytesToBase64(decodedBytes) });
+    } else {
+      files.push({ path:item.path, contentText:decoder.decode(decodedBytes) });
+    }
   }
 
   return files;
