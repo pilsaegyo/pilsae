@@ -1,6 +1,14 @@
 {
   "backups": [
     {
+      "id": "weekly-1793383223582-2",
+      "slot": 2,
+      "path": "data/weekly-backups/weekly-2.json",
+      "reason": "weekly",
+      "createdAt": "2026-10-30T18:00:23.582Z",
+      "total": 657
+    },
+    {
       "id": "weekly-1792778424836-1",
       "slot": 1,
       "path": "data/weekly-backups/weekly-1.json",
@@ -23,16 +31,8 @@
       "reason": "weekly",
       "createdAt": "2026-10-09T18:00:11.831Z",
       "total": 652
-    },
-    {
-      "id": "weekly-1790964019384-2",
-      "slot": 2,
-      "path": "data/weekly-backups/weekly-2.json",
-      "reason": "weekly",
-      "createdAt": "2026-10-02T18:00:19.384Z",
-      "total": 650
     }
   ],
-  "nextSlot": 2,
-  "updatedAt": "2026-10-23T18:00:24.836Z"
+  "nextSlot": 3,
+  "updatedAt": "2026-10-30T18:00:23.582Z"
 }
